@@ -23,7 +23,7 @@
 	},
     "autoload": {
         "psr-4": {
-            "skeeks\\cms\\themes\\unify": "src/"
+            "skeeks\\cms\\themes\\unify\\": "src/"
         }
     }
 }
