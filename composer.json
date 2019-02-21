@@ -1,0 +1,29 @@
+{
+	"name": "skeeks/cms-theme-unify-v2",
+	"description": "Theme for SkeekS CMS",
+	"keywords": ["yii", "skeeks", "framework", "component", "admin"],
+    "homepage": "https://cms.skeeks.com/",
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"support": {
+        "issues": "https://skeeks.com/",
+        "wiki": "https://cms.skeeks.com/docs/",
+        "source": "https://github.com/skeeks-cms/cms-admin"
+    },
+	"authors": [
+		{
+			"name": "Semenov Alexander",
+			"email": "semenov@skeeks.com"
+		}
+	],
+	"require": {
+		"skeeks/cms": "^5.1.0 || dev-master",
+        "skeeks/yii2-assets-unify-v2": "^2.6 || dev-master",
+        "skeeks/yii2-bootstrap4": "^0.0.2 || dev-master"
+	},
+    "autoload": {
+        "psr-4": {
+            "skeeks\\cms\\themes\\unify": "src/"
+        }
+    }
+}
