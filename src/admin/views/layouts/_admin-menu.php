@@ -43,7 +43,7 @@ $level = 1;
                     </a>
 
                     <? if ($adminMenuItem->items) : ?>
-                        <?= $this->render("_admin-submenu", [
+                        <?= $this->render("@app/views/layouts/_admin-submenu", [
                             'items'  => $adminMenuItem->items,
                             'level'  => $level,
                             'parent' => $adminMenuItem,
