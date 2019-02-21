@@ -53,7 +53,7 @@ if ($level == 4) {
 
 
                 <? if ($item->items) : ?>
-                    <?= $this->render("@app/views/layouts/_admin-submenu", [
+                    <?= $this->render("@app/views/layouts/_submenu", [
                         'items'  => $item->items,
                         'level'  => $level,
                         'parent' => $item,
