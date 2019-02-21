@@ -1,6 +1,6 @@
 {
 	"name": "skeeks/cms-theme-unify-v2",
-	"description": "Theme for SkeekS CMS",
+	"description": "Theme unify for skeeks cms projects",
 	"keywords": ["yii", "skeeks", "framework", "component", "admin"],
     "homepage": "https://cms.skeeks.com/",
 	"type": "yii2-extension",
