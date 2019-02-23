@@ -17,6 +17,7 @@ class UnifyJqueryAsset extends UnifyAsset
     public $css = [];
     public $js = [
         'assets/vendor/jquery/jquery.min.js',
+        'assets/vendor/jquery-migrate/jquery-migrate.min.js',
     ];
     public $depends = [];
 }

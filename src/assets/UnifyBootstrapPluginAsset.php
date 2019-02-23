@@ -25,6 +25,8 @@ class UnifyBootstrapPluginAsset extends BootstrapPluginAsset
 
     //Если грузить в другой последовательности то плохо работают tooltip @see https://stackoverflow.com/questions/13731400/jqueryui-tooltips-are-competing-with-twitter-bootstrap
     public $depends = [
+        'yii\web\JqueryAsset',
+        'yii\bootstrap\BootstrapAsset',
         JuiAsset::class,
     ];
 }
