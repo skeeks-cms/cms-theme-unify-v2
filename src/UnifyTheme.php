@@ -35,10 +35,8 @@ class UnifyTheme extends Theme
     /**
      *
      */
-    public function init()
+    static public function initBeforeRender()
     {
-        parent::init();
-
         //Переопределние стандартных Assets
         \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
             'class' => UnifyJqueryAsset::class,
