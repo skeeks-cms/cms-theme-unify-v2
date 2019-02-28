@@ -62,6 +62,7 @@ class UnifyDefaultAsset extends UnifyAsset
         'assets/js/components/hs.header.js',
         'assets/js/components/hs.popup.js',
         'assets/js/components/hs.onscroll-animation.js',
+        'assets/js/components/hs.sticky-block.js',
         'assets/js/components/hs.carousel.js',
         'assets/js/components/hs.go-to.js',
     ];
