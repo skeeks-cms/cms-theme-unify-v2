@@ -167,6 +167,11 @@ class UnifyThemeAdmin extends Theme
      */
     static public function initBeforeRender()
     {
+        /**
+         * Для виджетов выбора времени
+         */
+        \Yii::$app->params['bsVersion'] = "4";
+
         //Переопределние стандартных Assets
         \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
             'class' => UnifyJqueryAsset::class,
