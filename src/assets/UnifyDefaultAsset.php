@@ -8,7 +8,21 @@
 
 namespace skeeks\cms\themes\unify\assets;
 
+use skeeks\assets\unify\base\UnifyAppearAsset;
 use skeeks\assets\unify\base\UnifyAsset;
+use skeeks\assets\unify\base\UnifyDzsparallaxerAsset;
+use skeeks\assets\unify\base\UnifyFancyboxAsset;
+use skeeks\assets\unify\base\UnifyHsBgVideoAsset;
+use skeeks\assets\unify\base\UnifyHsCarouselAsset;
+use skeeks\assets\unify\base\UnifyHsGoToAsset;
+use skeeks\assets\unify\base\UnifyHsHamburgersAsset;
+use skeeks\assets\unify\base\UnifyHsHeaderAsset;
+use skeeks\assets\unify\base\UnifyHsMegamenuAsset;
+use skeeks\assets\unify\base\UnifyHsOnscrollAnimationAsset;
+use skeeks\assets\unify\base\UnifyHsPopupAsset;
+use skeeks\assets\unify\base\UnifyHsStickyBlockAsset;
+use skeeks\assets\unify\base\UnifyMasonryAsset;
+use skeeks\assets\unify\base\UnifyOnscrollAnimationAsset;
 use skeeks\sx\assets\Custom;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\YiiAsset;
@@ -28,11 +42,11 @@ class UnifyDefaultAsset extends UnifyAsset
         'assets/vendor/icon-line-pro/style.css',
         'assets/vendor/icon-hs/style.css',
         'assets/vendor/animate.css',
-        'assets/vendor/fancybox/jquery.fancybox.min.css',
-        'assets/vendor/slick-carousel/slick/slick.css',
+        //'assets/vendor/fancybox/jquery.fancybox.min.css',
+        //'assets/vendor/slick-carousel/slick/slick.css',
         'assets/vendor/typedjs/typed.css',
-        'assets/vendor/hs-megamenu/src/hs.megamenu.css',
-        'assets/vendor/hamburgers/hamburgers.min.css',
+        //'assets/vendor/hs-megamenu/src/hs.megamenu.css',
+        //'assets/vendor/hamburgers/hamburgers.min.css',
 
 
         'assets/css/unify-core.css',
@@ -41,35 +55,53 @@ class UnifyDefaultAsset extends UnifyAsset
     ];
 
     public $js = [
-        'assets/vendor/appear.js',
-        'assets/vendor/hs-megamenu/src/hs.megamenu.js',
+        //'assets/vendor/appear.js',
+        //'assets/vendor/hs-megamenu/src/hs.megamenu.js',
 
-        'assets/vendor/dzsparallaxer/dzsparallaxer.js',
+        /*'assets/vendor/dzsparallaxer/dzsparallaxer.js',
         'assets/vendor/dzsparallaxer/dzsscroller/scroller.js',
 
-        'assets/vendor/dzsparallaxer/advancedscroller/plugin.js',
-        'assets/vendor/masonry/dist/masonry.pkgd.min.js',
+        'assets/vendor/dzsparallaxer/advancedscroller/plugin.js',*/
+
+        //'assets/vendor/masonry/dist/masonry.pkgd.min.js',
         'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js',
-        'assets/vendor/slick-carousel/slick/slick.js',
-        'assets/vendor/hs-bg-video/hs-bg-video.js',
-        'assets/vendor/hs-bg-video/vendor/player.min.js',
-        'assets/vendor/fancybox/jquery.fancybox.min.js',
+        //'assets/vendor/slick-carousel/slick/slick.js',
+        //'assets/vendor/hs-bg-video/hs-bg-video.js',
+        //'assets/vendor/hs-bg-video/vendor/player.min.js',
 
-        'assets/js/hs.core.js',
-        'assets/js/helpers/hs.hamburgers.js',
-        'assets/js/helpers/hs.bg-video.js',
+        //'assets/vendor/fancybox/jquery.fancybox.min.js',
 
-        'assets/js/components/hs.header.js',
-        'assets/js/components/hs.popup.js',
-        'assets/js/components/hs.onscroll-animation.js',
-        'assets/js/components/hs.sticky-block.js',
-        'assets/js/components/hs.carousel.js',
-        'assets/js/components/hs.go-to.js',
+        //'assets/js/hs.core.js',
+        //'assets/js/helpers/hs.hamburgers.js',
+        //'assets/js/helpers/hs.bg-video.js',
+
+        //'assets/js/components/hs.header.js',
+        //'assets/js/components/hs.popup.js',
+        //'assets/js/components/hs.onscroll-animation.js',
+        //'assets/js/components/hs.sticky-block.js',
+        //'assets/js/components/hs.carousel.js',
+        //'assets/js/components/hs.go-to.js',
     ];
 
     public $depends = [
         YiiAsset::class,
         Custom::class,
         BootstrapPluginAsset::class,
+
+
+        //UnifyAppearAsset::class,
+        UnifyHsMegamenuAsset::class,
+        UnifyFancyboxAsset::class,
+        UnifyHsHamburgersAsset::class,
+        UnifyHsHeaderAsset::class,
+        UnifyHsPopupAsset::class,
+        UnifyHsOnscrollAnimationAsset::class,
+        UnifyHsBgVideoAsset::class,
+        UnifyHsStickyBlockAsset::class,
+        UnifyHsGoToAsset::class,
+        UnifyHsCarouselAsset::class,
+        UnifyMasonryAsset::class,
+        UnifyDzsparallaxerAsset::class,
+
     ];
 }
