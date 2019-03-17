@@ -114,4 +114,26 @@ class UnifyTheme extends Theme
         ));
 
     }
+
+    /**
+     * @var string
+     */
+    public $favicon = '/favicon.ico';
+
+    /**
+     * @var string
+     */
+    public $logo = 'https://skeeks.com/assets/f1ec03bc/img/logos/logo-no-bg-title-138.png?v=1492117123';
+
+    /**
+     * @var string
+     */
+    public $title = 'Название сайта';
+
+    /**
+     * @var bool
+     */
+    public $isShowLoader = false;
+
+
 }

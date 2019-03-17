@@ -1,0 +1,14 @@
+/**
+ * Unify custom css
+ */
+.navbar-brand .sx-logo-text{
+    bottom: 7px;
+    /*letter-spacing: 3px;*/
+    font-size: 23px;
+    position: absolute;
+    left: 58px;
+}
+
+.navbar-brand img {
+    height: 39px;
+}
