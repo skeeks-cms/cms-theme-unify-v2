@@ -96,7 +96,7 @@
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
                                 <!-- Top User -->
-                                <a class="g-color-black" href="<?= \yii\helpers\Url::to(['/upa-home']) ?>">
+                                <a class="g-color-black" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
                                     <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
