@@ -7,7 +7,7 @@
  */
 /* @var $this yii\web\View */
 ?>
-    <div id="contacts-section" class="g-bg-secondary g-py-60">
+    <div id="contacts-section" class="sx-footer g-bg-secondary g-py-60">
         <!-- Footer Content -->
         <div class="container">
             <div class="row">
@@ -17,40 +17,51 @@
                         <img class="img-fluid" src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <ul class="list-inline g-mb-20">
-                        <li class="list-inline-item g-mx-5">
-                            <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                               href="https://vk.com/skeeks_com"
-                               target="_blank"
-                            >
-                                <i class="fa fa-vk"></i>
-                            </a>
-                        </li>
+                        <? if ($this->theme->vk) : ?>
+                            <li class="list-inline-item g-mx-5">
+                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                   href="<?= $this->theme->vk; ?>"
+                                   target="_blank"
+                                >
+                                    <i class="fa fa-vk"></i>
+                                </a>
+                            </li>
+                        <? endif; ?>
 
-                        <li class="list-inline-item g-mx-5">
-                            <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                               href="https://www.youtube.com/c/skeeks"
-                               target="_blank"
-                            >
-                                <i class="fa fa-youtube"></i>
-                            </a>
-                        </li>
+                        <? if ($this->theme->youtube) : ?>
+                            <li class="list-inline-item g-mx-5">
+                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                   href="<?= $this->theme->youtube; ?>"
+                                   target="_blank"
+                                >
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                        <? endif; ?>
 
-                        <li class="list-inline-item g-mx-5">
-                            <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                               href="https://www.instagram.com/skeeks_com/"
-                               target="_blank"
-                            >
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item g-mx-5">
-                            <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                               href="https://www.facebook.com/skeekscom"
-                               target="_blank"
-                            >
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
+
+                        <? if ($this->theme->instagram) : ?>
+                            <li class="list-inline-item g-mx-5">
+                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                   href="<?= $this->theme->instagram; ?>"
+                                   target="_blank"
+                                >
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        <? endif; ?>
+
+                        <? if ($this->theme->facebook) : ?>
+                            <li class="list-inline-item g-mx-5">
+                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                   href="<?= $this->theme->facebook; ?>"
+                                   target="_blank"
+                                >
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                        <? endif; ?>
+
                     </ul>
                 </div>
                 <!-- End Footer Content -->
@@ -120,7 +131,7 @@
                                 <i class="fa fa-map-marker"></i>
                               </span>
                             </div>
-                            <p class="mb-0">Россия, Московская область, Рузский городской округ, деревня Усадково</p>
+                            <p class="mb-0"><?= $this->theme->address; ?></p>
                         </div>
                         <!-- End Location -->
                         <!-- Phone -->

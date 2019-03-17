@@ -7,7 +7,7 @@
  */
 /* @var $this yii\web\View */
 ?>
-<section class="g-mt-80 g-pb-0">
+<section class="g-mt-0 g-pb-0">
     <div class="container g-py-20">
         <div class="row">
             <div class="col-md-9 order-md-2">
@@ -25,7 +25,7 @@
                     <?= $this->render("@app/views/include/gallery", ['images' => $model->images]); ?>
                 <? endif; ?>
             </div>
-            <?/*= $this->render("@app/views/include/col-left"); */?>
+            <?= $this->render("@app/views/include/col-left"); ?>
         </div>
     </div>
 </section>
