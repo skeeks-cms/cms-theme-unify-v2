@@ -10,7 +10,11 @@
 /* @var $model   \skeeks\cms\models\Tree */
 ?>
 
-<li class="g-mb-8">
-    <a class="g-color-white-opacity-0_8" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
-        <?= $model->name; ?></a>
+<li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
+    <h4 class="h6 g-pr-20 mb-0">
+
+        <a class="g-color-black" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
+            <i class="fa fa-angle-right"></i>
+            <?= $model->name; ?></a>
+    </h4>
 </li>

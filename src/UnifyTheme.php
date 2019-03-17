@@ -118,6 +118,11 @@ class UnifyTheme extends Theme
     /**
      * @var string
      */
+    public $themeAssetClass = 'skeeks\cms\themes\unify\assets\UnifyThemeAsset';
+
+    /**
+     * @var string
+     */
     public $favicon = '/favicon.ico';
 
     /**
@@ -128,7 +133,40 @@ class UnifyTheme extends Theme
     /**
      * @var string
      */
+    public $address = 'Адрес';
+
+    /**
+     * @var string
+     */
     public $title = 'Название сайта';
+
+    /**
+     * @var string
+     */
+    public $phone = '+7 (495) 777-77-77';
+
+    /**
+     * @var string
+     */
+    public $email = 'info@skeeks.com';
+
+
+    /**
+     * @var string
+     */
+    public $vk = '';
+    /**
+     * @var string
+     */
+    public $instagram = '';
+    /**
+     * @var string
+     */
+    public $youtube = '';
+    /**
+     * @var string
+     */
+    public $facebook = '';
 
     /**
      * @var bool

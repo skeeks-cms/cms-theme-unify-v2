@@ -7,7 +7,8 @@
  */
 use yii\helpers\Html;
 
-\skeeks\cms\themes\unify\assets\UnifyThemeAsset::register($this);
+$class = $this->theme->themeAssetClass;
+$class::register($this);
 /* @var $this \yii\web\View */
 /* @var $content string */
 ?>

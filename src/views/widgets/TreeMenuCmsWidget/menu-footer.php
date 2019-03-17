@@ -11,18 +11,25 @@
 ?>
 
 
-<ul class="list-unstyled mb-0">
+<div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
+    <div class="u-heading-v2-3--bottom g-mb-20">
+        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= $widget->label; ?></h2>
+    </div>
 
-    <? if ($trees = $widget->activeQuery->all()) : ?>
-        <? foreach ($trees as $tree) : ?>
-            <?= $this->render("_one-footer", [
-                "widget" => $widget,
-                "model"  => $tree,
-            ]); ?>
-        <? endforeach; ?>
-    <? endif; ?>
+    <nav class="text-uppercase1">
+        <ul class="list-unstyled g-mt-minus-10 mb-0">
+
+            <? if ($trees = $widget->activeQuery->all()) : ?>
+                <? foreach ($trees as $tree) : ?>
+                    <?= $this->render("_one-footer", [
+                        "widget" => $widget,
+                        "model"  => $tree,
+                    ]); ?>
+                <? endforeach; ?>
+            <? endif; ?>
 
 
-</ul>
-
+        </ul>
+    </nav>
+</div>
 
