@@ -8,8 +8,6 @@
 /* @var $this yii\web\View */
 ?>
 <footer class="g-bg-black g-color-white-opacity-0_8 text-center g-pt-60 g-pb-40 sx-no-print">
-
-
     <!-- Footer Content -->
     <div class="container">
         <div class="row">
@@ -125,7 +123,7 @@
                         <li class="g-mb-8">
                             <!-- Top User -->
                             <a class="g-color-white-opacity-0_8" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
-                               <i class="fas fa-sign-out-alt"></i> Выход
+                                <i class="fas fa-sign-out-alt"></i> Выход
                             </a>
                         </li>
 
@@ -164,3 +162,18 @@
     <!-- End Copyright -->
 </footer>
 <!-- End Footer -->
+<a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
+             "bottom": 15,
+             "right": 15
+           }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+    <i class="hs-icon hs-icon-arrow-top"></i>
+</a>
+<div class="u-outer-spaces-helper"></div>
+
+<?
+$this->registerJs(<<<JS
+// initialization of go to
+$.HSCore.components.HSGoTo.init('.js-go-to');
+JS
+);
+?>

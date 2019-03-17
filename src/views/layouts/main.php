@@ -33,16 +33,9 @@ use yii\helpers\Html;
         <?= $this->render("@app/views/header"); ?>
         <?= $content; ?>
         <?= $this->render("@app/views/footer"); ?>
-        <?= $this->render("@app/views/modals"); ?>
-        <?= \Yii::$app->seo->countersContent; ?>
-        <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
-             "bottom": 15,
-             "right": 15
-           }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
-            <i class="hs-icon hs-icon-arrow-top"></i>
-        </a>
     </main>
-    <div class="u-outer-spaces-helper"></div>
+    <?= $this->render("@app/views/modals"); ?>
+    <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
     </body>
     </html>

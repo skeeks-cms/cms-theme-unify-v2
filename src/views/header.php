@@ -1,3 +1,36 @@
+<?php
+/**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
+ * @author Semenov Alexander <semenov@skeeks.com>
+ */
+/* @var $this yii\web\View */
+$this->registerJs(<<<JS
+$(window).on('load', function () {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+    });
+
+
+    $('#dropdown-megamenu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767
+    });
+
+});
+JS
+);
+?>
+
 <!-- Header -->
 <!--<header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">-->
 <header id="js-header" class="sx-no-print u-header u-header--sticky-top  u-header--show-hide   u-header--change-appearance" data-header-fix-moment="300" data-header-fix-effect="slide">
