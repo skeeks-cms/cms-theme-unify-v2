@@ -1,3 +1,12 @@
+<?php
+/**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
+ * @author Semenov Alexander <semenov@skeeks.com>
+ */
+/* @var $this yii\web\View */
+?>
 <!-- Promo Block -->
 <section>
     <!-- Parallax Image -->
@@ -7,10 +16,10 @@
     <!-- End Parallax Image -->
 
 </section>
-<section class="clearfix g-brd-bottom  g-bg-gray-dark-v1 g-color-white-opacity-0_9">
+<section class="clearfix g-brd-bottom">
     <!-- Icons Block -->
     <div class="row no-gutters g-py-60">
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-dark-v3">
+        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
@@ -18,25 +27,25 @@
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('app', 'Address'); ?></h4>
-                <span class="d-block"><?= \Yii::t('app', 'Moscow, Zelenograd, 2005-29'); ?></span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Адрес</h4>
+                <span class="d-block"><?= $this->theme->address; ?></span>
             </div>
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-dark-v3">
+        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
                 <i class="icon-electronics-005 u-line-icon-pro"></i>
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('app', 'Phone number'); ?></h4>
-                <span class="d-block"><a href="tel:+74950057926">(+7 495) 005-79-26 </a></span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Телефон</h4>
+                <span class="d-block"><a href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?> </a></span>
             </div>
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-dark-v3">
+        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
@@ -45,12 +54,12 @@
 
               </span>
                 <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('app', 'Email'); ?></h4>
-                <span class="d-block"><a href="mailto:info@skeeks.com">info@skeeks.com</a></span>
+                <span class="d-block"><a href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a></span>
             </div>
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-dark-v3">
+        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-gray-light-v1">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
@@ -58,25 +67,12 @@
                 <i class="icon-hotel-restaurant-003 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('app', 'Opening hours'); ?></h4>
-                <span class="d-block"><?= \Yii::t('app', 'Monday - Friday: 10:00 to 19:00'); ?></span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Рабочее время</h4>
+                <span class="d-block"><?= \Yii::t('app', 'Понедельник - Пятница: 10:00 - 19:00'); ?></span>
             </div>
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-12 col-sm-12 col-xs-12">
-            <!-- Icon Blocks -->
-            <div class="text-center g-py-20">
-            <span class="u-icon-v1 u-icon-size--xl g-mb-10">
-
-                <i class="fas fa-user"></i>
-
-              </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('app', 'Customer cabinet'); ?></h4>
-                <span class="d-block"><a href="<?= \yii\helpers\Url::to(['/upa-home']); ?>"><?= \Yii::t('app', 'Sign in'); ?></a></span>
-            </div>
-            <!-- End Icon Blocks -->
-        </div>
     </div>
     <!-- End Icons Block -->
 </section>
