@@ -23,6 +23,7 @@ use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyHsStickyBlockAsset;
 use skeeks\assets\unify\base\UnifyMasonryAsset;
 use skeeks\assets\unify\base\UnifyOnscrollAnimationAsset;
+use skeeks\assets\unify\base\UnifyPopperAsset;
 use skeeks\sx\assets\Custom;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\YiiAsset;
@@ -52,6 +53,7 @@ class UnifyDefaultAsset extends UnifyAsset
     public $depends = [
         YiiAsset::class,
         Custom::class,
+        UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
     ];
 }

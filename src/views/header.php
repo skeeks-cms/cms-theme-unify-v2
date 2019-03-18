@@ -6,6 +6,7 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
+\skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 $this->registerJs(<<<JS
 $(window).on('load', function () {
     // initialization of header

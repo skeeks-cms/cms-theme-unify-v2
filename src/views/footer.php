@@ -210,6 +210,7 @@
     <div class="u-outer-spaces-helper"></div>
 
 <?
+\skeeks\assets\unify\base\UnifyHsGoToAsset::register($this);
 $this->registerJs(<<<JS
 // initialization of go to
 $.HSCore.components.HSGoTo.init('.js-go-to');
