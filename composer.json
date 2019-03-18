@@ -18,8 +18,10 @@
 	],
 	"require": {
 		"skeeks/cms": "^5.1.0 || dev-master",
+
         "skeeks/yii2-assets-unify-v2": "^2.6 || dev-master",
-        "skeeks/yii2-bootstrap4": "^0.0.2 || dev-master"
+        "skeeks/yii2-bootstrap4": "^0.0.2 || dev-master",
+        "skeeks/yii2-query-filter": "dev-master@dev",
 	},
     "autoload": {
         "psr-4": {
