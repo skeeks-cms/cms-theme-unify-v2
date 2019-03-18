@@ -150,6 +150,16 @@ class UnifyTheme extends Theme
      */
     public $email = 'info@skeeks.com';
 
+    /**
+     * @var string
+     */
+    public $work_time = 'Понедельник - Пятница: 10:00 - 19:00';
+
+    /**
+     * @var string
+     */
+    public $yandex_map = '<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0c531662526b93dbdf5073562662972971277522ac0bdad700a1d3736e09828&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>';
+
 
     /**
      * @var string
