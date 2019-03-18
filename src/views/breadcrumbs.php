@@ -12,7 +12,7 @@ if (!@$title) {
     }
 }
 ?>
-<section class="g-pb-20">
+<section class="g-pb-0">
     <div class="g-bg-cover__inner">
         <?= \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget::widget([
             'viewFile' => '@app/views/widgets/BreadcrumbsCmsWidget/default',
