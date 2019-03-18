@@ -26,9 +26,6 @@ class UnifyThemeAsset extends UnifyAsset
     public $sourcePath = "@skeeks/cms/themes/unify/assets/src";
 
     public $css = [
-        '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik',
-        'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
-
         'css/unify-custom.css',
     ];
 
