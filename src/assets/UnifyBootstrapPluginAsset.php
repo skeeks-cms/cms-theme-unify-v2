@@ -9,6 +9,7 @@
 namespace skeeks\cms\themes\unify\assets;
 
 use skeeks\assets\unify\base\UnifyAsset;
+use skeeks\assets\unify\base\UnifyPopperAsset;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\jui\JuiAsset;
 /**
@@ -19,7 +20,7 @@ class UnifyBootstrapPluginAsset extends BootstrapPluginAsset
     public $sourcePath = '@skeeks/assets/unify/template/html/';
 
     public $js = [
-        'assets/vendor/popper.min.js',
+        /*'assets/vendor/popper.min.js',*/
         'assets/vendor/bootstrap/bootstrap.min.js'
     ];
 
@@ -27,6 +28,7 @@ class UnifyBootstrapPluginAsset extends BootstrapPluginAsset
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
+        UnifyPopperAsset::class,
         JuiAsset::class,
     ];
 }
