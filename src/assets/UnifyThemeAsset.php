@@ -30,7 +30,7 @@ class UnifyThemeAsset extends UnifyAsset
     ];
 
     public $js = [
-        //'assets/js/components/hs.go-to.js',
+        'js/unify-custom.js',
     ];
 
     public $depends = [

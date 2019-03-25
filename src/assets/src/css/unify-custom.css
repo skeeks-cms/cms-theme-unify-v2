@@ -12,3 +12,162 @@
 .navbar-brand img {
     height: 39px;
 }
+
+
+
+
+/**
+ * Кастомизация радиокнопок
+ */
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #F87DA9;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/**
+ * Кастомные checkbox
+ */
+.checkbox
+{
+    margin: 0 0 12px;
+    /*margin: 0 0 5px; */
+    position: relative;
+    margin-top: 0 !important;
+}
+
+.checkbox input[type=checkbox],
+.sx-project-form-wrapper input[type=checkbox]
+{
+    position: absolute;
+    visibility: hidden;
+}
+
+
+.checkbox input[type=checkbox]:checked + label
+{
+    font-weight: 600;
+}
+
+
+.checkbox label,
+.sx-project-form-wrapper .form-check label
+{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    line-height: 14px;
+    padding: 0 0 0 26px;
+    font-size: 1.083333em;
+    cursor: pointer;
+}
+
+.checkbox label:before,
+.sx-project-form-wrapper label:before
+{
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.checkbox input[type=checkbox] + label:before,
+.sx-project-form-wrapper input[type=checkbox] + label:before
+{
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+
+    background-color: white;
+    border: 1px solid #ddd;
+
+    content: '';
+    position: absolute;
+}
+
+.checkbox input[type=checkbox]:checked + label:before,
+.sx-project-form-wrapper input[type=checkbox]:checked + label:before
+{
+    background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;
+    background-color: #87c451;
+    border-color: #87c451;
+}
+
+
+
+
+
+/**
+ * Кастомизация форм
+ */
+
+.sx-project-form-wrapper .form-check {
+    padding-left: 0;
+}
+
+
+
+.sx-content {
+    font-size: 16px;
+}
+
+
+
+/**
+ * Просто общие вещи
+ */
+a.sx-dashed {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+a.sx-dashed:hover {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}

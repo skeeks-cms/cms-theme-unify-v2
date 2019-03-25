@@ -69,6 +69,9 @@ class UnifyTheme extends Theme
                 ],
                 \yii\bootstrap\ActiveForm::class            => [
                     'class' => \yii\bootstrap4\ActiveForm::class,
+                    'options' => [
+                        'class' => 'sx-bootstrap4-form'
+                    ]
                 ],
                 \yii\bootstrap\ActiveField::class           => [
                     'class' => \yii\bootstrap4\ActiveField::class,
