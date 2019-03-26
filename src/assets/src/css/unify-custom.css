@@ -171,3 +171,29 @@ a.sx-dashed:hover {
     text-decoration: none;
     border-bottom: 1px dashed;
 }
+
+
+
+
+.alert-danger {
+    color: red;
+}
+
+.g-bg-primary {
+    background: linear-gradient(150deg, #6b86c9, rgba(51, 152, 220, 1));
+}
+
+
+.linkCursor {
+    cursor: pointer;
+}
+
+.has-error .help-block {
+    color: red;
+}
+
+/*
+body {
+    padding-top: 116px;
+}
+*/

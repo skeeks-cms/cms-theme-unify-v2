@@ -63,7 +63,7 @@ JS
                         <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">Зарегистрироваться</button>
                     </div>
                     <div class="text-center">
-                        <? if (\Yii::$app->authClientCollection->clients) : ?>
+                        <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
                             <?= yii\authclient\widgets\AuthChoice::widget([
                                 'baseAuthUrl' => ['/authclient/auth/client'],
                                 'popupMode'   => true,
