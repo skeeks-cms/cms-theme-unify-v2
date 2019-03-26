@@ -62,6 +62,10 @@
         }
     });
 
+
+
+    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
 })(sx, sx.$, sx._);
 
 

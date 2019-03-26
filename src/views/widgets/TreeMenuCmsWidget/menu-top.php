@@ -10,7 +10,7 @@
 /* @var $trees  \skeeks\cms\models\Tree[] */
 ?>
 
-<ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto" data-splitted-breakpoint="992">
+<ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto u-nav-hover-v1" data-splitted-breakpoint="992">
     <? if ($trees = $widget->activeQuery->all()) : ?>
         <? foreach ($trees as $key => $tree) : ?>
             <?= $this->render("_one-menu-top", [
