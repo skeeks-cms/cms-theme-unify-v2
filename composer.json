@@ -20,7 +20,7 @@
 		"skeeks/cms": "^5.1.0 || dev-master",
         "skeeks/cms-eav-query-filter-handler": "0.0.1 || dev-master",
 
-        "skeeks/yii2-assets-unify-v2": "^2.6 || dev-master",
+        "skeeks/yii2-assets-unify-v2-min": "^2.6 || dev-master",
         "skeeks/yii2-bootstrap4": "^2.0.0 || dev-master"
 
 	},
