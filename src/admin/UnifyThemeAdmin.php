@@ -212,7 +212,7 @@ class UnifyThemeAdmin extends Theme
                     'class' => \yii\bootstrap4\Alert::class,
                 ],
                 \yii\bootstrap\Modal::class                 => [
-                    'class' => \yii\bootstrap4\Modal::class,
+                    'class' => \skeeks\bootstrap4\Modal::class,
                 ],
                 \yii\widgets\LinkPager::class               => [
                     'linkOptions'                   => [

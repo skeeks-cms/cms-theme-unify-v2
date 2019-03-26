@@ -37,6 +37,11 @@ class UnifyTheme extends Theme
      */
     static public function initBeforeRender()
     {
+        /**
+         * Для виджетов выбора времени
+         */
+        \Yii::$app->params['bsVersion'] = "4";
+
         //Переопределние стандартных Assets
         \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
             'class' => UnifyJqueryAsset::class,
@@ -80,7 +85,7 @@ class UnifyTheme extends Theme
                     'class' => \yii\bootstrap4\Alert::class,
                 ],
                 \yii\bootstrap\Modal::class                 => [
-                    'class' => \yii\bootstrap4\Modal::class,
+                    'class' => \skeeks\bootstrap4\Modal::class,
                 ],
                 \yii\widgets\LinkPager::class               => [
                     'linkOptions'                   => [
