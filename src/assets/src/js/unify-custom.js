@@ -29,8 +29,27 @@
 
     /**
      * new sx.classes.Location('id');
+     * new sx.classes.Location('#id');
+     * <a href="#id" class="sx-scroll-to">go to id</a>
      */
     sx.classes.Location = sx.classes.Component.extend({
+
+        /**
+         * Установка необходимых данных
+         * @param text
+         * @param opts
+         */
+        construct: function(id, opts)
+        {
+            opts = opts || {};
+            id = id || false;
+
+            this.applyParentMethod(sx.classes.Component, 'construct', [opts]);
+
+            if (id) {
+                this.href(id);
+            }
+        },
 
         href: function(id)
         {
@@ -59,8 +78,29 @@
 
                 return true;
             }
+        },
+
+        _onDomReady: function () {
+
+            var self = this;
+
+            $('body').on("click", ".sx-scroll-to", function() {
+                 if ($(this).attr('href')) {
+                     if ($(this).attr('href') != "#") {
+                         return self.href($(this).attr('href'));
+                     }
+                 } else {
+                     if ($(this).data('href')) {
+                         return self.href($(this).data('href'));
+                     }
+                 }
+
+                 return false;
+            });
         }
     });
+
+    new sx.classes.Location();
 
 
 
