@@ -7,6 +7,7 @@
 
 (function (sx, $, _) {
 
+
     sx.classes.App = sx.classes.Component.extend({
 
         _init: function () {
@@ -20,19 +21,16 @@
             $('.sx-main-col').fadeIn();
 
 
-            $(document).on('pjax:complete', function(e)
-            {
+            $(document).on('pjax:complete', function (e) {
                 $('[data-toggle="tooltip"]').tooltip();
             });
 
-            $(document).on('pjax:error', function(e, data)
-            {
+            $(document).on('pjax:error', function (e, data) {
                 console.error('Не удалось перезагрузить контейнер: ' + e.target.id + ' — ' + data.statusText);
                 e.preventDefault();
             });
 
-            if ($.pjax)
-            {
+            if ($.pjax) {
                 $.pjax.defaults.timeout = 60000;
             }
 
@@ -107,4 +105,34 @@
     });
 
     sx.App = new sx.classes.App();
+
+
+    /**
+     * Добавление звездочек в формы обрамленные .sx-project-form-wrapper
+     */
+    sx.classes.ProjectForm = sx.classes.Component.extend({
+
+        _onDomReady: function () {
+            $(document).on('pjax:complete', function (e) {
+                $('.form-group.required label').each(function () {
+                    var jLabel = $(this);
+                    _.delay(function () {
+                        jLabel.find(".sx-from-required").remove();
+                        jLabel.append($('<span class="sx-from-required" title="Это поле обязательно для заполнения">').text(' *'));
+                    }, 200);
+                });
+            });
+
+            $('.form-group.required label').each(function () {
+                var jLabel = $(this);
+                _.delay(function () {
+                    jLabel.find(".sx-from-required").remove();
+                    jLabel.append($('<span class="sx-from-required" title="Это поле обязательно для заполнения">').text(' *'));
+                }, 200);
+            });
+        }
+    });
+
+    new sx.classes.ProjectForm();
+
 })(sx, sx.$, sx._);

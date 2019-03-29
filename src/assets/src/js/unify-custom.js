@@ -13,13 +13,21 @@
 
         _onDomReady: function () {
             $(document).on('pjax:complete', function (e) {
-                $('.sx-project-form-wrapper .form-group.required label').each(function () {
-                    $(this).append($('<span class="sx-from-required">').text(' *'));
+                $('.form-group.required label').each(function () {
+                    var jLabel = $(this);
+                    _.delay(function () {
+                        jLabel.find(".sx-from-required").remove();
+                        jLabel.append($('<span class="sx-from-required" title="Это поле обязательно для заполнения">').text(' *'));
+                    }, 200);
                 });
             });
 
-            $('.sx-project-form-wrapper .form-group.required label').each(function () {
-                $(this).append($('<span class="sx-from-required">').text(' *'));
+            $('.form-group.required label').each(function () {
+                var jLabel = $(this);
+                _.delay(function () {
+                    jLabel.find(".sx-from-required").remove();
+                    jLabel.append($('<span class="sx-from-required" title="Это поле обязательно для заполнения">').text(' *'));
+                }, 200);
             });
         }
     });

@@ -401,3 +401,24 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active {
     color: #e62154;
 }
+
+
+
+
+form .error-summary {
+    background: #ffe7e7;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+form .error-summary p {
+    color: red;
+}
+
+form .has-error .help-block {
+    color: red;
+}
+
+form .sx-from-required {
+    color: red;
+}
