@@ -69,7 +69,7 @@ form.sx-form-admin .tab-content {
 /**
  * Переопределение стилей таблиц
  */
-table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd):hover>td {
+table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(odd):hover > td {
     background-color: #e6ecec !important;
 }
 
@@ -80,12 +80,15 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .sx-table a.btn {
     border-bottom: 0;
 }
+
 .sx-table a {
     border-bottom: 1px solid;
 }
+
 .sx-table a:hover {
     text-decoration: none;
 }
+
 /**
  * Показывать контект после того как готов dom
  */
@@ -144,15 +147,23 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 }
 
 .u-sidebar-navigation--light .sx-menu-link-pink:hover i,
-.u-sidebar-navigation--light .sx-menu-link-pink:hover
-{
+.u-sidebar-navigation--light .sx-menu-link-pink:hover {
     color: white;
 }
-
 
 /**
  * Уведомления alert
  */
+
+.alert p {
+    margin-bottom: 0;
+}
+
+.alert-default {
+    color: #53585e;
+    background-color: #f5f9f9;
+    border-color: #f5f9f9;
+}
 
 .alert-info {
     color: white;
@@ -183,8 +194,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     color: silver;
 }
 
-
-
 .error-summary {
     color: red;
 }
@@ -192,7 +201,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .comment .author {
     font-weight: normal;
 }
-
 
 .u-btn-green {
     color: #fff;
@@ -212,7 +220,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     border-radius: 50%;
 }
 
-
 .u-side-nav-mini .sx-left-block-workers {
     display: none;
 }
@@ -220,7 +227,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .sx-left-block-workers-list {
     font-size: 12px;
 }
-
 
 .sx-left-block-workers .sx-show-workers {
     text-decoration: none;
@@ -236,8 +242,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     display: none;
 }
 
-
-
 .u-side-nav-mini .sx-schedule-left-block {
     display: none;
 }
@@ -251,9 +255,11 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     text-decoration: none;
     border-bottom: 1px dashed;
 }
+
 .sx-schedule-left-block .error-summary {
     color: red;
 }
+
 .sx-schedule-left-block .sx-schedule-times {
     line-height: 12px;
     display: none;
@@ -262,17 +268,14 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .sx-fa-play {
     color: green;
 }
+
 .sx-fa-stop {
     color: #e62154;
 }
+
 .sx-fa-pause {
     color: orange;
 }
-
-
-
-
-
 
 /**
  * Превью карточка общая
@@ -283,13 +286,13 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     border-radius: 50%;
     border: 1px solid;
 }
+
 .sx-preview-card img.sx-photo.sx-img-size-50 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 1px solid;
 }
-
 
 .sx-preview-card .sx-no-photo {
     width: 40px;
@@ -302,13 +305,13 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     font-size: 16px;
     border: 1px solid
 }
+
 .sx-preview-card .sx-no-photo.sx-img-size-50 {
     width: 50px;
     height: 50px;
     line-height: 50px;
     font-size: 20px;
 }
-
 
 /**
  * Превью карточка сотрудника
@@ -326,15 +329,13 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
     border-radius: 50%;
 }
 
-
 /**
  * Починка CKEditor
  */
 .cke_reset [aria-labelledby],
 .cke_reset[aria-labelledby],
 .cke_reset_all[aria-labelledby],
-.cke_reset_all [aria-labelledby]
-{
+.cke_reset_all [aria-labelledby] {
     opacity: inherit;
 }
 
@@ -357,30 +358,21 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .sx-empty header.u-header,
 .sx-empty #sideNav,
 .sx-empty .sx-hide-on-empty,
-.sx-empty footer
-{
+.sx-empty footer {
     display: none;
 }
 
-.sx-empty main
-{
+.sx-empty main {
     padding-top: 0px !important;
 }
-.sx-empty .sx-main-col
-{
+
+.sx-empty .sx-main-col {
     padding-bottom: 0px !important;
 }
-
-
-
-
 
 .g-bg-in-work {
     background-color: #bbf3bb !important;
 }
-
-
-
 
 .sx-icon-wrapper {
     width: 20px;
@@ -389,11 +381,13 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .u-side-nav--has-sub-menu ul {
     display: none;
 }
+
 .u-side-nav--has-sub-menu ul li a {
     /*line-height: 15px;*/
     white-space: nowrap;
     overflow: hidden;
 }
+
 .u-side-nav--third-level-menu {
     padding-left: 1.5rem;
 }
@@ -401,9 +395,6 @@ table.sx-table > tbody > tr:hover > td, table.sx-table>tbody>tr:nth-of-type(odd)
 .u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active {
     color: #e62154;
 }
-
-
-
 
 form .error-summary {
     background: #ffe7e7;
