@@ -42,9 +42,9 @@ if ($model) {
 
 ?>
 
-<div class="col-md-3 order-md-1  g-pt-0">
+<div class="col-md-3 order-md-1 g-py-20 g-bg-secondary">
     <div class="g-mb-20">
-        <div id="stickyblock-start" class="g-bg-white g-pa-5 js-sticky-block" data-start-point="#stickyblock-start" data-end-point=".sx-footer">
+        <div id="stickyblock-start" class="g-pa-5 js-sticky-block" data-start-point="#stickyblock-start" data-end-point=".sx-footer">
 
             <? if ($parent->activeChildren) : ?>
 
