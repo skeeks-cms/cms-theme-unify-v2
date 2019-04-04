@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Filter
+   ========================================================================== */
+.filter {
+  margin: 0 0 35px;
+}
+.filter .filter--header {
+  zoom: 1;
+  *zoom: 1;
+  padding: 0 0 20px 14px;
+}
+.filter .filter--header:before,
+.filter .filter--header:after {
+  content: " ";
+  display: table;
+}
+.filter .filter--header:after {
+  clear: both;
+}
+.filter .filter--header h1,
+.filter .filter--header h2,
+.filter .filter--header h3,
+.filter .filter--header h4,
+.filter .filter--header h5,
+.filter .filter--header h6 {
+  float: left;
+  line-height: 28px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.333333em;
+  text-transform: uppercase;
+}
+.filter .filter--header .btn {
+  float: right;
+}
+.filter .filter--action {
+  padding: 0 25px 0 35px;
+}
+.filter .irs {
+  margin-top: -2px;
+}
+.filter--group {
+  border-top: solid 1px #dfdfdf;
+}
+.filter--group .filter--group--header {
+  position: relative;
+  padding: 20px 0 20px 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.filter--group .filter--group--header:before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 7px;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  margin-top: -4px;
+  background: url('../images/angle-down.png') no-repeat 50% 50%;
+}
+.filter--group .filter--group--body {
+  display: none;
+  padding: 0 0 10px;
+}
+.filter--group .filter--group--inner {
+  padding: 0 25px 0 35px;
+}
+.filter--group .filter--hidden {
+  display: none;
+}
+.filter--group .filter--show-more {
+  font-size: 14px;
+  padding: 0 0 10px;
+}
+.filter--group .filter--show-more a {
+  border-bottom: 1px dashed;
+}
+.filter--group .filter--show-more a:hover {
+  text-decoration: none;
+}
+.filter--group.opened .filter--group--header:before {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.filter--group.opened .filter--group--body {
+  display: block;
+}
+.side-section {
+  margin: 0 0 35px;
+}
+.side-section .side-section--header {
+  padding: 0 0 20px 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.side-section .side-section--body {
+  padding: 0 0 0 35px;
+}
+
+
+
+
+.sx-product-filter-wrapper {
+    border-bottom: 1px solid silver;
+}
+
+.sx-product-filter-wrapper .form-group > label {
+    text-transform: uppercase;
+}
+
+.sx-product-filter-wrapper .form-group label {
+    display: block;
+}
+
+.sx-product-filter-wrapper .sx-product-filter-checkbox-wrapper {
+    max-height: 150px;
+}
+
+.sx-hidden-filters {
+    display: none;
+}
+
+
+.sx-product-filter-wrapper {
+    border-bottom: 1px solid #c0c0c085;
+    margin-bottom: 5px;
+}
+
+.sx-product-filter-wrapper .form-group > label {
+    text-transform: uppercase;
+}
+
+.sx-product-filter-wrapper .form-group label {
+    display: block;
+}
+
+.sx-product-filter-wrapper .sx-product-filter-checkbox-wrapper {
+    max-height: 150px;
+    overflow-x: auto;
+}
+
+
+#sx-filters-form {
+    display: none;
+}
+
+.sx-filter-selected {
+    background: #fafafa;
+    /*box-shadow: 0 1px 1px #ffe5d9;*/
+}
+
+
+.sx-filter-option-hidden {
+    display: none;
+}
+.sx-filter-option-hidden.sx-filter-option-visible {
+    display: block;
+}
+
+.sx-product-filters .checkbox input[type=checkbox]{
+    margin-left: 0px;
+    margin-top: 2px;
+}
+
+.sx-filters-tree, .sx-filters-tree ul {
+    padding-left: 10px;
+}
+ul.sx-filters-tree li, .sx-filters-tree ul li {
+    list-style: none;
+}
+
+
+.sx-product-filters .panel-default {
+    border-color: #ddd;
+    border-bottom: 0px;
+    box-shadow: none;
+    border-radius: 0px;
+    margin-bottom: 5px;
+}
+
+
