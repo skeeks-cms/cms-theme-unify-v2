@@ -7,8 +7,8 @@
  */
 namespace skeeks\cms\themes\unify\widgets\filters\assets;
 
+use skeeks\assets\unify\base\UnifyIoRangeSliderAsset;
 use skeeks\cms\themes\unify\assets\UnifyDefaultAsset;
-use skeeks\cms\themes\unifyshop\assets\UnifyIoRangeSliderAsset;
 use yii\web\AssetBundle;
 
 /**
