@@ -69,29 +69,29 @@
                 <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
                     'namespace' => 'menu-footer-2',
                     'viewFile'  => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
-                    'label'     => "Меню",
+                    'label'     => \Yii::t('skeeks/unify', 'Menu'),
                     'level'     => '1',
                 ]); ?>
                 <div class="col-sm-6 col-lg">
                     <? if (\Yii::$app->user->isGuest) : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600">Авторизация</h2>
+                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Authorization'); ?></h2>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
-                                <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>" title="Вход">
-                                    <i class="fa fa-sign-in"></i> Вход
+                                <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>" title="<?= \Yii::t('skeeks/unify', 'Sign in'); ?>">
+                                    <i class="fa fa-sign-in"></i> <?= \Yii::t('skeeks/unify', 'Sign in'); ?>
                                 </a>
                             </li>
                             <li class="g-mb-8">
-                                <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); ?>" title="Регистрация">
-                                    <i class="fas fa-user-plus"></i> Регистрация
+                                <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); ?>" title="<?= \Yii::t('skeeks/unify', 'Sign up'); ?>">
+                                    <i class="fas fa-user-plus"></i> <?= \Yii::t('skeeks/unify', 'Sign up'); ?>
                                 </a>
                             </li>
                         </ul>
                     <? else : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600">Личные данные</h2>
+                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Personal data'); ?></h2>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
@@ -109,7 +109,7 @@
                             <li class="g-mb-8">
                                 <!-- Top User -->
                                 <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
-                                    <i class="fas fa-sign-out-alt"></i> Выход
+                                    <i class="fas fa-sign-out-alt"></i> <?= \Yii::t('skeeks/unify', 'Logout'); ?>
                                 </a>
                             </li>
                         </ul>

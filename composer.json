@@ -30,5 +30,15 @@
         "psr-4": {
             "skeeks\\cms\\themes\\unify\\": "src/"
         }
+    },
+    "extra": {
+        "config-plugin": {
+            "console": [
+                "src/config/common.php"
+            ],
+            "web": [
+                "src/config/common.php"
+            ]
+        }
     }
 }
