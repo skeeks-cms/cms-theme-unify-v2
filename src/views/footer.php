@@ -71,6 +71,7 @@
                     'viewFile'  => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
                     'label'     => \Yii::t('skeeks/unify', 'Menu'),
                     'level'     => '1',
+                    'enabledRunCache'     => 'N',
                 ]); ?>
                 <div class="col-sm-6 col-lg">
                     <? if (\Yii::$app->user->isGuest) : ?>
@@ -120,7 +121,7 @@
                 <!-- Footer Content -->
                 <div class="col-lg-3 col-md-6">
                     <div class="u-heading-v2-3--bottom g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600">Контакты</h2>
+                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
                     </div>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">
@@ -176,7 +177,7 @@
                     <div class="d-lg-flex">
                         <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md" style="line-height:30px;">
                             <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text'); ?>
-                            2019 &copy; Все права защищены. <?= $this->theme->title; ?>
+                            2019 &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>
                             <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
                         </small>
 
@@ -186,9 +187,9 @@
 
                 <div class="col-md-4 align-self-center">
                     <div class="pull-right">
-                        <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="Разработка сайта — веб-студия SkeekS">
-                            <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="Разработка сайта — веб-студия SkeekS" width="30">
-                            <span>Разработка сайта - SkeekS</span>
+                        <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
+                            <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30">
+                            <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
                         </a>
                         <a href="https://cms.skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="Yii2 cms">
                             <span>(Yii2 CMS)</span>

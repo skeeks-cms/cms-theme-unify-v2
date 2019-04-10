@@ -6,10 +6,13 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 return [
-    'Menu'          => "Меню",
-    'Authorization' => "Авторизация",
-    'Sign in'       => "Вход",
-    'Sign up'       => "Регистрация",
-    'Logout'        => "Выход",
-    'Personal data' => "Личные данные",
+    'Menu'                => "Меню",
+    'Authorization'       => "Авторизация",
+    'Sign in'             => "Вход",
+    'Sign up'             => "Регистрация",
+    'Logout'              => "Выход",
+    'Personal data'       => "Личные данные",
+    'All rights reserved' => "Все права защищены",
+    'Site development'    => "Разработка сайта",
+    'Contacts'            => "Контакты",
 ];
