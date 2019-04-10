@@ -11,7 +11,7 @@ return [
             'translations' => [
                 'skeeks/unify' => [
                     'class'    => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@skeeks/cms/multiLanguage/messages',
+                    'basePath' => '@skeeks/cms/themes/unify/messages',
                     'fileMap'  => [
                         'skeeks/unify' => 'main.php',
                     ],
