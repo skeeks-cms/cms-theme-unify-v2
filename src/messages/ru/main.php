@@ -15,4 +15,8 @@ return [
     'All rights reserved' => "Все права защищены",
     'Site development'    => "Разработка сайта",
     'Contacts'            => "Контакты",
+    'Categories'          => "Категории",
+    'Address'             => "Адрес",
+    'Phone'               => "Телефон",
+    'Working time'        => "Рабочее время",
 ];

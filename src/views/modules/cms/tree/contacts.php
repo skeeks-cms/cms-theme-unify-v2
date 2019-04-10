@@ -27,7 +27,7 @@
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5">Адрес</h4>
+                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Address'); ?></h4>
                 <span class="d-block"><?= $this->theme->address; ?></span>
             </div>
             <!-- End Icon Blocks -->
@@ -39,7 +39,7 @@
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
                 <i class="icon-electronics-005 u-line-icon-pro"></i>
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5">Телефон</h4>
+                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Phone'); ?></h4>
                 <span class="d-block"><a href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?> </a></span>
             </div>
             <!-- End Icon Blocks -->
@@ -67,7 +67,7 @@
                 <i class="icon-hotel-restaurant-003 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5">Рабочее время</h4>
+                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Working time'); ?></h4>
                 <span class="d-block"><?= $this->theme->work_time; ?></span>
             </div>
             <!-- End Icon Blocks -->

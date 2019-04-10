@@ -50,7 +50,7 @@ if ($model) {
 
                 <div class="u-heading-v3-1 g-mb-10">
                     <h2 class="h5 u-heading-v3__title g-font-weight-600 text-uppercase g-brd-primary ">
-                        Категории
+                        <?= \Yii::t('skeeks/unify', 'Categories'); ?>
                     </h2>
                 </div>
 
