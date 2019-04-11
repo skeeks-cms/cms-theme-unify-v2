@@ -136,7 +136,7 @@ class UnifyTheme extends Theme
     /**
      * @var string
      */
-    public $logo = 'https://skeeks.com/assets/f1ec03bc/img/logos/logo-no-bg-title-138.png?v=1492117123';
+    public $logo = 'https://skeeks.com/assets/5107fcb3/img/logos/logo-no-bg-title-138.png?v=1492117123';
 
     /**
      * @var string

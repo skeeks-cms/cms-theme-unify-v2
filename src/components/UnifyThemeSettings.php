@@ -48,7 +48,7 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
-    public $phone = '(+7 495) 005-79-26 ';
+    public $phone = '(+7 495) 005-79-26';
 
     /**
      * @var string
