@@ -121,6 +121,15 @@ class UnifyTheme extends Theme
             ]
         ));
 
+        if (isset(\Yii::$app->unifyThemeSettings)) {
+            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value)
+            {
+                if (\Yii::$app->view->theme->hasProperty($key) && \Yii::$app->view->theme->canSetProperty($key)) {
+                    \Yii::$app->view->theme->{$key} = $value;
+                }
+            }
+        }
+
     }
 
     /**
@@ -195,14 +204,7 @@ class UnifyTheme extends Theme
 
     public function init()
     {
-        if (isset(\Yii::$app->unifyThemeSettings)) {
-            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value)
-            {
-                if ($this->hasProperty($key) && $this->canSetProperty($key)) {
-                    $this->{$key} = $value;
-                }
-            }
-        }
+
         parent::init();
     }
 
