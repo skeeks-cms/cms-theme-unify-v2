@@ -192,4 +192,18 @@ class UnifyTheme extends Theme
     public $isShowLoader = false;
 
 
+
+    public function init()
+    {
+        if (isset(\Yii::$app->unifyThemeSettings)) {
+            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value)
+            {
+                if ($this->hasProperty($key) && $this->canSetProperty($key)) {
+                    $this->{$key} = $value;
+                }
+            }
+        }
+        parent::init();
+    }
+
 }

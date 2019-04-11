@@ -37,7 +37,8 @@
                 "src/config/common.php"
             ],
             "web": [
-                "src/config/common.php"
+                "src/config/common.php",
+                "src/config/web.php"
             ]
         }
     }
