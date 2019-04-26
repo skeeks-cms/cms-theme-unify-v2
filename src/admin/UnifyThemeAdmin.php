@@ -9,6 +9,7 @@
 namespace skeeks\cms\themes\unify\admin;
 
 use skeeks\cms\backend\widgets\filters\Bootstrap4ActiveField;
+use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab;
 use skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
