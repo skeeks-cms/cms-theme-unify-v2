@@ -51,7 +51,7 @@ form.sx-form-admin {
 }
 
 form.sx-form-admin .tab-content {
-    background: #ffffff;
+    background: #f5f9f9;
     padding: 0px;
     border: 0px;
 }
@@ -424,3 +424,5 @@ form .sx-from-required {
 .comment-form .comment-fields-more {
     margin-top: 10px;
 }
+
+
