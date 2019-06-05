@@ -192,6 +192,11 @@ class UnifyTheme extends Theme
     /**
      * @var string
      */
+    public $footer = 'v1';
+
+    /**
+     * @var string
+     */
     public $main_theme_color1 = '#0185c8';
 
     /**

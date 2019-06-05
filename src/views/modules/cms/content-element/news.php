@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @link https://cms.skeeks.com/
  * @copyright Copyright (c) 2010 SkeekS
@@ -7,4 +7,5 @@
  */
 /* @var $this yii\web\View */
 ?>
-<?= $this->render('@app/views/footers/footer-' . $this->theme->footer . '.php'); ?>
+<?= $this->render('@app/views/modules/cms/content-element/default', ['model' => $model]); ?>
+

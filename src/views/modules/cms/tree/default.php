@@ -17,6 +17,14 @@
                 <div class="g-color-gray-dark-v1 g-font-size-16 sx-content">
                     <?= $model->description_full; ?>
                 </div>
+
+                <?= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                'namespace'       => 'TreeMenuCmsWidget-sub-catalog',
+                'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/sub-catalog',
+                'treePid'         => $model->id,
+                'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+            ])); ?>
+
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'namespace' => 'news',
                     'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/news',

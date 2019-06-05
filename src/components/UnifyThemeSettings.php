@@ -11,14 +11,10 @@ namespace skeeks\cms\themes\unify\components;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\widgets\ColorInput;
-use skeeks\cms\widgets\formInputs\StorageImage;
-use skeeks\cms\widgets\StorageFileManager;
-use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
 
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
@@ -71,27 +67,29 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
-    public $vk = '';
-
+    public $vk = 'https://vk.com/skeeks_com';
     /**
      * @var string
      */
-    public $instagram = '';
-
+    public $instagram = 'https://www.instagram.com/skeeks_com/';
     /**
      * @var string
      */
-    public $youtube = '';
-
+    public $youtube = 'https://www.youtube.com/c/skeeks';
     /**
      * @var string
      */
-    public $facebook = '';
+    public $facebook = 'https://www.facebook.com/skeekscom';
 
     /**
      * @var string
      */
     public $header = 'v1';
+
+    /**
+     * @var string
+     */
+    public $footer = 'v1';
 
     /**
      * @var string
@@ -144,6 +142,7 @@ class UnifyThemeSettings extends Component
                     'main_theme_color2',
 
                     'header',
+                    'footer',
 
                     'css_code',
                 ],
@@ -171,10 +170,11 @@ class UnifyThemeSettings extends Component
             'youtube'   => "Ссылка на страницу Youtube",
             'facebook'  => "Ссылка на страницу facebook",
 
-            'main_theme_color1'  => "Цвет темы 1",
-            'main_theme_color2'  => "Цвет темы 2",
+            'main_theme_color1' => "Цвет темы 1",
+            'main_theme_color2' => "Цвет темы 2",
 
-            'header'  => "Вариант отображения шапки",
+            'header' => "Вариант отображения шапки",
+            'footer' => "Вариант отображения футера",
         ]);
     }
 
@@ -182,11 +182,7 @@ class UnifyThemeSettings extends Component
     public function attributeHints()
     {
         return ArrayHelper::merge(parent::attributeHints(), [
-            /*'css'               => "CSS код подключаемый к вашему сайту",
-            'js'                => "JS код подключаемый к вашему сайту, в этом поле, можно например вставить счетчики",
-            'bg_image'          => "Фоновое изображение",
-            'no_image'          => "заполните, если хотите изменить изображение по умолчанию,",
-            'header_image'      => "Картинка в шапке",*/
+            'footer' => "Нижняя часть сайта",
         ]);
     }
 
@@ -203,15 +199,14 @@ class UnifyThemeSettings extends Component
             'address',
             'work_time',
 
-            'favicon'  => [
+            'favicon' => [
                 'class'       => WidgetField::class,
                 'widgetClass' => OneImage::class,
             ],
-            'logo'     => [
+            'logo'    => [
                 'class'       => WidgetField::class,
                 'widgetClass' => OneImage::class,
             ],
-
 
 
             'vk',
@@ -219,24 +214,32 @@ class UnifyThemeSettings extends Component
             'youtube',
             'facebook',
 
-            'yandex_map'      => [
+            'yandex_map' => [
                 'class' => TextareaField::class,
             ],
 
 
-            'header'      => [
+            'header' => [
                 'class' => SelectField::class,
                 'items' => [
                     'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
-                    'v2' => 'Вариант 2 (лого и меню)'
+                    'v2' => 'Вариант 2 (лого и меню)',
                 ],
             ],
 
-            'main_theme_color1'      => [
+            'footer' => [
+                'class' => SelectField::class,
+                'items' => [
+                    'v1' => 'Вариант 1',
+                    'v2' => 'Вариант 2',
+                ],
+            ],
+
+            'main_theme_color1' => [
                 'class'       => WidgetField::class,
                 'widgetClass' => ColorInput::class,
             ],
-            'main_theme_color2'      => [
+            'main_theme_color2' => [
                 'class'       => WidgetField::class,
                 'widgetClass' => ColorInput::class,
             ],

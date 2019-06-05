@@ -8,14 +8,17 @@
 /* @var $this yii\web\View */
 ?>
 <!-- Promo Block -->
-<section>
-    <!-- Parallax Image -->
-    <div style="height: 400px;">
-        <?= $this->theme->yandex_map; ?>
-    </div>
-    <!-- End Parallax Image -->
+<? if ($this->theme->yandex_map) : ?>
+    <section>
+        <!-- Parallax Image -->
+        <div style="height: 400px; overflow: hidden;">
+            <?= $this->theme->yandex_map; ?>
+        </div>
+        <!-- End Parallax Image -->
 
-</section>
+    </section>
+<? endif; ?>
+
 <section class="clearfix g-brd-bottom">
     <!-- Icons Block -->
     <div class="row no-gutters g-py-60">
