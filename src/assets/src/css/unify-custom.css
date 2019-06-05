@@ -347,3 +347,9 @@ body {
     max-height: 100px;*/
     height: 100px;
 }
+
+
+
+.sx-main-logo img {
+    max-height: 86px;
+}

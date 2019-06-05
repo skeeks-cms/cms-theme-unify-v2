@@ -130,6 +130,11 @@ class UnifyTheme extends Theme
             }
         }
 
+        $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-theme-template.css"));
+        $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
+        $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
+        \Yii::$app->view->registerCss($content);
+
     }
 
     /**
@@ -178,34 +183,43 @@ class UnifyTheme extends Theme
     public $yandex_map = '<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0c531662526b93dbdf5073562662972971277522ac0bdad700a1d3736e09828&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>';
 
 
+
     /**
      * @var string
      */
-    public $vk = '';
+    public $header = 'v1';
+
     /**
      * @var string
      */
-    public $instagram = '';
+    public $main_theme_color1 = '#0185c8';
+
     /**
      * @var string
      */
-    public $youtube = '';
+    public $main_theme_color2 = '#e1082c';
+
+
+
     /**
      * @var string
      */
-    public $facebook = '';
+    public $vk = 'https://vk.com/skeeks_com';
+    /**
+     * @var string
+     */
+    public $instagram = 'https://www.instagram.com/skeeks_com/';
+    /**
+     * @var string
+     */
+    public $youtube = 'https://www.youtube.com/c/skeeks';
+    /**
+     * @var string
+     */
+    public $facebook = 'https://www.facebook.com/skeekscom';
 
     /**
      * @var bool
      */
     public $isShowLoader = false;
-
-
-
-    public function init()
-    {
-
-        parent::init();
-    }
-
 }

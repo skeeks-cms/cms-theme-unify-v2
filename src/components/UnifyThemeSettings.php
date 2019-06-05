@@ -14,6 +14,7 @@ use skeeks\cms\widgets\ColorInput;
 use skeeks\cms\widgets\formInputs\StorageImage;
 use skeeks\cms\widgets\StorageFileManager;
 use skeeks\yii2\form\fields\BoolField;
+use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
@@ -27,7 +28,7 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
-    public $logo = '/favicon.ico';
+    public $logo = 'https://skeeks.com/img/logo/logo-no-bg-title-138.png';
 
     /**
      * @var string
@@ -87,6 +88,20 @@ class UnifyThemeSettings extends Component
      */
     public $facebook = '';
 
+    /**
+     * @var string
+     */
+    public $header = 'v1';
+
+    /**
+     * @var string
+     */
+    public $main_theme_color1 = '#0185c8';
+
+    /**
+     * @var string
+     */
+    public $main_theme_color2 = '#e1082c';
 
     /**
      * @var string
@@ -125,6 +140,11 @@ class UnifyThemeSettings extends Component
                     'youtube',
                     'facebook',
 
+                    'main_theme_color1',
+                    'main_theme_color2',
+
+                    'header',
+
                     'css_code',
                 ],
                 'string',
@@ -150,6 +170,11 @@ class UnifyThemeSettings extends Component
             'instagram' => "Ссылка на страницу Instagram",
             'youtube'   => "Ссылка на страницу Youtube",
             'facebook'  => "Ссылка на страницу facebook",
+
+            'main_theme_color1'  => "Цвет темы 1",
+            'main_theme_color2'  => "Цвет темы 2",
+
+            'header'  => "Вариант отображения шапки",
         ]);
     }
 
@@ -187,6 +212,8 @@ class UnifyThemeSettings extends Component
                 'widgetClass' => OneImage::class,
             ],
 
+
+
             'vk',
             'instagram',
             'youtube',
@@ -195,6 +222,25 @@ class UnifyThemeSettings extends Component
             'yandex_map'      => [
                 'class' => TextareaField::class,
             ],
+
+
+            'header'      => [
+                'class' => SelectField::class,
+                'items' => [
+                    'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
+                    'v2' => 'Вариант 2 (лого и меню)'
+                ],
+            ],
+
+            'main_theme_color1'      => [
+                'class'       => WidgetField::class,
+                'widgetClass' => ColorInput::class,
+            ],
+            'main_theme_color2'      => [
+                'class'       => WidgetField::class,
+                'widgetClass' => ColorInput::class,
+            ],
+
 
             'css_code' => [
                 'class' => TextareaField::class,
