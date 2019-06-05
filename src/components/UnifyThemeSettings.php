@@ -32,7 +32,7 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
-    public $favicon = 'https://skeeks.com/assets/f1ec03bc/img/logos/logo-no-bg-title-138.png?v=1492117123';
+    public $favicon = '/favicon.ico';
 
 
     /**
