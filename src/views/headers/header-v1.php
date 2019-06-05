@@ -90,7 +90,7 @@ JS
                     <?= $this->theme->title; ?>
                 </div>
                 <div class="col-auto">
-                    <a href="#sx-request" data-toggle="modal" class="btn btn-lg btn-primary u-btn-primary g-rounded-50 g-font-size-14">Обратный звонок</a>
+                    <a href="#sx-callback" data-toggle="modal" class="btn btn-lg btn-primary u-btn-primary g-rounded-50 g-font-size-14">Обратный звонок</a>
                 </div>
 
 

@@ -18,15 +18,34 @@
                     <?= $model->description_full; ?>
                 </div>
 
-                <?= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                'namespace'       => 'TreeMenuCmsWidget-sub-catalog',
-                'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/sub-catalog',
-                'treePid'         => $model->id,
-                'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
-            ])); ?>
+                <?
+                    $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'faq'])->one();
+                ?>
+                <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                    'namespace' => 'ContentElementsCmsWidget-faq',
+                    'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+                    'content_ids' => [
+                        $contentFaq ? $contentFaq->id : ""
+                    ],
+                    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/faq',
+                ]); ?>
 
+
+                <?= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                    'namespace'       => 'TreeMenuCmsWidget-sub-catalog',
+                    'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/sub-catalog',
+                    'treePid'         => $model->id,
+                    'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+                ])); ?>
+
+                <?
+                    $contentNews = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one();
+                ?>
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'namespace' => 'news',
+                    'content_ids' => [
+                        $contentNews ? $contentNews->id : ""
+                    ],
                     'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/news',
                 ]); ?>
                 <? if ($model->images) : ?>
