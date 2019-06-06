@@ -11,7 +11,7 @@ $this->registerJs(<<<JS
 $(window).on('load', function () {
         // initialization of sticky blocks
 setTimeout(function() { // important in this case
-  $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+  //$.HSCore.components.HSStickyBlock.init('.js-sticky-block');
 }, 1);
 });
 JS
@@ -44,7 +44,11 @@ if ($model) {
 
 <div class="col-md-3 order-md-1 g-py-20 g-bg-secondary">
     <div class="g-mb-20">
-        <div id="stickyblock-start" class="g-pa-5 js-sticky-block" data-start-point="#stickyblock-start" data-end-point=".sx-footer">
+        <div
+                id="stickyblock-start"
+                class="g-pa-5 js-sticky-block"
+                data-start-point="#stickyblock-start" data-end-point=".sx-footer"
+        >
 
             <? if ($parent->activeChildren) : ?>
 
@@ -74,5 +78,16 @@ if ($model) {
 
         </div>
     </div>
+
+    <? $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one(); ?>
+    <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+        'namespace' => 'ContentElementsCmsWidget-left-news',
+        'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/left-news',
+        'content_ids'           => [
+            $content ? $content->id : ""
+        ],
+        'enabledCurrentTree'   => \skeeks\cms\components\Cms::BOOL_N,
+        'enabledRunCache'   => \skeeks\cms\components\Cms::BOOL_N,
+    ]); ?>
 
 </div>

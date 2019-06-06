@@ -10,7 +10,7 @@ $model->show_counter = $model->show_counter + 1;
 $model->update(false, ['show_counter']);
 ?>
 <section class="g-pb-0">
-    <div class="container ">
+    <div class="container g-bg-white">
         <div class="row">
             <!-- Content -->
             <div class="col-md-9 order-md-2 g-py-20">
@@ -87,7 +87,7 @@ $model->update(false, ['show_counter']);
                     <? endif; ?>
                 <? endif; ?>
 
-                <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-0">
+                <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-20">
                     <li class="list-inline-item">
                         <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%;"/>
                         <a href="<?= $model->createdBy->getPageUrl(); ?>" title="<?= $model->createdBy->name; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
@@ -151,6 +151,8 @@ $model->update(false, ['show_counter']);
                 <!--<div class="card g-brd-gray-light-v7 g-bg-gray-light-v8 g-pa-15 g-pa-25-30--md g-mb-30 g-mt-30">
                     <?/* echo \skeeks\cms\comments\widgets\CommentsWidget::widget(['model' => $model]); */?>
                 </div>-->
+
+                <?= $this->render("@app/views/include/bottom-block"); ?>
 
             </div>
             <?= $this->render("@app/views/include/col-left"); ?>

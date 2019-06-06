@@ -22,6 +22,8 @@ use yii\base\Theme;
  * @property string      $slideNavClasses read-only
  * @property string      $headerClasses read-only
  *
+ * @property bool        $isBoxed
+ *
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 class UnifyTheme extends Theme
@@ -73,10 +75,10 @@ class UnifyTheme extends Theme
                     'class' => \skeeks\cms\admin\form\fields\AdminSelectField::class,
                 ],
                 \yii\bootstrap\ActiveForm::class            => [
-                    'class' => \yii\bootstrap4\ActiveForm::class,
+                    'class'   => \yii\bootstrap4\ActiveForm::class,
                     'options' => [
-                        'class' => 'sx-bootstrap4-form'
-                    ]
+                        'class' => 'sx-bootstrap4-form',
+                    ],
                 ],
                 \yii\bootstrap\ActiveField::class           => [
                     'class' => \yii\bootstrap4\ActiveField::class,
@@ -122,8 +124,7 @@ class UnifyTheme extends Theme
         ));
 
         if (isset(\Yii::$app->unifyThemeSettings)) {
-            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value)
-            {
+            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
                 if (\Yii::$app->view->theme->hasProperty($key) && \Yii::$app->view->theme->canSetProperty($key)) {
                     \Yii::$app->view->theme->{$key} = $value;
                 }
@@ -134,6 +135,17 @@ class UnifyTheme extends Theme
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         \Yii::$app->view->registerCss($content);
+        if (\Yii::$app->view->theme->body_bg_image) {
+            $bgImage = \Yii::$app->view->theme->body_bg_image;
+            \Yii::$app->view->registerCss(<<<CSS
+        body {
+            background: url('{$bgImage}') fixed;
+            background-size: cover;
+        }
+CSS
+            );
+        }
+
 
     }
 
@@ -183,7 +195,6 @@ class UnifyTheme extends Theme
     public $yandex_map = '<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0c531662526b93dbdf5073562662972971277522ac0bdad700a1d3736e09828&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>';
 
 
-
     /**
      * @var string
      */
@@ -192,7 +203,25 @@ class UnifyTheme extends Theme
     /**
      * @var string
      */
+    public $header_shadow = 'u-shadow-v19';
+
+
+    /**
+     * @var string
+     */
     public $footer = 'v1';
+
+
+    /**
+     * @var string
+     */
+    public $body_bg_image = '';
+
+    /**
+     * @var string
+     */
+    public $container = 'full'; //full or boxed
+
 
     /**
      * @var string
@@ -203,7 +232,6 @@ class UnifyTheme extends Theme
      * @var string
      */
     public $main_theme_color2 = '#e1082c';
-
 
 
     /**
@@ -227,4 +255,19 @@ class UnifyTheme extends Theme
      * @var bool
      */
     public $isShowLoader = false;
+
+    /**
+     * @var bool
+     */
+    public $isShowBottomBlock = true;
+
+    /**
+     * @return bool
+     */
+    public function getIsBoxed()
+    {
+        return $this->container == "boxed";
+    }
+
+
 }

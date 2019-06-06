@@ -43,10 +43,10 @@ JS
 
 <!-- Header -->
 <!--u-header--sticky-top-->
-<header id="js-header" class="u-shadow-v19 u-header u-header--toggle-section u-header--change-appearance" data-header-fix-moment="100" data-header-fix-effect="slide">
+<header id="js-header" class="<?= $this->theme->isBoxed ? "" : $this->theme->header_shadow; ?> u-header u-header--toggle-section u-header--change-appearance" data-header-fix-moment="100" data-header-fix-effect="slide">
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
-    <div class="u-header__section u-header__section--hidden g-py-7 	d-none d-sm-block g-bg-white">
+    <div class="u-header__section u-header__section--hidden g-py-7 d-none d-sm-block g-bg-white <?= $this->theme->isBoxed ? "container" : ""; ?>">
         <div class="container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                 <!--<div class="col-auto">
@@ -166,7 +166,7 @@ JS
     </div>
     <!-- End Top Bar -->
 
-    <div class="u-header__section u-header__section--dark g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+    <div class="u-header__section u-header__section--dark g-py-0 sx-main-menu-wrapper <?= $this->theme->container == "boxed" ? "container" : ""; ?>" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container">
                 <!-- Responsive Toggle Button -->

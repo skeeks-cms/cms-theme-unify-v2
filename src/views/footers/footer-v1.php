@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 ?>
 
-    <div id="contacts-section" class="sx-footer g-bg-secondary g-py-60">
+    <div id="contacts-section" class="sx-footer g-bg-secondary g-py-60 <?= $this->theme->isBoxed ? "container" : ""; ?>">
         <!-- Footer Content -->
         <div class="container">
             <div class="row">
@@ -135,7 +135,7 @@
 
 
     <!-- Copyright Footer -->
-    <footer class="g-bg-secondary g-color-black g-py-20">
+    <footer class="g-bg-secondary g-color-black g-py-20 <?= $this->theme->container == "boxed" ? "container" : ""; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
