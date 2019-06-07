@@ -11,4 +11,23 @@ if (!$model->meta_title) {
     $this->title = $this->theme->title;
 }
 ?>
-Главная страница
+<? if ($this->theme->isBoxed) : ?>
+<div class="container">
+<div class="col-md-12">
+<? endif; ?>
+<?
+    $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->one();
+?>
+<?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+    'namespace' => 'home-slider',
+    'enabledCurrentTree' => 'N',
+    'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+    'content_ids' => [
+        $content ? $content->id : ""
+    ],
+    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/slider-revo',
+]); ?>
+<? if ($this->theme->isBoxed) : ?>
+</div>
+</div>
+<? endif; ?>

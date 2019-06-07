@@ -114,6 +114,17 @@
 
     $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
 
+    $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+        helpers: {
+            media: {},
+            overlay: {
+                css: {
+                    'background': 'rgba(0, 0, 0, .8)'
+                }
+            }
+        }
+    });
+
 })(sx, sx.$, sx._);
 
 
