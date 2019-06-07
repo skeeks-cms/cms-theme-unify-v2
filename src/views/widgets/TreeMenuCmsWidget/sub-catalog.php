@@ -10,12 +10,12 @@
 /* @var $models  \skeeks\cms\models\Tree[] */
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
-    <ul class="shop-item-list row list-inline nomargin">
+    <div class="shop-item-list row list-inline nomargin">
         <? foreach ($models as $model) : ?>
             <?= $this->render("_one-subcatalog", [
                 "widget" => $widget,
                 "model"  => $model,
             ]); ?>
         <? endforeach; ?>
-    </ul>
+    </div>
 <? endif; ?>

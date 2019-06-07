@@ -135,12 +135,32 @@ class UnifyTheme extends Theme
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         \Yii::$app->view->registerCss($content);
+
         if (\Yii::$app->view->theme->body_bg_image) {
             $bgImage = \Yii::$app->view->theme->body_bg_image;
             \Yii::$app->view->registerCss(<<<CSS
         body {
             background: url('{$bgImage}') fixed;
             background-size: cover;
+        }
+CSS
+            );
+        }
+
+        if (\Yii::$app->view->theme->footer_bg_color) {
+            $bgColor = \Yii::$app->view->theme->footer_bg_color;
+            \Yii::$app->view->registerCss(<<<CSS
+        .sx-footer {
+            background-color: {$bgColor} !important;
+        }
+CSS
+            );
+        }
+        if (\Yii::$app->view->theme->footer_copyright_bg_color) {
+            $bgColor = \Yii::$app->view->theme->footer_copyright_bg_color;
+            \Yii::$app->view->registerCss(<<<CSS
+        .sx-footer-copyright {
+            background-color: {$bgColor} !important;
         }
 CSS
             );
@@ -210,6 +230,16 @@ CSS
      * @var string
      */
     public $footer = 'v1';
+
+    /**
+     * @var string
+     */
+    public $footer_bg_color = '#fafafa';
+
+    /**
+     * @var string
+     */
+    public $footer_copyright_bg_color = '#fafafa';
 
 
     /**

@@ -15,8 +15,24 @@
                     'model' => $model,
                 ]) ?>
                 <div class="g-color-gray-dark-v1 g-font-size-16 sx-content">
+                    <?= $model->description_short; ?>
+                </div>
+                <?
+                    $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'advantage'])->one();
+                ?>
+                <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                    'namespace' => 'advantage',
+                    'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+                    'content_ids' => [
+                        $contentFaq ? $contentFaq->id : ""
+                    ],
+                    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/advantage',
+                ]); ?>
+
+                <div class="g-color-gray-dark-v1 g-font-size-16 sx-content">
                     <?= $model->description_full; ?>
                 </div>
+
 
                 <?
                     $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'faq'])->one();
