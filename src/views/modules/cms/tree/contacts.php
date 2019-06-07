@@ -11,7 +11,7 @@
 <? if ($this->theme->yandex_map) : ?>
     <section>
         <!-- Parallax Image -->
-        <div style="height: 400px; overflow: hidden;" class="<?= $this->theme->isBoxed ? "container" : ""; ?>">
+        <div style="height: 400px; overflow: hidden;">
             <div class="row">
             <?= $this->theme->yandex_map; ?>
             </div>
@@ -21,7 +21,7 @@
     </section>
 <? endif; ?>
 
-<section class="clearfix g-brd-bottom <?= $this->theme->isBoxed ? "container g-bg-white" : ""; ?>">
+<section class="clearfix g-brd-bottom">
     <!-- Icons Block -->
     <div class="row no-gutters g-py-60">
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">

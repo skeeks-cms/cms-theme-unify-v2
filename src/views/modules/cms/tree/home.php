@@ -11,10 +11,6 @@ if (!$model->meta_title) {
     $this->title = $this->theme->title;
 }
 ?>
-<? if ($this->theme->isBoxed) : ?>
-<div class="container">
-<div class="col-md-12">
-<? endif; ?>
 <?
     $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->one();
 ?>
@@ -27,7 +23,3 @@ if (!$model->meta_title) {
     ],
     'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/slider-revo',
 ]); ?>
-<? if ($this->theme->isBoxed) : ?>
-</div>
-</div>
-<? endif; ?>

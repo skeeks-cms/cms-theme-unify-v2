@@ -136,6 +136,10 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $container = 'full'; //full or boxed
+    /**
+     * @var string
+     */
+    public $body_outer = '';
 
     /**
      * @var bool
@@ -188,6 +192,7 @@ class UnifyThemeSettings extends Component
 
                     'body_bg_image',
                     'container',
+                    'body_outer',
 
                     'css_code',
                 ],
@@ -234,6 +239,7 @@ class UnifyThemeSettings extends Component
 
             'body_bg_image' => "Фоновая картинка сайта",
             'container' => "Сайт во всю ширину или центрированный?",
+            'body_outer' => "Отступ вокруг контейнера сайта",
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
         ]);
@@ -297,8 +303,17 @@ class UnifyThemeSettings extends Component
                     'container' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'boxed' => 'Центрированный',
                             'full' => 'Во всю ширину',
+                            'boxed' => 'Центрированный',
+                            'semiboxed' => 'Широко центрированный',
+                        ],
+                    ],
+                    'body_outer' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            '' => 'Нет',
+                            'u-outer-space-v1' => 'Небольшой отступ',
+                            'u-outer-space-v2' => 'Большой отступ',
                         ],
                     ],
                     'isShowBottomBlock' => [

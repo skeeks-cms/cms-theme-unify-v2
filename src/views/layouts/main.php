@@ -14,7 +14,7 @@ $class::register($this);
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
-    <html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#">
+    <html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#" class="<?= $this->theme->htmlCssClass; ?>" data-outer-spaces="<?= $this->theme->htmlCssClass; ?>">
     <head>
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@ $class::register($this);
         <link rel="icon" type="image/x-icon" href="<?= $this->theme->favicon; ?>"/>
         <?php $this->head() ?>
     </head>
-    <body>
+    <body class="<?= $this->theme->bodyCssClass; ?>">
     <?php $this->beginBody() ?>
     <? if ($this->theme->isShowLoader) : ?>
         <div class="preloader">

@@ -22,7 +22,8 @@ use yii\base\Theme;
  * @property string      $slideNavClasses read-only
  * @property string      $headerClasses read-only
  *
- * @property bool        $isBoxed
+ * @property string        $bodyCssClass
+ * @property string        $htmlCssClass
  *
  * @author Semenov Alexander <semenov@skeeks.com>
  */
@@ -130,6 +131,12 @@ class UnifyTheme extends Theme
                 }
             }
         }
+
+        $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
+        $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
+        \Yii::$app->view->registerCss($content);
+
+
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-theme-template.css"));
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
@@ -252,6 +259,11 @@ CSS
      */
     public $container = 'full'; //full or boxed
 
+    /**
+     * @var string
+     */
+    public $body_outer = ''; //v1 or v2
+
 
     /**
      * @var string
@@ -291,12 +303,32 @@ CSS
      */
     public $isShowBottomBlock = true;
 
+
+
     /**
      * @return bool
      */
-    public function getIsBoxed()
+    public function getBodyCssClass()
     {
-        return $this->container == "boxed";
+        if ($this->container == "boxed") {
+            return 'g-layout-boxed';
+        } elseif ($this->container == "semiboxed") {
+            return 'g-layout-semiboxed';
+        }
+
+        return '';
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHtmlCssClass()
+    {
+        if ($this->body_outer) {
+            return $this->body_outer;
+        }
+
+        return '';
     }
 
 
