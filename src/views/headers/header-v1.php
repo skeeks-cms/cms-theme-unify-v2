@@ -106,10 +106,11 @@ JS
                         <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
                             <?= $this->theme->phone; ?>
                         </a>
+                    <br />
                     <? endif; ?>
 
                     <? if ($this->theme->email) : ?>
-                    <br />
+
                         <a href="mailto:<?= $this->theme->email; ?>" target="_blank" title="Email для связи">
                             <?= $this->theme->email; ?>
                         </a>

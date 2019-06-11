@@ -91,16 +91,20 @@
                     </div>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">
-                        <!-- Location -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
-                              <span class="u-icon-v3 u-icon-size--xs">
-                                <i class="fa fa-map-marker"></i>
-                              </span>
+                        <? if ($this->theme->address) : ?>
+                            <!-- Location -->
+                            <div class="d-flex g-mb-20">
+                                <div class="g-mr-10">
+                                  <span class="u-icon-v3 u-icon-size--xs">
+                                    <i class="fa fa-map-marker"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0"><?= $this->theme->address; ?></p>
                             </div>
-                            <p class="mb-0"><?= $this->theme->address; ?></p>
-                        </div>
-                        <!-- End Location -->
+                            <!-- End Location -->
+                        <? endif; ?>
+
+                        <? if ($this->theme->phone) : ?>
                         <!-- Phone -->
                         <div class="d-flex g-mb-20">
                             <div class="g-mr-10">
@@ -111,6 +115,9 @@
                             <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
                         </div>
                         <!-- End Phone -->
+                        <? endif; ?>
+
+                        <? if ($this->theme->email) : ?>
                         <!-- Email and Website -->
                         <div class="d-flex g-mb-20">
                             <div class="g-mr-10">
@@ -123,6 +130,7 @@
                             </p>
                         </div>
                         <!-- End Email and Website -->
+                        <? endif; ?>
                     </address>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
                 </div>
