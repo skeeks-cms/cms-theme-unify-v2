@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 ?>
 <? if ($this->theme->isShowBottomBlock) : ?>
-    <section class="g-brd-around g-brd-10 g-brd-gray-light-v4 g-pa-30 g-mt-20">
+    <section class="g-brd-around g-brd-10 g-brd-gray-light-v4 g-pa-30 g-mt-20 g-bg-white">
         <div class="row">
             <div class="col-md-9 align-self-center">
                 <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-title'); ?>

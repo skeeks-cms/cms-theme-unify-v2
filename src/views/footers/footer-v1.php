@@ -79,7 +79,8 @@
                     'namespace' => 'menu-footer-3',
                     'viewFile'  => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
                     'label'     => "Услуги",
-                    'treeParentCode'     => 'uslugi',
+                    'treeParentCode'     => 'services',
+                    'enabledRunCache' => 'N',
                 ]); ?>
 
 
