@@ -194,6 +194,16 @@ CSS
     /**
      * @var string
      */
+    public $footer_logo = '';
+
+    /**
+     * @var string
+     */
+    public $logo_text = '';
+
+    /**
+     * @var string
+     */
     public $address = 'Адрес';
 
     /**
@@ -305,18 +315,35 @@ CSS
 
 
 
+    protected $_bodyCssClass = null;
     /**
      * @return bool
      */
     public function getBodyCssClass()
     {
-        if ($this->container == "boxed") {
-            return 'g-layout-boxed';
-        } elseif ($this->container == "semiboxed") {
-            return 'g-layout-semiboxed';
+        if ($this->_bodyCssClass === null) {
+            if ($this->container == "boxed") {
+                $this->_bodyCssClass = 'g-layout-boxed';
+            } elseif ($this->container == "semiboxed") {
+                $this->_bodyCssClass = 'g-layout-semiboxed';
+            }
+
+            if ($this->header == "v2") {
+                $this->_bodyCssClass = $this->_bodyCssClass . " g-mt-80";
+            }
         }
 
-        return '';
+        return $this->_bodyCssClass;
+    }
+
+    /**
+     * @param $css
+     * @return $this
+     */
+    public function setBodyCssClass($css)
+    {
+        $this->_bodyCssClass = $css;
+        return $this;
     }
 
     /**

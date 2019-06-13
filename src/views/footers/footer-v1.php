@@ -15,7 +15,7 @@
                 <!-- Footer Content -->
                 <div class="col-sm-6 col-lg g-mb-30 g-mb-0--lg text-center">
                     <a class="d-block g-width-100 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
-                        <img class="img-fluid" src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                        <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <ul class="list-inline g-mb-20">
                         <? if ($this->theme->vk) : ?>

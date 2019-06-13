@@ -7,12 +7,14 @@
  */
 /* @var $this yii\web\View */
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
+//$this->theme->bodyCssClass = $this->theme->bodyCssClass . " g-mt-80";
+
 $this->registerJs(<<<JS
 $(window).on('load', function () {
     // initialization of header
     $.HSCore.components.HSHeader.init($('#js-header'));
     $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
+``
     // initialization of HSMegaMenu component
     $('.js-mega-menu').HSMegaMenu({
         event: 'hover',
@@ -26,7 +28,6 @@ $(window).on('load', function () {
         pageContainer: $('.container'),
         breakpoint: 767
     });
-
 });
 JS
 );
@@ -37,7 +38,7 @@ JS
 <header id="js-header" class="sx-no-print u-header u-header--sticky-top  u-header--show-hide   u-header--change-appearance" data-header-fix-moment="300" data-header-fix-effect="slide">
     <!--u-header u-header--static u-header--show-hide u-header--change-appearance u-header--untransitioned-->
     <!--g-bg-primary-gradient-opacity-v1-->
-    <div class="u-header__section g-bg-black u-header__section--dark g-transition-0_3 g-py-10 sx-brd--bottom" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+    <div class="u-header__section g-bg-black u-header__section--dark g-transition-0_3 g-py-10 sx-brd--bottom sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <!-- Responsive Toggle Button -->
             <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
@@ -54,6 +55,11 @@ JS
             <!-- Logo -->
             <a href="<?= \yii\helpers\Url::home(); ?>" class="navbar-brand" title="<?= $this->theme->title; ?>">
                 <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                <? if ($this->theme->logo_text) : ?>
+                    <span class="sx-logo-text">
+                            <?= $this->theme->logo_text; ?>
+                            </span>
+                <? endif; ?>
             </a>
             <!-- End Logo -->
 

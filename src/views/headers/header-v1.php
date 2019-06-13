@@ -90,10 +90,16 @@ JS
                     <!-- Logo -->
                     <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
                         <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                        <? if ($this->theme->logo_text) : ?>
+                            <span class="sx-logo-text">
+                            <?= $this->theme->logo_text; ?>
+                            </span>
+                        <? endif; ?>
+
                     </a>
                     <!-- End Logo -->
                 </div>
-<div class="col-auto g-pos-rel g-color-black g-font-size-18 h1 g-font-weight-700">
+                <div class="col-auto g-pos-rel g-color-black g-font-size-18 h1 g-font-weight-700">
                     <?= $this->theme->title; ?>
                 </div>
                 <div class="col-auto">
@@ -106,7 +112,7 @@ JS
                         <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
                             <?= $this->theme->phone; ?>
                         </a>
-                    <br />
+                        <br/>
                     <? endif; ?>
 
                     <? if ($this->theme->email) : ?>

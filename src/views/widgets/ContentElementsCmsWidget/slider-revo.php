@@ -128,7 +128,10 @@ JS
 
 
                     <!-- SLIDE  -->
-              <li data-index="rs-<?= $tree->id; ?>" data-transition="slidingoverlayhorizontal" data-slotamount="default"
+                    <!--data-transition="slidingoverlayhorizontal" -->
+              <li data-index="rs-<?= $tree->id; ?>"
+
+                  data-slotamount="default"
                   data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                   data-thumb="<?= $tree->image->src; ?>" data-rotate="0" data-saveperformance="off"
                   data-title="<?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>"
@@ -194,12 +197,12 @@ JS
                 <!-- LAYER NR. 4 -->
                 <div class="tp-caption   tp-resizeme"
                      id="slide-<?= $tree->id; ?>-layer-2"
-                     data-x="['center','center','center','center']" data-hoffset="['-10','-10','-10','-10']"
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-8','-32']"
                      data-fontsize="['40','40','30','30']"
-                     data-width="['640','640','480','360']"
+                     data-width="none"
                      data-height="none"
-                     data-whitespace="['nowrap','nowrap','normal','normal']"
+                     data-whitespace="['nowrap','normal','normal','normal']"
 
                      data-type="text"
                      data-typewriter='{"lines":"Special%20Offer:%20Free%20Shipping%20Today,%20Shop%20with%20Unify","enabled":"on","speed":"70","delays":"1%7C100","looped":"on","cursorType":"one","blinking":"on","word_delay":"off","sequenced":"on","hide_cursor":"off","start_delay":"1500","newline_delay":"1000","deletion_speed":"20","deletion_delay":"1000","blinking_speed":"500","linebreak_delay":"60","cursor_type":"two","background":"off"}'

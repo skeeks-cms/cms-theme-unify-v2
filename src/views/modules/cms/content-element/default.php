@@ -6,8 +6,6 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
-$model->show_counter = $model->show_counter + 1;
-$model->update(false, ['show_counter']);
 ?>
 <section class="g-pb-0">
     <div class="container g-bg-white">
@@ -32,13 +30,6 @@ $model->update(false, ['show_counter']);
                             ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
                         </div>
 
-                    <? elseif ($model->cmsTree->dir == 'news/releases'): ?>
-                        <?
-                        $imgsrc = \frontend\assets\AppAsset::getAssetUrl('/img/cms/box/box'.\Yii::$app->project->widgetSuffix.".png");
-                        ?>
-                        <div class="g-mb-20">
-                            <img src="<?= $imgsrc; ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
-                        </div>
                     <? endif; ?>
                     <!--<img src="<? /*= \skeeks\cms\helpers\Image::getCapSrc(); */ ?>" title="<? /*= $model->name; */ ?>" alt="<? /*= $model->name; */ ?>" class="img-responsive" />-->
                     <?= $model->description_short; ?>
@@ -47,45 +38,11 @@ $model->update(false, ['show_counter']);
                 </div>
 
 
-                <? /* if ($model->images) : */ ?><!--
-                    <? /*= $this->render("@app/views/include/gallery", ['images' => $model->images]); */ ?>
-                --><? /* endif; */ ?>
-
-
-                <? if ($packages = $model->relatedPropertiesModel->getSmartAttribute('packages')) : ?>
-                    <? $packages = $model->relatedPropertiesModel->getAttribute('packages'); ?>
-                    <? if ($property = $model->relatedPropertiesModel->getRelatedProperty('packages')) : ?>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <hr/>
-                                <h3><?= \Yii::t('app', 'Marketplace'); ?></h3>
-
-                                <?
-                                /**
-                                 * @var $property skeeks\cms\models\CmsContentProperty
-                                 */
-                                echo \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-                                    'namespace'               => 'blog-item-package',
-                                    'viewFile'                => '@app/views/widgets/ContentElementsCmsWidget/products-no-pagination',
-                                    'pageSize'                => 20,
-                                    'limit'                   => 20,
-                                    'enabledPaging'           => \skeeks\cms\components\Cms::BOOL_N,
-                                    'enabledCurrentTree'      => \skeeks\cms\components\Cms::BOOL_N,
-                                    'enabledCurrentTreeChild' => \skeeks\cms\components\Cms::BOOL_N,
-                                    'data'                    => [
-                                        'itemClasses' => 'col-md-2 col-sm-6 md-margin-bottom-30',
-                                    ],
-                                    'dataProviderCallback'    => function (\yii\data\ActiveDataProvider $dataProvider) use ($packages) {
-                                        $dataProvider->query->andWhere(['id' => $packages]);
-                                    },
-                                ]);
-
-                                ?>
-                            </div>
-                        </div>
-
-                    <? endif; ?>
+                <? if ($model->images) : ?>
+                    <h2><?= count($model->images); ?> фото</h2>
+                    <?= $this->render("@app/views/include/gallery", ['images' => $model->images]); ?>
                 <? endif; ?>
+
 
                 <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-20">
                     <li class="list-inline-item">
@@ -152,9 +109,7 @@ $model->update(false, ['show_counter']);
                     <?/* echo \skeeks\cms\comments\widgets\CommentsWidget::widget(['model' => $model]); */?>
                 </div>-->
 
-                <? if ($model->images) : ?>
-                    <?= $this->render("@app/views/include/gallery", ['images' => $model->images]); ?>
-                <? endif; ?>
+
 
                 <?= $this->render("@app/views/include/bottom-block"); ?>
 

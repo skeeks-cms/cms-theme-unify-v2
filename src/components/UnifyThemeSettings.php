@@ -9,7 +9,6 @@
 namespace skeeks\cms\themes\unify\components;
 
 use skeeks\cms\base\Component;
-use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\widgets\ColorInput;
 use skeeks\yii2\form\fields\BoolField;
@@ -30,6 +29,16 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $logo = 'https://skeeks.com/img/logo/logo-no-bg-title-138.png';
+
+    /**
+     * @var string
+     */
+    public $footer_logo = '';
+
+    /**
+     * @var string
+     */
+    public $logo_text = '';
 
     /**
      * @var string
@@ -165,6 +174,8 @@ class UnifyThemeSettings extends Component
             [
                 [
                     'logo',
+                    'footer_logo',
+                    'logo_text',
                     'favicon',
                     'address',
                     'title',
@@ -201,10 +212,10 @@ class UnifyThemeSettings extends Component
 
             [
                 [
-                    'isShowBottomBlock'
+                    'isShowBottomBlock',
                 ],
-                'boolean'
-            ]
+                'boolean',
+            ],
 
         ]);
     }
@@ -212,8 +223,10 @@ class UnifyThemeSettings extends Component
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'logo'    => "Логотип",
-            'favicon' => "Фавикон",
+            'logo'        => "Логотип",
+            'footer_logo' => "Логотип для футера",
+            'logo_text'   => "Текст для логотипа",
+            'favicon'     => "Фавикон",
 
             'title'      => "Короткое название сайта",
             'phone'      => "Телефон",
@@ -230,16 +243,16 @@ class UnifyThemeSettings extends Component
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
 
-            'header' => "Вариант отображения шапки",
+            'header'        => "Вариант отображения шапки",
             'header_shadow' => "Тень шапки",
 
-            'footer' => "Вариант отображения футера",
-            'footer_bg_color' => "Цвет фона футера",
+            'footer'                    => "Вариант отображения футера",
+            'footer_bg_color'           => "Цвет фона футера",
             'footer_copyright_bg_color' => "Цвет фона под футером",
 
             'body_bg_image' => "Фоновая картинка сайта",
-            'container' => "Сайт во всю ширину или центрированный?",
-            'body_outer' => "Отступ вокруг контейнера сайта",
+            'container'     => "Сайт во всю ширину или центрированный?",
+            'body_outer'    => "Отступ вокруг контейнера сайта",
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
         ]);
@@ -249,7 +262,8 @@ class UnifyThemeSettings extends Component
     public function attributeHints()
     {
         return ArrayHelper::merge(parent::attributeHints(), [
-            'footer' => "Нижняя часть сайта",
+            'footer'        => "Нижняя часть сайта",
+            'footer_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'header_shadow' => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
         ]);
     }
@@ -261,8 +275,8 @@ class UnifyThemeSettings extends Component
     {
         return [
             'main' => [
-                'class' => FieldSet::class,
-                'name' => 'Данные',
+                'class'  => FieldSet::class,
+                'name'   => 'Данные',
                 'fields' => [
                     'title',
 
@@ -283,35 +297,41 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
+                    'logo_text',
+                    'footer_logo'    => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => OneImage::class,
+                    ],
+
 
                     'vk',
                     'instagram',
                     'youtube',
                     'facebook',
-                ]
+                ],
             ],
 
             'design' => [
-                'class' => FieldSet::class,
-                'name' => 'Дизайн',
+                'class'  => FieldSet::class,
+                'name'   => 'Дизайн',
                 'fields' => [
                     [
-                        'class' => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Общие настройки')
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Общие настройки'),
                     ],
 
-                    'container' => [
+                    'container'         => [
                         'class' => SelectField::class,
                         'items' => [
-                            'full' => 'Во всю ширину',
-                            'boxed' => 'Центрированный',
+                            'full'      => 'Во всю ширину',
+                            'boxed'     => 'Центрированный',
                             'semiboxed' => 'Широко центрированный',
                         ],
                     ],
-                    'body_outer' => [
+                    'body_outer'        => [
                         'class' => SelectField::class,
                         'items' => [
-                            '' => 'Нет',
+                            ''                 => 'Нет',
                             'u-outer-space-v1' => 'Небольшой отступ',
                             'u-outer-space-v2' => 'Большой отступ',
                         ],
@@ -328,16 +348,15 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
-                    'body_bg_image' => [
+                    'body_bg_image'     => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
 
 
-
                     [
-                        'class' => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Настройки шапки')
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Настройки шапки'),
                     ],
 
                     'header' => [
@@ -359,51 +378,51 @@ class UnifyThemeSettings extends Component
                             'u-shadow-v1-5' => 'Вариант 1.5',
                             'u-shadow-v1-6' => 'Вариант 1.6',
                             'u-shadow-v1-7' => 'Вариант 1.7',
-                            'u-shadow-v2' => 'Вариант 2',
-                            'u-shadow-v3' => 'Вариант 3',
-                            'u-shadow-v5' => 'Вариант 5',
-                            'u-shadow-v6' => 'Вариант 6',
-                            'u-shadow-v7' => 'Вариант 7',
-                            'u-shadow-v8' => 'Вариант 8',
-                            'u-shadow-v9' => 'Вариант 9',
-                            'u-shadow-v10' => 'Вариант 10',
-                            'u-shadow-v11' => 'Вариант 11',
-                            'u-shadow-v12' => 'Вариант 12',
-                            'u-shadow-v13' => 'Вариант 13',
-                            'u-shadow-v14' => 'Вариант 14',
-                            'u-shadow-v15' => 'Вариант 15',
-                            'u-shadow-v16' => 'Вариант 16',
-                            'u-shadow-v17' => 'Вариант 17',
-                            'u-shadow-v18' => 'Вариант 18',
-                            'u-shadow-v19' => 'Вариант 19',
-                            'u-shadow-v20' => 'Вариант 20',
-                            'u-shadow-v21' => 'Вариант 21',
-                            'u-shadow-v22' => 'Вариант 22',
-                            'u-shadow-v23' => 'Вариант 23',
-                            'u-shadow-v24' => 'Вариант 24',
-                            'u-shadow-v25' => 'Вариант 25',
-                            'u-shadow-v26' => 'Вариант 26',
-                            'u-shadow-v27' => 'Вариант 27',
-                            'u-shadow-v28' => 'Вариант 28',
-                            'u-shadow-v29' => 'Вариант 29',
-                            'u-shadow-v30' => 'Вариант 30',
-                            'u-shadow-v31' => 'Вариант 31',
-                            'u-shadow-v32' => 'Вариант 32',
-                            'u-shadow-v33' => 'Вариант 33',
-                            'u-shadow-v34' => 'Вариант 34',
-                            'u-shadow-v35' => 'Вариант 35',
-                            'u-shadow-v36' => 'Вариант 36',
-                            'u-shadow-v37' => 'Вариант 37',
-                            'u-shadow-v38' => 'Вариант 38',
-                            'u-shadow-v39' => 'Вариант 39',
-                            'u-shadow-v40' => 'Вариант 40',
-                            'u-shadow-v41' => 'Вариант 41',
+                            'u-shadow-v2'   => 'Вариант 2',
+                            'u-shadow-v3'   => 'Вариант 3',
+                            'u-shadow-v5'   => 'Вариант 5',
+                            'u-shadow-v6'   => 'Вариант 6',
+                            'u-shadow-v7'   => 'Вариант 7',
+                            'u-shadow-v8'   => 'Вариант 8',
+                            'u-shadow-v9'   => 'Вариант 9',
+                            'u-shadow-v10'  => 'Вариант 10',
+                            'u-shadow-v11'  => 'Вариант 11',
+                            'u-shadow-v12'  => 'Вариант 12',
+                            'u-shadow-v13'  => 'Вариант 13',
+                            'u-shadow-v14'  => 'Вариант 14',
+                            'u-shadow-v15'  => 'Вариант 15',
+                            'u-shadow-v16'  => 'Вариант 16',
+                            'u-shadow-v17'  => 'Вариант 17',
+                            'u-shadow-v18'  => 'Вариант 18',
+                            'u-shadow-v19'  => 'Вариант 19',
+                            'u-shadow-v20'  => 'Вариант 20',
+                            'u-shadow-v21'  => 'Вариант 21',
+                            'u-shadow-v22'  => 'Вариант 22',
+                            'u-shadow-v23'  => 'Вариант 23',
+                            'u-shadow-v24'  => 'Вариант 24',
+                            'u-shadow-v25'  => 'Вариант 25',
+                            'u-shadow-v26'  => 'Вариант 26',
+                            'u-shadow-v27'  => 'Вариант 27',
+                            'u-shadow-v28'  => 'Вариант 28',
+                            'u-shadow-v29'  => 'Вариант 29',
+                            'u-shadow-v30'  => 'Вариант 30',
+                            'u-shadow-v31'  => 'Вариант 31',
+                            'u-shadow-v32'  => 'Вариант 32',
+                            'u-shadow-v33'  => 'Вариант 33',
+                            'u-shadow-v34'  => 'Вариант 34',
+                            'u-shadow-v35'  => 'Вариант 35',
+                            'u-shadow-v36'  => 'Вариант 36',
+                            'u-shadow-v37'  => 'Вариант 37',
+                            'u-shadow-v38'  => 'Вариант 38',
+                            'u-shadow-v39'  => 'Вариант 39',
+                            'u-shadow-v40'  => 'Вариант 40',
+                            'u-shadow-v41'  => 'Вариант 41',
                         ],
                     ],
 
                     [
-                        'class' => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Настройки футера')
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Настройки футера'),
                     ],
 
                     'footer' => [
@@ -425,19 +444,16 @@ class UnifyThemeSettings extends Component
                     ],
 
                     [
-                        'class' => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Дополнительно')
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Дополнительно'),
                     ],
 
 
                     'css_code' => [
                         'class' => TextareaField::class,
                     ],
-                ]
+                ],
             ],
-
-
-
 
 
         ];
