@@ -349,6 +349,15 @@ CSS
      */
     public $home_view_file = 'default';
 
+    /**
+     * @var string
+     */
+    public $news_list_view = 'news';
+    /**
+     * @var string
+     */
+    public $news_list_count_columns = 3;
+
 
     /**
      * @var string

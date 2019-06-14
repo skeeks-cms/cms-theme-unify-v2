@@ -81,7 +81,7 @@
                     'content_ids' => [
                         $contentNews ? $contentNews->id : ""
                     ],
-                    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/news',
+                    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/' . $this->theme->news_list_view,
                 ]); ?>
 
                 <?

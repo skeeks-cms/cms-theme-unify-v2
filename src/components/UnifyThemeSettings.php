@@ -211,6 +211,15 @@ class UnifyThemeSettings extends Component
      */
     public $isShowBottomBlock = true;
 
+    /**
+     * @var string
+     */
+    public $news_list_view = 'news';
+
+    /**
+     * @var string
+     */
+    public $news_list_count_columns = 3;
 
     /**
      * Можно задать название и описание компонента
@@ -244,6 +253,8 @@ class UnifyThemeSettings extends Component
                     'instagram',
                     'youtube',
                     'facebook',
+
+                    'news_list_view',
 
                     'main_theme_color1',
                     'main_theme_color2',
@@ -287,6 +298,7 @@ class UnifyThemeSettings extends Component
                 [
                     'body_begin_image_height_tree',
                     'body_begin_image_height_element',
+                    'news_list_count_columns',
                 ],
                 'integer',
             ],
@@ -341,8 +353,11 @@ class UnifyThemeSettings extends Component
             'body_begin_image_height_element' => "Высота блока с картинкой в новостях",
             'body_begin_no_image'             => "Если картинка не задана в анонсе показывать эту",
 
-            'tree_content_layout' => 'Вариант отображения разделов',
-            'element_content_layout' => 'Вариант отображения новостей',
+            'tree_content_layout' => 'Вариант отображения раздела',
+            'element_content_layout' => 'Вариант отображения страницы одной новости',
+
+            'news_list_view' => 'Вариант отображения списка новостей',
+            'news_list_count_columns' => 'Количество колонок в новостях',
         ]);
     }
 
@@ -606,6 +621,23 @@ class UnifyThemeSettings extends Component
                         'items' => [
                             'default' => "По умолчанию",
                             'news' => "Новости",
+                        ]
+                    ],
+
+                    'news_list_view' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'news' => "По умолчанию",
+                            'news-masonry' => "Новости с фоновой картинкой",
+                        ]
+                    ],
+
+                    'news_list_count_columns' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            '2' => "2",
+                            '3' => "3",
+                            '4' => "4",
                         ]
                     ],
 
