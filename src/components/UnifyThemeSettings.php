@@ -108,6 +108,44 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
+    public $fixed_header_margin = 'g-mt-80';
+
+
+
+
+    /**
+     * @var bool
+     */
+    public $is_image_body_begin = false;
+    /**
+     * @var int
+     */
+    public $body_begin_image_height_tree = 300;
+
+    /**
+     * @var int
+     */
+    public $body_begin_image_height_element = 500;
+    /**
+     * @var string
+     */
+    public $body_begin_no_image = "";
+
+
+    /**
+     * @var string
+     */
+    public $tree_content_layout = "col-left";
+
+    /**
+     * @var string
+     */
+    public $element_content_layout = "col-left";
+
+
+    /**
+     * @var string
+     */
     public $footer = 'v1';
 
     /**
@@ -131,6 +169,19 @@ class UnifyThemeSettings extends Component
      */
     public $main_theme_color2 = '#e1082c';
 
+
+
+    /**
+     * @var string
+     */
+    public $menu_color1 = '#0185c8';
+
+    /**
+     * @var string
+     */
+    public $menu_color2 = '#e1082c';
+
+
     /**
      * @var string
      */
@@ -149,6 +200,11 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $body_outer = '';
+
+    /**
+     * @var string
+     */
+    public $home_view_file = 'default';
 
     /**
      * @var bool
@@ -192,9 +248,13 @@ class UnifyThemeSettings extends Component
                     'main_theme_color1',
                     'main_theme_color2',
 
+                    'menu_color1',
+                    'menu_color2',
+
 
                     'header',
                     'header_shadow',
+                    'fixed_header_margin',
 
 
                     'footer',
@@ -206,6 +266,12 @@ class UnifyThemeSettings extends Component
                     'body_outer',
 
                     'css_code',
+                    'home_view_file',
+
+                    'body_begin_no_image',
+
+                    'tree_content_layout',
+                    'element_content_layout',
                 ],
                 'string',
             ],
@@ -213,8 +279,16 @@ class UnifyThemeSettings extends Component
             [
                 [
                     'isShowBottomBlock',
+                    'is_image_body_begin',
                 ],
                 'boolean',
+            ],
+            [
+                [
+                    'body_begin_image_height_tree',
+                    'body_begin_image_height_element',
+                ],
+                'integer',
             ],
 
         ]);
@@ -243,8 +317,14 @@ class UnifyThemeSettings extends Component
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
 
+            'home_view_file' => "Шаблон главной страницы",
+
+            'menu_color1' => "Цвет меню 1",
+            'menu_color2' => "Цвет меню 2",
+
             'header'        => "Вариант отображения шапки",
             'header_shadow' => "Тень шапки",
+            'fixed_header_margin' => "Если шапка фиксирована, добавлять отступ",
 
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
@@ -255,6 +335,14 @@ class UnifyThemeSettings extends Component
             'body_outer'    => "Отступ вокруг контейнера сайта",
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
+
+            'is_image_body_begin'             => "Показывать в начале страницы картинку из анонса?",
+            'body_begin_image_height_tree'    => "Высота блока с картинкой в разделах",
+            'body_begin_image_height_element' => "Высота блока с картинкой в новостях",
+            'body_begin_no_image'             => "Если картинка не задана в анонсе показывать эту",
+
+            'tree_content_layout' => 'Вариант отображения разделов',
+            'element_content_layout' => 'Вариант отображения новостей',
         ]);
     }
 
@@ -289,16 +377,16 @@ class UnifyThemeSettings extends Component
                         'class' => TextareaField::class,
                     ],
 
-                    'favicon' => [
+                    'favicon'     => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
-                    'logo'    => [
+                    'logo'        => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
                     'logo_text',
-                    'footer_logo'    => [
+                    'footer_logo' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
@@ -340,6 +428,8 @@ class UnifyThemeSettings extends Component
                         'class' => BoolField::class,
                     ],
 
+
+
                     'main_theme_color1' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
@@ -354,6 +444,12 @@ class UnifyThemeSettings extends Component
                     ],
 
 
+
+
+
+
+
+
                     [
                         'class'   => HtmlBlock::class,
                         'content' => Html::tag('h2', 'Настройки шапки'),
@@ -363,7 +459,7 @@ class UnifyThemeSettings extends Component
                         'class' => SelectField::class,
                         'items' => [
                             'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
-                            'v2' => 'Вариант 2 (лого и меню)',
+                            'v2' => 'Вариант 2 (лого, меню, авторизация, прижат к верху)',
                         ],
                     ],
 
@@ -420,6 +516,101 @@ class UnifyThemeSettings extends Component
                         ],
                     ],
 
+
+
+
+                    'fixed_header_margin' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'g-mt-80' => 'Стандартный отступ на высоту шапки (80px)',
+                        ],
+                    ],
+
+
+                    'menu_color1' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
+                    ],
+                    'menu_color2' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
+                    ],
+
+
+
+
+                    [
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Контентная часть (верх сайта)'),
+                    ],
+
+
+                    'is_image_body_begin' => [
+                        'class' => BoolField::class
+                    ],
+                    'body_begin_no_image' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => OneImage::class,
+                    ],
+                    'body_begin_image_height_tree' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            '100' => "100 px",
+                            '200' => "200 px",
+                            '300' => "300 px",
+                            '400' => "400 px",
+                            '500' => "500 px",
+                            '600' => "600 px",
+                        ]
+                    ],
+                    'body_begin_image_height_element' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            '100' => "100 px",
+                            '200' => "200 px",
+                            '300' => "300 px",
+                            '400' => "400 px",
+                            '500' => "500 px",
+                            '600' => "600 px",
+                        ]
+                    ],
+
+
+                    [
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Контентная часть'),
+                    ],
+
+                    'tree_content_layout' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'no-col' => "Без колонок",
+                            'col-left' => "Есть колонка слева",
+                            'col-right' => "Есть колонка справа",
+                            'col-left-right' => "Есть колонка слева и справа",
+                        ]
+                    ],
+
+                    'element_content_layout' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'no-col' => "Без колонок",
+                            'col-left' => "Есть колонка слева",
+                            'col-right' => "Есть колонка справа",
+                            'col-left-right' => "Есть колонка слева и справа",
+                        ]
+                    ],
+
+                    'home_view_file' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'default' => "По умолчанию",
+                            'news' => "Новости",
+                        ]
+                    ],
+
+
+
                     [
                         'class'   => HtmlBlock::class,
                         'content' => Html::tag('h2', 'Настройки футера'),
@@ -428,8 +619,8 @@ class UnifyThemeSettings extends Component
                     'footer' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'v1' => 'Вариант 1',
-                            'v2' => 'Вариант 2',
+                            'v1' => 'Футер с меню',
+                            'v2' => 'Футер с авторизацией',
                         ],
                     ],
 

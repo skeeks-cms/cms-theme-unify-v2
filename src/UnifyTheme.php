@@ -174,6 +174,18 @@ CSS
         }
 
 
+        if (\Yii::$app->view->theme->menu_color1) {
+            $bgColor1 = \Yii::$app->view->theme->menu_color1;
+            $bgColor2 = \Yii::$app->view->theme->menu_color2;
+            \Yii::$app->view->registerCss(<<<CSS
+                .sx-main-menu-wrapper {
+            background: linear-gradient(to right, {$bgColor1} 12%, {$bgColor2}) !important;
+        }
+CSS
+            );
+        }
+
+
     }
 
     /**
@@ -242,6 +254,41 @@ CSS
      */
     public $header_shadow = 'u-shadow-v19';
 
+    /**
+     * @var string
+     */
+    public $fixed_header_margin = 'g-mt-80';
+
+
+    /**
+     * @var bool
+     */
+    public $is_image_body_begin = false;
+    /**
+     * @var int
+     */
+    public $body_begin_image_height_tree = 300;
+
+    /**
+     * @var int
+     */
+    public $body_begin_image_height_element = 500;
+    /**
+     * @var string
+     */
+    public $body_begin_no_image = "";
+
+
+    /**
+     * @var string
+     */
+    public $tree_content_layout = "col-left";
+
+    /**
+     * @var string
+     */
+    public $element_content_layout = "col-left";
+
 
     /**
      * @var string
@@ -289,6 +336,23 @@ CSS
     /**
      * @var string
      */
+    public $menu_color1 = '#0185c8';
+
+    /**
+     * @var string
+     */
+    public $menu_color2 = '#e1082c';
+
+
+    /**
+     * @var string
+     */
+    public $home_view_file = 'default';
+
+
+    /**
+     * @var string
+     */
     public $vk = 'https://vk.com/skeeks_com';
     /**
      * @var string
@@ -329,7 +393,7 @@ CSS
             }
 
             if ($this->header == "v2") {
-                $this->_bodyCssClass = $this->_bodyCssClass . " g-mt-80";
+                $this->_bodyCssClass = $this->_bodyCssClass . " " . $this->fixed_header_margin;
             }
         }
 

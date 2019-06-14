@@ -7,5 +7,7 @@
  */
 /* @var $this yii\web\View */
 ?>
-<?= $this->render('@app/views/modules/cms/content-element/default', ['model' => $model]); ?>
+<?= $this->render('@app/views/modules/cms/content-element/default', [
+        'model' => $model,
+]); ?>
 

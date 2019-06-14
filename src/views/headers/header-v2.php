@@ -57,8 +57,8 @@ JS
                 <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 <? if ($this->theme->logo_text) : ?>
                     <span class="sx-logo-text">
-                            <?= $this->theme->logo_text; ?>
-                            </span>
+                        <?= $this->theme->logo_text; ?>
+                    </span>
                 <? endif; ?>
             </a>
             <!-- End Logo -->

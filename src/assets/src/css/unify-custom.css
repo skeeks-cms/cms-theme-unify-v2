@@ -353,3 +353,15 @@ body {
 .sx-main-logo img {
     max-height: 86px;
 }
+
+
+.sx-body-begin-image-wrapper .sx-breadcrumbs-wrapper a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.sx-list-short-info {
+    background: #fafafa;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
