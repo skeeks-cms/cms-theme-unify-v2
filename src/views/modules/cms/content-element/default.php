@@ -68,7 +68,10 @@ if (@$isShowMainImage !== false) {
 
                     <? endif; ?>
                     <!--<img src="<? /*= \skeeks\cms\helpers\Image::getCapSrc(); */ ?>" title="<? /*= $model->name; */ ?>" alt="<? /*= $model->name; */ ?>" class="img-responsive" />-->
+                    <? if (!$this->theme->is_image_body_begin) : ?>
                     <?= $model->description_short; ?>
+                    <? endif; ?>
+
                     <?= $model->description_full; ?>
 
                 </div>
