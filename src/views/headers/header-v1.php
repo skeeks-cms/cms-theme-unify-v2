@@ -38,6 +38,7 @@ $this->registerJs(<<<JS
     });
     
     
+    
     $('#dropdown-megamenu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),

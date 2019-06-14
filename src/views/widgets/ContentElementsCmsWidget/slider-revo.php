@@ -22,8 +22,9 @@ if (count($trees) > 1) {
 
 ?>
 <?
-\skeeks\assets\unify\base\UnifyRevolutionAsset::register($this);
-\skeeks\assets\unify\base\revolution\UnifyRevolutionActionsAsset::register($this);
+\skeeks\assets\unify\base\revolution\UnifyRevolutionAllAsset::register($this);
+//\skeeks\assets\unify\base\UnifyRevolutionAsset::register($this);
+//\skeeks\assets\unify\base\revolution\UnifyRevolutionActionsAsset::register($this);
 $this->registerJs(<<<JS
 var tpj = jQuery;
 
@@ -135,9 +136,13 @@ JS
                   data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                   data-thumb="<?= $tree->image->src; ?>" data-rotate="0" data-saveperformance="off"
                   data-title="<?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>"
-                  data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                  data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""
+
+              >
                 <!-- MAIN IMAGE -->
-                <img src="<?= $tree->image->src; ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+                <img src="<?= $tree->image->src; ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg"
+                data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
+                >
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
                   <? if ($tree->relatedPropertiesModel->getAttribute('slide_title')) : ?>

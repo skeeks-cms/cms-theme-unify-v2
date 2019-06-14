@@ -136,7 +136,14 @@ if (@$isShowMainImage !== false) {
                             'property' => 'og:title',
                             'content'  => $model->name,
                         ], 'og:title');
+
+                        $this->registerMetaTag([
+                            'property' => 'og:type',
+                            'content'  => 'article',
+                        ], 'og:type');
                         ?>
+
+
                         <?= \skeeks\cms\yandex\share\widget\YaShareWidget::widget([
                             'namespace' => 'YaShareWidget-default',
                         ]); ?>
