@@ -157,6 +157,9 @@
 .sx-content {
     font-size: 16px;
 }
+.sx-content img {
+    max-width: 100%;
+}
 
 
 
