@@ -255,9 +255,15 @@ CSS
     public $header_shadow = 'u-shadow-v19';
 
     /**
-     * @var string
+     * @var bool
      */
-    public $fixed_header_margin = 'g-mt-80';
+    public $is_header_sticky = false;
+
+    /**
+     * @var bool
+     */
+    public $is_header_sticky_margin = true;
+
 
 
     /**
@@ -401,8 +407,8 @@ CSS
                 $this->_bodyCssClass = 'g-layout-semiboxed';
             }
 
-            if ($this->header == "v2") {
-                $this->_bodyCssClass = $this->_bodyCssClass . " " . $this->fixed_header_margin;
+            if ($this->is_header_sticky && $this->is_header_sticky_margin) {
+                $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky-margin";
             }
         }
 

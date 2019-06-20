@@ -125,6 +125,12 @@
         }
     });
 
+    if ($("body").hasClass("sx-header-sticky-margin")) {
+        if ($("#js-header").hasClass("u-header--sticky-top")) {
+            $("body").css("margin-top", $("#js-header").height());
+        }
+    }
+
 })(sx, sx.$, sx._);
 
 

@@ -35,7 +35,7 @@ JS
 
 <!-- Header -->
 <!--<header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">-->
-<header id="js-header" class="sx-no-print u-header u-header--sticky-top  u-header--show-hide   u-header--change-appearance" data-header-fix-moment="300" data-header-fix-effect="slide">
+<header id="js-header" class="sx-no-print u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?>  u-header--show-hide   u-header--change-appearance" data-header-fix-moment="300" data-header-fix-effect="slide">
     <!--u-header u-header--static u-header--show-hide u-header--change-appearance u-header--untransitioned-->
     <!--g-bg-primary-gradient-opacity-v1-->
     <div class="u-header__section g-bg-black u-header__section--dark g-transition-0_3 g-py-10 sx-brd--bottom sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">

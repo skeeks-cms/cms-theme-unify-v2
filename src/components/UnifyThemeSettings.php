@@ -106,9 +106,14 @@ class UnifyThemeSettings extends Component
     public $header_shadow = 'u-shadow-v19';
 
     /**
+     * @var bool
+     */
+    public $is_header_sticky = false;
+
+    /**
      * @var string
      */
-    public $fixed_header_margin = 'g-mt-80';
+    public $is_header_sticky_margin = true;
 
 
 
@@ -265,7 +270,6 @@ class UnifyThemeSettings extends Component
 
                     'header',
                     'header_shadow',
-                    'fixed_header_margin',
 
 
                     'footer',
@@ -291,6 +295,8 @@ class UnifyThemeSettings extends Component
                 [
                     'isShowBottomBlock',
                     'is_image_body_begin',
+                    'is_header_sticky_margin',
+                    'is_header_sticky',
                 ],
                 'boolean',
             ],
@@ -336,7 +342,9 @@ class UnifyThemeSettings extends Component
 
             'header'        => "Вариант отображения шапки",
             'header_shadow' => "Тень шапки",
-            'fixed_header_margin' => "Если шапка фиксирована, добавлять отступ",
+            'is_header_sticky' => "Зафиксировать шапку к верху экрана?",
+            'is_header_sticky_margin' => "Если шапка фиксирована, добавлять отступ?",
+
 
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
@@ -535,12 +543,14 @@ class UnifyThemeSettings extends Component
 
 
 
-                    'fixed_header_margin' => [
-                        'class' => SelectField::class,
-                        'items' => [
-                            'g-mt-80' => 'Стандартный отступ на высоту шапки (80px)',
-                        ],
+                    'is_header_sticky' => [
+                        'class' => BoolField::class,
                     ],
+
+                    'is_header_sticky_margin' => [
+                        'class' => BoolField::class,
+                    ],
+
 
 
                     'menu_color1' => [
