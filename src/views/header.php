@@ -7,5 +7,4 @@
  */
 /* @var $this yii\web\View */
 ?>
-
 <?= $this->render('@app/views/headers/header-' . $this->theme->header . '.php'); ?>
