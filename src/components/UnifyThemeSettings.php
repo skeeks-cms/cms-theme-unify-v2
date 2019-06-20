@@ -186,6 +186,16 @@ class UnifyThemeSettings extends Component
      */
     public $menu_color2 = '#e1082c';
 
+    /**
+     * @var string
+     */
+    public $menu_font_color = '#ffffffcc';
+
+    /**
+     * @var string
+     */
+    public $menu_font_size = '13px';
+
 
     /**
      * @var string
@@ -266,6 +276,8 @@ class UnifyThemeSettings extends Component
 
                     'menu_color1',
                     'menu_color2',
+                    'menu_font_color',
+                    'menu_font_size',
 
 
                     'header',
@@ -339,6 +351,8 @@ class UnifyThemeSettings extends Component
 
             'menu_color1' => "Цвет меню 1",
             'menu_color2' => "Цвет меню 2",
+            'menu_font_color' => "Цвет текста в меню",
+            'menu_font_size' => "Размер текста в меню",
 
             'header'        => "Вариант отображения шапки",
             'header_shadow' => "Тень шапки",
@@ -560,6 +574,25 @@ class UnifyThemeSettings extends Component
                     'menu_color2' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
+                    ],
+
+                    'menu_font_color' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
+                    ],
+
+                    'menu_font_size' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            '13px' => "13px",
+                            '14px' => "14px",
+                            '15px' => "15px",
+                            '16px' => "16px",
+                            '17px' => "17px",
+                            '18px' => "18px",
+                            '19px' => "19px",
+                            '20px' => "20px",
+                        ]
                     ],
 
 

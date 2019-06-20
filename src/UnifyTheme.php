@@ -178,12 +178,25 @@ CSS
             $bgColor1 = \Yii::$app->view->theme->menu_color1;
             $bgColor2 = \Yii::$app->view->theme->menu_color2;
             \Yii::$app->view->registerCss(<<<CSS
-                .sx-main-menu-wrapper {
+                .sx-main-menu-wrapper .hs-sub-menu,
+                .sx-main-menu-wrapper
+                {
             background: linear-gradient(to right, {$bgColor1} 12%, {$bgColor2}) !important;
         }
 CSS
             );
         }
+
+        $color = \Yii::$app->view->theme->menu_font_color;
+        $fz = \Yii::$app->view->theme->menu_font_size;
+            \Yii::$app->view->registerCss(<<<CSS
+                .sx-main-menu-wrapper .nav-link,
+                .sx-main-menu-wrapper a {
+            color: {$color} !important;
+            font-size: {$fz} !important;
+        }
+CSS
+            );
 
 
     }
@@ -348,6 +361,16 @@ CSS
      * @var string
      */
     public $menu_color2 = '#e1082c';
+
+    /**
+     * @var string
+     */
+    public $menu_font_color = '#ffffffcc';
+
+    /**
+     * @var string
+     */
+    public $menu_font_size = '13px';
 
 
     /**
