@@ -178,6 +178,7 @@ CSS
             $bgColor1 = \Yii::$app->view->theme->menu_color1;
             $bgColor2 = \Yii::$app->view->theme->menu_color2;
             \Yii::$app->view->registerCss(<<<CSS
+                .hs-sub-menu,
                 .sx-main-menu-wrapper .hs-sub-menu,
                 .sx-main-menu-wrapper
                 {
