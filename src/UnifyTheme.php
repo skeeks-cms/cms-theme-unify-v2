@@ -203,6 +203,12 @@ CSS
     }
 
     /**
+     * Показывать копирайты?
+     * @var bool
+     */
+    public $is_show_copyright = true;
+
+    /**
      * @var string
      */
     public $themeAssetClass = 'skeeks\cms\themes\unify\assets\UnifyThemeAsset';

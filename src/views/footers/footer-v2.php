@@ -141,31 +141,31 @@
                         <? endif; ?>
 
                         <? if ($this->theme->phone) : ?>
-                        <!-- Phone -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
+                            <!-- Phone -->
+                            <div class="d-flex g-mb-20">
+                                <div class="g-mr-10">
                               <span class="u-icon-v3 u-icon-size--xs">
                                 <i class="fa fa-phone"></i>
                               </span>
+                                </div>
+                                <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
                             </div>
-                            <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
-                        </div>
-                        <!-- End Phone -->
+                            <!-- End Phone -->
                         <? endif; ?>
 
                         <? if ($this->theme->email) : ?>
-                        <!-- Email and Website -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
+                            <!-- Email and Website -->
+                            <div class="d-flex g-mb-20">
+                                <div class="g-mr-10">
                               <span class="u-icon-v3 u-icon-size--xs">
                                 <i class="fa fa-globe"></i>
                               </span>
+                                </div>
+                                <p class="mb-0">
+                                    <a class="g-color-black" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
+                                </p>
                             </div>
-                            <p class="mb-0">
-                                <a class="g-color-black" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
-                            </p>
-                        </div>
-                        <!-- End Email and Website -->
+                            <!-- End Email and Website -->
                         <? endif; ?>
                     </address>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
@@ -196,15 +196,17 @@
 
 
                 <div class="col-md-4 align-self-center">
-                    <div class="pull-right">
-                        <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
-                            <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30">
-                            <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
-                        </a>
-                        <a href="https://cms.skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="Yii2 cms">
-                            <span>(Yii2 CMS)</span>
-                        </a>
-                    </div>
+                    <? if ($this->theme->is_show_copyright) : ?>
+                        <div class="pull-right">
+                            <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
+                                <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30">
+                                <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
+                            </a>
+                            <a href="https://cms.skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="Yii2 cms">
+                                <span>(Yii2 CMS)</span>
+                            </a>
+                        </div>
+                    <? endif; ?>
                 </div>
             </div>
         </div>
