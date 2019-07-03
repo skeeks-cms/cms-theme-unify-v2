@@ -12,6 +12,16 @@
 .navbar-brand img {
     height: 39px;
 }
+@media (max-width: 450px) {
+    .pagination {
+        display: block;
+    }
+    .page-item {
+        float: left;
+        width: 38px;
+    }
+}
+
 
 
 
@@ -339,7 +349,11 @@ body {
         float: none;
     }
 }
-
+@media (max-width: 450px) {
+    .sx-category-list-small img {
+        max-width: 100%;
+    }
+}
 
 /**
  * Маленькие подкатегории
