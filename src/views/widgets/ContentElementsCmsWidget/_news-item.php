@@ -21,7 +21,7 @@
 
             <? if ($model->createdBy) : ?>
                 <li class="list-inline-item">
-                    <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%;"/>
+                    <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%; max-width: 100%;"/>
                     <a href="<?= $model->createdBy->getPageUrl(); ?>" title="<?= $model->createdBy->name; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
                         <?= $model->createdBy->displayName; ?>
                     </a>
@@ -77,7 +77,7 @@
                                 'w' => 0,
                                 'h' => 400,
                             ]), $model->code
-                        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
+                        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive" style="max-width: 100% !important;"/>
                     </div>
                 <? elseif ($model->cmsTree->dir == 'news/releases'): ?>
                     <?
