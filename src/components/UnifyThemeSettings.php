@@ -450,7 +450,6 @@ class UnifyThemeSettings extends Component
 
 
                     'vk',
-
                     'instagram',
                     'youtube',
                     'facebook',
