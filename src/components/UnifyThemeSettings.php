@@ -111,9 +111,20 @@ class UnifyThemeSettings extends Component
     public $is_header_sticky = false;
 
     /**
-     * @var string
+     * @var bool
      */
     public $is_header_sticky_margin = true;
+
+    /**
+     * @var bool
+     */
+    public $is_show_zero_price = true;
+
+
+    /**
+     * @var bool
+     */
+    public $is_buy_zero_price = true;
 
 
 
@@ -309,6 +320,8 @@ class UnifyThemeSettings extends Component
                     'is_image_body_begin',
                     'is_header_sticky_margin',
                     'is_header_sticky',
+                    'is_show_zero_price',
+                    'is_buy_zero_price',
                 ],
                 'boolean',
             ],
@@ -358,6 +371,8 @@ class UnifyThemeSettings extends Component
             'header_shadow' => "Тень шапки",
             'is_header_sticky' => "Зафиксировать шапку к верху экрана?",
             'is_header_sticky_margin' => "Если шапка фиксирована, добавлять отступ?",
+            'is_show_zero_price' => "Показывать товары с нулевыми ценами?",
+            'is_buy_zero_price'  => "Показывать кнопку купить для товаров с нулевыми ценами?",
 
 
             'footer'                    => "Вариант отображения футера",
@@ -387,9 +402,14 @@ class UnifyThemeSettings extends Component
     public function attributeHints()
     {
         return ArrayHelper::merge(parent::attributeHints(), [
+            'menu_color1'   =>  'Если задан один цвет, меню будет одного цвета',
+            'menu_color2'   =>  'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
             'footer'        => "Нижняя часть сайта",
             'footer_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'header_shadow' => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
+            'body_outer'    => "Задается для центрированных сайтов",
+            'is_header_sticky'    => "Фиксированная шапка будет растянута на весь экран",
+            'is_buy_zero_price'   => "Если выбрана опция - показывать товары с нулевыми ценами"
         ]);
     }
 
@@ -608,6 +628,7 @@ class UnifyThemeSettings extends Component
                     'is_image_body_begin' => [
                         'class' => BoolField::class
                     ],
+
                     'body_begin_no_image' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
@@ -684,6 +705,20 @@ class UnifyThemeSettings extends Component
                             '3' => "3",
                             '4' => "4",
                         ]
+                    ],
+
+
+                    [
+                        'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Настройки магазина'),
+                    ],
+
+                    'is_show_zero_price' => [
+                        'class' => BoolField::class
+                    ],
+
+                    'is_buy_zero_price' => [
+                        'class' => BoolField::class
                     ],
 
 

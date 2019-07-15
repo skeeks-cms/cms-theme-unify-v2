@@ -28,7 +28,7 @@ if ($this->theme->news_list_count_columns == 4) {
     <!-- Blog Background Overlay Blocks -->
     <article class="u-block-hover">
         <div class="g-bg-cover g-bg-white-gradient-opacity-v1--after">
-            <img class="u-block-hover__main--mover-down" src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+            <img class="u-block-hover__main--mover-down" style="max-width: 100% !important;" src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                 'w' => 540,
                                 'h' => 540,
