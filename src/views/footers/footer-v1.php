@@ -81,6 +81,7 @@
                     'label'           => "Услуги",
                     'treeParentCode'  => 'services',
                     'enabledRunCache' => 'N',
+                    'limit'  =>    6
                 ]); ?>
 
 
