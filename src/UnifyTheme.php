@@ -284,16 +284,6 @@ CSS
      */
     public $is_header_sticky_margin = true;
 
-    /**
-     * @var bool
-     */
-    public $is_show_zero_price = true;
-
-    /**
-     * @var bool
-     */
-    public $is_buy_zero_price = true;
-
 
     /**
      * @var bool
