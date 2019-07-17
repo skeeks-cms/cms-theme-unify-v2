@@ -22,5 +22,5 @@
         <? endforeach; ?>
     </div>
     </div>
-    </div>
+</section>
 <? endif; ?>
