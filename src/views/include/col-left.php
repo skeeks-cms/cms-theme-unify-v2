@@ -50,7 +50,7 @@ if ($model) {
                 data-start-point="#stickyblock-start" data-end-point=".sx-footer"
         >
 
-            <? if ($parent->activeChildren) : ?>
+            <? if ($parent && $parent->activeChildren) : ?>
 
                 <div class="u-heading-v3-1 g-mb-10">
                     <h2 class="h5 u-heading-v3__title g-font-weight-600 text-uppercase g-brd-primary ">

@@ -25,7 +25,7 @@
     'itemOptions' => [
         'tag' => false
     ],
-    'layout'            => "<div class=\"row\">{items}</div><div class=\"row\"><div class=\"col-sm-12\">{summary}{pager}</div></div>"
+    'layout'            => "<div class=\"row\">{items}</div><div class=\"row\"><div class=\"col-sm-12\">{pager}</div></div>"
 ])?>
 
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--
