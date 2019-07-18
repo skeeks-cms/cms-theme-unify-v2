@@ -17,6 +17,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
     'namespace'          => 'home-slider',
     'enabledCurrentTree' => 'N',
+    'enabledRunCache'                => "Y",
     'orderBy'            => 'priority',
     'order'              => SORT_ASC,
     'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_N,
@@ -35,6 +36,9 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
             'namespace'   => 'news',
+            'enabledPaging'       => 'N',
+            'enabledRunCache'                => "Y",
+            'limit'       => 12,
             'content_ids' => [
                 $contentNews ? $contentNews->id : "",
             ],

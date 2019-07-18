@@ -43,8 +43,9 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'advantage'])->one();
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+            'enabledPaging'       => 'N',
             'namespace'       => 'advantage',
-            'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+            'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_Y,
             'content_ids'     => [
                 $contentFaq ? $contentFaq->id : "",
             ],

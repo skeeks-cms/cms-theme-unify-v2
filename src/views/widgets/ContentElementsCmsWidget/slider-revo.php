@@ -140,7 +140,12 @@ JS
 
               >
                 <!-- MAIN IMAGE -->
-                <img src="<?= $tree->image->src; ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg"
+                <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
+                            new \skeeks\cms\components\imaging\filters\Thumbnail([
+                                'w' => 1920,
+                                'h' => 1080,
+                            ]), $tree->code
+                        ) ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg"
                 data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                 >
                 <!-- LAYERS -->

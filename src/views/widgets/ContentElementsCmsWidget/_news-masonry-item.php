@@ -30,10 +30,10 @@ if ($this->theme->news_list_count_columns == 4) {
         <div class="g-bg-cover g-bg-white-gradient-opacity-v1--after">
             <img class="u-block-hover__main--mover-down" style="max-width: 100% !important;" src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                'w' => 540,
-                                'h' => 540,
+                                'w' => 350,
+                                'h' => 350,
                             ]), $model->code
-                        ) ?>" alt="Image Description">
+                        ) ?>" alt="<?= $model->name; ?>">
         </div>
         <div class="g-pos-abs g-top-0 g-right-0 g-z-index-1 g-pa-35">
             <span class="d-block g-color-white g-font-weight-600 g-font-size-12"><?= \Yii::$app->formatter->asDate($model->published_at); ?></span>

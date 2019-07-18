@@ -7,6 +7,10 @@
  */
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget */
+$layout = "<div class=\"row\">{items}</div>";
+if ($widget->enabledPaging == \skeeks\cms\components\Cms::BOOL_Y) {
+    $layout = "<div class=\"row\">{items}</div><div class=\"row\"><div class=\"col-sm-12\">{summary}{pager}</div></div>";
+}
 ?>
 
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--
@@ -25,7 +29,7 @@
     'itemOptions' => [
         'tag' => false
     ],
-    'layout'            => "<div class=\"row\">{items}</div><div class=\"row\"><div class=\"col-sm-12\">{summary}{pager}</div></div>"
+    'layout'            => $layout
 ])?>
 
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--
