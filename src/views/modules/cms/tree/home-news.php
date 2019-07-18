@@ -35,7 +35,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         $contentNews = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one();
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-            'namespace'   => 'news',
+            'namespace'   => 'home-news',
             'enabledPaging'       => 'N',
             'enabledRunCache'                => "Y",
             'limit'       => 12,
