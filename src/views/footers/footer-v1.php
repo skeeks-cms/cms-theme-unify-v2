@@ -72,7 +72,7 @@
                     'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
                     'label'           => \Yii::t('skeeks/unify', 'Menu'),
                     'level'           => '1',
-                    'enabledRunCache' => 'N',
+                    'enabledRunCache' => 'Y',
                 ]); ?>
 
                 <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
@@ -80,7 +80,7 @@
                     'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
                     'label'           => "Услуги",
                     'treeParentCode'  => 'services',
-                    'enabledRunCache' => 'N',
+                    'enabledRunCache' => 'Y',
                     'limit'  =>    6
                 ]); ?>
 

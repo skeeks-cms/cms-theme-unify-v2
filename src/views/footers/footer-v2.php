@@ -72,7 +72,7 @@
                     'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
                     'label'           => \Yii::t('skeeks/unify', 'Menu'),
                     'level'           => '1',
-                    'enabledRunCache' => 'N',
+                    'enabledRunCache' => 'Y',
                 ]); ?>
 
                 <div class="col-sm-6 col-lg">
