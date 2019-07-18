@@ -35,7 +35,8 @@ class UnifyDefaultAsset extends UnifyAsset
 {
     public $css = [
         '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
-        'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
+        //'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
+        //'@vendor/fortawesome/font-awesome/css/all.min.css',
 
         'assets/vendor/icon-awesome/css/font-awesome.min.css',
         'assets/vendor/icon-line/css/simple-line-icons.css',
@@ -59,6 +60,7 @@ class UnifyDefaultAsset extends UnifyAsset
         Custom::class,
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
+        FontAwesomeAsset::class,
     ];
 
     public function registerAssetFiles($view)
