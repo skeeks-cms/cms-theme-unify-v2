@@ -36,6 +36,25 @@ class UnifyTheme extends Theme
     ];
 
     /**
+     * @return bool
+     */
+    static public function isInitBeforeRender()
+    {
+        if (\skeeks\cms\backend\BackendComponent::getCurrent()) {
+            return false;
+        }
+        
+        if (\Yii::$app->controller && \Yii::$app->controller->module && in_array(\Yii::$app->controller->module->id, ['debug', 'gii'])) {
+            return false;
+        }
+        
+        if (\Yii::$app->view->theme instanceof self) {
+            return true;
+        }
+        
+        return false;
+    }
+    /**
      *
      */
     static public function initBeforeRender()
