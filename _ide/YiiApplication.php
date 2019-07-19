@@ -8,22 +8,17 @@
 
 namespace yii\web;
 
-use common\components\ProjectComponent;
-use common\components\TelegramComponent;
 use common\components\unify\TemplateUnify;
-use common\themes\unify\SkeeksUnifyTheme;
-use kartik\mpdf\Pdf;
 use skeeks\cms\themes\unify\components\UnifyThemeSettings;
 use skeeks\cms\themes\unify\UnifyTheme;
-use skeeks\cms\themes\unifyshop\UnifyShopTheme;
-use skeeks\crm\components\TinkoffIntegrationApi;
-use v3project\themes\mega\ThemeMega;
+use skeeks\yii2\mobiledetect\MobileDetect;
 use yii\base\Theme;
 
 
 /**
- * @property View|PView            $view
- * @property UnifyThemeSettings            $unifyThemeSettings
+ * @property View|PView         $view
+ * @property UnifyThemeSettings $unifyThemeSettings
+ * @property MobileDetect       $mobileDetect
  *
  * Class Application
  * @package yii\web

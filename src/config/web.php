@@ -10,5 +10,9 @@ return [
         'unifyThemeSettings' => [
             'class' => \skeeks\cms\themes\unify\components\UnifyThemeSettings::class,
         ],
+
+        'mobileDetect' => [
+            'class' => '\skeeks\yii2\mobiledetect\MobileDetect'
+        ]
     ],
 ];
