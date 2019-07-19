@@ -13,6 +13,19 @@ return [
 
         'mobileDetect' => [
             'class' => '\skeeks\yii2\mobiledetect\MobileDetect'
-        ]
+        ],
+
+        'upaBackend' => [
+
+            'on beforeRun' => function ($e) {
+                $theme = new \skeeks\cms\themes\unify\admin\UnifyThemeAdmin();
+
+                $theme->favicon = \Yii::$app->view->theme->favicon;
+                $theme->logoSrc = \Yii::$app->view->theme->logo;
+                $theme->logoTitle = \Yii::$app->view->theme->logo_text;
+                \skeeks\cms\themes\unify\admin\UnifyThemeAdmin::initBeforeRender();
+                \Yii::$app->view->theme = $theme;
+            },
+        ],
     ],
 ];

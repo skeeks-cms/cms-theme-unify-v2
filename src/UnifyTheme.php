@@ -54,6 +54,19 @@ class UnifyTheme extends Theme
         
         return false;
     }
+
+    public function init()
+    {
+        parent::init();
+
+        if (isset(\Yii::$app->unifyThemeSettings)) {
+            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
+                if ($this->hasProperty($key) && $this->canSetProperty($key)) {
+                    $this->{$key} = $value;
+                }
+            }
+        }
+    }
     /**
      *
      */
@@ -142,14 +155,6 @@ class UnifyTheme extends Theme
 
             ]
         ));
-
-        if (isset(\Yii::$app->unifyThemeSettings)) {
-            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
-                if (\Yii::$app->view->theme->hasProperty($key) && \Yii::$app->view->theme->canSetProperty($key)) {
-                    \Yii::$app->view->theme->{$key} = $value;
-                }
-            }
-        }
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
