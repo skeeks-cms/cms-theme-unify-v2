@@ -67,22 +67,24 @@
                 </div>
                 <!-- End Footer Content -->
                 <!-- Footer Content -->
-                <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                    'namespace'       => 'menu-footer-2',
-                    'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
-                    'label'           => \Yii::t('skeeks/unify', 'Menu'),
-                    'level'           => '1',
-                    'enabledRunCache' => 'Y',
-                ]); ?>
+                <? if (\Yii::$app->mobileDetect->isDesktop) : ?>
+                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                        'namespace'       => 'menu-footer-2',
+                        'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
+                        'label'           => \Yii::t('skeeks/unify', 'Menu'),
+                        'level'           => '1',
+                        'enabledRunCache' => 'Y',
+                    ]); ?>
 
-                <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                    'namespace'       => 'menu-footer-3',
-                    'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
-                    'label'           => "Услуги",
-                    'treeParentCode'  => 'services',
-                    'enabledRunCache' => 'Y',
-                    'limit'  =>    6
-                ]); ?>
+                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                        'namespace'       => 'menu-footer-3',
+                        'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
+                        'label'           => "Услуги",
+                        'treeParentCode'  => 'services',
+                        'enabledRunCache' => 'Y',
+                        'limit'           => 6,
+                    ]); ?>
+                <? endif; ?>
 
 
                 <!-- Footer Content -->

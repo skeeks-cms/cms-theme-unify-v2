@@ -67,13 +67,15 @@
                 </div>
                 <!-- End Footer Content -->
                 <!-- Footer Content -->
-                <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                    'namespace'       => 'menu-footer-2',
-                    'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
-                    'label'           => \Yii::t('skeeks/unify', 'Menu'),
-                    'level'           => '1',
-                    'enabledRunCache' => 'Y',
-                ]); ?>
+                <? if (\Yii::$app->mobileDetect->isDesktop) : ?>
+                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                        'namespace'       => 'menu-footer-2',
+                        'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-footer',
+                        'label'           => \Yii::t('skeeks/unify', 'Menu'),
+                        'level'           => '1',
+                        'enabledRunCache' => 'Y',
+                    ]); ?>
+                <? endif; ?>
 
                 <div class="col-sm-6 col-lg">
                     <? if (\Yii::$app->user->isGuest) : ?>
