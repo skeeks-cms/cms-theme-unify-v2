@@ -185,7 +185,6 @@ JS
                          data-lineheight="['110','110','100','60']"
                          data-width="none"
                          data-height="none"
-                         data-whitespace="nowrap"
 
                          data-type="text"
                          data-responsive_offset="on"
@@ -197,7 +196,7 @@ JS
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 6; white-space: nowrap; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-7px;">
+                         style="z-index: 6; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-7px;">
                         <?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>
                     </div>
                   <? endif; ?>
