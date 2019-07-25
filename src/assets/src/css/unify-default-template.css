@@ -164,26 +164,7 @@
 .g-dark-theme .u-btn-inset::before {
   border-color: #222;
 }
-/*------------------------------------
-  Fonts
-------------------------------------*/
-body {
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
-}
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
-}
+
 a {
   color: #72c02c;
   outline: none;

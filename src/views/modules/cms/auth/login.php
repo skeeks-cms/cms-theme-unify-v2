@@ -57,7 +57,7 @@ CSS
                         </div>
                     </div>
                     <div class="mb-4">
-                        <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">Войти</button>
+                        <button class="btn btn-md btn-block u-btn-primary g-py-13" type="submit">Войти</button>
                     </div>
                     <div class="text-center">
                         <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
