@@ -77,14 +77,14 @@ JS
 
             <!-- Search -->
 
-            <div class="g-pos-abs g-top-18 g-right-65 g-pos-rel--lg g-top-0--lg g-right-0--lg g-pt-3--lg g-ml-30 g-ml-0--lg text-uppercase">
+            <div class="sx-header-auth g-pos-abs g-top-18 g-right-65 g-pos-rel--lg g-top-0--lg g-right-0--lg g-pt-3--lg g-ml-30 g-ml-0--lg">
 
                 <? if (\Yii::$app->user->isGuest) : ?>
-                    <a class="d-block u-link-v5 g-color-white-opacity-0_8 g-color-white--hover g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fa fa-sign-in"></i> Вход</a>
+                    <a class="d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fa fa-sign-in"></i> Вход</a>
                 <? else : ?>
 
                     <!-- Top User -->
-                    <a class="d-block u-link-v5 g-color-white-opacity-0_8 g-color-white--hover g-font-weight-600 " href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
+                    <a class="d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600 " href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                         <span class="g-pos-rel">
                             <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
                             <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">

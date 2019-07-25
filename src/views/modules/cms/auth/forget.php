@@ -26,11 +26,7 @@ use skeeks\cms\helpers\UrlHelper;
                     <header class="text-center mb-4">
                         <h2 class="h2 g-color-black g-font-weight-600">Восстановление пароля</h2>
                     </header>
-                    <?= $form->field($model, 'identifier', [
-                        'labelOptions' => [
-                            'class' => 'g-color-gray-dark-v2 g-font-weight-600 g-font-size-13',
-                        ],
-                    ])->textInput([
+                    <?= $form->field($model, 'identifier')->textInput([
                         'class' => 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover g-py-15 g-px-15',
                     ]); ?>
 

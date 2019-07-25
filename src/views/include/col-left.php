@@ -58,7 +58,7 @@ if ($model) {
                     </h2>
                 </div>
 
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0 sx-col-menu">
 
                     <? foreach ($parent->activeChildren as $child) : ?>
 
