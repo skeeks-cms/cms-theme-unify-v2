@@ -180,7 +180,7 @@ JS
                     <div class="tp-caption   tp-resizeme"
                          id="slide-<?= $tree->id; ?>-layer-1"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-130','-157']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-130','-140']"
                          data-fontsize="['110','110','100','60']"
                          data-lineheight="['110','110','100','60']"
                          data-width="none"
@@ -209,7 +209,7 @@ JS
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-8','-32']"
                      data-fontsize="['40','40','30','30']"
-                     data-width="none"
+                     data-width="[1200, 600, 600, 420]"
                      data-height="none"
                      data-whitespace="['nowrap','normal','normal','normal']"
 
