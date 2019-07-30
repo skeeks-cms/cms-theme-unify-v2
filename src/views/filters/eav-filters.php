@@ -14,6 +14,9 @@ $widget = $this->context;
 <? foreach ($handler->toArray() as $code => $value) : ?>
 
     <?
+    /**
+     * @var $rp \skeeks\cms\relatedProperties\models\RelatedPropertyModel
+     */
     $rp = $handler->getRPByCode($code);
     ?>
     <? if ($rp && in_array($rp->property_type, [
@@ -40,7 +43,12 @@ $widget = $this->context;
         ) : ?>
 
             <section class="filter--group <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected": ""?>">
-                <header class="filter--group--header"><?= $rp->name; ?></header>
+                <header class="filter--group--header">
+                    <?= $rp->name; ?>
+                    <? if ($rp->hint) : ?>
+                        <i class="far fa-question-circle" title="<?= $rp->hint; ?>"></i>
+                    <? endif; ?>
+                </header>
                 <div class="filter--group--body">
                     <div class="filter--group--inner">
                         <input type="text"
@@ -165,10 +173,11 @@ JS
                 }
 
                 $info = '';
-                /*if ($rp->buyer_description) {
-                    $info = "<i class='fa fa-question' title='{$feature->buyer_description}'></i>";
-                }*/
+                if ($rp->hint) {
+                    $info = "<i class='far fa-question-circle' title='{$rp->hint}'></i>";
+                }
                 ?>
+
                 <?= $form->field($handler, $code, [
                     'options'  => [
                         'class' => 'filter--group '.$class,
