@@ -415,3 +415,21 @@ body {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+
+
+.form-control
+{
+    border-color: #eee;
+}
+.form-control
+{
+    padding: 15px;
+}
+
+.error-summary {
+    background: #ff3e17;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}
