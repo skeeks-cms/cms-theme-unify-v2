@@ -16,17 +16,23 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 ?>
 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
     'namespace'          => 'home-slider',
-    'enabledCurrentTree' => 'N',
-    'enabledRunCache'                => "Y",
+    'enabledCurrentTree' =>  \skeeks\cms\components\Cms::BOOL_N,
     'orderBy'            => 'priority',
     'order'              => SORT_ASC,
-    'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_N,
+    'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_Y,
     'content_ids'        => [
         $content ? $content->id : "",
     ],
     'viewFile'           => '@app/views/widgets/ContentElementsCmsWidget/slider-revo',
 ]); ?>
 
+<? if ($model->description_full) : ?>
+    <div class="container">
+        <header class="g-mt-20">
+            <?=$model->description_full; ?>
+        </header>
+    </div>
+<? endif; ?>
 
 <section class="promo-4 noborder g-bg-secondary g-pt-20 g-pb-20">
     <div class="container">
@@ -36,8 +42,8 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
             'namespace'   => 'home-news',
-            'enabledPaging'       => 'N',
-            'enabledRunCache'                => "Y",
+            'enabledPaging'       =>  \skeeks\cms\components\Cms::BOOL_N,
+            'enabledRunCache'                =>  \skeeks\cms\components\Cms::BOOL_Y,
             'limit'       => 12,
             'content_ids' => [
                 $contentNews ? $contentNews->id : "",

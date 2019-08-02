@@ -10,7 +10,7 @@
 /* @var $models  \skeeks\cms\models\Tree[] */
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
-<section id="sx-promo-1" class="g-py-100 g-bg-white">
+<section id="sx-promo-1" class="g-py-60 g-bg-white">
     <div class="container">
 
     <div class="shop-item-list row list-inline nomargin">
