@@ -42,6 +42,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
             'namespace'   => 'news',
+            'enabledPaging' =>  \skeeks\cms\components\Cms::BOOL_N,
             'content_ids' => [
                 $contentNews ? $contentNews->id : "",
             ],
