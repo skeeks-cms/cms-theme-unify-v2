@@ -36,6 +36,38 @@ class UnifyTheme extends Theme
     ];
 
     /**
+     * @return bool
+     */
+    static public function isInitBeforeRender()
+    {
+        if (\skeeks\cms\backend\BackendComponent::getCurrent()) {
+            return false;
+        }
+        
+        if (\Yii::$app->controller && \Yii::$app->controller->module && in_array(\Yii::$app->controller->module->id, ['debug', 'gii'])) {
+            return false;
+        }
+        
+        if (\Yii::$app->view->theme instanceof self) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    public function init()
+    {
+        parent::init();
+
+        if (isset(\Yii::$app->unifyThemeSettings)) {
+            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
+                if ($this->hasProperty($key) && $this->canSetProperty($key)) {
+                    $this->{$key} = $value;
+                }
+            }
+        }
+    }
+    /**
      *
      */
     static public function initBeforeRender()
@@ -123,14 +155,6 @@ class UnifyTheme extends Theme
 
             ]
         ));
-
-        if (isset(\Yii::$app->unifyThemeSettings)) {
-            foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
-                if (\Yii::$app->view->theme->hasProperty($key) && \Yii::$app->view->theme->canSetProperty($key)) {
-                    \Yii::$app->view->theme->{$key} = $value;
-                }
-            }
-        }
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);

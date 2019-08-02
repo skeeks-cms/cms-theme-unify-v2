@@ -41,7 +41,7 @@ if ($model) {
 }
 
 ?>
-
+<? if (\Yii::$app->mobileDetect->isDesktop) : ?>
 <div class="col-md-3 order-md-1 g-py-20 g-bg-secondary">
     <div class="g-mb-20">
         <div
@@ -58,7 +58,7 @@ if ($model) {
                     </h2>
                 </div>
 
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0 sx-col-menu">
 
                     <? foreach ($parent->activeChildren as $child) : ?>
 
@@ -91,3 +91,4 @@ if ($model) {
     ]); ?>
 
 </div>
+<? endif; ?>

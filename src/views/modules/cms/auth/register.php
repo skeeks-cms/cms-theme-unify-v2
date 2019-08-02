@@ -51,16 +51,12 @@ JS
                     <header class="text-center mb-4">
                         <h2 class="h2 g-color-black g-font-weight-600">Регистрация</h2>
                     </header>
-                    <?= $form->field($model, 'email', [
-                        'labelOptions' => [
-                            'class' => 'g-color-gray-dark-v2 g-font-weight-600 g-font-size-13',
-                        ],
-                    ])->textInput([
+                    <?= $form->field($model, 'email')->textInput([
                         'class' => 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15',
                     ]); ?>
 
                     <div class="mb-4">
-                        <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">Зарегистрироваться</button>
+                        <button class="btn btn-md btn-block u-btn-primary g-py-13" type="submit">Зарегистрироваться</button>
                     </div>
                     <div class="text-center">
                         <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>

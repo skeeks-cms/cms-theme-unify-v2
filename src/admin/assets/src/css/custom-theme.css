@@ -11,11 +11,12 @@
 
 
 .u-header-logo-toggler .navbar-brand img {
-    max-height: 55px;
+    max-height: 50px;
+    margin: 5px;
 }
 
 .u-header-logo-toggler .navbar-brand {
-    line-height: 65px;
+    line-height: 60px;
 }
 
 .sx-now-hide {

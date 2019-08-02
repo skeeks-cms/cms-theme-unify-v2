@@ -140,7 +140,12 @@ JS
 
               >
                 <!-- MAIN IMAGE -->
-                <img src="<?= $tree->image->src; ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg"
+                <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
+                            new \skeeks\cms\components\imaging\filters\Thumbnail([
+                                'w' => 1920,
+                                'h' => 1080,
+                            ]), $tree->code
+                        ) ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg"
                 data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                 >
                 <!-- LAYERS -->
@@ -175,12 +180,11 @@ JS
                     <div class="tp-caption   tp-resizeme"
                          id="slide-<?= $tree->id; ?>-layer-1"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-130','-157']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-130','-140']"
                          data-fontsize="['110','110','100','60']"
                          data-lineheight="['110','110','100','60']"
                          data-width="none"
                          data-height="none"
-                         data-whitespace="nowrap"
 
                          data-type="text"
                          data-responsive_offset="on"
@@ -192,7 +196,7 @@ JS
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 6; white-space: nowrap; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-7px;">
+                         style="z-index: 6; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-7px;">
                         <?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>
                     </div>
                   <? endif; ?>
@@ -205,7 +209,7 @@ JS
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-8','-32']"
                      data-fontsize="['40','40','30','30']"
-                     data-width="none"
+                     data-width="[1200, 600, 600, 420]"
                      data-height="none"
                      data-whitespace="['nowrap','normal','normal','normal']"
 

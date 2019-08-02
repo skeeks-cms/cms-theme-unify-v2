@@ -5,7 +5,7 @@
 
 
 
-.u-btn-primary {
+.u-btn-primary, .g-bg-primary {
     color: #fff;
     background: linear-gradient(150deg, #0185c8, #e1082c);
 }

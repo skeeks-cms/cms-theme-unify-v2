@@ -16,10 +16,10 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 ?>
 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
     'namespace'          => 'home-slider',
-    'enabledCurrentTree' => 'N',
+    'enabledCurrentTree' =>  \skeeks\cms\components\Cms::BOOL_N,
     'orderBy'            => 'priority',
     'order'              => SORT_ASC,
-    'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_N,
+    'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_Y,
     'content_ids'        => [
         $content ? $content->id : "",
     ],
@@ -41,8 +41,10 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         $contentNews = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one();
         ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-            'namespace'   => 'news',
-            'enabledPaging' =>  \skeeks\cms\components\Cms::BOOL_N,
+            'namespace'   => 'home-news',
+            'enabledPaging'       =>  \skeeks\cms\components\Cms::BOOL_N,
+            'enabledRunCache'                =>  \skeeks\cms\components\Cms::BOOL_Y,
+            'limit'       => 12,
             'content_ids' => [
                 $contentNews ? $contentNews->id : "",
             ],
