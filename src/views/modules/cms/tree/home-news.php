@@ -26,6 +26,13 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
     'viewFile'           => '@app/views/widgets/ContentElementsCmsWidget/slider-revo',
 ]); ?>
 
+<? if ($model->description_full) : ?>
+    <div class="container">
+        <header class="g-mt-20">
+            <?=$model->description_full; ?>
+        </header>
+    </div>
+<? endif; ?>
 
 <section class="promo-4 noborder g-bg-secondary g-pt-20 g-pb-20">
     <div class="container">

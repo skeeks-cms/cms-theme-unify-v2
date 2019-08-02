@@ -27,6 +27,13 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 ]); ?>
 
 
+<? if ($model->description_full) : ?>
+    <div class="container">
+        <header class="g-mt-50">
+            <?=$model->description_full; ?>
+        </header>
+    </div>
+<? endif; ?>
 
 <?= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
     'namespace'       => 'home-sub-catalog',
