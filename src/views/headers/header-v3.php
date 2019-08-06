@@ -123,7 +123,7 @@ JS
     <!-- End Top Bar -->
 
     <div class="u-header__section u-header__section--light g-bg-white-opacity-0_8 g-py-10 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-bg-white-opacity-0_8 g-py-10" data-header-fix-moment-classes="g-bg-white u-shadow-v18 g-py-0">
-        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal" itemscope itemtype="http://schema.org/Organization">
+        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container">
                 <!-- Responsive Toggle Button -->
                 <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
@@ -136,14 +136,9 @@ JS
               </span>
                 </button>
                 <!-- End Responsive Toggle Button -->
-
-                <meta itemprop="name" content="<?=$this->theme->title; ?>">
-                <meta itemprop="telephone" content="<?=$this->theme->phone; ?>">
-                <meta itemprop="address" content="<?=$this->theme->address; ?>">
-                <meta itemprop="email" content="<?=$this->theme->email; ?>">
                 <!-- Logo -->
-                <a href="<?=\yii\helpers\Url::base(true);?>" title="<?= $this->theme->title; ?>" class="navbar-brand" itemprop="url">
-                    <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>" itemprop="logo">
+                <a href="<?=\yii\helpers\Url::home();?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
+                    <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
                 <!-- End Logo -->
 

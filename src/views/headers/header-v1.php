@@ -87,14 +87,10 @@ JS
                     </ul>
                 </div>-->
 
-                <div class="col-auto"  itemscope itemtype="http://schema.org/Organization">
-                    <meta itemprop="name" content="<?=$this->theme->title; ?>">
-                    <meta itemprop="telephone" content="<?=$this->theme->phone; ?>">
-                    <meta itemprop="address" content="<?=$this->theme->address; ?>">
-                    <meta itemprop="email" content="<?=$this->theme->email; ?>">
+                <div class="col-auto">
                     <!-- Logo -->
-                    <a href="<?=\yii\helpers\Url::base(true);?>" title="<?= $this->theme->title; ?>" class="sx-main-logo" itemprop="url">
-                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>" itemprop="logo">
+                    <a href="<?=\yii\helpers\Url::home();?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
+                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                         <? if ($this->theme->logo_text) : ?>
                             <span class="sx-logo-text">
                                 <?= $this->theme->logo_text; ?>
