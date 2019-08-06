@@ -87,10 +87,13 @@ JS
                     </ul>
                 </div>-->
 
-                <div class="col-auto">
+                <div class="col-auto"  itemscope itemtype="http://schema.org/Organization">
+                    <meta itemprop="name" content="<?=$this->theme->title; ?>">
+                    <meta itemprop="telephone" content="<?=$this->theme->phone; ?>">
+                    <meta itemprop="address" content="<?=$this->theme->address; ?>">
                     <!-- Logo -->
-                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
-                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                    <a href="<?=\yii\helpers\Url::base(true);?>" title="<?= $this->theme->title; ?>" class="sx-main-logo" itemprop="url">
+                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>" itemprop="logo">
                         <? if ($this->theme->logo_text) : ?>
                             <span class="sx-logo-text">
                                 <?= $this->theme->logo_text; ?>
@@ -197,7 +200,7 @@ JS
                 <!-- End Responsive Toggle Button -->
 
                 <!-- Logo -->
-                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
+                <a href="<?=\yii\helpers\Url::base(true);?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
                     <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
                 <!-- End Logo -->

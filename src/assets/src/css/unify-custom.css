@@ -161,8 +161,11 @@ h6,
 
     content: '';
     position: absolute;
+    top: 3px;
 }
-
+.sx-project-form-wrapper .custom-control-label {
+    padding-left: 30px;
+}
 .checkbox input[type=checkbox]:checked + label:before,
 .sx-project-form-wrapper input[type=checkbox]:checked + label:before
 {
