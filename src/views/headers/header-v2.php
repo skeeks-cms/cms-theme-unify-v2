@@ -54,6 +54,7 @@ JS
             <meta itemprop="name" content="<?=$this->theme->title; ?>">
             <meta itemprop="telephone" content="<?=$this->theme->phone; ?>">
             <meta itemprop="address" content="<?=$this->theme->address; ?>">
+            <meta itemprop="email" content="<?=$this->theme->email; ?>">
             <!-- Logo -->
             <a href="<?=\yii\helpers\Url::base(true);?>" class="navbar-brand" title="<?= $this->theme->title; ?>" itemprop="url">
                 <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>" itemprop="logo">
