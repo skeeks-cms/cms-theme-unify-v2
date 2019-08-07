@@ -30,18 +30,16 @@ if (!isset($isShowLast)) {
                     <? if ($counter == $count): ?>
                         <? if ($isShowLast) : ?>
                             <li class="list-inline-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <span><?= $data['name']; ?></span>
+                                <span itemprop="name"><?= $data['name']; ?></span>
                                 <link itemprop="item" href="<?= $data['url']; ?>">
-                                <meta itemprop="name" content="<?= $data['name']; ?>">
                                 <meta itemprop="position" content="<?= $counter; ?>" />
                             </li>
                         <? endif; ?>
                     <? else : ?>
                         <li class="list-inline-item g-mr-7" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <link itemprop="item" href="<?= $data['url']; ?>">
-                            <meta itemprop="name" content="<?= $data['name']; ?>">
-                            <a href="<?= $data['url']; ?>" class="u-link-v5 g-color-main" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
+                            <a itemprop="item" href="<?= $data['url']; ?>" class="u-link-v5 g-color-main" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
                             <i class="fa fa-angle-right g-ml-7"></i>
+                            <meta itemprop="name" content="<?= $data['name']; ?>">
                             <meta itemprop="position" content="<?= $counter; ?>" />
                         </li>
                     <? endif; ?>
