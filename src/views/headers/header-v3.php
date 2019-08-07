@@ -137,7 +137,7 @@ JS
                 </button>
                 <!-- End Responsive Toggle Button -->
                 <!-- Logo -->
-                <a href="<?=\yii\helpers\Url::home();?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
+                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
                     <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
                 <!-- End Logo -->

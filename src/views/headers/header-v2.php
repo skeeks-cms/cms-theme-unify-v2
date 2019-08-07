@@ -51,7 +51,7 @@ JS
             </button>
             <!-- End Responsive Toggle Button -->
             <!-- Logo -->
-            <a href="<?=\yii\helpers\Url::home();?>" class="navbar-brand" title="<?= $this->theme->title; ?>">
+            <a href="<?= \yii\helpers\Url::home(); ?>" class="navbar-brand" title="<?= $this->theme->title; ?>">
                 <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 <? if ($this->theme->logo_text) : ?>
                     <span class="sx-logo-text">
