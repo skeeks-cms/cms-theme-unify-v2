@@ -77,7 +77,12 @@ h6,
     border: 1px solid #ddd;
     border-radius: 100%;
     background: #fff;
+    box-shadow: none;
 }
+.custom-control-input:checked~.custom-control-label::before {
+    box-shadow: none;
+}
+
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
     content: '';
@@ -103,10 +108,14 @@ h6,
 }
 
 
+.sx-project-form-wrapper .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-image: none;
+}
+
 /**
  * Кастомные checkbox
  */
-.checkbox, .custom-checkbox
+.checkbox
 {
     margin: 0 0 12px;
     /*margin: 0 0 5px; */
@@ -115,21 +124,23 @@ h6,
 }
 
 .checkbox input[type=checkbox],
-.sx-project-form-wrapper input[type=checkbox], .custom-checkbox input[type=checkbox]
+.sx-project-form-wrapper input[type=checkbox]
 {
     position: absolute;
     visibility: hidden;
 }
 
 
-.checkbox input[type=checkbox]:checked + label, .custom-checkbox input[type=checkbox]:checked + label
+.checkbox input[type=checkbox]:checked + label
 {
     font-weight: 600;
 }
 
 
-.checkbox label, .custom-checkbox label,
-.sx-project-form-wrapper .form-check label
+.checkbox label,
+.sx-project-form-wrapper .form-check label,
+.sx-project-form-wrapper .custom-radio label,
+.sx-project-form-wrapper .custom-checkbox label
 {
     display: inline-block;
     vertical-align: top;
@@ -140,7 +151,7 @@ h6,
     cursor: pointer;
 }
 
-.checkbox label:before, .custom-checkbox label:before,
+.checkbox label:before,
 .sx-project-form-wrapper label:before
 {
     display: block;
@@ -148,7 +159,7 @@ h6,
     top: 0;
 }
 
-.checkbox input[type=checkbox] + label:before,.custom-checkbox input[type=checkbox] + label:before,
+.checkbox input[type=checkbox] + label:before,
 .sx-project-form-wrapper input[type=checkbox] + label:before
 {
     -webkit-border-radius: 2px;
@@ -161,10 +172,9 @@ h6,
 
     content: '';
     position: absolute;
-    top: 0;
 }
 
-.checkbox input[type=checkbox]:checked + label:before,.custom-checkbox input[type=checkbox]:checked + label:before,
+.checkbox input[type=checkbox]:checked + label:before,
 .sx-project-form-wrapper input[type=checkbox]:checked + label:before
 {
     background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;
@@ -180,7 +190,10 @@ h6,
  * Кастомизация форм
  */
 
-.sx-project-form-wrapper .form-check {
+.sx-project-form-wrapper .form-check,
+.sx-project-form-wrapper .custom-checkbox,
+.sx-project-form-wrapper .custom-radio
+{
     padding-left: 0;
 }
 
