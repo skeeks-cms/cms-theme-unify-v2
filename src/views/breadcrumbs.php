@@ -17,25 +17,30 @@ if (!isset($isShowH1)) {
 if (!isset($isShowLast)) {
     $isShowLast = false;
 }
+
 ?>
 <section class="g-pb-0">
     <div class="g-bg-cover__inner sx-breadcrumbs-wrapper">
         <? if (count(\Yii::$app->breadcrumbs->parts) > 1) : ?>
             <? $count = count(\Yii::$app->breadcrumbs->parts); ?>
             <? $counter = 0; ?>
-            <ul class="u-list-inline">
+            <ul class="u-list-inline" itemscope itemtype="http://schema.org/BreadcrumbList">
                 <? foreach (\Yii::$app->breadcrumbs->parts as $data) : ?>
                     <? $counter++; ?>
                     <? if ($counter == $count): ?>
                         <? if ($isShowLast) : ?>
-                            <li class="list-inline-item">
-                                <span><?= $data['name']; ?></span>
+                            <li class="list-inline-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <span itemprop="name"><?= $data['name']; ?></span>
+                                <link itemprop="item" href="<?= $data['url']; ?>">
+                                <meta itemprop="position" content="<?= $counter; ?>" />
                             </li>
                         <? endif; ?>
                     <? else : ?>
-                        <li class="list-inline-item g-mr-7">
-                            <a href="<?= $data['url']; ?>" class="u-link-v5 g-color-main" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
+                        <li class="list-inline-item g-mr-7" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="<?= $data['url']; ?>" class="u-link-v5 g-color-main" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
                             <i class="fa fa-angle-right g-ml-7"></i>
+                            <meta itemprop="name" content="<?= $data['name']; ?>">
+                            <meta itemprop="position" content="<?= $counter; ?>" />
                         </li>
                     <? endif; ?>
                 <? endforeach; ?>

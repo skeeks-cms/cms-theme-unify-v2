@@ -22,3 +22,11 @@ $modal = \yii\bootstrap\Modal::begin([
     ]); ?>
 
 <? $modal::end(); ?>
+<div style="display: none;"  itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="<?= $this->theme->title; ?>">
+    <meta itemprop="telephone" content="<?= $this->theme->phone; ?>">
+    <meta itemprop="address" content="<?= $this->theme->address; ?>">
+    <meta itemprop="email" content="<?= $this->theme->email; ?>">
+    <meta itemprop="url" content="<?= \yii\helpers\Url::home(true); ?>">
+    <meta itemprop="logo" content="<?= $this->theme->logo; ?>">
+</div>
