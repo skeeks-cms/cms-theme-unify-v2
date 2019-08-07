@@ -106,7 +106,7 @@ h6,
 /**
  * Кастомные checkbox
  */
-.checkbox
+.checkbox, .custom-checkbox
 {
     margin: 0 0 12px;
     /*margin: 0 0 5px; */
@@ -115,20 +115,20 @@ h6,
 }
 
 .checkbox input[type=checkbox],
-.sx-project-form-wrapper input[type=checkbox]
+.sx-project-form-wrapper input[type=checkbox], .custom-checkbox input[type=checkbox]
 {
     position: absolute;
     visibility: hidden;
 }
 
 
-.checkbox input[type=checkbox]:checked + label
+.checkbox input[type=checkbox]:checked + label, .custom-checkbox input[type=checkbox]:checked + label
 {
     font-weight: 600;
 }
 
 
-.checkbox label,
+.checkbox label, .custom-checkbox label,
 .sx-project-form-wrapper .form-check label
 {
     display: inline-block;
@@ -140,7 +140,7 @@ h6,
     cursor: pointer;
 }
 
-.checkbox label:before,
+.checkbox label:before, .custom-checkbox label:before,
 .sx-project-form-wrapper label:before
 {
     display: block;
@@ -148,7 +148,7 @@ h6,
     top: 0;
 }
 
-.checkbox input[type=checkbox] + label:before,
+.checkbox input[type=checkbox] + label:before,.custom-checkbox input[type=checkbox] + label:before,
 .sx-project-form-wrapper input[type=checkbox] + label:before
 {
     -webkit-border-radius: 2px;
@@ -161,12 +161,10 @@ h6,
 
     content: '';
     position: absolute;
-    top: 3px;
+    top: 0;
 }
-.sx-project-form-wrapper .custom-control-label {
-    padding-left: 30px;
-}
-.checkbox input[type=checkbox]:checked + label:before,
+
+.checkbox input[type=checkbox]:checked + label:before,.custom-checkbox input[type=checkbox]:checked + label:before,
 .sx-project-form-wrapper input[type=checkbox]:checked + label:before
 {
     background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;

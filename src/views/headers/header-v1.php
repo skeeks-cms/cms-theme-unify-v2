@@ -89,7 +89,7 @@ JS
 
                 <div class="col-auto">
                     <!-- Logo -->
-                    <a href="<?=\yii\helpers\Url::home();?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
+                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
                         <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                         <? if ($this->theme->logo_text) : ?>
                             <span class="sx-logo-text">
@@ -197,7 +197,7 @@ JS
                 <!-- End Responsive Toggle Button -->
 
                 <!-- Logo -->
-                <a href="<?=\yii\helpers\Url::base(true);?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
+                <a href="<?=\yii\helpers\Url::home();?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
                     <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
                 <!-- End Logo -->
