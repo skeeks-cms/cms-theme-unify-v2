@@ -228,3 +228,19 @@ a:hover {
 .g-bg-primary--active.active, .active .g-bg-primary--active {
     background-color: #0185c8 !important;
 }
+
+
+/**
+ * Кастомизация форм в основной цвет
+ */
+.custom-control-input:checked~.custom-control-label::before {
+    box-shadow: none;
+    background: #0185c8;
+    border-color: #0185c8;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-image: none;
+    background: white;
+}
+

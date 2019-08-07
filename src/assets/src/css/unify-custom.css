@@ -77,7 +77,12 @@ h6,
     border: 1px solid #ddd;
     border-radius: 100%;
     background: #fff;
+    box-shadow: none;
 }
+.custom-control-input:checked~.custom-control-label::before {
+    box-shadow: none;
+}
+
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
     content: '';
@@ -102,6 +107,10 @@ h6,
     transform: scale(1);
 }
 
+
+.sx-project-form-wrapper .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-image: none;
+}
 
 /**
  * Кастомные checkbox
@@ -129,7 +138,9 @@ h6,
 
 
 .checkbox label,
-.sx-project-form-wrapper .form-check label
+.sx-project-form-wrapper .form-check label,
+.sx-project-form-wrapper .custom-radio label,
+.sx-project-form-wrapper .custom-checkbox label
 {
     display: inline-block;
     vertical-align: top;
@@ -179,7 +190,10 @@ h6,
  * Кастомизация форм
  */
 
-.sx-project-form-wrapper .form-check {
+.sx-project-form-wrapper .form-check,
+.sx-project-form-wrapper .custom-checkbox,
+.sx-project-form-wrapper .custom-radio
+{
     padding-left: 0;
 }
 
