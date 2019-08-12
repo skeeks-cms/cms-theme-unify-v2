@@ -28,8 +28,9 @@
         "skeeks/cms-ya-share": "^2.0.1 || dev-master",
 
         "fortawesome/font-awesome": "^5.9.0",
-        "skeeks/yii2-mobile-detect": "^1.0.2"
+        "skeeks/yii2-mobile-detect": "^1.0.2",
 
+        "skeeks/yii2-ajax-pager": "^2.0"
 	},
     "autoload": {
         "psr-4": {
