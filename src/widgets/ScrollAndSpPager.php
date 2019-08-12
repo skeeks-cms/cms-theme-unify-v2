@@ -18,6 +18,7 @@ class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
     </div>';
 
     public $triggerText = 'Показать еще';
+    public $noneLeftText = '';
 
     public $spClientOptions = [
         'prevText' => '',
