@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                             'namespace' => 'ContentElementsCmsWidget-search-result',
-                            'viewFile' => '@app/views/modules/cmsSearch/_widget',
+                            'viewFile' => '@app/views/modules/cmsSearch/widget',
                             'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
                             'active' => "Y",
                             'dataProviderCallback' => function (\yii\data\ActiveDataProvider $dataProvider) {
