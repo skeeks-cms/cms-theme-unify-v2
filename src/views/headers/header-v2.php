@@ -75,7 +75,7 @@ JS
             <!-- End Navigation -->
 
             <?= @$content; ?>
-            
+
             <!-- Search -->
 
             <div class="sx-header-auth g-pos-abs g-top-18 g-right-65 g-pos-rel--lg g-top-0--lg g-right-0--lg g-pt-3--lg g-ml-30 g-ml-0--lg">
@@ -98,7 +98,7 @@ JS
             </div>
             <!-- End Search -->
         </nav>
-        
+
     </div>
 </header>
 <!-- End Header -->
