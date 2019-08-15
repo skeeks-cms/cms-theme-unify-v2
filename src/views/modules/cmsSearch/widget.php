@@ -8,18 +8,23 @@
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget */
 ?>
-<div class="headline"><h2><?= $widget->label; ?></h2></div>
+
 <? echo \yii\widgets\ListView::widget([
     'dataProvider' => $widget->dataProvider,
     'itemView' => '_widget-item',
     'emptyText' => '',
     'options' =>
         [
-            'tag' => 'ul',
-            'class' => 'list-unstyled link-list',
+            'tag' => false
         ],
     'itemOptions' => [
-        'tag' => false
+        'tag' => 'div',
+        'class' => 'item row g-mb-20'
     ],
-    'layout' => "\n{items}{summary}\n<p class=\"row\">{pager}</p>"
+    'pager'        => [
+        'class' => \skeeks\cms\themes\unify\widgets\ScrollAndSpPager::class
+    ],
+    'layout' => "<div class=\"row\"><div class=\"col-md-12\">{summary}</div></div>
+<div class=\"no-gutters list-view\">{items}</div>
+<div class=\"row\"><div class=\"col-md-12\">{pager}</div></div>"
 ]) ?>

@@ -9,23 +9,25 @@
  *
  */
 ?>
-<div class="row margin-bottom-20">
-    <div class="col-sm-4 sm-margin-bottom-20">
+    <div class="col-sm-4 sm-margin-bottom-20 text-center">
+        <a href="<?= $model->url; ?>">
         <? if ($model->image) : ?>
-            <img src="<?= \Yii::$app->imaging->getImagingUrl($model->image->src,
+            <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                 new \skeeks\cms\components\imaging\filters\Thumbnail([
-                    'w' => 409,
-                    'h' => 258,
-                ])
-            ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
+                    'w' => 400,
+                    'h' => 210,
+                    'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
+                ]), $model->code
+            )); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
         <? else: ?>
             <img src="<?= \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>"
                  alt="<?= $model->name; ?>" class="img-responsive"/>
         <? endif; ?>
+        </a>
     </div>
     <div class="col-sm-8 news-v3">
         <div class="news-v3-in-sm no-padding">
-            <h2>
+            <h2 class="h4">
                 <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0"><?= $model->name; ?></a>
             </h2>
             <ul class="list-inline posted-info">
@@ -46,7 +48,4 @@
             <p><a href="<?= $model->url; ?>" data-pjax="0" class="btn btn-primary">Подробнее</a></p>
         </div>
     </div>
-</div>
-<div class="clearfix margin-bottom-20">
-    <hr>
-</div>
+
