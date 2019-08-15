@@ -52,50 +52,18 @@ JS
     <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-7 sx-topbar">
         <div class="container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
-                <!--<div class="col-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-tumblr"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-pinterest-p"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-google"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>-->
-
                 <div class="col-auto">
                     <i class="fa fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                     <a href="tel:<?= $this->theme->phone; ?>" class="g-color-white g-color-white--hover">
                         <?= $this->theme->phone; ?>
                     </a>
                 </div>
-
                 <div class="col-auto">
                     <i class="fa fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                     <a href="mailto:<?= $this->theme->email; ?>" class="g-color-white g-color-white--hover">
                         <?= $this->theme->email; ?>
                     </a>
                 </div>
-
                 <div class="col-auto g-pos-rel">
                     <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
                         <? if (\Yii::$app->user->isGuest) : ?>
@@ -116,7 +84,6 @@ JS
 
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>
@@ -128,9 +95,7 @@ JS
                 <!-- Responsive Toggle Button -->
                 <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
               <span class="hamburger hamburger--slider">
-
             <span class="hamburger-box">
-
               <span class="hamburger-inner"></span>
               </span>
               </span>
@@ -141,10 +106,8 @@ JS
                     <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
                 <!-- End Logo -->
-
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
-
                     <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
                         'namespace'       => 'menu-top',
                         'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-top',
@@ -152,15 +115,10 @@ JS
                         'level'           => '1',
                         'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
                     ]); ?>
-
                 </div>
                 <!-- End Navigation -->
-
                 <?= @$content; ?>
-
             </div>
-
-
         </nav>
     </div>
 </header>

@@ -10,12 +10,6 @@
 
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
-$this->registerCss(<<<CSS
-.sx-main-menu ul {
-    margin-left: 0 !important;
-}
-CSS
-);
 
 $this->registerJs(<<<JS
 
