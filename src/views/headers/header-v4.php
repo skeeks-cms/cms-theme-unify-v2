@@ -11,6 +11,14 @@
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 
+$this->registerCss(<<<CSS
+.sx-main-menu ul {
+margin-left: 0 !important;
+}
+CSS
+);
+
+
 $this->registerJs(<<<JS
 
 // initialization of HSDropdown component
@@ -88,9 +96,9 @@ JS
             </div>
         </div>
 
-        <div class="g-bg-white sx-header-middle-block">
-            <div class="container g-pt-10">
-                <div class="row">
+        <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
+            <div class="container g-pt-15 g-pb-15">
+                <div class="row ">
                     <div class="col-sm-4 col-md-3">
                         <!-- Logo -->
                         <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">

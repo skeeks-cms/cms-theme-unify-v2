@@ -11,6 +11,13 @@
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 
+$this->registerCss(<<<CSS
+.sx-main-menu ul {
+margin-left: 0 !important;
+}
+CSS
+);
+
 $this->registerJs(<<<JS
 
     // initialization of HSDropdown component
@@ -51,36 +58,6 @@ JS
     <div class="u-header__section u-header__section--hidden g-py-7 d-none d-sm-block g-bg-white">
         <div class="container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
-                <!--<div class="col-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-tumblr"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-pinterest-p"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!" class="g-color-white g-color-primary--hover g-pa-3">
-                                <i class="fa fa-google"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>-->
-
                 <div class="col-auto">
                     <!-- Logo -->
                     <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">

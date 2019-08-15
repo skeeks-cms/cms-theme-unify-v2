@@ -224,6 +224,11 @@ CSS
             );
 
 
+        if (\Yii::$app->view->theme->css_code) {
+            \Yii::$app->view->registerCss(\Yii::$app->view->theme->css_code);
+        }
+
+
     }
 
     /**
@@ -407,6 +412,11 @@ CSS
      * @var string
      */
     public $home_view_file = 'default';
+
+    /**
+     * @var string
+     */
+    public $css_code = '';
 
     /**
      * @var string
