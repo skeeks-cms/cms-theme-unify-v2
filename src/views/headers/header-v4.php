@@ -89,8 +89,8 @@ JS
         </div>
 
         <div class="g-bg-white sx-header-middle-block">
-            <div class="container g-pt-10">
-                <div class="row">
+            <div class="container g-pt-15 g-pb-15">
+                <div class="row ">
                     <div class="col-sm-4 col-md-3">
                         <!-- Logo -->
                         <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
