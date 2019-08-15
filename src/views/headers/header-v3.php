@@ -156,6 +156,7 @@ JS
                 </div>
                 <!-- End Navigation -->
 
+                <?= @$content; ?>
 
             </div>
 
