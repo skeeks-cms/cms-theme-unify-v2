@@ -15,7 +15,6 @@
     <div class="container sx-content">
         <div class="row">
             <div class="col-md-12">
-                <? \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
                 <div class="alert alert-info" role="alert">
                     Вы искали: <strong><?= \Yii::$app->cmsSearch->searchQuery; ?></strong>
                 </div>
@@ -34,7 +33,6 @@
                         ]) ?>
                     </div>
                 </div>
-                <? \skeeks\cms\modules\admin\widgets\Pjax::end(); ?>
             </div>
         </div>
     </div>
