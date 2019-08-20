@@ -440,6 +440,8 @@ form .sx-from-required {
     max-height: 100%;*/
     overflow: hidden;
     margin: 0;
+    max-height: 100%;
+    float: right;
 }
 
 /* Custom animation */
@@ -455,13 +457,19 @@ form .sx-from-required {
   transform: translateX(0);
 }*/
 .fancybox-fx-slide-in-out.fancybox-slide--previous {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 
 .fancybox-fx-slide-in-out.fancybox-slide--next {
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 
 .fancybox-fx-slide-in-out.fancybox-slide--current {
     transform: translateX(0);
+}
+
+.fancybox-slide--iframe .fancybox-close-small {
+    left: 0;
+    top: 0;
+    background: #000000a8;
 }

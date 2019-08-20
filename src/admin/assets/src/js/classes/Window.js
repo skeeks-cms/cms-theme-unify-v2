@@ -35,6 +35,12 @@
                     src: self._src,
                     'type': 'iframe',
                     'opts': {
+                        toolbar  : false,
+	smallBtn : true,
+                        /*buttons: [
+                            "close"
+                        ],*/
+
                         'afterClose': function () {
                             self.trigger('close');
                         },
