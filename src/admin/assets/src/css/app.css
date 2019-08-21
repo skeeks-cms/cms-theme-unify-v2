@@ -433,6 +433,10 @@ form .sx-from-required {
 /**
  * Fancybox rewrite
  */
+.fancybox-slide--iframe {
+    padding: 0;
+}
+
 .fancybox-slide--iframe .fancybox-content {
     /*width: 100%;
     height: 100%;
@@ -443,6 +447,13 @@ form .sx-from-required {
     margin: 0;
     max-height: 100%;
     float: right;
+}
+
+@media (max-width: 768px) {
+    .fancybox-slide--iframe .fancybox-content {
+        max-width: calc(100% - 20px);
+    }
+
 }
 
 /* Custom animation */

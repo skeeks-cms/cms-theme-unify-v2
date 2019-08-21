@@ -5,9 +5,10 @@
  * @date 07.04.2015
  */
 (function (sx, $, _) {
+
     sx.createNamespace('classes', sx);
+
     /**
-     * Настройка блокировщика для админки по умолчанию. Глобальное перекрытие
      * @type {void|*|Function}
      */
     sx.classes.Window = sx.classes._Window.extend({
@@ -30,13 +31,15 @@
                 });
             }
 
+            var name = this.getName();
+
             this.onDomReady(function () {
                 $.fancybox.open({
                     src: self._src,
                     'type': 'iframe',
                     'opts': {
                         toolbar  : false,
-	smallBtn : true,
+	                    smallBtn : true,
                         /*buttons: [
                             "close"
                         ],*/
@@ -45,6 +48,7 @@
                             self.trigger('close');
                         },
                         iframe: {
+                            tpl: '<iframe id="fancybox-frame{rnd}" name="' + name + '" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe>',
                             preload: false,
                             css: {
                                 width: '100%',
@@ -55,23 +59,15 @@
                         animationEffect   : 'slide-in-out',
                     }
                 });
-
-                /*var options = _.extend({
-
-                    'height'	: '100%',
-                    'autoSize'  : false,
-                    'width'		: '100%'
-                }, self.toArray());
-
-                $("<a>", {
-                    'style' : 'display: none;',
-                    'href' : self._src,
-                    'data-type' : 'iframe',
-                }).appendTo('body').fancybox(options).click();*/
             });
 
             return this;
+        },
+
+        close: function() {
+            $.fancybox.close();
         }
     });
+
 
 })(sx, sx.$, sx._);
