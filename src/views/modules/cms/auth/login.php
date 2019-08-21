@@ -18,11 +18,11 @@ $this->registerCss(<<<CSS
 CSS
 );
 ?>
-<section class="g-bg-gray-light-v5">
-    <div class="container g-py-50">
+<section class="g-bg-gray-light-v5 sx-auth-wrapper">
+    <div class="container g-py-100">
         <div class="row justify-content-center">
             <div class="col-sm-8 col-lg-5">
-                <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+                <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30 sx-bg-block">
                     <?php $form = ActiveForm::begin([
                         'validationUrl' => UrlHelper::construct('cms/auth/login')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
                         'options'       => [
@@ -30,7 +30,7 @@ CSS
                         ],
                     ]); ?>
                     <header class="text-center mb-4">
-                        <h2 class="h2 g-color-black g-font-weight-600">Авторизация</h2>
+                        <h2 class="h2 g-font-weight-600">Авторизация</h2>
                     </header>
                     <?= $form->field($model, 'identifier')->textInput([
                         'class' => 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15',
