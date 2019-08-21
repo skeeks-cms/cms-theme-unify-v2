@@ -96,10 +96,11 @@ class UnifyAdminAsset extends UnifyAsset
         Custom::class,
         BootstrapAsset::class,
         BootstrapPluginAsset::class,
-        UnifyFancyboxAsset::class,
+        //UnifyFancyboxAsset::class,
         FontAwesomeAsset::class,
         UnifyHsPopupAsset::class,
         UnifyAppearAsset::class,
         UnifyHsScrollbarAsset::class,
+        'skeeks\cms\assets\FancyboxAssets',
     ];
 }
