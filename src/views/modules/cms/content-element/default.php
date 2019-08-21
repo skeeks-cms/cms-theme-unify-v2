@@ -56,7 +56,7 @@ if (@$isShowMainImage !== false) {
                 <? endif; ?>
                 <div class="g-color-gray-dark-v1 g-font-size-16 sx-content" itemscope itemtype="http://schema.org/NewsArticle">
                     <!-- Микроразметка новости-статьи -->
-                    <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?= \yii\helpers\Url::to($model->url, true); ?>"/>
+                    <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?= $model->getUrl(true); ?>"/>
                     <meta itemprop="headline" content="<?= $model->name; ?>">
                     <span itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="<?= $model->createdBy->displayName; ?>"></span>
                     <span itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
@@ -78,7 +78,7 @@ if (@$isShowMainImage !== false) {
                     <? endif; ?>
                     <? if ($model->image) : ?>
                     <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                        <link itemprop="url" href="<?= \yii\helpers\Url::to($model->url, true); ?>">
+                        <link itemprop="url" href="<?= $model->getUrl(true); ?>">
                         <span itemprop="image" content="<?= $model->image->src; ?>">
                             <meta itemprop="width" content="<?= $model->image->image_width; ?>">
                             <meta itemprop="height" content="<?= $model->image->image_height; ?>">
