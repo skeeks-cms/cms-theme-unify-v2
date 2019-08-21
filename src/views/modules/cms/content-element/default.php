@@ -54,8 +54,38 @@ if (@$isShowMainImage !== false) {
                     'model' => $model,
                 ]) ?>
                 <? endif; ?>
-                <div class="g-color-gray-dark-v1 g-font-size-16 sx-content">
-
+                <div class="g-color-gray-dark-v1 g-font-size-16 sx-content" itemscope itemtype="http://schema.org/NewsArticle">
+                    <!-- Микроразметка новости-статьи -->
+                    <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?= $model->getUrl(true); ?>"/>
+                    <meta itemprop="headline" content="<?= $model->name; ?>">
+                    <span itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="<?= $model->createdBy->displayName; ?>"></span>
+                    <span itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
+                        <meta itemprop="name" content="<?= \Yii::$app->cms->appName; ?>">
+                        <meta itemprop="address" content="<?= $this->theme->address; ?>">
+                        <meta itemprop="telephone" content="<?= $this->theme->phone; ?>">
+                        <span itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
+                            <link itemprop="url" href="<?= $this->theme->logo; ?>">
+                            <meta itemprop="image" content="<?= $this->theme->logo; ?>">
+                        </span>
+                    </span>
+                    <meta itemprop="datePublished" content="<?= \Yii::$app->formatter->asDate($model->created_at, "php:Y-m-d"); ?>"/>
+                    <meta itemprop="dateModified" content="<?= \Yii::$app->formatter->asDate($model->updated_at, "php:Y-m-d"); ?>"/>
+                    <meta itemprop="genre" content="<?= $model->cmsTree->name; ?>"/>
+                    <? if ($model->description_short) : ?>
+                        <meta itemprop="description" content="<?= $model->description_short; ?>"/>
+                    <? else : ?>
+                        <meta itemprop="description" content="<?= \yii\helpers\StringHelper::truncate($model->description_full, 250); ?>"/>
+                    <? endif; ?>
+                    <? if ($model->image) : ?>
+                    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <link itemprop="url" href="<?= $model->getUrl(true); ?>">
+                        <span itemprop="image" content="<?= $model->image->src; ?>">
+                            <meta itemprop="width" content="<?= $model->image->image_width; ?>">
+                            <meta itemprop="height" content="<?= $model->image->image_height; ?>">
+                        </span>
+                    </span>
+                    <? endif; ?>
+                    <!-- /Микроразметка новости -->
                     <? if ($model->image && $isShowMainImage && !$this->theme->is_image_body_begin) : ?>
                         <div class="g-mb-20">
                             <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
@@ -71,9 +101,10 @@ if (@$isShowMainImage !== false) {
                     <? if (!$this->theme->is_image_body_begin) : ?>
                     <?= $model->description_short; ?>
                     <? endif; ?>
-
+                    <div itemprop="articleBody">
                     <?= $model->description_full; ?>
 
+                    </div>
                 </div>
 
 
@@ -131,6 +162,11 @@ if (@$isShowMainImage !== false) {
                             ], 'og:description');
                         }
 
+
+                        $this->registerMetaTag([
+                            'property' => 'og:url',
+                            'content'  => \yii\helpers\Url::to($model->url, true)
+                        ], 'og:url' );
 
                         $this->registerMetaTag([
                             'property' => 'og:title',
