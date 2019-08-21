@@ -165,7 +165,7 @@ if (@$isShowMainImage !== false) {
 
                         $this->registerMetaTag([
                             'property' => 'og:url',
-                            'content'  => \yii\helpers\Url::to($model->url, true)
+                            'content'  => $model->getUrl(true)
                         ], 'og:url' );
 
                         $this->registerMetaTag([
