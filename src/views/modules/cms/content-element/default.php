@@ -68,8 +68,8 @@ if (@$isShowMainImage !== false) {
                             <meta itemprop="image" content="<?= $this->theme->logo; ?>">
                         </span>
                     </span>
-                    <meta itemprop="datePublished" content="<?= date('Y-m-d', $model->created_at); ?>"/>
-                    <meta itemprop="dateModified" content="<?= date('Y-m-d', $model->updated_at); ?>"/>
+                    <meta itemprop="datePublished" content="<?= \Yii::$app->formatter->asDate($model->created_at, "php:Y-m-d"); ?>"/>
+                    <meta itemprop="dateModified" content="<?= \Yii::$app->formatter->asDate($model->updated_at, "php:Y-m-d"); ?>"/>
                     <meta itemprop="genre" content="<?= $model->cmsTree->name; ?>"/>
                     <? if ($model->description_short) : ?>
                         <meta itemprop="description" content="<?= $model->description_short; ?>"/>
