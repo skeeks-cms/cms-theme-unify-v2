@@ -61,6 +61,8 @@
 
         href: function(id)
         {
+            var self = this;
+
             var duration = Number(this.get('duration', 500));
             var easing   = String(this.get('easing', 'swing'));
 
@@ -81,7 +83,10 @@
                 $('html:not(:animated),body:not(:animated)')
                     .animate({ scrollTop: top }, duration, easing, function()
                     {
-                      window.location.href = newLocation;
+                        if (Boolean(self.get('isLocationHref')) === true) {
+                            window.location.href = newLocation;
+                        }
+
                     });
 
                 return true;
