@@ -68,6 +68,8 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
         <?= $this->render("@app/views/include/bottom-block"); ?>
     </div>
 </section>
+<? if (!\Yii::$app->mobileDetect->isMobile) : ?>
 <section class="promo-4 noborder p-y-0">
     <?= $this->theme->yandex_map; ?>
 </section>
+<? endif; ?>
