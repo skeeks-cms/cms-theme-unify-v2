@@ -72,9 +72,9 @@ if (@$isShowMainImage !== false) {
                     <meta itemprop="dateModified" content="<?= \Yii::$app->formatter->asDate($model->updated_at, "php:Y-m-d"); ?>"/>
                     <meta itemprop="genre" content="<?= $model->cmsTree->name; ?>"/>
                     <? if ($model->description_short) : ?>
-                        <meta itemprop="description" content="<?= $model->description_short; ?>"/>
+                        <meta itemprop="description" content="<?= strip_tags($model->description_short); ?>"/>
                     <? else : ?>
-                        <meta itemprop="description" content="<?= \yii\helpers\StringHelper::truncate($model->description_full, 250); ?>"/>
+                        <meta itemprop="description" content="<?= \yii\helpers\StringHelper::truncate(strip_tags($model->description_full), 250); ?>"/>
                     <? endif; ?>
                     <? if ($model->image) : ?>
                     <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
