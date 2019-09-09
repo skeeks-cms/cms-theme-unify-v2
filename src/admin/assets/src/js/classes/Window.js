@@ -20,18 +20,9 @@
             var self = this;
 
             this.trigger('beforeOpen');
-            //строка параметров, собираем из массива
-            var paramsSting = "";
-            if (this.getOpts()) {
-                _.each(this.getOpts(), function (value, key) {
-                    if (paramsSting) {
-                        paramsSting = paramsSting + ',';
-                    }
-                    paramsSting = paramsSting + String(key) + "=" + String(value);
-                });
-            }
 
             var name = this.getName();
+            /*var currentHref = window.location.href;*/
 
             this.onDomReady(function () {
                 $.fancybox.open({
@@ -46,6 +37,11 @@
 
                         'afterClose': function () {
                             self.trigger('close');
+                            /*window.history.replaceState(null, 'title', currentHref);*/
+                        },
+                        'afterShow': function () {
+                            /*window.history.replaceState(null, 'title', self._src);*/
+
                         },
                         iframe: {
                             tpl: '<iframe id="fancybox-frame{rnd}" name="' + name + '" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe>',
