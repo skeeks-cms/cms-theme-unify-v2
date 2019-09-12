@@ -15,6 +15,15 @@
                 $(this).closest('form').submit();
 
             });
+            $('.sx-btn-filter').click(function () {
+                $('.sx-filters-block').animate({right: '0'});
+                return false;
+            });
+            
+            $('.sx-mobile-filters-hide').click(function () {
+                $('.sx-filters-block').animate({right: '-100%'});
+                return false;
+            })
         }
     });
 })(sx, sx.$, sx._);
