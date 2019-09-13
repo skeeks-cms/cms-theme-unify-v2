@@ -447,3 +447,25 @@ body {
     color: white;
     margin-top: 20px;
 }
+
+.sx-main-menu ul {
+    margin-left: 0 !important;
+}
+/* Поисковый блок на мобильной версии */
+.sx-search-btn-block {
+    display: none !important;
+}
+@media (max-width: 450px) {
+    .sx-search-btn-block {
+        display: inline-block !important;
+    }
+    .sx-search-form {
+        background: #fff;
+        padding: 5px;
+        position: relative;
+        top: -100px;
+    }
+}
+.sx-main-menu-wrapper a.sx-search-btn {
+    font-size: 20px !important;
+}

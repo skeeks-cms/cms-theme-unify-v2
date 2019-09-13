@@ -11,14 +11,12 @@
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 
-$this->registerCss(<<<CSS
-.sx-main-menu ul {
-margin-left: 0 !important;
-}
-CSS
+if (\Yii::$app->mobileDetect->isMobile) {
+    $this->registerJs(<<<JS
+        $('.sx-main-menu-wrapper').after($('.sx-search-form'));
+JS
 );
-
-
+}
 $this->registerJs(<<<JS
 
 // initialization of HSDropdown component
@@ -40,13 +38,28 @@ $(window).on('load', function () {
         breakpoint: 991
     });
 
-
     $('#dropdown-megamenu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 767
     });
-
+    
+    $('.sx-search-btn').click(function() {
+        console.log($(this).hasClass('sx-search-form-close'));
+        if ($(this).hasClass('sx-search-form-close')){
+            console.log(1);
+            $('.sx-search-form').animate({top: '-100px'});
+            $('.sx-search-btn').removeClass('sx-search-form-close');
+            return false;
+        }
+        else {
+            console.log(2);
+            $('.sx-search-form').animate({top: '0'});
+            $('.sx-search-btn').addClass('sx-search-form-close');
+            return false;
+        }
+       
+    });
 });
 JS
 );
@@ -107,19 +120,21 @@ JS
                         <!-- End Logo -->
                     </div>
                     <div class="col-md-6 col-sm-4">
-                        <form action="/search" method="get" style="margin-bottom: 0px;">
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <label for="search" class="sr-only">Поиск</label>
-                                    <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                                           name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                           value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                        <div  class="sx-search-form">
+                            <form action="/search" method="get" style="margin-bottom: 0px;">
+                                <div class="row">
+                                    <div class="col-sm-10 col-9">
+                                        <label for="search" class="sr-only">Поиск</label>
+                                        <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                                               name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                                    </div>
+                                    <div class="col-sm-2 g-pl-10 col-3">
+                                        <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
+                                    </div>
                                 </div>
-                                <div class="col-sm-2 g-pl-10">
-                                    <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-md-3 col-sm-4 ">
                         <div class="pull-right">
@@ -177,7 +192,9 @@ JS
 
                 </div>
                 <!-- End Navigation -->
-
+                <div class="d-inline-block g-pos-abs g-top-15 g-right-110 g-pos-rel--lg g-top-0--lg g-right-0--lg g-valign-middle g-ml-30 g-ml-0--lg sx-search-btn-block">
+                    <a href="#" class="sx-search-btn g-font-size-20"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </div>
                 <?= @$content; ?>
 
             </div>
