@@ -47,13 +47,11 @@ $(window).on('load', function () {
     $('.sx-search-btn').click(function() {
         console.log($(this).hasClass('sx-search-form-close'));
         if ($(this).hasClass('sx-search-form-close')){
-            console.log(1);
             $('.sx-search-form').animate({top: '-100px'});
             $('.sx-search-btn').removeClass('sx-search-form-close');
             return false;
         }
         else {
-            console.log(2);
             $('.sx-search-form').animate({top: '0'});
             $('.sx-search-btn').addClass('sx-search-form-close');
             return false;
