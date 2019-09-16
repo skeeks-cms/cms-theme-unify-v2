@@ -10,10 +10,23 @@
 
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
-
+var_dump(\Yii::$app->mobileDetect->isMobile);
 if (\Yii::$app->mobileDetect->isMobile) {
     $this->registerJs(<<<JS
         $('.sx-main-menu-wrapper').after($('.sx-search-form'));
+        $('.sx-search-btn').click(function() {
+            if ($(this).hasClass('sx-search-form-close')){
+                $('.sx-search-form').animate({top: '-100px'});
+                $('.sx-search-btn').removeClass('sx-search-form-close');
+                return false;
+            }
+            else {
+                $('.sx-search-form').animate({top: '0'});
+                $('.sx-search-btn').addClass('sx-search-form-close');
+                return false;
+            }
+           
+        });
 JS
 );
 }
@@ -44,20 +57,6 @@ $(window).on('load', function () {
         breakpoint: 767
     });
     
-    $('.sx-search-btn').click(function() {
-        console.log($(this).hasClass('sx-search-form-close'));
-        if ($(this).hasClass('sx-search-form-close')){
-            $('.sx-search-form').animate({top: '-100px'});
-            $('.sx-search-btn').removeClass('sx-search-form-close');
-            return false;
-        }
-        else {
-            $('.sx-search-form').animate({top: '0'});
-            $('.sx-search-btn').addClass('sx-search-form-close');
-            return false;
-        }
-       
-    });
 });
 JS
 );

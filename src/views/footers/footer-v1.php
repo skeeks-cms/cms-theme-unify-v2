@@ -145,7 +145,7 @@
 
     </div>
 
-    <?= $this->render('@app/views/include/footer-copyrright'); ?>
+    <?= $this->render('@app/views/include/footer-copyright'); ?>
 
 
     <!-- End Footer -->

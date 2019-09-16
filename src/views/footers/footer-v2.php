@@ -180,7 +180,7 @@
 
     </div>
 
-    <?= $this->render('@app/views/include/footer-copyrright'); ?>
+    <?= $this->render('@app/views/include/footer-copyright'); ?>
 
     <!-- End Footer -->
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
