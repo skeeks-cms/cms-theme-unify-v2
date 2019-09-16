@@ -10,8 +10,8 @@
 
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
-var_dump(\Yii::$app->mobileDetect->isMobile);
-if (\Yii::$app->mobileDetect->isMobile) {
+
+if (!\Yii::$app->mobileDetect->isTablet && \Yii::$app->mobileDetect->isMobile) {
     $this->registerJs(<<<JS
         $('.sx-main-menu-wrapper').after($('.sx-search-form'));
         $('.sx-search-btn').click(function() {

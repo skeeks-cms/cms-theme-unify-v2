@@ -469,3 +469,9 @@ body {
 .sx-main-menu-wrapper a.sx-search-btn {
     font-size: 20px !important;
 }
+/* Поднять меню на планшете */
+@media (max-width: 1024px) AND (min-width: 768px) {
+    .hamburger {
+        padding-top: 0;
+    }
+}

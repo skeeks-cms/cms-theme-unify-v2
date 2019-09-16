@@ -7,4 +7,9 @@
  */
 /* @var $this yii\web\View */
 ?>
-<?= $this->render('@app/views/headers/header-' . $this->theme->header . '.php'); ?>
+
+<? if (\Yii::$app->mobileDetect->isMobile) : ?>
+    <?= $this->render('@app/views/headers/header-mobile.php'); ?>
+<? else : ?>
+    <?= $this->render('@app/views/headers/header-' . $this->theme->header . '.php'); ?>
+<? endif; ?>
