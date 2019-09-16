@@ -13,6 +13,9 @@ use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
 use yii\base\Theme;
+use yii\helpers\ArrayHelper;
+use yii\helpers\FileHelper;
+use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 
 /**
  * @property string      $favicon путь к фавиконке
@@ -22,8 +25,8 @@ use yii\base\Theme;
  * @property string      $slideNavClasses read-only
  * @property string      $headerClasses read-only
  *
- * @property string        $bodyCssClass
- * @property string        $htmlCssClass
+ * @property string      $bodyCssClass
+ * @property string      $htmlCssClass
  *
  * @author Semenov Alexander <semenov@skeeks.com>
  */
@@ -158,14 +161,53 @@ class UnifyTheme extends Theme
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
-        \Yii::$app->view->registerCss($content);
 
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)));
+
+        $newDir = \Yii::getAlias("@webroot/assets/unify");
+        $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-" . $cache . ".css");
+        $newFilePublic = \Yii::getAlias("@web/assets/unify/unify-default-template-" . $cache . ".css");
+
+        if (!file_exists($newFile)) {
+            FileHelper::createDirectory($newDir);
+
+            $fp = fopen($newFile, 'w+');
+            fwrite($fp, $content);
+            fclose($fp);
+        }
+
+
+        \Yii::$app->view->registerCssFile($newFilePublic, [
+            'depends' => [
+                UnifyThemeAsset::class
+            ]
+        ]);
+        //\Yii::$app->view->registerCss($content);
 
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-theme-template.css"));
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
-        \Yii::$app->view->registerCss($content);
+        //\Yii::$app->view->registerCss($content);
+
+
+        $newFile2 = \Yii::getAlias("@webroot/assets/unify/unify-theme-template-" . $cache . ".css");
+        $newFilePublic2 = \Yii::getAlias("@web/assets/unify/unify-theme-template-" . $cache . ".css");
+
+        if (!file_exists($newFile2)) {
+            FileHelper::createDirectory($newDir);
+
+            $fp = fopen($newFile2, 'w+');
+            fwrite($fp, $content);
+            fclose($fp);
+        }
+
+
+        \Yii::$app->view->registerCssFile($newFilePublic2, [
+            'depends' => [
+                UnifyThemeAsset::class
+            ]
+        ]);
 
         if (\Yii::$app->view->theme->body_bg_image) {
             $bgImage = \Yii::$app->view->theme->body_bg_image;
@@ -471,7 +513,7 @@ CSS
             }
 
             if ($this->is_header_sticky && $this->is_header_sticky_margin) {
-                $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky-margin";
+                $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky-margin";
             }
         }
 
