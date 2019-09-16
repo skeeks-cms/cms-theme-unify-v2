@@ -12,10 +12,11 @@ use skeeks\cms\backend\widgets\filters\Bootstrap4ActiveField;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
+use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use yii\base\Theme;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
-use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
+
 
 /**
  * @property string      $favicon путь к фавиконке
@@ -496,7 +497,6 @@ CSS
      * @var bool
      */
     public $isShowBottomBlock = true;
-
 
 
     protected $_bodyCssClass = null;
