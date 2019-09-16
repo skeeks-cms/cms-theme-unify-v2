@@ -17,7 +17,6 @@ use yii\base\Theme;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 
-
 /**
  * @property string      $favicon путь к фавиконке
  * @property string|null $logoSrc путь к лого, если передать null, то будет лого по умолчанию
