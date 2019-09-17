@@ -53,8 +53,8 @@ h6,
 
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+    /*position: absolute;
+    left: -9999px;*/
 }
 [type="radio"]:checked + label,
 [type="radio"]:not(:checked) + label
