@@ -47,7 +47,7 @@ $(window).on('load', function () {
             return false;
         }
         else {
-            $('.sx-search-form').animate({top: '0'});
+            $('.sx-search-form').animate({top: '100%'});
             $('.sx-search-btn').addClass('sx-search-form-close');
             return false;
         }
@@ -57,14 +57,7 @@ $(window).on('load', function () {
 });
 JS
 );
-$this->registerCss(<<<CSS
-#sx-menu {
-    z-index: 502;
-}
 
-
-CSS
-);
 ?>
 <? $items = [
 ];
@@ -169,7 +162,7 @@ if ($models)
     <header id="js-header" class="u-shadow-v19 u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
         <!-- Top Bar -->
 
-        <div class="u-header__section u-header__section--dark g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+        <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
             <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
                 <div class="container">
                     <!-- Responsive Toggle Button -->
@@ -187,27 +180,28 @@ if ($models)
                         <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <!-- End Logo -->
-                    <div class="d-inline-block g-pos-abs g-top-15 g-right-110 g-pos-rel--lg g-top-0--lg g-right-0--lg g-valign-middle g-ml-30 g-ml-0--lg sx-search-btn-block">
-                        <a href="#" class="sx-search-btn g-font-size-20"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <div class="d-inline-block g-pos-abs g-top-0 g-pt-0 g-right-110 sx-search-btn-block">
+                        <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </div>
                     <?= @$content; ?>
                 </div>
             </nav>
         </div>
+        <div  class="sx-search-form" style="top: -100px;">
+            <form action="/search" method="get" style="margin-bottom: 0px;">
+                <div class="row">
+                    <div class="col-sm-10 col-9">
+                        <label for="search" class="sr-only">Поиск</label>
+                        <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                               name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                    </div>
+                    <div class="col-sm-2 g-pl-10 col-3">
+                        <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </header>
-    <div  class="sx-search-form" style="top: -100px;">
-        <form action="/search" method="get" style="margin-bottom: 0px;">
-            <div class="row">
-                <div class="col-sm-10 col-9">
-                    <label for="search" class="sr-only">Поиск</label>
-                    <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                           name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                           value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
-                </div>
-                <div class="col-sm-2 g-pl-10 col-3">
-                    <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
-                </div>
-            </div>
-        </form>
-    </div>
+
     <!-- End Header -->

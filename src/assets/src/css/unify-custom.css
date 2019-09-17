@@ -462,12 +462,15 @@ body {
     .sx-search-form {
         background: #fff;
         padding: 15px;
-        position: relative;
+        position: absolute;
         top: -100px;
+        left:0;
+        right:0;
+        z-index: 1;
     }
 }
-.sx-main-menu-wrapper a.sx-search-btn {
-    font-size: 20px !important;
+.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger {
+    font-size: 1.9rem !important;
 }
 /* Поднять меню на планшете */
 @media (max-width: 1024px) AND (min-width: 768px) {
@@ -488,6 +491,15 @@ html.mm-right.mm-opening .mm-menu.mm-fx-menu-slide {
 }
 html.mm-right.mm-opened .mm-menu.mm-fx-menu-slide {
     transform: translate3d(-440px, 0, 0px);
+}
+.mm-opened .u-header--sticky-top {
+    position: relative !important;
+}
+.mm-opened .sx-header-sticky-margin {
+    margin-top: 0 !important;
+}
+.hamburger {
+    padding: 10px;
 }
 /* Уменьшаем размер шрифта для мобилльной версии  */
 @media (max-width: 768px) {

@@ -30,12 +30,14 @@ $class::register($this);
             <div id="loaderImage"></div>
         </div>
     <? endif; ?>
-    <main>
-        <?= $this->render("@app/views/header"); ?>
-        <?= $content; ?>
-        <?= $this->render("@app/views/footer"); ?>
-    </main>
-    <?= $this->render("@app/views/modals"); ?>
+    <div>
+        <main>
+            <?= $this->render("@app/views/header"); ?>
+            <?= $content; ?>
+            <?= $this->render("@app/views/footer"); ?>
+        </main>
+        <?= $this->render("@app/views/modals"); ?>
+    </div>
     <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
     </body>
