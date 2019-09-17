@@ -461,7 +461,7 @@ body {
     }
     .sx-search-form {
         background: #fff;
-        padding: 5px;
+        padding: 15px;
         position: relative;
         top: -100px;
     }
@@ -474,4 +474,49 @@ body {
     .hamburger {
         padding-top: 0;
     }
+}
+/* Настройки меню */
+html.mm-right .mm-menu.mm-fx-menu-slide {
+    z-index: 502;
+}
+html.mm-right.mm-opening .mm-menu.mm-fx-menu-slide {
+    right: 0;
+    transform: translate3d(0, 0, 0px);
+}
+.mm-menu.mm-offcanvas.mm-right {
+    right: -440px;
+}
+html.mm-right.mm-opened .mm-menu.mm-fx-menu-slide {
+    transform: translate3d(-440px, 0, 0px);
+}
+/* Уменьшаем размер шрифта для мобилльной версии  */
+@media (max-width: 768px) {
+    .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3;
+    }
+    .h1, h1 {
+        font-size: 1.5rem;
+    }
+    .h2, h2 {
+        font-size: 1.4rem;
+    }
+
+}
+@media (max-width: 1024px) {
+    .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
+        line-height: 1.4;
+    }
+    .h1, h1 {
+        font-size: 2rem;
+    }
+    .h2, h2 {
+        font-size: 1.75rem;
+    }
+
+}
+.mm-menu.mm-shadow-page:after {
+    box-shadow: none !important;
+}
+#mm-blocker {
+    z-index: 501 !important;
 }
