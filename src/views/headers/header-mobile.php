@@ -189,15 +189,17 @@ if ($models)
         </div>
         <div  class="sx-search-form" style="top: -100px;">
             <form action="/search" method="get" style="margin-bottom: 0px;">
-                <div class="row">
-                    <div class="col-sm-10 col-9">
-                        <label for="search" class="sr-only">Поиск</label>
-                        <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                               name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
-                    </div>
-                    <div class="col-sm-2 g-pl-10 col-3">
-                        <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-9">
+                            <label for="search" class="sr-only">Поиск</label>
+                            <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                                   name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                   value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                        </div>
+                        <div class="col-sm-3 g-pl-0 col-3">
+                            <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
+                        </div>
                     </div>
                 </div>
             </form>

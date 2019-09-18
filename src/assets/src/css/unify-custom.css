@@ -371,6 +371,7 @@ body {
 .sorting .in-stock {
     float: right;
     margin-top: 4px !important;
+    margin-bottom: 0;
 }
 
 .sorting .in-stock label {
@@ -461,7 +462,7 @@ body {
     }
     .sx-search-form {
         background: #fff;
-        padding: 15px;
+        padding: 15px 0;
         position: absolute;
         top: -100px;
         left:0;

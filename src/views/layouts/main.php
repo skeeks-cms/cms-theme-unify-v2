@@ -36,8 +36,9 @@ $class::register($this);
             <?= $content; ?>
             <?= $this->render("@app/views/footer"); ?>
         </main>
-        <?= $this->render("@app/views/modals"); ?>
     </div>
+        <?= $this->render("@app/views/modals"); ?>
+
     <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
     </body>
