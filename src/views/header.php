@@ -9,7 +9,7 @@
 ?>
 
 <? if (\Yii::$app->mobileDetect->isMobile) : ?>
-    <?= $this->render('@app/views/headers/header-mobile.php'); ?>
+    <?= $this->render('@app/views/headers/header-mobile'); ?>
 <? else : ?>
-    <?= $this->render('@app/views/headers/header-' . $this->theme->header . '.php'); ?>
+    <?= $this->render('@app/views/headers/header-' . $this->theme->header); ?>
 <? endif; ?>

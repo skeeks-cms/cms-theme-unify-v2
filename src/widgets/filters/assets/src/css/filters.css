@@ -194,7 +194,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         background: white;
         height: 100%;
         padding: 10px 20px;
-        right: -100%;
+        left: -100%;
         top: 0;
         overflow: auto;
     }

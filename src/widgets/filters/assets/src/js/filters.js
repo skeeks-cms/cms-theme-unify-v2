@@ -16,12 +16,12 @@
 
             });
             $('.sx-btn-filter').click(function () {
-                $('.sx-filters-block').animate({right: '0'});
+                $('.sx-filters-block').animate({left: '0'});
                 return false;
             });
             
             $('.sx-mobile-filters-hide').click(function () {
-                $('.sx-filters-block').animate({right: '-100%'});
+                $('.sx-filters-block').animate({left: '-100%'});
                 return false;
             })
         }

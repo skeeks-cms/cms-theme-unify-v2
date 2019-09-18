@@ -456,7 +456,7 @@ body {
 .sx-search-btn-block {
     display: none !important;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
     .sx-search-btn-block {
         display: inline-block !important;
     }
@@ -483,16 +483,7 @@ body {
 html.mm-right .mm-menu.mm-fx-menu-slide {
     z-index: 502;
 }
-html.mm-right.mm-opening .mm-menu.mm-fx-menu-slide {
-    right: 0;
-    transform: translate3d(0, 0, 0px);
-}
-.mm-menu.mm-offcanvas.mm-right {
-    right: -440px;
-}
-html.mm-right.mm-opened .mm-menu.mm-fx-menu-slide {
-    transform: translate3d(-440px, 0, 0px);
-}
+
 .mm-opened .u-header--sticky-top {
     position: relative !important;
 }
@@ -527,9 +518,18 @@ html.mm-right.mm-opened .mm-menu.mm-fx-menu-slide {
     }
 
 }
+/* Правки для меню мобильной версии */
 .mm-menu.mm-shadow-page:after {
     box-shadow: none !important;
 }
 #mm-blocker {
     z-index: 501 !important;
+}
+.u-btn-primary, a.g-bg-primary {
+    color: #fff !important;
+}
+@media (max-width: 768px) {
+    .sx-search-form {
+        padding: 15px;
+    }
 }

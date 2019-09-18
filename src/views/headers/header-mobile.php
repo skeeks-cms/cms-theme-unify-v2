@@ -11,34 +11,10 @@
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 \skeeks\yii2\mmenu\MenuAsset::register($this);
-$this->registerCssFile('//mmenujs.com/mburger/mburger.css');
 $this->registerJs(<<<JS
 
-// initialization of HSDropdown component
-  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-    afterOpen: function(){
-      $(this).find('input[type="search"]').focus();
-    }
-  });
 
 $(window).on('load', function () {
-    // initialization of header
-    $.HSCore.components.HSHeader.init($('#js-header'));
-    $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-    // initialization of HSMegaMenu component
-    $('.js-mega-menu').HSMegaMenu({
-        event: 'hover',
-        pageContainer: $('.container'),
-        breakpoint: 991
-    });
-
-    $('#dropdown-megamenu').HSMegaMenu({
-        event: 'hover',
-        pageContainer: $('.container'),
-        breakpoint: 767
-    });
-    
     
     $('.sx-search-btn').click(function() {
         if ($(this).hasClass('sx-search-form-close')){
@@ -119,7 +95,7 @@ if ($models)
             ],
             'extensions' =>
                 [
-                    "fx-menu-slide", "shadow-page", "shadow-panels", "position-right", "pagedim-black", "theme-dark"
+                    "fx-panels-slide-100", "shadow-page", "shadow-panels", "position-right", "pagedim-black", "theme-dark"
                     /*
                     'shadow-page',
                     'shadow-panels',
@@ -162,28 +138,28 @@ if ($models)
     <header id="js-header" class="u-shadow-v19 u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
         <!-- Top Bar -->
 
-        <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+        <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="g-py-0">
             <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
                 <div class="container">
-                    <!-- Responsive Toggle Button -->
-                    <a href="#sx-menu" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-0 g-right-0">
+                            <!-- Responsive Toggle Button -->
+                            <a href="#sx-menu" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-0 g-right-0">
                         <span class="hamburger">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
                         </span>
-                    </a>
-                    <!-- End Responsive Toggle Button -->
+                            </a>
+                            <!-- End Responsive Toggle Button -->
 
-                    <!-- Logo -->
-                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
-                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                    </a>
-                    <!-- End Logo -->
-                    <div class="d-inline-block g-pos-abs g-top-0 g-pt-0 g-right-110 sx-search-btn-block">
-                        <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
-                    </div>
-                    <?= @$content; ?>
+                            <!-- Logo -->
+                            <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
+                                <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                            </a>
+                            <!-- End Logo -->
+                            <div class="d-inline-block g-pos-abs g-top-0 g-pt-0 g-right-110 sx-search-btn-block">
+                                <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                            <?= @$content; ?>
                 </div>
             </nav>
         </div>
@@ -191,15 +167,14 @@ if ($models)
             <form action="/search" method="get" style="margin-bottom: 0px;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-10 col-9">
-                            <label for="search" class="sr-only">Поиск</label>
-                            <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                                   name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                   value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
-                        </div>
-                        <div class="col-sm-3 g-pl-0 col-3">
-                            <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
-                        </div>
+                            <div class="input-group">
+                                <input placeholder="Поиск..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                       value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
+                                <div class="input-group-append">
+                                    <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit">Найти</button>
+                                </div>
+                            </div>
+
                     </div>
                 </div>
             </form>
