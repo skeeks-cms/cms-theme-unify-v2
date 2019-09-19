@@ -10,6 +10,14 @@
 
 \skeeks\yii2\mmenu\MenuAsset::register($this);
 
+$this->registerJs(<<<JS
+    /* Перемещаем модальное окно в конец body. */
+    $('.modal').on('shown.bs.modal', function (e) {
+        $(this).appendTo("body")
+    });
+    
+JS
+);
 ?>
 <? $items = [
 ];

@@ -136,17 +136,6 @@
         }
     }
 
-    /* Перемещаем модальное окно в конец body. */
-    $('body').on("click", ".btn", function()
-    {
-        if ($(this).data('toggle') == 'modal')
-        {
-            var modalBlock = $(this).attr('href');
-            $(modalBlock).appendTo('body');
-            return true;
-        }
-    });
-
 })(sx, sx.$, sx._);
 
 
