@@ -465,7 +465,7 @@ body {
 @media (max-width: 768px) {
     .sx-search-form {
         background: #fff;
-        padding: 15px 0;
+        padding: 15px;
         position: absolute;
         top: -100px;
         left:0;
@@ -473,6 +473,7 @@ body {
         z-index: 1;
     }
 }
+
 .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
     font-size: 1.9rem !important;
 }
@@ -535,9 +536,4 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 }
 .u-btn-primary, a.g-bg-primary {
     color: #fff !important;
-}
-@media (max-width: 768px) {
-    .sx-search-form {
-        padding: 15px;
-    }
 }
