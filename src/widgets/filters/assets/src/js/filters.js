@@ -15,12 +15,12 @@
                 $(this).closest('form').submit();
 
             });
-            $('.sx-btn-filter').click(function () {
+            $('body').on("click", ".sx-btn-filter", function() {
                 $('.sx-filters-block').animate({left: '0'});
                 return false;
             });
-            
-            $('.sx-mobile-filters-hide').click(function () {
+
+            $('body').on("click", ".sx-mobile-filters-hide", function() {
                 $('.sx-filters-block').animate({left: '-100%'});
                 return false;
             })
