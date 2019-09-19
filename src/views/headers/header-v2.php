@@ -99,8 +99,8 @@ JS
                 <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
                     <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </div>
-                <div class="sx-search-form g-mt-8" style="top: -120px; position: absolute; width: 500px;right:0;z-index: 1; background: #fff; padding: 15px;border-top: 2px solid #000;">
-                    <form action="/search" method="get" style="margin-bottom: 0px;">
+                <div class="sx-search-form sx-invisible-search-block g-mt-8">
+                    <form action="/search" method="get" class="g-mb-0">
                         <div class="container">
                             <div class="row">
                                 <div class="input-group">

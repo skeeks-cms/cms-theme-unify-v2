@@ -456,6 +456,11 @@ body {
 .sx-main-menu ul {
     margin-left: 0 !important;
 }
+/* Поисковый блок, выезжающий в шапке */
+.sx-invisible-search-block
+{
+    top: -120px; position: absolute; width: 500px;right:0;z-index: 1; background: #fff; padding: 15px;border-top: 2px solid #000;
+}
 /* Поисковый блок на мобильной версии */
 @media (max-width: 768px) {
     .sx-search-form {

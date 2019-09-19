@@ -138,7 +138,8 @@
     }
 
     /* Перемещаем модальное окно в конец body. */
-    $('.btn').click(function () {
+    $('body').on("click", ".btn", function()
+    {
         if ($(this).data('toggle') == 'modal')
         {
             var modalBlock = $(this).attr('href');
