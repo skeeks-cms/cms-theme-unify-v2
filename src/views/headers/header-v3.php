@@ -38,20 +38,6 @@ $(window).on('load', function () {
         pageContainer: $('.container'),
         breakpoint: 767
     });
-    
-    $('.sx-search-btn').click(function() {
-        if ($(this).hasClass('sx-search-form-close')){
-            $('.sx-search-form').animate({top: '-120px'});
-            $('.sx-search-btn').removeClass('sx-search-form-close');
-            return false;
-        }
-        else {
-            $('.sx-search-form').animate({top: '100%'});
-            $('.sx-search-btn').addClass('sx-search-form-close');
-            return false;
-        }
-       
-    });
 
 });
 JS
@@ -131,7 +117,24 @@ JS
                     ]); ?>
                 </div>
                 <!-- End Navigation -->
-                <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                <? if (\Yii::$app->view->theme->is_show_search_block) :
+                    $this->registerJs(<<<JS
+                    $('body').on('click','.sx-search-btn', function() {
+                        if ($(this).hasClass('sx-search-form-close')){
+                            $('.sx-search-form').animate({top: '-120px'});
+                            $('.sx-search-btn').removeClass('sx-search-form-close');
+                            return false;
+                        }
+                        else {
+                            $('.sx-search-form').animate({top: '100%'});
+                            $('.sx-search-btn').addClass('sx-search-form-close');
+                            return false;
+                        }
+                       
+                    });
+JS
+);
+                    ?>
                     <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
                         <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </div>

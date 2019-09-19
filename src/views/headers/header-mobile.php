@@ -8,31 +8,7 @@
 /* @var $this yii\web\View */
 /* @see https://htmlstream.com/public/preview/unify-v2.6.1/unify-main/shortcodes/headers/classic-header--topbar-1.html */
 
-\skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
-\skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 \skeeks\yii2\mmenu\MenuAsset::register($this);
-$this->registerJs(<<<JS
-
-
-$(window).on('load', function () {
-    
-    $('.sx-search-btn').click(function() {
-        if ($(this).hasClass('sx-search-form-close')){
-            $('.sx-search-form').animate({top: '-100px'});
-            $('.sx-search-btn').removeClass('sx-search-form-close');
-            return false;
-        }
-        else {
-            $('.sx-search-form').animate({top: '100%'});
-            $('.sx-search-btn').addClass('sx-search-form-close');
-            return false;
-        }
-       
-    });
-    
-});
-JS
-);
 
 ?>
 <? $items = [
@@ -159,7 +135,27 @@ if ($models)
                 </div>
             </nav>
         </div>
-        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+        <? if (\Yii::$app->view->theme->is_show_search_block) :
+            $this->registerJs(<<<JS
+    
+               $('body').on('click','.sx-search-btn', function() {
+                    if ($(this).hasClass('sx-search-form-close')){
+                        $('.sx-search-form').animate({top: '-100px'});
+                        $('.sx-search-btn').removeClass('sx-search-form-close');
+                        return false;
+                    }
+                    else {
+                        $('.sx-search-form').animate({top: '100%'});
+                        $('.sx-search-btn').addClass('sx-search-form-close');
+                        return false;
+                    }
+                   
+                });
+    
+JS
+            );
+
+            ?>
         <div  class="sx-search-form" style="top: -100px;">
             <form action="/search" method="get" style="margin-bottom: 0px;">
                 <div class="container">
