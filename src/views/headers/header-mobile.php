@@ -157,7 +157,7 @@ JS
 
             ?>
         <div  class="sx-search-form" style="top: -100px;">
-            <form action="/search" method="get" style="margin-bottom: 0px;">
+            <form action="/search" method="get" class="g-mb-0">
                 <div class="container">
                     <div class="row">
                             <div class="input-group">
