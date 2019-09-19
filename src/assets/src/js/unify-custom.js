@@ -118,7 +118,6 @@
 
 
     $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-    $.HSCore.components.HSCarousel.init('.js-carousel');
 
     $.HSCore.components.HSPopup.init('.js-fancybox-media', {
         helpers: {
