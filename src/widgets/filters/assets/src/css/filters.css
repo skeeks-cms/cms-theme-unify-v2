@@ -181,5 +181,31 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     border-radius: 0px;
     margin-bottom: 5px;
 }
+/* Фильтры для мобильной версии. Показываются по клику поверх всего содержимого окна.  */
+.sx-btn-filter, .sx-mobile-filters-hide {
+    display: none;
+}
+@media (max-width: 450px) {
+    .sx-filters-block {
+        display: block;
+        position: fixed;
+        z-index: 600;
+        width: 100%;
+        background: white;
+        height: 100%;
+        padding: 10px 20px;
+        left: -100%;
+        top: 0;
+        overflow: auto;
+    }
 
+    .sx-mobile-filters-hide {
+        float: right;
+        font-size: 2rem;
+        line-height: 1rem;
+    }
 
+    .sx-btn-filter, .sx-mobile-filters-hide {
+        display: block;
+    }
+}

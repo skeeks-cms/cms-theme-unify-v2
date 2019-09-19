@@ -117,6 +117,44 @@ JS
                     ]); ?>
                 </div>
                 <!-- End Navigation -->
+                <? if (\Yii::$app->view->theme->is_show_search_block) :
+                    $this->registerJs(<<<JS
+                    $('body').on('click','.sx-search-btn', function() {
+                        if ($(this).hasClass('sx-search-form-close')){
+                            $('.sx-search-form').animate({top: '-120px'});
+                            $('.sx-search-btn').removeClass('sx-search-form-close');
+                            return false;
+                        }
+                        else {
+                            $('.sx-search-form').animate({top: '100%'});
+                            $('.sx-search-btn').addClass('sx-search-form-close');
+                            return false;
+                        }
+                       
+                    });
+JS
+);
+                    ?>
+                    <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
+                        <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="sx-search-form g-mt-8 sx-invisible-search-block">
+                        <form action="/search" method="get" class="g-mb-0">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input placeholder="Поиск..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit">Найти</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                <? endif; ?>
                 <?= @$content; ?>
             </div>
         </nav>

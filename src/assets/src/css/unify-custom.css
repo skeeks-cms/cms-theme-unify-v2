@@ -22,6 +22,10 @@ h6,
 /**
  * Unify custom css
  */
+#navBar {
+    max-width: 100%;
+    overflow: auto;
+}
 .navbar-brand .sx-logo-text{
     bottom: 7px;
     /*letter-spacing: 3px;*/
@@ -371,6 +375,7 @@ body {
 .sorting .in-stock {
     float: right;
     margin-top: 4px !important;
+    margin-bottom: 0;
 }
 
 .sorting .in-stock label {
@@ -446,4 +451,89 @@ body {
     padding: 10px;
     color: white;
     margin-top: 20px;
+}
+
+.sx-main-menu ul {
+    margin-left: 0 !important;
+}
+/* Поисковый блок, выезжающий в шапке */
+.sx-invisible-search-block
+{
+    top: -120px; position: absolute; width: 500px;right:0;z-index: 1; background: #fff; padding: 15px;border-top: 2px solid #000;
+}
+/* Поисковый блок на мобильной версии */
+@media (max-width: 768px) {
+    .sx-search-form {
+        background: #fff;
+        padding: 15px;
+        position: absolute;
+        top: -100px;
+        left:0;
+        right:0;
+        z-index: 1;
+    }
+}
+
+.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
+    font-size: 1.9rem !important;
+}
+@media (min-width: 1024px) {
+    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
+        font-size: 1.4rem !important;
+    }
+}
+/* Поднять меню на планшете */
+@media (max-width: 1024px) AND (min-width: 768px) {
+    .hamburger {
+        padding-top: 0;
+    }
+}
+/* Настройки меню */
+html.mm-right .mm-menu.mm-fx-menu-slide {
+    z-index: 502;
+}
+
+.mm-opened .u-header--sticky-top {
+    position: relative !important;
+}
+.mm-opened .sx-header-sticky-margin {
+    margin-top: 0 !important;
+}
+.hamburger {
+    padding: 10px;
+}
+/* Уменьшаем размер шрифта для мобилльной версии  */
+@media (max-width: 768px) {
+    .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3;
+    }
+    .h1, h1 {
+        font-size: 1.5rem;
+    }
+    .h2, h2 {
+        font-size: 1.4rem;
+    }
+
+}
+@media (max-width: 1024px) {
+    .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
+        line-height: 1.4;
+    }
+    .h1, h1 {
+        font-size: 2rem;
+    }
+    .h2, h2 {
+        font-size: 1.75rem;
+    }
+
+}
+/* Правки для меню мобильной версии */
+.mm-menu.mm-shadow-page:after {
+    box-shadow: none !important;
+}
+#mm-blocker {
+    z-index: 501 !important;
+}
+.u-btn-primary, a.g-bg-primary {
+    color: #fff !important;
 }

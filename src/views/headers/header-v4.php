@@ -11,14 +11,6 @@
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 
-$this->registerCss(<<<CSS
-.sx-main-menu ul {
-margin-left: 0 !important;
-}
-CSS
-);
-
-
 $this->registerJs(<<<JS
 
 // initialization of HSDropdown component
@@ -40,13 +32,12 @@ $(window).on('load', function () {
         breakpoint: 991
     });
 
-
     $('#dropdown-megamenu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 767
     });
-
+    
 });
 JS
 );
@@ -107,19 +98,23 @@ JS
                         <!-- End Logo -->
                     </div>
                     <div class="col-md-6 col-sm-4">
-                        <form action="/search" method="get" style="margin-bottom: 0px;">
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <label for="search" class="sr-only">Поиск</label>
-                                    <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                                           name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                           value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                        <div class="sx-search-form">
+                            <form action="/search" method="get" style="margin-bottom: 0px;">
+                                <div class="row">
+                                    <div class="col-sm-10 col-9">
+                                        <label for="search" class="sr-only">Поиск</label>
+                                        <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                                               name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                                    </div>
+                                    <div class="col-sm-2 g-pl-10 col-3">
+                                        <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
+                                    </div>
                                 </div>
-                                <div class="col-sm-2 g-pl-10">
-                                    <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0">Найти</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 ">
                         <div class="pull-right">

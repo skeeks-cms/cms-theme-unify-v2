@@ -246,7 +246,8 @@ CSS
             \Yii::$app->view->registerCss(<<<CSS
                 .hs-sub-menu,
                 .sx-main-menu-wrapper .hs-sub-menu,
-                .sx-main-menu-wrapper
+                .sx-main-menu-wrapper,
+                .mm-menu.mm-theme-dark
                 {
             background: linear-gradient(to right, {$bgColor1} 12%, {$bgColor2}) !important;
         }
@@ -258,9 +259,18 @@ CSS
         $fz = \Yii::$app->view->theme->menu_font_size;
         \Yii::$app->view->registerCss(<<<CSS
                 .sx-main-menu-wrapper .nav-link,
-                .sx-main-menu-wrapper a {
+                .sx-main-menu-wrapper a,
+                .mm-menu.mm-theme-dark,
+                .mm-menu.mm-theme-dark .mm-navbar a,
+                .mm-menu.mm-theme-dark .mm-navbar>*,
+                .mm-listview .mm-next, .mm-listview .mm-prev {
             color: {$color} !important;
             font-size: {$fz} !important;
+        }
+            .mm-menu.mm-theme-dark .mm-btn:after,
+            .mm-menu.mm-theme-dark .mm-btn:before,
+            .mm-menu.mm-theme-dark .mm-listview>li .mm-next:after{
+                border-color: {$color} !important;
         }
 CSS
         );
@@ -496,6 +506,11 @@ CSS
      * @var bool
      */
     public $isShowBottomBlock = true;
+
+    /**
+     * @var bool
+     */
+    public $is_show_search_block = false;
 
 
     protected $_bodyCssClass = null;
