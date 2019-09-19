@@ -7,4 +7,4 @@
  */
 /* @var $this yii\web\View */
 ?>
-<?= $this->render('@app/views/footers/footer-' . $this->theme->footer . '.php'); ?>
+<?= $this->render('@app/views/footers/footer-' . $this->theme->footer); ?>
