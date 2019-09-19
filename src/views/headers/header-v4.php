@@ -98,7 +98,8 @@ JS
                         <!-- End Logo -->
                     </div>
                     <div class="col-md-6 col-sm-4">
-                        <div  class="sx-search-form">
+                        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                        <div class="sx-search-form">
                             <form action="/search" method="get" style="margin-bottom: 0px;">
                                 <div class="row">
                                     <div class="col-sm-10 col-9">
@@ -113,6 +114,7 @@ JS
                                 </div>
                             </form>
                         </div>
+                        <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 ">
                         <div class="pull-right">
@@ -170,9 +172,7 @@ JS
 
                 </div>
                 <!-- End Navigation -->
-                <div class="d-inline-block g-pos-abs g-top-15 g-right-110 g-pos-rel--lg g-top-0--lg g-right-0--lg g-valign-middle g-ml-30 g-ml-0--lg sx-search-btn-block">
-                    <a href="#" class="sx-search-btn g-font-size-20"><i class="fa fa-search" aria-hidden="true"></i></a>
-                </div>
+
                 <?= @$content; ?>
 
             </div>

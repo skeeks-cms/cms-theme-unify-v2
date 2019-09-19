@@ -28,6 +28,20 @@ $(window).on('load', function () {
         breakpoint: 767
     });
     
+    $('.sx-search-btn').click(function() {
+        if ($(this).hasClass('sx-search-form-close')){
+            $('.sx-search-form').animate({top: '-100px'});
+            $('.sx-search-btn').removeClass('sx-search-form-close');
+            return false;
+        }
+        else {
+            $('.sx-search-form').animate({top: '100%'});
+            $('.sx-search-btn').addClass('sx-search-form-close');
+            return false;
+        }
+       
+    });
+    
 });
 JS
 );
@@ -77,11 +91,31 @@ JS
             <?= @$content; ?>
 
             <!-- Search -->
+            <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
+                    <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </div>
+                <div class="sx-search-form g-mt-8" style="top: -120px; position: absolute; width: 500px;right:0;z-index: 1; background: #fff; padding: 15px;border-top: 2px solid #000;">
+                    <form action="/search" method="get" style="margin-bottom: 0px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="input-group">
+                                    <input placeholder="Поиск..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                           value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit">Найти</button>
+                                    </div>
+                                </div>
 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <? endif; ?>
             <div class="sx-header-auth g-pos-abs g-top-18 g-right-65 g-pos-rel--lg g-top-0--lg g-right-0--lg g-pt-3--lg g-ml-30 g-ml-0--lg">
 
                 <? if (\Yii::$app->user->isGuest) : ?>
-                    <a class="d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fa fa-sign-in"></i> Вход</a>
+                    <a class="sx-login-block d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fa fa-user-o"></i></a>
                 <? else : ?>
 
                     <!-- Top User -->

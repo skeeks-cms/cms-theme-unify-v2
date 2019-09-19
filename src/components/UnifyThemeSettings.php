@@ -101,6 +101,11 @@ class UnifyThemeSettings extends Component
     public $header = 'v1';
 
     /**
+     * @var bool
+     */
+    public $is_show_search_block = false;
+
+    /**
      * @var string
      */
     public $header_shadow = 'u-shadow-v19';
@@ -313,6 +318,7 @@ class UnifyThemeSettings extends Component
             ],
             [
                 [
+                    'is_show_search_block',
                     'body_begin_image_height_tree',
                     'body_begin_image_height_element',
                     'news_list_count_columns',
@@ -355,6 +361,7 @@ class UnifyThemeSettings extends Component
 
             'header'        => "Вариант отображения шапки",
             'header_shadow' => "Тень шапки",
+            'is_show_search_block'  => "Добавить поисковый блок в шапку",
             'is_header_sticky' => "Зафиксировать шапку к верху экрана?",
             'is_header_sticky_margin' => "Если шапка фиксирована, добавлять отступ?",
 
@@ -393,6 +400,7 @@ class UnifyThemeSettings extends Component
             'header_shadow' => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
             'body_outer'    => "Задается для центрированных сайтов",
             'is_header_sticky'    => "Фиксированная шапка будет растянута на весь экран",
+            'is_show_search_block'        => 'При выборе "Да", в шапке будет выведен поисковый блок',
         ]);
     }
 
@@ -501,7 +509,7 @@ class UnifyThemeSettings extends Component
                             'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
                             'v2' => 'Вариант 2 (лого, меню, авторизация, прижат к верху)',
                             'v3' => 'Вариант 3 (не высокий тулбар, лого и меню прижат к верху)',
-                            'v4' => 'Вариант 4 (лого, меню, авторизация, поиск, телефоны, прижат к верху)',
+                            'v4' => 'Вариант 4 (лого, меню, авторизация, телефоны, прижат к верху)',
                         ],
                     ],
 
@@ -558,7 +566,9 @@ class UnifyThemeSettings extends Component
                         ],
                     ],
 
-
+                    'is_show_search_block' => [
+                        'class' => BoolField::class,
+                    ],
 
 
                     'is_header_sticky' => [

@@ -507,6 +507,11 @@ CSS
      */
     public $isShowBottomBlock = true;
 
+    /**
+     * @var bool
+     */
+    public $is_show_search_block = false;
+
 
     protected $_bodyCssClass = null;
     /**

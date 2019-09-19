@@ -84,18 +84,18 @@ if ($models)
     <?= skeeks\yii2\mmenu\Menu::widget([
         'id'    => 'sx-menu',
         'clientOptions'    => [
-            'pageScroll'    => true,
             //'slidingSubmenus'   =>  false,
             'navbar'    => [
                 'title' => 'Меню',
             ],
             //'setSelected'   =>  true,
             'offCanvas' => [
-                'position' => "right"
+                'position' => "right",
+                'pageSelector' => "#mm-0"
             ],
             'extensions' =>
                 [
-                    "fx-panels-slide-100", "shadow-page", "shadow-panels", "position-right", "pagedim-black", "theme-dark"
+                    "fx-panels-slide-100","position-right","theme-dark"
                     /*
                     'shadow-page',
                     'shadow-panels',
@@ -103,17 +103,11 @@ if ($models)
                     "fx-panels-slide-0",
                     "border-none", "fullscreen", "position-right"*/
                 ],
-            'dragOpen' => true,
-            'drag' => [
-                'page' =>
-                    [
-                        'open' => true,
-                    ],
-                'panels' =>
-                    [
-                        'close' => true,
-                    ]
+            'dragOpen' => [
+                'open' => true,
+                'pageNode'  =>  "#mm-0"
             ],
+
             'navbars' =>
                 [
                     "position" => "bottom",
@@ -156,13 +150,16 @@ if ($models)
                                 <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                             </a>
                             <!-- End Logo -->
+                            <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                             <div class="d-inline-block g-pos-abs g-top-0 g-pt-0 g-right-110 sx-search-btn-block">
                                 <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
                             </div>
+                            <? endif; ?>
                             <?= @$content; ?>
                 </div>
             </nav>
         </div>
+        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
         <div  class="sx-search-form" style="top: -100px;">
             <form action="/search" method="get" style="margin-bottom: 0px;">
                 <div class="container">
@@ -179,6 +176,7 @@ if ($models)
                 </div>
             </form>
         </div>
+        <? endif; ?>
     </header>
 
     <!-- End Header -->

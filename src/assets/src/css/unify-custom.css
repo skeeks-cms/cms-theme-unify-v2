@@ -22,6 +22,10 @@ h6,
 /**
  * Unify custom css
  */
+#navBar {
+    max-width: 100%;
+    overflow: auto;
+}
 .navbar-brand .sx-logo-text{
     bottom: 7px;
     /*letter-spacing: 3px;*/
@@ -453,13 +457,7 @@ body {
     margin-left: 0 !important;
 }
 /* Поисковый блок на мобильной версии */
-.sx-search-btn-block {
-    display: none !important;
-}
 @media (max-width: 768px) {
-    .sx-search-btn-block {
-        display: inline-block !important;
-    }
     .sx-search-form {
         background: #fff;
         padding: 15px 0;
@@ -470,8 +468,13 @@ body {
         z-index: 1;
     }
 }
-.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger {
+.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
     font-size: 1.9rem !important;
+}
+@media (min-width: 1024px) {
+    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
+        font-size: 1.4rem !important;
+    }
 }
 /* Поднять меню на планшете */
 @media (max-width: 1024px) AND (min-width: 768px) {
