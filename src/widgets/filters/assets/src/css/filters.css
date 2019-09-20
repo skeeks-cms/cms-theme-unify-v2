@@ -185,7 +185,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 .sx-btn-filter, .sx-mobile-filters-hide {
     display: none;
 }
-@media (max-width: 450px) {
+@media (max-width: 766px) {
     .sx-filters-block {
         display: block;
         position: fixed;

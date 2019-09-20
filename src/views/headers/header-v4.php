@@ -15,9 +15,7 @@ $this->registerJs(<<<JS
 
 // initialization of HSDropdown component
   $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-    afterOpen: function(){
-      $(this).find('input[type="search"]').focus();
-    }
+    
   });
 
 $(window).on('load', function () {

@@ -7,10 +7,15 @@
  */
 /* @var $this yii\web\View */
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
+\skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
+
 //$this->theme->bodyCssClass = $this->theme->bodyCssClass . " g-mt-80";
 
 $this->registerJs(<<<JS
 $(window).on('load', function () {
+    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+    
+  });
     // initialization of header
     $.HSCore.components.HSHeader.init($('#js-header'));
     $.HSCore.helpers.HSHamburgers.init('.hamburger');

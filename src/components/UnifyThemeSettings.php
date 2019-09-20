@@ -38,6 +38,11 @@ class UnifyThemeSettings extends Component
     /**
      * @var string
      */
+    public $mobile_logo = '';
+
+    /**
+     * @var string
+     */
     public $logo_text = '';
 
     /**
@@ -260,6 +265,7 @@ class UnifyThemeSettings extends Component
                     'logo',
                     'footer_logo',
                     'logo_text',
+                    'mobile_logo',
                     'favicon',
                     'address',
                     'title',
@@ -335,6 +341,7 @@ class UnifyThemeSettings extends Component
             'logo'        => "Логотип",
             'footer_logo' => "Логотип для футера",
             'logo_text'   => "Текст для логотипа",
+            'mobile_logo' => "Логотип для мобильного телефона",
             'favicon'     => "Фавикон",
 
             'title'      => "Короткое название сайта",
@@ -397,6 +404,7 @@ class UnifyThemeSettings extends Component
             'menu_color2'   =>  'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
             'footer'        => "Нижняя часть сайта",
             'footer_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
+            'mobile_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'header_shadow' => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
             'body_outer'    => "Задается для центрированных сайтов",
             'is_header_sticky'    => "Фиксированная шапка будет растянута на весь экран",
@@ -435,6 +443,10 @@ class UnifyThemeSettings extends Component
                     ],
                     'logo_text',
                     'footer_logo' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => OneImage::class,
+                    ],
+                    'mobile_logo' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
