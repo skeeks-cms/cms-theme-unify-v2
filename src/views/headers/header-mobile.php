@@ -7,9 +7,6 @@
  */
 /* @var $this yii\web\View */
 /* @see https://htmlstream.com/public/preview/unify-v2.6.1/unify-main/shortcodes/headers/classic-header--topbar-1.html */
-
-\skeeks\yii2\mmenu\MenuAsset::register($this);
-
 $this->registerJs(<<<JS
     /* Перемещаем модальное окно в конец body. */
     $('.modal').on('shown.bs.modal', function (e) {
