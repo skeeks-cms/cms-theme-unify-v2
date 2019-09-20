@@ -274,6 +274,10 @@ CSS
             color: {$color} !important;
             font-size: {$fz} !important;
         }
+        
+        .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+            background-color: {$color} !important;
+        }
             .mm-menu.mm-theme-dark .mm-btn:after,
             .mm-menu.mm-theme-dark .mm-btn:before,
             .mm-menu.mm-theme-dark .mm-listview>li .mm-next:after{
@@ -315,6 +319,11 @@ CSS
      * @var string
      */
     public $footer_logo = '';
+
+    /**
+     * @var string
+     */
+    public $mobile_logo = '';
 
     /**
      * @var string
