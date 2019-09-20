@@ -16,6 +16,7 @@ use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use yii\base\Theme;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
+use yii\web\View;
 
 /**
  * @property string      $favicon путь к фавиконке
@@ -177,11 +178,15 @@ class UnifyTheme extends Theme
         }
 
 
-        \Yii::$app->view->registerCssFile($newFilePublic, [
-            'depends' => [
-                UnifyThemeAsset::class
-            ]
-        ]);
+        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function() use ($newFilePublic) {
+            \Yii::$app->view->registerCssFile($newFilePublic, [
+                'depends' => [
+                    UnifyThemeAsset::class
+                ]
+            ]);
+        });
+
+
         //\Yii::$app->view->registerCss($content);
 
 
@@ -203,11 +208,13 @@ class UnifyTheme extends Theme
         }
 
 
-        \Yii::$app->view->registerCssFile($newFilePublic2, [
-            'depends' => [
-                UnifyThemeAsset::class
-            ]
-        ]);
+        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function() use ($newFilePublic2) {
+            \Yii::$app->view->registerCssFile($newFilePublic2, [
+                'depends' => [
+                    UnifyThemeAsset::class
+                ]
+            ]);
+        });
 
         if (\Yii::$app->view->theme->body_bg_image) {
             $bgImage = \Yii::$app->view->theme->body_bg_image;

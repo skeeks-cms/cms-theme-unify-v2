@@ -26,7 +26,7 @@ class FiltersWidgetAsset extends AssetBundle
     ];
     public $depends = [
         //UnifyThemeShopAsset::class,
-        UnifyDefaultAsset::class,
+        //UnifyDefaultAsset::class,
         UnifyIoRangeSliderAsset::class,
     ];
 }
