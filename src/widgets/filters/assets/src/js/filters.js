@@ -23,7 +23,12 @@
             $('body').on("click", ".sx-mobile-filters-hide", function() {
                 $('.sx-filters-block').animate({left: '-100%'});
                 return false;
-            })
+            });
+
+            $('body').on("click", ".sx-btn-sort", function () {
+                $('.sorting').fadeToggle();
+                return false;
+            });
         }
     });
 })(sx, sx.$, sx._);

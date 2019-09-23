@@ -116,27 +116,28 @@ if ($models)
         <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="g-py-0">
             <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
                 <div class="container">
-                            <!-- Responsive Toggle Button -->
-                            <a href="#sx-menu" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-0 g-right-0">
-                        <span class="hamburger">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
+                    <!-- Logo -->
+                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
+                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                    </a>
+                    <div class="pull-right">
+                        <!-- End Logo -->
+                        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                        <div class="d-inline-block sx-search-btn-block g-mr-10 g-valign-middle">
+                            <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                        <? endif; ?>
+                        <?= @$content; ?>
+                        <!-- Responsive Toggle Button -->
+                        <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-pt-10 g-valign-middle">
+                            <span class="hamburger">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
                             </span>
-                        </span>
-                            </a>
-                            <!-- End Responsive Toggle Button -->
-
-                            <!-- Logo -->
-                            <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
-                                <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                            </a>
-                            <!-- End Logo -->
-                            <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
-                            <div class="d-inline-block g-pos-abs g-top-0 g-pt-0 g-right-110 sx-search-btn-block">
-                                <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            </div>
-                            <? endif; ?>
-                            <?= @$content; ?>
+                        </a>
+                        <!-- End Responsive Toggle Button -->
+                    </div>
                 </div>
             </nav>
         </div>
