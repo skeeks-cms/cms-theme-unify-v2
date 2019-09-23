@@ -329,11 +329,21 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 /* Фильтры для мобильной версии. Показываются по клику поверх всего содержимого окна.  */
 /* Сортировка */
 @media (max-width: 766px) {
+
+    .sorting {
+        border: 1px solid #000;
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        background: #fff;
+        z-index: 500;
+    }
     .sx-filters-form .lbl {
         display: none;
     }
     .sorting.sx-filters-form {
         display: none;
+
     }
     .sorting .sx-filter-action, .sorting .sort .vals a {
         display: block;
@@ -341,11 +351,15 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         margin-top: 10px;
         float: none;
     }
+    .sorting .checkbox {
+        padding-left: 10px;
+    }
 }
 /* Блок фильтров */
 .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort {
     display: none;
 }
+
 @media (max-width: 766px) {
     .sx-filters-block {
         display: block;
@@ -368,5 +382,9 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 
     .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort {
         display: block;
+    }
+
+    .sx-btn-sort {
+        border:1px solid #000; border-radius: 0;
     }
 }
