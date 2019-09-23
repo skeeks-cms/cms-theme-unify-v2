@@ -126,7 +126,7 @@ $widget = $this->context;
 <!--js-scrollbar g-height-280-->
 <div class="sx-filters-block">
     <div>
-        <a href="#" class="sx-mobile-filters-hide">&#65794;</a>
+        <a href="#" class="sx-mobile-filters-hide"><i class="fa fa-close g-font-weight-100 g-font-size-12"></i></a>
         <h2 class="h5 u-heading-v3__title g-font-weight-600 text-uppercase g-brd-primary ">
             Фильтры
         </h2>
