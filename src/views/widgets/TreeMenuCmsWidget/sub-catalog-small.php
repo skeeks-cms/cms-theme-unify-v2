@@ -10,31 +10,35 @@
 /* @var $models  \skeeks\cms\models\Tree[] */
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
-    <div class="col-md-12">
-        <!--g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4-->
-        <ul class="row sx-category-list-small list-inline nomargin g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4">
-            <? foreach ($models as $model) : ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!--g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4-->
+                <ul class="row sx-category-list-small list-inline nomargin g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4">
+                    <? foreach ($models as $model) : ?>
 
-                <li class="col-lg-2 col-md-3 col-sm-3 col-4 g-mb-10 g-mt-10">
-                    <div class="text-center">
-                        <a data-pjax="0" href="<?= $model->url; ?>" class="shop-item-image">
-                            <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
-                                new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                    'w' => 120,
-                                    'h' => 100,
-                                    'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
-                                ]), $model->code
-                            )); ?>
-                " alt="<?= $model->name; ?>">
-                        </a>
-                        <!--<div class="easy-block-v1-badge rgba-purple"><? /*= $model->name; */ ?></div>-->
-                        <div class="sx-caption-wrapper text-center">
-                            <a data-pjax="0" href="<?= $model->url; ?>" class="g-color-gray-dark-v2 g-font-weight-700 g-line-height-1" style="display: inherit;"><?= $model->name; ?></a>
-                        </div>
-                    </div>
-                </li>
+                        <li class="col-lg-2 col-md-3 col-sm-4 col-6 g-mb-10 g-mt-10">
+                            <div class="text-center">
+                                <a data-pjax="0" href="<?= $model->url; ?>" class="shop-item-image">
+                                    <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+                                        new \skeeks\cms\components\imaging\filters\Thumbnail([
+                                            'w' => 120,
+                                            'h' => 100,
+                                            'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
+                                        ]), $model->code
+                                    )); ?>
+                        " alt="<?= $model->name; ?>">
+                                </a>
+                                <!--<div class="easy-block-v1-badge rgba-purple"><? /*= $model->name; */ ?></div>-->
+                                <div class="sx-caption-wrapper text-center">
+                                    <a data-pjax="0" href="<?= $model->url; ?>" class="g-color-gray-dark-v2 g-font-weight-700 g-line-height-1" style="display: inherit;"><?= $model->name; ?></a>
+                                </div>
+                            </div>
+                        </li>
 
-            <? endforeach; ?>
-        </ul>
+                    <? endforeach; ?>
+                </ul>
+            </div>
+        </div>
     </div>
 <? endif; ?>
