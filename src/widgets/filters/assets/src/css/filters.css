@@ -339,6 +339,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         top:100%;
         background: #fff;
         z-index: 500;
+        border-radius: .25rem;
     }
     .sx-filters-form .lbl {
         display: none;
@@ -386,7 +387,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         display: block;
     }
 
-    .sx-btn-sort {
-        border:1px solid #000; border-radius: 0;
+    .sx-btn-sort, .sx-btn-filter {
+        border:1px solid #000;
     }
 }
