@@ -70,7 +70,7 @@ JS
                 </div>
 
 
-                <div class="col-auto g-pos-rel g-color-black sx-parners">
+                <div class="col-auto g-pos-rel g-color-black sx-parners g-font-size-14">
                     <? if ($this->theme->phone) : ?>
                         <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
                             <?= $this->theme->phone; ?>

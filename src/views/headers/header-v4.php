@@ -117,7 +117,7 @@ JS
                     <div class="col-md-3 col-sm-4 ">
                         <div class="pull-right">
                             <? if ($this->theme->phone) : ?>
-                                <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
+                                <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10 g-font-size-14">
                                     <?= $this->theme->phone; ?>
                                 </a>
                                 <br/>
@@ -125,7 +125,7 @@ JS
 
                             <? if ($this->theme->email) : ?>
 
-                                <a href="mailto:<?= $this->theme->email; ?>" target="_blank" title="Email для связи">
+                                <a href="mailto:<?= $this->theme->email; ?>" target="_blank" title="Email для связи" class="g-font-size-14">
                                     <?= $this->theme->email; ?>
                                 </a>
                             <? endif; ?>
