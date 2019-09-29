@@ -82,6 +82,7 @@
                     $contentNews = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one();
                 ?>
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                    'pageSize' => 12,
                     'namespace' => 'news',
                     'content_ids' => [
                         $contentNews ? $contentNews->id : ""

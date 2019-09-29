@@ -24,7 +24,7 @@ if ($this->theme->news_list_count_columns == 4) {
 ?>
 
 
-<div class="masonry-grid-item <?= $class; ?> g-mb-30">
+<div class="masonry-grid-item <?= $class; ?> g-mb-30 item">
     <!-- Blog Background Overlay Blocks -->
     <article class="u-block-hover">
         <div class="g-bg-cover g-bg-white-gradient-opacity-v1--after">
