@@ -110,6 +110,11 @@
 
                  return false;
             });
+
+
+            $('.sx-preloader').fadeOut('slow', function () {
+                $(this).remove();
+            });
         }
     });
 
@@ -136,6 +141,9 @@
         }
     }
 
+    
+    
+    
+    
+    
 })(sx, sx.$, sx._);
-
-

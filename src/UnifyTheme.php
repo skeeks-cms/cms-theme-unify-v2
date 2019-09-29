@@ -516,7 +516,7 @@ CSS
     /**
      * @var bool
      */
-    public $isShowLoader = false;
+    public $is_show_loader = false;
 
     /**
      * @var bool

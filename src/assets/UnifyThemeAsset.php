@@ -36,11 +36,11 @@ class UnifyThemeAsset extends UnifyAsset
     public $depends = [
         UnifyDefaultAsset::class,
 
-        UnifyHsMegamenuAsset::class,
-        UnifyHsHamburgersAsset::class,
+        //UnifyHsMegamenuAsset::class,
+        //UnifyHsHamburgersAsset::class,
         UnifyHsPopupAsset::class,
         UnifyHsOnscrollAnimationAsset::class,
-        UnifyHsStickyBlockAsset::class,
-        UnifyHsCarouselAsset::class,
+        //UnifyHsStickyBlockAsset::class,
+        //UnifyHsCarouselAsset::class,
     ];
 }

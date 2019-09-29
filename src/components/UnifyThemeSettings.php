@@ -130,6 +130,11 @@ class UnifyThemeSettings extends Component
     /**
      * @var bool
      */
+    public $is_show_loader = false;
+
+    /**
+     * @var bool
+     */
     public $is_image_body_begin = false;
     /**
      * @var int
@@ -317,6 +322,7 @@ class UnifyThemeSettings extends Component
                 [
                     'isShowBottomBlock',
                     'is_image_body_begin',
+                    'is_show_loader',
                     'is_header_sticky_margin',
                     'is_header_sticky',
                 ],
@@ -383,6 +389,7 @@ class UnifyThemeSettings extends Component
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
 
+            'is_show_loader'             => "Показывать индикатор загрузки перед загрузкой страницы?",
             'is_image_body_begin'             => "Показывать в начале страницы картинку из анонса?",
             'body_begin_image_height_tree'    => "Высота блока с картинкой в разделах",
             'body_begin_image_height_element' => "Высота блока с картинкой в новостях",
@@ -409,6 +416,7 @@ class UnifyThemeSettings extends Component
             'body_outer'    => "Задается для центрированных сайтов",
             'is_header_sticky'    => "Фиксированная шапка будет растянута на весь экран",
             'is_show_search_block'        => 'При выборе "Да", в шапке будет выведен поисковый блок',
+            'is_show_loader'        => 'Показывать индикатор загрузки?',
         ]);
     }
 
@@ -488,6 +496,9 @@ class UnifyThemeSettings extends Component
                         'class' => BoolField::class,
                     ],
 
+                    'is_show_loader' => [
+                        'class' => BoolField::class,
+                    ],
 
 
                     'main_theme_color1' => [
@@ -581,6 +592,8 @@ class UnifyThemeSettings extends Component
                     'is_show_search_block' => [
                         'class' => BoolField::class,
                     ],
+
+
 
 
                     'is_header_sticky' => [
@@ -747,8 +760,6 @@ class UnifyThemeSettings extends Component
                     ],
                 ],
             ],
-
-
         ];
     }
 

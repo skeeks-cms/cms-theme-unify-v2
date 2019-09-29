@@ -11,14 +11,9 @@
     <section class="g-bg-cover g-bg-size-cover g-bg-white-gradient-opacity-v1--after sx-body-begin-image-wrapper" data-bg-img-src="<?= $model->image ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                 'w' => 1920,
-                                'h' => 1080,
+                                'h' => 500,
                             ]), $model->code
-                        ) : $this->theme->body_begin_no_image; ?>" style="background-image: url('<?= $model->image ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
-                            new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                'w' => 1920,
-                                'h' => 1080,
-                            ]), $model->code
-                        ) : $this->theme->body_begin_no_image; ?>'); background: center;">
+                        ) : $this->theme->body_begin_no_image; ?>" style="background-position: center;">
         <div class="container text-center g-pos-rel g-z-index-1 g-pb-50">
             <div class="row d-flex justify-content-center align-content-end flex-wrap g-min-height-<?= $this->theme->body_begin_image_height_tree; ?>">
                 <div class="col-lg-10 mt-auto">

@@ -8,6 +8,8 @@
 /* @var $this yii\web\View */
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
+\skeeks\assets\unify\base\UnifyHsHamburgersAsset::register($this);
+\skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
 
 //$this->theme->bodyCssClass = $this->theme->bodyCssClass . " g-mt-80";
 
