@@ -29,6 +29,6 @@ class UnifyBootstrapPluginAsset extends BootstrapPluginAsset
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         UnifyPopperAsset::class,
-        JuiAsset::class,
+        //JuiAsset::class,
     ];
 }
