@@ -39,11 +39,13 @@ class UnifyTheme extends Theme
         ],
     ];
 
+    public static $is_ready = false;
     /**
      * @return bool
      */
     static public function isInitBeforeRender()
     {
+
         if (\skeeks\cms\backend\BackendComponent::getCurrent()) {
             return false;
         }
@@ -76,6 +78,11 @@ class UnifyTheme extends Theme
      */
     static public function initBeforeRender()
     {
+        if (self::$is_ready === true) {
+            return true;
+        }
+
+        self::$is_ready = true;
         /**
          * Для виджетов выбора времени
          */
