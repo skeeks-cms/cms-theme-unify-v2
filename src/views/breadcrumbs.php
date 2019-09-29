@@ -38,7 +38,7 @@ if (!isset($isShowLast)) {
                     <? else : ?>
                         <li class="list-inline-item g-mr-7" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             <a itemprop="item" href="<?= $data['url']; ?>" class="u-link-v5 g-color-main" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
-                            <i class="fa fa-angle-right g-ml-7"></i>
+                            <i class="fas fa-angle-right g-ml-7"></i>
                             <meta itemprop="name" content="<?= $data['name']; ?>">
                             <meta itemprop="position" content="<?= $counter; ?>" />
                         </li>

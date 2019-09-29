@@ -14,7 +14,7 @@
     <div class="g-pr-20 mb-0">
 
         <a class="g-color-black" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
-            <i class="fa fa-angle-right"></i>
+            <i class="fas fa-angle-right"></i>
             <?= $model->name; ?></a>
     </div>
 </li>

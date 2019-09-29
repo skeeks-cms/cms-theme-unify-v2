@@ -38,7 +38,7 @@ class UnifyDefaultAsset extends UnifyAsset
         //'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
         //'@vendor/fortawesome/font-awesome/css/all.min.css',
 
-        'assets/vendor/icon-awesome/css/font-awesome.min.css',
+        //'assets/vendor/icon-awesome/css/font-awesome.min.css',
         'assets/vendor/icon-hs/style.css',
         /*'assets/vendor/icon-awesome/css/font-awesome.min.css',
         'assets/vendor/icon-line/css/simple-line-icons.css',

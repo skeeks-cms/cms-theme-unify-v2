@@ -52,7 +52,7 @@ new sx.classes.Filters();
                 var text = $(this).closest('div').find('label').text(); 
                 
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'fa fa-times',
+                    'class' : 'fas fa-times',
                     'title' : 'Отменить выбранную опцию',
                 });
                 
@@ -87,7 +87,7 @@ new sx.classes.Filters();
                 var text = "от " + new Intl.NumberFormat('ru-RU').format(From) + " до " + new Intl.NumberFormat('ru-RU').format(To) + $(this).data('postfix'); 
                 
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'fa fa-times',
+                    'class' : 'fas fa-times',
                     'title' : 'Отменить выбранную опцию',
                 });
                 
@@ -119,19 +119,14 @@ new sx.classes.Filters();
 
 JS
 );
-if (\Yii::$app->mobileDetect->isMobile) {
-    $this->registerJs(<<<JS
-        $('.sx-sorting-block').append($('.sorting'));
-JS
-);
-}
+
 $widget = $this->context;
 ?>
 <!--<div id="stickyblock-start" class="js-scrollbar h-100 g-bg-white g-pa-5 js-sticky-block" data-start-point="#stickyblock-start" data-end-point=".sx-footer" data-has-sticky-header="true">-->
 <!--js-scrollbar g-height-280-->
 <div class="sx-filters-block">
     <div>
-        <a href="#" class="sx-mobile-filters-hide"><i class="fa fa-close g-font-weight-100 g-font-size-12"></i></a>
+        <a href="#" class="sx-mobile-filters-hide">&#65794;</a>
         <h2 class="h5 u-heading-v3__title g-font-weight-600 text-uppercase g-brd-primary ">
             Фильтры
         </h2>

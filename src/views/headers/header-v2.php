@@ -103,8 +103,8 @@ JS
 );
                 ?>
 
-                <div class="d-inline-block g-valign-middle g-mr-10 sx-search-btn-block">
-                    <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
+                    <a href="#" class="sx-search-btn"><i class="fas fa-search" aria-hidden="true"></i></a>
                 </div>
                 <div class="sx-search-form sx-invisible-search-block g-mt-8">
                     <form action="/search" method="get" class="g-mb-0">
@@ -123,10 +123,10 @@ JS
                     </form>
                 </div>
             <? endif; ?>
-            <div class="sx-header-auth d-inline-block">
+            <div class="sx-header-auth g-pos-abs g-top-18 g-right-65 g-pos-rel--lg g-top-0--lg g-right-0--lg g-pt-3--lg g-ml-30 g-ml-0--lg">
 
                 <? if (\Yii::$app->user->isGuest) : ?>
-                    <a class="sx-login-block d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fa fa-user-o"></i></a>
+                    <a class="sx-login-block d-block u-link-v5 g-color-white-opacity-0_8 g-font-weight-600" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>"><i class="fas fa-user"></i></a>
                 <? else : ?>
 
                     <!-- Top User -->

@@ -53,13 +53,13 @@ JS
             <div class="container">
                 <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                     <div class="col-auto">
-                        <i class="fa fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                        <i class="fas fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                         <a href="tel:<?= $this->theme->phone; ?>" class="g-color-white g-color-white--hover">
                             <?= $this->theme->phone; ?>
                         </a>
                     </div>
                     <div class="col-auto">
-                        <i class="fa fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                        <i class="fas fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                         <a href="mailto:<?= $this->theme->email; ?>" class="g-color-white g-color-white--hover">
                             <?= $this->theme->email; ?>
                         </a>
@@ -68,7 +68,7 @@ JS
                         <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
                             <? if (\Yii::$app->user->isGuest) : ?>
                                 <li class="list-inline-item g-mx-4">
-                                    <i class="fa fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                                    <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                                     <a class="g-color-white g-color-white--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">Вход</a>
                                 </li>
                                 <li class="list-inline-item g-mx-4">|</li>
@@ -77,7 +77,7 @@ JS
                                 </li>
                             <? else : ?>
                                 <li class="list-inline-item g-mx-4">
-                                    <i class="fa fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                                    <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
                                     <a class="g-color-white g-color-white--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>"><?= \Yii::$app->user->identity->displayName; ?></a>
                                 </li>
                             <? endif; ?>

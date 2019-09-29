@@ -24,7 +24,7 @@
                                    href="<?= $this->theme->vk; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-vk"></i>
+                                    <i class="fab fa-vk"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -35,7 +35,7 @@
                                    href="<?= $this->theme->youtube; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-youtube"></i>
+                                    <i class="fab fa-youtube"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -47,7 +47,7 @@
                                    href="<?= $this->theme->instagram; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-instagram"></i>
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -58,7 +58,7 @@
                                    href="<?= $this->theme->facebook; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-facebook"></i>
+                                    <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -99,7 +99,7 @@
                             <div class="d-flex g-mb-20">
                                 <div class="g-mr-10">
                                   <span class="u-icon-v3 u-icon-size--xs">
-                                    <i class="fa fa-map-marker"></i>
+                                    <i class="fas fa-map-marker"></i>
                                   </span>
                                 </div>
                                 <p class="mb-0"><?= $this->theme->address; ?></p>
@@ -112,7 +112,7 @@
                             <div class="d-flex g-mb-20">
                                 <div class="g-mr-10">
                               <span class="u-icon-v3 u-icon-size--xs">
-                                <i class="fa fa-phone"></i>
+                                <i class="fas fa-phone"></i>
                               </span>
                                 </div>
                                 <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
@@ -125,7 +125,7 @@
                             <div class="d-flex g-mb-20">
                                 <div class="g-mr-10">
                               <span class="u-icon-v3 u-icon-size--xs">
-                                <i class="fa fa-globe"></i>
+                                <i class="fas fa-globe"></i>
                               </span>
                                 </div>
                                 <p class="mb-0">

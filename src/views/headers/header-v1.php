@@ -97,7 +97,7 @@ JS
                                    href="<?= $this->theme->vk; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-vk"></i>
+                                    <i class="fab fa-vk"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -108,7 +108,7 @@ JS
                                    href="<?= $this->theme->youtube; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-youtube"></i>
+                                    <i class="fab fa-youtube"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -120,7 +120,7 @@ JS
                                    href="<?= $this->theme->instagram; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-instagram"></i>
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -131,7 +131,7 @@ JS
                                    href="<?= $this->theme->facebook; ?>"
                                    target="_blank"
                                 >
-                                    <i class="fa fa-facebook"></i>
+                                    <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
                         <? endif; ?>
@@ -198,7 +198,7 @@ JS
 JS
 ); ?>
                     <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
-                        <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <a href="#" class="sx-search-btn"><i class="fas fa-search" aria-hidden="true"></i></a>
                     </div>
                     <div class="sx-search-form g-mt-15 sx-invisible-search-block">
                         <form action="/search" method="get"class="g-mb-0">

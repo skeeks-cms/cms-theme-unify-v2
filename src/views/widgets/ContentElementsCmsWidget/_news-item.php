@@ -90,7 +90,7 @@
     <div class="g-color-gray-dark-v1 g-font-size-16">
         <?= $model->description_short; ?>
     </div>
-    <p><a href="<?= $model->absoluteUrl; ?>" class="btn btn-md u-btn-outline-black g-mr-10 g-mb-15" data-pjax="0"><?= \Yii::t('skeeks/cms', 'More'); ?> <i class="fa fa-chevron-right"></i></a></p>
+    <p><a href="<?= $model->absoluteUrl; ?>" class="btn btn-md u-btn-outline-black g-mr-10 g-mb-15" data-pjax="0"><?= \Yii::t('skeeks/cms', 'More'); ?> <i class="fas fa-chevron-right"></i></a></p>
 
 </div>
 

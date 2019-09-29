@@ -63,7 +63,7 @@ if ($model) {
                     <? foreach ($parent->activeChildren as $child) : ?>
 
                         <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-                            <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                            <i class="fas fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
                             <a class="<?= $child->id == $model->id ? "active g-color-primary" : "g-color-gray-dark-v1"; ?> u-link-v5 g-color-primary--hover"
                                href="<?= $child->url; ?>">
                                 <?= $child->name; ?>

@@ -26,22 +26,22 @@
             <ul class="list-inline g-font-size-16 text-center mb-0">
                 <li class="list-inline-item g-mx-10">
                     <a href="https://www.facebook.com/skeekscom" class="g-color-facebook g-color-secondary--hover">
-                        <i class="fa fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
                     <a href="https://www.youtube.com/channel/UC26fcOT8EK0Rr80WSM44mEA" class="g-color-youtube g-color-secondary--hover">
-                        <i class="fa fa-youtube"></i>
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
                     <a href="https://github.com/skeeks-cms/cms" class="g-color-black g-color-secondary--hover">
-                        <i class="fa fa-github"></i>
+                        <i class="fab fa-github"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
                     <a href="https://vk.com/skeeks_com" class="g-color-vk g-color-secondary--hover">
-                        <i class="fa fa-vk"></i>
+                        <i class="fab fa-vk"></i>
                     </a>
                 </li>
             </ul>
@@ -54,7 +54,7 @@
 
             <? if (\Yii::$app->user->can('rbac/admin-permission') && \Yii::$app->controller instanceof \skeeks\cms\IHasPermissions) : ?>
                 <a class="text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#sx-permisson-modal" data-toggle="modal">
-                    <i class="fa fa-exclamation-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
                     <!--<i class="hs-admin-align-right g-absolute-centered"></i>-->
                 </a>
             <? endif; ?>

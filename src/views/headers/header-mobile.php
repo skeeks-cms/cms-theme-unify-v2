@@ -127,7 +127,7 @@ if ($models)
                         <!-- End Logo -->
                         <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                         <div class="d-inline-block sx-search-btn-block g-mr-10 g-valign-middle">
-                            <a href="#" class="sx-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <a href="#" class="sx-search-btn"><i class="fas fa-search" aria-hidden="true"></i></a>
                         </div>
                         <? endif; ?>
                         <?= @$content; ?>

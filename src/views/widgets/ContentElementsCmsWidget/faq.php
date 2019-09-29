@@ -22,9 +22,9 @@
 
                             <span class="u-accordion__control-icon g-color-primary">
 
-                          <i class="fa fa-angle-down"></i>
+                          <i class="fas fa-angle-down"></i>
 
-                          <i class="fa fa-angle-up"></i>
+                          <i class="fas fa-angle-up"></i>
 
                         </span>
 
