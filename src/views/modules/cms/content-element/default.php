@@ -17,6 +17,7 @@ if (@$isShowMainImage !== false) {
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                 'w' => 1920,
                                 'h' => 500,
+                                'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
                             ]), $model->code
                         ) : $this->theme->body_begin_no_image; ?>" style="background: center;">
         <div class="container text-center g-pos-rel g-z-index-1 g-pb-50">
@@ -28,7 +29,7 @@ if (@$isShowMainImage !== false) {
                             'isShowH1' => false,
                         ]) ?>
                          </div>
-                        <h1 class="g-color-white g-font-weight-600 g-mb-30"><?= $model->name; ?></h1>
+                        <h1 class="g-color-white g-font-weight-600 g-mb-30"><?= $model->seoName; ?></h1>
                         <div class="lead g-color-white-opacity-0_8"><?= $model->description_short; ?></div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@ if (@$isShowMainImage !== false) {
                 <div class="g-color-gray-dark-v1 g-font-size-16 sx-content" itemscope itemtype="http://schema.org/NewsArticle">
                     <!-- Микроразметка новости-статьи -->
                     <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?= $model->getUrl(true); ?>"/>
-                    <meta itemprop="headline" content="<?= $model->name; ?>">
+                    <meta itemprop="headline" content="<?= $model->seoName; ?>">
                     <span itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="<?= $model->createdBy->displayName; ?>"></span>
                     <span itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
                         <meta itemprop="name" content="<?= \Yii::$app->cms->appName; ?>">
@@ -98,7 +99,7 @@ if (@$isShowMainImage !== false) {
                                     'w' => 0,
                                     'h' => 400,
                                 ]), $model->code
-                            ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
+                            ) ?>" title="<?= $model->seoName; ?>" alt="<?= $model->seoName; ?>" class="img-responsive"/>
                         </div>
 
                     <? endif; ?>

@@ -23,7 +23,7 @@
                             'isShowH1' => false,
                         ]) ?>
                          </div>
-                        <h1 class="g-color-white g-font-weight-600 g-mb-30"><?= $model->name; ?></h1>
+                        <h1 class="g-color-white g-font-weight-600 g-mb-30"><?= $model->seoName; ?></h1>
                         <div class="lead g-color-white-opacity-0_8"><?= $model->description_short; ?></div>
                     </div>
                 </div>

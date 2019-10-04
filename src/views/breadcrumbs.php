@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 if (!@$title) {
     if ($model) {
-        $title = $model->name ? $model->name : $model->username;
+        $title = isset($model->seoName) ? $model->seoName : $model->username;
     }
 }
 if (!isset($isShowH1)) {
