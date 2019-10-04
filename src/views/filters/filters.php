@@ -160,20 +160,9 @@ $widget = $this->context;
 
 
 
+
+
 <?
-
-
-$this->registerJs(<<<JS
-$(window).on('load', function () {
-        // initialization of sticky blocks
-setTimeout(function() { // important in this case
-  $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
-}, 1);
-});
-JS
-);
-
-
 $this->registerJs(<<<JS
 
 

@@ -121,7 +121,7 @@ if ($models)
                 <div class="container">
                     <!-- Logo -->
                     <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
-                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                        <img src="<?= $this->theme->mobile_logo ? $this->theme->mobile_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <div class="pull-right">
                         <!-- End Logo -->
