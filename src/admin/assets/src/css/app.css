@@ -485,3 +485,26 @@ form .sx-from-required {
     top: 0;
     background: #000000a8;
 }
+
+
+
+
+.sx-bg-primary {
+    background: #f5f9f9;
+}
+
+.sx-form-tab-panel .nav-tabs .nav-link.active {
+    background: #f5f9f9;
+}
+
+.u-sidebar-navigation--light .has-active{
+    background-color: #8484841a;
+}
+
+iframe {
+    border: 0;
+}
+
+.u-header__section--admin-dark .u-header-logo-toggler {
+    background: transparent;
+}
