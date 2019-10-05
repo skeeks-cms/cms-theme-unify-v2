@@ -23,6 +23,7 @@ class UnifyAdminAppAsset extends AssetBundle
     ];
 
     public $js = [
+        //'js/classes/Iframe.js',
         'js/classes/Blocker.js',
         'js/classes/Window.js',
 
