@@ -508,3 +508,7 @@ iframe {
 .u-header__section--admin-dark .u-header-logo-toggler {
     background: transparent;
 }
+
+.blockUI img {
+    margin-left: -40%;
+}

@@ -1,0 +1,49 @@
+body {
+    background: url('../img/bg/bg_cms.jpg') center fixed;
+    background-size: cover;
+}
+
+.sx-bg-auth {
+    background: #0000008c;
+}
+
+.sx-bg-auth {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+a:hover,
+a:visited,
+a:active
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.u-btn-primary {
+    background-color: #e81c62;
+}
+.u-btn-primary:hover {
+    background-color: #fe075c;
+}
+.u-btn-primary:hover {
+    border-color: #fe075c;
+}
+
+::selection {
+    background: #e81c62;
+}
+
+
+.sx-bg-auth .has-error .help-block {
+    color: #e81c62;
+}
+
+
+.blockUI img {
+    margin-left: -40%;
+}
