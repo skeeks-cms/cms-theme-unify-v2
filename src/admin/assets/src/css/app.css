@@ -512,3 +512,13 @@ iframe {
 .blockUI img {
     margin-left: -40%;
 }
+
+
+
+.btn-primary:visited,
+.btn-primary:active,
+.btn-primary:focus
+{
+    background-color: #e62154;
+    border-color: #e62154;
+}
