@@ -244,7 +244,7 @@ $theme = $this->theme;
                 <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                 </span>
                             <span class="g-pos-rel g-top-2">
-        <span class="g-hidden-sm-down"><?= \Yii::$app->user->identity->displayName; ?></span>
+        <span class="g-hidden-sm-down"><?= \Yii::$app->user->identity->shortDisplayName; ?></span>
                 <i class="hs-admin-angle-down g-pos-rel g-top-2 g-ml-10"></i>
                 </span>
                         </a>

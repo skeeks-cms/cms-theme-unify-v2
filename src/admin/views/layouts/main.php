@@ -36,7 +36,7 @@ $theme = $this->theme;
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
         <div class="row no-gutters g-pos-rel g-overflow-x-hidden g-min-height-100vh">
             <!-- Sidebar Nav -->
-            <div id="sideNav" class="<?= $theme->slideNavClasses; ?>">
+            <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
                 <?= $this->render("@app/views/layouts/_before-menu"); ?>
                 <?= $this->render("@app/views/layouts/_menu"); ?>
                 <?= $this->render("@app/views/layouts/_after-menu"); ?>

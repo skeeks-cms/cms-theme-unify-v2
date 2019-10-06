@@ -11,7 +11,8 @@ $level = 1;
 
 <? if ($items = \skeeks\cms\backend\BackendComponent::getCurrent()->menu->items) : ?>
     <!--g-min-height-100vh-->
-    <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu mb-0">
+    <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu mb-0
+">
         <? foreach ($items as $adminMenuItem) : ?>
             <? if ($adminMenuItem->isVisible) : ?>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item
