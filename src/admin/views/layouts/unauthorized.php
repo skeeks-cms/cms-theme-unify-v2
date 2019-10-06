@@ -67,6 +67,13 @@ CSS
             <? /*= $this->render("@app/views/footer"); */ ?>
         </main>
     </div>
+    <div class="text-center">
+        <a href="https://cms.skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site {cms}', ['cms' => 'SkeekS CMS']) ?>">
+            SkeekS CMS
+        </a>
+        | <a href="https://skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site of the developer') ?>">SkeekS.com</a>
+
+    </div>
     <? /*= $this->render("@app/views/modals"); */ ?>
 
     <?php $this->endBody() ?>
