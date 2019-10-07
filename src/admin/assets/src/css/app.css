@@ -522,3 +522,22 @@ iframe {
     background-color: #e62154;
     border-color: #e62154;
 }
+
+
+.sx-btn-backend-header a:hover{
+    color: white;
+}
+.sx-header-user-profile [data-dropdown-target] {
+    color: #8294b9;
+    /* opacity: 0.5; */
+}
+.sx-header-user-profile a .sx-avatar {
+    opacity: 0.8;
+}
+.sx-header-user-profile a:hover .sx-avatar {
+    opacity: 1;
+}
+
+.u-header__section--admin-dark [aria-labelledby] a:hover {
+    color: white;
+}
