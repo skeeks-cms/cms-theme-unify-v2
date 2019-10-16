@@ -29,7 +29,7 @@
             </div>
 
             <div class="col-md-3 align-self-center text-md-right">
-                <a class="btn btn-lg u-btn-primary" href="#sx-callback" data-toggle="modal" data-target="#sx-callback">Заказать звонок</a>
+                <a class="btn btn-lg u-btn-primary sx-btn-phone" href="#sx-callback" data-toggle="modal" data-target="#sx-callback">Заказать звонок</a>
             </div>
         </div>
     </section>

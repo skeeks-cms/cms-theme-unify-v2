@@ -6,6 +6,8 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
+
+\skeeks\assets\unify\base\UnifyIconLineProAsset::register($this);
 ?>
 <!-- Promo Block -->
 <? if ($this->theme->yandex_map) : ?>
