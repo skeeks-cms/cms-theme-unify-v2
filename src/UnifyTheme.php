@@ -169,6 +169,15 @@ class UnifyTheme extends Theme
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
+        $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)) , $content);
+        $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)) , $content);
+        $content = str_replace("114, 192, 44, 0.4", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.4)) , $content);
+        $content = str_replace("114, 192, 44, 0.2", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.2)) , $content);
+        $content = str_replace("114, 192, 44, 0.9", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.9)) , $content);
+        $content = str_replace("114, 192, 44, 0.3", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.3)) , $content);
+        $content = str_replace("114, 192, 44, 0.95", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.95)) , $content);
+        $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.5)) , $content);
+        $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.1)) , $content);
 
         $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)));
 
@@ -299,6 +308,23 @@ CSS
         }
 
 
+    }
+
+    /**
+     * @param      $hex
+     * @param bool $alpha
+     * @return mixed
+     */
+    static public function hexToRgb($hex, $alpha = false) {
+       $hex      = str_replace('#', '', $hex);
+       $length   = strlen($hex);
+       $rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
+       $rgb['g'] = hexdec($length == 6 ? substr($hex, 2, 2) : ($length == 3 ? str_repeat(substr($hex, 1, 1), 2) : 0));
+       $rgb['b'] = hexdec($length == 6 ? substr($hex, 4, 2) : ($length == 3 ? str_repeat(substr($hex, 2, 1), 2) : 0));
+       if ( $alpha ) {
+          $rgb['a'] = $alpha;
+       }
+       return $rgb;
     }
 
     /**
