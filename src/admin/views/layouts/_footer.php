@@ -5,16 +5,24 @@
         <div class="col-md-4 g-mb-10 g-mb-0--md">
             <ul class="list-inline text-center text-md-left mb-0">
                 <li class="list-inline-item">
-                    <a class="g-color-gray-dark-v6 g-color-secondary--hover" href="<?= \yii\helpers\Url::home(); ?>">Главная</a>
+                    <a class="g-color-gray-dark-v6 g-color-secondary--hover" target="_blank" href="<?= \Yii::$app->cms->homePage; ?>">
+
+                        <img src="<?= \Yii::$app->cms->logo(); ?>" style="max-height: 30px;"/>
+                        &copy; <?= \Yii::$app->formatter->asDate(time(), "php:Y"); ?>
+                        <?= \Yii::$app->cms->cmsName; ?>
+                    </a>
+                </li>
+                <!--<li class="list-inline-item">
+                    <a class="g-color-gray-dark-v6 g-color-secondary--hover" href="<?/*= \yii\helpers\Url::home(); */?>">Главная</a>
                 </li>
                 <li class="list-inline-item">
                     <span class="g-color-gray-dark-v6">|</span>
                 </li>
 
                 <li class="list-inline-item">
-                    <a class="g-color-gray-dark-v6 g-color-secondary--hover" href="<?= \yii\helpers\Url::to(['/cms/tree/view', 'dir' => 'about']); ?>">
+                    <a class="g-color-gray-dark-v6 g-color-secondary--hover" href="<?/*= \yii\helpers\Url::to(['/cms/tree/view', 'dir' => 'about']); */?>">
                         О компании
-                    </a>
+                    </a>-->
                 </li>
 
             </ul>
@@ -25,22 +33,22 @@
         <div class="col-md-4 g-mb-10 g-mb-0--md">
             <ul class="list-inline g-font-size-16 text-center mb-0">
                 <li class="list-inline-item g-mx-10">
-                    <a href="https://www.facebook.com/skeekscom" class="g-color-facebook g-color-secondary--hover">
+                    <a href="https://www.facebook.com/skeekscom" class="g-color-facebook g-color-secondary--hover" target="_blank">
                         <i class="fab fa-facebook-square"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
-                    <a href="https://www.youtube.com/channel/UC26fcOT8EK0Rr80WSM44mEA" class="g-color-youtube g-color-secondary--hover">
+                    <a href="https://www.youtube.com/channel/UC26fcOT8EK0Rr80WSM44mEA" class="g-color-youtube g-color-secondary--hover" target="_blank">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
-                    <a href="https://github.com/skeeks-cms/cms" class="g-color-black g-color-secondary--hover">
+                    <a href="https://github.com/skeeks-cms/cms" class="g-color-black g-color-secondary--hover" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
-                    <a href="https://vk.com/skeeks_com" class="g-color-vk g-color-secondary--hover">
+                    <a href="https://vk.com/skeeks_com" class="g-color-vk g-color-secondary--hover" target="_blank">
                         <i class="fab fa-vk"></i>
                     </a>
                 </li>
@@ -59,7 +67,7 @@
                 </a>
             <? endif; ?>
 
-            <small class="d-block g-font-size-default">&copy; 2019 Skeeks.com</small>
+            <!--<small class="d-block g-font-size-default">&copy; 2019 Skeeks.com</small>-->
 
         </div>
         <!-- End Footer Copyrights -->

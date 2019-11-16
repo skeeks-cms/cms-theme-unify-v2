@@ -18,7 +18,7 @@ $theme = $this->theme;
         <nav class="navbar no-gutters g-pa-0">
             <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
                 <!-- Logo -->
-                <a href="<?= $theme->logoHref; ?>" class="navbar-brand d-flex align-self-center g-hidden-xs-down py-0 g-mt-5">
+                <a href="<?= $theme->logoHref; ?>" class="navbar-brand d-flex align-self-center g-hidden-xs-down py-0">
                     <? if ($theme->logoSrc) : ?>
                         <img class="default-logo" src="<?= $theme->logoSrc; ?>" alt="<?= $theme->logoTitle; ?>">
                     <? endif; ?>

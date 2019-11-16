@@ -5,6 +5,8 @@
  * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
  */
+/* @var $this yii\web\View */
+
 ?>
 
 <? $controller = \Yii::$app->controller; ?>
@@ -12,7 +14,7 @@
     <ul class="u-list-inline g-color-gray-dark-v6">
 
         <li class="list-inline-item g-mr-10">
-            <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= \yii\helpers\Url::to(['/upa-home']) ?>">Рабочий стол</a>
+            <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= $this->theme->logoHref; ?>">Главная</a>
             <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
         </li>
 

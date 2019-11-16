@@ -123,7 +123,7 @@ class UnifyThemeAdmin extends Theme
      * @param string $href
      * @return $this
      */
-    public function setLotoHref($href)
+    public function setLogoHref($href)
     {
         $this->_logoHref = $href;
         return $this;
