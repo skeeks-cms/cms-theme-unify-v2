@@ -38,7 +38,7 @@ var tpj = jQuery;
             /*jsFileLocation: "revolution/js/",*/
             /*sliderLayout: "fullscreen",*/
             dottedOverlay: "none",
-            delay: 9000,
+            delay: 4000,
             navigation: {
               keyboardNavigation: "off",
               keyboard_direction: "horizontal",
@@ -87,9 +87,9 @@ var tpj = jQuery;
             lazyType: "none",
             shadow: 0,
             spinner: "off",
-            stopLoop: "on",
-            stopAfterLoops: 0,
-            stopAtSlide: 1,
+            stopLoop: "off",
+            stopAfterLoops: -1,
+            stopAtSlide: -1,
             shuffle: "off",
             autoHeight: "off",
             fullScreenAutoWidth: "off",
