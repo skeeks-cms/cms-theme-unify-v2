@@ -557,3 +557,8 @@ pre {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+
+.sx-progress-bar-wrapper {
+    height: 12px;
+}
