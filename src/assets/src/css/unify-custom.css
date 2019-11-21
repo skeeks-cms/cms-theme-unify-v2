@@ -404,3 +404,7 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 
 
 
+.sx-head-short-description {
+    overflow: hidden;
+    max-height: 56px;
+}
