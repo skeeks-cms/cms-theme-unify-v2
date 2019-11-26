@@ -133,6 +133,9 @@ class UnifyTheme extends Theme
                 \yii\bootstrap\Modal::class                 => [
                     'class' => \skeeks\bootstrap4\Modal::class,
                 ],
+                \yii\bootstrap\Tabs::class                 => [
+                    'class' => \yii\bootstrap4\Tabs::class,
+                ],
                 \yii\widgets\LinkPager::class               => [
                     'linkOptions'                   => [
                         'class' => 'page-link',
