@@ -212,6 +212,8 @@ class UnifyTheme extends Theme
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-theme-template.css"));
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
+        $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
+        $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
         //\Yii::$app->view->registerCss($content);
 
 
@@ -329,6 +331,17 @@ CSS
        }
        return $rgb;
     }
+
+    /**
+     * @var string Шрифт заголовков
+     */
+    public $font_headers = "Open Sans";
+
+    /**
+     * @var string Шрифт текста
+     */
+    public $font_texts = "Open Sans";
+
 
     /**
      * Показывать копирайты?

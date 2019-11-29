@@ -1,3 +1,25 @@
+/*------------------------------------
+  Fonts
+------------------------------------*/
+body {
+  font-family: "{font_texts}", Helvetica, Arial, sans-serif;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "{font_headers}", Helvetica, Arial, sans-serif;
+}
+
+
 .sx-main-menu-wrapper {
     background: linear-gradient(to right, #0185c8 12%, #e1082c) !important;
 }

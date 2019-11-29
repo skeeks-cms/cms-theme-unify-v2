@@ -52,6 +52,17 @@ class UnifyThemeSettings extends Component
 
 
     /**
+     * @var string Шрифт заголовков
+     */
+    public $font_headers = "Open Sans";
+
+    /**
+     * @var string Шрифт текста
+     */
+    public $font_texts = "Open Sans";
+
+
+    /**
      * @var string
      */
     public $title = 'Веб-студия SkeekS.com';
@@ -314,6 +325,9 @@ class UnifyThemeSettings extends Component
 
                     'tree_content_layout',
                     'element_content_layout',
+
+                    'font_headers',
+                    'font_texts',
                 ],
                 'string',
             ],
@@ -364,6 +378,9 @@ class UnifyThemeSettings extends Component
 
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
+
+            'font_headers' => "Шрифт заголовков",
+            'font_texts' => "Шрифт текста",
 
             'home_view_file' => "Шаблон главной страницы",
 
@@ -473,6 +490,35 @@ class UnifyThemeSettings extends Component
                 'fields' => [
                     [
                         'class'   => HtmlBlock::class,
+                        'content' => Html::tag('h2', 'Шрифт'),
+                    ],
+
+                    'font_headers'         => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'Open Sans'      => 'Open Sans',
+                            'Playfair Display'      => 'Playfair Display',
+                            'Roboto'      => 'Roboto',
+                            'Raleway'      => 'Raleway',
+                            'Spectral'      => 'Spectral',
+                            'Rubik'      => 'Rubik',
+                        ],
+                    ],
+                    'font_texts'         => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'Open Sans'      => 'Open Sans',
+                            'Playfair Display'      => 'Playfair Display',
+                            'Roboto'      => 'Roboto',
+                            'Raleway'      => 'Raleway',
+                            'Spectral'      => 'Spectral',
+                            'Rubik'      => 'Rubik',
+                        ],
+                    ],
+
+
+                    [
+                        'class'   => HtmlBlock::class,
                         'content' => Html::tag('h2', 'Общие настройки'),
                     ],
 
@@ -532,7 +578,8 @@ class UnifyThemeSettings extends Component
                             'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
                             'v2' => 'Вариант 2 (лого, меню, авторизация, прижат к верху)',
                             'v3' => 'Вариант 3 (не высокий тулбар, лого и меню прижат к верху)',
-                            'v4' => 'Вариант 4 (лого, меню, авторизация, телефоны, прижат к верху)',
+                            'v4' => 'Вариант 4 (лого, меню, авторизация, телефоны)',
+                            'v5' => 'Вариант 5 (лого, меню)',
                         ],
                     ],
 
