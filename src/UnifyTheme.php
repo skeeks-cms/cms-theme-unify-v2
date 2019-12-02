@@ -393,6 +393,11 @@ CSS
      * @var string
      */
     public $phone = '+7 (495) 777-77-77';
+    
+    /**
+     * @var string
+     */
+    public $phone_second = '';
 
     /**
      * @var string

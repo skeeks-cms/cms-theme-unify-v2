@@ -116,6 +116,20 @@
                               </span>
                                 </div>
                                 <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
+                                
+                            </div>
+                            <!-- End Phone -->
+                        <? endif; ?>
+                        <? if ($this->theme->phone_second) : ?>
+                            <!-- Phone -->
+                            <div class="d-flex g-mb-20">
+                                <div class="g-mr-10">
+                              <span class="u-icon-v3 u-icon-size--xs">
+                                <i class="fas fa-phone"></i>
+                              </span>
+                                </div>
+                                <a class="g-color-black" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
+                                
                             </div>
                             <!-- End Phone -->
                         <? endif; ?>

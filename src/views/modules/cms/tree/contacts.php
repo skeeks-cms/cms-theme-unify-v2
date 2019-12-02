@@ -48,6 +48,9 @@
               </span>
                 <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Phone'); ?></h4>
                 <span class="d-block"><a href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?> </a></span>
+                <? if ($this->theme->phone_second) : ?>
+                    <span class="d-block"><a href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?> </a></span>
+                <? endif; ?>
             </div>
             <!-- End Icon Blocks -->
         </div>
