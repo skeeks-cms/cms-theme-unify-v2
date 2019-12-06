@@ -9,7 +9,7 @@
 ?>
 
 <!-- Copyright Footer -->
-<footer class="g-bg-secondary g-color-black g-py-20 sx-footer-copyright">
+<footer class="g-py-20 sx-footer-copyright">
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">

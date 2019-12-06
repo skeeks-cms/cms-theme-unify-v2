@@ -13,7 +13,7 @@
 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
     <div class="g-pr-20 mb-0">
 
-        <a class="g-color-black" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
+        <a class="" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
             <i class="fas fa-angle-right"></i>
             <?= $model->name; ?></a>
     </div>

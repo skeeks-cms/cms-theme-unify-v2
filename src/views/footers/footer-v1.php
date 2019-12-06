@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 ?>
 
-    <div id="contacts-section" class="sx-footer g-bg-secondary g-py-60">
+    <div id="contacts-section" class="sx-footer g-py-60">
         <!-- Footer Content -->
         <div class="container">
             <div class="row">
@@ -90,7 +90,7 @@
                 <!-- Footer Content -->
                 <div class="col-lg-3 col-md-6">
                     <div class="u-heading-v2-3--bottom g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
+                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
                     </div>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">
@@ -115,7 +115,7 @@
                                 <i class="fas fa-phone"></i>
                               </span>
                                 </div>
-                                <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
+                                <a class="" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
                                 
                             </div>
                             <!-- End Phone -->
@@ -128,7 +128,7 @@
                                 <i class="fas fa-phone"></i>
                               </span>
                                 </div>
-                                <a class="g-color-black" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
+                                <a class="" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
                                 
                             </div>
                             <!-- End Phone -->
@@ -143,7 +143,7 @@
                               </span>
                                 </div>
                                 <p class="mb-0">
-                                    <a class="g-color-black" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
+                                    <a class="" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
                                 </p>
                             </div>
                             <!-- End Email and Website -->

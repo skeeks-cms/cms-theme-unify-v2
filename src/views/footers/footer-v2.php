@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 ?>
 
-    <div id="contacts-section" class="sx-footer g-bg-secondary g-py-60">
+    <div id="contacts-section" class="sx-footer g-py-60">
         <!-- Footer Content -->
         <div class="container">
             <div class="row">
@@ -80,7 +80,7 @@
                 <div class="col-sm-6 col-lg">
                     <? if (\Yii::$app->user->isGuest) : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Authorization'); ?></h2>
+                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Authorization'); ?></h2>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
@@ -96,12 +96,12 @@
                         </ul>
                     <? else : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Personal data'); ?></h2>
+                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Personal data'); ?></h2>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
                                 <!-- Top User -->
-                                <a class="g-color-black" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
+                                <a class="" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
                                     <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
@@ -113,7 +113,7 @@
                             </li>
                             <li class="g-mb-8">
                                 <!-- Top User -->
-                                <a class="g-color-black" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
+                                <a class="" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
                                     <i class="fas fa-sign-out-alt"></i> <?= \Yii::t('skeeks/unify', 'Logout'); ?>
                                 </a>
                             </li>
@@ -125,7 +125,7 @@
                 <!-- Footer Content -->
                 <div class="col-lg-3 col-md-6">
                     <div class="u-heading-v2-3--bottom g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-color-black g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
+                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
                     </div>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">
@@ -150,7 +150,7 @@
                                 <i class="fas fa-phone"></i>
                               </span>
                                 </div>
-                                <a class="g-color-black" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
+                                <a class="" href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?></a>
                             </div>
                             <!-- End Phone -->
                         <? endif; ?>
@@ -163,7 +163,7 @@
                                 <i class="fas fa-phone"></i>
                               </span>
                                 </div>
-                                <a class="g-color-black" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
+                                <a class="" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
                                 
                             </div>
                             <!-- End Phone -->
@@ -178,7 +178,7 @@
                               </span>
                                 </div>
                                 <p class="mb-0">
-                                    <a class="g-color-black" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
+                                    <a class="" href="mailto:<?= $this->theme->email; ?>"><?= $this->theme->email; ?></a>
                                 </p>
                             </div>
                             <!-- End Email and Website -->

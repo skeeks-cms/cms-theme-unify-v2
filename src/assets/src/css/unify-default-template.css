@@ -1398,3 +1398,22 @@ input[type="radio"]:checked + * .g-overlay-primary-0_9--checked::after,
     opacity: 0;
   }
 }
+
+
+.sx-footer {
+    background-color: {footer_bg_color};
+}
+.sx-footer, .sx-footer a {
+    color: {footer_color};
+}
+
+
+
+
+.sx-footer-copyright {
+    background-color: {footer_copyright_bg_color};
+}
+
+.sx-footer-copyright, .sx-footer-copyright a {
+    color: {footer_copyright_color};
+}

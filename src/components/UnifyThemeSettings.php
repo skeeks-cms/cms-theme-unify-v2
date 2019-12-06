@@ -187,11 +187,13 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $footer_bg_color = '#fafafa';
+    public $footer_color = '#000';
 
     /**
      * @var string
      */
     public $footer_copyright_bg_color = '#fafafa';
+    public $footer_copyright_color = '#000';
 
 
     /**
@@ -318,7 +320,9 @@ class UnifyThemeSettings extends Component
 
                     'footer',
                     'footer_bg_color',
+                    'footer_color',
                     'footer_copyright_bg_color',
+                    'footer_copyright_color',
 
                     'body_bg_image',
                     'container',
@@ -405,7 +409,9 @@ class UnifyThemeSettings extends Component
 
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
+            'footer_color'           => "Цвет текста в футере футера",
             'footer_copyright_bg_color' => "Цвет фона под футером",
+            'footer_copyright_color' => "Цвет текста под футером",
 
             'body_bg_image' => "Фоновая картинка сайта",
             'container'     => "Сайт во всю ширину или центрированный?",
@@ -799,8 +805,16 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
+                    'footer_color' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
+                    ],
 
                     'footer_copyright_bg_color' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
+                    ],
+                    'footer_copyright_color' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],

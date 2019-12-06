@@ -182,6 +182,12 @@ class UnifyTheme extends Theme
         $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.5)) , $content);
         $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.1)) , $content);
 
+        $content = str_replace("{footer_bg_color}", \Yii::$app->view->theme->footer_bg_color, $content);
+        $content = str_replace("{footer_color}", \Yii::$app->view->theme->footer_color, $content);
+        $content = str_replace("{footer_copyright_bg_color}", \Yii::$app->view->theme->footer_copyright_bg_color, $content);
+        $content = str_replace("{footer_copyright_color}", \Yii::$app->view->theme->footer_copyright_color, $content);
+        
+        
         $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)));
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
@@ -248,24 +254,6 @@ CSS
             );
         }
 
-        if (\Yii::$app->view->theme->footer_bg_color) {
-            $bgColor = \Yii::$app->view->theme->footer_bg_color;
-            \Yii::$app->view->registerCss(<<<CSS
-        .sx-footer {
-            background-color: {$bgColor} !important;
-        }
-CSS
-            );
-        }
-        if (\Yii::$app->view->theme->footer_copyright_bg_color) {
-            $bgColor = \Yii::$app->view->theme->footer_copyright_bg_color;
-            \Yii::$app->view->registerCss(<<<CSS
-        .sx-footer-copyright {
-            background-color: {$bgColor} !important;
-        }
-CSS
-            );
-        }
 
 
         if (\Yii::$app->view->theme->menu_color1) {
@@ -477,9 +465,18 @@ CSS
     public $footer_bg_color = '#fafafa';
 
     /**
+     * @var string 
+     */
+    public $footer_color = '#000';
+
+    /**
      * @var string
      */
     public $footer_copyright_bg_color = '#fafafa';
+    /**
+     * @var string
+     */
+    public $footer_copyright_color = '#000';
 
 
     /**
