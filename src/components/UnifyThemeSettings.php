@@ -83,6 +83,11 @@ class UnifyThemeSettings extends Component
     public $phone_second = '';
 
     /**
+     * @var string 
+     */
+    public $phone_third = '';
+
+    /**
      * @var string
      */
     public $email = 'info@skeeks.com';
@@ -294,6 +299,7 @@ class UnifyThemeSettings extends Component
                     'title',
                     'phone',
                     'phone_second',
+                    'phone_third',
                     'email',
                     'work_time',
                     'yandex_map',
@@ -377,6 +383,7 @@ class UnifyThemeSettings extends Component
             'title'      => "Короткое название сайта",
             'phone'      => "Телефон",
             'phone_second'      => "Телефон 2",
+            'phone_third'      => "Телефон 3",
             'email'      => "Email",
             'address'    => "Адрес",
             'work_time'  => "Рабочее время",
@@ -448,6 +455,7 @@ class UnifyThemeSettings extends Component
             'is_show_search_block'        => 'При выборе "Да", в шапке будет выведен поисковый блок',
             'is_show_loader'        => 'Показывать индикатор загрузки?',
             'phone_second'        => 'Дополнительный номер телефона',
+            'phone_third'        => 'Дополнительный номер телефона',
         ]);
     }
 
@@ -465,6 +473,7 @@ class UnifyThemeSettings extends Component
 
                     'phone',
                     'phone_second',
+                    'phone_third',
                     'email',
                     'address',
                     'work_time',

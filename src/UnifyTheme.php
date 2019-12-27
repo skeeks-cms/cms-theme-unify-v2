@@ -386,6 +386,11 @@ CSS
      * @var string
      */
     public $phone_second = '';
+    
+    /**
+     * @var string 
+     */
+    public $phone_third = '';
 
     /**
      * @var string

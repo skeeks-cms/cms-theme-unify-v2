@@ -15,7 +15,7 @@
         <!-- Parallax Image -->
         <div style="height: 400px; overflow: hidden;">
             <div class="row">
-            <?= $this->theme->yandex_map; ?>
+                <?= $this->theme->yandex_map; ?>
             </div>
         </div>
         <!-- End Parallax Image -->
@@ -28,7 +28,7 @@
     <div class="row no-gutters g-py-60">
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
-            <div class="text-center g-py-20">
+            <div class="text-center g-pa-20">
             <span class="u-icon-v1 u-icon-size--xl g-mb-10">
 
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
@@ -50,6 +50,9 @@
                 <span class="d-block"><a href="tel:<?= $this->theme->phone; ?>"><?= $this->theme->phone; ?> </a></span>
                 <? if ($this->theme->phone_second) : ?>
                     <span class="d-block"><a href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?> </a></span>
+                <? endif; ?>
+                <? if ($this->theme->phone_third) : ?>
+                    <span class="d-block"><a href="tel:<?= $this->theme->phone_third; ?>"><?= $this->theme->phone_third; ?> </a></span>
                 <? endif; ?>
             </div>
             <!-- End Icon Blocks -->

@@ -8,7 +8,7 @@
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
 /* @var $trees  \skeeks\cms\models\Tree[] */
-$trees = $widget->dataProvider->query->all();
+$trees = $widget->dataProvider->query->orderBy([$widget->orderBy => $widget->order])->all();
 ?>
 
 <? if ($trees) : ?>

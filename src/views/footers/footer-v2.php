@@ -169,6 +169,20 @@
                             <!-- End Phone -->
                         <? endif; ?>
 
+                        <? if ($this->theme->phone_third) : ?>
+                            <!-- Phone -->
+                            <div class="d-flex g-mb-20">
+                                <div class="g-mr-10">
+                              <span class="u-icon-v3 u-icon-size--xs">
+                                <i class="fas fa-phone"></i>
+                              </span>
+                                </div>
+                                <a class="" href="tel:<?= $this->theme->phone_third; ?>"><?= $this->theme->phone_third; ?></a>
+                                
+                            </div>
+                            <!-- End Phone -->
+                        <? endif; ?>
+
                         <? if ($this->theme->email) : ?>
                             <!-- Email and Website -->
                             <div class="d-flex g-mb-20">
