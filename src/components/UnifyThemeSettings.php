@@ -50,6 +50,11 @@ class UnifyThemeSettings extends Component
      */
     public $favicon = '/favicon.ico';
 
+    /**
+     * @var int 
+     */
+    public $is_show_home_slider = 0;
+
 
     /**
      * @var string Шрифт заголовков
@@ -355,6 +360,7 @@ class UnifyThemeSettings extends Component
                     'is_show_loader',
                     'is_header_sticky_margin',
                     'is_header_sticky',
+                    'is_show_home_slider',
                 ],
                 'boolean',
             ],
@@ -437,6 +443,8 @@ class UnifyThemeSettings extends Component
 
             'news_list_view' => 'Вариант отображения списка новостей',
             'news_list_count_columns' => 'Количество колонок в новостях',
+
+            'is_show_home_slider'=> "Показывать слайдер на главной",
         ]);
     }
 
@@ -836,6 +844,12 @@ class UnifyThemeSettings extends Component
 
                     'css_code' => [
                         'class' => TextareaField::class,
+                    ],
+                    
+                    'is_show_home_slider' => [
+                        'class' => BoolField::class,
+                        'allowNull' => false,
+                        'formElement' => BoolField::ELEMENT_RADIO_LIST,
                     ],
                 ],
             ],

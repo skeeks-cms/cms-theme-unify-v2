@@ -368,8 +368,11 @@ CSS
     public $logo_text = '';
 
     /**
-     * @var string
+     * @var int
      */
+    public $is_show_home_slider = 1;
+    
+    
     public $address = 'Адрес';
 
     /**

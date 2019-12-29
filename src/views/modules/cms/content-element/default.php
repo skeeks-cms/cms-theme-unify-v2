@@ -76,7 +76,7 @@ if (@$isShowMainImage !== false) {
                     </span>
                     <meta itemprop="datePublished" content="<?= \Yii::$app->formatter->asDate($model->created_at, "php:Y-m-d"); ?>"/>
                     <meta itemprop="dateModified" content="<?= \Yii::$app->formatter->asDate($model->updated_at, "php:Y-m-d"); ?>"/>
-                    <meta itemprop="genre" content="<?= $model->cmsTree->name; ?>"/>
+                    <meta itemprop="genre" content="<?= $model->cmsTree ? $model->cmsTree->name : ""; ?>"/>
                     <? if ($model->description_short) : ?>
                         <meta itemprop="description" content="<?= strip_tags($model->description_short); ?>"/>
                     <? else : ?>
