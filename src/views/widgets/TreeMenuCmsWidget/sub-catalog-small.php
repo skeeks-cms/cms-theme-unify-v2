@@ -11,10 +11,10 @@
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="">
+            <div class="">
                 <!--g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4-->
-                <ul class="row sx-category-list-small list-inline nomargin g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4">
+                <ul class="row sx-category-list-small list-inline nomargin g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4 no-gutters">
                     <? foreach ($models as $model) : ?>
 
                         <li class="col-lg-2 col-md-3 col-sm-4 col-6 g-mb-10 g-mt-10">

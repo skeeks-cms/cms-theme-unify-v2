@@ -279,6 +279,7 @@ body {
 
 .sx-caption-wrapper {
     overflow: hidden;
+    padding-bottom: 5px;
 }
 
 
