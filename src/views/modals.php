@@ -8,7 +8,7 @@
 ?>
 <?
 $modal = \yii\bootstrap\Modal::begin([
-    'header'       => 'Заказ звонка',
+    'header'       => \Yii::t('app', 'Заказ звонка'),
     'id'           => 'sx-callback',
     'toggleButton' => false,
     'size'         => \yii\bootstrap\Modal::SIZE_DEFAULT,
@@ -22,6 +22,7 @@ $modal = \yii\bootstrap\Modal::begin([
     ]); ?>
 
 <? $modal::end(); ?>
+
 <div style="display: none;"  itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="<?= $this->theme->title; ?>">
     <meta itemprop="telephone" content="<?= $this->theme->phone; ?>">
