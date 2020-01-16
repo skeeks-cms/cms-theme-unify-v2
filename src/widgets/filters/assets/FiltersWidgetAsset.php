@@ -22,7 +22,8 @@ class FiltersWidgetAsset extends AssetBundle
         'css/filters.css'
     ];
     public $js = [
-        'js/filters.js'
+        'js/filters.js',
+        'js/sliderRange.js'
     ];
     public $depends = [
         //UnifyThemeShopAsset::class,

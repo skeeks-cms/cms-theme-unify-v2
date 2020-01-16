@@ -17,6 +17,7 @@ CSS
 );
 $this->registerJs(<<<JS
 new sx.classes.Filters();
+new sx.classes.filters.SliderRange();
 
 (function(sx, $, _)
 {
