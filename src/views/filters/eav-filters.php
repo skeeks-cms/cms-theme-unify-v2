@@ -100,57 +100,6 @@ $widget = $this->context;
                 </div>
             </section>
 
-
-            <!--<div class="sx-product-filter-wrapper">
-                <div class="row">
-                    <div class="col-md-12">
-                        <label><? /*= $handler->getAttributeLabel($code); */ ?></label>
-                    </div>
-
-                    <div class="col-md-6">
-                        <? /*= $form->field($handler, $handler->getAttributeNameRangeFrom($feature->id))
-                            ->textInput(['placeholder' => $min])
-                            ->label('От');
-                        */ ?>
-                    </div>
-                    <div class="col-md-6">
-                        <? /*= $form->field($handler, $handler->getAttributeNameRangeTo($feature->id))
-                            ->textInput(['placeholder' => $max])
-                            ->label('До');
-                        */ ?>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12" style="height: 40px;">
-                            <? /* echo \yii\jui\Slider::widget([
-                                'clientEvents' => [
-                                    'change' => new \yii\web\JsExpression(<<<JS
-                        function( event, ui ) {
-                          $("#{$fromId}").change();
-                        },
-JS
-    ),
-                                    'slide' => new \yii\web\JsExpression(<<<JS
-                        function( event, ui ) {
-                            $("#{$fromId}").val(ui.values[ 0 ]);
-                            $("#{$toId}").val(ui.values[ 1 ]);
-                        },
-JS
-    ),
-                                ],
-                                'clientOptions' => [
-                                    'range' =>  true,
-                                    'min' => (float) $min,
-                                    'max' => (float) $max,
-                                    'values' => [(float) $val1, (float) $val2],
-                                ],
-                            ]); */ ?>
-                            <!--<div id="<? /*= $id; */ ?>"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
         <? endif; ?>
     <? elseif ($rp && in_array($rp->property_type, [
             \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT,
@@ -182,6 +131,17 @@ JS
                 if ($rp->hint) {
                     $info = "<i class='far fa-question-circle' title='{$rp->hint}'></i>";
                 }
+
+                $searchOptions = "";
+                if (count($options) > 3) {
+                    $searchOptions = <<<HTML
+<div class="filter-search__input js-filter-search-hide" style="display: none;">
+    <input type="text" class="form-control" placeholder="Введите название">
+</div>
+HTML;
+
+                }
+
                 ?>
 
                 <?= $form->field($handler, $code, [
@@ -191,8 +151,13 @@ JS
                     ],
                     'template' => <<<HTML
 <header class="filter--group--header">{$rp->name} {$info}</header>
-<div class="filter--group--body js-scrollbar " style="max-height: 280px;">
-{input}
+<div>
+    <div class="filter--group--body">
+        {$searchOptions}
+        <div class="js-scrollbar" style="max-height: 280px;">
+        {input}
+        </div>
+    </div>
 </div>
 HTML
                     ,

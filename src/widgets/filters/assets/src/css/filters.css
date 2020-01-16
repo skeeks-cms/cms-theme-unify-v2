@@ -42,12 +42,19 @@
 .filter--group {
   border-top: solid 1px #dfdfdf;
 }
+.filter--group.opened .filter--group--header {
+    font-weight: 700;
+}
 .filter--group .filter--group--header {
   position: relative;
-  padding: 20px 0 20px 35px;
-  font-weight: 700;
-  text-transform: uppercase;
+  padding: 15px 10px 15px 10px;
+  /*font-weight: 700;
+  text-transform: uppercase;*/
   cursor: pointer;
+}
+.filter--group .checkbox input[type=checkbox]:checked + label
+{
+    font-weight: normal;
 }
 .filter--group .filter--group--header:before {
   content: '';
@@ -55,17 +62,18 @@
   width: 13px;
   height: 7px;
   position: absolute;
-  left: 14px;
+  right: 14px;
   top: 50%;
   margin-top: -4px;
   background: url('../images/angle-down.png') no-repeat 50% 50%;
 }
+
 .filter--group .filter--group--body {
   display: none;
-  padding: 0 0 10px;
+  padding: 0 10px 0 10px;
 }
 .filter--group .filter--group--inner {
-  padding: 0 25px 0 35px;
+  /*padding: 0 10px 0 10px;*/
 }
 .filter--group .filter--hidden {
   display: none;
@@ -101,6 +109,10 @@
   padding: 0 0 0 35px;
 }
 
+.filter-search__input {
+    padding-right: 7px;
+    margin-bottom: 15px;
+}
 
 
 
@@ -404,7 +416,22 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     min-width: 13px;
 }
 
-.sort-slider .form-control {
+
+.sx-filters-form .form-control {
+    background-color: #fcfcfc;
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 5px rgba(153, 153, 153, 0.35);
+    letter-spacing: 0.2px;
+
+    height: 30px;
+    font-size: 12px;
+    padding: 0 9px;
+    width: 100%;
+}
+
+.sort-slider .form-control
+{
     height: 30px;
     color: #111;
     font-size: 13px;
@@ -412,12 +439,6 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     line-height: 18px;
     width: 100%;
     padding: 0 8px;
-
-    background-color: #fcfcfc;
-    border: 1px solid #e8e8e8;
-    border-radius: 2px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 5px rgba(153, 153, 153, 0.35);
-    letter-spacing: 0.2px;
 }
 
 .sx-project-slider-skin .irs {
