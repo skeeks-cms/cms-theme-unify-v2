@@ -23,7 +23,7 @@ $widget = $this->context;
             \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER,
             \skeeks\cms\relatedProperties\PropertyType::CODE_RANGE,
         ])) : ?>
-    <?
+        <?
         $min = $handler->getMinValue($rp);
         $max = $handler->getMaxValue($rp);
 
@@ -42,18 +42,36 @@ $widget = $this->context;
             //&& $max > 0
         ) : ?>
 
-            <section class="filter--group <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected": ""?>">
+            <section class="filter--group <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected" : "" ?>">
                 <header class="filter--group--header">
                     <?= $rp->name; ?>
                     <? if ($rp->hint) : ?>
                         <i class="far fa-question-circle" title="<?= $rp->hint; ?>"></i>
                     <? endif; ?>
                 </header>
-                <div class="filter--group--body">
+                <div class="filter--group--body sort-slider sx-project-slider-skin">
                     <div class="filter--group--inner">
+                        <div class="sort-slider__row">
+                            <div class="sort-slider__input">
+                                <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
+                                    'id'    => $id.'-from',
+                                    'value' => $val1,
+                                    'class' => 'sx-from form-control',
+                                ])->label(false); ?>
+                            </div>
+                            <span class="sort-slider__devide">—</span>
+                            <div class="sort-slider__input">
+                                <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
+                                    'id'    => $id.'-to',
+                                    'value' => $val2,
+                                    'class' => 'sx-to form-control',
+                                ])->label(false); ?>
+                            </div>
+                        </div>
+
                         <input type="text"
                                id="<?= $id ?>"
-                               class="range-slider"
+                               class="slider-range"
                                data-no-submit="true"
                                data-type="double"
                                data-min="<?= $min ?>"
@@ -63,60 +81,49 @@ $widget = $this->context;
                                data-postfix=""/>
 
 
-                        <div class="" style="display: none;">
+                        <!--<div class="" style="display: none;">
                             <div class="col-md-6">
-                                <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
+                                <? /*= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
                                     'placeholder' => \Yii::$app->money->currencyCode,
                                     'id' => $id . '-from'
-                                ])->label("От"); ?>
+                                ])->label("От"); */ ?>
                             </div>
                             <div class="col-md-6">
-                                <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
+                                <? /*= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
                                     'placeholder' => \Yii::$app->money->currencyCode,
                                     'id' => $id . '-to'
-                                ])->label("До"); ?>
+                                ])->label("До"); */ ?>
                             </div>
                         </div>
-
-                        <? $this->registerJs(<<<JS
-$('#{$id}').ionRangeSlider({
-    onFinish: function (data) {
-        $("#{$id}-from").val(data.from);
-        $("#{$id}-to").val(data.to);
-        $("#{$id}-to").change();
-    }
-});
-JS
-); ?>
+-->
                     </div>
                 </div>
             </section>
 
 
-
             <!--<div class="sx-product-filter-wrapper">
                 <div class="row">
                     <div class="col-md-12">
-                        <label><?/*= $handler->getAttributeLabel($code); */?></label>
+                        <label><? /*= $handler->getAttributeLabel($code); */ ?></label>
                     </div>
 
                     <div class="col-md-6">
-                        <?/*= $form->field($handler, $handler->getAttributeNameRangeFrom($feature->id))
+                        <? /*= $form->field($handler, $handler->getAttributeNameRangeFrom($feature->id))
                             ->textInput(['placeholder' => $min])
                             ->label('От');
-                        */?>
+                        */ ?>
                     </div>
                     <div class="col-md-6">
-                        <?/*= $form->field($handler, $handler->getAttributeNameRangeTo($feature->id))
+                        <? /*= $form->field($handler, $handler->getAttributeNameRangeTo($feature->id))
                             ->textInput(['placeholder' => $max])
                             ->label('До');
-                        */?>
+                        */ ?>
                     </div>
 
 
                     <div class="row">
                         <div class="col-md-12" style="height: 40px;">
-                            <?/* echo \yii\jui\Slider::widget([
+                            <? /* echo \yii\jui\Slider::widget([
                                 'clientEvents' => [
                                     'change' => new \yii\web\JsExpression(<<<JS
                         function( event, ui ) {
@@ -138,8 +145,8 @@ JS
                                     'max' => (float) $max,
                                     'values' => [(float) $val1, (float) $val2],
                                 ],
-                            ]); */?>
-                            <!--<div id="<?/*= $id; */?>"></div>
+                            ]); */ ?>
+                            <!--<div id="<? /*= $id; */ ?>"></div>
                         </div>
                     </div>
                 </div>
@@ -162,8 +169,7 @@ JS
                     $class = 'opened sx-filter-selected';
 
                     $newOptions = [];
-                    foreach ($values as $value)
-                    {
+                    foreach ($values as $value) {
                         $newOptions[$value] = $options[$value];
                         unset($options[$value]);
                     }
