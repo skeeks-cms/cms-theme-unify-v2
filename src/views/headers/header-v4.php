@@ -138,7 +138,7 @@ JS
         </div>
     </div>
 
-    <div class="u-header__section u-header__section--dark g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+    <div class="u-header__section u-header__section--dark g-py-10 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container">
                 <!-- Responsive Toggle Button -->

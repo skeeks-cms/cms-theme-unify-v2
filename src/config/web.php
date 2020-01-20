@@ -18,9 +18,19 @@ return [
         'upaBackend' => [
 
             'on beforeRun' => function ($e) {
-                $theme = new \skeeks\cms\themes\unify\admin\UnifyThemeAdmin();
+    
+                $theme = \Yii::$app->view->theme;
+                $theme::initBeforeRender();
 
-                if (isset(\Yii::$app->view->theme->favicon)) {
+                $theme->pathMap['@app/views'] = \yii\helpers\ArrayHelper::merge([
+                    '@skeeks/cms/themes/unify/views/upa'
+                ], $theme->pathMap['@app/views']);
+                
+                
+                
+                //$theme = new \skeeks\cms\themes\unify\admin\UnifyThemeAdmin();
+
+                /*if (isset(\Yii::$app->view->theme->favicon)) {
                     $theme->favicon = \Yii::$app->view->theme->favicon;
                 }
 
@@ -33,7 +43,7 @@ return [
                 }
 
                 \skeeks\cms\themes\unify\admin\UnifyThemeAdmin::initBeforeRender();
-                \Yii::$app->view->theme = $theme;
+                \Yii::$app->view->theme = $theme;*/
             },
         ],
     ],
