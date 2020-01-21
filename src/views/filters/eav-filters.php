@@ -55,7 +55,8 @@ $widget = $this->context;
                             <div class="sort-slider__input">
                                 <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
                                     'id'    => $id.'-from',
-                                    'value' => $val1,
+                                    'value' => $val1 == $min ? "" : $val1,
+                                    'placeholder' => $val1 == $min ? $val1 : "",
                                     'class' => 'sx-from form-control',
                                 ])->label(false); ?>
                             </div>
@@ -63,7 +64,8 @@ $widget = $this->context;
                             <div class="sort-slider__input">
                                 <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
                                     'id'    => $id.'-to',
-                                    'value' => $val2,
+                                    'value' => $val2 == $max ? "" : $val2,
+                                    'placeholder' => $val2 == $max ? $val2 : "",
                                     'class' => 'sx-to form-control',
                                 ])->label(false); ?>
                             </div>
