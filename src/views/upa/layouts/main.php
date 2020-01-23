@@ -12,6 +12,15 @@ $class = $this->theme->themeAssetClass;
 $class::register($this);
 /* @var $this \yii\web\View */
 /* @var $content string */
+$this->registerCss(<<<CSS
+.sx-main-col {
+    overflow: auto;
+}
+.js-side-nav {
+    display: none !important;
+}
+CSS
+);
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
