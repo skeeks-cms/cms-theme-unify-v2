@@ -64,6 +64,7 @@ class UnifyDefaultAsset extends UnifyAsset
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
         FontAwesomeAsset::class,
+        VanillaLazyLoadAsset::class
     ];
 
     public function registerAssetFiles($view)
