@@ -170,6 +170,19 @@ class UnifyTheme extends Theme
             ]
         ));
 
+        if (\Yii::$app->view->theme->is_cap) {
+            $enableCap = true;
+            if (\Yii::$app->view->theme->is_cap_only_guests) {
+                $enableCap = false;
+                if ( \Yii::$app->user->isGuest) {
+                    $enableCap = true;
+                }
+            }
+            
+            if ($enableCap) {
+                \Yii::$app->layout = "main-cap";
+            }
+        }
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)) , $content);
@@ -320,6 +333,15 @@ CSS
        return $rgb;
     }
 
+    /**
+     * @var int 
+     */
+    public $is_cap = 0;
+    /**
+     * @var int
+     */
+    public $is_cap_only_guests = 1;
+    
     /**
      * @var string Шрифт заголовков
      */

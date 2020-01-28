@@ -280,6 +280,16 @@ class UnifyThemeSettings extends Component
 
 
     /**
+     * @var int Включить заглушку?
+     */
+    public $is_cap = 0;
+    /**
+     * @var int Заглушка показывается только гостям?
+     */
+    public $is_cap_only_guests = 1;
+
+
+    /**
      * Можно задать название и описание компонента
      * @return array
      */
@@ -362,6 +372,8 @@ class UnifyThemeSettings extends Component
                     'is_header_sticky_margin',
                     'is_header_sticky',
                     'is_show_home_slider',
+                    'is_cap',
+                    'is_cap_only_guests',
                 ],
                 'boolean',
             ],
@@ -381,6 +393,8 @@ class UnifyThemeSettings extends Component
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
+            'is_cap'        => "Включить заглушку?",
+            'is_cap_only_guests'        => "Показывать заглушку только неавторизованным пользователям?",
             'logo'        => "Логотип",
             'footer_logo' => "Логотип для футера",
             'logo_text'   => "Текст для логотипа",
@@ -855,6 +869,19 @@ class UnifyThemeSettings extends Component
                     ],
                 ],
             ],
+
+            'dev' => [
+                'class' => FieldSet::class,
+                'name' => 'Разработка',
+                'fields' => [
+                    'is_cap' => [
+                        'class' => BoolField::class
+                    ],
+                    'is_cap_only_guests' => [
+                        'class' => BoolField::class
+                    ],
+                ]
+            ]
         ];
     }
 
