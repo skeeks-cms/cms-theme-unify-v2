@@ -13,14 +13,14 @@
 
 <div class="row g-mb-30">
     <!-- Article Image -->
-    <div class="col-md-3">
+    <div class="col-md-2">
         <figure class="u-shadow-v25 g-pos-rel g-mb-20 g-mb-0--lg">
             <? if ($model->image) : ?>
                 <a href="<?= $model->image->src; ?>" target="_blank" class="js-fancybox-media">
                     <img class="img-fluid w-100" src="<?= \skeeks\cms\helpers\Image::getSrc(
                         \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                'w' => 350,
+                                'w' => 100,
                                 'h' => 0,
                                 'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
                             ]), $model->code
@@ -31,7 +31,7 @@
                 <img class="img-fluid w-100" src="<?= \skeeks\cms\helpers\Image::getSrc(
                     \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                         new \skeeks\cms\components\imaging\filters\Thumbnail([
-                            'w' => 350,
+                            'w' => 100,
                             'h' => 0,
                             'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
                         ]), $model->code
@@ -43,7 +43,7 @@
     <!-- End Article Image -->
 
     <!-- Article Content -->
-    <div class="col-md-9 align-self-center">
+    <div class="col-md-10 align-self-center">
         <h3 class="h4 g-mb-15">
             <?= $model->name; ?>
         </h3>
@@ -63,8 +63,8 @@
         </ul>
 
         <p class="g-color-gray-dark-v2"><?= $model->description_short; ?></p>
-        <? if ($model->image) : ?>
-            <a class="g-font-size-12 js-fancybox-media" href="<?= $model->image->src; ?>" target="_blank">Читать оригинал</a>
+        <? if ($model->fullImage) : ?>
+            <a class="g-font-size-12 js-fancybox-media" href="<?= $model->fullImage->src; ?>" target="_blank">Читать оригинал</a>
         <? endif; ?>
 
     </div>

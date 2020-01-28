@@ -278,6 +278,7 @@ class UnifyThemeSettings extends Component
      */
     public $news_list_count_columns = 3;
 
+
     /**
      * Можно задать название и описание компонента
      * @return array
@@ -784,6 +785,7 @@ class UnifyThemeSettings extends Component
                         'items' => [
                             'default' => "По умолчанию",
                             'news' => "Новости",
+                            'company' => "Страница компании (слайдер, услуги, преимущества, акции и т.д.)",
                         ]
                     ],
 

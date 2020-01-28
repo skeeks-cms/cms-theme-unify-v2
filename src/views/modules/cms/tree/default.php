@@ -8,7 +8,7 @@
 /* @var $this yii\web\View */
 ?>
 <? if ($this->theme->is_image_body_begin) : ?>
-    <section class="g-bg-cover g-bg-size-cover g-bg-white-gradient-opacity-v1--after sx-body-begin-image-wrapper" data-bg-img-src="<?= $model->image ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
+    <section class="g-bg-cover g-bg-size-cover g-bg-white-gradient-opacity-v1--after sx-body-begin-image-wrapper" data-bg-img-src="<?= ($model->image && $model->image->image_width >= 1920) ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
         new \skeeks\cms\components\imaging\filters\Thumbnail([
             'w' => 1920,
             'h' => 500,
