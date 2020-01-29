@@ -170,6 +170,7 @@ class UnifyTheme extends Theme
             ]
         ));
 
+        //Показывать заглушку?
         if (\Yii::$app->view->theme->is_cap) {
             $enableCap = true;
             if (\Yii::$app->view->theme->is_cap_only_guests) {
@@ -183,6 +184,18 @@ class UnifyTheme extends Theme
                 \Yii::$app->layout = "main-cap";
             }
         }
+
+        if (\Yii::$app->view->theme->include_assets) {
+            foreach ((array) \Yii::$app->view->theme->include_assets as $assetClass)
+            {
+                if (class_exists($assetClass)) {
+                    $assetClass::register(\Yii::$app->view);
+                } else {
+                    \Yii::error('Ошибка, класс: ' . $assetClass . " не существует или удален!");
+                }
+            }
+        }
+
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)) , $content);
@@ -334,7 +347,12 @@ CSS
     }
 
     /**
-     * @var int 
+     * @var array
+     */
+    public $include_assets = [];
+
+    /**
+     * @var int
      */
     public $is_cap = 0;
     /**

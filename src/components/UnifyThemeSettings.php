@@ -8,6 +8,9 @@
 
 namespace skeeks\cms\themes\unify\components;
 
+use skeeks\assets\unify\base\UnifyIconLineProAsset;
+use skeeks\assets\unify\base\UnifyIconMaterialAsset;
+use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\widgets\ColorInput;
@@ -288,6 +291,10 @@ class UnifyThemeSettings extends Component
      */
     public $is_cap_only_guests = 1;
 
+    public $include_assets = [
+
+    ];
+
 
     /**
      * Можно задать название и описание компонента
@@ -386,6 +393,12 @@ class UnifyThemeSettings extends Component
                 ],
                 'integer',
             ],
+            [
+                [
+                    'include_assets',
+                ],
+                'safe',
+            ],
 
         ]);
     }
@@ -460,6 +473,7 @@ class UnifyThemeSettings extends Component
             'news_list_count_columns' => 'Количество колонок в новостях',
 
             'is_show_home_slider'=> "Показывать слайдер на главной",
+            'include_assets'=> "Дополнительные компоненты",
         ]);
     }
 
@@ -479,6 +493,7 @@ class UnifyThemeSettings extends Component
             'is_show_loader'        => 'Показывать индикатор загрузки?',
             'phone_second'        => 'Дополнительный номер телефона',
             'phone_third'        => 'Дополнительный номер телефона',
+            'include_assets'        => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
         ]);
     }
 
@@ -879,6 +894,15 @@ class UnifyThemeSettings extends Component
                     ],
                     'is_cap_only_guests' => [
                         'class' => BoolField::class
+                    ],
+                    'include_assets' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
+                            UnifyIconMaterialAsset::class => 'Иконки (Material)',
+                            UnifyIconLineProAsset::class => 'Иконки (LinePro)',
+                        ],
+                        'multiple' => true
                     ],
                 ]
             ]

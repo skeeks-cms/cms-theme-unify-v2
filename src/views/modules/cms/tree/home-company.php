@@ -39,18 +39,13 @@ if (!$model->meta_title) {
 ])); ?>
 
 
-<?
-\skeeks\assets\unify\base\UnifyIconLineProAsset::register($this);
-?>
-<div class="g-bg-img-hero" style="background-image: url(https://htmlstream.com/preview/unify-v2.6.2/assets/include/svg/svg-bg3.svg);">
+<div class="g-bg-img-hero" style="background-image: url(<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/svg-bg3.svg'); ?>);">
     <div class="container g-pt-80">
-
         <div class="row g-pb-60">
             <div class="col-md-12 text-center">
                 <h2 class="h1 text-uppercase sx-color-primary">Преимущества</h2>
             </div>
         </div>
-
         <?
         $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'advantage'])->one();
         ?>
@@ -67,8 +62,6 @@ if (!$model->meta_title) {
             ],
             'viewFile'                => '@app/views/widgets/ContentElementsCmsWidget/advantage-v1',
         ]); ?>
-
-
     </div>
 
     <div class="g-bg-img-hero g-pb-60 sx-actions" id="sx-sell">
@@ -78,28 +71,24 @@ if (!$model->meta_title) {
                     <h2 class="h1 text-uppercase sx-color-primary">Акции</h2>
                 </div>
             </div>-->
-                <?
-                $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'stock'])->one();
-                ?>
-                <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-                    'enabledCurrentTree'      => 'N',
-                    'enabledSearchParams'     => 'N',
-                    'enabledCurrentTreeChild' => 'N',
-                    'namespace'               => 'home-stock',
-                    'enabledPaging'           => \skeeks\cms\components\Cms::BOOL_N,
-                    'enabledRunCache'         => \skeeks\cms\components\Cms::BOOL_Y,
-                    'limit'                   => 12,
-                    'content_ids'             => [
-                        $contentFaq ? $contentFaq->id : "",
-                    ],
-                    'viewFile'                => '@app/views/widgets/ContentElementsCmsWidget/stock-carousel',
-                ]); ?>
-                    
-            
-
+            <?
+            $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'stock'])->one();
+            ?>
+            <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                'enabledCurrentTree'      => 'N',
+                'enabledSearchParams'     => 'N',
+                'enabledCurrentTreeChild' => 'N',
+                'namespace'               => 'home-stock',
+                'enabledPaging'           => \skeeks\cms\components\Cms::BOOL_N,
+                'enabledRunCache'         => \skeeks\cms\components\Cms::BOOL_N,
+                'limit'                   => 12,
+                'content_ids'             => [
+                    $contentFaq ? $contentFaq->id : "",
+                ],
+                'viewFile'                => '@app/views/widgets/ContentElementsCmsWidget/stock-carousel',
+            ]); ?>
         </div>
     </div>
-
 </div>
 
 
