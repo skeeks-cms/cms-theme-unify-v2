@@ -33,6 +33,10 @@ use yii\web\View;
  */
 class UnifyTheme extends Theme
 {
+    const UPA_CONTAINER_FULL = 'container-full-width';
+    const UPA_CONTAINER_STANDART = 'container-standart';
+    const UPA_CONTAINER_NO_STANDART = 'container-no-standart';
+
     public $pathMap = [
         '@app/views' => [
             '@skeeks/cms/themes/unify/views',
@@ -346,6 +350,11 @@ CSS
        return $rgb;
     }
 
+    /**
+     * @var string 
+     */
+    public $upa_container = self::UPA_CONTAINER_FULL;
+    
     /**
      * @var array
      */

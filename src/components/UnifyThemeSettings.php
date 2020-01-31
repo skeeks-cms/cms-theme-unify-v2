@@ -13,6 +13,7 @@ use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
+use skeeks\cms\themes\unify\UnifyTheme;
 use skeeks\cms\widgets\ColorInput;
 use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\FieldSet;
@@ -256,6 +257,11 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $container = 'full'; //full or boxed
+
+    /**
+     * @var string 
+     */
+    public $upa_container = UnifyTheme::UPA_CONTAINER_FULL;
     /**
      * @var string
      */
@@ -355,6 +361,7 @@ class UnifyThemeSettings extends Component
 
                     'body_bg_image',
                     'container',
+                    'upa_container',
                     'body_outer',
 
                     'css_code',
@@ -457,6 +464,8 @@ class UnifyThemeSettings extends Component
             'body_bg_image' => "Фоновая картинка сайта",
             'container'     => "Сайт во всю ширину или центрированный?",
             'body_outer'    => "Отступ вокруг контейнера сайта",
+            
+            'upa_container'     => "Личный кабинет",
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
 
@@ -903,6 +912,22 @@ class UnifyThemeSettings extends Component
                             UnifyIconLineProAsset::class => 'Иконки (LinePro)',
                         ],
                         'multiple' => true
+                    ],
+                ]
+            ],
+    
+            'upa' => [
+                'class' => FieldSet::class,
+                'name' => 'Личный кабинет',
+                'fields' => [
+                
+                    'upa_container' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            UnifyTheme::UPA_CONTAINER_FULL => 'Во всю ширину',
+                            UnifyTheme::UPA_CONTAINER_STANDART => 'Стандартная ширина контейнера',
+                            UnifyTheme::UPA_CONTAINER_NO_STANDART => 'Широкий контейнер',
+                        ],
                     ],
                 ]
             ]

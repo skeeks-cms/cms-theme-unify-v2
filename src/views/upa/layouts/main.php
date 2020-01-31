@@ -44,78 +44,51 @@ CSS
         <?= $this->render("@app/views/header"); ?>
 
 
+        <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
         <div class="container">
-        <div class="row no-gutters g-pos-rel g-overflow-x-hidden g-min-height-100vh">
-            <!-- Sidebar Nav -->
+            <? endif; ?>
+
+            <div class="row no-gutters g-pos-rel g-overflow-x-hidden g-min-height-100vh">
+                <!-- Sidebar Nav -->
 
 
-            <a class="js-side-nav u-header__nav-toggler d-flex align-self-center ml-auto" href="#!" data-hssm-class="u-side-nav--mini u-sidebar-navigation-v1--mini" data-hssm-body-class="u-side-nav-mini" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
-<i class="hs-admin-align-left"></i>
-</a>
-            <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light g-bg-gray-light-v8">
-                <?/*= $this->render("@app/views/layouts/_before-menu"); */?>
-                <?= $this->render("@app/views/layouts/_menu"); ?>
-                <div class="text-center g-mt-20">
-
-                <a class="btn btn-default btn-secondary" style="color: white;" href="<?= \yii\helpers\Url::to(['/cms/auth/logout'])?>" data-method="post"><i class="fas fa-sign-out-alt"></i>
-                    Выход
+                <a class="js-side-nav u-header__nav-toggler d-flex align-self-center ml-auto" href="#!" data-hssm-class="u-side-nav--mini u-sidebar-navigation-v1--mini" data-hssm-body-class="u-side-nav-mini"
+                   data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+                    <i class="hs-admin-align-left"></i>
                 </a>
-                </div>
-                <?/*= $this->render("@app/views/layouts/_after-menu"); */?>
+                <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light g-bg-gray-light-v8">
+                    <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
+                    <?= $this->render("@app/views/layouts/_menu"); ?>
+                    <div class="text-center g-mt-20">
 
-
-            </div>
-            <!-- End Sidebar Nav -->
-            <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
-                <!-- Breadcrumb-v1 -->
-                <div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
-                    <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
-                </div>
-                <!-- End Breadcrumb-v1 -->
-
-                <!-- Statistic Card -->
-                <div class="g-pa-20">
-                    <div class="sx-empty-layout-hidden-no">
-                        <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
-                            <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
-                                && \Yii::$app->controller->actions) : ?>
-                                <?
-                                echo \skeeks\cms\backend\widgets\ControllerActionsWidget::currentWidget([
-                                    'options'            => [
-                                        //'class' => 'nav justify-content-center u-nav-v4-1 u-nav-primary sx-main-page-nav',
-                                        'class' => 'nav u-nav-v7-1 u-nav-primary sx-main-page-nav',
-                                        'style' => 'font-size: 16px;',
-                                    ],
-                                    'itemWrapperOptions' => [
-                                        'class' => 'nav-item',
-                                    ],
-                                    'itemOptions'        => [
-                                        'class' => 'nav-link',
-                                    ],
-                                ]);
-                                ?>
-                            <? endif; ?>
-                        <? endif; ?>
+                        <a class="btn btn-default btn-secondary" style="color: white;" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post"><i class="fas fa-sign-out-alt"></i>
+                            Выход
+                        </a>
                     </div>
-
-                    <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                        <div class="">
-                            <div class="panel-content-before panel-content-before-second">
-                                <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                                    && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+                    <? /*= $this->render("@app/views/layouts/_after-menu"); */ ?>
 
 
-                                    <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
-                                        <?= \Yii::$app->controller->modelHeader; ?>
-                                    </div>
+                </div>
+                <!-- End Sidebar Nav -->
+                <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
+                    <!-- Breadcrumb-v1 -->
+                    <div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
+                        <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
+                    </div>
+                    <!-- End Breadcrumb-v1 -->
 
+                    <!-- Statistic Card -->
+                    <div class="g-pa-20">
+                        <div class="sx-empty-layout-hidden-no">
+                            <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
+                                <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
+                                    && \Yii::$app->controller->actions) : ?>
                                     <?
-                                    echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
-                                        'actions'            => \Yii::$app->controller->modelActions,
-                                        'activeId'           => \Yii::$app->controller->action->id,
+                                    echo \skeeks\cms\backend\widgets\ControllerActionsWidget::currentWidget([
                                         'options'            => [
-                                            'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
+                                            //'class' => 'nav justify-content-center u-nav-v4-1 u-nav-primary sx-main-page-nav',
+                                            'class' => 'nav u-nav-v7-1 u-nav-primary sx-main-page-nav',
+                                            'style' => 'font-size: 16px;',
                                         ],
                                         'itemWrapperOptions' => [
                                             'class' => 'nav-item',
@@ -125,39 +98,71 @@ CSS
                                         ],
                                     ]);
                                     ?>
-
-
                                 <? endif; ?>
-                            </div>
+                            <? endif; ?>
                         </div>
-                        <div class="tab-content">
+
+                        <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
+                            && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+                            <div class="">
+                                <div class="panel-content-before panel-content-before-second">
+                                    <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
+                                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+
+
+                                        <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
+                                            <?= \Yii::$app->controller->modelHeader; ?>
+                                        </div>
+
+                                        <?
+                                        echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
+                                            'actions'            => \Yii::$app->controller->modelActions,
+                                            'activeId'           => \Yii::$app->controller->action->id,
+                                            'options'            => [
+                                                'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
+                                            ],
+                                            'itemWrapperOptions' => [
+                                                'class' => 'nav-item',
+                                            ],
+                                            'itemOptions'        => [
+                                                'class' => 'nav-link',
+                                            ],
+                                        ]);
+                                        ?>
+
+
+                                    <? endif; ?>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <section>
+                                    <?= $content; ?>
+                                </section>
+                            </div>
+                        <? else : ?>
                             <section>
                                 <?= $content; ?>
                             </section>
-                        </div>
-                    <? else : ?>
-                        <section>
-                            <?= $content; ?>
-                        </section>
-                    <? endif; ?>
+                        <? endif; ?>
 
 
-                    <!--</div>-->
+                        <!--</div>-->
+                        <!-- End Statistic Card -->
+                    </div>
                     <!-- End Statistic Card -->
+                    <!--</div>
+                </div>-->
+
                 </div>
-                <!-- End Statistic Card -->
-                <!--</div>
-            </div>-->
-
             </div>
+
+    <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
         </div>
-        </div>
+    <? endif; ?>
 
 
 
-
-
-            <?= $this->render("@app/views/footer"); ?>
+        <?= $this->render("@app/views/footer"); ?>
     </main>
     <?= $this->render("@app/views/modals"); ?>
     <?= \Yii::$app->seo->countersContent; ?>
