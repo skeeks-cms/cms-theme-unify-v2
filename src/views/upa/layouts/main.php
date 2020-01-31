@@ -21,6 +21,9 @@ $this->registerCss(<<<CSS
 }
 CSS
 );
+if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
+    $this->theme->bodyCssClass = $this->theme->bodyCssClass . ' sx-empty';
+}
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
