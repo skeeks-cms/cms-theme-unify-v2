@@ -562,3 +562,78 @@ pre {
 .sx-progress-bar-wrapper {
     height: 12px;
 }
+
+
+
+
+
+
+/**
+ * Кастомные checkbox
+ */
+/*
+.sx-custom-checkbox
+{
+    margin: 0 0 12px;
+    position: relative;
+    margin-top: 0 !important;
+}
+
+.sx-custom-checkbox input[type=checkbox],
+.sx-backend-form input[type=checkbox]
+{
+    position: absolute;
+    visibility: hidden;
+}
+
+
+.sx-custom-checkbox input[type=checkbox]:checked + label
+{
+    font-weight: 600;
+}
+
+
+.sx-custom-checkbox label,
+.sx-backend-form .form-check label,
+.sx-backend-form .custom-radio label,
+.sx-backend-form .custom-checkbox label
+{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    line-height: 14px;
+    padding: 0 0 0 26px;
+    font-size: 1.083333em;
+    cursor: pointer;
+}
+
+.sx-custom-checkbox label:before,
+.sx-backend-form label:before
+{
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.sx-custom-checkbox input[type=checkbox] + label:before,
+.sx-backend-form input[type=checkbox] + label:before
+{
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+
+    background-color: white;
+    border: 1px solid #ddd;
+
+    content: '';
+    position: absolute;
+}
+
+.sx-custom-checkbox input[type=checkbox]:checked + label:before,
+.sx-backend-form input[type=checkbox]:checked + label:before
+{
+    background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;
+    background-color: #87c451;
+    border-color: #87c451;
+}*/
