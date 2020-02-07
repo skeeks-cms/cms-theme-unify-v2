@@ -11,6 +11,7 @@ namespace skeeks\cms\themes\unify\components;
 use skeeks\assets\unify\base\UnifyIconLineProAsset;
 use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
+use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\themes\unify\UnifyTheme;
@@ -21,6 +22,7 @@ use skeeks\yii2\form\fields\HtmlBlock;
 use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\WidgetField;
+use yii\bootstrap4\ActiveField;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -507,11 +509,20 @@ class UnifyThemeSettings extends Component
     }
 
     /**
+     * @return ActiveForm
+     */
+    public function beginConfigForm()
+    {
+        return ActiveFormBackend::begin();
+    }
+    
+    /**
      * @return array
      */
     public function getConfigFormFields()
     {
         return [
+
             'main' => [
                 'class'  => FieldSet::class,
                 'name'   => 'Данные',
