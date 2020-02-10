@@ -14,6 +14,8 @@ use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
+use skeeks\cms\themes\unify\assets\UnifyDefaultAsset;
+use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\UnifyTheme;
 use skeeks\cms\widgets\ColorInput;
 use skeeks\yii2\form\fields\BoolField;
@@ -312,6 +314,9 @@ class UnifyThemeSettings extends Component
     {
         return array_merge(parent::descriptorConfig(), [
             'name' => 'Настройки шаблона Unify',
+            'image' => [
+                UnifyThemeAsset::class, 'img/template-preview.png'
+            ],
         ]);
     }
 
