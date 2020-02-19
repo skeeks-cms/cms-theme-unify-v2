@@ -20,7 +20,7 @@ if (@$isShowMainImage !== false) {
                                 'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
                             ]), $model->code
                         ) : $this->theme->body_begin_no_image; ?>" style="background: center;">
-        <div class="container text-center g-pos-rel g-z-index-1 g-pb-50">
+        <div class="container sx-container text-center g-pos-rel g-z-index-1 g-pb-50">
             <div class="row d-flex justify-content-center align-content-end flex-wrap g-min-height-<?= $this->theme->body_begin_image_height_element; ?>">
                 <div class="col-lg-10 mt-auto">
                     <div class="mb-5">
@@ -39,19 +39,19 @@ if (@$isShowMainImage !== false) {
 <? endif; ?>
 
 <section class="g-pb-0">
-    <div class="container g-bg-white">
+    <div class="container sx-container g-bg-white">
         <div class="row">
             <!-- Content -->
-            <? if ($this->theme->tree_content_layout == 'col-left') : ?>
-                <div class="col-md-9 order-md-2 g-py-20">
+            <? if ($this->theme->element_content_layout == 'col-left') : ?>
+                <div class="order-md-2 g-py-20 g-px-15 sx-content-col-main">
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'col-right') : ?>
-                <div class="col-md-9 g-py-20">
+            <? if ($this->theme->element_content_layout == 'col-right') : ?>
+                <div class="g-py-20 g-px-15 sx-content-col-main">
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'no-col') : ?>
+            <? if ($this->theme->element_content_layout == 'no-col') : ?>
                 <div class="col-md-12 g-py-20">
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'col-left-right') : ?>
+            <? if ($this->theme->element_content_layout == 'col-left-right') : ?>
                 <div class="col-md-7  order-md-2 g-py-20">
             <? endif; ?>
 
@@ -202,16 +202,16 @@ if (@$isShowMainImage !== false) {
                 <?= $this->render("@app/views/include/bottom-block"); ?>
 
             </div>
-            <? if ($this->theme->tree_content_layout == 'col-left') : ?>
+            <? if ($this->theme->element_content_layout == 'col-left') : ?>
                 <?= $this->render("@app/views/include/col-left"); ?>
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'col-right') : ?>
+            <? if ($this->theme->element_content_layout == 'col-right') : ?>
                 <?= $this->render("@app/views/include/col-left"); ?>
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'no-col') : ?>
+            <? if ($this->theme->element_content_layout == 'no-col') : ?>
 
             <? endif; ?>
-            <? if ($this->theme->tree_content_layout == 'col-left-right') : ?>
+            <? if ($this->theme->element_content_layout == 'col-left-right') : ?>
                 <?= $this->render("@app/views/include/col-left"); ?>
             <? endif; ?>
         </div>

@@ -14,7 +14,7 @@
             'h' => 500,
         ]), $model->code
     ) : $this->theme->body_begin_no_image; ?>" style="background-position: center;">
-        <div class="container text-center g-pos-rel g-z-index-1 g-pb-50">
+        <div class="container sx-container text-center g-pos-rel g-z-index-1 g-pb-50">
             <div class="row d-flex justify-content-center align-content-end flex-wrap g-min-height-<?= $this->theme->body_begin_image_height_tree; ?>">
                 <div class="col-lg-10 mt-auto">
                     <div class="mb-5">
@@ -33,7 +33,7 @@
 <? endif; ?>
 
 <section class="g-mt-0 g-pb-0">
-    <div class="container g-bg-white">
+    <div class="container sx-container g-bg-white">
         <div class="row">
             <? if ($this->theme->tree_content_layout == 'col-left') : ?>
             <div class="col-md-9 order-md-2 g-py-20">

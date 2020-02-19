@@ -10,7 +10,7 @@
 /* @var $models  \skeeks\cms\models\Tree[] */
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
-    <div class="container-fluid">
+    <div class="">
         <div class="">
             <div class="">
                 <!--g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4-->

@@ -50,7 +50,7 @@ JS
     <!--u-header__section--hidden -->
     <div class="u-header__section u-header__section--hidden u-header__section--dark">
         <div class="g-bg-black sx-topbar g-py-7">
-            <div class="container">
+            <div class="container sx-container">
                 <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                     <div class="col-auto">
                         <i class="fas fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
@@ -88,7 +88,7 @@ JS
         </div>
 
         <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
-            <div class="container g-pt-15 g-pb-15">
+            <div class="container sx-container g-pt-15 g-pb-15">
                 <div class="row ">
                     <div class="col-sm-4 col-md-3">
                         <!-- Logo -->
@@ -140,7 +140,7 @@ JS
 
     <div class="u-header__section u-header__section--dark g-py-10 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
-            <div class="container">
+            <div class="container sx-container">
                 <!-- Responsive Toggle Button -->
                 <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
                       <span class="hamburger hamburger--slider">

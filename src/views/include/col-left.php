@@ -42,7 +42,7 @@ if ($model) {
 
 ?>
 <? if (\Yii::$app->mobileDetect->isDesktop) : ?>
-<div class="col-md-3 order-md-1 g-py-20 g-bg-secondary">
+<div class="order-md-1 g-py-20 g-px-20 g-bg-secondary sx-content-col-left">
     <div class="g-mb-20">
         <div
                 id="stickyblock-start"

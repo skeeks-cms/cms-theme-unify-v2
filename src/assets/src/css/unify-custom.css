@@ -307,9 +307,7 @@ body {
     margin-top: 20px;
 }
 
-.sx-main-menu ul {
-    margin-left: 0 !important;
-}
+
 /* Поисковый блок, выезжающий в шапке */
 .sx-invisible-search-block
 {

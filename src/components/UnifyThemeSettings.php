@@ -13,8 +13,8 @@ use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
+use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
-use skeeks\cms\themes\unify\assets\UnifyDefaultAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\UnifyTheme;
 use skeeks\cms\widgets\ColorInput;
@@ -24,7 +24,6 @@ use skeeks\yii2\form\fields\HtmlBlock;
 use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\WidgetField;
-use yii\bootstrap4\ActiveField;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -59,7 +58,7 @@ class UnifyThemeSettings extends Component
     public $favicon = '/favicon.ico';
 
     /**
-     * @var int 
+     * @var int
      */
     public $is_show_home_slider = 0;
 
@@ -91,12 +90,12 @@ class UnifyThemeSettings extends Component
     public $phone = '(+7 495) 005-79-26';
 
     /**
-     * @var string 
+     * @var string
      */
     public $phone_second = '';
 
     /**
-     * @var string 
+     * @var string
      */
     public $phone_third = '';
 
@@ -158,7 +157,6 @@ class UnifyThemeSettings extends Component
      * @var bool
      */
     public $is_header_sticky_margin = true;
-
 
 
     /**
@@ -225,11 +223,42 @@ class UnifyThemeSettings extends Component
     public $main_theme_color2 = '#e1082c';
 
 
+    /**
+     * @var bool 
+     */
+    public $is_header_toolbar = true;
 
+    /**
+     * @var bool 
+     */
+    public $is_header_auth = true;
+
+    /**
+     * @var bool
+     */
+    public $is_header_show_hide = true;
+
+    /**
+     * @var bool
+     */
+    public $is_header_toggle_sections = true;
+
+    
+    
     /**
      * @var string
      */
     public $menu_color1 = '#0185c8';
+
+    /**
+     * @var string 
+     */
+    public $menu_align = 'left';
+    
+    /**
+     * @var bool 
+     */
+    public $is_center_logo = false;
 
     /**
      * @var string
@@ -263,7 +292,7 @@ class UnifyThemeSettings extends Component
     public $container = 'full'; //full or boxed
 
     /**
-     * @var string 
+     * @var string
      */
     public $upa_container = UnifyTheme::UPA_CONTAINER_FULL;
     /**
@@ -300,6 +329,12 @@ class UnifyThemeSettings extends Component
      * @var int Заглушка показывается только гостям?
      */
     public $is_cap_only_guests = 1;
+    
+    public $col_left_width = 285;
+    /**
+     * @var int 
+     */
+    public $sx_container_width = 0;
 
     public $include_assets = [
 
@@ -313,9 +348,10 @@ class UnifyThemeSettings extends Component
     static public function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
-            'name' => 'Настройки шаблона Unify',
+            'name'  => 'Настройки шаблона Unify',
             'image' => [
-                UnifyThemeAsset::class, 'img/template-preview.png'
+                UnifyThemeAsset::class,
+                'img/template-preview.png',
             ],
         ]);
     }
@@ -381,6 +417,7 @@ class UnifyThemeSettings extends Component
 
                     'font_headers',
                     'font_texts',
+                    'sx_container_width',
                 ],
                 'string',
             ],
@@ -398,12 +435,25 @@ class UnifyThemeSettings extends Component
                 ],
                 'boolean',
             ],
+
+
+            [
+                [
+                    'is_header_toolbar',
+                    'is_header_auth',
+                    'is_header_show_hide',
+                    'is_header_toggle_sections',
+                    'is_center_logo',
+                ],
+                'boolean',
+            ],
             [
                 [
                     'is_show_search_block',
                     'body_begin_image_height_tree',
                     'body_begin_image_height_element',
                     'news_list_count_columns',
+                    'col_left_width',
                 ],
                 'integer',
             ],
@@ -413,6 +463,12 @@ class UnifyThemeSettings extends Component
                 ],
                 'safe',
             ],
+            [
+                [
+                    'menu_align',
+                ],
+                'string',
+            ],
 
         ]);
     }
@@ -420,22 +476,22 @@ class UnifyThemeSettings extends Component
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'is_cap'        => "Включить заглушку?",
-            'is_cap_only_guests'        => "Показывать заглушку только неавторизованным пользователям?",
-            'logo'        => "Логотип",
-            'footer_logo' => "Логотип для футера",
-            'logo_text'   => "Текст для логотипа",
-            'mobile_logo' => "Логотип для мобильного телефона",
-            'favicon'     => "Фавикон",
+            'is_cap'             => "Включить заглушку?",
+            'is_cap_only_guests' => "Показывать заглушку только неавторизованным пользователям?",
+            'logo'               => "Логотип",
+            'footer_logo'        => "Логотип для футера",
+            'logo_text'          => "Текст для логотипа",
+            'mobile_logo'        => "Логотип для мобильного телефона",
+            'favicon'            => "Фавикон",
 
-            'title'      => "Короткое название сайта",
-            'phone'      => "Телефон",
-            'phone_second'      => "Телефон 2",
-            'phone_third'      => "Телефон 3",
-            'email'      => "Email",
-            'address'    => "Адрес",
-            'work_time'  => "Рабочее время",
-            'yandex_map' => "Код яндекс карт",
+            'title'        => "Короткое название сайта",
+            'phone'        => "Телефон",
+            'phone_second' => "Телефон 2",
+            'phone_third'  => "Телефон 3",
+            'email'        => "Email",
+            'address'      => "Адрес",
+            'work_time'    => "Рабочее время",
+            'yandex_map'   => "Код яндекс карт",
 
             'vk'        => "Ссылка на страницу VK",
             'instagram' => "Ссылка на страницу Instagram",
@@ -446,50 +502,59 @@ class UnifyThemeSettings extends Component
             'main_theme_color2' => "Цвет темы 2",
 
             'font_headers' => "Шрифт заголовков",
-            'font_texts' => "Шрифт текста",
+            'font_texts'   => "Шрифт текста",
 
             'home_view_file' => "Шаблон главной страницы",
 
-            'menu_color1' => "Цвет меню 1",
-            'menu_color2' => "Цвет меню 2",
+            'is_center_logo'     => "Показывать лого по центру?",
+            'menu_align'     => "Выравнивание меню",
+            'menu_color1'     => "Цвет меню 1",
+            'menu_color2'     => "Цвет меню 2",
             'menu_font_color' => "Цвет текста в меню",
-            'menu_font_size' => "Размер текста в меню",
+            'menu_font_size'  => "Размер текста в меню",
 
-            'header'        => "Вариант отображения шапки",
-            'header_shadow' => "Тень шапки",
-            'is_show_search_block'  => "Добавить поисковый блок в шапку",
-            'is_header_sticky' => "Зафиксировать шапку к верху экрана?",
+            'header'                  => "Вариант отображения шапки",
+            'header_shadow'           => "Тень шапки",
+            'is_show_search_block'    => "Добавить поисковый блок в шапку",
+            'is_header_sticky'        => "Зафиксировать шапку к верху экрана?",
             'is_header_sticky_margin' => "Если шапка фиксирована, добавлять отступ?",
 
 
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
-            'footer_color'           => "Цвет текста в футере футера",
+            'footer_color'              => "Цвет текста в футере футера",
             'footer_copyright_bg_color' => "Цвет фона под футером",
-            'footer_copyright_color' => "Цвет текста под футером",
+            'footer_copyright_color'    => "Цвет текста под футером",
 
             'body_bg_image' => "Фоновая картинка сайта",
             'container'     => "Сайт во всю ширину или центрированный?",
             'body_outer'    => "Отступ вокруг контейнера сайта",
-            
-            'upa_container'     => "Личный кабинет",
+
+            'upa_container' => "Личный кабинет",
 
             'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
 
-            'is_show_loader'             => "Показывать индикатор загрузки перед загрузкой страницы?",
+            'is_show_loader'                  => "Показывать индикатор загрузки перед загрузкой страницы?",
             'is_image_body_begin'             => "Показывать в начале страницы картинку из анонса?",
             'body_begin_image_height_tree'    => "Высота блока с картинкой в разделах",
             'body_begin_image_height_element' => "Высота блока с картинкой в новостях",
             'body_begin_no_image'             => "Если картинка не задана в анонсе показывать эту",
 
-            'tree_content_layout' => 'Вариант отображения раздела',
+            'tree_content_layout'    => 'Вариант отображения раздела',
             'element_content_layout' => 'Вариант отображения страницы одной новости',
 
-            'news_list_view' => 'Вариант отображения списка новостей',
+            'news_list_view'          => 'Вариант отображения списка новостей',
             'news_list_count_columns' => 'Количество колонок в новостях',
 
-            'is_show_home_slider'=> "Показывать слайдер на главной",
-            'include_assets'=> "Дополнительные компоненты",
+            'is_show_home_slider' => "Показывать слайдер на главной",
+            'include_assets'      => "Дополнительные компоненты",
+            'col_left_width'      => "Ширина левой колонки, px",
+
+            'is_header_toolbar'      => "Показывать панельку перед меню",
+            'is_header_auth'      => "Показывать ссылки на авторизацию",
+            'is_header_show_hide'      => "Прятать при прокрутки страницы?",
+            'is_header_toggle_sections'      => "Сокращать при прокрутке? Скрывать тулбар",
+            'sx_container_width'      => "Максимальная ширина контейнера",
         ]);
     }
 
@@ -497,19 +562,22 @@ class UnifyThemeSettings extends Component
     public function attributeHints()
     {
         return ArrayHelper::merge(parent::attributeHints(), [
-            'menu_color1'   =>  'Если задан один цвет, меню будет одного цвета',
-            'menu_color2'   =>  'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
-            'footer'        => "Нижняя часть сайта",
-            'footer_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
-            'mobile_logo'   => "Если логотип не будет задан, то возьмется фото основного логотипа",
-            'header_shadow' => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
-            'body_outer'    => "Задается для центрированных сайтов",
-            'is_header_sticky'    => "Фиксированная шапка будет растянута на весь экран",
-            'is_show_search_block'        => 'При выборе "Да", в шапке будет выведен поисковый блок',
-            'is_show_loader'        => 'Показывать индикатор загрузки?',
-            'phone_second'        => 'Дополнительный номер телефона',
-            'phone_third'        => 'Дополнительный номер телефона',
-            'include_assets'        => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
+            'menu_color1'          => 'Если задан один цвет, меню будет одного цвета',
+            'menu_color2'          => 'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
+            'footer'               => "Нижняя часть сайта",
+            'footer_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
+            'mobile_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
+            'header_shadow'        => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
+            'body_outer'           => "Задается для центрированных сайтов",
+            'is_header_sticky'     => "Фиксированная шапка будет растянута на весь экран",
+            'is_show_search_block' => 'При выборе "Да", в шапке будет выведен поисковый блок',
+            'is_show_loader'       => 'Показывать индикатор загрузки?',
+            'phone_second'         => 'Дополнительный номер телефона',
+            'phone_third'          => 'Дополнительный номер телефона',
+            'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
+            'col_left_width'       => 'Указывается в px',
+            'sx_container_width'       => 'Можно вказать в px или %. Например 100%',
+            'is_center_logo'       => 'Работает в стандартной шапке',
         ]);
     }
 
@@ -520,7 +588,7 @@ class UnifyThemeSettings extends Component
     {
         return ActiveFormBackend::begin();
     }
-    
+
     /**
      * @return array
      */
@@ -577,37 +645,37 @@ class UnifyThemeSettings extends Component
                 'fields' => [
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Шрифт'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Шрифт']),
                     ],
 
-                    'font_headers'         => [
+                    'font_headers' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'Open Sans'      => 'Open Sans',
-                            'Playfair Display'      => 'Playfair Display',
-                            'Roboto'      => 'Roboto',
-                            'Raleway'      => 'Raleway',
-                            'Spectral'      => 'Spectral',
-                            'Rubik'      => 'Rubik',
+                            'Open Sans'        => 'Open Sans',
+                            'Playfair Display' => 'Playfair Display',
+                            'Roboto'           => 'Roboto',
+                            'Raleway'          => 'Raleway',
+                            'Spectral'         => 'Spectral',
+                            'Rubik'            => 'Rubik',
                         ],
                     ],
-                    'font_texts'         => [
+                    'font_texts'   => [
                         'class' => SelectField::class,
                         'items' => [
-                            'Open Sans'      => 'Open Sans',
-                            'Playfair Display'      => 'Playfair Display',
-                            'Roboto'      => 'Roboto',
-                            'Raleway'      => 'Raleway',
-                            'Spectral'      => 'Spectral',
-                            'Rubik'      => 'Rubik',
+                            'Open Sans'        => 'Open Sans',
+                            'Playfair Display' => 'Playfair Display',
+                            'Roboto'           => 'Roboto',
+                            'Raleway'          => 'Raleway',
+                            'Spectral'         => 'Spectral',
+                            'Rubik'            => 'Rubik',
                         ],
                     ],
-
 
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Общие настройки'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Глобальные настройки']),
                     ],
+
 
                     'container'         => [
                         'class' => SelectField::class,
@@ -617,6 +685,7 @@ class UnifyThemeSettings extends Component
                             'semiboxed' => 'Широко центрированный',
                         ],
                     ],
+                    'sx_container_width',
                     'body_outer'        => [
                         'class' => SelectField::class,
                         'items' => [
@@ -625,13 +694,7 @@ class UnifyThemeSettings extends Component
                             'u-outer-space-v2' => 'Большой отступ',
                         ],
                     ],
-                    'isShowBottomBlock' => [
-                        'class' => BoolField::class,
-                    ],
-
-                    'is_show_loader' => [
-                        'class' => BoolField::class,
-                    ],
+                    
 
 
                     'main_theme_color1' => [
@@ -648,25 +711,18 @@ class UnifyThemeSettings extends Component
                     ],
 
 
-
-
-
-
-
-
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Настройки шапки'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Настройки шапки']),
                     ],
+
 
                     'header' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'v1' => 'Вариант 1 (лого, обратный звонок, телефоны, меню)',
-                            'v2' => 'Вариант 2 (лого, меню, авторизация, прижат к верху)',
-                            'v3' => 'Вариант 3 (не высокий тулбар, лого и меню прижат к верху)',
-                            'v4' => 'Вариант 4 (лого, меню, авторизация, телефоны)',
-                            'v5' => 'Вариант 5 (лого, меню)',
+                            'v1' => 'Вариант 1 (меню и высокий тулбар)',
+                            'v2' => 'Вариант 2 (стандартная шапка)',
+                            'v4' => 'Вариант 4 (большая шапка с поисковой формой)',
                         ],
                     ],
 
@@ -723,11 +779,31 @@ class UnifyThemeSettings extends Component
                         ],
                     ],
 
-                    'is_show_search_block' => [
+                    'is_header_toolbar' => [
+                        'class' => BoolField::class,
+                    ],
+
+                    'is_header_auth' => [
+                        'class' => BoolField::class,
+                    ],
+                    
+                    'is_header_auth' => [
+                        'class' => BoolField::class,
+                    ],
+                    
+                    'is_header_toggle_sections' => [
+                        'class' => BoolField::class,
+                    ],
+
+                    
+                    'is_header_show_hide' => [
                         'class' => BoolField::class,
                     ],
 
 
+                    'is_show_search_block' => [
+                        'class' => BoolField::class,
+                    ],
 
 
                     'is_header_sticky' => [
@@ -739,7 +815,7 @@ class UnifyThemeSettings extends Component
                     ],
 
 
-
+                    
                     'menu_color1' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
@@ -765,27 +841,38 @@ class UnifyThemeSettings extends Component
                             '18px' => "18px",
                             '19px' => "19px",
                             '20px' => "20px",
-                        ]
+                        ],
                     ],
-
-
-
+                    'menu_align' => [
+                        'class' => SelectField::class,
+                        'items' => [
+                            'left' => "Слева",
+                            'right' => "Справа",
+                            'center' => "По центру",
+                        ],
+                    ],
+                    
+                    'is_center_logo' => [
+                        'class' => BoolField::class,
+                    ],
+                    
+                    
 
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Контентная часть (верх сайта)'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Контентная часть (верх сайта)']),
                     ],
 
 
                     'is_image_body_begin' => [
-                        'class' => BoolField::class
+                        'class' => BoolField::class,
                     ],
 
-                    'body_begin_no_image' => [
+                    'body_begin_no_image'             => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
-                    'body_begin_image_height_tree' => [
+                    'body_begin_image_height_tree'    => [
                         'class' => SelectField::class,
                         'items' => [
                             '100' => "100 px",
@@ -794,7 +881,7 @@ class UnifyThemeSettings extends Component
                             '400' => "400 px",
                             '500' => "500 px",
                             '600' => "600 px",
-                        ]
+                        ],
                     ],
                     'body_begin_image_height_element' => [
                         'class' => SelectField::class,
@@ -805,50 +892,52 @@ class UnifyThemeSettings extends Component
                             '400' => "400 px",
                             '500' => "500 px",
                             '600' => "600 px",
-                        ]
+                        ],
                     ],
-
 
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Контентная часть'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Контентная часть']),
                     ],
 
                     'tree_content_layout' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'no-col' => "Без колонок",
-                            'col-left' => "Есть колонка слева",
-                            'col-right' => "Есть колонка справа",
+                            'no-col'         => "Без колонок",
+                            'col-left'       => "Есть колонка слева",
+                            'col-right'      => "Есть колонка справа",
                             'col-left-right' => "Есть колонка слева и справа",
-                        ]
+                        ],
                     ],
+                    
 
                     'element_content_layout' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'no-col' => "Без колонок",
-                            'col-left' => "Есть колонка слева",
-                            'col-right' => "Есть колонка справа",
+                            'no-col'         => "Без колонок",
+                            'col-left'       => "Есть колонка слева",
+                            'col-right'      => "Есть колонка справа",
                             'col-left-right' => "Есть колонка слева и справа",
-                        ]
+                        ],
                     ],
 
+                    'col_left_width',
+                    
                     'home_view_file' => [
                         'class' => SelectField::class,
                         'items' => [
                             'default' => "По умолчанию",
-                            'news' => "Новости",
+                            'news'    => "Новости",
                             'company' => "Страница компании (слайдер, услуги, преимущества, акции и т.д.)",
-                        ]
+                        ],
                     ],
 
                     'news_list_view' => [
                         'class' => SelectField::class,
                         'items' => [
-                            'news' => "По умолчанию",
+                            'news'         => "По умолчанию",
                             'news-masonry' => "Новости с фоновой картинкой",
-                        ]
+                        ],
                     ],
 
                     'news_list_count_columns' => [
@@ -857,14 +946,15 @@ class UnifyThemeSettings extends Component
                             '2' => "2",
                             '3' => "3",
                             '4' => "4",
-                        ]
+                        ],
                     ],
 
 
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Настройки футера'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Футер']),
                     ],
+                  
 
                     'footer' => [
                         'class' => SelectField::class,
@@ -880,7 +970,7 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
-                    'footer_color' => [
+                    'footer_color'    => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
@@ -889,66 +979,76 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
-                    'footer_copyright_color' => [
+                    'footer_copyright_color'    => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
                     ],
 
+                  
+                    
                     [
                         'class'   => HtmlBlock::class,
-                        'content' => Html::tag('h2', 'Дополнительно'),
+                        'content' => BlockTitleWidget::widget(['content' => 'Дополнительно']),
                     ],
 
+                    'isShowBottomBlock' => [
+                        'class' => BoolField::class,
+                    ],
+
+                    'is_show_loader' => [
+                        'class' => BoolField::class,
+                    ],
+                    
 
                     'css_code' => [
                         'class' => TextareaField::class,
                     ],
-                    
+
                     'is_show_home_slider' => [
-                        'class' => BoolField::class,
-                        'allowNull' => false,
+                        'class'       => BoolField::class,
+                        'allowNull'   => false,
                         'formElement' => BoolField::ELEMENT_RADIO_LIST,
                     ],
                 ],
             ],
 
             'dev' => [
-                'class' => FieldSet::class,
-                'name' => 'Разработка',
+                'class'  => FieldSet::class,
+                'name'   => 'Разработка',
                 'fields' => [
-                    'is_cap' => [
-                        'class' => BoolField::class
+                    'is_cap'             => [
+                        'class' => BoolField::class,
                     ],
                     'is_cap_only_guests' => [
-                        'class' => BoolField::class
+                        'class' => BoolField::class,
                     ],
-                    'include_assets' => [
-                        'class' => SelectField::class,
-                        'items' => [
+                    'include_assets'     => [
+                        'class'    => SelectField::class,
+                        'items'    => [
                             UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
-                            UnifyIconMaterialAsset::class => 'Иконки (Material)',
-                            UnifyIconLineProAsset::class => 'Иконки (LinePro)',
+                            UnifyIconMaterialAsset::class   => 'Иконки (Material)',
+                            UnifyIconLineProAsset::class    => 'Иконки (LinePro)',
                         ],
-                        'multiple' => true
+                        'multiple' => true,
                     ],
-                ]
+                ],
             ],
-    
+
             'upa' => [
-                'class' => FieldSet::class,
-                'name' => 'Личный кабинет',
+                'class'  => FieldSet::class,
+                'name'   => 'Личный кабинет',
                 'fields' => [
-                
+
                     'upa_container' => [
                         'class' => SelectField::class,
                         'items' => [
-                            UnifyTheme::UPA_CONTAINER_FULL => 'Во всю ширину',
-                            UnifyTheme::UPA_CONTAINER_STANDART => 'Стандартная ширина контейнера',
+                            UnifyTheme::UPA_CONTAINER_FULL        => 'Во всю ширину',
+                            UnifyTheme::UPA_CONTAINER_STANDART    => 'Стандартная ширина контейнера',
                             UnifyTheme::UPA_CONTAINER_NO_STANDART => 'Широкий контейнер',
                         ],
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

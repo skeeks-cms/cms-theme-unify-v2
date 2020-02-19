@@ -137,7 +137,7 @@ class UnifyTheme extends Theme
                 \yii\bootstrap\Modal::class                 => [
                     'class' => \skeeks\bootstrap4\Modal::class,
                 ],
-                \yii\bootstrap\Tabs::class                 => [
+                \yii\bootstrap\Tabs::class                  => [
                     'class' => \yii\bootstrap4\Tabs::class,
                 ],
                 \yii\widgets\LinkPager::class               => [
@@ -179,50 +179,49 @@ class UnifyTheme extends Theme
             $enableCap = true;
             if (\Yii::$app->view->theme->is_cap_only_guests) {
                 $enableCap = false;
-                if ( \Yii::$app->user->isGuest) {
+                if (\Yii::$app->user->isGuest) {
                     $enableCap = true;
                 }
             }
-            
+
             if ($enableCap) {
                 \Yii::$app->layout = "main-cap";
             }
         }
 
         if (\Yii::$app->view->theme->include_assets) {
-            foreach ((array) \Yii::$app->view->theme->include_assets as $assetClass)
-            {
+            foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
                 if (class_exists($assetClass)) {
                     $assetClass::register(\Yii::$app->view);
                 } else {
-                    \Yii::error('Ошибка, класс: ' . $assetClass . " не существует или удален!");
+                    \Yii::error('Ошибка, класс: '.$assetClass." не существует или удален!");
                 }
             }
         }
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
-        $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)) , $content);
-        $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)) , $content);
-        $content = str_replace("114, 192, 44, 0.4", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.4)) , $content);
-        $content = str_replace("114, 192, 44, 0.2", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.2)) , $content);
-        $content = str_replace("114, 192, 44, 0.9", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.9)) , $content);
-        $content = str_replace("114, 192, 44, 0.3", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.3)) , $content);
-        $content = str_replace("114, 192, 44, 0.95", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.95)) , $content);
-        $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.5)) , $content);
-        $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.1)) , $content);
+        $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)), $content);
+        $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)), $content);
+        $content = str_replace("114, 192, 44, 0.4", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.4)), $content);
+        $content = str_replace("114, 192, 44, 0.2", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.2)), $content);
+        $content = str_replace("114, 192, 44, 0.9", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.9)), $content);
+        $content = str_replace("114, 192, 44, 0.3", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.3)), $content);
+        $content = str_replace("114, 192, 44, 0.95", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.95)), $content);
+        $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.5)), $content);
+        $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.1)), $content);
 
         $content = str_replace("{footer_bg_color}", \Yii::$app->view->theme->footer_bg_color, $content);
         $content = str_replace("{footer_color}", \Yii::$app->view->theme->footer_color, $content);
         $content = str_replace("{footer_copyright_bg_color}", \Yii::$app->view->theme->footer_copyright_bg_color, $content);
         $content = str_replace("{footer_copyright_color}", \Yii::$app->view->theme->footer_copyright_color, $content);
-        
-        
+
+
         $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)));
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
-        $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-" . $cache . ".css");
-        $newFilePublic = \Yii::getAlias("@web/assets/unify/unify-default-template-" . $cache . ".css");
+        $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
+        $newFilePublic = \Yii::getAlias("@web/assets/unify/unify-default-template-".$cache.".css");
 
         if (!file_exists($newFile)) {
             FileHelper::createDirectory($newDir);
@@ -233,11 +232,11 @@ class UnifyTheme extends Theme
         }
 
 
-        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function() use ($newFilePublic) {
+        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic) {
             \Yii::$app->view->registerCssFile($newFilePublic, [
                 'depends' => [
-                    UnifyThemeAsset::class
-                ]
+                    UnifyThemeAsset::class,
+                ],
             ]);
         });
 
@@ -252,9 +251,22 @@ class UnifyTheme extends Theme
         $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
         //\Yii::$app->view->registerCss($content);
 
+        if (\Yii::$app->view->theme->menu_color1) {
+            $bgColor1 = \Yii::$app->view->theme->menu_color1;
+            $bgColor2 = \Yii::$app->view->theme->menu_color2;
+            $content = str_replace("{menuBgColor1}", $bgColor1, $content);
+            $content = str_replace("{menuBgColor2}", $bgColor2, $content);
+        }
 
-        $newFile2 = \Yii::getAlias("@webroot/assets/unify/unify-theme-template-" . $cache . ".css");
-        $newFilePublic2 = \Yii::getAlias("@web/assets/unify/unify-theme-template-" . $cache . ".css");
+        $color = \Yii::$app->view->theme->menu_font_color;
+        $fz = \Yii::$app->view->theme->menu_font_size;
+
+        $content = str_replace("{menuColor}", $color, $content);
+        $content = str_replace("{menuFz}", $fz, $content);
+
+
+        $newFile2 = \Yii::getAlias("@webroot/assets/unify/unify-theme-template-".$cache.".css");
+        $newFilePublic2 = \Yii::getAlias("@web/assets/unify/unify-theme-template-".$cache.".css");
 
         if (!file_exists($newFile2)) {
             FileHelper::createDirectory($newDir);
@@ -265,14 +277,56 @@ class UnifyTheme extends Theme
         }
 
 
-        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function() use ($newFilePublic2) {
+        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic2) {
             \Yii::$app->view->registerCssFile($newFilePublic2, [
                 'depends' => [
-                    UnifyThemeAsset::class
-                ]
+                    UnifyThemeAsset::class,
+                ],
             ]);
         });
 
+        if (\Yii::$app->view->theme->sx_container_width) {
+            $maxWidth = \Yii::$app->view->theme->sx_container_width;
+            \Yii::$app->view->registerCss(<<<CSS
+    .sx-container {
+        max-width: {$maxWidth};
+    }
+CSS
+            );
+
+        }
+
+        if (\Yii::$app->view->theme->menu_align == 'left') {
+            \Yii::$app->view->registerCss(<<<CSS
+    ul.sx-menu-top {
+        margin-left: 0 !important;
+    }
+    .sx-menu-top li:first-child {
+            margin-left: 0 !important;
+        }
+CSS
+            );
+
+        }
+        if (\Yii::$app->view->theme->menu_align == 'right') {
+            \Yii::$app->view->registerCss(<<<CSS
+    ul.sx-menu-top {
+        margin-left: auto !important;
+    }
+CSS
+            );
+
+        }
+        if (\Yii::$app->view->theme->menu_align == 'center') {
+            \Yii::$app->view->registerCss(<<<CSS
+    ul.sx-menu-top {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+CSS
+            );
+
+        }
         if (\Yii::$app->view->theme->body_bg_image) {
             $bgImage = \Yii::$app->view->theme->body_bg_image;
             \Yii::$app->view->registerCss(<<<CSS
@@ -285,45 +339,23 @@ CSS
         }
 
 
-
-        if (\Yii::$app->view->theme->menu_color1) {
-            $bgColor1 = \Yii::$app->view->theme->menu_color1;
-            $bgColor2 = \Yii::$app->view->theme->menu_color2;
+        if (\Yii::$app->view->theme->col_left_width) {
+            $leftCol = \Yii::$app->view->theme->col_left_width;
             \Yii::$app->view->registerCss(<<<CSS
-                .hs-sub-menu,
-                .sx-main-menu-wrapper .hs-sub-menu,
-                .sx-main-menu-wrapper,
-                .mm-menu.mm-theme-dark
-                {
-            background: linear-gradient(to right, {$bgColor1} 12%, {$bgColor2}) !important;
-        }
+@media (min-width: 768px) {
+                .sx-content-col-main {
+                    width: calc(100% - {$leftCol}px);
+                }
+                .sx-content-col-left {
+                    width: {$leftCol}px;
+                    position: static;
+                    top: auto;
+                    z-index: auto;
+                }
+            }
 CSS
             );
         }
-
-        $color = \Yii::$app->view->theme->menu_font_color;
-        $fz = \Yii::$app->view->theme->menu_font_size;
-        \Yii::$app->view->registerCss(<<<CSS
-                .sx-main-menu-wrapper .nav-link,
-                .sx-main-menu-wrapper a,
-                .mm-menu.mm-theme-dark,
-                .mm-menu.mm-theme-dark .mm-navbar a,
-                .mm-menu.mm-theme-dark .mm-navbar>*,
-                .mm-listview .mm-next, .mm-listview .mm-prev {
-            color: {$color} !important;
-            font-size: {$fz} !important;
-        }
-        
-        .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
-            background-color: {$color} !important;
-        }
-            .mm-menu.mm-theme-dark .mm-btn:after,
-            .mm-menu.mm-theme-dark .mm-btn:before,
-            .mm-menu.mm-theme-dark .mm-listview>li .mm-next:after{
-                border-color: {$color} !important;
-        }
-CSS
-        );
 
 
         if (\Yii::$app->view->theme->css_code) {
@@ -338,23 +370,24 @@ CSS
      * @param bool $alpha
      * @return mixed
      */
-    static public function hexToRgb($hex, $alpha = false) {
-       $hex      = str_replace('#', '', $hex);
-       $length   = strlen($hex);
-       $rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
-       $rgb['g'] = hexdec($length == 6 ? substr($hex, 2, 2) : ($length == 3 ? str_repeat(substr($hex, 1, 1), 2) : 0));
-       $rgb['b'] = hexdec($length == 6 ? substr($hex, 4, 2) : ($length == 3 ? str_repeat(substr($hex, 2, 1), 2) : 0));
-       if ( $alpha ) {
-          $rgb['a'] = $alpha;
-       }
-       return $rgb;
+    static public function hexToRgb($hex, $alpha = false)
+    {
+        $hex = str_replace('#', '', $hex);
+        $length = strlen($hex);
+        $rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
+        $rgb['g'] = hexdec($length == 6 ? substr($hex, 2, 2) : ($length == 3 ? str_repeat(substr($hex, 1, 1), 2) : 0));
+        $rgb['b'] = hexdec($length == 6 ? substr($hex, 4, 2) : ($length == 3 ? str_repeat(substr($hex, 2, 1), 2) : 0));
+        if ($alpha) {
+            $rgb['a'] = $alpha;
+        }
+        return $rgb;
     }
 
     /**
-     * @var string 
+     * @var string
      */
     public $upa_container = self::UPA_CONTAINER_FULL;
-    
+
     /**
      * @var array
      */
@@ -364,11 +397,16 @@ CSS
      * @var int
      */
     public $is_cap = 0;
+    
+    /**
+     * @var bool 
+     */
+    public $is_center_logo = false;
     /**
      * @var int
      */
     public $is_cap_only_guests = 1;
-    
+
     /**
      * @var string Шрифт заголовков
      */
@@ -378,6 +416,11 @@ CSS
      * @var string Шрифт текста
      */
     public $font_texts = "Open Sans";
+
+    /**
+     * @var string
+     */
+    public $menu_align = "left";
 
 
     /**
@@ -420,8 +463,8 @@ CSS
      * @var int
      */
     public $is_show_home_slider = 1;
-    
-    
+
+
     public $address = 'Адрес';
 
     /**
@@ -433,14 +476,14 @@ CSS
      * @var string
      */
     public $phone = '+7 (495) 777-77-77';
-    
+
     /**
      * @var string
      */
     public $phone_second = '';
-    
+
     /**
-     * @var string 
+     * @var string
      */
     public $phone_third = '';
 
@@ -522,7 +565,7 @@ CSS
     public $footer_bg_color = '#fafafa';
 
     /**
-     * @var string 
+     * @var string
      */
     public $footer_color = '#000';
 
@@ -603,6 +646,11 @@ CSS
      */
     public $news_list_count_columns = 3;
 
+    /**
+     * @var int
+     */
+    public $col_left_width = 285;
+
 
     /**
      * @var string
@@ -636,6 +684,30 @@ CSS
      */
     public $is_show_search_block = false;
 
+    /**
+     * @var int
+     */
+    public $sx_container_width = 0;
+
+    /**
+     * @var bool
+     */
+    public $is_header_toolbar = true;
+
+    /**
+     * @var bool
+     */
+    public $is_header_auth = true;
+
+    /**
+     * @var bool
+     */
+    public $is_header_show_hide = true;
+
+    /**
+     * @var bool
+     */
+    public $is_header_toggle_sections = true;
 
     protected $_bodyCssClass = null;
     /**

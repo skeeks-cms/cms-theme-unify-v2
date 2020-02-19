@@ -47,8 +47,7 @@
          * @param text
          * @param opts
          */
-        construct: function(id, opts)
-        {
+        construct: function (id, opts) {
             opts = opts || {};
             id = id || false;
 
@@ -59,18 +58,16 @@
             }
         },
 
-        href: function(id)
-        {
+        href: function (id) {
             var self = this;
 
             var duration = Number(this.get('duration', 500));
-            var easing   = String(this.get('easing', 'swing'));
+            var easing = String(this.get('easing', 'swing'));
 
-            var Jtarget   = $(id);
-            var newHash   = "#" + Jtarget.attr('id');
+            var Jtarget = $(id);
+            var newHash = "#" + Jtarget.attr('id');
 
-            if (!Jtarget.offset())
-            {
+            if (!Jtarget.offset()) {
                 return true;
             }
 
@@ -78,11 +75,9 @@
             var oldLocation = window.location.href.replace(window.location.hash, '');
             var newLocation = oldLocation + newHash;
 
-            if (oldLocation + newHash == newLocation)
-            {
+            if (oldLocation + newHash == newLocation) {
                 $('html:not(:animated),body:not(:animated)')
-                    .animate({ scrollTop: top }, duration, easing, function()
-                    {
+                    .animate({scrollTop: top}, duration, easing, function () {
                         if (Boolean(self.get('isLocationHref')) === true) {
                             window.location.href = newLocation;
                         }
@@ -97,18 +92,18 @@
 
             var self = this;
 
-            $('body').on("click", ".sx-scroll-to", function() {
-                 if ($(this).attr('href')) {
-                     if ($(this).attr('href') != "#") {
-                         return self.href($(this).attr('href'));
-                     }
-                 } else {
-                     if ($(this).data('href')) {
-                         return self.href($(this).data('href'));
-                     }
-                 }
+            $('body').on("click", ".sx-scroll-to", function () {
+                if ($(this).attr('href')) {
+                    if ($(this).attr('href') != "#") {
+                        return self.href($(this).attr('href'));
+                    }
+                } else {
+                    if ($(this).data('href')) {
+                        return self.href($(this).data('href'));
+                    }
+                }
 
-                 return false;
+                return false;
             });
 
 
@@ -119,7 +114,6 @@
     });
 
     new sx.classes.Location();
-
 
 
     $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
@@ -141,12 +135,22 @@
         }
     }
 
-    
+    $(window).ready(function () {
+        _.delay(function () {
+            if ($("body").hasClass("sx-header-sticky-margin")) {
+                if ($("#js-header").hasClass("u-header--sticky-top")) {
+                    console.log($("#js-header").height());
+                    $("body").css("margin-top", $("#js-header").height());
+                }
+            }
+        }, 200);
+    });
+
+
     sx.LazyLoadInstance = new LazyLoad({
         elements_selector: ".lazy"
         // ... more custom settings?
     });
-    
-    
-    
+
+
 })(sx, sx.$, sx._);

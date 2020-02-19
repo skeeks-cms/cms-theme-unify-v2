@@ -10,7 +10,7 @@
 
     <div id="contacts-section" class="sx-footer g-py-60">
         <!-- Footer Content -->
-        <div class="container">
+        <div class="container sx-container">
             <div class="row">
                 <!-- Footer Content -->
                 <div class="col-sm-12 col-lg g-mb-30 g-mb-0--lg text-center">

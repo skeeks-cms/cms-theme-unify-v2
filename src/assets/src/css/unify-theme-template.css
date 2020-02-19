@@ -266,3 +266,31 @@ a:hover {
     background: white;
 }
 
+
+
+.hs-sub-menu,
+.sx-main-menu-wrapper .hs-sub-menu,
+.sx-main-menu-wrapper,
+.mm-menu.mm-theme-dark
+{
+    background: linear-gradient(to right, {menuBgColor1} 12%, {menuBgColor2}) !important;
+}
+
+.sx-main-menu-wrapper .nav-link,
+        .sx-main-menu-wrapper a,
+        .mm-menu.mm-theme-dark,
+        .mm-menu.mm-theme-dark .mm-navbar a,
+        .mm-menu.mm-theme-dark .mm-navbar>*,
+        .mm-listview .mm-next, .mm-listview .mm-prev {
+    color: {menuColor} !important;
+    font-size: {menuFz} !important;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    background-color: {menuColor} !important;
+}
+    .mm-menu.mm-theme-dark .mm-btn:after,
+    .mm-menu.mm-theme-dark .mm-btn:before,
+    .mm-menu.mm-theme-dark .mm-listview>li .mm-next:after{
+        border-color: {menuColor} !important;
+}
