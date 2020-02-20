@@ -79,7 +79,7 @@ CSS
 <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?>  
 <?= $this->theme->is_header_toggle_sections ? "u-header--toggle-section" : ""; ?>  
 <?= $this->theme->is_header_show_hide ? "u-header--show-hide" : ""; ?>  
- u-header--change-appearance" data-header-fix-moment="300"
+ u-header--change-appearance" data-header-fix-moment="50"
         data-header-fix-effect="slide">
 
     <? if ($this->theme->is_header_toolbar) : ?>

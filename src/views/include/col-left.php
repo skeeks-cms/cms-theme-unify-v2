@@ -7,17 +7,7 @@
  */
 /* @var $this yii\web\View */
 
-$this->registerJs(<<<JS
-$(window).on('load', function () {
-        // initialization of sticky blocks
-setTimeout(function() { // important in this case
-  //$.HSCore.components.HSStickyBlock.init('.js-sticky-block');
-}, 1);
-});
-JS
-);
 $model = \Yii::$app->cms->currentTree;
-
 $menuName = $model ? $model->name : "Меню";
 $parent = $model;
 if ($model) {
@@ -36,10 +26,7 @@ if ($model) {
     } else {
         $parent = $model->parents[0];
     }
-
-
 }
-
 ?>
 <? if (\Yii::$app->mobileDetect->isDesktop) : ?>
 <div class="order-md-1 g-py-20 g-px-20 g-bg-secondary sx-content-col-left">
