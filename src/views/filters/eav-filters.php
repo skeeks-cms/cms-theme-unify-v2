@@ -7,6 +7,7 @@
  */
 /* @var $this yii\web\View */
 /* @var $handler \skeeks\cms\queryFilters\EavFiltersHandler */
+/* @var $widget \skeeks\cms\eavqueryfilter\CmsEavQueryFilterHandler */
 /* @var $form \yii\widgets\ActiveForm */
 /* @var $code string */
 $widget = $this->context;
@@ -116,6 +117,10 @@ $widget = $this->context;
                 $code = $handler->getAttributeName($rp->id);
                 $values = $handler->{$code};
                 $class = '';
+                if (in_array($rp->id, (array) $handler->openedPropertyIds)) {
+                    $class = 'opened';
+                }
+                
                 if ($values) {
                     $class = 'opened sx-filter-selected';
 
