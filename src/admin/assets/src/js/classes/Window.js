@@ -17,6 +17,7 @@
          * @returns {Window}
          */
         open: function () {
+            
             var self = this;
 
             this.trigger('beforeOpen');
@@ -35,6 +36,13 @@
                             "close"
                         ],*/
 
+                        beforeClose: function () {
+                            self.trigger('beforeClose');
+                            if (!self.isAllowClose) {
+                                return false;
+                            }
+                        },
+                                            
                         'afterClose': function () {
                             self.trigger('close');
                             /*window.history.replaceState(null, 'title', currentHref);*/
