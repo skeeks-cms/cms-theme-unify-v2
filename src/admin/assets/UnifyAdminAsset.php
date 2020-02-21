@@ -10,7 +10,6 @@ namespace skeeks\cms\themes\unify\admin\assets;
 
 use skeeks\assets\unify\base\UnifyAppearAsset;
 use skeeks\assets\unify\base\UnifyAsset;
-use skeeks\assets\unify\base\UnifyFancyboxAsset;
 use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyHsScrollbarAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;

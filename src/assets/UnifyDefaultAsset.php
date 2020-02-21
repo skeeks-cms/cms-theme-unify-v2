@@ -8,24 +8,10 @@
 
 namespace skeeks\cms\themes\unify\assets;
 
-use skeeks\assets\unify\base\UnifyAppearAsset;
 use skeeks\assets\unify\base\UnifyAsset;
-use skeeks\assets\unify\base\UnifyDzsparallaxerAsset;
-use skeeks\assets\unify\base\UnifyFancyboxAsset;
-use skeeks\assets\unify\base\UnifyHsBgVideoAsset;
-use skeeks\assets\unify\base\UnifyHsCarouselAsset;
-use skeeks\assets\unify\base\UnifyHsGoToAsset;
-use skeeks\assets\unify\base\UnifyHsHamburgersAsset;
-use skeeks\assets\unify\base\UnifyHsHeaderAsset;
-use skeeks\assets\unify\base\UnifyHsMegamenuAsset;
-use skeeks\assets\unify\base\UnifyHsOnscrollAnimationAsset;
-use skeeks\assets\unify\base\UnifyHsPopupAsset;
-use skeeks\assets\unify\base\UnifyHsStickyBlockAsset;
-use skeeks\assets\unify\base\UnifyMasonryAsset;
 use skeeks\assets\unify\base\UnifyOnscrollAnimationAsset;
 use skeeks\assets\unify\base\UnifyPopperAsset;
 use skeeks\sx\assets\Custom;
-use yii\base\Exception;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\YiiAsset;
 /**
@@ -41,7 +27,7 @@ class UnifyDefaultAsset extends UnifyAsset
         'assets/vendor/icon-etlinefont/style.css',
         'assets/vendor/icon-line-pro/style.css',
         'assets/vendor/icon-hs/style.css',*/
-        
+
         /*'assets/vendor/animate.css',
         'assets/vendor/typedjs/typed.css',*/
 
@@ -60,7 +46,7 @@ class UnifyDefaultAsset extends UnifyAsset
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
         FontAwesomeAsset::class,
-        VanillaLazyLoadAsset::class
+        VanillaLazyLoadAsset::class,
     ];
 
     public function registerAssetFiles($view)
@@ -72,20 +58,36 @@ class UnifyDefaultAsset extends UnifyAsset
 
         $href = self::getAssetUrl('assets/vendor/icon-hs/fonts/hs-icons.ttf?xa77py');
         \Yii::$app->view->registerLinkTag([
-            'rel' => 'preload', 'href' => $href, 'as' => 'font', 'type' => 'font/ttf', 'crossorigin' => 'crossorigin'
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/ttf',
+            'crossorigin' => 'crossorigin',
         ]);
         $href = self::getAssetUrl('assets/vendor/icon-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
         \Yii::$app->view->registerLinkTag([
-            'rel' => 'preload', 'href' => $href, 'as' => 'font', 'type' => 'font/woff2', 'crossorigin' => 'crossorigin'
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'crossorigin',
         ]);
 
         $href = self::getAssetUrl('assets/vendor/icon-line/fonts/Simple-Line-Icons.woff2?v=2.4.0');
         \Yii::$app->view->registerLinkTag([
-            'rel' => 'preload', 'href' => $href, 'as' => 'font', 'type' => 'font/woff2', 'crossorigin' => 'crossorigin'
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'crossorigin',
         ]);
         $href = self::getAssetUrl('assets/vendor/icon-line-pro/finance/webfont/fonts/finance.woff');
         \Yii::$app->view->registerLinkTag([
-            'rel' => 'preload', 'href' => $href, 'as' => 'font', 'type' => 'font/woff', 'crossorigin' => 'crossorigin'
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff',
+            'crossorigin' => 'crossorigin',
         ]);
 
         \Yii::$app->assetManager->appendTimestamp = $appendTimestamp;
