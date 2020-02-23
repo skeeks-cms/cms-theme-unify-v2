@@ -63,7 +63,12 @@ if ($this->theme->is_center_logo) {
     .navbar-brand {
         position: absolute;
         text-align: center;
-        width: 100%;
+        width: 300px;
+        left: -webkit-calc(50% - 150px);
+        left: -moz-calc(50% - 150px);
+        left: calc(50% - 150px);
+        padding: 0;
+        margin: 0;
     }
 }
 
