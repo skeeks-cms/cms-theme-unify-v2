@@ -62,8 +62,8 @@ class SortFiltersHandler extends Model
     public function getSortOptions()
     {
         return [
-            '-popular' => 'Популярные',
-            '-new'     => 'Сначала новые',
+            '-popular' => \Yii::t("skeeks/unify", "Popular"),
+            '-new'     => \Yii::t("skeeks/unify", "New"),
         ];
     }
     /**

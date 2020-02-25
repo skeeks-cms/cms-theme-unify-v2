@@ -35,7 +35,7 @@
 
               </span>
                 <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Address'); ?></h4>
-                <span class="d-block"><?= $this->theme->address; ?></span>
+                <span class="d-block"><?= \Yii::t('app', $this->theme->address); ?></span>
             </div>
             <!-- End Icon Blocks -->
         </div>
@@ -81,7 +81,7 @@
 
               </span>
                 <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Working time'); ?></h4>
-                <span class="d-block"><?= $this->theme->work_time; ?></span>
+                <span class="d-block"><?= \Yii::t('app', $this->theme->work_time); ?></span>
             </div>
             <!-- End Icon Blocks -->
         </div>

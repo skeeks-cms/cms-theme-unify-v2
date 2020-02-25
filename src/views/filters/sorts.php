@@ -12,7 +12,7 @@
 <div class="sorting sx-filters-form">
     <div class="sort">
         <div class="lbl">
-            Сортировать:
+            <?= \Yii::t("skeeks/unify", "Sorting"); ?>:
         </div>
         <div class="vals">
             <?= $sortFiltersHandler->renderVisible(); ?>

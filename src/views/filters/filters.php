@@ -136,7 +136,7 @@ $widget = $this->context;
 
     <? $form = \yii\widgets\ActiveForm::begin([
         'method'  => 'post',
-        //'action' => "/" . \Yii::$app->request->pathInfo,
+        'action' => null,
         'options' => [
             'id'    => 'sx-filters-form',
             'class' => 'sx-filters-form',

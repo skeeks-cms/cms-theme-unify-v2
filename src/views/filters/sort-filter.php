@@ -24,5 +24,5 @@ $('.sx-filter-action').on('click', function()
 JS
 );
 ?>
-<a href="#" class="sx-filter-action g-color-primary--hover <?= $handler->value == '-popular' ? "active g-color-primary g-font-weight-600" : "" ; ?>" data-filter="productfilters-sort" data-filter-value="-popular">Популярные</a>
-<a href="#" class="sx-filter-action g-color-primary--hover <?= $handler->value == '-new' ? "active g-color-primary g-font-weight-600" : "" ; ?>" data-filter="productfilters-sort" data-filter-value="-new">Сначала новые</a>
+<a href="#" class="sx-filter-action g-color-primary--hover <?= $handler->value == '-popular' ? "active g-color-primary g-font-weight-600" : "" ; ?>" data-filter="productfilters-sort" data-filter-value="-popular"><?= \Yii::t("skeeks/unify", "Pupular"); ?></a>
+<a href="#" class="sx-filter-action g-color-primary--hover <?= $handler->value == '-new' ? "active g-color-primary g-font-weight-600" : "" ; ?>" data-filter="productfilters-sort" data-filter-value="-new"><?= \Yii::t("skeeks/unify", "New"); ?></a>

@@ -102,7 +102,7 @@
                                     <i class="fas fa-map-marker"></i>
                                   </span>
                                 </div>
-                                <p class="mb-0"><?= $this->theme->address; ?></p>
+                                <p class="mb-0"><?= \Yii::t('app', $this->theme->address); ?></p>
                             </div>
                             <!-- End Location -->
                         <? endif; ?>
