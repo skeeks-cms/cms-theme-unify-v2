@@ -22,5 +22,6 @@ return [
     'More'                => "Подробнее",
     'You searched'        => "Вы искали",
     'Search'              => "Поиск",
+    'Filters'             => "Фильтры",
     'Find'                => "Найти",
 ];

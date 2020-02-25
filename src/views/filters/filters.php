@@ -129,7 +129,7 @@ $widget = $this->context;
     <div>
         <a href="#" class="sx-mobile-filters-hide">&#65794;</a>
         <h2 class="h5 u-heading-v3__title g-font-weight-600 text-uppercase g-brd-primary ">
-            Фильтры
+            <?= Yii::t('skeeks/unify', 'Filters'); ?>
         </h2>
     </div>
     <!--<div class="h-100">-->
