@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="alert alert-info" role="alert">
-                    Вы искали: <strong><?= \Yii::$app->cmsSearch->searchQuery; ?></strong>
+                    <?= Yii::t("skeeks/unify", "You searched"); ?>: <strong><?= \Yii::$app->cmsSearch->searchQuery; ?></strong>
                 </div>
                 <!--=== Content Part ===-->
                 <div class="row">

@@ -166,14 +166,14 @@ JS
 
             ?>
         <div  class="sx-search-form" style="top: -100px;">
-            <form action="/search" method="get" class="g-mb-0">
+            <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" class="g-mb-0">
                 <div class="container">
                     <div class="row">
                             <div class="input-group">
-                                <input placeholder="Поиск..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                <input placeholder="<?= Yii::t("skeeks/unify", "Search"); ?>..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
                                        value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
                                 <div class="input-group-append">
-                                    <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit">Найти</button>
+                                    <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit"><?= Yii::t("skeeks/unify", "Find"); ?></button>
                                 </div>
                             </div>
 

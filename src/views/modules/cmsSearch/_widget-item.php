@@ -45,7 +45,7 @@
             </ul>
             <p><?= $model->description_short; ?></p>
 
-            <p><a href="<?= $model->url; ?>" data-pjax="0" class="btn btn-primary">Подробнее</a></p>
+            <p><a href="<?= $model->url; ?>" data-pjax="0" class="btn btn-primary"><?= Yii::t("skeeks/unify", "More"); ?></a></p>
         </div>
     </div>
 

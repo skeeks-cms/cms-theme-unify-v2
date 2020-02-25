@@ -49,7 +49,7 @@ if ($this->theme->news_list_count_columns == 4) {
 
             <div class="g-pl-25">
                 <a class="d-inline-block g-brd-bottom g-brd-white g-color-white g-font-weight-600 g-font-size-12 text-uppercase g-text-underline--none--hover g-mb-30" href="<?= $model->url; ?>">
-                    Подробнее
+                    <?= Yii::t("skeeks/unify", "More"); ?>
                 </a>
             </div>
         </div>
