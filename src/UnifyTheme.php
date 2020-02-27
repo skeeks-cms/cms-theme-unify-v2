@@ -301,9 +301,9 @@ CSS
     ul.sx-menu-top {
         margin-left: 0 !important;
     }
-    .sx-menu-top li:first-child {
+    /*.sx-menu-top li:first-child {
             margin-left: 0 !important;
-        }
+        }*/
 CSS
             );
 

@@ -10,7 +10,7 @@
 
 <!-- Copyright Footer -->
 <footer class="g-py-20 sx-footer-copyright">
-    <div class="container">
+    <div class="container sx-container">
         <div class="row">
             <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
                 <div class="d-lg-flex">
@@ -26,7 +26,7 @@
 
             <div class="col-md-4 align-self-center">
                 <? if ($this->theme->is_show_copyright) : ?>
-                    <div class="pull-right">
+                    <div class="float-right">
                         <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
                             <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30">
                             <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
