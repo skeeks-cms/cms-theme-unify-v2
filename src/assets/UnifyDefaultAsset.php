@@ -20,7 +20,7 @@ use yii\web\YiiAsset;
 class UnifyDefaultAsset extends UnifyAsset
 {
     public $css = [
-        '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
+        //'//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
         'assets/vendor/icon-hs/style.css',
         /*'assets/vendor/icon-awesome/css/font-awesome.min.css',
         'assets/vendor/icon-line/css/simple-line-icons.css',

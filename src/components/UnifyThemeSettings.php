@@ -62,6 +62,10 @@ class UnifyThemeSettings extends Component
      */
     public $is_show_home_slider = 0;
 
+    /**
+     * @var string
+     */
+    public $font_css = "//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap";
 
     /**
      * @var string Шрифт заголовков
@@ -417,6 +421,7 @@ class UnifyThemeSettings extends Component
 
                     'font_headers',
                     'font_texts',
+                    'font_css',
                     'sx_container_width',
                 ],
                 'string',
@@ -501,6 +506,7 @@ class UnifyThemeSettings extends Component
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
 
+            'font_css' => "Подключаемые шрифты",
             'font_headers' => "Шрифт заголовков",
             'font_texts'   => "Шрифт текста",
 
@@ -578,6 +584,9 @@ class UnifyThemeSettings extends Component
             'col_left_width'       => 'Указывается в px',
             'sx_container_width'       => 'Можно вказать в px или %. Например 100%',
             'is_center_logo'       => 'Работает в стандартной шапке',
+            'font_headers'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+            'font_texts'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+            'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/',
         ]);
     }
 
@@ -648,8 +657,9 @@ class UnifyThemeSettings extends Component
                         'content' => BlockTitleWidget::widget(['content' => 'Шрифт']),
                     ],
 
+                    'font_css',
                     'font_headers' => [
-                        'class' => SelectField::class,
+                        /*'class' => SelectField::class,
                         'items' => [
                             'Open Sans'        => 'Open Sans',
                             'Playfair Display' => 'Playfair Display',
@@ -657,10 +667,10 @@ class UnifyThemeSettings extends Component
                             'Raleway'          => 'Raleway',
                             'Spectral'         => 'Spectral',
                             'Rubik'            => 'Rubik',
-                        ],
+                        ],*/
                     ],
                     'font_texts'   => [
-                        'class' => SelectField::class,
+                        /*'class' => SelectField::class,
                         'items' => [
                             'Open Sans'        => 'Open Sans',
                             'Playfair Display' => 'Playfair Display',
@@ -668,7 +678,7 @@ class UnifyThemeSettings extends Component
                             'Raleway'          => 'Raleway',
                             'Spectral'         => 'Spectral',
                             'Rubik'            => 'Rubik',
-                        ],
+                        ],*/
                     ],
 
                     [

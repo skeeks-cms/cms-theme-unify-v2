@@ -233,6 +233,10 @@ class UnifyTheme extends Theme
 
 
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic) {
+            if (\Yii::$app->view->theme->font_css) {
+                \Yii::$app->view->registerCssFile(\Yii::$app->view->theme->font_css);
+            }
+            
             \Yii::$app->view->registerCssFile($newFilePublic, [
                 'depends' => [
                     UnifyThemeAsset::class,
@@ -383,6 +387,8 @@ CSS
         return $rgb;
     }
 
+    public $font_css = '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap';
+    
     /**
      * @var string
      */
