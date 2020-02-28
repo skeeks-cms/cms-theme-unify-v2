@@ -586,7 +586,7 @@ class UnifyThemeSettings extends Component
             'is_center_logo'       => 'Работает в стандартной шапке',
             'font_headers'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
             'font_texts'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
-            'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/',
+            'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
         ]);
     }
 

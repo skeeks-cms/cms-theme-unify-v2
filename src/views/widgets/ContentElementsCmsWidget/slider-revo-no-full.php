@@ -170,7 +170,7 @@ JS
 
                             <? if ($tree->relatedPropertiesModel->getAttribute('slide_title')) : ?>
                                 <!-- LAYER NR. 2 -->
-                                <div class="tp-caption   tp-resizeme"
+                                <div class="tp-caption  h1 tp-resizeme"
                                      id="slide-<?= $tree->id; ?>-layer-1"
                                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                      data-y="['middle','middle','middle','middle']" data-voffset="['-140','-140','-130','-140']"
