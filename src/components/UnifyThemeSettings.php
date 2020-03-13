@@ -8,6 +8,7 @@
 
 namespace skeeks\cms\themes\unify\components;
 
+use skeeks\assets\unify\base\UnifyIconEtlineAsset;
 use skeeks\assets\unify\base\UnifyIconLineProAsset;
 use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
@@ -1038,6 +1039,7 @@ class UnifyThemeSettings extends Component
                             UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
                             UnifyIconMaterialAsset::class   => 'Иконки (Material)',
                             UnifyIconLineProAsset::class    => 'Иконки (LinePro)',
+                            UnifyIconEtlineAsset::class    => 'Иконки (Etline)',
                         ],
                         'multiple' => true,
                     ],
