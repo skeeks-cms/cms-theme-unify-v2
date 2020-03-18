@@ -6,6 +6,7 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
+/*print_r(\Yii::$app->cloudshopApiClient->getCatalogApiMethod());die;*/
 ?>
 
 <? if (\Yii::$app->mobileDetect->isMobile) : ?>
