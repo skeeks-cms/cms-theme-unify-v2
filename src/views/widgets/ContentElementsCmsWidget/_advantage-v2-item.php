@@ -14,7 +14,7 @@
 <div class="col-md-6 col-lg-3 g-mb-30">
     <!-- Icon Blocks -->
     <div class="text-center">
-      <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+      <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-primary g-color-primary g-rounded-50x g-mb-25">
         <i class="<?= $model->relatedPropertiesModel->getAttribute('icon'); ?>"></i>
       </span>
       <h3 class="h5 g-color-black mb-25"><?= $model->name; ?></h3>

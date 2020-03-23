@@ -49,6 +49,7 @@ JS
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
     <div class="u-header__section u-header__section--hidden u-header__section--dark">
+        <? if ($this->theme->is_header_toolbar) : ?>
         <div class="g-bg-black sx-topbar g-py-7">
             <div class="container sx-container">
                 <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
@@ -86,7 +87,7 @@ JS
                 </div>
             </div>
         </div>
-
+        <? endif; ?>
         <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
             <div class="container sx-container g-pt-15 g-pb-15">
                 <div class="row ">
@@ -102,14 +103,16 @@ JS
                         <div class="sx-search-form">
                             <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
                                 <div class="row">
-                                    <div class="col-sm-10 col-9">
-                                        <label for="search" class="sr-only"><?= Yii::t("skeeks/unify", "Search"); ?></label>
+                                    <div class="col-sm-12">
+                                        <!--<label for="search" class="sr-only"><?/*= Yii::t("skeeks/unify", "Search"); */?></label>-->
+                                        <div class="input-group">
                                         <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
                                                name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
                                                value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
-                                    </div>
-                                    <div class="col-sm-2 g-pl-10 col-3">
-                                        <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
+                                            <div class="input-group-append">
+                                              <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -117,7 +120,7 @@ JS
                         <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 ">
-                        <div class="pull-right">
+                        <div class="text-center">
                             <? if ($this->theme->phone) : ?>
                                 <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
                                     <?= $this->theme->phone; ?>
@@ -174,6 +177,7 @@ JS
                 <!-- End Navigation -->
 
                 <?= @$content; ?>
+
 
             </div>
 
