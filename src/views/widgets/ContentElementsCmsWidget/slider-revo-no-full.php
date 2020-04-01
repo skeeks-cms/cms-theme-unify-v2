@@ -174,8 +174,8 @@ JS
                                      id="slide-<?= $tree->id; ?>-layer-1"
                                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                      data-y="['middle','middle','middle','middle']" data-voffset="['-140','-140','-130','-140']"
-                                     data-fontsize="['100','100','90','50']"
-                                     data-lineheight="['100','100','90','50']"
+                                     data-fontsize="['80','60','50','30']"
+                                     data-lineheight="['80','60','50','30']"
                                      data-width="none"
                                      data-height="none"
 
@@ -189,7 +189,7 @@ JS
                                      data-paddingbottom="[0,0,0,0]"
                                      data-paddingleft="[0,0,0,0]"
 
-                                     style="z-index: 6; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;">
+                                     style="z-index: 6;font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;">
                                     <?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>
                                 </div>
                             <? endif; ?>
