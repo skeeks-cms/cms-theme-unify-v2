@@ -104,7 +104,8 @@
                                 <a class="" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
+                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle"
+                                         src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                                 </span>
                                     <span class="g-pos-rel g-top-2">
                                     <span class="g-hidden-sm-down"><?= \Yii::$app->user->identity->displayName; ?></span>
@@ -154,7 +155,7 @@
                             </div>
                             <!-- End Phone -->
                         <? endif; ?>
-                        
+
                         <? if ($this->theme->phone_second) : ?>
                             <!-- Phone -->
                             <div class="d-flex g-mb-20">
@@ -164,7 +165,7 @@
                               </span>
                                 </div>
                                 <a class="" href="tel:<?= $this->theme->phone_second; ?>"><?= $this->theme->phone_second; ?></a>
-                                
+
                             </div>
                             <!-- End Phone -->
                         <? endif; ?>
@@ -178,7 +179,7 @@
                               </span>
                                 </div>
                                 <a class="" href="tel:<?= $this->theme->phone_third; ?>"><?= $this->theme->phone_third; ?></a>
-                                
+
                             </div>
                             <!-- End Phone -->
                         <? endif; ?>
@@ -208,7 +209,7 @@
 
     </div>
 
-    <?= $this->render('@app/views/include/footer-copyright'); ?>
+<?= $this->render('@app/views/include/footer-copyright'); ?>
 
     <!-- End Footer -->
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{

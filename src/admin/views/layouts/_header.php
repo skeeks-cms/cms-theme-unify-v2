@@ -26,7 +26,8 @@ $theme = $this->theme;
                 </a>
                 <!-- End Logo -->
                 <!-- Sidebar Toggler -->
-                <a class="js-side-nav u-header__nav-toggler d-flex align-self-center ml-auto" href="#!" data-hssm-class="u-side-nav--mini u-sidebar-navigation-v1--mini" data-hssm-body-class="u-side-nav-mini" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+                <a class="js-side-nav u-header__nav-toggler d-flex align-self-center ml-auto" href="#!" data-hssm-class="u-side-nav--mini u-sidebar-navigation-v1--mini" data-hssm-body-class="u-side-nav-mini"
+                   data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
                     <i class="hs-admin-align-left"></i>
                 </a>
                 <!-- End Sidebar Toggler -->
@@ -35,7 +36,8 @@ $theme = $this->theme;
             <div class="col-auto d-flex g-py-12 g-pl-40--lg ml-auto">
                 <!-- Top Messages -->
                 <div class="sx-now-hide g-pos-rel g-hidden-sm-down g-mr-5">
-                    <a id="messagesInvoker" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="messagesMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#messagesMenu"
+                    <a id="messagesInvoker" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="messagesMenu" aria-haspopup="true"
+                       aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#messagesMenu"
                        data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                         <span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">7</span>
                         <i class="hs-admin-comment-alt g-absolute-centered"></i>
@@ -115,7 +117,8 @@ $theme = $this->theme;
 
                 <!-- Top Notifications -->
                 <div class="sx-now-hide g-pos-rel g-hidden-sm-down">
-                    <a id="notificationsInvoker" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="notificationsMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click"
+                    <a id="notificationsInvoker" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="notificationsMenu"
+                       aria-haspopup="true" aria-expanded="false" data-dropdown-event="click"
                        data-dropdown-target="#notificationsMenu" data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                         <i class="hs-admin-bell g-absolute-centered"></i>
                     </a>
@@ -228,7 +231,8 @@ $theme = $this->theme;
                 <!-- End Top Notifications -->
 
                 <!-- Top Search Bar (Mobi) -->
-                <a id="searchInvoker" class="sx-now-hide g-hidden-sm-up text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="searchMenu" aria-haspopup="true" aria-expanded="false" data-is-mobile-only="true" data-dropdown-event="click"
+                <a id="searchInvoker" class="sx-now-hide g-hidden-sm-up text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="searchMenu"
+                   aria-haspopup="true" aria-expanded="false" data-is-mobile-only="true" data-dropdown-event="click"
                    data-dropdown-target="#searchMenu" data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                     <i class="hs-admin-search g-absolute-centered"></i>
                 </a>
@@ -237,11 +241,13 @@ $theme = $this->theme;
                 <!-- Top User -->
                 <div class="col-auto d-flex g-pt-5 g-pt-0--sm g-pl-10 g-pl-20--sm">
                     <div class="g-pos-rel g-px-10--lg sx-header-user-profile">
-                        <a id="profileMenuInvoker" class="d-block" href="#!" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#profileMenu" data-dropdown-type="css-animation" data-dropdown-duration="300"
+                        <a id="profileMenuInvoker" class="d-block" href="#!" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#profileMenu"
+                           data-dropdown-type="css-animation" data-dropdown-duration="300"
                            data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                 <span class="g-pos-rel">
         <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm sx-avatar" src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
+                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm sx-avatar"
+                     src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                 </span>
                             <span class="g-pos-rel g-top-2">
         <span class="g-hidden-sm-down"><?= \Yii::$app->user->identity->shortDisplayName; ?></span>
@@ -286,7 +292,8 @@ $theme = $this->theme;
             </div>
             <!-- End Messages/Notifications/Top Search Bar/Top User -->
             <!-- Top Activity Toggler -->
-            <a id="activityInvoker" class="sx-now-hide text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="activityMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#activityMenu"
+            <a id="activityInvoker" class="sx-now-hide text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!" aria-controls="activityMenu" aria-haspopup="true"
+               aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#activityMenu"
                data-dropdown-type="css-animation" data-dropdown-animation-in="fadeInRight" data-dropdown-animation-out="fadeOutRight" data-dropdown-duration="300">
                 <i class="hs-admin-align-right g-absolute-centered"></i>
             </a>
@@ -296,7 +303,8 @@ $theme = $this->theme;
         <!-- Top Activity Panel -->
         <div id="activityMenu" class="js-custom-scroll u-header-sidebar g-pos-fix g-top-0 g-left-auto g-right-0 g-z-index-4 g-width-300 g-width-400--sm g-height-100vh" aria-labelledby="activityInvoker">
             <div class="u-header-dropdown-bordered-v1 g-pa-20">
-                <a id="activityInvokerClose" class="pull-right g-color-lightblue-v2" href="#!" aria-controls="activityMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#activityMenu" data-dropdown-type="css-animation"
+                <a id="activityInvokerClose" class="pull-right g-color-lightblue-v2" href="#!" aria-controls="activityMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click"
+                   data-dropdown-target="#activityMenu" data-dropdown-type="css-animation"
                    data-dropdown-animation-in="fadeInRight" data-dropdown-animation-out="fadeOutRight" data-dropdown-duration="300">
                     <i class="hs-admin-close"></i>
                 </a>
@@ -329,7 +337,8 @@ $theme = $this->theme;
                                 <g transform="translate(0.000000, 64.000000)">
                                     <g transform="translate(20.000000, 619.000000)">
                                         <g transform="translate(1.000000, 68.000000)">
-                                            <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)" points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
+                                            <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)"
+                                                     points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
                                         </g>
                                     </g>
                                 </g>
@@ -366,7 +375,8 @@ $theme = $this->theme;
               <g transform="translate(0.000000, 64.000000)">
                 <g transform="translate(20.000000, 619.000000)">
                   <g transform="translate(1.000000, 68.000000)">
-                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)" points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
+                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)"
+                             points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
                   </g>
                 </g>
               </g>
@@ -402,7 +412,8 @@ $theme = $this->theme;
               <g transform="translate(0.000000, 64.000000)">
                 <g transform="translate(20.000000, 619.000000)">
                   <g transform="translate(1.000000, 68.000000)">
-                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)" points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
+                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)"
+                             points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
                   </g>
                 </g>
               </g>
@@ -438,7 +449,8 @@ $theme = $this->theme;
               <g transform="translate(0.000000, 64.000000)">
                 <g transform="translate(20.000000, 619.000000)">
                   <g transform="translate(1.000000, 68.000000)">
-                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)" points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
+                    <polygon transform="translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)"
+                             points="18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049"></polygon>
                   </g>
                 </g>
               </g>

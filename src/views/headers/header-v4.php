@@ -50,43 +50,43 @@ JS
     <!--u-header__section--hidden -->
     <div class="u-header__section u-header__section--hidden u-header__section--dark">
         <? if ($this->theme->is_header_toolbar) : ?>
-        <div class="g-bg-black sx-topbar g-py-7">
-            <div class="container sx-container">
-                <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
-                    <div class="col-auto">
-                        <i class="fas fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                        <a href="tel:<?= $this->theme->phone; ?>" class="g-color-white g-color-white--hover">
-                            <?= $this->theme->phone; ?>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                        <a href="mailto:<?= $this->theme->email; ?>" class="g-color-white g-color-white--hover">
-                            <?= $this->theme->email; ?>
-                        </a>
-                    </div>
-                    <div class="col-auto g-pos-rel">
-                        <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-                            <? if (\Yii::$app->user->isGuest) : ?>
-                                <li class="list-inline-item g-mx-4">
-                                    <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                                    <a class="g-color-white g-color-white--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">Вход</a>
-                                </li>
-                                <li class="list-inline-item g-mx-4">|</li>
-                                <li class="list-inline-item g-mx-4">
-                                    <a class="g-color-white g-color-white--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); ?>">Регистрация</a>
-                                </li>
-                            <? else : ?>
-                                <li class="list-inline-item g-mx-4">
-                                    <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                                    <a class="g-color-white g-color-white--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>"><?= \Yii::$app->user->identity->displayName; ?></a>
-                                </li>
-                            <? endif; ?>
-                        </ul>
+            <div class="g-bg-black sx-topbar g-py-7">
+                <div class="container sx-container">
+                    <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
+                        <div class="col-auto">
+                            <i class="fas fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                            <a href="tel:<?= $this->theme->phone; ?>" class="g-color-white g-color-white--hover">
+                                <?= $this->theme->phone; ?>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                            <a href="mailto:<?= $this->theme->email; ?>" class="g-color-white g-color-white--hover">
+                                <?= $this->theme->email; ?>
+                            </a>
+                        </div>
+                        <div class="col-auto g-pos-rel">
+                            <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+                                <? if (\Yii::$app->user->isGuest) : ?>
+                                    <li class="list-inline-item g-mx-4">
+                                        <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                                        <a class="g-color-white g-color-white--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">Вход</a>
+                                    </li>
+                                    <li class="list-inline-item g-mx-4">|</li>
+                                    <li class="list-inline-item g-mx-4">
+                                        <a class="g-color-white g-color-white--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); ?>">Регистрация</a>
+                                    </li>
+                                <? else : ?>
+                                    <li class="list-inline-item g-mx-4">
+                                        <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
+                                        <a class="g-color-white g-color-white--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>"><?= \Yii::$app->user->identity->displayName; ?></a>
+                                    </li>
+                                <? endif; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         <? endif; ?>
         <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
             <div class="container sx-container g-pt-15 g-pb-15">
@@ -100,23 +100,23 @@ JS
                     </div>
                     <div class="col-md-6 col-sm-4">
                         <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
-                        <div class="sx-search-form">
-                            <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <!--<label for="search" class="sr-only"><?/*= Yii::t("skeeks/unify", "Search"); */?></label>-->
-                                        <div class="input-group">
-                                        <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
-                                               name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                               value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
-                                            <div class="input-group-append">
-                                              <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
+                            <div class="sx-search-form">
+                                <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!--<label for="search" class="sr-only"><? /*= Yii::t("skeeks/unify", "Search"); */ ?></label>-->
+                                            <div class="input-group">
+                                                <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                                                       name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                                       value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
                         <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 ">
@@ -145,7 +145,8 @@ JS
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container sx-container">
                 <!-- Responsive Toggle Button -->
-                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                        aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
                       <span class="hamburger hamburger--slider">
 
                     <span class="hamburger-box">

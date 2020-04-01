@@ -358,7 +358,9 @@ table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(
 .sx-empty header.u-header,
 .sx-empty #sideNav,
 .sx-empty .sx-hide-on-empty,
-.sx-empty footer {
+.sx-empty footer,
+.sx-empty .sx-footer
+{
     display: none;
 }
 

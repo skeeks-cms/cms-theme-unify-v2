@@ -153,21 +153,21 @@ CSS
                         </ul>
 
                         <!--<ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-                            <?/* if (\Yii::$app->user->isGuest) : */?>
+                            <? /* if (\Yii::$app->user->isGuest) : */ ?>
                                 <li class="list-inline-item g-mx-4">
                                     <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                                    <a class="g-color-white g-color-white--hover" href="<?/*= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); */?>">Вход</a>
+                                    <a class="g-color-white g-color-white--hover" href="<? /*= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); */ ?>">Вход</a>
                                 </li>
                                 <li class="list-inline-item g-mx-4">|</li>
                                 <li class="list-inline-item g-mx-4">
-                                    <a class="g-color-white g-color-white--hover" href="<?/*= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); */?>">Регистрация</a>
+                                    <a class="g-color-white g-color-white--hover" href="<? /*= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); */ ?>">Регистрация</a>
                                 </li>
-                            <?/* else : */?>
+                            <? /* else : */ ?>
                                 <li class="list-inline-item g-mx-4">
                                     <i class="far fa-user g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                                    <a class="g-color-white g-color-white--hover" href="<?/*= \yii\helpers\Url::to(['/cms/upa-personal/update']) */?>"><?/*= \Yii::$app->user->identity->displayName; */?></a>
+                                    <a class="g-color-white g-color-white--hover" href="<? /*= \yii\helpers\Url::to(['/cms/upa-personal/update']) */ ?>"><? /*= \Yii::$app->user->identity->displayName; */ ?></a>
                                 </li>
-                            <?/* endif; */?>
+                            <? /* endif; */ ?>
 
                         </ul>-->
                     </div>
