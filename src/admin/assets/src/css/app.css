@@ -359,8 +359,7 @@ table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(
 .sx-empty #sideNav,
 .sx-empty .sx-hide-on-empty,
 .sx-empty footer,
-.sx-empty .sx-footer
-{
+.sx-empty .sx-footer {
     display: none;
 }
 
@@ -377,7 +376,10 @@ table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(
 }
 
 .sx-icon-wrapper {
-    width: 20px;
+    width: 17px;
+    /* min-width: 20px; */
+    display: inline-block;
+    text-align: center;
 }
 
 .u-side-nav--has-sub-menu ul {
@@ -415,6 +417,7 @@ form .has-error .help-block {
 form .sx-from-required {
     color: red;
 }
+
 /**
  * Оформление комментариев
  */
@@ -423,13 +426,10 @@ form .sx-from-required {
     padding: 15px;
     border-radius: 10px;
 }
+
 .comment-form .comment-fields-more {
     margin-top: 10px;
 }
-
-
-
-
 
 
 /**
@@ -471,11 +471,11 @@ form .sx-from-required {
   transform: translateX(0);
 }*/
 .fancybox-fx-slide-in-out.fancybox-slide--previous {
-  transform: translateX(100%);
+    transform: translateX(100%);
 }
 
 .fancybox-fx-slide-in-out.fancybox-slide--next {
-  transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 .fancybox-fx-slide-in-out.fancybox-slide--current {
@@ -489,8 +489,6 @@ form .sx-from-required {
 }
 
 
-
-
 .sx-bg-primary {
     background: #f5f9f9;
 }
@@ -499,7 +497,7 @@ form .sx-from-required {
     background: #f5f9f9;
 }
 
-.u-sidebar-navigation--light .has-active{
+.u-sidebar-navigation--light .has-active {
     background-color: #8484841a;
 }
 
@@ -516,26 +514,27 @@ iframe {
 }
 
 
-
 .btn-primary:visited,
 .btn-primary:active,
-.btn-primary:focus
-{
+.btn-primary:focus {
     background-color: #e62154;
     border-color: #e62154;
 }
 
 
-.sx-btn-backend-header a:hover{
+.sx-btn-backend-header a:hover {
     color: white;
 }
+
 .sx-header-user-profile [data-dropdown-target] {
     color: #8294b9;
     /* opacity: 0.5; */
 }
+
 .sx-header-user-profile a .sx-avatar {
     opacity: 0.8;
 }
+
 .sx-header-user-profile a:hover .sx-avatar {
     opacity: 1;
 }
@@ -543,7 +542,6 @@ iframe {
 .u-header__section--admin-dark [aria-labelledby] a:hover {
     color: white;
 }
-
 
 
 pre {
@@ -564,10 +562,6 @@ pre {
 .sx-progress-bar-wrapper {
     height: 12px;
 }
-
-
-
-
 
 
 /**
