@@ -635,3 +635,8 @@ pre {
 }*/
 
 
+
+
+.sx-content-wrapper, .sx-breadcrumbs-wrapper {
+    padding: 20px;
+}

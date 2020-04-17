@@ -45,14 +45,14 @@ $theme = $this->theme;
             <!-- End Sidebar Nav -->
             <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
                 <!-- Breadcrumb-v1 -->
-                <div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
+                <div class="g-hidden-sm-down g-bg-gray-light-v8 sx-hide-on-empty sx-breadcrumbs-wrapper">
                     <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
                 </div>
                 <!-- End Breadcrumb-v1 -->
 
                 <!-- Statistic Card -->
-                <div class="g-pa-20">
-                    <div class="sx-empty-layout-hidden-no">
+                <div class="sx-content-wrapper">
+                    <div class="sx-empty-layout-hidden-no sx-content-actions">
                         <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
                                 && \Yii::$app->controller->actions) : ?>
@@ -77,7 +77,7 @@ $theme = $this->theme;
 
                     <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                         && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                        <div class="">
+                        <div class="sx-content-model-actions">
                             <div class="panel-content-before panel-content-before-second">
                                 <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                                     && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
