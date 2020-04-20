@@ -80,7 +80,7 @@
                 <div class="col-sm-6 col-lg">
                     <? if (\Yii::$app->user->isGuest) : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Authorization'); ?></h2>
+                            <div class="u-heading-v2__title h6 mb-0 sx-footer-title"><?= \Yii::t('skeeks/unify', 'Authorization'); ?></div>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
@@ -96,7 +96,7 @@
                         </ul>
                     <? else : ?>
                         <div class="u-heading-v2-3--bottom g-mb-20">
-                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Personal data'); ?></h2>
+                            <div class="u-heading-v2__title h6 mb-0 sx-footer-title"><?= \Yii::t('skeeks/unify', 'Personal data'); ?></div>
                         </div>
                         <ul class="list-unstyled mb-0">
                             <li class="g-mb-8">
@@ -126,7 +126,7 @@
                 <!-- Footer Content -->
                 <div class="col-lg-3 col-md-6">
                     <div class="u-heading-v2-3--bottom g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></h2>
+                        <div class="u-heading-v2__title h6 mb-0 sx-footer-title"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></div>
                     </div>
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">

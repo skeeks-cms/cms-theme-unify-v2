@@ -407,3 +407,34 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     overflow: hidden;
     max-height: 56px;
 }
+
+
+/**
+ * Оформление верхнего toolbar
+ */
+.sx-topbar {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    background: black;
+}
+.sx-topbar a {
+    color: white;
+}
+
+.sx-topbar a:hover {
+    color: white;
+}
+
+/**
+ * Оформление футера
+ */
+.sx-footer-title {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sx-breadcrumbs-h1 {
+    font-weight: 600;
+}

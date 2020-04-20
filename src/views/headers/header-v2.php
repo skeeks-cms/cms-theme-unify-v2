@@ -88,18 +88,18 @@ CSS
         data-header-fix-effect="slide">
 
     <? if ($this->theme->is_header_toolbar) : ?>
-        <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-7 sx-topbar">
+        <div class="u-header__section u-header__section--hidden u-header__section--dark g-py-7 sx-topbar">
             <div class="container sx-container">
-                <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
+                <div class="row flex-column flex-sm-row justify-content-between align-items-center g-mx-0--lg">
                     <div class="col-auto">
-                        <i class="fas fa-phone g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                        <a href="tel:<?= $this->theme->phone; ?>" class="g-color-white g-color-white--hover">
+                        <i class="fas fa-phone g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                        <a href="tel:<?= $this->theme->phone; ?>" class="">
                             <?= $this->theme->phone; ?>
                         </a>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-envelope g-font-size-18 g-valign-middle g-color-white g-mr-10 g-mt-minus-2"></i>
-                        <a href="mailto:<?= $this->theme->email; ?>" class="g-color-white g-color-white--hover">
+                        <i class="fas fa-envelope g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                        <a href="mailto:<?= $this->theme->email; ?>" class="">
                             <?= $this->theme->email; ?>
                         </a>
                     </div>

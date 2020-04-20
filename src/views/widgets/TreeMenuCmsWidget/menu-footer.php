@@ -13,7 +13,7 @@
 
 <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
     <div class="u-heading-v2-3--bottom g-mb-20">
-        <h2 class="u-heading-v2__title h6 text-uppercase mb-0 g-font-weight-600"><?= $widget->label; ?></h2>
+        <div class="u-heading-v2__title h6 sx-footer-title mb-0"><?= $widget->label; ?></div>
     </div>
 
     <nav class="text-uppercase1">

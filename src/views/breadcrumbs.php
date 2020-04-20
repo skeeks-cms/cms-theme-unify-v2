@@ -48,7 +48,7 @@ if (!isset($isShowLast)) {
         <? endif; ?>
         <? if ($isShowH1) : ?>
             <header class="g-mb-0">
-                <h1 class="h1 g-color-gray-dark-v2 g-font-weight-600"><?= $title; ?></h1>
+                <h1 class="sx-breadcrumbs-h1"><?= $title; ?></h1>
             </header>
         <? endif; ?>
     </div>
