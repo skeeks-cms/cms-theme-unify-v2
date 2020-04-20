@@ -438,3 +438,16 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 .sx-breadcrumbs-h1 {
     font-weight: 600;
 }
+
+.sx-subcatalog-title {
+    font-weight: 700;
+}
+
+.sx-main-text-color {
+    color: #333;
+}
+
+.sx-col-left-title  {
+    font-weight: 600;
+    text-transform: uppercase;
+}

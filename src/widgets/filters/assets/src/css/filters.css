@@ -291,7 +291,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 }
 
 .sorting .sort .vals a.active {
-    font-weight: 700;
+    /*font-weight: 700;*/
     color: #ed1b24;
 }
 
