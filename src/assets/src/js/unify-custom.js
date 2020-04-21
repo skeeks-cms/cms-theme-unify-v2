@@ -88,6 +88,12 @@
             }
         },
 
+        _onWindowReady: function () {
+            $('.sx-preloader').fadeOut('slow', function () {
+                /*$(this).remove();*/
+            });
+        },
+
         _onDomReady: function () {
 
             var self = this;
@@ -107,9 +113,7 @@
             });
 
 
-            $('.sx-preloader').fadeOut('slow', function () {
-                $(this).remove();
-            });
+
         }
     });
 

@@ -80,100 +80,8 @@ class UnifyTheme extends Theme
     /**
      *
      */
-    static public function initBeforeRender()
+    static public function initThemeSettings()
     {
-        if (self::$is_ready === true) {
-            return true;
-        }
-
-        self::$is_ready = true;
-        /**
-         * Для виджетов выбора времени
-         */
-        \Yii::$app->params['bsVersion'] = "4";
-
-        //Переопределние стандартных Assets
-        \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
-            'class' => UnifyJqueryAsset::class,
-        ];
-
-        \Yii::$app->assetManager->bundles[\yii\bootstrap\BootstrapAsset::class] = [
-            'class' => UnifyBootstrapAsset::class,
-        ];
-
-        \Yii::$app->assetManager->bundles[\yii\bootstrap\BootstrapPluginAsset::class] = [
-            'class' => UnifyBootstrapPluginAsset::class,
-        ];
-
-
-        \Yii::$app->assetManager->bundles[\yii\bootstrap4\BootstrapPluginAsset::class] = [
-            'class' => UnifyBootstrapPluginAsset::class,
-        ];
-
-        \Yii::$app->assetManager->bundles[\yii\bootstrap4\BootstrapAsset::class] = [
-            'class' => UnifyBootstrapAsset::class,
-        ];
-
-
-        //Переопределение стандартных классов
-        \Yii::$container->setDefinitions(\yii\helpers\ArrayHelper::merge(
-            \Yii::$container->definitions,
-            [
-                \skeeks\yii2\form\fields\SelectField::class => [
-                    'class' => \skeeks\cms\admin\form\fields\AdminSelectField::class,
-                ],
-                \yii\bootstrap\ActiveForm::class            => [
-                    'class'   => \yii\bootstrap4\ActiveForm::class,
-                    'options' => [
-                        'class' => 'sx-bootstrap4-form',
-                    ],
-                ],
-                \yii\bootstrap\ActiveField::class           => [
-                    'class' => \yii\bootstrap4\ActiveField::class,
-                ],
-                \yii\bootstrap\Alert::class                 => [
-                    'class' => \yii\bootstrap4\Alert::class,
-                ],
-                \yii\bootstrap\Modal::class                 => [
-                    'class' => \skeeks\bootstrap4\Modal::class,
-                ],
-                \yii\bootstrap\Tabs::class                  => [
-                    'class' => \yii\bootstrap4\Tabs::class,
-                ],
-                \yii\widgets\LinkPager::class               => [
-                    'linkOptions'                   => [
-                        'class' => 'page-link',
-                    ],
-                    'linkContainerOptions'          => [
-                        'class' => 'page-item',
-                    ],
-                    'disabledListItemSubTagOptions' => [
-                        'class' => 'page-link',
-                    ],
-                ],
-
-                \skeeks\cms\backend\widgets\FiltersWidget::class => [
-                    //'viewFile' => 'asd',
-                    'defaultActiveForm' => [
-                        'class'       => '\yii\bootstrap4\ActiveForm',
-                        'fieldClass'  => Bootstrap4ActiveField::class,
-                        'layout'      => 'horizontal',
-                        'fieldConfig' => [
-                            'template'      => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
-                            'checkTemplate' => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
-                        ],
-                        'options'     => [
-                            'class'     => 'sx-backend-filters-form col-sm-12',
-                            'data-pjax' => 1,
-                        ],
-                        'method'      => 'get',
-                    ],
-                ],
-
-
-            ]
-        ));
-
         //Показывать заглушку?
         if (\Yii::$app->view->theme->is_cap) {
             $enableCap = true;
@@ -188,6 +96,7 @@ class UnifyTheme extends Theme
                 \Yii::$app->layout = "main-cap";
             }
         }
+
 
         if (\Yii::$app->view->theme->include_assets) {
             foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
@@ -236,7 +145,7 @@ class UnifyTheme extends Theme
             if (\Yii::$app->view->theme->font_css) {
                 \Yii::$app->view->registerCssFile(\Yii::$app->view->theme->font_css);
             }
-            
+
             \Yii::$app->view->registerCssFile($newFilePublic, [
                 'depends' => [
                     UnifyThemeAsset::class,
@@ -365,6 +274,116 @@ CSS
         if (\Yii::$app->view->theme->css_code) {
             \Yii::$app->view->registerCss(\Yii::$app->view->theme->css_code);
         }
+        
+        
+        \Yii::$app->view->registerCssFile($newFilePublic2, [
+            'depends' => [
+                UnifyThemeAsset::class,
+            ],
+        ]);
+        
+        $assetClass = \Yii::$app->view->theme->themeAssetClass;
+        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($assetClass) {
+            $assetClass::register(\Yii::$app->view);
+        });
+        
+    }
+
+    static public function initBeforeRender()
+    {
+        if (self::$is_ready === true) {
+            return true;
+        }
+
+        self::$is_ready = true;
+        /**
+         * Для виджетов выбора времени
+         */
+        \Yii::$app->params['bsVersion'] = "4";
+
+        //Переопределние стандартных Assets
+        \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
+            'class' => UnifyJqueryAsset::class,
+        ];
+
+        \Yii::$app->assetManager->bundles[\yii\bootstrap\BootstrapAsset::class] = [
+            'class' => UnifyBootstrapAsset::class,
+        ];
+
+        \Yii::$app->assetManager->bundles[\yii\bootstrap\BootstrapPluginAsset::class] = [
+            'class' => UnifyBootstrapPluginAsset::class,
+        ];
+
+
+        \Yii::$app->assetManager->bundles[\yii\bootstrap4\BootstrapPluginAsset::class] = [
+            'class' => UnifyBootstrapPluginAsset::class,
+        ];
+
+        \Yii::$app->assetManager->bundles[\yii\bootstrap4\BootstrapAsset::class] = [
+            'class' => UnifyBootstrapAsset::class,
+        ];
+
+
+        //Переопределение стандартных классов
+        \Yii::$container->setDefinitions(\yii\helpers\ArrayHelper::merge(
+            \Yii::$container->definitions,
+            [
+                \skeeks\yii2\form\fields\SelectField::class => [
+                    'class' => \skeeks\cms\admin\form\fields\AdminSelectField::class,
+                ],
+                \yii\bootstrap\ActiveForm::class            => [
+                    'class'   => \yii\bootstrap4\ActiveForm::class,
+                    'options' => [
+                        'class' => 'sx-bootstrap4-form',
+                    ],
+                ],
+                \yii\bootstrap\ActiveField::class           => [
+                    'class' => \yii\bootstrap4\ActiveField::class,
+                ],
+                \yii\bootstrap\Alert::class                 => [
+                    'class' => \yii\bootstrap4\Alert::class,
+                ],
+                \yii\bootstrap\Modal::class                 => [
+                    'class' => \skeeks\bootstrap4\Modal::class,
+                ],
+                \yii\bootstrap\Tabs::class                  => [
+                    'class' => \yii\bootstrap4\Tabs::class,
+                ],
+                \yii\widgets\LinkPager::class               => [
+                    'linkOptions'                   => [
+                        'class' => 'page-link',
+                    ],
+                    'linkContainerOptions'          => [
+                        'class' => 'page-item',
+                    ],
+                    'disabledListItemSubTagOptions' => [
+                        'class' => 'page-link',
+                    ],
+                ],
+
+                \skeeks\cms\backend\widgets\FiltersWidget::class => [
+                    //'viewFile' => 'asd',
+                    'defaultActiveForm' => [
+                        'class'       => '\yii\bootstrap4\ActiveForm',
+                        'fieldClass'  => Bootstrap4ActiveField::class,
+                        'layout'      => 'horizontal',
+                        'fieldConfig' => [
+                            'template'      => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
+                            'checkTemplate' => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
+                        ],
+                        'options'     => [
+                            'class'     => 'sx-backend-filters-form col-sm-12',
+                            'data-pjax' => 1,
+                        ],
+                        'method'      => 'get',
+                    ],
+                ],
+
+
+            ]
+        ));
+
+        static::initThemeSettings();
 
 
     }
@@ -388,7 +407,7 @@ CSS
     }
 
     public $font_css = '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap';
-    
+
     /**
      * @var string
      */
@@ -403,9 +422,9 @@ CSS
      * @var int
      */
     public $is_cap = 0;
-    
+
     /**
-     * @var bool 
+     * @var bool
      */
     public $is_center_logo = false;
     /**

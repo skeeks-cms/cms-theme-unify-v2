@@ -7,8 +7,8 @@
  */
 use yii\helpers\Html;
 
-$class = $this->theme->themeAssetClass;
-$class::register($this);
+//$class = $this->theme->themeAssetClass;
+//$class::register($this);
 /* @var $this \yii\web\View */
 /* @var $content string */
 if ($this->theme->body_bg_image) {

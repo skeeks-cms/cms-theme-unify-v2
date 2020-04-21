@@ -177,7 +177,7 @@ JS
 
                   <? if ($tree->relatedPropertiesModel->getAttribute('slide_title')) : ?>
                       <!-- LAYER NR. 2 -->
-                    <div class="tp-caption   tp-resizeme"
+                    <div class="tp-caption  h1 tp-resizeme"
                          id="slide-<?= $tree->id; ?>-layer-1"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                          data-y="['middle','middle','middle','middle']" data-voffset="['-160','-160','-130','-140']"
@@ -196,7 +196,7 @@ JS
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 6; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-7px;">
+                         style="z-index: 6; font-size: 110px; line-height: 110px; font-weight: 700; color: rgba(255, 255, 255, 1.00);border-width:0px;">
                         <?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>
                     </div>
                   <? endif; ?>
@@ -211,7 +211,7 @@ JS
                      data-fontsize="['40','40','30','30']"
                      data-width="[1200, 600, 600, 420]"
                      data-height="none"
-                     data-whitespace="['nowrap','normal','normal','normal']"
+                     data-whitespace="['normal','normal','normal','normal']"
 
                      data-type="text"
                      data-typewriter='{"lines":"Special%20Offer:%20Free%20Shipping%20Today,%20Shop%20with%20Unify","enabled":"on","speed":"70","delays":"1%7C100","looped":"on","cursorType":"one","blinking":"on","word_delay":"off","sequenced":"on","hide_cursor":"off","start_delay":"1500","newline_delay":"1000","deletion_speed":"20","deletion_delay":"1000","blinking_speed":"500","linebreak_delay":"60","cursor_type":"two","background":"off"}'
@@ -224,7 +224,7 @@ JS
                      data-paddingbottom="[0,0,0,0]"
                      data-paddingleft="[0,0,0,0]"
 
-                     style="z-index: 8; min-width: 640px; max-width: 640px; white-space: nowrap; font-size: 40px; line-height: 40px; font-weight: 400; color: rgba(255, 255, 255, 1.00);border-width:0px;">
+                     style="z-index: 8; min-width: 640px; max-width: 640px; font-size: 40px; line-height: 40px; font-weight: 400; color: rgba(255, 255, 255, 1.00);border-width:0px;">
                     <?= $tree->relatedPropertiesModel->getAttribute('slide_title2'); ?>
                 </div>
                   <? endif; ?>
