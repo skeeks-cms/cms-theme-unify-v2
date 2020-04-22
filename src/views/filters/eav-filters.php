@@ -38,14 +38,27 @@ $widget = $this->context;
         $toId = \yii\helpers\Html::getInputId($handler, $handler->getAttributeNameRangeTo($rp->id));
         $id = \yii\helpers\Html::getInputId($handler, $handler->getAttributeName($rp->id));
 
+        $class = '';
+        if (in_array($rp->id, (array) $handler->openedPropertyIds)) {
+            $class = 'opened';
+        }
+
+        if (($val1 != $min || $val2 != $max)) {
+            $class = 'opened sx-filter-selected';
+        }
+
+        $name = $rp->name;
+        if ($rp->cms_measure_code) {
+            $name = $rp->name . ", " . $rp->cmsMeasure->symbol;
+        }
         ?>
         <? if ($min != $max
             //&& $max > 0
         ) : ?>
 
-            <section class="filter--group <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected" : "" ?>">
+            <section class="filter--group <?= $class ?>">
                 <header class="filter--group--header">
-                    <?= $rp->name; ?>
+                    <?= $name; ?>
                     <? if ($rp->hint) : ?>
                         <i class="far fa-question-circle" title="<?= $rp->hint; ?>"></i>
                     <? endif; ?>
