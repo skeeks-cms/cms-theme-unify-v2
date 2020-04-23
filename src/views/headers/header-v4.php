@@ -89,16 +89,16 @@ JS
             </div>
         <? endif; ?>
         <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
-            <div class="container sx-container g-pt-15 g-pb-15">
+            <div class="container sx-container g-py-15">
                 <div class="row ">
-                    <div class="col-sm-4 col-md-3">
+                    <div class="col-sm-4 col-md-3 my-auto">
                         <!-- Logo -->
                         <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
                             <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                         </a>
                         <!-- End Logo -->
                     </div>
-                    <div class="col-md-6 col-sm-4">
+                    <div class="col-md-6 col-sm-4 my-auto">
                         <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                             <div class="sx-search-form">
                                 <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
@@ -119,7 +119,7 @@ JS
                             </div>
                         <? endif; ?>
                     </div>
-                    <div class="col-md-3 col-sm-4 ">
+                    <div class="col-md-3 col-sm-4 my-auto">
                         <div class="text-center">
                             <? if ($this->theme->phone) : ?>
                                 <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">

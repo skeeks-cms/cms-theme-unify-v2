@@ -451,3 +451,8 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+
+.hamburger {
+    padding: 5px !important;
+}
