@@ -26,11 +26,13 @@ use yii\helpers\Html;
     <body class="<?= $this->theme->bodyCssClass; ?>">
     <?php $this->beginBody() ?>
     <?= $this->render("@app/views/include/pre-loader"); ?>
-    <main>
-        <?= $this->render("@app/views/header"); ?>
-        <?= $content; ?>
-        <?= $this->render("@app/views/footer"); ?>
-    </main>
+    <div class="sx-main-wrapper"><!--Нужен для mmenu-->
+        <main>
+            <?= $this->render("@app/views/header"); ?>
+            <?= $content; ?>
+            <?= $this->render("@app/views/footer"); ?>
+        </main>
+    </div>
     <?= $this->render("@app/views/modals"); ?>
     <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
