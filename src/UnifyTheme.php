@@ -98,6 +98,7 @@ class UnifyTheme extends Theme
         }
 
 
+        //Дополнительные компоненты верстки
         if (\Yii::$app->view->theme->include_assets) {
             foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
                 if (class_exists($assetClass)) {
@@ -126,7 +127,28 @@ class UnifyTheme extends Theme
         $content = str_replace("{footer_copyright_color}", \Yii::$app->view->theme->footer_copyright_color, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)));
+        
+        $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
+        $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
+        $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
+        $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
+        //\Yii::$app->view->registerCss($content);
+
+        if (\Yii::$app->view->theme->menu_color1) {
+            $bgColor1 = \Yii::$app->view->theme->menu_color1;
+            $bgColor2 = \Yii::$app->view->theme->menu_color2;
+            $content = str_replace("{menuBgColor1}", $bgColor1, $content);
+            $content = str_replace("{menuBgColor2}", $bgColor2, $content);
+        }
+
+        $color = \Yii::$app->view->theme->menu_font_color;
+        $fz = \Yii::$app->view->theme->menu_font_size;
+
+        $content = str_replace("{menuColor}", $color, $content);
+        $content = str_replace("{menuFz}", $fz, $content);
+        
+        
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v1";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -154,49 +176,6 @@ class UnifyTheme extends Theme
         });
 
 
-        //\Yii::$app->view->registerCss($content);
-
-
-        $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-theme-template.css"));
-        $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
-        $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
-        $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
-        $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
-        //\Yii::$app->view->registerCss($content);
-
-        if (\Yii::$app->view->theme->menu_color1) {
-            $bgColor1 = \Yii::$app->view->theme->menu_color1;
-            $bgColor2 = \Yii::$app->view->theme->menu_color2;
-            $content = str_replace("{menuBgColor1}", $bgColor1, $content);
-            $content = str_replace("{menuBgColor2}", $bgColor2, $content);
-        }
-
-        $color = \Yii::$app->view->theme->menu_font_color;
-        $fz = \Yii::$app->view->theme->menu_font_size;
-
-        $content = str_replace("{menuColor}", $color, $content);
-        $content = str_replace("{menuFz}", $fz, $content);
-
-
-        $newFile2 = \Yii::getAlias("@webroot/assets/unify/unify-theme-template-".$cache.".css");
-        $newFilePublic2 = \Yii::getAlias("@web/assets/unify/unify-theme-template-".$cache.".css");
-
-        if (!file_exists($newFile2)) {
-            FileHelper::createDirectory($newDir);
-
-            $fp = fopen($newFile2, 'w+');
-            fwrite($fp, $content);
-            fclose($fp);
-        }
-
-
-        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic2) {
-            \Yii::$app->view->registerCssFile($newFilePublic2, [
-                'depends' => [
-                    UnifyThemeAsset::class,
-                ],
-            ]);
-        });
 
         if (\Yii::$app->view->theme->sx_container_width) {
             $maxWidth = \Yii::$app->view->theme->sx_container_width;
@@ -276,11 +255,6 @@ CSS
         }
         
         
-        \Yii::$app->view->registerCssFile($newFilePublic2, [
-            'depends' => [
-                UnifyThemeAsset::class,
-            ],
-        ]);
         
         $assetClass = \Yii::$app->view->theme->themeAssetClass;
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($assetClass) {
