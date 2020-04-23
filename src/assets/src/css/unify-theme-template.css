@@ -187,14 +187,15 @@ h6,
 .irs-from, .irs-to, .irs-single,
 .irs-bar, .irs-bar-edge
 {
-    background: #e1082c;
+    background: #e1082c !important;
 }
 .irs-from:after, .irs-to:after, .irs-single:after {
-    border-top-color: #e1082c;
+    border-top-color: #e1082c !important;
 }
 .irs-slider {
-    border: 4px solid #e1082c;
+    border: 4px solid #e1082c !important;
 }
+
 
 /**
  * Кнопки
