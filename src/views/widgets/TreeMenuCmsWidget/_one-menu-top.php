@@ -14,6 +14,15 @@ $activeClass = '';
 if (strpos(\Yii::$app->request->pathInfo, $model->dir) !== false) {
     $activeClass = ' active';
 }
+
+if ($model->redirectTree && $model->redirectTree->dir && strpos(\Yii::$app->request->pathInfo, $model->redirectTree->dir)) {
+    $activeClass = ' active';
+}
+
+if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTree && $model->redirectTree->level == 0))) {
+    $activeClass = ' active';
+}
+
 ?>
 <li class="nav-item g-mx-20--lg <?= $activeClass; ?> <?= ($hasChildrens) ? ' hs-has-sub-menu' : ''; ?>" data-animation-in="fadeIn" data-animation-out="fadeOut">
     <? if ($hasChildrens) : ?>
