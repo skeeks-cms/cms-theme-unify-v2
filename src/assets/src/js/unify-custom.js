@@ -113,6 +113,15 @@
             });
 
 
+            $(".sx-content table").addClass("table table-striped table-bordered table-hover u-table--v1 table-condensed sx-project-table");
+            $(".sx-content table").each(function() {
+                var jWrapper = $("<div>", {
+                    'class': 'table-responsive'
+                });
+                $(this).after(jWrapper);
+                $(this).appendTo(jWrapper);
+            });
+
 
         }
     });

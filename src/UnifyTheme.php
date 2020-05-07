@@ -148,7 +148,82 @@ class UnifyTheme extends Theme
         $content = str_replace("{menuFz}", $fz, $content);
         
         
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v1";
+        
+
+
+        $css_content = '';
+
+        if (\Yii::$app->view->theme->sx_container_width) {
+            $maxWidth = \Yii::$app->view->theme->sx_container_width;
+            $css_content .= <<<CSS
+    .sx-container {
+        max-width: {$maxWidth};
+    }
+CSS;
+
+        }
+
+        if (\Yii::$app->view->theme->menu_align == 'left') {
+            $css_content .= <<<CSS
+    ul.sx-menu-top {
+        margin-left: 0 !important;
+    }
+    .sx-menu-top li:first-child {
+        margin-left: 0 !important;
+    }
+CSS;
+
+        }
+        if (\Yii::$app->view->theme->menu_align == 'right') {
+            $css_content .= <<<CSS
+    ul.sx-menu-top {
+        margin-left: auto !important;
+    }
+CSS;
+
+        }
+        if (\Yii::$app->view->theme->menu_align == 'center') {
+            $css_content .= <<<CSS
+    ul.sx-menu-top {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+CSS;
+
+        }
+        if (\Yii::$app->view->theme->body_bg_image) {
+            $bgImage = \Yii::$app->view->theme->body_bg_image;
+            $css_content .= <<<CSS
+        body {
+            background: url('{$bgImage}') fixed;
+            background-size: cover;
+        }
+CSS;
+        }
+
+
+        if (\Yii::$app->view->theme->col_left_width) {
+            $leftCol = \Yii::$app->view->theme->col_left_width;
+            $css_content .= <<<CSS
+@media (min-width: 768px) {
+                .sx-content-col-main {
+                    width: calc(100% - {$leftCol}px);
+                }
+                .sx-content-col-left {
+                    width: {$leftCol}px;
+                    position: static;
+                    top: auto;
+                    z-index: auto;
+                }
+            }
+CSS;
+        }
+        
+        
+        $content = str_replace("{css_content}", $css_content, $content);
+
+
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v2";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -174,82 +249,8 @@ class UnifyTheme extends Theme
                 ],
             ]);
         });
-
-
-
-        if (\Yii::$app->view->theme->sx_container_width) {
-            $maxWidth = \Yii::$app->view->theme->sx_container_width;
-            \Yii::$app->view->registerCss(<<<CSS
-    .sx-container {
-        max-width: {$maxWidth};
-    }
-CSS
-            );
-
-        }
-
-        if (\Yii::$app->view->theme->menu_align == 'left') {
-            \Yii::$app->view->registerCss(<<<CSS
-    ul.sx-menu-top {
-        margin-left: 0 !important;
-    }
-    /*.sx-menu-top li:first-child {
-            margin-left: 0 !important;
-        }*/
-CSS
-            );
-
-        }
-        if (\Yii::$app->view->theme->menu_align == 'right') {
-            \Yii::$app->view->registerCss(<<<CSS
-    ul.sx-menu-top {
-        margin-left: auto !important;
-    }
-CSS
-            );
-
-        }
-        if (\Yii::$app->view->theme->menu_align == 'center') {
-            \Yii::$app->view->registerCss(<<<CSS
-    ul.sx-menu-top {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-CSS
-            );
-
-        }
-        if (\Yii::$app->view->theme->body_bg_image) {
-            $bgImage = \Yii::$app->view->theme->body_bg_image;
-            \Yii::$app->view->registerCss(<<<CSS
-        body {
-            background: url('{$bgImage}') fixed;
-            background-size: cover;
-        }
-CSS
-            );
-        }
-
-
-        if (\Yii::$app->view->theme->col_left_width) {
-            $leftCol = \Yii::$app->view->theme->col_left_width;
-            \Yii::$app->view->registerCss(<<<CSS
-@media (min-width: 768px) {
-                .sx-content-col-main {
-                    width: calc(100% - {$leftCol}px);
-                }
-                .sx-content-col-left {
-                    width: {$leftCol}px;
-                    position: static;
-                    top: auto;
-                    z-index: auto;
-                }
-            }
-CSS
-            );
-        }
-
-
+        
+        
         if (\Yii::$app->view->theme->css_code) {
             \Yii::$app->view->registerCss(\Yii::$app->view->theme->css_code);
         }

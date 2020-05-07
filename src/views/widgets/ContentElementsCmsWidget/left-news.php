@@ -18,7 +18,7 @@
     <div class="g-bg-secondary  g-mb-20">
 
             <div class="u-heading-v3-1 g-mb-10">
-                <h2 class="h5 u-heading-v3__title g-font-primary text-uppercase g-brd-primary">Новости</h2>
+                <h2 class="h5 u-heading-v3__title sx-col-left-title g-brd-primary"><?= $widget->label; ?></h2>
             </div>
 
             <? echo \yii\widgets\ListView::widget([

@@ -204,6 +204,7 @@ h6,
 }
 .sx-content img {
     max-width: 100%;
+    height: auto !important;
 }
 
 
@@ -455,4 +456,14 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 
 .hamburger {
     padding: 5px !important;
+}
+
+
+
+@media (max-width: 766px)
+{
+    .sx-content-col-left {
+        position: absolute;
+        left: -100000px;
+    }
 }
