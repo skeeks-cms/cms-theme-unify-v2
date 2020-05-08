@@ -41,8 +41,8 @@ class UnifyAdminAsset extends UnifyAsset
         'admin-template/assets/vendor/flatpickr/dist/css/flatpickr.min.css',
         'admin-template/assets/vendor/bootstrap-select/css/bootstrap-select.min.css',
 
-        'admin-template/assets/vendor/chartist-js/chartist.min.css',
-        'admin-template/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css',
+        //'admin-template/assets/vendor/chartist-js/chartist.min.css',
+        //'admin-template/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css',
 
         'assets/vendor/hamburgers/hamburgers.min.css',
         'admin-template/assets/css/unify-admin.css',
@@ -71,8 +71,8 @@ class UnifyAdminAsset extends UnifyAsset
         'admin-template/assets/vendor/bootstrap-select/js/bootstrap-select.min.js',
         'admin-template/assets/vendor/flatpickr/dist/js/flatpickr.min.js',
         //'assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js',
-        'admin-template/assets/vendor/chartist-js/chartist.min.js',
-        'admin-template/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js',
+        //'admin-template/assets/vendor/chartist-js/chartist.min.js',
+        //'admin-template/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js',
 
         //'assets/js/hs.core.js',
         'admin-template/assets/js/components/hs.side-nav.js',
