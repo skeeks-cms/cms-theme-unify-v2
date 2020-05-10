@@ -20,7 +20,7 @@
                         <li class="col-lg-2 col-md-3 col-sm-4 col-6 g-mb-10 g-mt-10">
                             <div class="text-center">
                                 <a data-pjax="0" href="<?= $model->url; ?>" class="shop-item-image">
-                                    <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+                                    <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->mainImage ? $model->mainImage->src : null,
                                         new \skeeks\cms\components\imaging\filters\Thumbnail([
                                             'w' => 120,
                                             'h' => 100,
