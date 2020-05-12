@@ -21,7 +21,11 @@
                 <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Пишите по электронной почте:
                     <a href="mailto:<?= $this->theme->email; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= $this->theme->email; ?></a>
                 </p>
-                <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-question g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+                <p class="lead g-mb-20 g-mb-0--md">
+                    <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-bottom-icon'); ?>
+                    <i class="g-color-black icon-question g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+                    <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
+                    
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-bottom'); ?>
                     Смотрите <a href="/populyarnye-voprosy" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover">популярные вопросы</a> прямо у нас на сайте
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
