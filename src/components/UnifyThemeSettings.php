@@ -209,6 +209,7 @@ class UnifyThemeSettings extends Component
      */
     public $footer_bg_color = '#fafafa';
     public $footer_color = '#000';
+    public $text_color = '#555';
 
     /**
      * @var string
@@ -404,6 +405,7 @@ class UnifyThemeSettings extends Component
                     'footer',
                     'footer_bg_color',
                     'footer_color',
+                    'text_color',
                     'footer_copyright_bg_color',
                     'footer_copyright_color',
 
@@ -530,6 +532,7 @@ class UnifyThemeSettings extends Component
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
             'footer_color'              => "Цвет текста в футере футера",
+            'text_color'              => "Цвет текста по умолчанию",
             'footer_copyright_bg_color' => "Цвет фона под футером",
             'footer_copyright_color'    => "Цвет текста под футером",
 
@@ -588,6 +591,7 @@ class UnifyThemeSettings extends Component
             'font_headers'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
             'font_texts'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
             'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
+            'text_color'       => 'Цвет текста заданный по умолчанию для всего сайта.',
         ]);
     }
 
@@ -680,6 +684,13 @@ class UnifyThemeSettings extends Component
                             'Spectral'         => 'Spectral',
                             'Rubik'            => 'Rubik',
                         ],*/
+                    ],
+
+
+
+                    'text_color' => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => ColorInput::class,
                     ],
 
                     [

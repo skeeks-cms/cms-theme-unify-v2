@@ -132,6 +132,7 @@ class UnifyTheme extends Theme
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
         $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
+        $content = str_replace("{text_color}", \Yii::$app->view->theme->text_color, $content);
         //\Yii::$app->view->registerCss($content);
 
         if (\Yii::$app->view->theme->menu_color1) {
@@ -223,7 +224,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v2";
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v3";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -416,6 +417,11 @@ CSS;
      * @var string Шрифт текста
      */
     public $font_texts = "Open Sans";
+
+    /**
+     * @var string Шрифт текста
+     */
+    public $text_color = "#555";
 
     /**
      * @var string

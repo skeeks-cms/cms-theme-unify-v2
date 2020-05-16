@@ -1369,7 +1369,12 @@ input[type="radio"]:checked + * .g-overlay-primary-0_9--checked::after,
 ------------------------------------*/
 body {
   font-family: "{font_texts}", Helvetica, Arial, sans-serif;
+    color: {text_color};
 }
+.sx-main-text-color {
+    color: {text_color};
+}
+
 h1,
 .h1,
 h2,
