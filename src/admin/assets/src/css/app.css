@@ -522,6 +522,14 @@ iframe {
 }
 
 
+.btn-primary:hover, .btn-secondary:hover,
+.btn-primary:active, .btn-secondary:active,
+.btn-primary:focus, .btn-secondary:focus
+{
+    color: white;
+}
+
+
 .sx-btn-backend-header a:hover {
     color: white;
 }
