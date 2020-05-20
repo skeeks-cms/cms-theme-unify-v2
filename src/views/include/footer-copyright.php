@@ -15,8 +15,11 @@
             <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
                 <div class="d-lg-flex">
                     <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md" style="line-height:30px;">
-                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text'); ?>
-                        2019 &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>
+                        <? 
+                        $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text'); 
+                        $widget->descriptor->name = 'Блок с текстом о защите прав';
+                        ?>
+                        2020 &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>
                         <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
                     </small>
 

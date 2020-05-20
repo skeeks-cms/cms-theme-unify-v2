@@ -128,7 +128,10 @@
                     <div class="u-heading-v2-3--bottom g-mb-20">
                         <div class="u-heading-v2__title h6 mb-0 sx-footer-title"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></div>
                     </div>
-                    <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text'); ?>
+                    <? 
+                        $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text');
+                        $widget->descriptor->name = 'Блок с адресом';
+                    ?>
                     <address class="g-bg-no-repeat g-font-size-12 mb-0">
                         <? if ($this->theme->address) : ?>
                             <!-- Location -->

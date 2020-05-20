@@ -6,7 +6,7 @@
  * @date 25.05.2015
  */
 /* @var $this   yii\web\View */
-/* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
+/* @var $widget \skeeks\cms\cmsWidgets\tree\TreeCmsWidget */
 /* @var $model   \skeeks\cms\models\Tree */
 
 $hasChildrens = $model->activeChildren;
@@ -31,11 +31,15 @@ if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTr
         </a>
 
         <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-<?= $model->id; ?>" aria-labelledby="nav-link-<?= $model->id; ?>">
-            <? foreach ($model->getActiveChildren()
-                            ->orderBy([$widget->orderBy => $widget->order])
-                            ->all() as $childTree) : ?>
+            <? 
+            $childQuery = $model->getActiveChildren();
+            $widget->initSorting($childQuery);
+            foreach ($childQuery->all() as $childTree) : ?>
                 <?
-                $subChilds = $childTree->getActiveChildren()->orderBy([$widget->orderBy => $widget->order])->all();
+                $subChildsQuery = $childTree->getActiveChildren();
+                $widget->initSorting($subChildsQuery);
+                
+                $subChilds = $subChildsQuery->all();
                 ?>
 
                 <li class="dropdown-item <?= $subChilds ? "hs-has-sub-menu" : "" ?>">

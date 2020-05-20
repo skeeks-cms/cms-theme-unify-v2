@@ -198,13 +198,12 @@ CSS
                 <!-- End Logo -->
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
-                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                        'namespace'       => 'menu-top',
-                        'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-top',
-                        'label'           => 'Верхнее меню',
-                        'level'           => '1',
-                        'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
-                    ]); ?>
+                    <?php
+                        $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('menu-top');
+                        $widget->descriptor->name = 'Главное верхнее меню';
+                        $widget->viewFile = '@app/views/widgets/TreeMenuCmsWidget/menu-top';
+                        $widget::end();
+                    ?>
                 </div>
                 <!-- End Navigation -->
                 <? if (\Yii::$app->view->theme->is_show_search_block) :

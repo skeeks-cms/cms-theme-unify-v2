@@ -168,15 +168,12 @@ JS
 
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--sm sx-main-menu" id="navBar">
-
-                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
-                        'namespace'       => 'menu-top',
-                        'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/menu-top',
-                        'label'           => 'Верхнее меню',
-                        'level'           => '1',
-                        'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
-                    ]); ?>
-
+                    <?php
+                        $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('menu-top');
+                        $widget->descriptor->name = 'Главное верхнее меню';
+                        $widget->viewFile = '@app/views/widgets/TreeMenuCmsWidget/menu-top';
+                        $widget::end();
+                    ?>
                 </div>
                 <!-- End Navigation -->
                 <!-- End Navigation -->
