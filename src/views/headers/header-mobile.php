@@ -22,10 +22,11 @@ JS
 <? $items = [
 ];
 
-$models = \skeeks\cms\models\CmsTree::find()->where(['level' => 1])->active()
+$models = \skeeks\cms\models\CmsTree::find()->cmsSite()->andWhere(['level' => 1])->active()
     //->andWhere(['active' => 'Y'])
     ->orderBy(['priority'   =>  SORT_ASC])
-    ->all();
+    ->all()
+;
 if ($models)
 {
     foreach ($models as $model)
