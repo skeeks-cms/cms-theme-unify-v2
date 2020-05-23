@@ -34,7 +34,6 @@ use yii\helpers\Html;
         </main>
     </div>
     <?= $this->render("@app/views/modals"); ?>
-    <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
     </body>
     </html>
