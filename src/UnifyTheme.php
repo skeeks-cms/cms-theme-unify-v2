@@ -97,6 +97,9 @@ class UnifyTheme extends Theme
             }
         }
 
+        if (\Yii::$app->request->isPjax || \Yii::$app->request->isAjax) {
+            return false;
+        }
 
         //Дополнительные компоненты верстки
         if (\Yii::$app->view->theme->include_assets) {
