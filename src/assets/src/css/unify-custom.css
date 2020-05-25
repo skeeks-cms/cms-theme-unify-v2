@@ -136,6 +136,9 @@ h6,
     font-weight: 600;
 }
 
+.sx-filters-form .checkbox label {
+    line-height: 14px;
+}
 
 .checkbox label,
 .sx-project-form-wrapper .form-check label,
@@ -145,7 +148,7 @@ h6,
     display: inline-block;
     vertical-align: top;
     position: relative;
-    line-height: 14px;
+    /*line-height: 14px;*/
     padding: 0 0 0 26px;
     font-size: 1.083333em;
     cursor: pointer;
@@ -172,6 +175,8 @@ h6,
 
     content: '';
     position: absolute;
+
+    top: 3px;
 }
 
 .checkbox input[type=checkbox]:checked + label:before,
