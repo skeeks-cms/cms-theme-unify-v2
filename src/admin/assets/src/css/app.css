@@ -1,7 +1,7 @@
 .sx-main-col .tab-content {
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
+    padding-top: 20px;
+    /*border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;*/
     border-bottom: 1px solid #ddd;
     border-color: #eee #eee #eee;
 }
@@ -69,9 +69,9 @@ form.sx-form-admin .tab-content {
 /**
  * Переопределение стилей таблиц
  */
-table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(odd):hover > td {
+/*table.sx-table > tbody > tr:hover > td, table.sx-table > tbody > tr:nth-of-type(odd):hover > td {
     background-color: #e6ecec !important;
-}
+}*/
 
 .sx-table hr {
     margin: 0;
