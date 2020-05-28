@@ -32,6 +32,8 @@ $theme = $this->theme;
                 </a>
                 <!-- End Sidebar Toggler -->
             </div>
+
+
             <!-- Messages/Notifications/Top Search Bar/Top User -->
             <div class="col-auto d-flex g-py-12 g-pl-40--lg ml-auto">
                 <!-- Top Messages -->

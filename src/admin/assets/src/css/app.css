@@ -1,13 +1,13 @@
 .sx-main-col .tab-content {
-    padding-top: 20px;
+    padding-top: 10px;
     /*border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;*/
-    border-bottom: 1px solid #ddd;
-    border-color: #eee #eee #eee;
+    /*border-bottom: 1px solid #ddd;
+    border-color: #eee #eee #eee;*/
 }
 
 .sx-main-page-nav {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .sx-main-col .sx-grid-view {
@@ -646,5 +646,45 @@ pre {
 
 
 .sx-content-wrapper, .sx-breadcrumbs-wrapper {
-    padding: 20px;
+    padding: 10px;
+}
+
+/**
+ * Стандартный серый фон
+ */
+.sx-bg-gray-light {
+    background-color: #f5f9f9;
+}
+
+/**
+ * Стилизация хлебных крошек
+ */
+.sx-main-col .sx-breadcrumbs-wrapper a {
+    color: #53585e;
+}
+
+.sx-breadcrumbs-wrapper a {
+    color: #53585e;
+}
+
+.sx-breadcrumbs-wrapper li.sx-breadcrumbs-item {
+    margin-right: 10px;
+}
+
+.sx-breadcrumbs-wrapper li.sx-breadcrumbs-item i {
+    margin-left: 10px;
+}
+
+
+/**
+ * Хлебные крошки в шапке
+ */
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper a {
+    color: #6b7996;
+}
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper a:hover {
+    color: white;
+}
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper i {
+    color: #6b7996;
 }

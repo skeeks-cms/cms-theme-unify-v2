@@ -44,12 +44,7 @@ $theme = $this->theme;
             </div>
             <!-- End Sidebar Nav -->
             <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
-                <!-- Breadcrumb-v1 -->
-                <div class="g-hidden-sm-down g-bg-gray-light-v8 sx-hide-on-empty sx-breadcrumbs-wrapper">
-                    <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
-                </div>
-                <!-- End Breadcrumb-v1 -->
-
+                <?= $this->render("@app/views/layouts/_before-content"); ?>
                 <!-- Statistic Card -->
                 <div class="sx-content-wrapper">
                     <div class="sx-empty-layout-hidden-no sx-content-actions">

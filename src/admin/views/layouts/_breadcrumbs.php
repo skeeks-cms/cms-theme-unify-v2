@@ -11,27 +11,27 @@
 
 <? $controller = \Yii::$app->controller; ?>
 <? if ($controller && $controller instanceof \skeeks\cms\backend\IHasBreadcrumbs && $controller->breadcrumbsData) : ?>
-    <ul class="u-list-inline g-color-gray-dark-v6">
+    <ul class="u-list-inline">
 
-        <li class="list-inline-item g-mr-10">
-            <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= $this->theme->logoHref; ?>">Главная</a>
-            <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
+        <li class="list-inline-item sx-breadcrumbs-item">
+            <a class="g-valign-middle" href="<?= $this->theme->logoHref; ?>">Главная</a>
+            <i class="hs-admin-angle-right g-valign-middle"></i>
         </li>
 
         <? if (\skeeks\cms\backend\BackendComponent::getCurrent()->id == 'hostingVpsBackend') : ?>
-            <li class="list-inline-item g-mr-10">
-                <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= \yii\helpers\Url::to(['/hosting/upa-hosting/index']) ?>">Мои VPS</a>
-                <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
+            <li class="list-inline-item sx-breadcrumbs-item">
+                <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/hosting/upa-hosting/index']) ?>">Мои VPS</a>
+                <i class="hs-admin-angle-right g-valign-middle"></i>
             </li>
-            <li class="list-inline-item g-mr-10">
-                <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="
+            <li class="list-inline-item sx-breadcrumbs-item">
+                <a class="g-valign-middle" href="
                                     <?= \yii\helpers\Url::to(['/hosting/hosting-vps/index']) ?>">VPS <?= \Yii::$app->hostingVpsBackend->vps->id; ?></a>
-                <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
+                <i class="hs-admin-angle-right g-valign-middle"></i>
             </li>
         <? elseif (\skeeks\cms\backend\BackendComponent::getCurrent()->id == 'crmBackend') : ?>
-            <li class="list-inline-item g-mr-10">
-                <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= \yii\helpers\Url::to(['/work/crm-portal']) ?>">Кабинет сотрудника</a>
-                <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
+            <li class="list-inline-item sx-breadcrumbs-item">
+                <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/work/crm-portal']) ?>">Кабинет сотрудника</a>
+                <i class="hs-admin-angle-right g-valign-middle"></i>
             </li>
         <? endif; ?>
 
@@ -40,15 +40,15 @@
         <? foreach ($controller->breadcrumbsData as $row) : ?>
             <? $counter++; ?>
             <? if ($counter == $total) : ?>
-                <li class="list-inline-item g-mr-10">
-                    <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= \yii\helpers\ArrayHelper::getValue($row,
+                <li class="list-inline-item sx-breadcrumbs-item">
+                    <a class="g-valign-middle" href="<?= \yii\helpers\ArrayHelper::getValue($row,
                         'url'); ?>"><?= \yii\helpers\ArrayHelper::getValue($row, 'label'); ?></a>
                 </li>
             <? else : ?>
-                <li class="list-inline-item g-mr-10">
-                    <a class="u-link-v5 g-color-gray-dark-v6 g-color-secondary--hover g-valign-middle" href="<?= \yii\helpers\ArrayHelper::getValue($row,
+                <li class="list-inline-item sx-breadcrumbs-item">
+                    <a class="g-valign-middle" href="<?= \yii\helpers\ArrayHelper::getValue($row,
                         'url'); ?>"><?= \yii\helpers\ArrayHelper::getValue($row, 'label'); ?></a>
-                    <i class="hs-admin-angle-right g-font-size-12 g-color-gray-light-v6 g-valign-middle g-ml-10"></i>
+                    <i class="hs-admin-angle-right g-valign-middle"></i>
                 </li>
             <? endif; ?>
 
