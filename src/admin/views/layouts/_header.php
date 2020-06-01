@@ -33,6 +33,10 @@ $theme = $this->theme;
                 <!-- End Sidebar Toggler -->
             </div>
 
+            <div class="col-auto d-flex g-py-12 g-ml-20 sx-breadcrumbs-wrapper">
+                <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
+            </div>
+
 
             <!-- Messages/Notifications/Top Search Bar/Top User -->
             <div class="col-auto d-flex g-py-12 g-pl-40--lg ml-auto">

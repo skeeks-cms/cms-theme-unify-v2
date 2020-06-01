@@ -30,7 +30,7 @@
             </li>
         <? elseif (\skeeks\cms\backend\BackendComponent::getCurrent()->id == 'crmBackend') : ?>
             <li class="list-inline-item sx-breadcrumbs-item">
-                <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/work/crm-portal']) ?>">Кабинет сотрудника</a>
+                <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/crm/crm-main']) ?>">Кабинет сотрудника</a>
                 <i class="hs-admin-angle-right g-valign-middle"></i>
             </li>
         <? endif; ?>
