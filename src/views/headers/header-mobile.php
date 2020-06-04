@@ -99,9 +99,6 @@ if ($models)
                     'content' => [
                         '<a href="tel:'. $this->theme->phone .'" class="g-color-white g-color-white--hover">
                             '. $this->theme->phone .'
-                        </a>
-                                    <a href="mailto:'. $this->theme->email .'" class="g-color-white g-color-white--hover">
-                '. $this->theme->email .'
                         </a>'
                     ]
                 ]
