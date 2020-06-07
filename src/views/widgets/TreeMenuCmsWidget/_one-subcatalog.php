@@ -14,7 +14,7 @@
     <!-- Article -->
     <article class="text-center g-color-white g-overflow-hidden h-100">
         <? if ($model->image) : ?>
-        <div class="u-block-hover--scale g-min-height-200 g-flex-middle g-bg-cover g-bg-size-cover g-bg-bluegray-opacity-0_5--after g-transition-0_5 h-100"
+        <div class="u-block-hover--scale g-min-height-200 g-flex-middle g-bg-cover g-bg-size-cover g-bg-black-opacity-0_5--after g-transition-0_5 h-100"
              data-bg-img-src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->mainImage ? $model->mainImage->src : null,
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
                                     'w' => 400,
