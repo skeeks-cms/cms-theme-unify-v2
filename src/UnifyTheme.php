@@ -243,6 +243,10 @@ CSS;
 
 
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic) {
+            if (\Yii::$app->request->isPjax) {
+                return false;
+            }
+
             if (\Yii::$app->view->theme->font_css) {
                 \Yii::$app->view->registerCssFile(\Yii::$app->view->theme->font_css);
             }
@@ -263,6 +267,9 @@ CSS;
         
         $assetClass = \Yii::$app->view->theme->themeAssetClass;
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($assetClass) {
+            if (\Yii::$app->request->isPjax) {
+                return false;
+            }
             $assetClass::register(\Yii::$app->view);
         });
         
