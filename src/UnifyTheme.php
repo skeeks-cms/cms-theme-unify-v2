@@ -259,7 +259,7 @@ CSS;
         });
         
         
-        if (\Yii::$app->view->theme->css_code) {
+        if (\Yii::$app->view->theme->css_code && !\Yii::$app->request->isPjax) {
             \Yii::$app->view->registerCss(\Yii::$app->view->theme->css_code);
         }
         
