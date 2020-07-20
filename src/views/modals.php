@@ -25,9 +25,15 @@ $modal = \yii\bootstrap\Modal::begin([
 
 <div style="display: none;"  itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="<?= $this->theme->title; ?>">
-    <meta itemprop="telephone" content="<?= $this->theme->phone; ?>">
-    <meta itemprop="address" content="<?= $this->theme->address; ?>">
-    <meta itemprop="email" content="<?= $this->theme->email; ?>">
+    <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+        <meta itemprop="telephone" content="<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>">
+    <?php endif; ?>
+    <?php if(\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
+        <meta itemprop="email" content="<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>">
+    <?php endif; ?>
+    <?php if(\Yii::$app->skeeks->site->cmsSiteAddress) : ?>
+        <meta itemprop="address" content="<?= \Yii::$app->skeeks->site->cmsSiteAddress->value; ?>">
+    <?php endif; ?>
     <link itemprop="url" href="<?= \yii\helpers\Url::home(true); ?>">
     <meta itemprop="logo" content="<?= $this->theme->logo; ?>">
 </div>

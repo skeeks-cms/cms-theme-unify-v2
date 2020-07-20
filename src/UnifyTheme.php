@@ -19,7 +19,6 @@ use yii\helpers\FileHelper;
 use yii\web\View;
 
 /**
- * @property string      $favicon путь к фавиконке
  * @property string|null $logoSrc путь к лого, если передать null, то будет лого по умолчанию
  * @property string|null $logoHref Url с логотипа
  *
@@ -241,6 +240,19 @@ CSS;
             fclose($fp);
         }
 
+        if (!\Yii::$app->view->theme->logo) {
+            if (\Yii::$app->skeeks->site->image) {
+                \Yii::$app->view->theme->logo = \Yii::$app->skeeks->site->image->src;
+            }
+        }
+
+        if (!\Yii::$app->view->theme->footer_logo && \Yii::$app->view->theme->logo) {
+            \Yii::$app->view->theme->footer_logo = \Yii::$app->view->theme->logo;
+        }
+
+        if (!\Yii::$app->view->theme->mobile_logo && \Yii::$app->view->theme->logo) {
+            \Yii::$app->view->theme->mobile_logo = \Yii::$app->view->theme->logo;
+        }
 
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic) {
             if (\Yii::$app->request->isPjax) {
@@ -450,10 +462,6 @@ CSS;
      */
     public $themeAssetClass = 'skeeks\cms\themes\unify\assets\UnifyThemeAsset';
 
-    /**
-     * @var string
-     */
-    public $favicon = '/favicon.ico';
 
     /**
      * @var string
@@ -481,37 +489,10 @@ CSS;
     public $is_show_home_slider = 1;
 
 
-    public $address = 'Адрес';
-
     /**
      * @var string
      */
     public $title = 'Название сайта';
-
-    /**
-     * @var string
-     */
-    public $phone = '+7 (495) 777-77-77';
-
-    /**
-     * @var string
-     */
-    public $phone_second = '';
-
-    /**
-     * @var string
-     */
-    public $phone_third = '';
-
-    /**
-     * @var string
-     */
-    public $email = 'info@skeeks.com';
-
-    /**
-     * @var string
-     */
-    public $work_time = 'Понедельник - Пятница: 10:00 - 19:00';
 
     /**
      * @var string

@@ -18,7 +18,6 @@ use yii\base\Theme;
 use yii\helpers\Url;
 
 /**
- * @property string $favicon путь к фавиконке
  * @property string|null $logoSrc путь к лого, если передать null, то будет лого по умолчанию
  * @property string|null $logoHref Url с логотипа
  *
@@ -42,12 +41,6 @@ class UnifyThemeAdmin extends Theme
     public $color_scheme = "multi";
 
     /**
-     * Путь к фавиконке
-     * @var string
-     */
-    protected $_favicon;
-
-    /**
      * Название рядом с логотипом
      * @var string
      */
@@ -63,27 +56,7 @@ class UnifyThemeAdmin extends Theme
      */
     protected $_logoHref = null;
 
-    /**
-     * @return string
-     */
-    public function getFavicon()
-    {
-        if (!$this->_favicon) {
-            $this->_favicon = \Yii::getAlias('@web/favicon.ico');
-        }
-
-        return (string) $this->_favicon;
-    }
-
-    /**
-     * @param string $src
-     * @return $this
-     */
-    public function setFavicon($src)
-    {
-        $this->_favicon = $src;
-        return $this;
-    }
+  
 
     /**
      * @return string

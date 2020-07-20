@@ -67,8 +67,14 @@ if (@$isShowMainImage !== false) {
                     <span itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="<?= $model->createdBy->displayName; ?>"></span>
                     <span itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
                         <meta itemprop="name" content="<?= \Yii::$app->cms->appName; ?>">
-                        <meta itemprop="address" content="<?= $this->theme->address; ?>">
-                        <meta itemprop="telephone" content="<?= $this->theme->phone; ?>">
+                        <?php if(\Yii::$app->skeeks->site->cmsSiteAddress) : ?>
+                            <meta itemprop="address" content="<?= \Yii::$app->skeeks->site->cmsSiteAddress->value; ?>">
+                        <?php endif; ?>
+
+                        <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                            <meta itemprop="telephone" content="<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>">
+                        <?php endif; ?>
+
                         <span itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
                             <link itemprop="url" href="<?= $this->theme->logo; ?>">
                             <meta itemprop="image" content="<?= $this->theme->logo; ?>">

@@ -54,16 +54,20 @@ JS
                 <div class="container sx-container">
                     <div class="row flex-column flex-sm-row justify-content-between align-items-center g-mx-0--lg">
                         <div class="col-auto">
-                            <i class="fas fa-phone g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                            <a href="tel:<?= $this->theme->phone; ?>" class="">
-                                <?= $this->theme->phone; ?>
-                            </a>
+                            <?php if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                                <i class="fas fa-phone g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                                <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" class="">
+                                    <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-envelope g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                            <a href="mailto:<?= $this->theme->email; ?>" class="">
-                                <?= $this->theme->email; ?>
-                            </a>
+                            <?php if (\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
+                                <i class="fas fa-envelope g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                                <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" class="">
+                                    <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                         <div class="col-auto g-pos-rel">
                             <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
@@ -121,17 +125,16 @@ JS
                     </div>
                     <div class="col-md-3 col-sm-4 my-auto">
                         <div class="text-center">
-                            <? if ($this->theme->phone) : ?>
-                                <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
-                                    <?= $this->theme->phone; ?>
+                            <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                                <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
+                                    <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
                                 </a>
                                 <br/>
                             <? endif; ?>
 
-                            <? if ($this->theme->email) : ?>
-
-                                <a href="mailto:<?= $this->theme->email; ?>" target="_blank" title="Email для связи">
-                                    <?= $this->theme->email; ?>
+                            <? if (\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
+                                <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" target="_blank" title="Email для связи">
+                                    <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
                                 </a>
                             <? endif; ?>
                         </div>
@@ -166,10 +169,10 @@ JS
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--sm sx-main-menu" id="navBar">
                     <?php
-                        $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('menu-top');
-                        $widget->descriptor->name = 'Главное верхнее меню';
-                        $widget->viewFile = '@app/views/widgets/TreeMenuCmsWidget/menu-top';
-                        $widget::end();
+                    $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('menu-top');
+                    $widget->descriptor->name = 'Главное верхнее меню';
+                    $widget->viewFile = '@app/views/widgets/TreeMenuCmsWidget/menu-top';
+                    $widget::end();
                     ?>
                 </div>
                 <!-- End Navigation -->

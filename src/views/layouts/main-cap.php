@@ -28,7 +28,7 @@ CSS
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <link rel="icon" type="image/x-icon" href="<?= $this->theme->favicon; ?>"/>
+        <!--<link rel="icon" type="image/x-icon" href="<?/*= $this->theme->favicon; */?>"/>-->
         <?php $this->head() ?>
     </head>
     <body>

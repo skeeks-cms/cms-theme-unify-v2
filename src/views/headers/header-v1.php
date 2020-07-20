@@ -73,17 +73,17 @@ JS
 
 
                 <div class="col-auto g-pos-rel g-color-black sx-parners">
-                    <? if ($this->theme->phone) : ?>
-                        <a href="tel:<?= $this->theme->phone; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
-                            <?= $this->theme->phone; ?>
+                    <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                        <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
+                            <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
                         </a>
                         <br/>
                     <? endif; ?>
 
-                    <? if ($this->theme->email) : ?>
+                    <? if (\Yii::$app->skeeks->site->cmsSiteEmail->value) : ?>
 
-                        <a href="mailto:<?= $this->theme->email; ?>" target="_blank" title="Email для связи">
-                            <?= $this->theme->email; ?>
+                        <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" target="_blank" title="Email для связи">
+                            <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
                         </a>
                     <? endif; ?>
 
@@ -91,51 +91,18 @@ JS
                 </div>
                 <div class="col-auto g-pos-rel g-color-black">
                     <ul class="list-inline">
-                        <? if ($this->theme->vk) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->vk; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-vk"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-                        <? if ($this->theme->youtube) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->youtube; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-
-                        <? if ($this->theme->instagram) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->instagram; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-                        <? if ($this->theme->facebook) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->facebook; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
+                        <?php if($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                            <?php foreach($socials as $social) : ?>
+                                <li class="list-inline-item g-mx-5">
+                                    <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                       href="<?= $social->url; ?>"
+                                       target="_blank"
+                                    >
+                                        <i class="fab fa-<?= $social->social_type; ?>"></i>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
 
                 </div>

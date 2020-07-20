@@ -26,7 +26,7 @@ $theme = $this->theme;
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <link rel="icon" href="<?= $theme->favicon ?>" type="image/x-icon"/>
+        <!--<link rel="icon" href="<?/*= $theme->favicon */?>" type="image/x-icon"/>-->
         <?php $this->head() ?>
     </head>
     <body class="<?= \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout ? "sx-empty" : ""; ?>">

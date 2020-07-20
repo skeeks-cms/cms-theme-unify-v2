@@ -18,51 +18,18 @@
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <ul class="list-inline g-mb-20">
-                        <? if ($this->theme->vk) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->vk; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-vk"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-                        <? if ($this->theme->youtube) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->youtube; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-
-                        <? if ($this->theme->instagram) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->instagram; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
-                        <? if ($this->theme->facebook) : ?>
-                            <li class="list-inline-item g-mx-5">
-                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                   href="<?= $this->theme->facebook; ?>"
-                                   target="_blank"
-                                >
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                            </li>
-                        <? endif; ?>
-
+                        <?php if($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                            <?php foreach($socials as $social) : ?>
+                                <li class="list-inline-item g-mx-5">
+                                    <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                       href="<?= $social->url; ?>"
+                                       target="_blank"
+                                    >
+                                        <i class="fab fa-<?= $social->social_type; ?>"></i>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <!-- End Footer Content -->

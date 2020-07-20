@@ -15,12 +15,18 @@
                 <h3 class="h4">Остались вопросы?</h3>
                 <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
 
-                <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-phone g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Звоните по телефону:
-                    <a href="tel:<?= $this->theme->phone; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= $this->theme->phone; ?></a>
-                </p>
-                <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Пишите по электронной почте:
-                    <a href="mailto:<?= $this->theme->email; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= $this->theme->email; ?></a>
-                </p>
+                <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                    <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-phone g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Звоните по телефону:
+                        <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?></a>
+                    </p>
+                <?php endif; ?>
+                
+                <?php if(\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
+                    <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Пишите по электронной почте:
+                        <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?></a>
+                    </p>
+                <?php endif; ?>
+                
                 <p class="lead g-mb-20 g-mb-0--md">
                     <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-bottom-icon'); ?>
                     <i class="g-color-black icon-question g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>

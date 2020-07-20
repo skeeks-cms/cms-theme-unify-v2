@@ -97,9 +97,9 @@ if ($models)
                 [
                     "position" => "bottom",
                     'content' => [
-                        '<a href="tel:'. $this->theme->phone .'" class="g-color-white g-color-white--hover">
-                            '. $this->theme->phone .'
-                        </a>'
+                        \Yii::$app->skeeks->site->cmsSitePhone ? '<a href="tel:'. \Yii::$app->skeeks->site->cmsSitePhone->value .'" class="g-color-white g-color-white--hover">
+                            '. \Yii::$app->skeeks->site->cmsSitePhone->value .'
+                        </a>' : ""
                     ]
                 ]
         ],

@@ -54,11 +54,6 @@ class UnifyThemeSettings extends Component
     public $logo_text = '';
 
     /**
-     * @var string
-     */
-    public $favicon = '/favicon.ico';
-
-    /**
      * @var int
      */
     public $is_show_home_slider = 0;
@@ -84,59 +79,13 @@ class UnifyThemeSettings extends Component
      */
     public $title = 'Веб-студия SkeekS.com';
 
-    /**
-     * @var string
-     */
-    public $address = 'Россия, Москва, Зеленоград, 2005-29';
-
-    /**
-     * @var string
-     */
-    public $phone = '(+7 495) 005-79-26';
-
-    /**
-     * @var string
-     */
-    public $phone_second = '';
-
-    /**
-     * @var string
-     */
-    public $phone_third = '';
-
-    /**
-     * @var string
-     */
-    public $email = 'info@skeeks.com';
-
-    /**
-     * @var string
-     */
-    public $work_time = 'Понедельник - Пятница: 10:00 - 19:00';
 
 
     /**
      * @var string
      */
-    public $yandex_map = '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3c54488d4f32ae571f2430a060822efc953527a3b093179c979cefdc898476ad&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>';
+    public $yandex_map = '';
 
-
-    /**
-     * @var string
-     */
-    public $vk = 'https://vk.com/skeeks_com';
-    /**
-     * @var string
-     */
-    public $instagram = 'https://www.instagram.com/skeeks_com/';
-    /**
-     * @var string
-     */
-    public $youtube = 'https://www.youtube.com/c/skeeks';
-    /**
-     * @var string
-     */
-    public $facebook = 'https://www.facebook.com/skeekscom';
 
     /**
      * @var string
@@ -372,20 +321,8 @@ class UnifyThemeSettings extends Component
                     'footer_logo',
                     'logo_text',
                     'mobile_logo',
-                    'favicon',
-                    'address',
                     'title',
-                    'phone',
-                    'phone_second',
-                    'phone_third',
-                    'email',
-                    'work_time',
                     'yandex_map',
-
-                    'vk',
-                    'instagram',
-                    'youtube',
-                    'facebook',
 
                     'news_list_view',
 
@@ -490,21 +427,9 @@ class UnifyThemeSettings extends Component
             'footer_logo'        => "Логотип для футера",
             'logo_text'          => "Текст для логотипа",
             'mobile_logo'        => "Логотип для мобильного телефона",
-            'favicon'            => "Фавикон",
 
             'title'        => "Короткое название сайта",
-            'phone'        => "Телефон",
-            'phone_second' => "Телефон 2",
-            'phone_third'  => "Телефон 3",
-            'email'        => "Email",
-            'address'      => "Адрес",
-            'work_time'    => "Рабочее время",
             'yandex_map'   => "Код яндекс карт",
-
-            'vk'        => "Ссылка на страницу VK",
-            'instagram' => "Ссылка на страницу Instagram",
-            'youtube'   => "Ссылка на страницу Youtube",
-            'facebook'  => "Ссылка на страницу facebook",
 
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
@@ -575,6 +500,7 @@ class UnifyThemeSettings extends Component
             'menu_color1'          => 'Если задан один цвет, меню будет одного цвета',
             'menu_color2'          => 'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
             'footer'               => "Нижняя часть сайта",
+            'logo'          => "Если не будет задан логотип, то логотип возьмется из описания сайта",
             'footer_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'mobile_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'header_shadow'        => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
@@ -582,8 +508,6 @@ class UnifyThemeSettings extends Component
             'is_header_sticky'     => "Фиксированная шапка будет растянута на весь экран",
             'is_show_search_block' => 'При выборе "Да", в шапке будет выведен поисковый блок',
             'is_show_loader'       => 'Показывать индикатор загрузки?',
-            'phone_second'         => 'Дополнительный номер телефона',
-            'phone_third'          => 'Дополнительный номер телефона',
             'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
             'col_left_width'       => 'Указывается в px',
             'sx_container_width'       => 'Можно вказать в px или %. Например 100%',
@@ -592,6 +516,7 @@ class UnifyThemeSettings extends Component
             'font_texts'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
             'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
             'text_color'       => 'Цвет текста заданный по умолчанию для всего сайта.',
+            'yandex_map'       => 'Если код не указан, то карта будет построена через апи',
         ]);
     }
 
@@ -616,21 +541,10 @@ class UnifyThemeSettings extends Component
                 'fields' => [
                     'title',
 
-                    'phone',
-                    'phone_second',
-                    'phone_third',
-                    'email',
-                    'address',
-                    'work_time',
-
                     'yandex_map' => [
                         'class' => TextareaField::class,
                     ],
 
-                    'favicon'     => [
-                        'class'       => WidgetField::class,
-                        'widgetClass' => OneImage::class,
-                    ],
                     'logo'        => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
@@ -644,12 +558,6 @@ class UnifyThemeSettings extends Component
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
                     ],
-
-
-                    'vk',
-                    'instagram',
-                    'youtube',
-                    'facebook',
                 ],
             ],
 

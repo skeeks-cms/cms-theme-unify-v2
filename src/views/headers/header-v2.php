@@ -92,63 +92,35 @@ CSS
             <div class="container sx-container">
                 <div class="row flex-column flex-sm-row justify-content-between align-items-center g-mx-0--lg">
                     <div class="col-auto">
-                        <i class="fas fa-phone g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                        <a href="tel:<?= $this->theme->phone; ?>" class="">
-                            <?= $this->theme->phone; ?>
-                        </a>
+                        <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
+                            <i class="fas fa-phone g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                            <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" class="">
+                                <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
+                            </a>
+                        <?php endif; ?>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-envelope g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                        <a href="mailto:<?= $this->theme->email; ?>" class="">
-                            <?= $this->theme->email; ?>
-                        </a>
+                        <?php if(\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
+                            <i class="fas fa-envelope g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
+                            <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" class="">
+                                <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
+                            </a>
+                        <?php endif; ?>
                     </div>
                     <div class="col-auto g-pos-rel">
                         <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-                            <? if ($this->theme->vk) : ?>
+                            <?php if($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                            <?php foreach($socials as $social) : ?>
                                 <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--xs u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                       href="<?= $this->theme->vk; ?>"
+                                    <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                       href="<?= $social->url; ?>"
                                        target="_blank"
                                     >
-                                        <i class="fab fa-vk"></i>
+                                        <i class="fab fa-<?= $social->social_type; ?>"></i>
                                     </a>
                                 </li>
-                            <? endif; ?>
-
-                            <? if ($this->theme->youtube) : ?>
-                                <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--xs u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                       href="<?= $this->theme->youtube; ?>"
-                                       target="_blank"
-                                    >
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                            <? endif; ?>
-
-
-                            <? if ($this->theme->instagram) : ?>
-                                <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--xs u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                       href="<?= $this->theme->instagram; ?>"
-                                       target="_blank"
-                                    >
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            <? endif; ?>
-
-                            <? if ($this->theme->facebook) : ?>
-                                <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--xs u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                       href="<?= $this->theme->facebook; ?>"
-                                       target="_blank"
-                                    >
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                            <? endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
 
                         </ul>
 
