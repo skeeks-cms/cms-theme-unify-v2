@@ -80,7 +80,7 @@ JS
                         <br/>
                     <? endif; ?>
 
-                    <? if (\Yii::$app->skeeks->site->cmsSiteEmail->value) : ?>
+                    <? if (\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
 
                         <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" target="_blank" title="Email для связи">
                             <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
