@@ -114,7 +114,7 @@ JS
                                                        name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
                                                        value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
                                                 <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-md btn-secondary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
+                                                    <button type="submit" class="btn btn-md btn-primary sx-btn-search rounded-0"><?= Yii::t("skeeks/unify", "Find"); ?></button>
                                                 </div>
                                             </div>
                                         </div>
