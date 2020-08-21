@@ -124,19 +124,30 @@ JS
                         <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 my-auto">
-                        <div class="text-center">
+                        <div class="text-right d-flex g-ml-20">
                             <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
-                                <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" target="_blank" title="Телефон для связи" class="g-mr-10">
-                                    <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
-                                </a>
-                                <br/>
-                            <? endif; ?>
+                                <div class="u-icon-v2 rounded-circle u-icon-size--xs g-color-primary my-auto"><i class="fas fa-phone"></i></div>
+                                <div class="my-auto g-ml-5">
+                                    <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" style="font-size: 20px; line-height: 20px;" target="_blank" title="Телефон для связи"
+                                       class="g-mr-10 sx-main-text-color g-color-primary--hover g-text-underline--none--hover">
+                                        <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
+                                    </a>
+                                    <?php if (\Yii::$app->skeeks->site->cmsSitePhone->name) : ?>
+                                        <div style="    font-size: 12px;
+    text-align: left;
+    line-height: 12px;">
+                                            <?php echo \Yii::$app->skeeks->site->cmsSitePhone->name; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
 
-                            <? if (\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
-                                <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" target="_blank" title="Email для связи">
-                                    <?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>
-                                </a>
+                                <!--<br/>-->
                             <? endif; ?>
+                            <? /* if (\Yii::$app->skeeks->site->cmsSiteEmail) : */ ?><!--
+                                <a href="mailto:<? /*= \Yii::$app->skeeks->site->cmsSiteEmail->value; */ ?>" target="_blank" title="Email для связи">
+                                    <? /*= \Yii::$app->skeeks->site->cmsSiteEmail->value; */ ?>
+                                </a>
+                            --><? /* endif; */ ?>
                         </div>
                     </div>
                 </div>
