@@ -36,6 +36,6 @@ class UnifyThemeAsset extends UnifyAsset
     public $depends = [
         UnifyDefaultAsset::class,
         UnifyHsPopupAsset::class,
-        UnifyHsOnscrollAnimationAsset::class,
+        //UnifyHsOnscrollAnimationAsset::class,
     ];
 }
