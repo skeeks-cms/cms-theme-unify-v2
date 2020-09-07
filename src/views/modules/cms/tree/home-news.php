@@ -27,7 +27,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 ]); ?>
 
 <? if ($model->description_full) : ?>
-    <div class="container">
+    <div class="container sx-content">
         <header class="g-mt-20">
             <?=$model->description_full; ?>
         </header>

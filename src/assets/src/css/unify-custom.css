@@ -473,3 +473,7 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
         left: -100000px;
     }
 }
+
+.sx-content-col-main {
+    max-width: 100%;
+}

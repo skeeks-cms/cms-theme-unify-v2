@@ -23,7 +23,13 @@ use yii\helpers\Html;
         <!--<link rel="icon" type="image/x-icon" href="<?/*= $this->theme->favicon; */?>"/>-->
         <?php $this->head() ?>
     </head>
-    <body class="<?= $this->theme->bodyCssClass; ?>">
+    <?php
+        $bodyClasses = $this->theme->bodyCssClass;
+        if (\Yii::$app->mobileDetect->isMobile) {
+            $bodyClasses = $bodyClasses . " sx-mobile-layout";
+        }
+    ?>
+    <body class="<?= $bodyClasses; ?>">
     <?php $this->beginBody() ?>
     <?= $this->render("@app/views/include/pre-loader"); ?>
     <div class="sx-main-wrapper"><!--Нужен для mmenu-->
