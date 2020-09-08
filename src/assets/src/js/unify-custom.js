@@ -129,7 +129,7 @@
     new sx.classes.Location();
 
 
-    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+    /*$.HSCore.components.HSOnScrollAnimation.init('[data-animation]');*/
 
     $.HSCore.components.HSPopup.init('.js-fancybox-media', {
         helpers: {
