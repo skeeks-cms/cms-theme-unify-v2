@@ -144,6 +144,7 @@ JS
                 </div>
                 <!-- End Navigation -->
                 <!-- End Navigation -->
+                <div class="sx-header-menu-right">
                 <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                     <? $this->registerJs(<<<JS
                     $('body').on('click','.sx-search-btn', function() {
@@ -161,7 +162,7 @@ JS
                 });
 JS
 ); ?>
-                    <div class="d-inline-block g-valign-middle g-mr-15 sx-search-btn-block">
+                    <div class="sx-header-menu-item sx-search-btn-block">
                         <a href="#" class="sx-search-btn"><i class="fas fa-search" aria-hidden="true"></i></a>
                     </div>
                     <div class="sx-search-form g-mt-15 sx-invisible-search-block">
@@ -182,6 +183,32 @@ JS
                     </div>
                 <? endif; ?>
                 <?= @$content; ?>
+
+                    <? if ($this->theme->is_header_auth) : ?>
+                        <div class="sx-header-menu-item sx-header-auth">
+                            <? if (\Yii::$app->user->isGuest) : ?>
+                                <a class="g-text-underline--none--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">
+                                    <i class="far fa-user"></i>
+                                    <span class="">
+                                    <span class="g-hidden-sm-down">Вход</span>
+                                </span>
+                                </a>
+                            <? else : ?>
+
+                                <!-- Top User -->
+                                <a class="g-text-underline--none--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
+                                <span class="g-pos-rel">
+                                    <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
+                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle"
+                                         src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
+                                </span>
+                                    <span class="">
+                                    <span class="g-hidden-sm-down">Профиль</span>
+                                </span>
+                                </a>
+                            <? endif; ?>
+                        </div>
+                    <? endif; ?>
 
             </div>
 

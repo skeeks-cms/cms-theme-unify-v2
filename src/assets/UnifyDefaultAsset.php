@@ -64,7 +64,34 @@ class UnifyDefaultAsset extends UnifyAsset
             'type'        => 'font/ttf',
             'crossorigin' => 'crossorigin',
         ]);
-        $href = self::getAssetUrl('assets/vendor/icon-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
+        /*$href = self::getAssetUrl('assets/vendor/icon-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
+        \Yii::$app->view->registerLinkTag([
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'crossorigin',
+        ]);*/
+
+        $href = FontAwesomeAsset::getAssetUrl('webfonts/fa-brands-400.woff2');
+        \Yii::$app->view->registerLinkTag([
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'crossorigin',
+        ]);
+
+        $href = FontAwesomeAsset::getAssetUrl('webfonts/fa-regular-400.woff2');
+        \Yii::$app->view->registerLinkTag([
+            'rel'         => 'preload',
+            'href'        => $href,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'crossorigin',
+        ]);
+
+        $href = FontAwesomeAsset::getAssetUrl('webfonts/fa-solid-900.woff2');
         \Yii::$app->view->registerLinkTag([
             'rel'         => 'preload',
             'href'        => $href,

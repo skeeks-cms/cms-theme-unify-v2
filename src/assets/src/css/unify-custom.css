@@ -477,3 +477,20 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 .sx-content-col-main {
     max-width: 100%;
 }
+
+/**
+ * Оформление иконок в шапке
+ */
+.sx-header-menu-right {
+    display: contents;
+}
+
+.sx-header-menu-right .sx-header-menu-item i {
+    font-size: 24px;
+}
+.sx-header-menu-right .sx-header-menu-item {
+    margin-right: 20px;
+}
+.sx-header-menu-right .sx-header-menu-item:last-child {
+    margin-right: 0px;
+}

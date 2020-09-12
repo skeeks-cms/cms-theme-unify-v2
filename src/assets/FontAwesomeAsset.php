@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */
-class FontAwesomeAsset extends AssetBundle
+class FontAwesomeAsset extends \skeeks\cms\base\AssetBundle
 {
     public $sourcePath = '@vendor/fortawesome/font-awesome/';
     public $css = [
