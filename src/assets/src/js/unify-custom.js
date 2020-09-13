@@ -165,5 +165,11 @@
         // ... more custom settings?
     });
 
+    $("[data-toggle=tooltip]").tooltip();
+    $(document).on('pjax:complete', function(event) {
+        console.log($(event.target));
+      $("[data-toggle=tooltip]", $(event.target)).tooltip();
+    })
+
 
 })(sx, sx.$, sx._);
