@@ -9,6 +9,7 @@
 namespace skeeks\cms\themes\unify\components;
 
 use skeeks\assets\unify\base\UnifyIconEtlineAsset;
+use skeeks\assets\unify\base\UnifyIconHsAsset;
 use skeeks\assets\unify\base\UnifyIconLineProAsset;
 use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
@@ -16,6 +17,7 @@ use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
+use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\UnifyTheme;
 use skeeks\cms\widgets\ColorInput;
@@ -26,7 +28,6 @@ use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
@@ -78,7 +79,6 @@ class UnifyThemeSettings extends Component
      * @var string
      */
     public $title = 'Веб-студия SkeekS.com';
-
 
 
     /**
@@ -179,12 +179,12 @@ class UnifyThemeSettings extends Component
 
 
     /**
-     * @var bool 
+     * @var bool
      */
     public $is_header_toolbar = true;
 
     /**
-     * @var bool 
+     * @var bool
      */
     public $is_header_auth = true;
 
@@ -198,20 +198,19 @@ class UnifyThemeSettings extends Component
      */
     public $is_header_toggle_sections = true;
 
-    
-    
+
     /**
      * @var string
      */
     public $menu_color1 = '#0185c8';
 
     /**
-     * @var string 
+     * @var string
      */
     public $menu_align = 'left';
-    
+
     /**
-     * @var bool 
+     * @var bool
      */
     public $is_center_logo = false;
 
@@ -284,10 +283,15 @@ class UnifyThemeSettings extends Component
      * @var int Заглушка показывается только гостям?
      */
     public $is_cap_only_guests = 1;
-    
-    public $col_left_width = 285;
+
     /**
      * @var int 
+     */
+    public $is_min_assets = 0;
+
+    public $col_left_width = 285;
+    /**
+     * @var int
      */
     public $sx_container_width = 0;
 
@@ -377,6 +381,7 @@ class UnifyThemeSettings extends Component
                     'is_show_home_slider',
                     'is_cap',
                     'is_cap_only_guests',
+                    'is_min_assets',
                 ],
                 'boolean',
             ],
@@ -423,25 +428,26 @@ class UnifyThemeSettings extends Component
         return ArrayHelper::merge(parent::attributeLabels(), [
             'is_cap'             => "Включить заглушку?",
             'is_cap_only_guests' => "Показывать заглушку только неавторизованным пользователям?",
+            'is_min_assets'      => "Загружать минимум css и js",
             'logo'               => "Логотип",
             'footer_logo'        => "Логотип для футера",
             'logo_text'          => "Текст для логотипа",
             'mobile_logo'        => "Логотип для мобильного телефона",
 
-            'title'        => "Короткое название сайта",
-            'yandex_map'   => "Код яндекс карт",
+            'title'      => "Короткое название сайта",
+            'yandex_map' => "Код яндекс карт",
 
             'main_theme_color1' => "Цвет темы 1",
             'main_theme_color2' => "Цвет темы 2",
 
-            'font_css' => "Подключаемые шрифты",
+            'font_css'     => "Подключаемые шрифты",
             'font_headers' => "Шрифт заголовков",
             'font_texts'   => "Шрифт текста",
 
             'home_view_file' => "Шаблон главной страницы",
 
-            'is_center_logo'     => "Показывать лого по центру?",
-            'menu_align'     => "Выравнивание меню",
+            'is_center_logo'  => "Показывать лого по центру?",
+            'menu_align'      => "Выравнивание меню",
             'menu_color1'     => "Цвет меню 1",
             'menu_color2'     => "Цвет меню 2",
             'menu_font_color' => "Цвет текста в меню",
@@ -457,7 +463,7 @@ class UnifyThemeSettings extends Component
             'footer'                    => "Вариант отображения футера",
             'footer_bg_color'           => "Цвет фона футера",
             'footer_color'              => "Цвет текста в футере футера",
-            'text_color'              => "Цвет текста по умолчанию",
+            'text_color'                => "Цвет текста по умолчанию",
             'footer_copyright_bg_color' => "Цвет фона под футером",
             'footer_copyright_color'    => "Цвет текста под футером",
 
@@ -485,11 +491,11 @@ class UnifyThemeSettings extends Component
             'include_assets'      => "Дополнительные компоненты",
             'col_left_width'      => "Ширина левой колонки, px",
 
-            'is_header_toolbar'      => "Показывать панельку перед меню",
-            'is_header_auth'      => "Показывать ссылки на авторизацию",
-            'is_header_show_hide'      => "Прятать при прокрутки страницы?",
-            'is_header_toggle_sections'      => "Сокращать при прокрутке? Скрывать тулбар",
-            'sx_container_width'      => "Максимальная ширина контейнера",
+            'is_header_toolbar'         => "Показывать панельку перед меню",
+            'is_header_auth'            => "Показывать ссылки на авторизацию",
+            'is_header_show_hide'       => "Прятать при прокрутки страницы?",
+            'is_header_toggle_sections' => "Сокращать при прокрутке? Скрывать тулбар",
+            'sx_container_width'        => "Максимальная ширина контейнера",
         ]);
     }
 
@@ -500,7 +506,7 @@ class UnifyThemeSettings extends Component
             'menu_color1'          => 'Если задан один цвет, меню будет одного цвета',
             'menu_color2'          => 'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
             'footer'               => "Нижняя часть сайта",
-            'logo'          => "Если не будет задан логотип, то логотип возьмется из описания сайта",
+            'logo'                 => "Если не будет задан логотип, то логотип возьмется из описания сайта",
             'footer_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'mobile_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
             'header_shadow'        => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
@@ -510,13 +516,13 @@ class UnifyThemeSettings extends Component
             'is_show_loader'       => 'Показывать индикатор загрузки?',
             'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
             'col_left_width'       => 'Указывается в px',
-            'sx_container_width'       => 'Можно вказать в px или %. Например 100%',
+            'sx_container_width'   => 'Можно вказать в px или %. Например 100%',
             'is_center_logo'       => 'Работает в стандартной шапке',
-            'font_headers'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
-            'font_texts'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
-            'font_css'       => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
-            'text_color'       => 'Цвет текста заданный по умолчанию для всего сайта.',
-            'yandex_map'       => 'Если код не указан, то карта будет построена через апи',
+            'font_headers'         => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+            'font_texts'           => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+            'font_css'             => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
+            'text_color'           => 'Цвет текста заданный по умолчанию для всего сайта.',
+            'yandex_map'           => 'Если код не указан, то карта будет построена через апи',
         ]);
     }
 
@@ -595,7 +601,6 @@ class UnifyThemeSettings extends Component
                     ],
 
 
-
                     'text_color' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
@@ -607,7 +612,7 @@ class UnifyThemeSettings extends Component
                     ],
 
 
-                    'container'         => [
+                    'container'  => [
                         'class' => SelectField::class,
                         'items' => [
                             'full'      => 'Во всю ширину',
@@ -616,7 +621,7 @@ class UnifyThemeSettings extends Component
                         ],
                     ],
                     'sx_container_width',
-                    'body_outer'        => [
+                    'body_outer' => [
                         'class' => SelectField::class,
                         'items' => [
                             ''                 => 'Нет',
@@ -624,7 +629,6 @@ class UnifyThemeSettings extends Component
                             'u-outer-space-v2' => 'Большой отступ',
                         ],
                     ],
-                    
 
 
                     'main_theme_color1' => [
@@ -716,16 +720,16 @@ class UnifyThemeSettings extends Component
                     'is_header_auth' => [
                         'class' => BoolField::class,
                     ],
-                    
+
                     'is_header_auth' => [
                         'class' => BoolField::class,
                     ],
-                    
+
                     'is_header_toggle_sections' => [
                         'class' => BoolField::class,
                     ],
 
-                    
+
                     'is_header_show_hide' => [
                         'class' => BoolField::class,
                     ],
@@ -745,7 +749,6 @@ class UnifyThemeSettings extends Component
                     ],
 
 
-                    
                     'menu_color1' => [
                         'class'       => WidgetField::class,
                         'widgetClass' => ColorInput::class,
@@ -773,20 +776,19 @@ class UnifyThemeSettings extends Component
                             '20px' => "20px",
                         ],
                     ],
-                    'menu_align' => [
+                    'menu_align'     => [
                         'class' => SelectField::class,
                         'items' => [
-                            'left' => "Слева",
-                            'right' => "Справа",
+                            'left'   => "Слева",
+                            'right'  => "Справа",
                             'center' => "По центру",
                         ],
                     ],
-                    
+
                     'is_center_logo' => [
                         'class' => BoolField::class,
                     ],
-                    
-                    
+
 
                     [
                         'class'   => HtmlBlock::class,
@@ -839,7 +841,7 @@ class UnifyThemeSettings extends Component
                             'col-left-right' => "Есть колонка слева и справа",
                         ],
                     ],
-                    
+
 
                     'element_content_layout' => [
                         'class' => SelectField::class,
@@ -852,7 +854,7 @@ class UnifyThemeSettings extends Component
                     ],
 
                     'col_left_width',
-                    
+
                     'home_view_file' => [
                         'class' => SelectField::class,
                         'items' => [
@@ -884,7 +886,7 @@ class UnifyThemeSettings extends Component
                         'class'   => HtmlBlock::class,
                         'content' => BlockTitleWidget::widget(['content' => 'Футер']),
                     ],
-                  
+
 
                     'footer' => [
                         'class' => SelectField::class,
@@ -914,8 +916,7 @@ class UnifyThemeSettings extends Component
                         'widgetClass' => ColorInput::class,
                     ],
 
-                  
-                    
+
                     [
                         'class'   => HtmlBlock::class,
                         'content' => BlockTitleWidget::widget(['content' => 'Дополнительно']),
@@ -928,7 +929,7 @@ class UnifyThemeSettings extends Component
                     'is_show_loader' => [
                         'class' => BoolField::class,
                     ],
-                    
+
 
                     'css_code' => [
                         'class' => TextareaField::class,
@@ -952,13 +953,18 @@ class UnifyThemeSettings extends Component
                     'is_cap_only_guests' => [
                         'class' => BoolField::class,
                     ],
+                    'is_min_assets'      => [
+                        'class' => BoolField::class,
+                    ],
                     'include_assets'     => [
                         'class'    => SelectField::class,
                         'items'    => [
                             UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
                             UnifyIconMaterialAsset::class   => 'Иконки (Material)',
                             UnifyIconLineProAsset::class    => 'Иконки (LinePro)',
-                            UnifyIconEtlineAsset::class    => 'Иконки (Etline)',
+                            UnifyIconEtlineAsset::class     => 'Иконки (Etline)',
+                            UnifyIconHsAsset::class         => 'Иконки (HsIcon)',
+                            FontAwesomeAsset::class         => 'Иконки (FontAwesome)',
                         ],
                         'multiple' => true,
                     ],

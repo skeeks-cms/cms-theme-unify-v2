@@ -9,7 +9,6 @@
 namespace skeeks\cms\themes\unify\assets;
 
 use skeeks\assets\unify\base\UnifyAsset;
-use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyIconHsAsset;
 use skeeks\assets\unify\base\UnifyOnscrollAnimationAsset;
 use skeeks\assets\unify\base\UnifyPopperAsset;
@@ -19,11 +18,11 @@ use yii\web\YiiAsset;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */
-class UnifyDefaultAsset extends UnifyAsset
+class UnifyMinAsset extends UnifyAsset
 {
     public $css = [
         'assets/css/unify-core.css',
-        'assets/css/unify-components.css',
+        //'assets/css/unify-components.css',
         'assets/css/unify-globals.css',
     ];
 
@@ -34,12 +33,14 @@ class UnifyDefaultAsset extends UnifyAsset
     public $depends = [
         YiiAsset::class,
         Custom::class,
+
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
-        FontAwesomeAsset::class,
-        VanillaLazyLoadAsset::class,
-        UnifyIconHsAsset::class,
-        UnifyHsPopupAsset::class,
+
+        //UnifyIconHsAsset::class,
+
+        //FontAwesomeAsset::class,
+        //VanillaLazyLoadAsset::class,
     ];
 
 

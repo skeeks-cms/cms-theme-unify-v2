@@ -23,4 +23,17 @@ class VanillaLazyLoadAsset extends AssetBundle
 
     public $css = [
     ];
+
+    public function registerAssetFiles($view)
+    {
+        parent::registerAssetFiles($view);
+
+        \Yii::$app->view->registerJs(<<<JS
+sx.LazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
+    // ... more custom settings?
+});
+JS
+        );
+    }
 }

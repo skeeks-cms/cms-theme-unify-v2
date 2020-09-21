@@ -8,22 +8,22 @@
 /* @var $this yii\web\View */
 /* @see https://htmlstream.com/public/preview/unify-v2.6.1/unify-main/shortcodes/headers/classic-header--topbar-1.html */
 
-\skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
+//\skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
-\skeeks\assets\unify\base\UnifyHsHamburgersAsset::register($this);
+//\skeeks\assets\unify\base\UnifyHsHamburgersAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
 
 $this->registerJs(<<<JS
 
 // initialization of HSDropdown component
-  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+  /*$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
     
-  });
+  });*/
 
 $(window).on('load', function () {
     // initialization of header
     $.HSCore.components.HSHeader.init($('#js-header'));
-    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+    //$.HSCore.helpers.HSHamburgers.init('.hamburger');
 
     // initialization of HSMegaMenu component
     $('.js-mega-menu').HSMegaMenu({
@@ -32,11 +32,11 @@ $(window).on('load', function () {
         breakpoint: 991
     });
 
-    $('#dropdown-megamenu').HSMegaMenu({
+    /*$('#dropdown-megamenu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 767
-    });
+    });*/
     
 });
 JS

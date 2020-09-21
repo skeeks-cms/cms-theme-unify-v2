@@ -404,6 +404,11 @@ CSS;
         return $rgb;
     }
 
+    /**
+     * @var bool
+     */
+    public $is_min_assets = 0;
+
     public $font_css = '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap';
 
     /**

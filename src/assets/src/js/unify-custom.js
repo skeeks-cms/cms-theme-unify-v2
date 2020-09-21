@@ -131,17 +131,6 @@
 
     /*$.HSCore.components.HSOnScrollAnimation.init('[data-animation]');*/
 
-    $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-        helpers: {
-            media: {},
-            overlay: {
-                css: {
-                    'background': 'rgba(0, 0, 0, .8)'
-                }
-            }
-        }
-    });
-
     if ($("body").hasClass("sx-header-sticky-margin")) {
         if ($("#js-header").hasClass("u-header--sticky-top")) {
             $("body").css("margin-top", $("#js-header").height());
@@ -160,10 +149,7 @@
     });
 
 
-    sx.LazyLoadInstance = new LazyLoad({
-        elements_selector: ".lazy"
-        // ... more custom settings?
-    });
+    
 
     $("[data-toggle=tooltip]").tooltip();
     $(document).on('pjax:complete', function(event) {

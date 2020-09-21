@@ -44,8 +44,8 @@ CSS
         </div>
     </main>
 
-    <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
+    <?= \Yii::$app->seo->countersContent; ?>
     </body>
     </html>
 <?php $this->endPage() ?>

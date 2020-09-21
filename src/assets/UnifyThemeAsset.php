@@ -35,7 +35,16 @@ class UnifyThemeAsset extends UnifyAsset
 
     public $depends = [
         UnifyDefaultAsset::class,
-        UnifyHsPopupAsset::class,
-        //UnifyHsOnscrollAnimationAsset::class,
     ];
+
+    public function init()
+    {
+        parent::init();
+
+        if (isset(\Yii::$app->view->theme->is_min_assets) && \Yii::$app->view->theme->is_min_assets) {
+            $this->depends = [
+                UnifyMinAsset::class
+            ];
+        }
+    }
 }

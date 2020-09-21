@@ -7,7 +7,6 @@
  */
 use yii\helpers\Html;
 \skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset::register($this);
-
 $class = $this->theme->themeAssetClass;
 $class::register($this);
 /* @var $this \yii\web\View */
@@ -168,7 +167,6 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
         <?= $this->render("@app/views/footer"); ?>
     </main>
     <?= $this->render("@app/views/modals"); ?>
-    <?= \Yii::$app->seo->countersContent; ?>
     <?php $this->endBody() ?>
     </body>
     </html>
