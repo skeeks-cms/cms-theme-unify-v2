@@ -24,7 +24,7 @@ if (!isset($isShowLast)) {
         <? if (count(\Yii::$app->breadcrumbs->parts) > 1) : ?>
             <? $count = count(\Yii::$app->breadcrumbs->parts); ?>
             <? $counter = 0; ?>
-            <ul class="u-list-inline" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <ul class="list-inline mb-0" itemscope itemtype="http://schema.org/BreadcrumbList">
                 <? foreach (\Yii::$app->breadcrumbs->parts as $data) : ?>
                     <? $counter++; ?>
                     <? if ($counter == $count): ?>
@@ -38,7 +38,7 @@ if (!isset($isShowLast)) {
                     <? else : ?>
                         <li class="list-inline-item g-mr-7" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             <a itemprop="item" href="<?= $data['url']; ?>" class="u-link-v5 sx-main-text-color g-color-primary--hover g-text-underline--none--hover" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
-                            <i class="fas fa-angle-right g-ml-7"></i>
+                            <i class="hs-icon hs-icon-arrow-right g-ml-7"></i>
                             <meta itemprop="name" content="<?= $data['name']; ?>">
                             <meta itemprop="position" content="<?= $counter; ?>" />
                         </li>

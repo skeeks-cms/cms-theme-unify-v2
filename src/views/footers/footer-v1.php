@@ -6,6 +6,69 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
+
+$this->registerCss(<<<CSS
+.sx-social-list {
+    
+}
+.sx-social-list a {
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 6px 15px -6px;
+    height:32px;
+    width:32px;
+    font-size:18px;
+    line-height:29px;
+    display: inline-block;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.sx-social-list a i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sx-contact-icon i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sx-contact-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    background-color: #eee;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.u-heading-v2-3--bottom::after {
+    margin-top: 1.07143rem;
+}
+.u-heading-v2-3--bottom::after, .u-heading-v2-3--top::before {
+    width: 5rem;
+    border-top-width: 1px;
+}
+
+.u-heading-v2-3--bottom::after {
+    content: "";
+    display: inline-block;
+    border-top-style: solid;
+    border-color: inherit;
+}
+CSS
+);
 ?>
 
     <div id="contacts-section" class="sx-footer g-py-60">
@@ -17,11 +80,11 @@
                     <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
-                    <ul class="list-inline g-mb-20">
-                        <?php if($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
-                            <?php foreach($socials as $social) : ?>
+                    <ul class="list-inline sx-social-list g-mb-20">
+                        <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                            <?php foreach ($socials as $social) : ?>
                                 <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                    <a class="g-color-primary g-text-underline--none--hover g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
                                        href="<?= $social->url; ?>"
                                        target="_blank"
                                     >
@@ -30,8 +93,7 @@
                                 </li>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                        
-                        
+
 
                     </ul>
                 </div>
@@ -71,13 +133,13 @@
                         <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
                             <? foreach ($addresses as $address) : ?>
                                 <div class="d-flex g-mb-20">
-                                <div class="g-mr-10">
-                                  <span class="u-icon-v3 u-icon-size--xs">
+                                    <div class="g-mr-10">
+                                  <span class="sx-contact-icon">
                                     <i class="fas fa-map-marker"></i>
                                   </span>
+                                    </div>
+                                    <p class="mb-0"><?= $address->value; ?></p>
                                 </div>
-                                <p class="mb-0"><?= $address->value; ?></p>
-                            </div>
                             <? endforeach; ?>
                         <?php endif; ?>
 
@@ -87,7 +149,7 @@
                                 <!-- Phone -->
                                 <div class="d-flex g-mb-20">
                                     <div class="g-mr-10">
-                                  <span class="u-icon-v3 u-icon-size--xs">
+                                  <span class="sx-contact-icon">
                                     <i class="fas fa-phone"></i>
                                   </span>
                                     </div>
@@ -102,7 +164,7 @@
                             <? foreach ($emails as $email) : ?>
                                 <div class="d-flex g-mb-20">
                                     <div class="g-mr-10">
-                                      <span class="u-icon-v3 u-icon-size--xs">
+                                      <span class="sx-contact-icon">
                                         <i class="fas fa-globe"></i>
                                       </span>
                                     </div>

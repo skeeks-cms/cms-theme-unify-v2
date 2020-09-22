@@ -275,6 +275,10 @@ body {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
+.sx-breadcrumbs-wrapper i {
+    font-size: 10px;
+}
+
 .sx-list-short-info {
     background: #fafafa;
     padding: 8px;
@@ -300,10 +304,8 @@ body {
 .form-control
 {
     border-color: #eee;
-}
-.form-control
-{
     padding: 10px;
+    height: auto;
 }
 
 .error-summary {
@@ -493,4 +495,92 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 }
 .sx-header-menu-right .sx-header-menu-item:last-child {
     margin-right: 0px;
+}
+
+
+
+/* Button Sizes
+------------------------------------*/
+/* Extra Small */
+.btn-xs {
+  line-height: 1.4;
+  padding: 0.14286rem 0.5rem;
+  font-size: 0.78571rem;
+}
+
+/* Medium */
+.btn-md {
+  line-height: 1.4;
+  padding: 0.57143rem 1.42857rem;
+  font-size: 1.07143rem;
+}
+
+/* Extra Large */
+.btn-xl {
+  line-height: 1.4;
+  padding: 0.92857rem 1.85714rem;
+  font-size: 1.28571rem;
+}
+
+/* Extramly Large */
+.btn-xxl {
+  line-height: 1.4;
+  padding: 1.07143rem 2.14286rem;
+  font-size: 1.5rem;
+}
+
+/**
+ * Стили для футера
+ */
+.sx-footer-menu li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background: rgba(0, 0, 0, 0.05);
+  color: inherit !important;
+}
+
+
+/*------------------------------------
+  Covers
+------------------------------------*/
+.u-bg-overlay {
+  position: relative;
+}
+
+.u-bg-overlay::before, .u-bg-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.u-bg-overlay--v1::after {
+  position: absolute;
+  top: 0.35714rem;
+  right: 0.35714rem;
+  bottom: 0.35714rem;
+  left: 0.35714rem;
+}
+
+.u-bg-overlay__inner {
+  z-index: 3;
+  position: relative;
+}
+
+.u-bg-overlay--reverse::before {
+  z-index: 2;
+}
+
+.u-bg-overlay--reverse::after {
+  z-index: 1;
 }

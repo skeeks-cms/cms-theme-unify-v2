@@ -139,7 +139,7 @@ JS
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-pa-20">
-            <span class="u-icon-v1 u-icon-size--xl g-mb-10">
+            <span class="g-mb-10" style="font-size:40px;">
 
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
 
@@ -158,7 +158,7 @@ JS
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
-            <span class="u-icon-v1 u-icon-size--xl g-mb-10">
+            <span class="g-mb-10" style="font-size:40px;">
                 <i class="icon-electronics-005 u-line-icon-pro"></i>
               </span>
                 <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Phone'); ?></h4>
@@ -175,7 +175,7 @@ JS
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
-            <span class="u-icon-v1 u-icon-size--xl g-mb-10">
+            <span class="g-mb-10" style="font-size:40px;">
 
                 <i class="icon-communication-062 u-line-icon-pro"></i>
 
@@ -195,7 +195,7 @@ JS
         <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-gray-light-v1">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
-            <span class="u-icon-v1 u-icon-size--xl g-mb-10">
+            <span class="g-mb-10" style="font-size:40px;">
 
                 <i class="icon-hotel-restaurant-003 u-line-icon-pro"></i>
 

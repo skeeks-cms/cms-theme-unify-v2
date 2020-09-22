@@ -57,7 +57,7 @@
 
 .filter--group .filter--group--header {
     position: relative;
-    padding: 15px 10px 15px 10px;
+    padding: 15px 32px 15px 10px;
     /*font-weight: 700;
     text-transform: uppercase;*/
     cursor: pointer;
@@ -74,9 +74,12 @@
     height: 7px;
     position: absolute;
     right: 14px;
-    top: 50%;
-    margin-top: -4px;
-    background: url('../images/angle-down.png') no-repeat 50% 50%;
+    /*top: 50%;*/
+    margin-top: 0px;
+    /*background: url('../images/angle-down.png') no-repeat 50% 50%;*/
+    top: 16px;
+    content: "\e900";
+    font-family: "hs-icons" !important;
 }
 
 .filter--group .filter--group--body {
@@ -110,6 +113,7 @@
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+    top: 34px;
 }
 
 .filter--group.opened .filter--group--body {

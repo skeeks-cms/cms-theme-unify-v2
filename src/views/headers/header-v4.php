@@ -41,6 +41,83 @@ $(window).on('load', function () {
 });
 JS
 );
+
+$this->registerCss(<<<CSS
+
+.u-header {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: 0.92857rem;
+    z-index: 501;
+}
+
+.u-header--sticky-top {
+    bottom: auto;
+    top: 0;
+}
+.u-header--sticky-top, .u-header--sticky-bottom {
+    position: fixed;
+}
+
+.sx-header-phone-wrapper {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+        text-align: center;
+}
+
+.sx-header-phone-wrapper > i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sx-badge {
+    line-height: 16px;
+    font-size: 10px;
+    min-height: 16px;
+    min-width: 16px;
+    position: absolute;
+    right: -2px;
+    top: -5px;
+    text-align: center;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    border-radius: 50%;
+}
+
+.u-shadow-v19 {
+  -webkit-box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+
+.hs-has-mega-menu:not(.hs-mega-menu-opened) *,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) * {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.hs-has-mega-menu:not(.hs-mega-menu-opened) *::before, .hs-has-mega-menu:not(.hs-mega-menu-opened) *::after,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) *::before,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) *::after {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+CSS
+);
 ?>
 
 <!-- Header -->
@@ -126,7 +203,9 @@ JS
                     <div class="col-md-3 col-sm-4 my-auto">
                         <div class="text-right d-flex g-ml-20">
                             <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
-                                <div class="u-icon-v2 rounded-circle u-icon-size--xs g-color-primary my-auto"><i class="fas fa-phone"></i></div>
+                                <div class="sx-header-phone-wrapper g-color-primary my-auto">
+                                    <i class="fas fa-phone"></i>
+                                </div>
                                 <div class="my-auto g-ml-5">
                                     <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" style="font-size: 20px; line-height: 20px;" target="_blank" title="Телефон для связи"
                                        class="g-mr-10 sx-main-text-color g-color-primary--hover g-text-underline--none--hover">

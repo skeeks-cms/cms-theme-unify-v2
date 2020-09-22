@@ -10,11 +10,10 @@
 /* @var $model   \skeeks\cms\models\Tree */
 ?>
 
-<li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-    <div class="g-pr-20 mb-0">
-
+<li>
+    <div class="">
         <a class="g-text-underline--none--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
-            <i class="fas fa-angle-right"></i>
-            <?= $model->name; ?></a>
+            <?= $model->name; ?>
+        </a>
     </div>
 </li>

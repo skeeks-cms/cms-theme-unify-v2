@@ -15,21 +15,15 @@
     <div class="u-heading-v2-3--bottom g-mb-20">
         <div class="u-heading-v2__title h6 sx-footer-title mb-0"><?= $widget->label; ?></div>
     </div>
-
-    <nav class="text-uppercase1">
-        <ul class="list-unstyled g-mt-minus-10 mb-0">
-
-            <? if ($trees = $widget->activeQuery->all()) : ?>
-                <? foreach ($trees as $tree) : ?>
-                    <?= $this->render("_one-footer", [
-                        "widget" => $widget,
-                        "model"  => $tree,
-                    ]); ?>
-                <? endforeach; ?>
-            <? endif; ?>
-
-
-        </ul>
-    </nav>
+    <ul class="list-unstyled sx-footer-menu">
+        <? if ($trees = $widget->activeQuery->all()) : ?>
+            <? foreach ($trees as $tree) : ?>
+                <?= $this->render("_one-footer", [
+                    "widget" => $widget,
+                    "model"  => $tree,
+                ]); ?>
+            <? endforeach; ?>
+        <? endif; ?>
+    </ul>
 </div>
 
