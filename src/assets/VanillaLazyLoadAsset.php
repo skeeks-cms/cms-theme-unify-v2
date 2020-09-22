@@ -30,7 +30,8 @@ class VanillaLazyLoadAsset extends AssetBundle
 
         \Yii::$app->view->registerJs(<<<JS
 sx.LazyLoadInstance = new LazyLoad({
-    elements_selector: ".lazy"
+    //use_native: true,
+    //elements_selector: ".lazy"
     // ... more custom settings?
 });
 JS
