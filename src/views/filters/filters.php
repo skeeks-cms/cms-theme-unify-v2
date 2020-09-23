@@ -53,7 +53,7 @@ new sx.classes.filters.SliderRange();
                 var text = $(this).closest('div').find('label').text(); 
                 
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'fas fa-times',
+                    'class' : 'hs-icon hs-icon-close',
                     'title' : 'Отменить выбранную опцию',
                 });
                 

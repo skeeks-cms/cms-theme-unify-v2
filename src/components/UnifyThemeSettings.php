@@ -17,6 +17,8 @@ use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
 use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
+use skeeks\cms\themes\unify\assets\components\UnifyGoToAsset;
+use skeeks\cms\themes\unify\assets\components\UnifyThemeGoToAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\UnifyTheme;
@@ -285,7 +287,7 @@ class UnifyThemeSettings extends Component
     public $is_cap_only_guests = 1;
 
     /**
-     * @var int 
+     * @var int
      */
     public $is_min_assets = 0;
 
@@ -963,8 +965,9 @@ class UnifyThemeSettings extends Component
                             UnifyIconMaterialAsset::class   => 'Иконки (Material)',
                             UnifyIconLineProAsset::class    => 'Иконки (LinePro)',
                             UnifyIconEtlineAsset::class     => 'Иконки (Etline)',
-                            UnifyIconHsAsset::class         => 'Иконки (HsIcon)',
-                            FontAwesomeAsset::class         => 'Иконки (FontAwesome)',
+                            UnifyIconHsAsset::class         => 'Иконки (HsIcon) — стандартные иконки, тонкие стрелочки',
+                            FontAwesomeAsset::class         => 'Иконки (FontAwesome) — самые распространенные иконки',
+                            UnifyThemeGoToAsset::class      => 'Кнопка наверх',
                         ],
                         'multiple' => true,
                     ],

@@ -8,120 +8,23 @@
 /* @var $this yii\web\View */
 /* @see https://htmlstream.com/public/preview/unify-v2.6.1/unify-main/shortcodes/headers/classic-header--topbar-1.html */
 
-//\skeeks\assets\unify\base\UnifyHsDropdownAsset::register($this);
+\skeeks\cms\themes\unify\assets\components\UnifyThemeHeaderAsset::register($this);
+
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
-//\skeeks\assets\unify\base\UnifyHsHamburgersAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
-
 $this->registerJs(<<<JS
-
-// initialization of HSDropdown component
-  /*$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-    
-  });*/
-
 $(window).on('load', function () {
-    // initialization of header
     $.HSCore.components.HSHeader.init($('#js-header'));
-    //$.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-    // initialization of HSMegaMenu component
     $('.js-mega-menu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 991
     });
-
-    /*$('#dropdown-megamenu').HSMegaMenu({
-        event: 'hover',
-        pageContainer: $('.container'),
-        breakpoint: 767
-    });*/
-    
 });
 JS
 );
 
-$this->registerCss(<<<CSS
-
-.u-header {
-    position: relative;
-    left: 0;
-    right: 0;
-    width: 100%;
-    font-size: 0.92857rem;
-    z-index: 501;
-}
-
-.u-header--sticky-top {
-    bottom: auto;
-    top: 0;
-}
-.u-header--sticky-top, .u-header--sticky-bottom {
-    position: fixed;
-}
-
-.sx-header-phone-wrapper {
-    width: 30px;
-    height: 30px;
-    font-size: 13px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-        text-align: center;
-}
-
-.sx-header-phone-wrapper > i {
-    position: relative;
-    top: 50%;
-    display: block;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    z-index: 2;
-}
-.sx-badge {
-    line-height: 16px;
-    font-size: 10px;
-    min-height: 16px;
-    min-width: 16px;
-    position: absolute;
-    right: -2px;
-    top: -5px;
-    text-align: center;
-    text-rendering: optimizelegibility;
-    text-size-adjust: 100%;
-    border-radius: 50%;
-}
-
-.u-shadow-v19 {
-  -webkit-box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
-}
-
-
-.hs-has-mega-menu:not(.hs-mega-menu-opened) *,
-.hs-has-sub-menu:not(.hs-sub-menu-opened) * {
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
-.hs-has-mega-menu:not(.hs-mega-menu-opened) *::before, .hs-has-mega-menu:not(.hs-mega-menu-opened) *::after,
-.hs-has-sub-menu:not(.hs-sub-menu-opened) *::before,
-.hs-has-sub-menu:not(.hs-sub-menu-opened) *::after {
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
-
-CSS
-);
 ?>
-
-<!-- Header -->
-<!--u-header--sticky-top-->
 <header id="js-header" class="u-shadow-v19 u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
@@ -295,13 +198,8 @@ CSS
                             <? endif; ?>
                         </div>
                     <? endif; ?>
-
-
                 </div>
             </div>
-
-
         </nav>
     </div>
 </header>
-<!-- End Header -->

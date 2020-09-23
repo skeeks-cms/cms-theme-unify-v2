@@ -7,55 +7,35 @@
  */
 /* @var $this yii\web\View */
 ?>
-
-    <div id="contacts-section" class="sx-footer g-py-60">
-        <!-- Footer Content -->
-        <div class="container sx-container">
-            <div class="row">
-                <!-- Footer Content -->
-                <div class="col-sm-12 col-lg g-mb-30 g-mb-0--lg text-center">
-                    <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
-                        <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                    </a>
-                    <ul class="list-inline g-mb-20">
-                        <?php if($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
-                            <?php foreach($socials as $social) : ?>
-                                <li class="list-inline-item g-mx-5">
-                                    <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
-                                       href="<?= $social->url; ?>"
-                                       target="_blank"
-                                    >
-                                        <i class="fab fa-<?= $social->social_type; ?>"></i>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </ul>
-                </div>
-                <!-- End Footer Content -->
-               
+<div id="contacts-section" class="sx-footer g-py-60">
+    <!-- Footer Content -->
+    <div class="container sx-container">
+        <div class="row">
+            <!-- Footer Content -->
+            <div class="col-sm-12 col-lg g-mb-30 g-mb-0--lg text-center">
+                <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
+                    <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                </a>
+                <ul class="list-inline g-mb-20">
+                    <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                        <?php foreach ($socials as $social) : ?>
+                            <li class="list-inline-item g-mx-5">
+                                <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                   href="<?= $social->url; ?>"
+                                   target="_blank"
+                                >
+                                    <i class="fab fa-<?= $social->social_type; ?>"></i>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
             </div>
+            <!-- End Footer Content -->
+
         </div>
-        <!-- End Footer Content -->
-
     </div>
+    <!-- End Footer Content -->
 
-    <?= $this->render('@app/views/include/footer-copyright'); ?>
-
-    <!-- End Footer -->
-    <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
-             "bottom": 15,
-             "right": 15
-           }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
-        <i class="hs-icon hs-icon-arrow-top"></i>
-    </a>
-    <div class="u-outer-spaces-helper"></div>
-
-<?
-\skeeks\assets\unify\base\UnifyHsGoToAsset::register($this);
-$this->registerJs(<<<JS
-// initialization of go to
-$.HSCore.components.HSGoTo.init('.js-go-to');
-JS
-);
-?>
+</div>
+<?= $this->render('@app/views/include/footer-copyright'); ?>

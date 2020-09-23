@@ -1,0 +1,195 @@
+
+.u-header {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: 0.92857rem;
+    z-index: 501;
+}
+
+.u-header--sticky-top {
+    bottom: auto;
+    top: 0;
+}
+.u-header--sticky-top, .u-header--sticky-bottom {
+    position: fixed;
+}
+
+.sx-main-logo img {
+    max-height: 86px;
+}
+
+/**
+ * Unify custom css
+ */
+.navbar-brand .sx-logo-text {
+    bottom: 7px;
+    /*letter-spacing: 3px;*/
+    font-size: 23px;
+    position: absolute;
+    left: 58px;
+}
+
+.navbar-brand img {
+    height: 39px;
+}
+
+.sx-header-phone-wrapper {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+        text-align: center;
+}
+
+.sx-header-phone-wrapper > i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sx-badge {
+    line-height: 16px;
+    font-size: 10px;
+    min-height: 16px;
+    min-width: 16px;
+    position: absolute;
+    right: -2px;
+    top: -5px;
+    text-align: center;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    border-radius: 50%;
+}
+
+.u-shadow-v19 {
+  -webkit-box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+
+.hs-has-mega-menu:not(.hs-mega-menu-opened) *,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) * {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.hs-has-mega-menu:not(.hs-mega-menu-opened) *::before, .hs-has-mega-menu:not(.hs-mega-menu-opened) *::after,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) *::before,
+.hs-has-sub-menu:not(.hs-sub-menu-opened) *::after {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+.sx-menu-top {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+
+/* Поисковый блок на мобильной версии */
+@media (max-width: 768px) {
+    .sx-search-form {
+        background: #fff;
+        padding: 15px;
+        position: absolute;
+        top: -100px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
+    font-size: 1.9rem !important;
+}
+
+@media (min-width: 1024px) {
+    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* Поднять меню на планшете */
+@media (max-width: 1024px) AND (min-width: 768px) {
+    .hamburger {
+        padding-top: 0;
+    }
+}
+
+/* Настройки меню */
+html.mm-right .mm-menu.mm-fx-menu-slide {
+    z-index: 502;
+}
+
+.mm-opened .u-header--sticky-top {
+    position: relative !important;
+}
+
+.mm-opened .sx-header-sticky-margin {
+    margin-top: 0 !important;
+}
+
+.hamburger {
+    padding: 0;
+}
+
+
+/* Правки для меню мобильной версии */
+.mm-menu.mm-shadow-page:after {
+    box-shadow: none !important;
+}
+
+#mm-blocker {
+    z-index: 501 !important;
+}
+
+
+/**
+ * Оформление верхнего toolbar
+ */
+.sx-topbar {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    background: black;
+}
+
+.sx-topbar a {
+    color: white;
+}
+
+.sx-topbar a:hover {
+    color: white;
+}
+
+
+/**
+ * Оформление иконок в шапке
+ */
+.sx-header-menu-right {
+    display: contents;
+}
+
+.sx-header-menu-right .sx-header-menu-item i {
+    font-size: 24px;
+}
+
+.sx-header-menu-right .sx-header-menu-item {
+    margin-right: 20px;
+}
+
+.sx-header-menu-right .sx-header-menu-item:last-child {
+    margin-right: 0px;
+}

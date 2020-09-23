@@ -1,40 +1,3 @@
-/*------------------------------------
-  Fonts
-------------------------------------*/
-body {
-    font-family: Open Sans, Helvetica, Arial, sans-serif;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-    font-family: Open Sans, Helvetica, Arial, sans-serif;
-}
-
-/**
- * Unify custom css
- */
-.navbar-brand .sx-logo-text {
-    bottom: 7px;
-    /*letter-spacing: 3px;*/
-    font-size: 23px;
-    position: absolute;
-    left: 58px;
-}
-
-.navbar-brand img {
-    height: 39px;
-}
-
 @media (max-width: 450px) {
     .pagination {
         display: block;
@@ -196,6 +159,10 @@ h6,
 }
 
 
+
+/**
+ * Для контента страниц
+ */
 .sx-content {
     font-size: 16px;
 }
@@ -255,11 +222,11 @@ body {
 }
 
 
-.sx-main-logo img {
-    max-height: 86px;
-}
 
 
+/**
+ * Хлебные крошки
+ */
 .sx-body-begin-image-wrapper .sx-breadcrumbs-wrapper a {
     color: rgba(255, 255, 255, 0.8) !important;
 }
@@ -267,6 +234,8 @@ body {
 .sx-breadcrumbs-wrapper i {
     font-size: 10px;
 }
+
+
 
 .sx-list-short-info {
     background: #fafafa;
@@ -281,11 +250,6 @@ body {
     padding-bottom: 5px;
 }
 
-
-.sx-menu-top {
-    font-weight: 600;
-    text-transform: uppercase;
-}
 
 
 .form-control {
@@ -314,52 +278,6 @@ body {
     border-top: 2px solid #000;
 }
 
-/* Поисковый блок на мобильной версии */
-@media (max-width: 768px) {
-    .sx-search-form {
-        background: #fff;
-        padding: 15px;
-        position: absolute;
-        top: -100px;
-        left: 0;
-        right: 0;
-        z-index: 1;
-    }
-}
-
-.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-    font-size: 1.9rem !important;
-}
-
-@media (min-width: 1024px) {
-    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-        font-size: 1.4rem !important;
-    }
-}
-
-/* Поднять меню на планшете */
-@media (max-width: 1024px) AND (min-width: 768px) {
-    .hamburger {
-        padding-top: 0;
-    }
-}
-
-/* Настройки меню */
-html.mm-right .mm-menu.mm-fx-menu-slide {
-    z-index: 502;
-}
-
-.mm-opened .u-header--sticky-top {
-    position: relative !important;
-}
-
-.mm-opened .sx-header-sticky-margin {
-    margin-top: 0 !important;
-}
-
-.hamburger {
-    padding: 0;
-}
 
 @media (max-width: 1024px) {
     .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
@@ -404,19 +322,9 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 
 }
 
-/* Правки для меню мобильной версии */
-.mm-menu.mm-shadow-page:after {
-    box-shadow: none !important;
-}
-
-#mm-blocker {
-    z-index: 501 !important;
-}
-
 .u-btn-primary, a.g-bg-primary {
     color: #fff !important;
 }
-
 
 .sx-head-short-description {
     overflow: hidden;
@@ -424,32 +332,7 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 }
 
 
-/**
- * Оформление верхнего toolbar
- */
-.sx-topbar {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    color: white;
-    background: black;
-}
 
-.sx-topbar a {
-    color: white;
-}
-
-.sx-topbar a:hover {
-    color: white;
-}
-
-/**
- * Оформление футера
- */
-.sx-footer-title {
-    text-transform: uppercase;
-    font-weight: 600;
-}
 
 .sx-breadcrumbs-h1 {
     font-weight: 600;
@@ -486,24 +369,6 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     max-width: 100%;
 }
 
-/**
- * Оформление иконок в шапке
- */
-.sx-header-menu-right {
-    display: contents;
-}
-
-.sx-header-menu-right .sx-header-menu-item i {
-    font-size: 24px;
-}
-
-.sx-header-menu-right .sx-header-menu-item {
-    margin-right: 20px;
-}
-
-.sx-header-menu-right .sx-header-menu-item:last-child {
-    margin-right: 0px;
-}
 
 
 /* Button Styles
@@ -554,22 +419,28 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     font-size: 1.5rem;
 }
 
+
 /**
- * Стили для футера
+ * Небольшая достилизация таблиц
  */
-.sx-footer-menu li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-
 .dropdown-item:focus, .dropdown-item:hover {
     background: rgba(0, 0, 0, 0.03);
 }
-
 .dropdown-item.active, .dropdown-item:active {
     background: rgba(0, 0, 0, 0.05);
     color: inherit !important;
+}
+
+
+/**
+ * Небольшая достилизация таблиц
+ */
+.table-striped tbody tr:nth-of-type(2n+1) {
+  background-color: #f7f7f7;
+}
+
+.table-striped tbody td {
+  border-top: none;
 }
 
 
