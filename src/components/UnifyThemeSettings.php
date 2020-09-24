@@ -8,6 +8,8 @@
 
 namespace skeeks\cms\themes\unify\components;
 
+use skeeks\assets\unify\base\UnifyComponentsAsset;
+use skeeks\assets\unify\base\UnifyGlobalsAsset;
 use skeeks\assets\unify\base\UnifyIconEtlineAsset;
 use skeeks\assets\unify\base\UnifyIconHsAsset;
 use skeeks\assets\unify\base\UnifyIconLineProAsset;
@@ -968,6 +970,8 @@ class UnifyThemeSettings extends Component
                             UnifyIconHsAsset::class         => 'Иконки (HsIcon) — стандартные иконки, тонкие стрелочки',
                             FontAwesomeAsset::class         => 'Иконки (FontAwesome) — самые распространенные иконки',
                             UnifyThemeGoToAsset::class      => 'Кнопка наверх',
+                            UnifyComponentsAsset::class     => 'Все компоненты шаблона',
+                            UnifyGlobalsAsset::class        => 'Стили globals.css (большой файл)',
                         ],
                         'multiple' => true,
                     ],

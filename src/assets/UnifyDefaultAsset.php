@@ -9,6 +9,9 @@
 namespace skeeks\cms\themes\unify\assets;
 
 use skeeks\assets\unify\base\UnifyAsset;
+use skeeks\assets\unify\base\UnifyComponentsAsset;
+use skeeks\assets\unify\base\UnifyCoreAsset;
+use skeeks\assets\unify\base\UnifyGlobalsAsset;
 use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyIconHsAsset;
 use skeeks\assets\unify\base\UnifyOnscrollAnimationAsset;
@@ -22,13 +25,9 @@ use yii\web\YiiAsset;
 class UnifyDefaultAsset extends UnifyAsset
 {
     public $css = [
-        'assets/css/unify-core.css',
-        'assets/css/unify-components.css',
-        'assets/css/unify-globals.css',
     ];
 
     public $js = [
-
     ];
 
     public $depends = [
@@ -40,6 +39,9 @@ class UnifyDefaultAsset extends UnifyAsset
         VanillaLazyLoadAsset::class,
         UnifyIconHsAsset::class,
         UnifyHsPopupAsset::class,
+        UnifyCoreAsset::class,
+        UnifyComponentsAsset::class,
+        UnifyGlobalsAsset::class,
     ];
 
 

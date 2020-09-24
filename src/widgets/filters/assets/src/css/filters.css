@@ -504,5 +504,5 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     margin-left: 3px;
 }
 .sx-filters-selected-wrapper i:hover {
-    opacity: 0.9;
+    opacity: 0.5;
 }

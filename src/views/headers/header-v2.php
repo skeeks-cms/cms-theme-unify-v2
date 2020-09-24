@@ -88,7 +88,7 @@ CSS
         data-header-fix-effect="slide">
 
     <? if ($this->theme->is_header_toolbar) : ?>
-        <div class="u-header__section u-header__section--hidden u-header__section--dark g-py-7 sx-topbar">
+        <div class="u-header__section u-header__section--hidden u-header__section--dark sx-topbar">
             <div class="container sx-container">
                 <div class="row flex-column flex-sm-row justify-content-between align-items-center g-mx-0--lg">
                     <div class="col-auto">
@@ -237,7 +237,7 @@ JS
                                 <a class="g-text-underline--none--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle"
+                                    <img class="rounded-circle" style="width: 30px; height: 30px;"
                                          src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                                 </span>
                                     <span class="">

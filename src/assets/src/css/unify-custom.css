@@ -1,3 +1,9 @@
+.form-control::placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+
 @media (max-width: 450px) {
     .pagination {
         display: block;

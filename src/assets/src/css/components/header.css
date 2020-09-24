@@ -95,6 +95,10 @@
     text-transform: uppercase;
 }
 
+.sx-menu-top > li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 
 /* Поисковый блок на мобильной версии */
@@ -164,6 +168,8 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     font-size: 12px;
     color: white;
     background: black;
+    padding-bottom: 7px;
+    padding-top: 7px;
 }
 
 .sx-topbar a {
@@ -174,6 +180,9 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     color: white;
 }
 
+.sx-header-middle-block {
+    background: white;
+}
 
 /**
  * Оформление иконок в шапке

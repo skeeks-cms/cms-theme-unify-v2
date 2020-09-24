@@ -48,7 +48,7 @@ JS
 <header id="js-header" class="<?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> <?= $this->theme->header_shadow; ?> u-header u-header--toggle-section u-header--change-appearance" data-header-fix-moment="100" data-header-fix-effect="slide">
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
-    <div class="u-header__section u-header__section--hidden g-py-7 d-none d-sm-block g-bg-white">
+    <div class="u-header__section u-header__section--hidden d-none d-sm-block g-bg-white" style="padding-bottom: 7px; padding-top: 7px;">
         <div class="container sx-container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                 <div class="col-auto">
@@ -199,7 +199,7 @@ JS
                                 <a class="g-text-underline--none--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle"
+                                    <img class="rounded-circle" style="width: 30px; height: 30px;"
                                          src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                                 </span>
                                     <span class="">

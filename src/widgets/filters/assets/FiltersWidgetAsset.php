@@ -5,10 +5,11 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 26.07.2015
  */
+
 namespace skeeks\cms\themes\unify\widgets\filters\assets;
 
 use skeeks\assets\unify\base\UnifyIoRangeSliderAsset;
-use skeeks\cms\themes\unify\assets\UnifyDefaultAsset;
+use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use yii\web\AssetBundle;
 
 /**
@@ -19,15 +20,15 @@ class FiltersWidgetAsset extends AssetBundle
     public $sourcePath = '@skeeks/cms/themes/unify/widgets/filters/assets/src';
 
     public $css = [
-        'css/filters.css'
+        'css/filters.css',
     ];
     public $js = [
         'js/filters.js',
-        'js/sliderRange.js'
+        'js/sliderRange.js',
     ];
     public $depends = [
         //UnifyThemeShopAsset::class,
-        UnifyDefaultAsset::class,
+        UnifyThemeAsset::class,
         UnifyIoRangeSliderAsset::class,
     ];
 }

@@ -8,7 +8,6 @@
 /* @var $this yii\web\View */
 /* @see https://htmlstream.com/public/preview/unify-v2.6.1/unify-main/shortcodes/headers/classic-header--topbar-1.html */
 
-\skeeks\cms\themes\unify\assets\components\UnifyThemeHeaderAsset::register($this);
 
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
@@ -30,7 +29,7 @@ JS
     <!--u-header__section--hidden -->
     <div class="u-header__section u-header__section--hidden u-header__section--dark">
         <? if ($this->theme->is_header_toolbar) : ?>
-            <div class="sx-topbar g-py-7">
+            <div class="sx-topbar">
                 <div class="container sx-container">
                     <div class="row flex-column flex-sm-row justify-content-between align-items-center g-mx-0--lg">
                         <div class="col-auto">
@@ -72,7 +71,7 @@ JS
                 </div>
             </div>
         <? endif; ?>
-        <div class="g-bg-white sx-header-middle-block g-hidden-xs-down">
+        <div class="sx-header-middle-block">
             <div class="container sx-container g-py-15">
                 <div class="row ">
                     <div class="col-sm-4 col-md-3 my-auto">
@@ -88,9 +87,8 @@ JS
                                 <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <!--<label for="search" class="sr-only"><? /*= Yii::t("skeeks/unify", "Search"); */ ?></label>-->
                                             <div class="input-group">
-                                                <input placeholder="Поиск..." for="search" type="text" class="form-control rounded-0 form-control-md"
+                                                <input placeholder="Поиск..." for="search" type="text" class="form-control"
                                                        name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
                                                        value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
                                                 <div class="input-group-append">
@@ -104,12 +102,12 @@ JS
                         <? endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-4 my-auto">
-                        <div class="text-right d-flex g-ml-20">
+                        <div class="text-right d-flex" style="margin-left: 20px;">
                             <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
                                 <div class="sx-header-phone-wrapper g-color-primary my-auto">
                                     <i class="fas fa-phone"></i>
                                 </div>
-                                <div class="my-auto g-ml-5">
+                                <div class="my-auto" style="margin-left: 5px;">
                                     <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" style="font-size: 20px; line-height: 20px;" target="_blank" title="Телефон для связи"
                                        class="g-mr-10 sx-main-text-color g-color-primary--hover g-text-underline--none--hover">
                                         <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
@@ -188,7 +186,7 @@ JS
                                 <a class="g-text-underline--none--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
                                 <span class="g-pos-rel">
                                     <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                                    <img class="g-width-30 g-width-30--md g-height-30 g-height-30--md rounded-circle"
+                                    <img class="rounded-circle" style="width: 30px; height: 30px;"
                                          src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
                                 </span>
                                     <span class="">

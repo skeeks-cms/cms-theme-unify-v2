@@ -6,6 +6,7 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 /* @var $this yii\web\View */
+\skeeks\cms\themes\unify\assets\components\UnifyThemeHeaderAsset::register($this);
 ?>
 
 <? if (\Yii::$app->mobileDetect->isMobile) : ?>
