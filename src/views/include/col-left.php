@@ -65,7 +65,6 @@ if ($model) {
 
             </div>
         </div>
-
         <? $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'news'])->one(); ?>
         <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
             'namespace'          => 'ContentElementsCmsWidget-left-news',
@@ -75,7 +74,7 @@ if ($model) {
                 $content ? $content->id : "",
             ],
             'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
-            'enabledRunCache'    => \skeeks\cms\components\Cms::BOOL_N,
+            'enabledRunCache'    => "Y",
         ]); ?>
 
     </div>
