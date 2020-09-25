@@ -1,0 +1,63 @@
+.g-bg-main {
+    background-color: #fff !important;
+}
+
+/* Main Secondary */
+.g-bg-secondary {
+    background-color: #fafafa !important;
+}
+
+/* Primary Colors */
+.g-bg-primary {
+    background-color: #72c02c !important;
+}
+
+.g-bg-primary--hover:hover {
+    background-color: #72c02c !important;
+}
+
+
+/* Primary Colors */
+.g-color-primary {
+    color: #72c02c !important;
+}
+
+
+.g-color-white {
+    color: #fff !important;
+}
+
+.g-py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.g-py-15 {
+    padding-top: 1.07143rem !important;
+    padding-bottom: 1.07143rem !important;
+}
+
+.g-py-10 {
+    padding-top: 0.71429rem !important;
+    padding-bottom: 0.71429rem !important;
+}
+
+.g-py-5 {
+    padding-top: 0.35714rem !important;
+    padding-bottom: 0.35714rem !important;
+}
+
+/* P */
+.g-py-20 {
+    padding-top: 1.42857rem !important;
+    padding-bottom: 1.42857rem !important;
+}
+
+
+.g-text-underline {
+    text-decoration: underline;
+}
+
+.g-text-underline--none--hover:focus, .g-text-underline--none--hover:hover {
+    text-decoration: none;
+}
