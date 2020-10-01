@@ -16,7 +16,10 @@ use skeeks\assets\unify\base\UnifyIconLineProAsset;
 use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\backend\widgets\ActiveFormBackend;
+use skeeks\cms\backend\widgets\SelectModelDialogStorageFileSrcWidget;
+use skeeks\cms\backend\widgets\SelectModelDialogWidget;
 use skeeks\cms\base\Component;
+use skeeks\cms\models\CmsStorageFile;
 use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\themes\unify\assets\components\UnifyGoToAsset;
@@ -555,10 +558,19 @@ class UnifyThemeSettings extends Component
                         'class' => TextareaField::class,
                     ],
 
-                    'logo'        => [
+                    /*'logo'        => [
                         'class'       => WidgetField::class,
                         'widgetClass' => OneImage::class,
+                    ],*/
+
+                    'logo'        => [
+                        'class'       => WidgetField::class,
+                        'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
+                        /*'widgetConfig' => [
+                            'modelPk' => 'src'
+                        ]*/
                     ],
+
                     'logo_text',
                     'footer_logo' => [
                         'class'       => WidgetField::class,
