@@ -21,7 +21,6 @@ use skeeks\cms\backend\widgets\SelectModelDialogWidget;
 use skeeks\cms\base\Component;
 use skeeks\cms\models\CmsStorageFile;
 use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
-use skeeks\cms\modules\admin\widgets\formInputs\OneImage;
 use skeeks\cms\themes\unify\assets\components\UnifyGoToAsset;
 use skeeks\cms\themes\unify\assets\components\UnifyThemeGoToAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
@@ -574,11 +573,11 @@ class UnifyThemeSettings extends Component
                     'logo_text',
                     'footer_logo' => [
                         'class'       => WidgetField::class,
-                        'widgetClass' => OneImage::class,
+                        'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                     ],
                     'mobile_logo' => [
                         'class'       => WidgetField::class,
-                        'widgetClass' => OneImage::class,
+                        'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                     ],
                 ],
             ],
@@ -657,7 +656,7 @@ class UnifyThemeSettings extends Component
                     ],
                     'body_bg_image'     => [
                         'class'       => WidgetField::class,
-                        'widgetClass' => OneImage::class,
+                        'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                     ],
 
 
@@ -818,7 +817,7 @@ class UnifyThemeSettings extends Component
 
                     'body_begin_no_image'             => [
                         'class'       => WidgetField::class,
-                        'widgetClass' => OneImage::class,
+                        'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                     ],
                     'body_begin_image_height_tree'    => [
                         'class' => SelectField::class,
