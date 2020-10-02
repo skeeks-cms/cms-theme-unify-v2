@@ -514,6 +514,7 @@ form .sx-from-required {
     background: white;
     color: black;
     opacity: 1;
+    outline: none;
 }
 
 .fancybox-slide--iframe .fancybox-close-small:after {
@@ -725,4 +726,18 @@ pre {
 }
 .u-header__section--admin-dark .sx-breadcrumbs-wrapper i {
     color: #6b7996;
+}
+
+
+.select2-container--krajee-bs4 .select2-selection__clear {
+    line-height: normal;
+}
+
+.select2-container--krajee-bs4 .select2-selection--multiple .select2-selection__choice__remove {
+    font-size: inherit;
+    line-height: normal;
+}
+
+.select2-container--krajee-bs4 .select2-selection--multiple .select2-selection__choice {
+    padding: 0.05rem 0.25rem 0.05rem 0.25rem;
 }
