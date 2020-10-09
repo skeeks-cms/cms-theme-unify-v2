@@ -58,7 +58,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                    data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
                     <i class="hs-admin-align-left"></i>
                 </a>
-                <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light g-bg-gray-light-v8">
+                <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
                     <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
                     <?= $this->render("@app/views/layouts/_menu"); ?>
                     <div class="text-center g-mt-20">

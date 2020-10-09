@@ -124,13 +124,13 @@ class UnifyThemeAdmin extends Theme
      */
     public function getSlideNavClasses()
     {
-        $slideNavClasses = "col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light g-bg-gray-light-v8";
+        $slideNavClasses = "col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary";
 
         if ($this->color_scheme == 'dark') {
             $slideNavClasses = "col-auto u-sidebar-navigation-v1 u-sidebar-navigation--dark";
         }
         if ($this->color_scheme == 'multi') {
-            $slideNavClasses = "col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light g-bg-gray-light-v8";
+            $slideNavClasses = "col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary";
         }
 
         return $slideNavClasses;
