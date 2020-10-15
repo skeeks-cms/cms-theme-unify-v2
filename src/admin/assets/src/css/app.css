@@ -1,3 +1,7 @@
+a:hover {
+    text-decoration: none;
+}
+
 .sx-bg-secondary {
     background: #f9f9f9;
 }
