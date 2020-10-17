@@ -745,3 +745,10 @@ pre {
 .select2-container--krajee-bs4 .select2-selection--multiple .select2-selection__choice {
     padding: 0.05rem 0.25rem 0.05rem 0.25rem;
 }
+
+
+
+
+.sx-shadow--hover:hover {
+    box-shadow: 1px 1px 6px -2px silver;
+}
