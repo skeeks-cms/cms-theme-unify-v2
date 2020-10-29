@@ -46,7 +46,7 @@ class UnifyAdminAsset extends UnifyAsset
     public $js = [
         'assets/vendor/cookiejs/jquery.cookie.js',
 
-        'assets/vendor/jquery-ui/ui/widget.js',
+        /*'assets/vendor/jquery-ui/ui/widget.js',
         'assets/vendor/jquery-ui/ui/version.js',
         'assets/vendor/jquery-ui/ui/keycode.js',
         'assets/vendor/jquery-ui/ui/position.js',
@@ -56,7 +56,7 @@ class UnifyAdminAsset extends UnifyAsset
         'assets/vendor/jquery-ui/ui/widgets/menu.js',
         'assets/vendor/jquery-ui/ui/widgets/mouse.js',
 
-        'assets/vendor/jquery-ui/ui/widgets/datepicker.js',
+        'assets/vendor/jquery-ui/ui/widgets/datepicker.js',*/
 
         'admin-template/assets/vendor/bootstrap-select/js/bootstrap-select.min.js',
         'admin-template/assets/vendor/flatpickr/dist/js/flatpickr.min.js',
