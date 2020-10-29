@@ -13,6 +13,7 @@ use skeeks\assets\unify\base\UnifyAsset;
 use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyHsScrollbarAsset;
 use skeeks\assets\unify\base\UnifyPopperAsset;
+use skeeks\cms\assets\FancyboxAssets;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\sx\assets\Custom;
 use yii\bootstrap\BootstrapAsset;
@@ -80,9 +81,9 @@ class UnifyAdminAsset extends UnifyAsset
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
         FontAwesomeAsset::class,
-        UnifyHsPopupAsset::class,
+        //UnifyHsPopupAsset::class,
         UnifyAppearAsset::class,
         UnifyHsScrollbarAsset::class,
-        'skeeks\cms\assets\FancyboxAssets',
+        FancyboxAssets::class
     ];
 }

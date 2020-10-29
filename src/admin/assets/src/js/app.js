@@ -88,11 +88,11 @@
             $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
 
             // initialization of popups
-            $.HSCore.components.HSPopup.init('.js-fancybox', {
+            /*$.HSCore.components.HSPopup.init('.js-fancybox', {
                 btnTpl: {
                     smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
                 }
-            });
+            });*/
         },
 
 
