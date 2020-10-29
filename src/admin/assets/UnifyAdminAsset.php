@@ -34,10 +34,10 @@ class UnifyAdminAsset extends UnifyAsset
 
         'admin-template/assets/vendor/hs-admin-icons/hs-admin-icons.css',
 
-        'assets/vendor/animate.css',
+        //'assets/vendor/animate.css',
 
-        'admin-template/assets/vendor/flatpickr/dist/css/flatpickr.min.css',
-        'admin-template/assets/vendor/bootstrap-select/css/bootstrap-select.min.css',
+        //'admin-template/assets/vendor/flatpickr/dist/css/flatpickr.min.css',
+        //'admin-template/assets/vendor/bootstrap-select/css/bootstrap-select.min.css',
 
         'assets/vendor/hamburgers/hamburgers.min.css',
         'admin-template/assets/css/unify-admin.css',
@@ -58,8 +58,8 @@ class UnifyAdminAsset extends UnifyAsset
 
         'assets/vendor/jquery-ui/ui/widgets/datepicker.js',*/
 
-        'admin-template/assets/vendor/bootstrap-select/js/bootstrap-select.min.js',
-        'admin-template/assets/vendor/flatpickr/dist/js/flatpickr.min.js',
+        //'admin-template/assets/vendor/bootstrap-select/js/bootstrap-select.min.js',
+        //'admin-template/assets/vendor/flatpickr/dist/js/flatpickr.min.js',
 
         'admin-template/assets/js/components/hs.side-nav.js',
         'assets/js/helpers/hs.hamburgers.js',
