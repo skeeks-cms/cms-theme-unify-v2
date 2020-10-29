@@ -35,7 +35,7 @@
             }
 
             // initialization of hamburger
-            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+            //$.HSCore.helpers.HSHamburgers.init('.hamburger');
 
             // initialization of charts
             /*$.HSCore.components.HSAreaChart.init('.js-area-chart');
@@ -45,7 +45,7 @@
 
             // initialization of sidebar navigation component
             $.HSCore.components.HSSideNav.init('.js-side-nav', {
-                afterOpen: function () {
+                /*afterOpen: function () {
                     setTimeout(function () {
                         $.HSCore.components.HSAreaChart.init('.js-area-chart');
                         $.HSCore.components.HSDonutChart.init('.js-donut-chart');
@@ -60,7 +60,7 @@
                         $.HSCore.components.HSBarChart.init('.js-bar-chart');
                         $.HSCore.components.HSPieChart.init('.js-pie-chart');
                     }, 400);
-                }
+                }*/
             });
 
             // initialization of range datepicker
