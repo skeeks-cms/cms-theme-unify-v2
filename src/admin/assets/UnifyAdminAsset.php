@@ -63,14 +63,14 @@ class UnifyAdminAsset extends UnifyAsset
 
         'admin-template/assets/js/components/hs.side-nav.js',
         'assets/js/helpers/hs.hamburgers.js',
-        'admin-template/assets/js/components/hs.range-datepicker.js',
+        /*'admin-template/assets/js/components/hs.range-datepicker.js',
         'assets/js/components/hs.datepicker.js',
         'assets/js/components/hs.dropdown.js',
         'admin-template/assets/js/components/hs.area-chart.js',
         'admin-template/assets/js/components/hs.donut-chart.js',
         'admin-template/assets/js/components/hs.bar-chart.js',
         'admin-template/assets/js/components/hs.pie-chart.js',
-        'assets/js/helpers/hs.focus-state.js',
+        'assets/js/helpers/hs.focus-state.js',*/
 
         //'assets/js/custom.js',
     ];

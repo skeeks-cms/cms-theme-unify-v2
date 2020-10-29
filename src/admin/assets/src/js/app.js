@@ -38,10 +38,10 @@
             $.HSCore.helpers.HSHamburgers.init('.hamburger');
 
             // initialization of charts
-            $.HSCore.components.HSAreaChart.init('.js-area-chart');
+            /*$.HSCore.components.HSAreaChart.init('.js-area-chart');
             $.HSCore.components.HSDonutChart.init('.js-donut-chart');
             $.HSCore.components.HSBarChart.init('.js-bar-chart');
-            $.HSCore.components.HSPieChart.init('.js-pie-chart');
+            $.HSCore.components.HSPieChart.init('.js-pie-chart');*/
 
             // initialization of sidebar navigation component
             $.HSCore.components.HSSideNav.init('.js-side-nav', {
@@ -64,10 +64,10 @@
             });
 
             // initialization of range datepicker
-            $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+            //$.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
 
             // initialization of datepicker
-            $.HSCore.components.HSDatepicker.init('#datepicker', {
+            /*$.HSCore.components.HSDatepicker.init('#datepicker', {
                 dayNamesMin: [
                     'SU',
                     'MO',
@@ -78,9 +78,11 @@
                     'SA'
                 ]
             });
+*/
 
             // initialization of HSDropdown component
-            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+            //$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
 
             // initialization of custom scrollbar
             $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
