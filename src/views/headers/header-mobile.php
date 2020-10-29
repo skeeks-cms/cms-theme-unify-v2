@@ -137,7 +137,7 @@ if ($models) {
                 <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
                     <img src="<?= $this->theme->mobile_logo ? $this->theme->mobile_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                 </a>
-                <div class="pull-right sx-header-menu-right">
+                <div class="float-right sx-header-menu-right">
                     <!-- End Logo -->
                     <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                         <div class="sx-header-menu-item">

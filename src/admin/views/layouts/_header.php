@@ -309,7 +309,7 @@ $theme = $this->theme;
         <!-- Top Activity Panel -->
         <div id="activityMenu" class="js-custom-scroll u-header-sidebar g-pos-fix g-top-0 g-left-auto g-right-0 g-z-index-4 g-width-300 g-width-400--sm g-height-100vh" aria-labelledby="activityInvoker">
             <div class="u-header-dropdown-bordered-v1 g-pa-20">
-                <a id="activityInvokerClose" class="pull-right g-color-lightblue-v2" href="#!" aria-controls="activityMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click"
+                <a id="activityInvokerClose" class="float-right g-color-lightblue-v2" href="#!" aria-controls="activityMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click"
                    data-dropdown-target="#activityMenu" data-dropdown-type="css-animation"
                    data-dropdown-animation-in="fadeInRight" data-dropdown-animation-out="fadeOutRight" data-dropdown-duration="300">
                     <i class="hs-admin-close"></i>

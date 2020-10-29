@@ -752,3 +752,10 @@ pre {
 .sx-shadow--hover:hover {
     box-shadow: 1px 1px 6px -2px silver;
 }
+
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
