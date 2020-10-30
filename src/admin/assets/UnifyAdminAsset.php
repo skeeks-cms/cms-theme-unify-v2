@@ -83,7 +83,7 @@ class UnifyAdminAsset extends UnifyAsset
         BootstrapPluginAsset::class,
         FontAwesomeAsset::class,
         //UnifyHsPopupAsset::class,
-        UnifyAppearAsset::class,
+        //UnifyAppearAsset::class,
         UnifyHsScrollbarAsset::class,
         FancyboxAssets::class
     ];

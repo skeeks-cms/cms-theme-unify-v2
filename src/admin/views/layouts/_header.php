@@ -276,7 +276,7 @@ $theme = $this->theme;
                             <li class="g-mb-10">
                                 <a class="media g-py-5 g-px-20" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/change-password']); ?>">
                                         <span class="d-flex align-self-center g-mr-12">
-                                      <i class="hs-admin-rocket"></i>
+                                      <i class="fas fa-key"></i>
                                     </span>
                                     <span class="media-body align-self-center">Смена пароля</span>
                                 </a>
