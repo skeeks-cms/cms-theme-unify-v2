@@ -22,7 +22,8 @@ use yii\web\YiiAsset;
 class UnifyAdminAsset extends UnifyAsset
 {
     public $css = [
-        '//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
+        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap',
+        //'//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
         'admin-template/assets/vendor/hs-admin-icons/hs-admin-icons.css',
         'assets/vendor/animate.css',
         'admin-template/assets/css/unify-admin.css',
