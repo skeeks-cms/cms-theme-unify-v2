@@ -14,8 +14,10 @@ use skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
+use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use yii\base\Theme;
 use yii\helpers\Url;
+use yii\jui\Sortable;
 
 /**
  * @property string|null $logoSrc путь к лого, если передать null, то будет лого по умолчанию
@@ -168,13 +170,15 @@ class UnifyThemeAdmin extends Theme
             'class' => UnifyBootstrapAsset::class,
         ];
 
-
         //Переопределение стандартных классов
         \Yii::$container->setDefinitions(\yii\helpers\ArrayHelper::merge(
             \Yii::$container->definitions,
             [
                 \skeeks\yii2\form\fields\SelectField::class => [
                     'class' => \skeeks\cms\admin\form\fields\AdminSelectField::class,
+                ],
+                Sortable::class           => [
+                    'class' => JuiSortableWidget::class,
                 ],
                 \yii\bootstrap\ActiveForm::class            => [
                     'class' => \yii\bootstrap4\ActiveForm::class,

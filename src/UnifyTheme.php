@@ -13,9 +13,11 @@ use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
+use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use yii\base\Theme;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
+use yii\jui\Sortable;
 use yii\web\View;
 
 /**
@@ -321,7 +323,6 @@ CSS;
             'class' => UnifyBootstrapAsset::class,
         ];
 
-
         //Переопределение стандартных классов
         \Yii::$container->setDefinitions(\yii\helpers\ArrayHelper::merge(
             \Yii::$container->definitions,
@@ -334,6 +335,9 @@ CSS;
                     'options' => [
                         'class' => 'sx-bootstrap4-form',
                     ],
+                ],
+                Sortable::class           => [
+                    'class' => JuiSortableWidget::class,
                 ],
                 \yii\bootstrap\ActiveField::class           => [
                     'class' => \yii\bootstrap4\ActiveField::class,
