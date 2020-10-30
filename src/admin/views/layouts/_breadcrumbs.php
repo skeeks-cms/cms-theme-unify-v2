@@ -11,7 +11,7 @@
 
 <? $controller = \Yii::$app->controller; ?>
 <? if ($controller && $controller instanceof \skeeks\cms\backend\IHasBreadcrumbs && $controller->breadcrumbsData) : ?>
-    <ul class="u-list-inline">
+    <ul class="u-list-inline g-hidden-sm-down">
 
         <li class="list-inline-item sx-breadcrumbs-item">
             <a class="g-valign-middle" href="<?= $this->theme->logoHref; ?>">Главная</a>

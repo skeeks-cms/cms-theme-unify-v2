@@ -81,7 +81,7 @@
 */
 
             // initialization of HSDropdown component
-            //$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
 
 
             // initialization of custom scrollbar
