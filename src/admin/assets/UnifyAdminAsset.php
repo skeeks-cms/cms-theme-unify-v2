@@ -26,7 +26,7 @@ class UnifyAdminAsset extends UnifyAsset
         //'//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik&display=swap',
         'admin-template/assets/vendor/hs-admin-icons/hs-admin-icons.css',
         'assets/vendor/animate.css',
-        'admin-template/assets/css/unify-admin.css',
+        //'admin-template/assets/css/unify-admin.min.css',
     ];
     public $js = [
         'assets/vendor/cookiejs/jquery.cookie.js',

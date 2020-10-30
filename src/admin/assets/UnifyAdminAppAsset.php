@@ -18,6 +18,8 @@ class UnifyAdminAppAsset extends AssetBundle
     public $sourcePath = '@skeeks/cms/themes/unify/admin/assets/src/';
 
     public $css = [
+        'css/unify-admin.min.css',
+
         'css/custom-theme.css',
         'css/app.css',
     ];
