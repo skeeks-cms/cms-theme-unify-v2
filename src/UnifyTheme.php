@@ -280,7 +280,7 @@ CSS;
         
         
         $assetClass = \Yii::$app->view->theme->themeAssetClass;
-        \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($assetClass) {
+        \Yii::$app->view->on(View::EVENT_END_BODY, function () use ($assetClass) {
             if (\Yii::$app->request->isPjax) {
                 return false;
             }
