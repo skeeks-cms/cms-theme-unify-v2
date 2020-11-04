@@ -31,7 +31,7 @@
                                 </a>
                                 <!--<div class="easy-block-v1-badge rgba-purple"><? /*= $model->name; */ ?></div>-->
                                 <div class="sx-caption-wrapper text-center">
-                                    <a data-pjax="0" href="<?= $model->url; ?>" class="sx-subcatalog-title sx-main-text-color g-color-primary--hover g-text-underline--none--hover g-line-height-1" style="display: inherit;"><?= $model->name; ?></a>
+                                    <a data-pjax="0" href="<?= $model->url; ?>" class="sx-subcatalog-title sx-main-text-color g-color-primary--hover g-text-underline--none--hover" style="display: inherit;"><?= $model->name; ?></a>
                                 </div>
                             </div>
                         </li>

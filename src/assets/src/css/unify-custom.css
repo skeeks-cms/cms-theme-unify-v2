@@ -254,6 +254,7 @@ body {
 .sx-caption-wrapper {
     overflow: hidden;
     padding-bottom: 5px;
+    margin-top: 5px;
 }
 
 
@@ -347,6 +348,7 @@ body {
 
 .sx-subcatalog-title {
     font-weight: 700;
+    line-height: 1.1;
 }
 
 .sx-main-text-color {
