@@ -29,18 +29,18 @@ if ($model) {
 }
 ?>
 <? if (\Yii::$app->mobileDetect->isDesktop) : ?>
-    <div class="order-md-1 g-py-20 g-px-20 g-bg-secondary sx-content-col-left">
-        <div class="g-mb-20">
+    <div class="order-md-1 g-bg-secondary sx-content-col-left">
+        <div class="sx-col-left-block">
             <div
                     id="stickyblock-start"
-                    class="g-pa-5 js-sticky-block"
+                    class="js-sticky-block"
                     data-start-point="#stickyblock-start" data-end-point=".sx-footer"
             >
 
                 <? if ($parent && $parent->activeChildren) : ?>
 
-                    <div class="u-heading-v3-1 g-mb-10">
-                        <div class="h5 u-heading-v3__title sx-col-left-title g-brd-primary ">
+                    <div class="g-mb-10">
+                        <div class="h5 sx-col-left-title">
                             <?= \Yii::t('skeeks/unify', 'Categories'); ?>
                         </div>
                     </div>
@@ -49,8 +49,7 @@ if ($model) {
 
                         <? foreach ($parent->activeChildren as $child) : ?>
 
-                            <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-                                <i class="fas fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                            <li class="">
                                 <a class="<?= $child->id == $model->id ? "active g-color-primary" : "sx-main-text-color"; ?> u-link-v5 g-color-primary--hover"
                                    href="<?= $child->url; ?>">
                                     <?= $child->name; ?>

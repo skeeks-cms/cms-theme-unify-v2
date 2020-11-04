@@ -44,10 +44,10 @@ if (@$isShowMainImage !== false) {
         <div class="row">
             <!-- Content -->
             <? if ($this->theme->element_content_layout == 'col-left') : ?>
-            <div class="order-md-2 g-py-20 g-px-15 sx-content-col-main">
+            <div class="order-md-2 sx-content-col-main">
                 <? endif; ?>
                 <? if ($this->theme->element_content_layout == 'col-right') : ?>
-                <div class="g-py-20 g-px-15 sx-content-col-main">
+                <div class="sx-content-col-main">
                     <? endif; ?>
                     <? if ($this->theme->element_content_layout == 'no-col') : ?>
                     <div class="col-md-12 g-py-20">

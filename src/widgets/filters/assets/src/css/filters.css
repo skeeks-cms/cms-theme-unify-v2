@@ -48,16 +48,16 @@
 }
 
 .filter--group {
-    border-top: solid 1px #dfdfdf;
+    border-top: solid 1px #f1f1f1;
 }
 
 .filter--group.opened .filter--group--header {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .filter--group .filter--group--header {
     position: relative;
-    padding: 15px 32px 15px 10px;
+    padding: 15px 32px 15px 15px;
     /*font-weight: 700;
     text-transform: uppercase;*/
     cursor: pointer;
@@ -85,7 +85,7 @@
 
 .filter--group .filter--group--body {
     display: none;
-    padding: 0 10px 0 10px;
+    padding: 0 15px 0 15px;
 }
 
 .filter--group .filter--group--inner {
@@ -136,10 +136,13 @@
 }
 
 .filter-search__input {
-    padding-right: 7px;
+    padding-right: 0px;
     margin-bottom: 15px;
 }
 
+.sx-filters-block .sx-filters-block-header {
+    padding: 0px 15px;
+}
 
 .sx-product-filter-wrapper {
     border-bottom: 1px solid silver;

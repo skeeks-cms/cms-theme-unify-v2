@@ -126,11 +126,11 @@ $widget = $this->context;
 <!--<div id="stickyblock-start" class="js-scrollbar h-100 g-bg-white g-pa-5 js-sticky-block" data-start-point="#stickyblock-start" data-end-point=".sx-footer" data-has-sticky-header="true">-->
 <!--js-scrollbar g-height-280-->
 <div class="sx-filters-block">
-    <div>
+    <div class="sx-filters-block-header">
         <a href="#" class="sx-mobile-filters-hide">&#65794;</a>
-        <h2 class="h5 u-heading-v3__title sx-col-left-title g-brd-primary">
+        <div class="h5 u-heading-v3__title sx-col-left-title g-brd-primary">
             <?= Yii::t('skeeks/unify', 'Filters'); ?>
-        </h2>
+        </div>
     </div>
     <!--<div class="h-100">-->
 

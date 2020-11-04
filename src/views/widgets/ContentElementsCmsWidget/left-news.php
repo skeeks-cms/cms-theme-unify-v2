@@ -15,25 +15,25 @@
 
 <? if ($widget->dataProvider->query->count()) : ?>
 
-    <div class="g-bg-secondary  g-mb-20">
+    <div class="sx-col-left-block">
 
-            <div class="u-heading-v3-1 g-mb-10">
-                <h2 class="h5 u-heading-v3__title sx-col-left-title g-brd-primary"><?= $widget->label; ?></h2>
-            </div>
+        <div class=" g-mb-10">
+            <div class="h5 sx-col-left-title"><?= $widget->label; ?></div>
+        </div>
 
-            <? echo \yii\widgets\ListView::widget([
-                'dataProvider' => $widget->dataProvider,
-                'itemView'     => '_left-news-item',
-                'emptyText'    => '',
-                'options'      =>
-                    [
-                        'tag' => 'div',
-                    ],
-                'itemOptions'  => [
-                    'tag' => false,
+        <? echo \yii\widgets\ListView::widget([
+            'dataProvider' => $widget->dataProvider,
+            'itemView'     => '_left-news-item',
+            'emptyText'    => '',
+            'options'      =>
+                [
+                    'tag' => 'div',
                 ],
-                'layout'       => "\n{items}",
-            ]); ?>
+            'itemOptions'  => [
+                'tag' => false,
+            ],
+            'layout'       => "\n{items}",
+        ]); ?>
 
     </div>
 <? endif; ?>

@@ -1,6 +1,6 @@
 .form-control::placeholder {
-  color: inherit;
-  opacity: .5;
+    color: inherit;
+    opacity: .5;
 }
 
 
@@ -165,7 +165,6 @@
 }
 
 
-
 /**
  * Для контента страниц
  */
@@ -228,8 +227,6 @@ body {
 }
 
 
-
-
 /**
  * Хлебные крошки
  */
@@ -240,7 +237,6 @@ body {
 .sx-breadcrumbs-wrapper i {
     font-size: 10px;
 }
-
 
 
 .sx-list-short-info {
@@ -256,7 +252,6 @@ body {
     padding-bottom: 5px;
     margin-top: 5px;
 }
-
 
 
 .form-control {
@@ -339,8 +334,6 @@ body {
 }
 
 
-
-
 .sx-breadcrumbs-h1 {
     font-weight: 600;
     line-height: 1.1;
@@ -357,9 +350,23 @@ body {
 
 .sx-col-left-title {
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
+.sx-col-left-block {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sx-col-menu li {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.sx-col-menu li:last-child {
+    margin-bottom: 0px;
+}
 
 .hamburger {
     padding: 5px !important;
@@ -375,25 +382,34 @@ body {
 
 .sx-content-col-main {
     max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
+.sx-content-col-left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 /* Button Styles
 ------------------------------------*/
 /* General Button Styles */
 .btn {
-  position: relative;
-  -webkit-transition: .2s ease;
-  -o-transition: .2s ease;
-  transition: .2s ease;
-  cursor: pointer;
+    position: relative;
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+    cursor: pointer;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
-  outline: 0 none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+    outline: 0 none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 
@@ -434,6 +450,7 @@ body {
 .dropdown-item:focus, .dropdown-item:hover {
     background: rgba(0, 0, 0, 0.03);
 }
+
 .dropdown-item.active, .dropdown-item:active {
     background: rgba(0, 0, 0, 0.05);
     color: inherit !important;
@@ -444,11 +461,11 @@ body {
  * Небольшая достилизация таблиц
  */
 .table-striped tbody tr:nth-of-type(2n+1) {
-  background-color: #f7f7f7;
+    background-color: #f7f7f7;
 }
 
 .table-striped tbody td {
-  border-top: none;
+    border-top: none;
 }
 
 
