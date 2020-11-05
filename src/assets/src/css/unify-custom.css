@@ -86,6 +86,21 @@
 }
 
 /**
+ * Base colors
+ */
+.sx-color-white {
+    color: white;
+}
+
+.sx-color-silver {
+    color: silver;
+}
+
+.sx-color-black {
+    color: silver;
+}
+
+/**
  * Кастомные checkbox
  */
 .checkbox {

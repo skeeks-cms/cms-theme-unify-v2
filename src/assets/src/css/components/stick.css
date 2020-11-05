@@ -1,0 +1,94 @@
+.sx-stick .sx-arrows {
+    z-index: 10;
+    position: absolute !important;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.sx-stick .sx-arrows.sx-left {
+    left: 0px;
+}
+
+.sx-stick .sx-arrows.sx-right {
+    right: 0px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-minus-10 {
+    left: -10px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-minus-10 {
+    right: -10px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-minus-20 {
+    left: -20px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-minus-20 {
+    right: -20px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-minus-30 {
+    left: -30px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-minus-30 {
+    right: -30px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-minus-40 {
+    left: -40px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-minus-40 {
+    right: -40px;
+}
+
+
+.sx-stick .sx-arrows.sx-left.sx-plus-10 {
+    left: 10px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-plus-10 {
+    right: 10px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-plus-20 {
+    left: 20px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-plus-20 {
+    right: 20px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-plus-30 {
+    left: 30px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-plus-30 {
+    right: 30px;
+}
+
+.sx-stick .sx-arrows.sx-left.sx-plus-40 {
+    left: 40px;
+}
+
+.sx-stick .sx-arrows.sx-right.sx-plus-40 {
+    right: 40px;
+}
+
+
+.sx-stick .sx-arrows {
+    font-size: 25px;
+}
+
+.slick-transform-off .slick-track {
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+}
