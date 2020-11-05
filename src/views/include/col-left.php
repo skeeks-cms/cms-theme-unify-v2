@@ -50,7 +50,7 @@ if ($model) {
                         <? foreach ($parent->activeChildren as $child) : ?>
 
                             <li class="">
-                                <a class="<?= $child->id == $model->id ? "active g-color-primary" : "sx-main-text-color"; ?> u-link-v5 g-color-primary--hover"
+                                <a class="<?= $child->id == $model->id ? "active g-color-primary" : "sx-main-text-color"; ?> u-link-v5 g-text-underline--none--hover g-color-primary--hover"
                                    href="<?= $child->url; ?>">
                                     <?= $child->name; ?>
                                     <!--<i class="fas fa-leaf float-right align-middle" style="color: gray;"></i>-->
