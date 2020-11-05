@@ -17,7 +17,7 @@ use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
          data-autoplay="true"
          data-speed="7000"
          data-lazy-load="progressive"
-         data-pagi-classes="u-carousel-indicators-v31 g-absolute-centered--x g-bottom-0 text-center g-mb-10"
+         data-pagi-classes="sx-absolute-centered--x text-center list-inline sx-stick-dots g-color-primary"
 
          data-arrows-classes="g-color-primary--hover sx-arrows sx-color-silver"
          data-arrow-left-classes="hs-icon hs-icon-arrow-left sx-left sx-plus-20"

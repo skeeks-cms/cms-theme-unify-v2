@@ -85,20 +85,6 @@
     background-image: none;
 }
 
-/**
- * Base colors
- */
-.sx-color-white {
-    color: white;
-}
-
-.sx-color-silver {
-    color: silver;
-}
-
-.sx-color-black {
-    color: silver;
-}
 
 /**
  * Кастомные checkbox
@@ -520,3 +506,24 @@ body {
 .u-bg-overlay--reverse::after {
     z-index: 1;
 }
+
+
+
+
+
+
+/**
+ * Base colors
+ */
+.sx-color-white {
+    color: white;
+}
+
+.sx-color-silver {
+    color: silver;
+}
+
+.sx-color-black {
+    color: silver;
+}
+

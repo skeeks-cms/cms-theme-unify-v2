@@ -92,3 +92,61 @@
     -ms-transform: none !important;
     transform: none !important;
 }
+
+.sx-stick .sx-stick-dots {
+    font-family: 'Open Sans';
+
+    position: absolute !important;
+      left: 50% !important;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+      -webkit-backface-visibility: hidden;
+
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.sx-stick .sx-stick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+.sx-stick .sx-stick-dots li span {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    /*width: 20px;
+    height: 20px;
+    padding: 5px;*/
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.sx-stick .sx-stick-dots li.slick-active span:before {
+    opacity: 1;
+}
+
+.sx-stick .sx-stick-dots li span:before {
+    font-size: 38px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    font-family: 'Open Sans';
+}
