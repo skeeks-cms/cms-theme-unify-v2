@@ -44,7 +44,7 @@ if ($this->theme->news_list_count_columns == 4) {
                 <h2 class="h3 g-color-white g-font-weight-600 mb-3">
                     <a class="u-link-v5 g-color-white g-color-white--hover g-cursor-pointer" href="<?= $model->url; ?>"><?= $model->name; ?></a>
                 </h2>
-                <div class="g-color-white-opacity-0_7 mb-0"><?= $model->description_short; ?></div>
+                <!--<div class="g-color-white-opacity-0_7 mb-0"><?/*= $model->description_short; */?></div>-->
             </div>
 
             <div class="g-pl-25">

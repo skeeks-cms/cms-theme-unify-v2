@@ -81,6 +81,7 @@
     content: "\e900";
     font-family: "hs-icons" !important;
     font-weight: normal;
+    color: silver;
 }
 
 .filter--group .filter--group--body {

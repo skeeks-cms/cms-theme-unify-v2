@@ -18,9 +18,9 @@
         <? if ($model->createdBy) : ?>
             <li class="list-inline-item">
                 <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%; max-width: 100%;"/>
-                <a href="<?= $model->createdBy->getPageUrl(); ?>" title="<?= $model->createdBy->name; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
-                    <?= $model->createdBy->displayName; ?>
-                </a>
+                <span title="<?= $model->createdBy->shortDisplayName; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
+                    <?= $model->createdBy->shortDisplayName; ?>
+                </span>
             </li>
             <li class="list-inline-item">/</li>
         <? endif; ?>

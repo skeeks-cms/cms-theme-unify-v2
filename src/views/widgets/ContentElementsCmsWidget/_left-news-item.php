@@ -24,10 +24,10 @@
 
     <div class="media-body">
         <h3 class="h6">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>"><?= $model->name; ?></a>
+            <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>"><?= $model->name; ?></a>
         </h3>
 
-        <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
+        <ul class="list-inline g-font-size-12 sx-color-silver">
             <li class="list-inline-item">
                 <?= \Yii::$app->formatter->asDate($model->published_at) ?>
             </li>
