@@ -7,6 +7,8 @@
  */
 /* @var $this yii\web\View */
 ?>
-<div id="contacts-section" class="sx-footer">
+<div class="sx-footer-wrapper">
+    <div id="contacts-section" class="sx-footer">
+    </div>
+    <?= $this->render('@app/views/include/footer-copyright'); ?>
 </div>
-<?= $this->render('@app/views/include/footer-copyright'); ?>

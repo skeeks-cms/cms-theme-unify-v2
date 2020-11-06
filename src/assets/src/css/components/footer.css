@@ -1,6 +1,8 @@
-.sx-social-list {
-    
+.sx-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
+
 .sx-social-list a {
     box-shadow:rgba(0, 0, 0, 0.1) 0px 6px 15px -6px;
     height:32px;
