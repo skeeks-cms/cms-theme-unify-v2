@@ -255,6 +255,12 @@ body {
 }
 
 
+.form-control:focus {
+    outline: 0 none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 .form-control {
     border-color: #eee;
     padding: 10px;
@@ -506,10 +512,6 @@ body {
 .u-bg-overlay--reverse::after {
     z-index: 1;
 }
-
-
-
-
 
 
 /**
