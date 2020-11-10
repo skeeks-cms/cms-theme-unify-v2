@@ -237,7 +237,13 @@ body {
 
 .sx-breadcrumbs-wrapper i {
     font-size: 10px;
+    margin-left: 7px;
 }
+
+.sx-breadcrumbs-wrapper .list-inline-item {
+    margin-right: 7px;
+}
+
 
 
 .sx-list-short-info {
@@ -528,4 +534,6 @@ body {
 .sx-color-black {
     color: silver;
 }
+
+
 

@@ -19,7 +19,7 @@ if (!isset($isShowLast)) {
 }
 
 ?>
-<section class="g-pb-0">
+<section>
     <div class="g-bg-cover__inner sx-breadcrumbs-wrapper">
         <? if (count(\Yii::$app->breadcrumbs->parts) > 1) : ?>
             <? $count = count(\Yii::$app->breadcrumbs->parts); ?>
@@ -36,9 +36,9 @@ if (!isset($isShowLast)) {
                             </li>
                         <? endif; ?>
                     <? else : ?>
-                        <li class="list-inline-item g-mr-7" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="<?= $data['url']; ?>" class="u-link-v5 sx-main-text-color g-color-primary--hover g-text-underline--none--hover" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
-                            <i class="hs-icon hs-icon-arrow-right g-ml-7"></i>
+                        <li class="list-inline-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="<?= $data['url']; ?>" class="sx-main-text-color g-color-primary--hover g-text-underline--none--hover" title="<?= $data['name']; ?>"><?= $data['name']; ?></a>
+                            <i class="hs-icon hs-icon-arrow-right"></i>
                             <meta itemprop="name" content="<?= $data['name']; ?>">
                             <meta itemprop="position" content="<?= $counter; ?>" />
                         </li>
@@ -47,7 +47,7 @@ if (!isset($isShowLast)) {
             </ul>
         <? endif; ?>
         <? if ($isShowH1) : ?>
-            <header class="g-mb-0">
+            <header class="mb-0">
                 <h1 class="sx-breadcrumbs-h1"><?= $title; ?></h1>
             </header>
         <? endif; ?>
