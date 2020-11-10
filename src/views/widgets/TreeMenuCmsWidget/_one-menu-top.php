@@ -24,7 +24,7 @@ if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTr
 }
 
 ?>
-<li class="nav-item g-mx-20--lg <?= $activeClass; ?> <?= ($hasChildrens) ? ' hs-has-sub-menu' : ''; ?>" data-animation-in="fadeIn" data-animation-out="fadeOut">
+<li class="nav-item <?= $activeClass; ?> <?= ($hasChildrens) ? ' hs-has-sub-menu' : ''; ?>" data-animation-in="fadeIn" data-animation-out="fadeOut">
     <? if ($hasChildrens) : ?>
         <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" id="nav-link-<?= $model->id; ?>" class="nav-link px-0" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-<?= $model->id; ?>">
             <?= $model->name; ?>

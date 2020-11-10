@@ -23,6 +23,11 @@
 /**
  * Unify custom css
  */
+
+.navbar-brand {
+    padding: 0px;
+}
+
 .navbar-brand .sx-logo-text {
     bottom: 7px;
     /*letter-spacing: 3px;*/
@@ -60,8 +65,8 @@
     min-height: 16px;
     min-width: 16px;
     position: absolute;
-    right: -2px;
-    top: -5px;
+    right: -6px;
+    top: -9px;
     text-align: center;
     text-rendering: optimizelegibility;
     text-size-adjust: 100%;
@@ -93,6 +98,7 @@
 .sx-menu-top {
     font-weight: 600;
     text-transform: uppercase;
+    padding: 10px;
 }
 
 .sx-menu-top > li {
@@ -114,15 +120,6 @@
     }
 }
 
-.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-    font-size: 1.9rem !important;
-}
-
-@media (min-width: 1024px) {
-    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-        font-size: 1.4rem !important;
-    }
-}
 
 /* Поднять меню на планшете */
 @media (max-width: 1024px) AND (min-width: 768px) {
@@ -194,11 +191,15 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 .sx-header-menu-right .sx-header-menu-item i {
     font-size: 24px;
 }
+.sx-header-menu-right .sx-header-menu-item .sx-icon-wrapper {
+    font-size: 24px;
+}
 
 .sx-header-menu-right .sx-header-menu-item {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .sx-header-menu-right .sx-header-menu-item:last-child {
     margin-right: 0px;
 }
+

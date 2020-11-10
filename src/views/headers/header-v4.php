@@ -24,7 +24,18 @@ JS
 );
 
 ?>
-<header id="js-header" class="u-shadow-v19 u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
+<header id="js-header" class="
+    u-header
+    <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?>
+    <?= $this->theme->is_header_toggle_sections ? "u-header--toggle-section" : ""; ?>
+    <?= $this->theme->header_shadow; ?>
+    u-header--change-appearance
+ "
+        data-header-fix-moment="50"
+        data-header-fix-effect="slide"
+>
+    
+
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
     <div class="u-header__section u-header__section--hidden u-header__section--dark">
@@ -135,30 +146,13 @@ JS
         </div>
     </div>
 
-    <div class="u-header__section u-header__section--dark g-py-10 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-py-0">
+    <div class="u-header__section sx-main-menu-wrapper sx-header-not-scrolled"
+         data-header-fix-moment-exclude="sx-header-not-scrolled"
+         data-header-fix-moment-classes="sx-header-not-scrolled"
+    >
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container sx-container">
-                <!-- Responsive Toggle Button -->
-                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false"
-                        aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-                      <span class="hamburger hamburger--slider">
-
-                    <span class="hamburger-box">
-
-                      <span class="hamburger-inner"></span>
-                      </span>
-                      </span>
-                </button>
-                <!-- End Responsive Toggle Button -->
-
-                <!-- Logo -->
-                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block d-sm-none">
-                    <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                </a>
-                <!-- End Logo -->
-
-                <!-- Navigation -->
-                <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--sm sx-main-menu" id="navBar">
+                <div class="collapse navbar-collapse align-items-center" id="navBar">
                     <?php
                     $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('menu-top');
                     $widget->descriptor->name = 'Главное верхнее меню';
@@ -166,35 +160,10 @@ JS
                     $widget::end();
                     ?>
                 </div>
-                <!-- End Navigation -->
-
                 <div class="sx-header-menu-right">
                     <?= @$content; ?>
-
                     <? if ($this->theme->is_header_auth) : ?>
-                        <div class="sx-header-menu-item sx-header-auth">
-                            <? if (\Yii::$app->user->isGuest) : ?>
-                                <a class="g-text-underline--none--hover" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">
-                                    <i class="far fa-user"></i>
-                                    <span class="">
-                                    <span class="g-hidden-sm-down">Вход</span>
-                                </span>
-                                </a>
-                            <? else : ?>
-
-                                <!-- Top User -->
-                                <a class="g-text-underline--none--hover" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/update']) ?>">
-                                <span class="g-pos-rel">
-                                    <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
-                                    <img class="rounded-circle" style="width: 30px; height: 30px;"
-                                         src="<?= \Yii::$app->user->identity->avatarSrc ? \Yii::$app->user->identity->avatarSrc : \skeeks\cms\helpers\Image::getCapSrc(); ?>" alt="Image description">
-                                </span>
-                                    <span class="">
-                                    <span class="g-hidden-sm-down">Профиль</span>
-                                </span>
-                                </a>
-                            <? endif; ?>
-                        </div>
+                        <?php echo $this->render("@app/views/headers/_header-auth"); ?>
                     <? endif; ?>
                 </div>
             </div>
