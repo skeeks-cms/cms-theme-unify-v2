@@ -40,6 +40,15 @@
     height: 39px;
 }
 
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: auto;
+        width: 120px;
+    }
+}
+
+
+
 .sx-header-phone-wrapper {
     width: 30px;
     height: 30px;
@@ -203,3 +212,14 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     margin-right: 0px;
 }
 
+
+@media (max-width: 768px) {
+    .sx-header-menu-right .sx-header-menu-item {
+        margin-right: 10px;
+    }
+}
+
+
+.sx-main-menu-wrapper .hamburger-inner, .sx-main-menu-wrapper .hamburger-inner:after, .sx-main-menu-wrapper .hamburger-inner:before {
+    height: 2px;
+}

@@ -140,13 +140,11 @@ if ($models) {
                 <div class="float-right sx-header-menu-right">
                     <!-- End Logo -->
                     <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
-                        <div class="sx-header-menu-item">
-                            <a href="#" class="sx-search-btn"><i class="fas fa-search" aria-hidden="true"></i></a>
-                        </div>
+                        <?php echo $this->render("@app/views/headers/_header-search"); ?>
                     <? endif; ?>
                     <?= @$content; ?>
                     <!-- Responsive Toggle Button -->
-                    <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-pt-10 g-valign-middle">
+                    <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
                             <span class="hamburger">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
@@ -158,44 +156,7 @@ if ($models) {
             </div>
         </nav>
     </div>
-    <? if (\Yii::$app->view->theme->is_show_search_block) :
-        $this->registerJs(<<<JS
-    
-               $('body').on('click','.sx-search-btn', function() {
-                    if ($(this).hasClass('sx-search-form-close')){
-                        $('.sx-search-form').animate({top: '-100px'});
-                        $('.sx-search-btn').removeClass('sx-search-form-close');
-                        return false;
-                    }
-                    else {
-                        $('.sx-search-form').animate({top: '100%'});
-                        $('.sx-search-btn').addClass('sx-search-form-close');
-                        return false;
-                    }
-                   
-                });
-    
-JS
-        );
 
-        ?>
-        <div class="sx-search-form" style="top: -100px;">
-            <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" class="g-mb-0">
-                <div class="container">
-                    <div class="row">
-                        <div class="input-group">
-                            <input placeholder="<?= Yii::t("skeeks/unify", "Search"); ?>..." type="text" class="form-control rounded-0 form-control-md" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                   value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
-                            <div class="input-group-append">
-                                <button class="btn btn-md btn-secondary rounded-0 sx-btn-search" type="submit"><?= Yii::t("skeeks/unify", "Find"); ?></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </form>
-        </div>
-    <? endif; ?>
 </header>
 
 <!-- End Header -->
