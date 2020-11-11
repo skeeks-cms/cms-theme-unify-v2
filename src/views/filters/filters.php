@@ -127,7 +127,9 @@ $widget = $this->context;
 <!--js-scrollbar g-height-280-->
 <div class="sx-filters-block">
     <div class="sx-filters-block-header">
-        <a href="#" class="sx-mobile-filters-hide">&#65794;</a>
+        <a href="#" class="sx-mobile-filters-hide sx-main-text-color">
+            <i class="hs-icon hs-icon-close"></i>
+        </a>
         <div class="h5 u-heading-v3__title sx-col-left-title g-brd-primary">
             <?= Yii::t('skeeks/unify', 'Filters'); ?>
         </div>

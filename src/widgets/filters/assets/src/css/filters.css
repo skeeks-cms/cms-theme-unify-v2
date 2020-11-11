@@ -419,7 +419,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         width: 100%;
         background: white;
         height: 100%;
-        padding: 10px 20px;
+        padding: 10px 0px;
         left: -100%;
         top: 0;
         overflow: auto;
@@ -427,8 +427,6 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 
     .sx-mobile-filters-hide {
         float: right;
-        font-size: 2rem;
-        line-height: 1rem;
     }
 
     .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort {
