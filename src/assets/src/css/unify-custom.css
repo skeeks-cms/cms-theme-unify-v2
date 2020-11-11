@@ -537,3 +537,27 @@ body {
 
 
 
+/**
+ * Для мобильной версии
+ */
+@media (max-width: 768px) {
+    .sx-content-col-main {
+        padding-top: 5px;
+        /*padding-left: 10px;
+        padding-right: 10px;*/
+    }
+
+    .sx-breadcrumbs-wrapper .list-inline {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .sx-breadcrumbs-h1 {
+        line-height: 1;
+    }
+
+    sx-product-card .sx-product-card--info {
+        padding: 0 5px 10px 5px;
+    }
+}
+
