@@ -33,7 +33,7 @@
         "skeeks/yii2-ajax-pager": "^2.0",
         "skeeks/yii2-mmenu-widget": "^2.0",
 
-        "bower-asset/vanilla-lazyload": "^12.4"
+        "bower-asset/vanilla-lazyload": "^17"
 	},
     "autoload": {
         "psr-4": {
