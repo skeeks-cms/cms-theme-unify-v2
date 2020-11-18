@@ -28,8 +28,8 @@
         <? endif; ?>
 
             <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-py-50 g-px-20">
-                <h3 class="text-uppercase"><?= $model->name; ?>
-                </h3>
+                <div class="h3"><?= $model->name; ?>
+                </div>
                 <hr class="g-brd-3 g-brd-white g-width-30 g-my-20">
                 <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase" href="<?= $model->url; ?>">Смотреть</a>
             </div>
