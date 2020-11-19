@@ -54,7 +54,7 @@
                                     'model' => $model,
                                 ]); ?>
                             <? endif; ?>
-                            <div class="g-color-gray-dark-v1 g-font-size-16 sx-content">
+                            <div class="sx-content">
                                 <?= $model->description_short; ?>
                             </div>
                             <?

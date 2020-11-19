@@ -61,7 +61,7 @@ if (@$isShowMainImage !== false) {
                                     'model' => $model,
                                 ]) ?>
                             <? endif; ?>
-                            <div class="g-color-gray-dark-v1 g-font-size-16 sx-content" itemscope itemtype="http://schema.org/NewsArticle">
+                            <div class="sx-content" itemscope itemtype="http://schema.org/NewsArticle">
                                 <!-- Микроразметка новости-статьи -->
                                 <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?= $model->getUrl(true); ?>"/>
                                 <meta itemprop="headline" content="<?= $model->seoName; ?>">
