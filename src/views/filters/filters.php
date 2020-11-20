@@ -29,6 +29,12 @@ new sx.classes.filters.SliderRange();
             this.JqueryForm = $("#sx-filters-form");
             this.jFilterFormWrapper = $(".sx-filters-form");
             
+            $('.sx-filter-action').on('click', function()
+            {
+                $($(this).data('filter')).val($(this).data('filter-value')).change();
+                return false;
+            });
+                        
             if ($(".form-group", this.JqueryForm).length > 0)
             {
                 $("button", self.JqueryForm).fadeIn();
@@ -59,7 +65,7 @@ new sx.classes.filters.SliderRange();
                 
                 var jBtn = $("<button>", {
                     'href' : '#', 
-                    'class' : 'btn btn-default btn-sm g-mr-10 g-mb-10',
+                    'class' : 'btn btn-default btn-sm sx-fast-filters-btn',
                     'title' : jOption.closest(".filter--group").find('header').text(),
                 })
                     .append(text)
@@ -88,13 +94,13 @@ new sx.classes.filters.SliderRange();
                 var text = "от " + new Intl.NumberFormat('ru-RU').format(From) + " до " + new Intl.NumberFormat('ru-RU').format(To) + $(this).data('postfix'); 
                 
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'fas fa-times',
+                    'class' : 'hs-icon hs-icon-close',
                     'title' : 'Отменить выбранную опцию',
                 });
                 
                 var jBtn = $("<button>", {
                     'href' : '#', 
-                    'class' : 'btn btn-default btn-sm g-mr-10 g-mb-10',
+                    'class' : 'btn btn-default btn-sm sx-fast-filters-btn',
                     'title' : jOption.closest(".filter--group").find('header').text(),
                 })
                     .append(text)

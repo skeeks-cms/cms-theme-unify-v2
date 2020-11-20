@@ -1,51 +1,3 @@
-/* ==========================================================================
-   Filter
-   ========================================================================== */
-.filter {
-    margin: 0 0 35px;
-}
-
-.filter .filter--header {
-    zoom: 1;
-    *zoom: 1;
-    padding: 0 0 20px 14px;
-}
-
-.filter .filter--header:before,
-.filter .filter--header:after {
-    content: " ";
-    display: table;
-}
-
-.filter .filter--header:after {
-    clear: both;
-}
-
-.filter .filter--header h1,
-.filter .filter--header h2,
-.filter .filter--header h3,
-.filter .filter--header h4,
-.filter .filter--header h5,
-.filter .filter--header h6 {
-    float: left;
-    line-height: 28px;
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.333333em;
-    text-transform: uppercase;
-}
-
-.filter .filter--header .btn {
-    float: right;
-}
-
-.filter .filter--action {
-    padding: 0 25px 0 35px;
-}
-
-.filter .irs {
-    margin-top: -2px;
-}
 
 .filter--group {
     border-top: solid 1px #f1f1f1;
@@ -225,165 +177,10 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     margin-bottom: 5px;
 }
 
-
-/* ==========================================================================
-   Sorting
-   ========================================================================== */
-.sorting {
-    /*zoom: 1;
-    *zoom: 1;
-    font-size: 1.083333em;
-    line-height: 22px;*/
-    /*margin: 0 0 10px;*/
-}
-
-.sorting:before,
-.sorting:after {
-    content: " ";
-    display: table;
-}
-
-.sorting:after {
-    clear: both;
-}
-
-.sorting .sort {
-    float: left;
-    zoom: 1;
-    *zoom: 1;
-    overflow: hidden;
-    min-width: 65%;
-}
-
-.sorting .sort:before,
-.sorting .sort:after {
-    content: " ";
-    display: table;
-}
-
-.sorting .sort:after {
-    clear: both;
-}
-
-.sorting .sort .lbl,
-.sorting .sort .vals {
-    float: left;
-    zoom: 1;
-    *zoom: 1;
-}
-
-.sorting .sort .lbl:before,
-.sorting .sort .vals:before,
-.sorting .sort .lbl:after,
-.sorting .sort .vals:after {
-    content: " ";
-    display: table;
-}
-
-.sorting .sort .lbl:after,
-.sorting .sort .vals:after {
-    clear: both;
-}
-
-.sorting .sort .vals a:hover {
-    text-decoration: none;
-}
-
-.sorting .sort .vals a {
-    float: left;
-    margin: 3px 9px;
-    line-height: 16px;
-    color: #131313;
-    border-bottom: dashed 1px #8a8a8a;
-    position: relative;
-    white-space: nowrap;
-    font-size: 13px;
-}
-
-.sorting .sort .vals a:before {
-    content: '';
-    display: block;
-    height: 10px;
-    width: 0;
-    border-left: solid 2px #dfdfdf;
-    position: absolute;
-    left: -11px;
-    top: 50%;
-    margin-top: -5px;
-}
-
-.sorting .sort .vals a:first-child:before {
-    display: none;
-}
-
-.sorting .sort .vals a:hover {
-    color: #ed1b24;
-}
-
-.sorting .sort .vals a.active {
-    /*font-weight: 700;*/
-    color: #ed1b24;
-}
-
-.sorting .sort .vals a.active:after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 0 3px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 3px 3px 0 3px;
-    border-color: #ed1b24 transparent transparent transparent;
-}
-
-.sorting .sort .vals a.active.up:after {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.sorting .in-stock {
-    float: right;
-    margin-top: 4px !important;
-    margin-bottom: 0;
-}
-
-.sorting .in-stock label {
-    font-weight: 400 !important;
-    font-size: 13px !important;
-}
-
-@media (max-width: 767px) {
-    .sorting .sort,
-    .sorting .in-stock {
-        float: none;
-    }
-}
-
-@media (max-width: 450px) {
-    .sx-category-list-small img {
-        max-width: 100%;
-    }
-}
-
-
 /* Фильтры для мобильной версии. Показываются по клику поверх всего содержимого окна.  */
 /* Сортировка */
 @media (max-width: 766px) {
 
-    .sorting {
-        border: 1px solid #000;
-        border-top: 0;
-        /*position: absolute;*/
-        left: 15px;
-        right: 15px;
-        top: 100%;
-        background: #fff;
-        z-index: 500;
-        border-radius: .25rem;
-    }
 
     .sx-filters-form .lbl {
         display: none;
@@ -392,17 +189,6 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     .sorting.sx-filters-form {
         display: none;
 
-    }
-
-    .sorting .sx-filter-action, .sorting .sort .vals a {
-        display: block;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        float: none;
-    }
-
-    .sorting .checkbox {
-        padding-left: 10px;
     }
 }
 
@@ -520,4 +306,14 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 
 .sx-btn-sort-select, .sx-btn-sort-select:hover {
     border: 1px solid silver;
+}
+
+
+.sx-inline-filter {
+    display: inline-block;
+}
+
+.sx-fast-filters-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
