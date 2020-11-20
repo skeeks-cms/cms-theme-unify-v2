@@ -458,6 +458,21 @@ body {
 }
 
 
+.sx-btn-white {
+  color: #555;
+  background-color: #fff;
+}
+
+.sx-btn-white:hover, .sx-btn-white.active {
+  border-color: white;
+  background-color: white;
+}
+
+.sx-btn-white:hover, .sx-btn-white:focus, .sx-btn-white.active {
+  color: #555;
+}
+
+
 /**
  * Небольшая достилизация таблиц
  */
@@ -537,6 +552,17 @@ body {
 }
 
 
+
+.sx-icon-arrow-down--after::after {
+    content: "\e900";
+    font-family: "hs-icons" !important;
+    border: none;
+    margin-top: 0;
+    vertical-align: 0px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-left: .255em;
+}
 
 /**
  * Для мобильной версии

@@ -407,8 +407,17 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 }
 
 /* Блок фильтров */
-.sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort {
+.sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort, .sx-mobile-filters-block {
     display: none;
+}
+
+.sx-mobile-filters-block {
+    background: white;
+    z-index: 3;
+}
+
+.sx-mobile-filters-block .sx-mobile-filters-block--inner  {
+    margin: 10px 0;
 }
 
 @media (max-width: 766px) {
@@ -429,12 +438,12 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         float: right;
     }
 
-    .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort {
+    .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort, .sx-mobile-filters-block {
         display: block;
     }
 
     .sx-btn-sort, .sx-btn-filter {
-        border: 1px solid #000;
+        border: 1px solid silver;
     }
 }
 
@@ -507,4 +516,8 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 }
 .sx-filters-selected-wrapper i:hover {
     opacity: 0.5;
+}
+
+.sx-btn-sort-select, .sx-btn-sort-select:hover {
+    border: 1px solid silver;
 }

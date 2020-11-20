@@ -38,6 +38,7 @@ class UnifyMinAsset extends UnifyAsset
         UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
 
+        UnifyIconHsAsset::class,
         UnifyCoreAsset::class,
     ];
 
