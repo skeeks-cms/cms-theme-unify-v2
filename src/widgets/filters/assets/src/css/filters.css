@@ -230,10 +230,10 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
    Sorting
    ========================================================================== */
 .sorting {
-    zoom: 1;
+    /*zoom: 1;
     *zoom: 1;
     font-size: 1.083333em;
-    line-height: 22px;
+    line-height: 22px;*/
     /*margin: 0 0 10px;*/
 }
 

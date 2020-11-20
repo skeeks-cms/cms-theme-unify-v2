@@ -12,6 +12,7 @@
     bottom: auto;
     top: 0;
 }
+
 .u-header--sticky-top, .u-header--sticky-bottom {
     position: fixed;
 }
@@ -43,10 +44,10 @@
 @media (max-width: 768px) {
     .navbar-brand img {
         height: auto;
-        width: 120px;
+        max-width: 120px;
+        max-height: 45px;
     }
 }
-
 
 
 .sx-header-phone-wrapper {
@@ -56,7 +57,7 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 50%;
-        text-align: center;
+    text-align: center;
 }
 
 .sx-header-phone-wrapper > i {
@@ -68,6 +69,7 @@
     transform: translateY(-50%);
     z-index: 2;
 }
+
 .sx-badge {
     line-height: 16px;
     font-size: 10px;
@@ -83,36 +85,37 @@
 }
 
 .u-shadow-v19 {
-  -webkit-box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 
 .hs-has-mega-menu:not(.hs-mega-menu-opened) *,
 .hs-has-sub-menu:not(.hs-sub-menu-opened) * {
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 .hs-has-mega-menu:not(.hs-mega-menu-opened) *::before, .hs-has-mega-menu:not(.hs-mega-menu-opened) *::after,
 .hs-has-sub-menu:not(.hs-sub-menu-opened) *::before,
 .hs-has-sub-menu:not(.hs-sub-menu-opened) *::after {
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 
 .sx-menu-top {
     font-weight: 600;
     text-transform: uppercase;
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .sx-menu-top > li {
     margin-left: 20px;
     margin-right: 20px;
+    padding: 10px 0;
 }
 
 
@@ -200,6 +203,7 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 .sx-header-menu-right .sx-header-menu-item i {
     font-size: 24px;
 }
+
 .sx-header-menu-right .sx-header-menu-item .sx-icon-wrapper {
     font-size: 24px;
 }

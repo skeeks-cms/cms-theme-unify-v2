@@ -30,7 +30,7 @@ if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTr
             <?= $model->name; ?>
         </a>
 
-        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-<?= $model->id; ?>" aria-labelledby="nav-link-<?= $model->id; ?>">
+        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-min-width-220" id="nav-submenu-<?= $model->id; ?>" aria-labelledby="nav-link-<?= $model->id; ?>">
             <? 
             $childQuery = $model->getActiveChildren();
             $widget->initSorting($childQuery);
