@@ -106,9 +106,12 @@
 }
 
 
+.sx-menu-top > li > a {
+    text-transform: uppercase;
+}
 .sx-menu-top {
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
     /*padding: 10px;*/
 }
 
