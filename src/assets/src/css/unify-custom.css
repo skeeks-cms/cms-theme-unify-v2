@@ -561,16 +561,19 @@ body {
 }
 
 
+.dropdown-toggle::before, .sx-icon-arrow-down--after::before {
+  display: none;
+}
 
-.sx-icon-arrow-down--after::after {
-    content: "\e900";
-    font-family: "hs-icons" !important;
-    border: none;
-    margin-top: 0;
-    vertical-align: 0px;
-    font-size: 0.8em;
-    display: inline-block;
-    margin-left: .255em;
+.dropdown-toggle::after, .sx-icon-arrow-down--after::after {
+  content: "\e900";
+  position: relative;
+  top: 0.21429rem;
+  font-family: "hs-icons" !important;
+  font-size: 10px;
+  display: inline;
+  border: none;
+  margin-left: 0.5rem;
 }
 
 /**
