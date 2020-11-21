@@ -49,7 +49,7 @@ $widget = $this->context;
 
         $name = $rp->name;
         if ($rp->cms_measure_code) {
-            $name = $rp->name . ", " . $rp->cmsMeasure->symbol;
+            $name = $rp->name;
         }
         ?>
         <? if ($min != $max
@@ -60,13 +60,13 @@ $widget = $this->context;
                 <header class="filter--group--header">
                     <?= $name; ?>
                     <? if ($rp->hint) : ?>
-                        <i class="far fa-question-circle" title="<?= $rp->hint; ?>"></i>
+                        <i class="far fa-question-circle" data-toggle='tooltip' title="<?= $rp->hint; ?>"></i>
                     <? endif; ?>
                 </header>
                 <div class="filter--group--body sort-slider sx-project-slider-skin">
                     <div class="filter--group--inner">
                         <div class="sort-slider__row">
-                            <div class="sort-slider__input">
+                            <div class="sort-slider__input my-auto">
                                 <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
                                     'id'    => $id.'-from',
                                     'value' => $val1 == $min ? "" : $val1,
@@ -74,8 +74,8 @@ $widget = $this->context;
                                     'class' => 'sx-from form-control',
                                 ])->label(false); ?>
                             </div>
-                            <span class="sort-slider__devide">—</span>
-                            <div class="sort-slider__input">
+                            <span class="sort-slider__devide my-auto">—</span>
+                            <div class="sort-slider__input my-auto">
                                 <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
                                     'id'    => $id.'-to',
                                     'value' => $val2 == $max ? "" : $val2,
@@ -83,6 +83,9 @@ $widget = $this->context;
                                     'class' => 'sx-to form-control',
                                 ])->label(false); ?>
                             </div>
+                            <?php if($rp->cmsMeasure) : ?>
+                                <span class="sort-slider__measure my-auto"><?php echo $rp->cmsMeasure->symbol; ?></span>
+                            <?php endif; ?>
                         </div>
 
                         <input type="text"
@@ -149,7 +152,7 @@ $widget = $this->context;
 
                 $info = '';
                 if ($rp->hint) {
-                    $info = "<i class='far fa-question-circle' title='{$rp->hint}'></i>";
+                    $info = "<i class='far fa-question-circle' data-toggle='tooltip' title='{$rp->hint}'></i>";
                 }
 
                 $searchOptions = "";

@@ -240,7 +240,9 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 
 .sort-slider__devide {
     margin: 0 6px;
-    min-width: 13px;
+}
+.sort-slider__measure {
+    margin-left: 6px;
 }
 
 
@@ -318,6 +320,13 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     margin-bottom: 10px;
 }
 
+.sort-slider__row .form-group{
+    margin-bottom: 0px;
+}
+
+.sort-slider__row {
+    margin-bottom: 14px;
+}
 /**
  * Горизонтальные фильтры в одну строку
  */
