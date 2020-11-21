@@ -317,3 +317,22 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+/**
+ * Горизонтальные фильтры в одну строку
+ */
+.sx-filters-form .dropdown-menu {
+    min-width: 250px;
+}
+.sx-filters-block .dropdown-menu {
+    padding: 10px;
+}
+.sx-inline-filter .filter--group .filter--group--body {
+    display: block;
+}
+.sx-inline-filter .filter--group {
+    border: 0px;
+}
+.sx-inline-filter .checkbox:last-child {
+    margin-bottom: 0px;
+}
