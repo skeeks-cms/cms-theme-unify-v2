@@ -337,9 +337,9 @@ body {
 
 }
 
-.u-btn-primary, a.g-bg-primary {
+/*.u-btn-primary, a.g-bg-primary {
     color: #fff !important;
-}
+}*/
 
 .sx-head-short-description {
     overflow: hidden;
@@ -381,9 +381,9 @@ body {
     margin-bottom: 0px;
 }
 
-.hamburger {
+/*.hamburger {
     padding: 5px !important;
-}
+}*/
 
 
 @media (max-width: 766px) {
@@ -435,38 +435,47 @@ body {
     box-shadow: none;
 }
 
+.btn-default {
+    background: #fafafa;
+    border-color: #e6e6e6;
+}
+.btn-default:hover {
+    background: #f5f5f5;
+}
 
-/* Button Sizes
-------------------------------------*/
-/* Extra Small */
+
+/*!* Button Sizes
+------------------------------------*!
+!* Extra Small *!
 .btn-xs {
     line-height: 1.4;
     padding: 0.14286rem 0.5rem;
     font-size: 0.78571rem;
 }
 
-/* Medium */
+!* Medium *!
 .btn-md {
     line-height: 1.4;
     padding: 0.57143rem 1.42857rem;
     font-size: 1.07143rem;
 }
 
-/* Extra Large */
+!* Extra Large *!
 .btn-xl {
     line-height: 1.4;
     padding: 0.92857rem 1.85714rem;
     font-size: 1.28571rem;
 }
 
-/* Extramly Large */
+!* Extramly Large *!
 .btn-xxl {
     line-height: 1.4;
     padding: 1.07143rem 2.14286rem;
     font-size: 1.5rem;
-}
+}*/
 
 
+/*
 .sx-btn-white {
   color: #555;
   background-color: #fff;
@@ -480,6 +489,9 @@ body {
 .sx-btn-white:hover, .sx-btn-white:focus, .sx-btn-white.active {
   color: #555;
 }
+*/
+
+
 
 
 /**
@@ -556,9 +568,6 @@ body {
     color: silver;
 }
 
-.sx-color-black {
-    color: silver;
-}
 
 
 .dropdown-toggle::before, .sx-icon-arrow-down--after::before {

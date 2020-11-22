@@ -1552,6 +1552,13 @@ h6,
     color: white;
 }
 
+
+.sx-inline-filter.sx-filter-selected .btn {
+    background-color: #e1082c;
+    border-color: #e1082c;
+    color: white;
+}
+
 /**
  * Слайдер
  */

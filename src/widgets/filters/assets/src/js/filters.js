@@ -261,7 +261,7 @@
                 
                 var jBtn = $("<button>", {
                     'href' : '#', 
-                    'class' : 'btn btn-default btn-sm sx-fast-filters-btn',
+                    'class' : 'btn btn-sm sx-fast-filters-btn',
                     'title' : jOption.closest(".filter--group").find('header').text(),
                 })
                     .append(text)
@@ -296,7 +296,7 @@
                 
                 var jBtn = $("<button>", {
                     'href' : '#', 
-                    'class' : 'btn btn-default btn-sm sx-fast-filters-btn',
+                    'class' : 'btn btn-sm sx-fast-filters-btn',
                     'title' : jOption.closest(".filter--group").find('header').text(),
                 })
                     .append(text)
