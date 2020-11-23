@@ -231,15 +231,6 @@ body {
 }
 
 
-@media (min-width: 768px) {
-    .sx-category-list-small {
-        border-bottom: solid 1px #eee;
-        border-top: solid 1px #eee;
-    }
-}
-
-
-
 /**
  * Хлебные крошки
  */
