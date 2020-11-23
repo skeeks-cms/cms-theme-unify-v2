@@ -221,11 +221,23 @@ body {
  * Маленькие подкатегории
  */
 
+.sx-category-list-small li:hover img {
+    opacity: 0.9;
+}
 .sx-category-list-small img {
     /*max-width: 120px;
     max-height: 100px;*/
     height: 100px;
 }
+
+
+@media (min-width: 768px) {
+    .sx-category-list-small {
+        border-bottom: solid 1px #eee;
+        border-top: solid 1px #eee;
+    }
+}
+
 
 
 /**
@@ -242,6 +254,10 @@ body {
 
 .sx-breadcrumbs-wrapper .list-inline-item {
     margin-right: 7px;
+}
+
+.sx-breadcrumbs-wrapper .list-inline-item span {
+    opacity: 0.6;
 }
 
 
@@ -444,35 +460,35 @@ body {
 }
 
 
-/*!* Button Sizes
-------------------------------------*!
-!* Extra Small *!
+/* Button Sizes
+------------------------------------*/
+/* Extra Small */
 .btn-xs {
     line-height: 1.4;
     padding: 0.14286rem 0.5rem;
     font-size: 0.78571rem;
 }
 
-!* Medium *!
+/* Medium */
 .btn-md {
     line-height: 1.4;
     padding: 0.57143rem 1.42857rem;
     font-size: 1.07143rem;
 }
 
-!* Extra Large *!
+/* Extra Large */
 .btn-xl {
     line-height: 1.4;
     padding: 0.92857rem 1.85714rem;
     font-size: 1.28571rem;
 }
 
-!* Extramly Large *!
+/* Extramly Large */
 .btn-xxl {
     line-height: 1.4;
     padding: 1.07143rem 2.14286rem;
     font-size: 1.5rem;
-}*/
+}
 
 
 /*
