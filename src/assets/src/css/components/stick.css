@@ -9,6 +9,9 @@
     cursor: pointer;
 }
 
+
+
+
 .sx-stick .sx-arrows.sx-left {
     left: 0px;
 }
@@ -149,4 +152,19 @@
     -moz-osx-font-smoothing: grayscale;
     color: white;
     font-family: 'Open Sans';
+}
+
+
+.sx-stick.slick-vertical .sx-arrows {
+    transform: translateX(-50%);
+    top: auto !important;
+    left: 50% !important;
+    right: auto !important;
+}
+
+.sx-stick.slick-vertical .sx-arrows.sx-left {
+    top: 0px !important;
+}
+.sx-stick.slick-vertical .sx-arrows.sx-right {
+    bottom: 0px !important;
 }
