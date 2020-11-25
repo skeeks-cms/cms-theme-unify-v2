@@ -193,7 +193,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 }
 
 /* Блок фильтров */
-.sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort, .sx-mobile-filters-block {
+.sx-mobile-filters-hide, .sx-mobile-filters-block {
     display: none;
 }
 
@@ -224,12 +224,16 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
         float: right;
     }
 
-    .sx-btn-filter, .sx-mobile-filters-hide, .sx-btn-sort, .sx-mobile-filters-block {
+    .sx-mobile-filters-hide, .sx-mobile-filters-block {
         display: block;
     }
 
     .sx-btn-sort, .sx-btn-filter {
         border: 1px solid silver;
+    }
+    .sx-mobile-filters-block .sx-mobile-filters-block--inner
+    {
+        background: white;
     }
 }
 
