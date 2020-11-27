@@ -1,3 +1,8 @@
+
+.h1, h1 {
+    font-size: 1.8rem;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -84,6 +89,25 @@ form.sx-form-admin .tab-content {
     margin-right: 6px;
 }
 
+.sx-nav-model {
+    white-space: nowrap;
+    flex-wrap: initial;
+    /*white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: initial;*/
+}
+.sx-nav-model-wrapper .mCustomScrollBox.mCS-minimal+.mCSB_scrollTools+.mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.sx-nav-model-wrapper .mCustomScrollBox.mCS-minimal+.mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.sx-nav-model-wrapper .mCustomScrollBox.mCS-minimal-dark+.mCSB_scrollTools+.mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.sx-nav-model-wrapper .mCustomScrollBox.mCS-minimal-dark+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    bottom: -10px;
+    margin: 0 0px;
+    height: 15px;
+}
+.sx-nav-model-wrapper .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {
+    height: 6px;
+}
 /**
  * Переопределение стилей таблиц
  */
@@ -689,7 +713,7 @@ pre {
 
 
 .sx-content-wrapper, .sx-breadcrumbs-wrapper {
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 /**

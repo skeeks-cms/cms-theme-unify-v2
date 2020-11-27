@@ -82,6 +82,7 @@ $theme = $this->theme;
                                         <?= \Yii::$app->controller->modelHeader; ?>
                                     </div>
 
+                                    <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
                                     <?
                                     echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
                                         'actions'            => \Yii::$app->controller->modelActions,
@@ -97,6 +98,7 @@ $theme = $this->theme;
                                         ],
                                     ]);
                                     ?>
+                                    </div>
 
 
                                 <? endif; ?>
