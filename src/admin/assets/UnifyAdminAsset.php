@@ -29,7 +29,7 @@ class UnifyAdminAsset extends UnifyAsset
         //'admin-template/assets/css/unify-admin.min.css',
     ];
     public $js = [
-        'assets/vendor/cookiejs/jquery.cookie.js',
+        //'assets/vendor/cookiejs/jquery.cookie.js',
         'admin-template/assets/js/components/hs.side-nav.js',
         'assets/js/components/hs.dropdown.js',
     ];

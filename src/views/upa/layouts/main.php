@@ -7,8 +7,9 @@
  */
 use yii\helpers\Html;
 \skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset::register($this);
+//\skeeks\cms\themes\unify\assets\UnifyDefaultAsset::register($this);
 $class = $this->theme->themeAssetClass;
-$class::register($this);
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 $this->registerCss(<<<CSS
@@ -47,7 +48,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
 
 
         <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
-        <div class="container">
+        <div class="container sx-container">
             <? endif; ?>
 
             <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden g-min-height-100vh">
@@ -63,7 +64,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                     <?= $this->render("@app/views/layouts/_menu"); ?>
                     <div class="text-center g-mt-20">
 
-                        <a class="btn btn-default btn-secondary" style="color: white;" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post"><i class="fas fa-sign-out-alt"></i>
+                        <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post"><i class="fas fa-sign-out-alt"></i>
                             Выход
                         </a>
                     </div>
@@ -74,9 +75,9 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                 <!-- End Sidebar Nav -->
                 <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
                     <!-- Breadcrumb-v1 -->
-                    <div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
-                        <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
-                    </div>
+                    <!--<div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
+                        <?/*= $this->render("@app/views/layouts/_breadcrumbs"); */?>
+                    </div>-->
                     <!-- End Breadcrumb-v1 -->
 
                     <!-- Statistic Card -->
@@ -167,6 +168,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
         <?= $this->render("@app/views/footer"); ?>
     </main>
     <?= $this->render("@app/views/modals"); ?>
+    <?php $class::register($this); ?>
     <?php $this->endBody() ?>
     </body>
     </html>

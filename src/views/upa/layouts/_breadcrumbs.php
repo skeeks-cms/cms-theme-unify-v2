@@ -5,6 +5,7 @@
  * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
  */
+
 ?>
 
 <? $controller = \Yii::$app->controller; ?>
