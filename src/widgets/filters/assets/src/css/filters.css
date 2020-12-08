@@ -314,6 +314,9 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     border: 1px solid silver;
 }
 
+.sx-filters-wrapper-inline {
+    z-index: 100;
+}
 
 .sx-inline-filter {
     display: inline-block;
