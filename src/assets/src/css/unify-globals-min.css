@@ -27,6 +27,10 @@
     color: #fff !important;
 }
 
+.g-mt-10 {
+    margin-top: 10px;
+}
+
 .g-py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;

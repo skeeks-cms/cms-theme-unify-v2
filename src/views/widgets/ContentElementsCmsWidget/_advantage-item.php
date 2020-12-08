@@ -13,13 +13,25 @@
 <div class="col-lg-4 g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-0--lg">
     <div class="text-center">
         <? if ($model->relatedPropertiesModel->getAttribute('icon')) : ?>
-            <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+            <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle" style="    width: 6.42857rem;
+    height: 6.42857rem;
+    font-size: 2.85714rem;
+    margin-bottom: 30px;">
                   <!--<i class="icon-finance-086 u-line-icon-pro"></i>-->
-                <i class="<?= $model->relatedPropertiesModel->getAttribute('icon'); ?>"></i>
+                <i class="<?= $model->relatedPropertiesModel->getAttribute('icon'); ?>" style="    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+    transform: translateY(-45%);
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;"></i>
             </span>
         <? elseif ($model->image) : ?>
             <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30" style="line-height: 80px;">
-            <img height="50" src="<?= $model->image->src; ?>">
+                <img height="50" src="<?= $model->image->src; ?>">
             </span>
         <? endif; ?>
 
