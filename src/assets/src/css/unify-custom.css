@@ -276,7 +276,7 @@ body {
 
 .form-control {
     border-color: #eee;
-    padding: 10px;
+    /*padding: 10px;*/
     height: auto;
 }
 
