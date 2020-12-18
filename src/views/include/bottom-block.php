@@ -22,7 +22,14 @@
                 <?php endif; ?>
                 
                 <?php if(\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
-                    <p class="lead g-mb-20 g-mb-0--md"><i class="g-color-black icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i> Пишите по электронной почте:
+                    <p class="lead g-mb-20 g-mb-0--md">
+                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-phone-icon'); ?>
+                        <i class="g-color-black icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
+
+                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('bottom-block-phone-text'); ?>
+                        Пишите на электронную почту:
+                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
                         <a href="mailto:<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>" class="g-font-weight-400 g-color-primary--hover g-text-underline--none--hover" style="font-size: 16px;"><?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?></a>
                     </p>
                 <?php endif; ?>
