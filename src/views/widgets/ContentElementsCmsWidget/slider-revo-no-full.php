@@ -132,8 +132,9 @@ JS
                             data-title="<?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>"
 
                         >
+                            <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
                             <!-- MAIN IMAGE -->
-                            <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
+                            <img <?php echo $url ? "onclick='location.href={$url}'": ""; ?>src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
                                     'w' => 1920,
                                     'h' => 500,
@@ -141,6 +142,8 @@ JS
                             ) ?>" alt="" data-bgposition="center center" class="rev-slidebg"
                                  data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                             >
+                                    
+                                    
                             <!-- LAYERS -->
                             <!-- LAYER NR. 1 -->
                             <? if ($tree->relatedPropertiesModel->getAttribute('slide_title')) : ?>
