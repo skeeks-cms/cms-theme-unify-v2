@@ -17,7 +17,7 @@
 		}
 	],
 	"require": {
-		"skeeks/cms": "^5.1.0 || dev-master",
+		"skeeks/cms": "^5.0 || dev-master",
         "skeeks/cms-eav-query-filter-handler": "^1.0.0 || dev-master",
 
         "skeeks/yii2-widget-nanogallery": "^0.0.1 || dev-master",
