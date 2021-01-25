@@ -36,15 +36,15 @@
             </li>
         <? endif; ?>
 
-        <li class="list-inline-item g-mx-10">/</li>
-        <li class="list-inline-item g-mr-10">
+        <li class="list-inline-item sx-news-item-comments g-mx-10">/</li>
+        <li class="list-inline-item sx-news-item-comments g-mr-10">
             <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                 <i class="fas fa-comments"></i>
                 <?= (int)$model->relatedPropertiesModel->getAttribute('comments'); ?>
             </a>
         </li>
-        <li class="list-inline-item g-mx-10">/</li>
-        <li class="list-inline-item g-mr-10">
+        <li class="list-inline-item sx-news-item-shows g-mx-10">/</li>
+        <li class="list-inline-item sx-news-item-shows g-mr-10">
             <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                 <i class="fas fa-eye"></i> <?= (int)$model->show_counter; ?>
             </a>
