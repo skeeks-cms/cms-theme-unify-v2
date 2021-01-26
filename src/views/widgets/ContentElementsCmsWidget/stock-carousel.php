@@ -6,6 +6,7 @@
     <?
     /* @var $this yii\web\View */
     \skeeks\cms\themes\unify\assets\components\UnifyThemeStickAsset::register($this);
+    \skeeks\cms\themes\unify\assets\VanillaLazyLoadAsset::register($this);
     ?>
     <div class="js-carousel sx-stick"
          data-infinite="true" 
