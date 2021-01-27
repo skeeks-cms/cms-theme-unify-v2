@@ -130,15 +130,15 @@ if (@$isShowMainImage !== false) {
                             <? endif; ?>
 
 
-                            <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-0 sx-list-short-info">
+                            <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-0 sx-list-short-info sx-news-item-short-info">
                                 <?php if ($model->createdBy) : ?>
-                                    <li class="list-inline-item">
+                                    <li class="list-inline-item sx-news-item-created_by">
                                         <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%;"/>
                                         <a href="<?= $model->createdBy->getPageUrl(); ?>" title="<?= $model->createdBy->name; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
                                             <?= $model->createdBy->shortDisplayName; ?>
                                         </a>
                                     </li>
-                                    <li class="list-inline-item g-mx-10">/</li>
+                                    <li class="list-inline-item g-mx-10 sx-news-item-created_by">/</li>
                                 <?php endif; ?>
 
 
