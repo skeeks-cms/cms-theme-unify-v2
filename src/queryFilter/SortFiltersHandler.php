@@ -83,7 +83,10 @@ class SortFiltersHandler extends Model
         if ($this->value) {
             switch ($this->value) {
                 case ('-popular'):
-                    $query->orderBy(['show_counter' => SORT_DESC]);
+                    $query->orderBy([
+                        'priority' => SORT_ASC,
+                        'show_counter' => SORT_DESC
+                    ]);
                     break;
 
                 case ('-new'):
