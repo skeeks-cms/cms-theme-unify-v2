@@ -363,8 +363,7 @@ CSS;
                     ],
                 ],
 
-                \skeeks\cms\backend\widgets\FiltersWidget::class => [
-                    //'viewFile' => 'asd',
+                /*\skeeks\cms\backend\widgets\FiltersWidget::class => [
                     'defaultActiveForm' => [
                         'class'       => '\yii\bootstrap4\ActiveForm',
                         'fieldClass'  => Bootstrap4ActiveField::class,
@@ -379,7 +378,7 @@ CSS;
                         ],
                         'method'      => 'get',
                     ],
-                ],
+                ],*/
 
 
             ]

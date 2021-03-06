@@ -9,6 +9,7 @@
 namespace skeeks\cms\themes\unify\admin;
 
 use skeeks\cms\backend\widgets\filters\Bootstrap4ActiveField;
+use skeeks\cms\backend\widgets\filters\Bootstrap4InlineActiveField;
 use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab;
 use skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
@@ -204,23 +205,18 @@ class UnifyThemeAdmin extends Theme
                     ],
                 ],
 
-                \skeeks\cms\backend\widgets\FiltersWidget::class => [
-                    //'viewFile' => 'asd',
+                /*\skeeks\cms\backend\widgets\FiltersWidget::class => [
                     'defaultActiveForm' => [
                         'class'       => '\yii\bootstrap4\ActiveForm',
-                        'fieldClass'  => Bootstrap4ActiveField::class,
-                        'layout'      => 'horizontal',
-                        'fieldConfig' => [
-                            'template'      => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
-                            'checkTemplate' => "{label}\n{beginWrapper}\n<div class='sx-filter-wrapper'>{input}</div>\n{hint}\n{error}\n{endWrapper}{controlls}",
-                        ],
+                        'fieldClass'  => Bootstrap4InlineActiveField::class,
+                        'layout'      => 'inline',
                         'options'     => [
-                            'class'     => 'sx-backend-filters-form col-sm-12',
+                            'class'     => 'sx-backend-filters-form',
                             'data-pjax' => 1,
                         ],
                         'method'      => 'get',
                     ],
-                ],
+                ],*/
 
 
             ]

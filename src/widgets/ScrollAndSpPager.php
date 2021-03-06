@@ -13,8 +13,8 @@ namespace skeeks\cms\themes\unify\widgets;
  */
 class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
 {
-    public $triggerTemplate = '<div class="ias-trigger col-md-12">
-        <button class="btn u-btn-outline-primary btn-xl btn-block g-mr-10 g-mb-15 ">{text}</button>
+    public $triggerTemplate = '<div class="ias-trigger col-md-12" style="margin-bottom: 15px;">
+        <button class="btn u-btn-outline-primary btn-xl btn-block">{text}</button>
     </div>';
 
     public $triggerText = 'Показать еще';

@@ -72,7 +72,7 @@
                         <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
                             <? foreach ($addresses as $address) : ?>
                                 <div class="d-flex g-mb-20">
-                                    <div class="g-mr-10">
+                                    <div class="g-mr-10 my-auto">
                                   <span class="sx-contact-icon">
                                     <i class="fas fa-map-marker"></i>
                                   </span>
@@ -92,7 +92,7 @@
                                     <i class="fas fa-phone"></i>
                                   </span>
                                     </div>
-                                    <a class="" href="tel:<?= $phone->value; ?>"><?= $phone->value; ?></a>
+                                    <a class="my-auto" href="tel:<?= $phone->value; ?>"><?= $phone->value; ?></a>
                                 </div>
                                 <!-- End Phone -->
                             <? endforeach; ?>
@@ -107,9 +107,7 @@
                                         <i class="fas fa-globe"></i>
                                       </span>
                                     </div>
-                                    <p class="mb-0">
-                                        <a class="" href="mailto:<?= $email->value; ?>"><?= $email->value; ?></a>
-                                    </p>
+                                    <a class="my-auto" href="mailto:<?= $email->value; ?>"><?= $email->value; ?></a>
                                 </div>
                             <? endforeach; ?>
                         <?php endif; ?>

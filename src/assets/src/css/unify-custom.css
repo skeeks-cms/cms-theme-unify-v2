@@ -1,50 +1,19 @@
-/*------------------------------------
-  Fonts
-------------------------------------*/
-body {
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
-}
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
+.form-control::placeholder {
+    color: inherit;
+    opacity: .5;
 }
 
-/**
- * Unify custom css
- */
-.navbar-brand .sx-logo-text{
-    bottom: 7px;
-    /*letter-spacing: 3px;*/
-    font-size: 23px;
-    position: absolute;
-    left: 58px;
-}
 
-.navbar-brand img {
-    height: 39px;
-}
 @media (max-width: 450px) {
     .pagination {
         display: block;
     }
+
     .page-item {
         float: left;
         width: 38px;
     }
 }
-
-
-
 
 
 /**
@@ -56,9 +25,9 @@ h6,
     /*position: absolute;
     left: -9999px;*/
 }
+
 [type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
-{
+[type="radio"]:not(:checked) + label {
     position: relative;
     padding-left: 28px;
     cursor: pointer;
@@ -66,6 +35,7 @@ h6,
     display: inline-block;
     /*color: #666;*/
 }
+
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
     content: '';
@@ -79,7 +49,8 @@ h6,
     background: #fff;
     box-shadow: none;
 }
-.custom-control-input:checked~.custom-control-label::before {
+
+.custom-control-input:checked ~ .custom-control-label::before {
     box-shadow: none;
 }
 
@@ -96,11 +67,13 @@ h6,
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
+
 [type="radio"]:not(:checked) + label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
+
 [type="radio"]:checked + label:after {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -108,15 +81,15 @@ h6,
 }
 
 
-.sx-project-form-wrapper .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+.sx-project-form-wrapper .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
     background-image: none;
 }
+
 
 /**
  * Кастомные checkbox
  */
-.checkbox
-{
+.checkbox {
     margin: 0 0 12px;
     /*margin: 0 0 5px; */
     position: relative;
@@ -124,15 +97,13 @@ h6,
 }
 
 .checkbox input[type=checkbox],
-.sx-project-form-wrapper input[type=checkbox]
-{
+.sx-project-form-wrapper input[type=checkbox] {
     position: absolute;
     visibility: hidden;
 }
 
 
-.checkbox input[type=checkbox]:checked + label
-{
+.checkbox input[type=checkbox]:checked + label {
     font-weight: 600;
 }
 
@@ -143,8 +114,7 @@ h6,
 .checkbox label,
 .sx-project-form-wrapper .form-check label,
 .sx-project-form-wrapper .custom-radio label,
-.sx-project-form-wrapper .custom-checkbox label
-{
+.sx-project-form-wrapper .custom-checkbox label {
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -155,16 +125,14 @@ h6,
 }
 
 .checkbox label:before,
-.sx-project-form-wrapper label:before
-{
+.sx-project-form-wrapper label:before {
     display: block;
     left: 0;
     top: 0;
 }
 
 .checkbox input[type=checkbox] + label:before,
-.sx-project-form-wrapper input[type=checkbox] + label:before
-{
+.sx-project-form-wrapper input[type=checkbox] + label:before {
     -webkit-border-radius: 2px;
     border-radius: 2px;
     width: 15px;
@@ -180,15 +148,11 @@ h6,
 }
 
 .checkbox input[type=checkbox]:checked + label:before,
-.sx-project-form-wrapper input[type=checkbox]:checked + label:before
-{
+.sx-project-form-wrapper input[type=checkbox]:checked + label:before {
     background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;
     background-color: #87c451;
     border-color: #87c451;
 }
-
-
-
 
 
 /**
@@ -197,21 +161,22 @@ h6,
 
 .sx-project-form-wrapper .form-check,
 .sx-project-form-wrapper .custom-checkbox,
-.sx-project-form-wrapper .custom-radio
-{
+.sx-project-form-wrapper .custom-radio {
     padding-left: 0;
 }
 
 
-
+/**
+ * Для контента страниц
+ */
 .sx-content {
     font-size: 16px;
 }
+
 .sx-content img {
     max-width: 100%;
     height: auto !important;
 }
-
 
 
 /**
@@ -221,12 +186,11 @@ a.sx-dashed {
     text-decoration: none;
     border-bottom: 1px dashed;
 }
+
 a.sx-dashed:hover {
     text-decoration: none;
     border-bottom: 1px dashed;
 }
-
-
 
 
 .alert-danger {
@@ -253,27 +217,41 @@ body {
 */
 
 
-
 /**
  * Маленькие подкатегории
  */
 
-.sx-category-list-small img{
+.sx-category-list-small li:hover img {
+    opacity: 0.9;
+}
+
+.sx-category-list-small img {
     /*max-width: 120px;
     max-height: 100px;*/
     height: 100px;
 }
 
 
-
-.sx-main-logo img {
-    max-height: 86px;
-}
-
-
+/**
+ * Хлебные крошки
+ */
 .sx-body-begin-image-wrapper .sx-breadcrumbs-wrapper a {
     color: rgba(255, 255, 255, 0.8) !important;
 }
+
+.sx-breadcrumbs-wrapper i {
+    font-size: 10px;
+    margin-left: 7px;
+}
+
+.sx-breadcrumbs-wrapper .list-inline-item {
+    margin-right: 7px;
+}
+
+.sx-breadcrumbs-wrapper .list-inline-item span {
+    opacity: 0.6;
+}
+
 
 .sx-list-short-info {
     background: #fafafa;
@@ -286,24 +264,20 @@ body {
 .sx-caption-wrapper {
     overflow: hidden;
     padding-bottom: 5px;
+    margin-top: 5px;
 }
 
 
-
-.sx-menu-top {
-    font-weight: 600;
-    text-transform: uppercase;
+.form-control:focus {
+    outline: 0 none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
-
-
-.form-control
-{
+.form-control {
     border-color: #eee;
-}
-.form-control
-{
-    padding: 10px;
+    /*padding: 10px;*/
+    height: auto;
 }
 
 .error-summary {
@@ -315,131 +289,70 @@ body {
 
 
 /* Поисковый блок, выезжающий в шапке */
-.sx-invisible-search-block
-{
-    top: -120px; position: absolute; width: 500px;right:0;z-index: 1; background: #fff; padding: 15px;border-top: 2px solid #000;
-}
-/* Поисковый блок на мобильной версии */
-@media (max-width: 768px) {
-    .sx-search-form {
-        background: #fff;
-        padding: 15px;
-        position: absolute;
-        top: -100px;
-        left:0;
-        right:0;
-        z-index: 1;
-    }
+.sx-invisible-search-block {
+    top: -120px;
+    position: absolute;
+    width: 500px;
+    right: 0;
+    z-index: 1;
+    background: #fff;
+    padding: 15px;
+    border-top: 2px solid #000;
 }
 
-.sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-    font-size: 1.9rem !important;
-}
-@media (min-width: 1024px) {
-    .sx-main-menu-wrapper a.sx-search-btn, .sx-main-menu-wrapper .sx-cart-small-open-trigger, .sx-main-menu-wrapper .sx-login-block {
-        font-size: 1.4rem !important;
-    }
-}
-/* Поднять меню на планшете */
-@media (max-width: 1024px) AND (min-width: 768px) {
-    .hamburger {
-        padding-top: 0;
-    }
-}
-/* Настройки меню */
-html.mm-right .mm-menu.mm-fx-menu-slide {
-    z-index: 502;
-}
-
-.mm-opened .u-header--sticky-top {
-    position: relative !important;
-}
-.mm-opened .sx-header-sticky-margin {
-    margin-top: 0 !important;
-}
-.hamburger {
-    padding: 0;
-}
 
 @media (max-width: 1024px) {
     .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
         line-height: 1.4;
     }
+
     .h1, h1 {
         font-size: 2rem;
     }
+
     .h2, h2 {
         font-size: 1.75rem;
     }
 
 }
+
 /* Уменьшаем размер шрифта для мобилльной версии  */
 @media (max-width: 768px) {
     .h1, .h2, .h3, .h4, .h5, .h6, .h7, h1, h2, h3, h4, h5, h6 {
         line-height: 1.3;
     }
+
     .h1, h1 {
         font-size: 1.5rem;
     }
+
     .h2, h2 {
         font-size: 1.4rem;
     }
+
     .h3, h3 {
         font-size: 1.3rem;
     }
+
     .h4, h4 {
         font-size: 1.2rem;
     }
+
     .h5, h5 {
         font-size: 1.1rem;
     }
 
 }
-/* Правки для меню мобильной версии */
-.mm-menu.mm-shadow-page:after {
-    box-shadow: none !important;
-}
-#mm-blocker {
-    z-index: 501 !important;
-}
-.u-btn-primary, a.g-bg-primary {
+
+/*.u-btn-primary, a.g-bg-primary {
     color: #fff !important;
-}
-
-
-
+}*/
 
 .sx-head-short-description {
     overflow: hidden;
     max-height: 56px;
 }
 
-
-/**
- * Оформление верхнего toolbar
- */
-.sx-topbar {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    color: white;
-    background: black;
-}
-.sx-topbar a {
-    color: white;
-}
-
-.sx-topbar a:hover {
-    color: white;
-}
-
-/**
- * Оформление футера
- */
-.sx-footer-title {
-    text-transform: uppercase;
-    font-weight: 600;
-}
 
 .sx-breadcrumbs-h1 {
     font-weight: 600;
@@ -448,26 +361,39 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 
 .sx-subcatalog-title {
     font-weight: 700;
+    line-height: 1.1;
 }
 
 .sx-main-text-color {
     color: #333;
 }
 
-.sx-col-left-title  {
+.sx-col-left-title {
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
+.sx-col-left-block {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
-.hamburger {
+.sx-col-menu li {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.sx-col-menu li:last-child {
+    margin-bottom: 0px;
+}
+
+/*.hamburger {
     padding: 5px !important;
-}
+}*/
 
 
-
-@media (max-width: 766px)
-{
+@media (max-width: 766px) {
     .sx-content-col-left {
         position: absolute;
         left: -100000px;
@@ -476,21 +402,214 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 
 .sx-content-col-main {
     max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.sx-content-col-left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Button Styles
+------------------------------------*/
+/* General Button Styles */
+.btn {
+    position: relative;
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.btn:focus, .btn:active, .btn:active:focus, .btn.active:focus, .btn-primary:focus, .btn-primary.focus {
+    outline: 0 none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.btn-primary:focus, .btn-primary.focus, .btn-outline-primary:focus, .btn-outline-primary.focus {
+    box-shadow: none;
+}
+
+.btn-default {
+    background: #fafafa;
+    border-color: #e6e6e6;
+}
+
+.btn-default:hover {
+    background: #f5f5f5;
+}
+
+
+/* Button Sizes
+------------------------------------*/
+/* Extra Small */
+.btn-xs {
+    line-height: 1.4;
+    padding: 0.14286rem 0.5rem;
+    font-size: 0.78571rem;
+}
+
+/* Medium */
+.btn-md {
+    line-height: 1.4;
+    padding: 0.57143rem 1.42857rem;
+    font-size: 1.07143rem;
+}
+
+/* Extra Large */
+.btn-xl {
+    line-height: 1.4;
+    padding: 0.92857rem 1.85714rem;
+    font-size: 1.28571rem;
+}
+
+/* Extramly Large */
+.btn-xxl {
+    line-height: 1.4;
+    padding: 1.07143rem 2.14286rem;
+    font-size: 1.5rem;
+}
+
+
+/*
+.sx-btn-white {
+  color: #555;
+  background-color: #fff;
+}
+
+.sx-btn-white:hover, .sx-btn-white.active {
+  border-color: white;
+  background-color: white;
+}
+
+.sx-btn-white:hover, .sx-btn-white:focus, .sx-btn-white.active {
+  color: #555;
+}
+*/
+
+
+/**
+ * Небольшая достилизация таблиц
+ */
+.dropdown-item:focus, .dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background: rgba(0, 0, 0, 0.05);
+    color: inherit !important;
+}
+
+
+/**
+ * Небольшая достилизация таблиц
+ */
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: #f7f7f7;
+}
+
+.table-striped tbody td {
+    border-top: none;
+}
+
+
+/*------------------------------------
+  Covers
+------------------------------------*/
+.u-bg-overlay {
+    position: relative;
+}
+
+.u-bg-overlay::before, .u-bg-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.u-bg-overlay--v1::after {
+    position: absolute;
+    top: 0.35714rem;
+    right: 0.35714rem;
+    bottom: 0.35714rem;
+    left: 0.35714rem;
+}
+
+.u-bg-overlay__inner {
+    z-index: 3;
+    position: relative;
+}
+
+.u-bg-overlay--reverse::before {
+    z-index: 2;
+}
+
+.u-bg-overlay--reverse::after {
+    z-index: 1;
+}
+
+
+/**
+ * Base colors
+ */
+.sx-color-white {
+    color: white;
+}
+
+.sx-color-silver {
+    color: silver;
+}
+
+
+.dropdown-toggle::before, .sx-icon-arrow-down--after::before {
+    display: none;
+}
+
+.dropdown-toggle::after, .sx-icon-arrow-down--after::after {
+    content: "\e900";
+    vertical-align: .255em;
+    position: relative;
+    top: 0.21429rem;
+    font-family: "hs-icons" !important;
+    font-size: 10px;
+    display: inline;
+    border: none;
+    margin-left: 0.5rem;
 }
 
 /**
- * Оформление иконок в шапке
+ * Для мобильной версии
  */
-.sx-header-menu-right {
-    display: contents;
+@media (max-width: 768px) {
+    .sx-content-col-main {
+        padding-top: 5px;
+        /*padding-left: 10px;
+        padding-right: 10px;*/
+    }
+
+    .sx-breadcrumbs-wrapper .list-inline {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .sx-breadcrumbs-h1 {
+        line-height: 1;
+    }
+
+    sx-product-card .sx-product-card--info {
+        padding: 0 5px 10px 5px;
+    }
 }
 
-.sx-header-menu-right .sx-header-menu-item i {
-    font-size: 24px;
-}
-.sx-header-menu-right .sx-header-menu-item {
-    margin-right: 20px;
-}
-.sx-header-menu-right .sx-header-menu-item:last-child {
-    margin-right: 0px;
-}
