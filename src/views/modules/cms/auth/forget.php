@@ -8,6 +8,9 @@
 /* @var $this yii\web\View */
 /* @var $model \skeeks\cms\models\forms\LoginFormUsernameOrEmail */
 
+
+\skeeks\cms\themes\unify\assets\components\UnifyThemeAuthAsset::register($this);
+
 use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
 use skeeks\cms\helpers\UrlHelper;
 
@@ -31,7 +34,7 @@ use skeeks\cms\helpers\UrlHelper;
                     ]); ?>
 
                     <div class="mb-4">
-                        <button class="btn btn-md btn-block u-btn-primary g-py-13" type="submit">Отправить</button>
+                        <button class="btn btn-md btn-block btn-primary g-py-13" type="submit">Отправить</button>
                     </div>
 
                     <div class="text-center g-color-gray-dark-v5 g-font-size-13 mb-0">

@@ -8,6 +8,8 @@
 /* @var $this yii\web\View */
 /* @var $model \skeeks\cms\models\forms\LoginFormUsernameOrEmail */
 
+\skeeks\cms\themes\unify\assets\components\UnifyThemeAuthAsset::register($this);
+
 use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
 use skeeks\cms\helpers\UrlHelper;
 

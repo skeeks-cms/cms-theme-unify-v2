@@ -8,15 +8,11 @@
 /* @var $this yii\web\View */
 /* @var $model \skeeks\cms\models\forms\LoginFormUsernameOrEmail */
 
+\skeeks\cms\themes\unify\assets\components\UnifyThemeAuthAsset::register($this);
+
 use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
 use skeeks\cms\helpers\UrlHelper;
 
-$this->registerCss(<<<CSS
-.auth-clients {
-    padding-left: 0px;
-}
-CSS
-);
 ?>
 <section class="g-bg-gray-light-v5 sx-auth-wrapper">
     <div class="container g-py-100">
@@ -49,7 +45,7 @@ CSS
                         </div>
                     </div>
                     <div class="mb-4">
-                        <button class="btn btn-md btn-block u-btn-primary g-py-13" type="submit">Войти</button>
+                        <button class="btn btn-md btn-block btn-primary g-py-13" type="submit">Войти</button>
                     </div>
                     <div class="text-center">
                         <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
