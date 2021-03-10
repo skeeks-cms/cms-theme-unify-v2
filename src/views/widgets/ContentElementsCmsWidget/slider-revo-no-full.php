@@ -19,7 +19,6 @@ if (count($trees) > 1) {
     $arrows = "true";
 }
 
-
 ?>
 <?
 \skeeks\assets\unify\base\revolution\UnifyRevolutionAllAsset::register($this);
@@ -134,7 +133,7 @@ JS
                         >
                             <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
                             <!-- MAIN IMAGE -->
-                            <img <?php echo $url ? "onclick='location.href={$url}'": ""; ?>src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
+                            <img <?php echo $url ? "onclick='location.href={$url}'": ""; ?> src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
                                     'w' => 1920,
                                     'h' => 500,

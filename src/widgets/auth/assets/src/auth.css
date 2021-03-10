@@ -1,0 +1,29 @@
+.sx-auth-widget .auth-clients {
+    padding-left: 0px;
+}
+
+
+.sx-auth-widget .sx-btn-submit {
+    padding-top: 0.92857rem !important;
+    padding-bottom: 0.92857rem !important;
+}
+
+.sx-auth-widget .form-control {
+    border-color: #ced4da;
+}
+
+.sx-auth-widget .sx-auth-action {
+    display: none;
+}
+
+.sx-auth-widget .sx-dashed {
+    border-bottom: 1px dashed;
+}
+
+.sx-auth-widget .sx-dashed:hover {
+    text-decoration: none;
+}
+
+.sx-auth-widget .form-control {
+    padding: 15px;
+}
