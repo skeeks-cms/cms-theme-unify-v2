@@ -27,3 +27,7 @@
 .sx-auth-widget .form-control {
     padding: 15px;
 }
+.sx-auth-widget .sx-email-code-wait,
+.sx-auth-widget .sx-phone-code-wait {
+    color: gray;
+}

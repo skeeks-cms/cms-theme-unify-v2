@@ -47,7 +47,8 @@ JS
                 $("[data-action=auth-by-phone-sms-code] .sx-phone", jAuthWidget).val(response.data.phone);
                 
                 jAuthWidget.trigger("action", {
-                    'action' : 'auth-by-phone-sms-code'
+                    'action' : 'auth-by-phone-sms-code',
+                    'left-time': response.data['left-repeat']
                 });
             }
             
@@ -95,7 +96,7 @@ JS
         </div>
         <?php $form::end(); ?>
         <div class="text-center">
-            <a href="#" class="sx-dashed sx-send-phone-code">Выслать одноразовый SMS код</a>
+            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
         </div>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-phone">Войти с другим телефоном</a>
@@ -121,9 +122,11 @@ JS
         </div>
         <?php $form::end(); ?>
 
-        <div class="text-center">
-            <a href="#" class="sx-dashed sx-send-phone-code">Выслать одноразовый SMS код</a>
+        <div class="text-center sx-phone-trigger-wrapper">
+            <span class="sx-phone-code-wait">Выслать код повторно, через: <span class="sx-left-time"></span> сек.</span>
+            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
         </div>
+
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-phone">Войти с другим телефоном</a>
         </div>
@@ -152,7 +155,8 @@ JS
                 $("[data-action=auth-by-phone-email-code] .sx-email", jAuthWidget).val(response.data.phone);
                 
                 jAuthWidget.trigger("action", {
-                    'action' : 'auth-by-phone-email-code'
+                    'action' : 'auth-by-email-code',
+                    'left-time': response.data['left-repeat']
                 });
             }
             
@@ -203,11 +207,41 @@ JS
         </div>
         <?php $form::end(); ?>
         <div class="text-center">
-            <a href="#" class="sx-dashed sx-send-email-code">Выслать одноразовый код на email</a>
+            <a href="#" class="sx-dashed sx-email-code-trigger">Выслать одноразовый код на email</a>
         </div>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти с другим email</a>
         </div>
+    </div>
+
+
+    <div class="sx-auth-action" data-action="auth-by-email-code">
+        <?php $form = ActiveForm::begin([
+            'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-email-code']),
+            'enableAjaxValidation' => false,
+        ]); ?>
+
+        <input type="hidden" name="phone" class="sx-email" />
+        <div class="form-group">
+            <input type="text"
+                   name="email_code"
+                   placeholder="Проверочный код из Email"
+                   class="form-control"
+            />
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Войти</button>
+        </div>
+        <?php $form::end(); ?>
+
+        <div class="text-center sx-email-trigger-wrapper">
+            <span class="sx-email-code-wait">Выслать код повторно, через: <span class="sx-left-time"></span> сек.</span>
+            <a href="#" class="sx-dashed sx-email-code-trigger">Выслать одноразовый код на email</a>
+        </div>
+        <div class="text-center">
+            <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти с другим email</a>
+        </div>
+
     </div>
 
     <div class="text-center">
