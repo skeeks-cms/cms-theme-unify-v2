@@ -64,7 +64,8 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                     <?= $this->render("@app/views/layouts/_menu"); ?>
                     <div class="text-center g-mt-20">
 
-                        <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post"><i class="fas fa-sign-out-alt"></i>
+                        <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post">
+                            <i class="icon-logout"></i>
                             Выход
                         </a>
                     </div>
