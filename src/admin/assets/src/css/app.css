@@ -119,7 +119,7 @@ form.sx-form-admin .tab-content {
     margin: 0;
 }
 
-.sx-table a.btn {
+/*.sx-table a.btn {
     border-bottom: 0;
 }
 
@@ -129,7 +129,7 @@ form.sx-form-admin .tab-content {
 
 .sx-table a:hover {
     text-decoration: none;
-}
+}*/
 
 /**
  * Показывать контект после того как готов dom
