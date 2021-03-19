@@ -395,12 +395,11 @@ form.sx-form-admin .tab-content {
     background-color: #bbf3bb !important;
 }
 
-.sx-icon-wrapper {
+/*.sx-icon-wrapper {
     width: 17px;
-    /* min-width: 20px; */
     display: inline-block;
     text-align: center;
-}
+}*/
 
 .u-side-nav--has-sub-menu ul {
     display: none;
