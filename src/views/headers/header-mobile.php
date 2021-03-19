@@ -143,6 +143,9 @@ if ($models) {
                         <?php echo $this->render("@app/views/headers/_header-search"); ?>
                     <? endif; ?>
                     <?= @$content; ?>
+                    <? if ($this->theme->is_header_auth) : ?>
+                        <?php echo $this->render("@app/views/headers/_header-auth"); ?>
+                    <? endif; ?>
                     <!-- Responsive Toggle Button -->
                     <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
                             <span class="hamburger">
