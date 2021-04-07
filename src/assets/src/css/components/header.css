@@ -231,3 +231,8 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
 .sx-main-menu-wrapper .hamburger-inner, .sx-main-menu-wrapper .hamburger-inner:after, .sx-main-menu-wrapper .hamburger-inner:before {
     height: 2px;
 }
+
+.sx-header-center-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

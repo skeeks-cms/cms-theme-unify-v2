@@ -83,7 +83,7 @@ JS
             </div>
         <? endif; ?>
         <div class="sx-header-middle-block">
-            <div class="container sx-container g-py-15">
+            <div class="container sx-container sx-header-center-container">
                 <div class="row ">
                     <div class="col-sm-4 col-md-3 my-auto">
                         <!-- Logo -->

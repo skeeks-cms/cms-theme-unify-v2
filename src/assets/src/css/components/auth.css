@@ -1,0 +1,30 @@
+.sx-auth-section {
+    padding: 100px 0;
+}
+
+.sx-auth-wrapper {
+    -webkit-box-shadow: 0 20px 25px -12px rgb(0 0 0 / 9%);
+    box-shadow: 0 20px 25px -12px rgb(0 0 0 / 9%);
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+
+    border-radius: .25rem!important;
+
+    padding-top: 2.85714rem !important;
+    padding-bottom: 2.85714rem !important;
+
+    padding-left: 2.14286rem !important;
+    padding-right: 2.14286rem !important;
+
+    background-color: #fff
+}
