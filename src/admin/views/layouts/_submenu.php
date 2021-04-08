@@ -38,7 +38,7 @@ if ($level == 4) {
 
                         <? elseif ($item->image) : ?>
                             <span class="align-self-center g-mr-5 g-mt-minus-1 sx-icon-wrapper">
-                            <img src="<?= $item->image; ?>" style="max-width: 19px;max-height: 19px;"/>
+                            <img src="<?= $item->image; ?>" style="max-width: 19px; max-height: 19px; width: 100%;"/>
                         </span>
                         <? else : ?>
                             <span class="align-self-center g-mr-5 g-mt-minus-1 sx-icon-wrapper">
@@ -50,7 +50,7 @@ if ($level == 4) {
 
                         <? if ($item->items) : ?>
                             <span class="align-self-center u-side-nav--control-icon">
-                          <i class="hs-admin-angle-right"></i>
+                          <i class="hs-admin-angle-down"></i>
                         </span>
                         <? endif; ?>
                     </a>

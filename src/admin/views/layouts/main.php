@@ -29,18 +29,19 @@ $theme = $this->theme;
         <!--<link rel="icon" href="<?/*= $theme->favicon */?>" type="image/x-icon"/>-->
         <?php $this->head() ?>
     </head>
-    <body class="<?= \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout ? "sx-empty" : ""; ?>">
+    <body class="has-fixed-sidebar <?= \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout ? "sx-empty" : ""; ?>">
     <?php $this->beginBody() ?>
     <?= $this->render('@app/views/layouts/_header'); ?>
     <main class="container-fluid px-0 g-pt-65">
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
-        <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden g-min-height-100vh">
+        <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
             <!-- Sidebar Nav -->
             <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
+                <div class="js-custom-scroll u-sidebar-navigation-v1-inner">
                 <?= $this->render("@app/views/layouts/_before-menu"); ?>
                 <?= $this->render("@app/views/layouts/_menu"); ?>
                 <?= $this->render("@app/views/layouts/_after-menu"); ?>
-
+                </div>
             </div>
             <!-- End Sidebar Nav -->
             <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">

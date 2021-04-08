@@ -37,7 +37,7 @@ $level = 1;
 
                         <? if ($adminMenuItem->items) : ?>
                             <span class="d-flex align-self-center u-side-nav--control-icon">
-                              <i class="hs-admin-angle-right"></i>
+                              <i class="hs-admin-angle-down"></i>
                             </span>
                             <span class="u-side-nav--has-sub-menu__indicator"></span>
                         <? endif; ?>

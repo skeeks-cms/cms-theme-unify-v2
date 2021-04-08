@@ -51,7 +51,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
         <div class="container sx-container">
             <? endif; ?>
 
-            <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden g-min-height-100vh">
+            <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
                 <!-- Sidebar Nav -->
 
 

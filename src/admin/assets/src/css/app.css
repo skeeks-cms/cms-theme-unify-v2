@@ -761,3 +761,16 @@ pre {
     float: right;
 }
 
+
+.sx-main-wrapper {
+    min-height: calc(100vh - 65px);
+}
+
+.u-side-nav--control-icon {
+    font-size: 10px;
+}
+
+.u-side-nav--third-level-menu-item {
+    overflow: hidden;
+    padding-right: 19px;
+}
