@@ -48,7 +48,7 @@ if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTr
                                         
 
                     <? if ($subChilds) : ?>
-                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2" id="nav-submenu--features--sliders" aria-labelledby="nav-link--features--sliders">
+                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2">
                             
                         <? foreach ($subChilds as $subChild) : ?>
                             <li class="dropdown-item ">
@@ -61,6 +61,6 @@ if (!\Yii::$app->request->pathInfo && ($model->level == 0 || ($model->redirectTr
             <? endforeach; ?>
         </ul>
     <? else: ?>
-        <a href="<?= $model->url; ?>" class="nav-link px-0" title="<?= $model->name; ?>" class="nav-link"><?= $model->name; ?></a>
+        <a href="<?= $model->url; ?>" class="nav-link px-0" title="<?= $model->name; ?>"><?= $model->name; ?></a>
     <? endif; ?>
 </li>

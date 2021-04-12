@@ -29,7 +29,13 @@ use yii\helpers\Html;
             $bodyClasses = $bodyClasses . " sx-mobile-layout";
         }
     ?>
-    <body class="<?= $bodyClasses; ?>">
+    <?php if($bodyClasses) : ?>
+        <body class="<?= $bodyClasses; ?>">
+    <?php else : ?>
+        <body>
+    <?php endif; ?>
+
+
     <?php $this->beginBody() ?>
     <?= $this->render("@app/views/include/pre-loader"); ?>
     <div class="sx-main-wrapper"><!--Нужен для mmenu-->

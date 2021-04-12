@@ -65,7 +65,7 @@ class UnifyAllAsset extends UnifyAsset
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/ttf',
-            'crossorigin' => 'crossorigin',
+            //'crossorigin' => 'crossorigin',
         ]);
         $href = self::getAssetUrl('assets/vendor/icon-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
         \Yii::$app->view->registerLinkTag([
@@ -73,7 +73,7 @@ class UnifyAllAsset extends UnifyAsset
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff2',
-            'crossorigin' => 'crossorigin',
+            //'crossorigin' => 'crossorigin',
         ]);
 
         $href = self::getAssetUrl('assets/vendor/icon-line/fonts/Simple-Line-Icons.woff2?v=2.4.0');
@@ -82,7 +82,7 @@ class UnifyAllAsset extends UnifyAsset
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff2',
-            'crossorigin' => 'crossorigin',
+            //'crossorigin' => 'crossorigin',
         ]);
         $href = self::getAssetUrl('assets/vendor/icon-line-pro/finance/webfont/fonts/finance.woff');
         \Yii::$app->view->registerLinkTag([
@@ -90,7 +90,7 @@ class UnifyAllAsset extends UnifyAsset
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff',
-            'crossorigin' => 'crossorigin',
+            //'crossorigin' => 'crossorigin',
         ]);
 
         \Yii::$app->assetManager->appendTimestamp = $appendTimestamp;
