@@ -43,9 +43,9 @@ $widget = $this->context;
         'options' => [
             'id'    => 'sx-filters-form',
             'class' => 'sx-filters-form',
-            'data'  => [
-                'pjax' => 1,
-            ],
+            /*'data'  => [
+                'pjax' => 0,
+            ],*/
         ],
     ]); ?>
     <? foreach ($widget->handlers as $filtersHandler) : ?>
