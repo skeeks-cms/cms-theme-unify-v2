@@ -774,3 +774,9 @@ pre {
     overflow: hidden;
     padding-right: 19px;
 }
+
+
+
+.sx-mobile-layout .sx-main-slider video {
+    height: 100% !important;
+}
