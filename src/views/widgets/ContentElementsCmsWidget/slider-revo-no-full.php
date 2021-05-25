@@ -245,8 +245,14 @@ JS
                                      data-paddingbottom="[0,0,0,0]"
                                      data-paddingleft="[50,50,50,50]"
 
+                                     <?php if($url) : ?>
+                                        onclick="location.href='<?php echo $url; ?>'; return false;"
+                                    <?php endif; ?>
+                                            
                                      style="z-index: 9; white-space: nowrap; font-size: 15px; line-height: 46px; font-weight: 700; color: rgba(255, 255, 255, 1.00);background-color:rgba(0, 0, 0, 0);border-color:rgba(255, 255, 255, 0.25);border-style:solid;border-width:2px;border-radius:4px 4px 4px 4px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;letter-spacing:5px;cursor:pointer;">
+                                    
                                     <?= $tree->relatedPropertiesModel->getAttribute('slide_btn'); ?>
+                                            
                                 </div>
 
                             <? endif; ?>
