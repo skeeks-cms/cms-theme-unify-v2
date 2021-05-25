@@ -8,7 +8,7 @@
 \skeeks\assets\unify\base\UnifyIconSimpleLineAsset::register($this);
 $this->registerJs(<<<JS
     $('body').on('submit', '.sx-search-form', function() {
-        alert('111');
+        //alert('111');
         sx.block($("body"));
     });
 
