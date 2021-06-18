@@ -33,7 +33,7 @@ JS
         <i class="icon-magnifier"></i>
     </a>
 </div>
-<div class="sx-search-form sx-invisible-search-block">
+<div class="sx-header-menu-item sx-search-form sx-invisible-search-block">
     <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get">
         <div class="container">
             <div class="row">

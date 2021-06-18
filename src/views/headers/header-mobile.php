@@ -147,15 +147,16 @@ if ($models) {
                         <?php echo $this->render("@app/views/headers/_header-auth"); ?>
                     <? endif; ?>
                     <!-- Responsive Toggle Button -->
-                    <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
+
+                    <!-- End Responsive Toggle Button -->
+                </div>
+                <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
                             <span class="hamburger">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
                             </span>
                     </a>
-                    <!-- End Responsive Toggle Button -->
-                </div>
             </div>
         </nav>
     </div>
