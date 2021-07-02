@@ -1596,8 +1596,8 @@ h6,
     background: linear-gradient(150deg, #0185c8, #e1082c);
     border-color: #0185c8;
 }
-a.btn:focus,
-a.btn:hover
+a.btn-primary:focus,
+a.btn-primary:hover
 {
     color: #fff;
 }

@@ -228,7 +228,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v7";
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme))) . "-v8";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
