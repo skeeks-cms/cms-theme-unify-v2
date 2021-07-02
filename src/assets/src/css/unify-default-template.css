@@ -13,6 +13,7 @@
 .g-color-primary--hover:hover {
   color: #72c02c !important;
 }
+
 /*------------------------------------
   Custom BG
 ------------------------------------*/
@@ -157,12 +158,12 @@ a:hover {
   background-color: #6db82a;
   border-color: #6db82a;
 }
-.btn-primary:focus,
+/*.btn-primary:focus,
 .btn-primary.focus,
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
   box-shadow: 0 0 0 2px rgba(114, 192, 44, 0.5);
-}
+}*/
 /*------------------------------------
   Background colors
 ------------------------------------*/
@@ -1594,6 +1595,11 @@ h6,
     color: #fff;
     background: linear-gradient(150deg, #0185c8, #e1082c);
     border-color: #0185c8;
+}
+a.btn:focus,
+a.btn:hover
+{
+    color: #fff;
 }
 
 a {
