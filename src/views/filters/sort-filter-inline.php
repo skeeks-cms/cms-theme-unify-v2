@@ -17,8 +17,8 @@ $id = \yii\helpers\Html::getInputId($handler, 'value');
     ]) ?>
 </div>
 
-<div class="dropdown sx-inline-filter sx-filter-selected">
-    <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" style="">
+<div class="dropdown sx-filter sx-inline-filter sx-filter-selected">
+    <a href="#" class="dropdown-toggle btn btn-default sx-inline-btn" data-toggle="dropdown" style="">
         <?php echo $handler->valueAsText; ?>
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

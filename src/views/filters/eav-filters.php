@@ -44,7 +44,7 @@ $widget = $this->context;
         }
 
         if (($val1 != $min || $val2 != $max)) {
-            $class = 'opened sx-filter-selected';
+            $class = 'opened sx-filter sx-filter-selected';
         }
 
         $name = $rp->name;
@@ -99,6 +99,9 @@ $widget = $this->context;
                                data-to="<?= $val2; ?>"
                                data-postfix=""/>
 
+                        <div class="sx-btn-apply-wrapper">
+                            <button type="submit" class="btn btn-primary">Применить</button>
+                        </div>
 
                         <!--<div class="" style="display: none;">
                             <div class="col-md-6">
@@ -169,7 +172,7 @@ HTML;
 
                 <?= $form->field($handler, $code, [
                     'options'  => [
-                        'class' => 'filter--group '.$class,
+                        'class' => 'filter--group sx-filter '.$class,
                         'tag'   => 'section',
                     ],
                     'template' => <<<HTML
@@ -180,6 +183,9 @@ HTML;
         <div class="js-scrollbar" style="max-height: 280px;">
         {input}
         </div>
+    </div>
+    <div class="sx-btn-apply-wrapper">
+        <button type="submit" class="btn btn-primary">Применить</button>
     </div>
 </div>
 HTML

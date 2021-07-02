@@ -45,69 +45,73 @@ $widget = $this->context;
         if ($val2 != $max) {
             $selectedValue .= " до ".\Yii::$app->formatter->asInteger($val2);
         }
-        
+
         if ($selectedValue && $rp->cmsMeasure) {
-            $selectedValue .= " " . $rp->cmsMeasure->symbol;
+            $selectedValue .= " ".$rp->cmsMeasure->symbol;
         }
-        
+
 
         ?>
         <? if ($min != $max
             //&& $max > 0
         ) : ?>
-        <div class="dropdown sx-inline-filter <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected" : "" ?>">
-            <button class="dropdown-toggle btn btn-default" data-toggle="dropdown">
-                <?= $rp->name; ?>
-                <? if ($val1 != $min || $val2 != $max) : ?>
-                    <small>(<?= $selectedValue; ?>)</small>
-                <? endif; ?>
-                    
-                <? if ($rp->hint) : ?>
-                    <i class="far fa-question-circle" data-toggle="tooltip" title="<?= $rp->hint; ?>"></i>
-                <? endif; ?>
-            </button>
-            <div class="dropdown-menu sort-slider" aria-labelledby="dropdownMenuButton">
-                <section class="filter--group">
-                    <div class="filter--group--body sort-slider sx-project-slider-skin">
-                        <div class="filter--group--inner">
-                            <div class="sort-slider__row">
-                                <div class="sort-slider__input my-auto">
-                                    <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
-                                        'id'          => $id.'-from',
-                                        'value'       => $val1 == $min ? "" : $val1,
-                                        'placeholder' => $val1 == $min ? $val1 : "",
-                                        'class'       => 'sx-from form-control',
-                                    ])->label(false); ?>
+            <div class="dropdown sx-filter sx-inline-filter <?= ($val1 != $min || $val2 != $max) ? "opened sx-filter-selected" : "" ?>">
+                <button class="dropdown-toggle btn btn-default sx-inline-btn" data-toggle="dropdown">
+                    <?= $rp->name; ?>
+                    <? if ($val1 != $min || $val2 != $max) : ?>
+                        <small>(<?= $selectedValue; ?>)</small>
+                    <? endif; ?>
+
+                    <? if ($rp->hint) : ?>
+                        <i class="far fa-question-circle" data-toggle="tooltip" title="<?= $rp->hint; ?>"></i>
+                    <? endif; ?>
+                </button>
+                <div class="dropdown-menu sort-slider keep-open" aria-labelledby="dropdownMenuButton">
+                    <section class="filter--group">
+                        <div class="filter--group--body sort-slider sx-project-slider-skin">
+                            <div class="filter--group--inner">
+                                <div class="sort-slider__row">
+                                    <div class="sort-slider__input my-auto">
+                                        <?= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
+                                            'id'          => $id.'-from',
+                                            'value'       => $val1 == $min ? "" : $val1,
+                                            'placeholder' => $val1 == $min ? $val1 : "",
+                                            'class'       => 'sx-from form-control',
+                                        ])->label(false); ?>
+                                    </div>
+                                    <span class="sort-slider__devide my-auto">—</span>
+                                    <div class="sort-slider__input my-auto">
+                                        <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
+                                            'id'          => $id.'-to',
+                                            'value'       => $val2 == $max ? "" : $val2,
+                                            'placeholder' => $val2 == $max ? $val2 : "",
+                                            'class'       => 'sx-to form-control',
+                                        ])->label(false); ?>
+                                    </div>
+                                    <?php if ($rp->cmsMeasure) : ?>
+                                        <span class="sort-slider__measure my-auto"><?php echo $rp->cmsMeasure->symbol; ?></span>
+                                    <?php endif; ?>
                                 </div>
-                                <span class="sort-slider__devide my-auto">—</span>
-                                <div class="sort-slider__input my-auto">
-                                    <?= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
-                                        'id'          => $id.'-to',
-                                        'value'       => $val2 == $max ? "" : $val2,
-                                        'placeholder' => $val2 == $max ? $val2 : "",
-                                        'class'       => 'sx-to form-control',
-                                    ])->label(false); ?>
+
+                                <input type="text"
+                                       id="<?= $id ?>"
+                                       class="slider-range"
+                                       data-no-submit="true"
+                                       data-type="double"
+                                       data-min="<?= $min ?>"
+                                       data-max="<?= $max ?>"
+                                       data-from="<?= $val1; ?>"
+                                       data-to="<?= $val2; ?>"
+                                       data-postfix=""/>
+
+                                <div class="sx-btn-apply-wrapper">
+                                    <button type="submit" class="btn btn-primary">Применить</button>
                                 </div>
-                                <?php if ($rp->cmsMeasure) : ?>
-                                    <span class="sort-slider__measure my-auto"><?php echo $rp->cmsMeasure->symbol; ?></span>
-                                <?php endif; ?>
+
                             </div>
-
-                            <input type="text"
-                                   id="<?= $id ?>"
-                                   class="slider-range"
-                                   data-no-submit="true"
-                                   data-type="double"
-                                   data-min="<?= $min ?>"
-                                   data-max="<?= $max ?>"
-                                   data-from="<?= $val1; ?>"
-                                   data-to="<?= $val2; ?>"
-                                   data-postfix=""/>
-
-                        </div>
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
 
         <? endif; ?>
     <? elseif ($rp && in_array($rp->property_type, [
@@ -174,19 +178,25 @@ HTML;
 
                 <?= $form->field($handler, $code, [
                     'options'  => [
-                        'class' => 'dropdown sx-inline-filter '.$class,
+                        'class' => 'dropdown sx-filter sx-filter-chekbox sx-inline-filter '.$class,
                         'tag'   => 'div',
                     ],
                     'template' => <<<HTML
-<a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown">{$rp->name} {$info}</a>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a href="#" class="dropdown-toggle btn btn-default sx-inline-btn" data-toggle="dropdown">{$rp->name} {$info}</a>
+<div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
     <div class="filter--group">
         <div class="filter--group--body">
             {$searchOptions}
             <div class="js-scrollbar" style="max-height: 280px;">
             {input}
             </div>
+            
         </div>
+        
+        <div class="sx-btn-apply-wrapper">
+                <button type="submit" class="btn btn-primary">Применить</button>
+            </div>
+        
     </div>
 </div>
 HTML

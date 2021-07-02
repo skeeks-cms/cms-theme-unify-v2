@@ -370,13 +370,17 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     background: none;
 }
 
-.sx-inline-filter .btn {
+.sx-inline-filter .sx-inline-btn {
     margin-right: 4px;
     margin-bottom: 5px;
-    /*margin-right: 4px;
-    margin-bottom: 5px;
-    padding: 3px 7px;
-    display: block;*/
-    /*background: #fafafa;*/
-    /*color: #555;*/
 }
+
+.sx-filter .sx-btn-apply-wrapper {
+    display: none;
+}
+
+.sx-filter .sx-btn-apply-wrapper .btn {
+    width: 100%
+}
+
+

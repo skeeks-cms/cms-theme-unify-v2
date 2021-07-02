@@ -243,7 +243,13 @@
                     return false;
                 }
 
-                self.JqueryForm.submit();
+                var jFilter = $(this).closest(".sx-filter");
+                $(".sx-btn-apply-wrapper", jFilter).show();
+                //self.JqueryForm.submit();
+            });
+
+            $('.dropdown-menu.keep-open').on('click', function (e) {
+              e.stopPropagation();
             });
             
             
@@ -275,6 +281,7 @@
                     jOption.click(); 
                     jBtn.fadeOut();
                     jBtn.remove();
+                    jOption.closest("form").submit();
                     return false;
                 });
             });
