@@ -74,7 +74,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
 
                 </div>
                 <!-- End Sidebar Nav -->
-                <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
+                <div class="col g-pb-65--md sx-main-col">
                     <!-- Breadcrumb-v1 -->
                     <!--<div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
                         <?/*= $this->render("@app/views/layouts/_breadcrumbs"); */?>
@@ -83,7 +83,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
 
                     <!-- Statistic Card -->
                     <div class="g-pa-20">
-                        <div class="sx-empty-layout-hidden-no">
+                        <div class="">
                             <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
                                 <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
                                     && \Yii::$app->controller->actions) : ?>

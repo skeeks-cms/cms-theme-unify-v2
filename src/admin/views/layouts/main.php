@@ -44,11 +44,11 @@ $theme = $this->theme;
                 </div>
             </div>
             <!-- End Sidebar Nav -->
-            <div class="col g-ml-45 g-ml-0--lg g-pb-65--md sx-main-col">
+            <div class="col g-pb-65--md sx-main-col">
                 <?= $this->render("@app/views/layouts/_before-content"); ?>
                 <!-- Statistic Card -->
                 <div class="sx-content-wrapper">
-                    <div class="sx-empty-layout-hidden-no sx-content-actions">
+                    <div class="sx-content-actions">
                         <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
                                 && \Yii::$app->controller->actions) : ?>

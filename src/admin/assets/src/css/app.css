@@ -19,6 +19,17 @@ a:hover {
     border-color: #eee #eee #eee;*/
 }
 
+@media (max-width: 991px) {
+    .sx-main-col {
+        margin-left: 45px;
+    }
+
+    .sx-empty .sx-main-col {
+        margin-left: 0px;
+    }
+}
+
+
 .sx-main-page-nav {
     margin-bottom: 10px;
 }
