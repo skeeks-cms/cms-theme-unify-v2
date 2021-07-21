@@ -132,8 +132,13 @@ JS
 
                         >
                             <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
+                            <?php if($url) : ?>
+                                <div <?php echo $url ? "onclick=\"location.href='{$url}'\" style=\"cursor: pointer;\"": ""; ?>>
+                            <?php endif; ?>
+                            
+                            
                             <!-- MAIN IMAGE -->
-                            <img <?php echo $url ? "onclick='location.href={$url}'": ""; ?> src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
+                            <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($tree->image ? $tree->image->src : null,
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
                                     'w' => 1920,
                                     'h' => 500,
@@ -141,6 +146,10 @@ JS
                             ) ?>" alt="" data-bgposition="center center" class="rev-slidebg"
                                  data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                             >
+                            <?php if($url) : ?>
+                                </div>
+                            <?php endif; ?>
+                            
                                     
                                     
                             <!-- LAYERS -->
