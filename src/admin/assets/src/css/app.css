@@ -19,17 +19,6 @@ a:hover {
     border-color: #eee #eee #eee;*/
 }
 
-@media (max-width: 991px) {
-    .sx-main-col {
-        margin-left: 45px;
-    }
-
-    .sx-empty .sx-main-col {
-        margin-left: 0px;
-    }
-}
-
-
 .sx-main-page-nav {
     margin-bottom: 10px;
 }
@@ -130,7 +119,7 @@ form.sx-form-admin .tab-content {
     margin: 0;
 }
 
-/*.sx-table a.btn {
+.sx-table a.btn {
     border-bottom: 0;
 }
 
@@ -140,7 +129,7 @@ form.sx-form-admin .tab-content {
 
 .sx-table a:hover {
     text-decoration: none;
-}*/
+}
 
 /**
  * Показывать контект после того как готов dom
@@ -158,7 +147,29 @@ form.sx-form-admin .tab-content {
     cursor: pointer;
 }
 
+/**
+ * Фильтры в админке
+ */
+.sx-backend-filters-form {
+    border: 0;
+}
 
+.sx-backend-filters-form .form-group {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.sx-backend-filters-form .col-form-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+    font-weight: bold;
+}
+
+.sx-backend-filters-form .form-group:hover {
+    background: #e6ecec;
+}
 
 /**
  * Form
@@ -406,11 +417,12 @@ form.sx-form-admin .tab-content {
     background-color: #bbf3bb !important;
 }
 
-/*.sx-icon-wrapper {
+.sx-icon-wrapper {
     width: 17px;
+    /* min-width: 20px; */
     display: inline-block;
     text-align: center;
-}*/
+}
 
 .u-side-nav--has-sub-menu ul {
     display: none;
@@ -770,24 +782,4 @@ pre {
 }
 .pull-right {
     float: right;
-}
-
-
-.sx-main-wrapper {
-    min-height: calc(100vh - 65px);
-}
-
-.u-side-nav--control-icon {
-    font-size: 10px;
-}
-
-.u-side-nav--third-level-menu-item {
-    overflow: hidden;
-    padding-right: 19px;
-}
-
-
-
-.sx-mobile-layout .sx-main-slider video {
-    height: 100% !important;
 }
