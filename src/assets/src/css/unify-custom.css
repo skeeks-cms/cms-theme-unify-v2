@@ -598,6 +598,7 @@ body {
         padding-top: 5px;
         /*padding-left: 10px;
         padding-right: 10px;*/
+        width: 100%;
     }
 
     .sx-breadcrumbs-wrapper .list-inline {

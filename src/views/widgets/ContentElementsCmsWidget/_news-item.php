@@ -15,15 +15,15 @@
 <div class="col-md-12 align-self-center">
     <ul class="list-inline g-color-gray-dark-v4 g-font-size-12 g-mb-0 sx-news-item-short-info">
 
-        <? if ($model->createdBy) : ?>
+        <?/* if ($model->createdBy) : */?><!--
             <li class="list-inline-item sx-news-item-created_by">
-                <img src="<?= $model->createdBy->avatarSrc; ?>" style="height: 25px; border-radius: 50%; max-width: 100%;"/>
-                <span title="<?= $model->createdBy->shortDisplayName; ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
-                    <?= $model->createdBy->shortDisplayName; ?>
+                <img src="<?/*= $model->createdBy->avatarSrc; */?>" style="height: 25px; border-radius: 50%; max-width: 100%;"/>
+                <span title="<?/*= $model->createdBy->shortDisplayName; */?>" class="g-color-gray-dark-v4 g-color-primary--hover">
+                    <?/*= $model->createdBy->shortDisplayName; */?>
                 </span>
             </li>
             <li class="list-inline-item sx-news-item-created_by">/</li>
-        <? endif; ?>
+        --><?/* endif; */?>
 
         <li class="list-inline-item sx-news-item-created_at">
             <?= \Yii::$app->formatter->asDate($model->published_at, 'medium') ?>

@@ -7,14 +7,13 @@
  */
 /* @var $this yii\web\View */
 ?>
-
 <? $items = \yii\helpers\ArrayHelper::map($images, "id", function (\skeeks\cms\models\StorageFile $model) {
     return [
         'src'         => $model->src,
         'preview_src' => \Yii::$app->imaging->thumbnailUrlOnRequest($model->src,
             new \skeeks\cms\components\imaging\filters\Thumbnail([
                 'h' => 350,
-                'w' => 525,
+                'w' => 0,
             ])
         ),
         'description' => $model->name,
@@ -22,8 +21,8 @@
     ];
 }); ?>
 <?= \skeeks\yii2\nanogalleryWidget\NanogalleryWidget::widget([
-    'items' => $items,
+    'items'         => $items,
     'clientOptions' => [
-        'thumbnailHeight' => 350
+        'thumbnailHeight' => 350,
     ],
 ]); ?>
