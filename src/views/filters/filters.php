@@ -54,7 +54,7 @@ $widget = $this->context;
     <? endforeach; ?>
 
     <? if (\Yii::$app->request->get(\Yii::$app->cmsSearch->searchQueryParamName)) : ?>
-        <input type="text" value="<?= \Yii::$app->cmsSearch->searchQuery; ?>" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"/>
+        <input type="hidden" value="<?= \Yii::$app->cmsSearch->searchQuery; ?>" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"/>
     <? endif; ?>
     <div style="display: none;">
         <button type="submit" class="btn btn-default">Применить</button>

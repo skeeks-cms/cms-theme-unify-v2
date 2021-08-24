@@ -160,46 +160,6 @@ if (@$isShowMainImage !== false) {
                                 </li>
                                 <li class="list-inline-item ml-auto">
 
-                                    <?
-
-                                    if ($model->image) {
-                                        $this->registerMetaTag([
-                                            'property' => 'og:image',
-                                            'content'  => $model->image->absoluteSrc,
-                                        ], 'og:image');
-                                    } else if ($model->cmsTree->dir == 'blog/releases') {
-                                        $imgsrc = \frontend\assets\AppAsset::getAssetUrl('/img/cms/box/box'.\Yii::$app->project->widgetSuffix.".png");
-                                        $this->registerMetaTag([
-                                            'property' => 'og:image',
-                                            'content'  => $imgsrc,
-                                        ], 'og:image');
-                                    }
-
-                                    if ($model->description_short) {
-                                        $this->registerMetaTag([
-                                            'property' => 'og:description',
-                                            'content'  => trim(strip_tags($model->description_short)),
-                                        ], 'og:description');
-                                    }
-
-
-                                    $this->registerMetaTag([
-                                        'property' => 'og:url',
-                                        'content'  => $model->getUrl(true),
-                                    ], 'og:url');
-
-                                    $this->registerMetaTag([
-                                        'property' => 'og:title',
-                                        'content'  => $model->name,
-                                    ], 'og:title');
-
-                                    $this->registerMetaTag([
-                                        'property' => 'og:type',
-                                        'content'  => 'article',
-                                    ], 'og:type');
-                                    ?>
-
-
                                     <?= \skeeks\cms\yandex\share\widget\YaShareWidget::widget([
                                         'namespace' => 'YaShareWidget-default',
                                     ]); ?>
