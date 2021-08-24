@@ -37,9 +37,8 @@ $widget = $this->context;
     </div>
     <!--<div class="h-100">-->
 
-    <? $form = \yii\widgets\ActiveForm::begin([
-        'method'  => 'post',
-        'action' => null,
+    <?
+    $widget->activeFormConfig = \yii\helpers\ArrayHelper::merge($widget->activeFormConfig, [
         'options' => [
             'id'    => 'sx-filters-form',
             'class' => 'sx-filters-form',
@@ -47,14 +46,16 @@ $widget = $this->context;
                 'pjax' => 0,
             ],*/
         ],
-    ]); ?>
+    ]);
+
+    $form = \yii\widgets\ActiveForm::begin($widget->activeFormConfig); ?>
     <? foreach ($widget->handlers as $filtersHandler) : ?>
         <?= $filtersHandler->render($form); ?>
     <? endforeach; ?>
 
-    <?/* if (\Yii::$app->request->get(\Yii::$app->cmsSearch->searchQueryParamName)) : */?><!--
-        <input type="text" value="<?/*= \Yii::$app->cmsSearch->searchQuery; */?>" name="<?/*= \Yii::$app->cmsSearch->searchQueryParamName; */?>"/>
-    --><?/* endif; */?>
+    <? if (\Yii::$app->request->get(\Yii::$app->cmsSearch->searchQueryParamName)) : ?>
+        <input type="text" value="<?= \Yii::$app->cmsSearch->searchQuery; ?>" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"/>
+    <? endif; ?>
     <div style="display: none;">
         <button type="submit" class="btn btn-default">Применить</button>
     </div>
