@@ -139,9 +139,12 @@ $widget = $this->context;
 
                     $newOptions = [];
                     foreach ($values as $value) {
-                        $newOptions[$value] = $options[$value];
-                        unset($options[$value]);
+                        if (\yii\helpers\ArrayHelper::getValue($options, $value)); {
+                            $newOptions[$value] = \yii\helpers\ArrayHelper::getValue($options, $value);
+                            unset($options[$value]);
+                        }
                     }
+
                     if ($newOptions) {
                         $options = \yii\helpers\ArrayHelper::merge($newOptions, $options);
                     }
