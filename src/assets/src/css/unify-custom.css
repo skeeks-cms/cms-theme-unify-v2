@@ -248,7 +248,7 @@ body {
     margin-right: 7px;
 }
 
-.sx-breadcrumbs-wrapper .list-inline-item span {
+.sx-breadcrumbs-wrapper .list-inline-item span.sx-last {
     opacity: 0.6;
 }
 
