@@ -23,8 +23,10 @@ use yii\db\QueryInterface;
 use yii\widgets\ActiveForm;
 
 /**
- * Class AvailabilityFiltersHandler
- * @package skeeks\cms\shop\queryFilter
+ *
+ * @property int $currentValue
+ *
+ * @author Semenov Alexander <semenov@skeeks.com>
  */
 class SortFiltersHandler extends Model
     implements IQueryFilterHandler
@@ -41,6 +43,38 @@ class SortFiltersHandler extends Model
     {
         return $this->formName;
     }
+
+
+    public function init()
+    {
+        $this->value = $this->currentValue;
+        return parent::init();
+    }
+
+    /**
+     * @return int
+     */
+    public function getCurrentValue()
+    {
+        if (\Yii::$app->session->offsetExists("sx-sort-value")) {
+            $value = (int) \Yii::$app->session->get("sx-sort-value");
+            $options = $this->getSortOptions();
+            if (isset($options[$value])) {
+                return $value;
+            }
+        }
+
+        return '-popular';
+    }
+
+    public function load($data, $formName = NULL)
+    {
+        $result = parent::load($data, $formName);
+        \Yii::$app->session->set("sx-sort-value", $this->value);
+
+        return $result;
+    }
+
 
     /**
      * @return array
