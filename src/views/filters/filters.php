@@ -7,7 +7,6 @@
  */
 /* @var $this yii\web\View */
 /* @var $widget \skeeks\cms\themes\unify\widgets\filters\FiltersWidget */
-
 \skeeks\cms\themes\unify\widgets\filters\assets\FiltersWidgetAsset::register($this);
 $this->registerCss(<<<CSS
 #sx-filters-form {
