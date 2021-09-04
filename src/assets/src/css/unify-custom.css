@@ -616,6 +616,14 @@ body {
 }
 
 
+.g-pos-fix {
+  position: fixed !important;
+}
+
+.g-m-reset {
+  margin: 0 !important;
+}
+
 
 /**
  * Кастомизация кнопок
