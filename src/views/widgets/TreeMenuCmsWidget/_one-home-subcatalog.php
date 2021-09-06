@@ -12,7 +12,7 @@
 
 <div class="col-lg-4 g-mb-30">
     <!-- Article -->
-    <article class="text-center g-color-white g-overflow-hidden h-100">
+    <article class="text-center g-color-white g-overflow-hidden h-100" style="cursor: pointer;" onclick="location.href='<?= $model->url; ?>'; return false;">
         <? if ($model->image) : ?>
         <div class="u-block-hover--scale g-min-height-200 g-flex-middle g-bg-cover g-bg-size-cover g-bg-black-opacity-0_5--after g-transition-0_5 h-100"
              data-bg-img-src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->mainImage ? $model->mainImage->src : null,
@@ -30,7 +30,7 @@
                 <div class="h3"><?= $model->name; ?>
                 </div>
                 <hr class="g-brd-3 g-brd-white g-width-30 g-my-20">
-                <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase" href="<?= $model->url; ?>">Смотреть</a>
+                <a class="btn btn-md btn-default g-font-weight-600 g-font-size-11 text-uppercase" href="<?= $model->url; ?>"><?php echo \Yii::t("app", "Смотреть"); ?></a>
             </div>
         </div>
     </article>
