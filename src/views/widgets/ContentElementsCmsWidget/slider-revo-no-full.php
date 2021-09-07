@@ -133,7 +133,7 @@ JS
                         >
                             <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
                             <?php if($url) : ?>
-                                <div <?php echo $url ? "onclick=\"location.href='{$url}'\" style=\"cursor: pointer;\"": ""; ?>>
+                                <div <?php echo $url ? "onclick=\"location.href='{$url}'\" style=\"cursor: pointer; text-align: center;\"": ""; ?>>
                             <?php endif; ?>
                             
                             

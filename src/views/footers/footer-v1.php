@@ -77,7 +77,7 @@
                                     <i class="fas fa-map-marker"></i>
                                   </span>
                                     </div>
-                                    <p class="mb-0"><?= $address->value; ?></p>
+                                    <p class="mb-0 my-auto"><?= $address->value; ?></p>
                                 </div>
                             <? endforeach; ?>
                         <?php endif; ?>

@@ -101,9 +101,9 @@ JS
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container sx-container">
                 <!-- Logo -->
-                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
-                    <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                </a>
+                <!--<a href="<?/*= \yii\helpers\Url::home(); */?>" title="<?/*= $this->theme->title; */?>" class="navbar-brand">
+                    <img src="<?/*= $this->theme->logo; */?>" alt="<?/*= $this->theme->title; */?>">
+                </a>-->
                 <!-- End Logo -->
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse align-items-center" id="navBar">
