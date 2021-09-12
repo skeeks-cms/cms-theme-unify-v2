@@ -33,13 +33,14 @@ class AuthWidget extends Widget
         $this->options['id'] = $this->id;
 
         $this->clientOptions['id'] = $this->id;
-        $this->clientOptions['action'] = $this->action;
         $this->clientOptions['url-generate-phone-code'] = Url::to(['/cms/auth/generate-phone-code']);
         $this->clientOptions['url-generate-email-code'] = Url::to(['/cms/auth/generate-email-code']);
 
         if (!\Yii::$app->cms->smsProvider) {
             $this->action = "auth-by-email";
         }
+
+        $this->clientOptions['action'] = $this->action;
 
         return parent::init();
     }
