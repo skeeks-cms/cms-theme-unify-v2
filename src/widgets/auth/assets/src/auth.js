@@ -4,6 +4,7 @@
  * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
  */
+
 (function (sx, $, _) {
     sx.classes.Auth = sx.classes.Component.extend({
 
