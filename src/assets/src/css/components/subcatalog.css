@@ -1,0 +1,84 @@
+.sx-one-subcatalog-wrapper .btn {
+    border: 1px solid white;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: white;
+}
+.sx-one-subcatalog-wrapper {
+    margin-bottom: 20px;
+}
+
+.sx-one-subcatalog-wrapper article {
+    height: 100%;
+    overflow: hidden;
+}
+
+.sx-one-subcatalog:hover {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.sx-one-subcatalog::after {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.sx-one-subcatalog {
+    min-height: 200px;
+    height: 100%;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+
+    background-size: cover;
+
+    position: relative;
+}
+
+.sx-one-subcatalog-info hr {
+    border-top: 3px white solid;
+    width: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sx-one-subcatalog-info {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 1;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
