@@ -3,6 +3,28 @@
     padding-bottom: 60px;
 }
 
+.sx-footer .sx-social-list li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.sx-footer .sx-social-list {
+    margin-bottom: 20px;
+}
+
+.sx-footer .u-heading-v2-3--bottom {
+    margin-bottom: 20px;
+}
+
+.sx-footer .sx-address-row {
+    margin-bottom: 20px;
+}
+
+.sx-footer .sx-icon-wrapper {
+    margin-right: 10px;
+}
+
+
+
 .sx-social-list a {
     box-shadow:rgba(0, 0, 0, 0.1) 0px 6px 15px -6px;
     height:32px;
@@ -77,4 +99,10 @@
 .sx-footer-title {
     text-transform: uppercase;
     font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sx-footer-logo-wrapper {
+    max-width: 200px;
+    margin-bottom: 30px;
 }

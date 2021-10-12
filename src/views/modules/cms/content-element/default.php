@@ -130,7 +130,7 @@ if (@$isShowMainImage !== false) {
                             <? endif; ?>
 
 
-                            <ul class="list-inline d-sm-flex g-color-gray-dark-v4 mb-0 sx-list-short-info sx-news-item-short-info">
+                            <ul class="list-inline d-sm-flex sx-list-short-info sx-main-text-color sx-news-item-short-info">
                                 <?php /*if ($model->createdBy) : */?><!--
                                     <li class="list-inline-item sx-news-item-created_by">
                                         <img src="<?/*= $model->createdBy->avatarSrc; */?>" style="height: 25px; border-radius: 50%;"/>
@@ -145,16 +145,16 @@ if (@$isShowMainImage !== false) {
                                 <li class="list-inline-item">
                                     <?= \Yii::$app->formatter->asDate($model->published_at, 'medium') ?>
                                 </li>
-                                <li class="list-inline-item sx-news-item-comments g-mx-10">/</li>
-                                <li class="list-inline-item sx-news-item-comments g-mr-10">
-                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                <li class="list-inline-item sx-news-item-comments sx-delimiter">/</li>
+                                <li class="list-inline-item sx-news-item-comments sx-item">
+                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="#!">
                                         <i class="fas fa-comments"></i>
                                         <?= (int)$model->relatedPropertiesModel->getAttribute('comments'); ?>
                                     </a>
                                 </li>
-                                <li class="list-inline-item sx-news-item-shows g-mx-10">/</li>
-                                <li class="list-inline-item sx-news-item-shows g-mr-10">
-                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                <li class="list-inline-item sx-news-item-shows sx-delimiter">/</li>
+                                <li class="list-inline-item sx-news-item-shows sx-item">
+                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="#!">
                                         <i class="fas fa-eye"></i> <?= (int)$model->show_counter; ?>
                                     </a>
                                 </li>

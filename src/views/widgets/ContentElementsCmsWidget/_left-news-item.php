@@ -10,9 +10,9 @@
  */
 ?>
 
-<article class="media g-mb-10">
-    <a class="d-flex u-shadow-v25 mr-3" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
-        <img class="g-width-60 g-height-60" src="<?= \skeeks\cms\helpers\Image::getSrc(
+<article class="media sx-news-item">
+    <a class="d-flex sx-news-img-wrapper" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
+        <img src="<?= \skeeks\cms\helpers\Image::getSrc(
                     \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                         new \skeeks\cms\components\imaging\filters\Thumbnail([
                             'w' => 60,
@@ -27,11 +27,10 @@
             <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>"><?= $model->name; ?></a>
         </h3>
 
-        <ul class="list-inline g-font-size-12 sx-color-silver">
+        <ul class="list-inline sx-color-silver sx-date-info">
             <li class="list-inline-item">
                 <?= \Yii::$app->formatter->asDate($model->published_at) ?>
             </li>
-
         </ul>
     </div>
 </article>

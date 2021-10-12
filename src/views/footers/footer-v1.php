@@ -14,14 +14,14 @@
         <div class="container sx-container">
             <div class="row">
                 <!-- Footer Content -->
-                <div class="col-sm-6 col-lg g-mb-30 g-mb-0--lg text-center">
-                    <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
+                <div class="col-sm-6 col-lg text-center sx-footer-logo-col">
+                    <a class="d-block mx-auto sx-footer-logo-wrapper" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
-                    <ul class="list-inline sx-social-list g-mb-20">
+                    <ul class="list-inline sx-social-list">
                         <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
                             <?php foreach ($socials as $social) : ?>
-                                <li class="list-inline-item g-mx-5">
+                                <li class="list-inline-item">
                                     <a class="g-color-primary g-text-underline--none--hover g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
                                        href="<?= $social->url; ?>"
                                        target="_blank"
@@ -31,8 +31,6 @@
                                 </li>
                             <?php endforeach; ?>
                         <?php endif; ?>
-
-
                     </ul>
                 </div>
                 <!-- End Footer Content -->
@@ -60,8 +58,8 @@
 
                 <!-- Footer Content -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="u-heading-v2-3--bottom g-mb-20">
-                        <div class="u-heading-v2__title sx-footer-title h6 mb-0"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></div>
+                    <div class="u-heading-v2-3--bottom">
+                        <div class="u-heading-v2__title sx-footer-title h6"><?= \Yii::t('skeeks/unify', 'Contacts'); ?></div>
                     </div>
                     <?
                     $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-address-text');
@@ -71,11 +69,11 @@
 
                         <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
                             <? foreach ($addresses as $address) : ?>
-                                <div class="d-flex g-mb-20">
-                                    <div class="g-mr-10 my-auto">
-                                  <span class="sx-contact-icon">
-                                    <i class="fas fa-map-marker"></i>
-                                  </span>
+                                <div class="d-flex sx-address-row">
+                                    <div class="sx-icon-wrapper my-auto">
+                                      <span class="sx-contact-icon">
+                                        <i class="fas fa-map-marker"></i>
+                                      </span>
                                     </div>
                                     <p class="mb-0 my-auto"><?= $address->value; ?></p>
                                 </div>
@@ -86,11 +84,11 @@
                         <?php if ($phones = \Yii::$app->skeeks->site->cmsSitePhones) : ?>
                             <? foreach ($phones as $phone) : ?>
                                 <!-- Phone -->
-                                <div class="d-flex g-mb-20">
-                                    <div class="g-mr-10">
-                                  <span class="sx-contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                  </span>
+                                <div class="d-flex sx-address-row">
+                                    <div class="sx-icon-wrapper my-auto">
+                                      <span class="sx-contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                      </span>
                                     </div>
                                     <a class="my-auto" href="tel:<?= $phone->value; ?>"><?= $phone->value; ?></a>
                                 </div>
@@ -101,8 +99,8 @@
 
                         <?php if ($emails = \Yii::$app->skeeks->site->cmsSiteEmails) : ?>
                             <? foreach ($emails as $email) : ?>
-                                <div class="d-flex g-mb-20">
-                                    <div class="g-mr-10">
+                                <div class="d-flex sx-address-row">
+                                    <div class="sx-icon-wrapper my-auto">
                                       <span class="sx-contact-icon">
                                         <i class="fas fa-globe"></i>
                                       </span>

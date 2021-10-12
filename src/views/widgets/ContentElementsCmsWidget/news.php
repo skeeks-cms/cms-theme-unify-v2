@@ -24,7 +24,7 @@
     ],
     'itemOptions' => [
         'tag' => 'div',
-        'class' => 'g-mb-30 item',
+        'class' => 'sx-news-list-item item',
     ],
     //'layout'            => "\n{items}{summary}\n<p class=\"row\">{pager}</p>",
     'layout'       => '

@@ -7,6 +7,7 @@
  */
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget */
+\skeeks\cms\themes\unify\assets\components\UnifyThemeSubcatalogAsset::register($this);
 ?>
 
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--

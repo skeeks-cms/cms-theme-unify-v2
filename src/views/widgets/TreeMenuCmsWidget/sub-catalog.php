@@ -8,6 +8,7 @@
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
 /* @var $models  \skeeks\cms\models\Tree[] */
+\skeeks\cms\themes\unify\assets\components\UnifyThemeSubcatalogAsset::register($this);
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
     <div class="shop-item-list row list-inline nomargin">

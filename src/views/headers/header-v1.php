@@ -71,9 +71,62 @@ JS
 
 
                 </div>
-                <div class="col-auto g-pos-rel g-color-black">
+                <div class="col-auto g-pos-rel sx-social-headerk">
                     <ul class="list-inline">
                         <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+
+                        <?php
+
+
+$this->registerCss(<<<CSS
+
+.u-icon-v1, .u-icon-v1 .u-icon__elem-regular, .u-icon-v1 .u-icon__elem-hover {
+    width: 2.57143rem;
+    height: 2.57143rem;
+    font-size: 1.42857rem;
+}
+.u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+
+.sx-social-header li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.u-icon-v1.u-icon-size--sm, .u-icon-v1.u-icon-size--sm .u-icon__elem-regular, .u-icon-v1.u-icon-size--sm .u-icon__elem-hover {
+    width: 2.28571rem;
+    height: 2.28571rem;
+    font-size: 1.28571rem;
+}
+.u-icon-v1 > i, .u-icon-v2 > i, .u-icon-v3 > i, .u-icon-v4 > span > i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+
+.g-color-white--hover:hover i {
+  color: #fff !important;
+}
+
+CSS
+);
+?>
+
                             <?php foreach ($socials as $social) : ?>
                                 <li class="list-inline-item g-mx-5">
                                     <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"

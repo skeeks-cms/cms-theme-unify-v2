@@ -8,32 +8,30 @@
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
 /* @var $model   \skeeks\cms\models\Tree */
-
 ?>
 
-<div class="col-lg-6 g-mb-30">
+<div class="col-lg-6 sx-one-subcatalog-wrapper">
     <!-- Article -->
-    <article class="text-center g-color-white g-overflow-hidden h-100">
+    <article class="text-center g-color-white">
         <? if ($model->image) : ?>
-        <div class="u-block-hover--scale g-min-height-200 g-flex-middle g-bg-cover g-bg-size-cover g-bg-bluegray-opacity-0_7--after g-transition-0_5 h-100"
+        <div class="sx-one-subcatalog"
              data-bg-img-src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
-                                new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                    'w' => 400,
-                                    'h' => 210,
-                                    'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
-                                ]), $model->code
-                            )); ?>">
-        <? else : ?>
-        <div class="u-block-hover--scale g-min-height-200 g-flex-middle g-bg-cover g-bg-primary g-bg-size-cover g-bg-bluegray-opacity-0_5--after g-transition-0_5 h-100">
-        <? endif; ?>
-
-            <div class="g-flex-middle-item g-pos-rel g-z-index-1 g-py-50 g-px-20">
-                <h3 class="text-uppercase"><?= $model->name; ?>
-                </h3>
-                <hr class="g-brd-3 g-brd-white g-width-30 g-my-20">
-                <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase" href="<?= $model->url; ?>">Смотреть</a>
+                 new \skeeks\cms\components\imaging\filters\Thumbnail([
+                     'w' => 400,
+                     'h' => 210,
+                     'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
+                 ]), $model->code
+             )); ?>">
+            <? else : ?>
+            <div class="sx-one-subcatalog g-bg-primary">
+                <? endif; ?>
+                <div class="sx-one-subcatalog-info">
+                    <div class="h3"><?= $model->name; ?>
+                    </div>
+                    <hr>
+                    <a class="btn btn-md" href="<?= $model->url; ?>">Смотреть</a>
+                </div>
             </div>
-        </div>
     </article>
     <!-- End Article -->
 </div>

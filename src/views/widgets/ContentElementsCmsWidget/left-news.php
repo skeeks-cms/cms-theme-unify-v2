@@ -17,7 +17,7 @@
 
     <div class="sx-col-left-block">
 
-        <div class=" g-mb-10">
+        <div class="sx-col-left-title-wrapper">
             <div class="h5 sx-col-left-title"><?= $widget->label; ?></div>
         </div>
 
@@ -28,6 +28,7 @@
             'options'      =>
                 [
                     'tag' => 'div',
+                    'class' => 'sx-col-left-news',
                 ],
             'itemOptions'  => [
                 'tag' => false,
