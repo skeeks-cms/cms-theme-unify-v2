@@ -56,6 +56,9 @@
             if (id) {
                 this.href(id);
             }
+
+            this._isDomReady = false;
+            this._isWindowReady = false;
         },
 
         href: function (id) {
@@ -88,10 +91,24 @@
             }
         },
 
+        _preloaderFade: function() {
+
+            setTimeout(function() {
+                $('.sx-preloader').fadeOut('slow', function () {
+                    /*$(this).remove();*/
+                });
+            }, 300);
+
+        },
+
         _onWindowReady: function () {
-            $('.sx-preloader').fadeOut('slow', function () {
-                /*$(this).remove();*/
-            });
+
+            if (this._isDomReady) {
+                this._preloaderFade();
+            }
+
+            this._isWindowReady = true;
+
         },
 
         _onDomReady: function () {
@@ -122,6 +139,10 @@
                 $(this).appendTo(jWrapper);
             });
 
+            this._isDomReady = true;
+            if (this._isWindowReady) {
+                this._preloaderFade();
+            }
 
         }
     });
