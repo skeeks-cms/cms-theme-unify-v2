@@ -5,7 +5,7 @@
     'options'           =>
     [
         'tag'   => 'div',
-        'class'   => '',
+        'class'   => 'sx-news-grid',
     ],
     'itemOptions' => [
         'tag' => false,

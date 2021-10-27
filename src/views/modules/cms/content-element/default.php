@@ -103,7 +103,7 @@ if (@$isShowMainImage !== false) {
                                 <? endif; ?>
                                 <!-- /Микроразметка новости -->
                                 <? if ($model->image && $isShowMainImage && !$this->theme->is_image_body_begin) : ?>
-                                    <div class="g-mb-20">
+                                    <div class="" style="margin-bottom: 20px;">
                                         <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                                 'w' => 0,
