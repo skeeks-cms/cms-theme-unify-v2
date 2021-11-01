@@ -156,7 +156,7 @@ CSS
                                            href="<?= $social->url; ?>"
                                            target="_blank"
                                         >
-                                            <i class="fab fa-<?= $social->social_type; ?>"></i>
+                                            <i class="<?= $social->iconCode; ?>"></i>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
