@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="sx-news-item-title" style="margin-bottom: 16px;">
-            <a class="h3 g-text-underline--none--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0">
+            <a class="h5 g-text-underline--none--hover" href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0">
                 <?= $model->name; ?>
             </a>
         </div>
