@@ -11,7 +11,7 @@
  *
  */
 ?>
-<div class="col-md-3 item" style="margin-bottom: 30px;" data-animation="fadeInUp" data-animation-delay="500" data-animation-duration="500">
+<div class="col-md-3 item" style="margin-bottom: 30px;">
     <div class="sx-news-item">
         <div style="margin-bottom: 20px;">
             <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0">

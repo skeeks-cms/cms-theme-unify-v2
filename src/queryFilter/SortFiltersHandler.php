@@ -20,6 +20,7 @@ use v3project\yii2\productfilter\IFiltersHandler;
 use yii\base\Model;
 use yii\data\DataProviderInterface;
 use yii\db\QueryInterface;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
@@ -37,6 +38,12 @@ class SortFiltersHandler extends Model
 
     public $value = '-popular';
     public $formName = 's';
+
+
+    public function getValueAsText()
+    {
+        return (string)ArrayHelper::getValue($this->getSortOptions(), $this->value);
+    }
 
 
     public function formName()
