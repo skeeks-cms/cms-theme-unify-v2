@@ -36,6 +36,12 @@ class UnifyAdminAppAsset extends AssetBundle
         UnifyAdminAsset::class,
     ];
 
+    public function init()
+    {
+        parent::init();
+        $this->_implodeFiles();
+    }
+
     /**
      * Registers this asset bundle with a view.
      * @param View $view the view to be registered with
