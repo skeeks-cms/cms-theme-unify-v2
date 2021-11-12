@@ -17,6 +17,10 @@ use yii\helpers\Html;
  * @var $theme \skeeks\cms\themes\unify\admin\UnifyThemeAdmin;
  */
 $theme = $this->theme;
+$isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout;
+if ($isEmpty && \Yii::$app->getModule('debug')) {
+    \Yii::$app->getModule('debug')->panels = [];
+}
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -29,20 +33,24 @@ $theme = $this->theme;
         <!--<link rel="icon" href="<?/*= $theme->favicon */?>" type="image/x-icon"/>-->
         <?php $this->head() ?>
     </head>
-    <body class="has-fixed-sidebar <?= \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout ? "sx-empty" : ""; ?>">
+    <body class="has-fixed-sidebar <?= $isEmpty ? "sx-empty" : ""; ?>">
     <?php $this->beginBody() ?>
+    <?php if (!$isEmpty) : ?>
     <?= $this->render('@app/views/layouts/_header'); ?>
+    <? endif; ?>
     <main class="container-fluid px-0 g-pt-65">
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
         <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
             <!-- Sidebar Nav -->
-            <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
-                <div class="js-custom-scroll u-sidebar-navigation-v1-inner">
-                <?= $this->render("@app/views/layouts/_before-menu"); ?>
-                <?= $this->render("@app/views/layouts/_menu"); ?>
-                <?= $this->render("@app/views/layouts/_after-menu"); ?>
+            <?php if (!$isEmpty) : ?>
+                <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
+                    <div class="js-custom-scroll u-sidebar-navigation-v1-inner">
+                    <?= $this->render("@app/views/layouts/_before-menu"); ?>
+                    <?= $this->render("@app/views/layouts/_menu"); ?>
+                    <?= $this->render("@app/views/layouts/_after-menu"); ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
             <!-- End Sidebar Nav -->
             <div class="col g-pb-65--md sx-main-col">
                 <?= $this->render("@app/views/layouts/_before-content"); ?>

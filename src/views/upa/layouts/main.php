@@ -21,8 +21,10 @@ $this->registerCss(<<<CSS
 }
 CSS
 );
+$isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout;
+
 if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
-    $this->theme->bodyCssClass = $this->theme->bodyCssClass . ' sx-empty';
+    $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
 }
 ?>
 <?php $this->beginPage() ?>
@@ -33,7 +35,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <!--<link rel="icon" type="image/x-icon" href="<?/*= $this->theme->favicon; */?>"/>-->
+        <!--<link rel="icon" type="image/x-icon" href="<? /*= $this->theme->favicon; */ ?>"/>-->
         <?php $this->head() ?>
     </head>
     <body class="<?= $this->theme->bodyCssClass; ?>">
@@ -44,7 +46,9 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
         </div>
     <? endif; ?>
     <main>
-        <?= $this->render("@app/views/header"); ?>
+        <?php if (!$isEmpty) : ?>
+            <?= $this->render("@app/views/header"); ?>
+        <? endif; ?>
 
 
         <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
@@ -59,25 +63,27 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                    data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
                     <i class="hs-admin-align-left"></i>
                 </a>
-                <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
-                    <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
-                    <?= $this->render("@app/views/layouts/_menu"); ?>
-                    <div class="text-center g-mt-20">
+                <?php if (!$isEmpty) : ?>
 
-                        <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post">
-                            <i class="icon-logout"></i>
-                            Выход
-                        </a>
+                    <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
+                        <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
+                        <?= $this->render("@app/views/layouts/_menu"); ?>
+                        <div class="text-center g-mt-20">
+
+                            <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post">
+                                <i class="icon-logout"></i>
+                                Выход
+                            </a>
+                        </div>
+                        <? /*= $this->render("@app/views/layouts/_after-menu"); */ ?>
                     </div>
-                    <? /*= $this->render("@app/views/layouts/_after-menu"); */ ?>
+                <? endif; ?>
 
-
-                </div>
                 <!-- End Sidebar Nav -->
                 <div class="col g-pb-65--md sx-main-col">
                     <!-- Breadcrumb-v1 -->
                     <!--<div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
-                        <?/*= $this->render("@app/views/layouts/_breadcrumbs"); */?>
+                        <? /*= $this->render("@app/views/layouts/_breadcrumbs"); */ ?>
                     </div>-->
                     <!-- End Breadcrumb-v1 -->
 
@@ -160,7 +166,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                 </div>
             </div>
 
-    <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
+            <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
         </div>
     <? endif; ?>
 

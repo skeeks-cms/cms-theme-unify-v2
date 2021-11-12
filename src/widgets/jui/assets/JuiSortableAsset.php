@@ -8,7 +8,7 @@
 
 namespace skeeks\cms\themes\unify\widgets\jui\assets;
 
-use yii\web\AssetBundle;
+use skeeks\cms\base\AssetBundle;
 /**
  *
  * Этот класс используется для того чтобы не пересекаться с bootstrap tooltip
@@ -19,6 +19,13 @@ use yii\web\AssetBundle;
 class JuiSortableAsset extends AssetBundle
 {
     public $sourcePath = '@bower/jquery-ui';
+
+    public function init()
+    {
+        parent::init();
+        $this->_implodeFiles();
+    }
+
     public $js = [
 
         //'ui/core.js', //TODO:переписал
