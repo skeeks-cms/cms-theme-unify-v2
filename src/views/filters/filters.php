@@ -41,9 +41,9 @@ $widget = $this->context;
         'options' => [
             'id'    => 'sx-filters-form',
             'class' => 'sx-filters-form',
-            /*'data'  => [
-                'pjax' => 0,
-            ],*/
+            'data'  => [
+                'pjax' => new \yii\helpers\UnsetArrayValue(),
+            ],
         ],
     ]);
 

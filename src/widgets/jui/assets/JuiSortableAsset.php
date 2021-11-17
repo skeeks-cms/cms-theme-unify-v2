@@ -52,12 +52,11 @@ class JuiSortableAsset extends AssetBundle
         'ui/widgets/mouse.js',
         'ui/widgets/sortable.js',
     ];
-    public $css = [
-        'themes/smoothness/jquery-ui.min.css',
-    ];
+
     public $depends = [
         JuiCoreFixAsset::class,
         'yii\web\JqueryAsset',
+        JuiSmoothnessAsset::class
     ];
 
     public function registerAssetFiles($view)

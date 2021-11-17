@@ -16,13 +16,11 @@ use yii\web\AssetBundle;
  * @see https://api.jqueryui.com/sortable/
  * @author Semenov Alexander <semenov@skeeks.com>
  */
-class JuiCoreFixAsset extends AssetBundle
+class JuiSmoothnessAsset extends AssetBundle
 {
-    public $sourcePath = "@skeeks/cms/themes/unify/widgets/jui/assets/src";
-    public $js = [
-        'core.js', //TODO:переписал
-    ];
+    public $sourcePath = '@bower/jquery-ui';
+
     public $css = [
-        
+        'themes/smoothness/jquery-ui.min.css',
     ];
 }
