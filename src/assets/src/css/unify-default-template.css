@@ -1585,7 +1585,8 @@ h6,
     background: linear-gradient(150deg, #e1082c, #0185c8);
 }
 
-.btn-primary:hover, .btn-primary.active {
+.btn-primary:hover, .btn-primary.active,
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active{
     border-color: #0185c8;
     /*background-color: #0185c8;*/
     background: linear-gradient(150deg, #e1082c, #0185c8);
