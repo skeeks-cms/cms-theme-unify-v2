@@ -7,6 +7,8 @@
  */
 /* @var $this yii\web\View */
 $level = 1;
+
+
 ?>
 
 <? if ($items = \skeeks\cms\backend\BackendComponent::getCurrent()->menu->items) : ?>
