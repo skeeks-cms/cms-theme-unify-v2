@@ -38,7 +38,7 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
     <?php if (!$isEmpty) : ?>
     <?= $this->render('@app/views/layouts/_header'); ?>
     <? endif; ?>
-    <main class="container-fluid px-0 g-pt-65">
+    <main class="sx-main">
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
         <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
             <!-- Sidebar Nav -->

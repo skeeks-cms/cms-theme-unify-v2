@@ -45,7 +45,8 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
             <div id="loaderImage"></div>
         </div>
     <? endif; ?>
-    <main>
+    <div class="sx-main-wrapper"><!--Нужен для mmenu-->
+    <main class="sx-main" style="padding-top: 0px;">
         <?php if (!$isEmpty) : ?>
             <?= $this->render("@app/views/header"); ?>
         <? endif; ?>
@@ -88,8 +89,8 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
                     <!-- End Breadcrumb-v1 -->
 
                     <!-- Statistic Card -->
-                    <div class="g-pa-20">
-                        <div class="">
+                    <div class="sx-content-wrapper">
+                        <div class="sx-content-actions">
                             <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
                                 <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
                                     && \Yii::$app->controller->actions) : ?>
@@ -174,6 +175,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
 
         <?= $this->render("@app/views/footer"); ?>
     </main>
+    </div>
     <?= $this->render("@app/views/modals"); ?>
     <?php $class::register($this); ?>
     <?php $this->endBody() ?>

@@ -50,7 +50,7 @@ if ($level == 4) {
 
                         <? if ($item->items) : ?>
                             <span class="align-self-center u-side-nav--control-icon">
-                          <i class="hs-admin-angle-down"></i>
+                          <i class="hs-admin-angle-right"></i>
                         </span>
                         <? endif; ?>
                     </a>

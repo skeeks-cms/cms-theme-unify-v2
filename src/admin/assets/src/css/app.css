@@ -92,6 +92,8 @@ form.sx-form-admin .tab-content {
 .sx-nav-model {
     white-space: nowrap;
     flex-wrap: initial;
+    overflow-x: auto;
+    overflow-y: hidden;
     /*white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
@@ -511,6 +513,7 @@ form .sx-from-required {
 
 }
 
+
 /* Custom animation */
 /*.fancybox-fx-slide-in-out.fancybox-slide--previous {
   transform: translateX(-100%);
@@ -782,4 +785,66 @@ pre {
 }
 .pull-right {
     float: right;
+}
+
+.sx-main-wrapper {
+    min-height: calc(100vh - 65px);
+}
+.sx-main {
+    padding-top: 65px;
+}
+
+.u-side-nav--control-icon {
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.u-side-nav--top-level-menu {
+    margin-bottom: 0;
+}
+
+.u-side-nav--top-level-menu-link {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.u-side-nav--top-level-menu-icon {
+    margin-right: 18px;
+    font-size: 18px;
+}
+
+
+@media (max-width: 993px) {
+    .sx-main-col {
+        margin-left: 50px;
+    }
+
+    .sx-content-wrapper, .sx-breadcrumbs-wrapper {
+        padding: 5px;
+    }
+
+    .sx-main-col .sx-grid-view {
+        font-size: 9px;
+    }
+
+    .table td, .table th {
+        padding: 3px;
+    }
+
+    .sx-main {
+        padding-top: 0px;
+    }
+
+    .sx-backend-form .sx-inline-row label {
+        font-size: 14px;
+    }
+
+    /*.sx-main-col .tab-content {
+        padding-top: 0px;
+    }*/
+
+    .sx-nav-model {
+        font-size: 13px;
+    }
 }
