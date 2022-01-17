@@ -167,10 +167,22 @@ html.mm-right .mm-menu.mm-fx-menu-slide {
     box-shadow: none !important;
 }
 
-#mm-blocker {
-    z-index: 501 !important;
+/* Для модальных окон бутстрап нужно сделать такой z-index */
+/*#mm-blocker {
+    z-index: 1060 !important;
 }
 
+.mm-slideout {
+    z-index: 1050 !important;
+}*/
+
+.mm-slideout {
+    z-index: auto !important;
+}
+
+html.mm-right.mm-opening .mm-menu.mm-opened~.mm-slideout {
+    z-index: 1050 !important;
+}
 
 /**
  * Оформление верхнего toolbar

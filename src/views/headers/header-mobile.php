@@ -12,8 +12,9 @@
 
 $this->registerJs(<<<JS
     /* Перемещаем модальное окно в конец body. */
+    /* Это не работает нормально когда включено mmenu! Лучше так не делать! */
     $('.modal').on('shown.bs.modal', function (e) {
-        $(this).appendTo("body")
+        //$(this).appendTo("body")
     });
     
 JS
