@@ -136,26 +136,27 @@ JS
 <section class="clearfix g-brd-bottom">
     <!-- Icons Block -->
     <div class="row no-gutters g-py-60">
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
-            <!-- Icon Blocks -->
-            <div class="text-center g-pa-20">
+        <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
+            <div class="col-lg col-md col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
+                <!-- Icon Blocks -->
+                <div class="text-center g-pa-20">
             <span class="g-mb-10" style="font-size:40px;">
 
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Address'); ?></h4>
-                <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
+                    <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Address'); ?></h4>
                     <? foreach ($addresses as $address) : ?>
                         <span class="d-block"><?= $address->value; ?></span>
                     <? endforeach; ?>
-                <?php endif; ?>
 
+                </div>
+                <!-- End Icon Blocks -->
             </div>
-            <!-- End Icon Blocks -->
-        </div>
+        <?php endif; ?>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
+
+        <div class="col-lg col-md col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="g-mb-10" style="font-size:40px;">
@@ -172,7 +173,7 @@ JS
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
+        <div class="col-lg col-md col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="g-mb-10" style="font-size:40px;">
