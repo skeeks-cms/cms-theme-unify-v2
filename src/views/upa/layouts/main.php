@@ -19,6 +19,9 @@ $this->registerCss(<<<CSS
 .js-side-nav {
     display: none !important;
 }
+.container-full-width .sx-container {
+    max-width: 100%;
+}
 CSS
 );
 $isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout;
@@ -26,6 +29,8 @@ $isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBa
 if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
     $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
 }
+$this->theme->bodyCssClass .= " " . $this->theme->upa_container;
+
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
