@@ -30,13 +30,13 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <!--<link rel="icon" href="<?/*= $theme->favicon */?>" type="image/x-icon"/>-->
+        <!--<link rel="icon" href="<? /*= $theme->favicon */ ?>" type="image/x-icon"/>-->
         <?php $this->head() ?>
     </head>
     <body class="has-fixed-sidebar <?= $isEmpty ? "sx-empty" : ""; ?>">
     <?php $this->beginBody() ?>
     <?php if (!$isEmpty) : ?>
-    <?= $this->render('@app/views/layouts/_header'); ?>
+        <?= $this->render('@app/views/layouts/_header'); ?>
     <? endif; ?>
     <main class="sx-main">
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
@@ -45,9 +45,9 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
             <?php if (!$isEmpty) : ?>
                 <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
                     <div class="js-custom-scroll u-sidebar-navigation-v1-inner">
-                    <?= $this->render("@app/views/layouts/_before-menu"); ?>
-                    <?= $this->render("@app/views/layouts/_menu"); ?>
-                    <?= $this->render("@app/views/layouts/_after-menu"); ?>
+                        <?= $this->render("@app/views/layouts/_before-menu"); ?>
+                        <?= $this->render("@app/views/layouts/_menu"); ?>
+                        <?= $this->render("@app/views/layouts/_after-menu"); ?>
                     </div>
                 </div>
             <?php endif; ?>
@@ -79,40 +79,45 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
                         <? endif; ?>
                     </div>
 
+
                     <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                         && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                        <div class="sx-content-model-actions">
-                            <div class="panel-content-before panel-content-before-second">
-                                <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                                    && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+
+                        <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
+
+                            <div class="sx-content-model-actions">
+                                <div class="panel-content-before panel-content-before-second">
+                                    <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
+                                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
 
 
-                                    <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
-                                        <?= \Yii::$app->controller->modelHeader; ?>
-                                    </div>
+                                        <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
+                                            <?= \Yii::$app->controller->modelHeader; ?>
+                                        </div>
 
-                                    <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
-                                    <?
-                                    echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
-                                        'actions'            => \Yii::$app->controller->modelActions,
-                                        'activeId'           => \Yii::$app->controller->action->id,
-                                        'options'            => [
-                                            'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
-                                        ],
-                                        'itemWrapperOptions' => [
-                                            'class' => 'nav-item',
-                                        ],
-                                        'itemOptions'        => [
-                                            'class' => 'nav-link',
-                                        ],
-                                    ]);
-                                    ?>
-                                    </div>
+                                        <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
+                                            <?
+                                            echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
+                                                'actions'            => \Yii::$app->controller->modelActions,
+                                                'activeId'           => \Yii::$app->controller->action->id,
+                                                'options'            => [
+                                                    'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
+                                                ],
+                                                'itemWrapperOptions' => [
+                                                    'class' => 'nav-item',
+                                                ],
+                                                'itemOptions'        => [
+                                                    'class' => 'nav-link',
+                                                ],
+                                            ]);
+                                            ?>
+                                        </div>
 
 
-                                <? endif; ?>
+                                    <? endif; ?>
+                                </div>
                             </div>
-                        </div>
+                        <? endif; ?>
                         <div class="tab-content">
                             <section>
                                 <?= $content; ?>
