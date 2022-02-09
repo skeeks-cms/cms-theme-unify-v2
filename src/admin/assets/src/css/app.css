@@ -482,6 +482,9 @@ form .sx-from-required {
 /**
  * Fancybox rewrite
  */
+.sx-fancy-container .fancybox-is-open .fancybox-bg {
+    opacity: 0.7;
+}
 .sx-fancy-container .fancybox-slide--iframe {
     padding: 0;
 }
