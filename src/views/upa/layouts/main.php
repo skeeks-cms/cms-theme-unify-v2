@@ -86,7 +86,7 @@ $this->theme->bodyCssClass .= " ".$this->theme->upa_container;
                     <? endif; ?>
 
                     <!-- End Sidebar Nav -->
-                    <div class="col g-pb-65--md sx-main-col">
+                    <div class="col sx-main-col">
                         <!-- Breadcrumb-v1 -->
                         <!--<div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
                         <? /*= $this->render("@app/views/layouts/_breadcrumbs"); */ ?>
