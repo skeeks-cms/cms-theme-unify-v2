@@ -30,6 +30,7 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
     $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
 }
 $this->theme->bodyCssClass .= " ".$this->theme->upa_container;
+$this->theme->bodyCssClass .= " sx-upa-body";
 
 ?>
 <?php $this->beginPage() ?>
@@ -120,7 +121,7 @@ $this->theme->bodyCssClass .= " ".$this->theme->upa_container;
 
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                                 && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                                <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
+                                <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
 
                                     <div class="">
                                         <div class="panel-content-before panel-content-before-second">
