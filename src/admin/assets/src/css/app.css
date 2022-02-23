@@ -845,3 +845,10 @@ pre {
         font-size: 13px;
     }
 }
+
+.sx-empty {
+    background: white;
+}
+.sx-empty .sx-container {
+    max-width: 100%;
+}
