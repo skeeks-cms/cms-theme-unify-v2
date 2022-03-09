@@ -23,7 +23,7 @@ class JuiSortableAsset extends AssetBundle
     public function init()
     {
         parent::init();
-        $this->_implodeFiles();
+        //$this->_implodeFiles();
     }
 
     public $js = [
@@ -54,8 +54,8 @@ class JuiSortableAsset extends AssetBundle
     ];
 
     public $depends = [
-        JuiCoreFixAsset::class,
         'yii\web\JqueryAsset',
+        JuiCoreFixAsset::class,
         JuiSmoothnessAsset::class
     ];
 
