@@ -7,9 +7,9 @@
  */
 return [
     'components' => [
-        'unifyThemeSettings' => [
+        /*'unifyThemeSettings' => [
             'class' => \skeeks\cms\themes\unify\components\UnifyThemeSettings::class,
-        ],
+        ],*/
 
         'mobileDetect' => [
             'class' => '\skeeks\yii2\mobiledetect\MobileDetect'
@@ -27,5 +27,14 @@ return [
                 ], $theme->pathMap['@app/views']);
             },
         ],
+        
+        'view' => [
+            'themes' => [
+                "unify" => [
+                    'class' => \skeeks\cms\themes\unify\UnifyTheme::class
+                ],
+            ]
+        ],
+        
     ],
 ];

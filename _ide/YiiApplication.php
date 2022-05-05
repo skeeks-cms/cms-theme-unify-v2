@@ -17,7 +17,6 @@ use yii\base\Theme;
 
 /**
  * @property View|PView         $view
- * @property UnifyThemeSettings $unifyThemeSettings
  * @property MobileDetect       $mobileDetect
  *
  * Class Application
