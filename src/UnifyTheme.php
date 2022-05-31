@@ -174,6 +174,18 @@ HTML
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
+                        
+                        
+                        'second_theme_bg_color' => [
+                            'class'       => WidgetField::class,
+                            'widgetClass' => ColorInput::class,
+                        ],
+                        'second_theme_text_color' => [
+                            'class'       => WidgetField::class,
+                            'widgetClass' => ColorInput::class,
+                        ],
+                        
+                        
                         'body_bg_image'     => [
                             'class'       => WidgetField::class,
                             'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
@@ -549,6 +561,13 @@ HTML
                 'font_css'             => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
                 'text_color'           => 'Цвет текста заданный по умолчанию для всего сайта.',
                 'yandex_map'           => 'Если код не указан, то карта будет построена через апи',
+                
+                'main_theme_color1'           => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
+                'main_theme_color2'           => 'Чтобы на кнопках был градиент задайте второй основной цвет',
+                
+                'second_theme_bg_color'           => 'Основной цвет фона второстепенных кнопок',
+                'second_theme_text_color'           => 'Основной цвет текста второстепенных кнопок',
+                
             ],
             'attributeLabels' => [
                 'css_code'           => "CSS код",
@@ -565,6 +584,9 @@ HTML
 
                 'main_theme_color1' => "Цвет темы 1",
                 'main_theme_color2' => "Цвет темы 2",
+                
+                'second_theme_bg_color' => "Цвет фона второстепенных кнопок",
+                'second_theme_text_color' => "Цвет текста второстепенных кнопок",
 
                 'font_css'     => "Подключаемые шрифты",
                 'font_headers' => "Шрифт заголовков",
@@ -637,6 +659,8 @@ HTML
 
                         'main_theme_color1',
                         'main_theme_color2',
+                        'second_theme_bg_color',
+                        'second_theme_text_color',
 
                         'menu_color1',
                         'menu_color2',
@@ -800,6 +824,7 @@ HTML
         }
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
+        
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)), $content);
         $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)), $content);
@@ -817,6 +842,9 @@ HTML
         $content = str_replace("{footer_copyright_color}", \Yii::$app->view->theme->footer_copyright_color, $content);
 
 
+        $content = str_replace("{second_theme_bg_color}", \Yii::$app->view->theme->second_theme_bg_color, $content);
+        $content = str_replace("{second_theme_text_color}", \Yii::$app->view->theme->second_theme_text_color, $content);
+        
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
@@ -910,7 +938,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)))."-v8";
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)))."-v9";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -1290,6 +1318,15 @@ CSS;
      * @var string
      */
     public $main_theme_color2 = '#e1082c';
+
+    /**
+     * @var string
+     */
+    public $second_theme_bg_color = '#6c757d';
+    /**
+     * @var string
+     */
+    public $second_theme_text_color = '#ffffff';
 
 
     /**

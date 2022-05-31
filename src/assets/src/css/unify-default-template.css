@@ -1636,7 +1636,16 @@ a:hover {
 .g-bg-primary--active.active, .active .g-bg-primary--active {
     background-color: #0185c8 !important;
 }
+:root {
+    --second-text-color: {second_theme_text_color};
+    --second-bg-color: {second_theme_bg_color};
+}
 
+.btn-secondary {
+    color: {second_theme_text_color};
+    background-color: {second_theme_bg_color};
+    border-color: {second_theme_bg_color};
+}
 
 /**
  * Кастомизация форм в основной цвет

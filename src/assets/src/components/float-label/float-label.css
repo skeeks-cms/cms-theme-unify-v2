@@ -1,0 +1,126 @@
+
+/*floatlabel*/
+.sx-from-required {
+    color: red;
+}
+
+.js-float-label-wrapper {
+    position: relative;
+}
+
+.js-float-label-wrapper label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 3px;
+    font-weight: normal;
+    color: #7a7a7a;
+    padding: 3px;
+    background: transparent;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.js-float-label-wrapper .form-control:disabled, .js-float-label-wrapper .form-control[readonly] {
+    background-color: #f3f3f3b3;
+}
+
+.js-float-label-wrapper.focused label,
+.js-float-label-wrapper.populated label {
+    opacity: 1;
+    top: 1px;
+    font-size: 10px;
+    color: #8a8a8a !important;
+    font-weight: normal;
+    z-index: 1;
+}
+
+.js-float-label-wrapper.populated label .to-hide {
+    display: none;
+}
+
+
+.js-float-label-wrapper input {
+    height: 52px;
+    padding: 15px;
+
+}
+
+.js-float-label-wrapper input.sx-value-element,
+.js-float-label-wrapper.focused input,
+.js-float-label-wrapper.populated input,
+.js-float-label-wrapper.focused textarea,
+.js-float-label-wrapper.populated textarea,
+.js-float-label-wrapper.focused select,
+.js-float-label-wrapper.populated select {
+    padding-top: 21px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 18px;
+    color: black;
+
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+
+
+.js-float-label-wrapper.focused select,
+.js-float-label-wrapper.populated select {
+    padding-left: 9px;
+}
+
+.js-float-label-wrapper input,
+.js-float-label-wrapper textarea,
+.js-float-label-wrapper label,
+.js-float-label-wrapper select {
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+
+
+}
+
+.js-float-label-wrapper .select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 54px;
+    padding: 22px 6px 13px;
+    border-radius: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #f7f7f7;
+    border: 1px solid #e4e7ed;
+    border-radius: 2px;
+}
+
+.js-float-label-wrapper.has-error:before, .js-float-label-wrapper.has-success:before {
+    top: 6px;
+}
+
+.field-filer_input.has-success:before, .field-filer_input.has-error:before {
+    top: 6px;
+    right: 4px;
+}
+
+
+/**
+ * Кастомизация форм
+ */
+.js-float-label-wrapper .form-control {
+    border: 1px solid gray;
+    border-radius: 0;
+
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.js-float-label-wrapper .form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: none;
+}
