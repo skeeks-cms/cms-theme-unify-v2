@@ -35,12 +35,18 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
     </div>
 <? endif; ?>
 
-<?= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+<?php
+  $widget = \skeeks\cms\cmsWidgets\tree\TreeCmsWidget::beginWidget('home-sub-catalog-new');
+  $widget->descriptor->name = 'Подразделы на главной';
+  $widget->viewFile = '@app/views/widgets/TreeMenuCmsWidget/home-sub-catalog';
+  $widget::end(); ?>
+
+<?/*= trim(\skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
     'namespace'       => 'home-sub-catalog',
     'viewFile'        => '@app/views/widgets/TreeMenuCmsWidget/home-sub-catalog',
     'treeParentCode'  => "services",
     'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
-])); ?>
+])); */?>
 
 
 <section class="promo-4 noborder g-bg-secondary g-pt-20 g-pb-20">

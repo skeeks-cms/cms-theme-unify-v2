@@ -27,6 +27,7 @@ use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use skeeks\cms\widgets\ColorInput;
+use skeeks\widget\codemirror\CodemirrorWidget;
 use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\FieldSet;
 use skeeks\yii2\form\fields\HtmlBlock;
@@ -482,7 +483,19 @@ HTML
 
 
                         'css_code' => [
-                            'class' => TextareaField::class,
+                            'class' => WidgetField::class,
+                            'widgetClass' => CodemirrorWidget::class,
+                            'widgetConfig' => [
+                                'preset' => 'htmlmixed',
+                                'assets' =>
+                                    [
+                                        \skeeks\widget\codemirror\CodemirrorAsset::THEME_NIGHT
+                                    ],
+                                        'clientOptions' =>
+                                    [
+                                        'theme' => 'night'
+                                    ],
+                            ]
                         ],
 
                         'is_show_home_slider' => [

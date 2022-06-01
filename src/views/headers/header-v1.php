@@ -30,7 +30,7 @@ JS
         data-header-fix-moment="100" data-header-fix-effect="slide">
     <!-- Top Bar -->
     <!--u-header__section--hidden -->
-    <div class="u-header__section u-header__section--hidden d-none d-sm-block g-bg-white" style="padding-bottom: 7px; padding-top: 7px;">
+    <div class="u-header__section u-header__section--hidden d-none d-sm-block g-bg-white sx-header-middle-block" style="padding-bottom: 7px; padding-top: 7px;">
         <div class="container sx-container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                 <div class="col-auto">
