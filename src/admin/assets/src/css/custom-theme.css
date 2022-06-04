@@ -86,5 +86,8 @@
 
 
 .btn-default {
-    background: #efefef;
+    /*background: #efefef;*/
+    background: transparent !important;
+    color: #262626;
+    border: 1px solid #C2C2C2;
 }
