@@ -33,6 +33,7 @@
     color: #8a8a8a !important;
     font-weight: normal;
     z-index: 1;
+    display: inline-table;
 }
 
 .js-float-label-wrapper.populated label .to-hide {
@@ -123,4 +124,8 @@
 
 .js-float-label-wrapper .form-control.is-invalid, .was-validated .form-control:invalid {
     background-image: none;
+}
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+    box-shadow: none;
 }

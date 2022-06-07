@@ -162,7 +162,6 @@
         _.delay(function () {
             if ($("body").hasClass("sx-header-sticky-margin")) {
                 if ($("#js-header").hasClass("u-header--sticky-top")) {
-                    console.log($("#js-header").height());
                     $("body").css("margin-top", $("#js-header").height());
                 }
             }
@@ -174,7 +173,6 @@
 
     $("[data-toggle=tooltip]").tooltip();
     $(document).on('pjax:complete', function(event) {
-        console.log($(event.target));
       $("[data-toggle=tooltip]", $(event.target)).tooltip();
     })
 
