@@ -25,7 +25,7 @@ $modal = \yii\bootstrap\Modal::begin([
 <? $modal::end(); ?>
 
 <div style="display: none;"  itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="<?= $this->theme->title; ?>">
+    <meta itemprop="name" content="<?= \Yii::$app->skeeks->site->name; ?>">
     <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
         <meta itemprop="telephone" content="<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>">
     <?php endif; ?>
@@ -37,4 +37,5 @@ $modal = \yii\bootstrap\Modal::begin([
     <?php endif; ?>
     <link itemprop="url" href="<?= \yii\helpers\Url::home(true); ?>">
     <meta itemprop="logo" content="<?= $this->theme->logo; ?>">
+    <meta itemprop="image" content="<?= $this->theme->logo; ?>">
 </div>
