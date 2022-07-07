@@ -69,6 +69,46 @@
             });
 
 
+            //Отправка SMS кода
+            $(".sx-callcheck-phone-code-trigger", self.getJWrapper()).on("click", function () {
+
+                var jWrapper = $(this).closest(".sx-auth-action");
+                var phone = $(".sx-phone", jWrapper).val();
+
+                var ajaxQuery = sx.ajax.preparePostQuery(self.get("url-generate-callcheck-phone-code"), {
+                    'phone' : phone
+                });
+
+                var Blocker = new sx.classes.Blocker(jWrapper);
+
+                var handler = new sx.classes.AjaxHandlerStandartRespose(ajaxQuery, {
+                    'blocker' : Blocker,
+                    'enableBlocker' : true,
+                });
+
+                handler.on("success", function(e, data) {
+
+                    $("[data-action=auth-by-callcheck-phone-code] .sx-phone", self.getJWrapper()).val(phone);
+
+                    self.getJWrapper().trigger("action", {
+                        'action': "auth-by-callcheck-phone-code",
+                        'left-time': data.data['left-repeat']
+                    });
+
+                    /*if (data.data['left-repeat']) {
+                        self.set("leftPhone", data.data['left-repeat']);
+                        self.runPhoneLeftTime();
+                    }*/
+                });
+
+                ajaxQuery.execute();
+
+
+
+                return false;
+            });
+
+
             //Отправка Email кода
             $(".sx-email-code-trigger", self.getJWrapper()).on("click", function () {
 
@@ -136,6 +176,17 @@
             this.phoneTimer = null
         },
 
+        stopCallcheckPhoneLeftTime() {
+            var self = this;
+            var waitJwrappper = $(".sx-callcheck-phone-trigger-wrapper");
+
+            $(".sx-phone-code-wait", waitJwrappper).hide();
+            $(".sx-callcheck-phone-code-trigger", waitJwrappper).show();
+
+            clearInterval(this.callcheckPhoneTimer);
+            this.callcheckPhoneTimer = null
+        },
+
         runEmailLeftTime() {
             var self = this;
             var waitJwrappper = $(".sx-email-trigger-wrapper");
@@ -184,6 +235,31 @@
             }
         },
 
+
+        runCallcheckPhoneLeftTime() {
+            var self = this;
+            var waitJwrappper = $(".sx-callcheck-phone-trigger-wrapper");
+
+            $(".sx-left-time", waitJwrappper).empty().append(self.get("leftPhone"));
+
+            $(".sx-phone-code-wait", waitJwrappper).show();
+            $(".sx-callcheck-phone-code-trigger", waitJwrappper).hide();
+
+            if (!this.callcheckPhoneTimer) {
+                this.callcheckPhoneTimer = setInterval(function() {
+
+                    var leftTime = self.get("leftPhone") - 1;
+                    self.set("leftPhone", leftTime);
+                    if (leftTime <= 0) {
+                        self.stopCallcheckPhoneLeftTime();
+                    }
+
+                    $(".sx-left-time", waitJwrappper).empty().append(self.get("leftPhone"));
+
+                }, 1000);
+            }
+        },
+
         getJWrapper() {
             return $("#" + this.get('id'));
         },
@@ -195,7 +271,6 @@
             $(".sx-auth-action").hide();
             $(".sx-auth-action[data-action=" + action + "]").show();
 
-            console.log(data);
             if (action == 'auth-by-email-code' && data['left-time']) {
                 self.set("leftEmail", data['left-time']);
                 self.runEmailLeftTime();
@@ -203,6 +278,10 @@
             if (action == 'auth-by-phone-sms-code' && data['left-time']) {
                 self.set("leftPhone", data['left-time']);
                 self.runPhoneLeftTime();
+            }
+            if (action == 'auth-by-callcheck-phone-code' && data['left-time']) {
+                self.set("leftPhone", data['left-time']);
+                self.runCallcheckPhoneLeftTime();
             }
         }
     });

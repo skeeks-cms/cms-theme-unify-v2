@@ -25,6 +25,116 @@ JS
 <?php echo \yii\helpers\Html::beginTag("div", $widget->options); ?>
 
 
+    <div class="sx-auth-action" data-action="auth-by-callcheck-phone">
+        <?php $form = ActiveForm::begin([
+            'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone']),
+            'enableClientValidation' => false,
+            'enableAjaxValidation' => false,
+            'clientCallback'       => new \yii\web\JsExpression(<<<JS
+    function (ActiveFormAjaxSubmit) {
+        ActiveFormAjaxSubmit.on('success', function(e, response) {
+            if (response.data.type == 'password') {
+                var jAuthWidget = ActiveFormAjaxSubmit.jForm.closest(".sx-auth-widget");
+                
+                $("[data-action=auth-by-callcheck-phone-password] .sx-phone", jAuthWidget).val(response.data.phone);
+                
+                jAuthWidget.trigger("action", {
+                    'action' : 'auth-by-callcheck-phone-password'
+                });
+            } else if (response.data.type == 'tmp-phone-code') {
+                var jAuthWidget = ActiveFormAjaxSubmit.jForm.closest(".sx-auth-widget");
+                
+                $("[data-action=auth-by-callcheck-phone-code] .sx-phone", jAuthWidget).val(response.data.phone);
+                
+                jAuthWidget.trigger("action", {
+                    'action' : 'auth-by-callcheck-phone-code',
+                    'left-time': response.data['left-repeat']
+                });
+            }
+            
+        });
+    }
+JS
+            ),
+        ]); ?>
+        <div class="form-group">
+            <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
+        </div>
+        <?php $form::end(); ?>
+        <div class="text-center">
+            <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
+        </div>
+    </div>
+    <div class="sx-auth-action" data-action="auth-by-callcheck-phone-password">
+        <?php $form = ActiveForm::begin([
+            'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone-password']),
+            'enableAjaxValidation' => false,
+            'clientCallback'       => new \yii\web\JsExpression(<<<JS
+    function (ActiveFormAjaxSubmit) {
+        ActiveFormAjaxSubmit.on('success', function(e, response) {
+            console.log(response);
+            
+        });
+    }
+JS
+            ),
+        ]); ?>
+        <div class="form-group" style="display: none;">
+            <input type="text" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+        </div>
+
+        <div class="mb-4">
+            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
+        </div>
+        <?php $form::end(); ?>
+
+        <div class="text-center">
+            <a href="#" class="sx-dashed sx-callcheck-phone-code-trigger">Войти через дозвон</a>
+        </div>
+        <div class="text-center">
+            <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-callcheck-phone">Войти с другим телефоном</a>
+        </div>
+    </div>
+    <div class="sx-auth-action" data-action="auth-by-callcheck-phone-code">
+        <?php $form = ActiveForm::begin([
+            'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone-code']),
+            'enableAjaxValidation' => false,
+        ]); ?>
+
+        <input type="hidden" name="phone" class="sx-phone" />
+        <div class="form-group field-sx-phone">
+            <input type="text"
+                   name="phone_code"
+                   placeholder="Последние 4 циры номера"
+                   class="form-control"
+            />
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Войти</button>
+        </div>
+        <?php $form::end(); ?>
+
+        <div class="text-center sx-callcheck-info">
+            Сейчас мы Вам позвоним! Вы должны указать 4 последние цифры входящего номера телефона.
+        </div>
+        <div class="text-center sx-callcheck-phone-trigger-wrapper">
+            <span class="sx-phone-code-wait">Позвонить еще раз, через: <span class="sx-left-time"></span> сек.</span>
+            <a href="#" class="sx-dashed sx-callcheck-phone-code-trigger">Позвонить еще раз</a>
+        </div>
+
+        <div class="text-center">
+            <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-callcheck-phone">Войти с другим телефоном</a>
+        </div>
+    </div>
+
+
     <div class="sx-auth-action" data-action="auth-by-phone">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-phone']),
@@ -95,6 +205,7 @@ JS
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
         </div>
         <?php $form::end(); ?>
+
         <div class="text-center">
             <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
         </div>
@@ -173,7 +284,11 @@ JS
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
         </div>
         <?php $form::end(); ?>
-        <?php if(\Yii::$app->cms->smsProvider) : ?>
+        <?php if(\Yii::$app->cms->callcheckProvider) : ?>
+            <div class="text-center">
+                <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-callcheck-phone">Войти по телефону</a>
+            </div>
+        <?php elseif(\Yii::$app->cms->smsProvider) : ?>
             <div class="text-center">
                 <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-phone">Войти по телефону</a>
             </div>
@@ -213,7 +328,6 @@ JS
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти с другим email</a>
         </div>
     </div>
-
 
     <div class="sx-auth-action" data-action="auth-by-email-code">
         <?php $form = ActiveForm::begin([

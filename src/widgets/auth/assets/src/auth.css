@@ -31,3 +31,6 @@
 .sx-auth-widget .sx-phone-code-wait {
     color: gray;
 }
+.sx-callcheck-info {
+    margin-bottom: 10px;
+}
