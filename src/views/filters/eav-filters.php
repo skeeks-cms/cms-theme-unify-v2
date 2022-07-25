@@ -145,7 +145,7 @@ $widget = $this->context;
 
                     $newOptions = [];
                     foreach ($values as $value) {
-                        $newOptions[$value] = $options[$value];
+                        $newOptions[$value] = \yii\helpers\ArrayHelper::getValue($options, $value);
                         unset($options[$value]);
                     }
                     if ($newOptions) {
