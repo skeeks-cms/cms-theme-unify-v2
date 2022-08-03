@@ -119,6 +119,7 @@ JS
 
                 <? if ($trees) : ?>
                     <? foreach ($trees as $key => $tree) : ?>
+                        <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
 
 
                         <!-- SLIDE  -->
@@ -129,12 +130,15 @@ JS
                             data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                             data-thumb="<?= $tree->image->src; ?>" data-rotate="0" data-saveperformance="off"
                             data-title="<?= $tree->relatedPropertiesModel->getAttribute('slide_title'); ?>"
+                            <?php if($url) : ?>
+                                onclick="location.href='<?php echo $url; ?>'; return false;"
+                                style="cursor:pointer;  "
+                            <?php endif; ?>
+                            
+                            
 
                         >
-                            <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
-                            <?php if($url) : ?>
-                                <div <?php echo $url ? "onclick=\"location.href='{$url}'\" style=\"cursor: pointer; text-align: center;\"": ""; ?>>
-                            <?php endif; ?>
+
                             
                             
                             <!-- MAIN IMAGE -->
@@ -146,9 +150,7 @@ JS
                             ) ?>" alt="" data-bgposition="center center" class="rev-slidebg"
                                  data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                             >
-                            <?php if($url) : ?>
-                                </div>
-                            <?php endif; ?>
+
                             
                                     
                                     
