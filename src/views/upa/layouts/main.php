@@ -6,9 +6,8 @@
  * @date 06.03.2015
  */
 use yii\helpers\Html;
-\skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset::register($this);
+//\skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset::register($this);
 //\skeeks\cms\themes\unify\assets\UnifyDefaultAsset::register($this);
-$class = $this->theme->themeAssetClass;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -44,13 +43,19 @@ $this->theme->bodyCssClass .= " sx-upa-body";
         <!--<link rel="icon" type="image/x-icon" href="<? /*= $this->theme->favicon; */ ?>"/>-->
         <?php $this->head() ?>
     </head>
-    <body class="<?= $this->theme->bodyCssClass; ?>">
+    <?php
+        $bodyClasses = $this->theme->bodyCssClass;
+        if (\Yii::$app->mobileDetect->isMobile) {
+            $bodyClasses = $bodyClasses . " sx-mobile-layout";
+        }
+    ?>
+    <?php if($bodyClasses) : ?>
+        <body class="<?= $bodyClasses; ?>">
+    <?php else : ?>
+        <body>
+    <?php endif; ?>
     <?php $this->beginBody() ?>
-    <? if ($this->theme->is_show_loader) : ?>
-        <div class="preloader">
-            <div id="loaderImage"></div>
-        </div>
-    <? endif; ?>
+    
     <div class="sx-main-wrapper"><!--Нужен для mmenu-->
         <main class="sx-main" style="padding-top: 0px;">
             <?php if (!$isEmpty) : ?>
@@ -75,25 +80,19 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                         <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
                             <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
                             <?= $this->render("@app/views/layouts/_menu"); ?>
-                            <div class="text-center g-mt-20">
+                            <!--<div class="text-center g-mt-20">
 
-                                <a class="btn btn-default" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post">
+                                <a class="btn btn-default" href="<?/*= \yii\helpers\Url::to(['/cms/auth/logout']) */?>" data-method="post">
                                     <i class="icon-logout"></i>
                                     Выход
                                 </a>
-                            </div>
+                            </div>-->
                             <? /*= $this->render("@app/views/layouts/_after-menu"); */ ?>
                         </div>
                     <? endif; ?>
 
                     <!-- End Sidebar Nav -->
                     <div class="col sx-main-col">
-                        <!-- Breadcrumb-v1 -->
-                        <!--<div class="g-hidden-sm-down g-bg-gray-light-v8 g-pa-20 sx-hide-on-empty">
-                        <? /*= $this->render("@app/views/layouts/_breadcrumbs"); */ ?>
-                    </div>-->
-                        <!-- End Breadcrumb-v1 -->
-
                         <!-- Statistic Card -->
                         <div class="sx-content-wrapper">
                             <div class="sx-content-actions">
@@ -186,7 +185,6 @@ $this->theme->bodyCssClass .= " sx-upa-body";
         </main>
     </div>
     <?= $this->render("@app/views/modals"); ?>
-    <?php $class::register($this); ?>
     <?php $this->endBody() ?>
     </body>
     </html>

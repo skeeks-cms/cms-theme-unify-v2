@@ -17,10 +17,10 @@ use skeeks\assets\unify\base\UnifyIconMaterialAsset;
 use skeeks\assets\unify\base\UnifyIconSimpleLineAsset;
 use skeeks\cms\backend\widgets\SelectModelDialogStorageFileSrcWidget;
 use skeeks\cms\base\Theme;
-use skeeks\cms\modules\admin\widgets\BlockTitleWidget;
 use skeeks\cms\themes\unify\assets\components\UnifyGoToAsset;
 use skeeks\cms\themes\unify\assets\components\UnifyThemeGoToAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
+use skeeks\cms\themes\unify\assets\FuturaFontAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
@@ -28,6 +28,7 @@ use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use skeeks\cms\widgets\ColorInput;
 use skeeks\widget\codemirror\CodemirrorWidget;
+use skeeks\yii2\form\elements\HtmlColEnd;
 use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\FieldSet;
 use skeeks\yii2\form\fields\HtmlBlock;
@@ -68,19 +69,42 @@ class UnifyTheme extends Theme
     static public function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
-            'name'  => "Unify",
-            'description'  => <<<HTML
+            'name'        => "Unify",
+            'description' => <<<HTML
 <p>Базовая популярная тема! Не содержит шаблонов для магазина.</p>
 <p>Подходит для одностраничного и многостраничного сайта, например для сайта о компании.</p>
 HTML
             ,
-            'image' => [UnifyThemeAsset::class, 'img/template-preview.png'],
+            'image'       => [UnifyThemeAsset::class, 'img/template-preview.png'],
         ]);
     }
 
 
     public function getConfigFormModelData()
     {
+        $fontDescription = '';
+        foreach ($this->getAvailbaleFontsDescription() as $id => $description)
+        {
+            $fontDescription .= <<<HTML
+<div class="sx-font-desc sx-font-{$id}" style="display:none;">{$description}</div>
+HTML;
+        }
+
+        \Yii::$app->view->registerJs(<<<JS
+$("#f-include_font_assets").on("change", function() {
+    sx.updateFontDescription($(this).val());
+    return false;
+});
+sx.updateFontDescription = function (fonts) {
+    $(".sx-font-desc").hide();
+    fonts.forEach(function(value) {
+        $(".sx-font-" + value).show();
+    });
+};
+sx.updateFontDescription($("#f-include_font_assets").val());
+JS
+        );
+
         return [
             'fields'          => [
 
@@ -89,7 +113,7 @@ HTML
                     'name'   => 'Общие данные',
                     'fields' => [
                         'title',
-                        'yandex_map' => [
+                        'yandex_map'  => [
                             'class' => TextareaField::class,
                         ],
                         'logo'        => [
@@ -112,6 +136,24 @@ HTML
                     'class'  => FieldSet::class,
                     'name'   => 'Шрифт',
                     'fields' => [
+
+                        'include_font_assets'     => [
+                            'class'    => SelectField::class,
+                            'items'    => $this->getAvailbaleFontsForSelect(),
+                            'multiple' => true,
+                        ],
+                        [
+                            'class' => HtmlBlock::class,
+                            'content' => <<<HTML
+<div class="sx-font-description">
+<div class="col-12">
+    {$fontDescription}
+</div>
+</div>
+HTML,
+
+                        ],
+
                         'font_css',
                         'font_headers' => [
                             /*'class' => SelectField::class,
@@ -141,7 +183,7 @@ HTML
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
-                    ]
+                    ],
                 ],
 
                 'global' => [
@@ -175,9 +217,9 @@ HTML
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
-                        
-                        
-                        'second_theme_bg_color' => [
+
+
+                        'second_theme_bg_color'   => [
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
@@ -185,9 +227,9 @@ HTML
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
-                        
-                        
-                        'body_bg_image'     => [
+
+
+                        'body_bg_image' => [
                             'class'       => WidgetField::class,
                             'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                         ],
@@ -337,7 +379,7 @@ HTML
                         'is_center_logo' => [
                             'class' => BoolField::class,
                         ],
-                    ]
+                    ],
                 ],
 
 
@@ -375,7 +417,7 @@ HTML
                                 '600' => "600 px",
                             ],
                         ],
-                    ]
+                    ],
                 ],
 
                 'body' => [
@@ -430,7 +472,7 @@ HTML
                                 '4' => "4",
                             ],
                         ],
-                    ]
+                    ],
                 ],
 
                 'footer' => [
@@ -464,9 +506,8 @@ HTML
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
-                    ]
+                    ],
                 ],
-
 
 
                 'additional' => [
@@ -483,19 +524,19 @@ HTML
 
 
                         'css_code' => [
-                            'class' => WidgetField::class,
-                            'widgetClass' => CodemirrorWidget::class,
+                            'class'        => WidgetField::class,
+                            'widgetClass'  => CodemirrorWidget::class,
                             'widgetConfig' => [
-                                'preset' => 'htmlmixed',
-                                'assets' =>
+                                'preset'        => 'htmlmixed',
+                                'assets'        =>
                                     [
-                                        \skeeks\widget\codemirror\CodemirrorAsset::THEME_NIGHT
+                                        \skeeks\widget\codemirror\CodemirrorAsset::THEME_NIGHT,
                                     ],
-                                        'clientOptions' =>
+                                'clientOptions' =>
                                     [
-                                        'theme' => 'night'
+                                        'theme' => 'night',
                                     ],
-                            ]
+                            ],
                         ],
 
                         'is_show_home_slider' => [
@@ -566,6 +607,7 @@ HTML
                 'is_show_search_block' => 'При выборе "Да", в шапке будет выведен поисковый блок',
                 'is_show_loader'       => 'Показывать индикатор загрузки?',
                 'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
+                'include_font_assets'  => 'Подключаемые шрифты',
                 'col_left_width'       => 'Указывается в px',
                 'sx_container_width'   => 'Можно вказать в px или %. Например 100%',
                 'is_center_logo'       => 'Работает в стандартной шапке',
@@ -574,13 +616,13 @@ HTML
                 'font_css'             => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
                 'text_color'           => 'Цвет текста заданный по умолчанию для всего сайта.',
                 'yandex_map'           => 'Если код не указан, то карта будет построена через апи',
-                
-                'main_theme_color1'           => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
-                'main_theme_color2'           => 'Чтобы на кнопках был градиент задайте второй основной цвет',
-                
-                'second_theme_bg_color'           => 'Основной цвет фона второстепенных кнопок',
-                'second_theme_text_color'           => 'Основной цвет текста второстепенных кнопок',
-                
+
+                'main_theme_color1' => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
+                'main_theme_color2' => 'Чтобы на кнопках был градиент задайте второй основной цвет',
+
+                'second_theme_bg_color'   => 'Основной цвет фона второстепенных кнопок',
+                'second_theme_text_color' => 'Основной цвет текста второстепенных кнопок',
+
             ],
             'attributeLabels' => [
                 'css_code'           => "CSS код",
@@ -597,11 +639,11 @@ HTML
 
                 'main_theme_color1' => "Цвет темы 1",
                 'main_theme_color2' => "Цвет темы 2",
-                
-                'second_theme_bg_color' => "Цвет фона второстепенных кнопок",
+
+                'second_theme_bg_color'   => "Цвет фона второстепенных кнопок",
                 'second_theme_text_color' => "Цвет текста второстепенных кнопок",
 
-                'font_css'     => "Подключаемые шрифты",
+                'font_css'     => "Подключаемые внешние шрифты",
                 'font_headers' => "Шрифт заголовков",
                 'font_texts'   => "Шрифт текста",
 
@@ -650,6 +692,7 @@ HTML
 
                 'is_show_home_slider' => "Показывать слайдер на главной",
                 'include_assets'      => "Дополнительные компоненты",
+                'include_font_assets' => "Набор предустановленынх шрифтов",
                 'col_left_width'      => "Ширина левой колонки, px",
 
                 'is_header_toolbar'         => "Показывать панельку перед меню",
@@ -752,6 +795,7 @@ HTML
                 [
                     [
                         'include_assets',
+                        'include_font_assets',
                     ],
                     'safe',
                 ],
@@ -825,6 +869,18 @@ HTML
             return false;
         }
 
+        //Предустановленные шрифты
+        if (\Yii::$app->view->theme->include_font_assets) {
+            foreach ((array)\Yii::$app->view->theme->include_font_assets as $id) {
+                $assetClass = ArrayHelper::getValue((array) \Yii::$app->view->theme->available_font_assets, [$id, 'class']);
+                if (class_exists($assetClass)) {
+                    $assetClass::register(\Yii::$app->view);
+                } else {
+                    \Yii::error('Ошибка, класс: '.$assetClass." не существует или удален!");
+                }
+            }
+        }
+
         //Дополнительные компоненты верстки
         if (\Yii::$app->view->theme->include_assets) {
             foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
@@ -837,7 +893,7 @@ HTML
         }
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
-        
+
         $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)), $content);
         $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)), $content);
@@ -857,7 +913,7 @@ HTML
 
         $content = str_replace("{second_theme_bg_color}", \Yii::$app->view->theme->second_theme_bg_color, $content);
         $content = str_replace("{second_theme_text_color}", \Yii::$app->view->theme->second_theme_text_color, $content);
-        
+
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
@@ -1145,6 +1201,51 @@ CSS;
      * @var array
      */
     public $include_assets = [];
+
+    /**
+     * @var array
+     */
+    public $include_font_assets = [];
+
+    /**
+     * @var array
+     */
+    public $available_font_assets = [
+        'futura' => [
+            'class' => FuturaFontAsset::class,
+            'label' => 'Futura',
+            'description' => 'font-family: futura35;<br />font-family: futura45;<br />font-family: futura55;<br /> font-family: futura65;'
+        ]
+    ];
+
+    /**
+     * @return array
+     */
+    public function getAvailbaleFontsForSelect()
+    {
+        $result = [];
+
+        foreach ($this->available_font_assets as $id => $data)
+        {
+            $result[$id] = ArrayHelper::getValue($data, 'label');
+        }
+
+        return $result;
+    }
+    /**
+     * @return array
+     */
+    public function getAvailbaleFontsDescription()
+    {
+        $result = [];
+
+        foreach ($this->available_font_assets as $id => $data)
+        {
+            $result[$id] = ArrayHelper::getValue($data, 'description');
+        }
+
+        return $result;
+    }
 
     /**
      * @var int

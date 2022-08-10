@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: "futura35";
+    font-display: swap;
+    src: url("FTR35.eot?#iefix");
+    src: url("FTR35.eot?#iefix") format("eot"), url("FTR35.woff") format("woff"), url("FTR35.ttf") format("truetype"), url("FTR35.svg#af931ed4-a6e9-46cf-8f5e-e3ee804ae773") format("svg");
+}
+
+@font-face {
+    font-family: "futura45";
+    font-display: swap;
+    src: url("FTR45.eot?#iefix");
+    src: url("FTR45.eot?#iefix") format("eot"), url("FTR45.woff") format("woff"), url("FTR45.ttf") format("truetype"), url("FTR45.svg#af931ed4-a6e9-46cf-8f5e-e3ee804ae773") format("svg");
+}
+
+@font-face {
+    font-family: "futura55";
+    font-display: swap;
+    src: url("FTR55.eot?#iefix");
+    src: url("FTR55.eot?#iefix") format("eot"), url("FTR55.woff") format("woff"), url("FTR55.ttf") format("truetype"), url("FTR55.svg#af931ed4-a6e9-46cf-8f5e-e3ee804ae773") format("svg");
+}
+
+@font-face {
+    font-family: "futura65";
+    font-display: swap;
+    src: url("FTR65.eot?#iefix");
+    src: url("FTR65.eot?#iefix") format("eot"), url("FTR65.woff") format("woff"), url("FTR65.ttf") format("truetype"), url("FTR65.svg#af931ed4-a6e9-46cf-8f5e-e3ee804ae773") format("svg");
+}
