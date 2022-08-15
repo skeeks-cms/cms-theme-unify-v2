@@ -302,11 +302,11 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
     top: 0px;
 }
 
-.sx-filters-selected-wrapper i {
+.sx-filters-selected-wrapper i, .sx-saved-filters-list i {
     font-size: 8px;
     margin-left: 3px;
 }
-.sx-filters-selected-wrapper i:hover {
+.sx-filters-selected-wrapper i:hover, .sx-saved-filters-list i:hover {
     opacity: 0.5;
 }
 

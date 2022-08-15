@@ -31,6 +31,28 @@
                 return false;
             });
 
+            $('body').on("breforeSubmit", "#sx-filters-form", function () {
+
+            });
+
+            $('body').on("click", ".sx-saved-filters-list .sx-close-btn", function () {
+                var jLi = $(this).closest("li");
+
+                var property_id = jLi.data("property_id");
+                var value_id = jLi.data("value_id");
+
+                var jFilter = $(".field-e-f" + property_id);
+                if (value_id) {
+                    $("input[value=" + value_id + "]", jFilter).prop("checked", false);
+                    $("#sx-filters-form").submit();
+                } else {
+                    $("input", jFilter).val("");
+                    $("#sx-filters-form").submit();
+                }
+
+                return false;
+            });
+
 
             $('.filter--group').each(function () {
                 var group = $(this),
@@ -227,7 +249,10 @@
             
             $('.sx-filter-action').on('click', function()
             {
-                $($(this).data('filter')).val($(this).data('filter-value')).change();
+                var jFilter = $($(this).data('filter'));
+                jFilter.prop("disabled", false);
+                jFilter.val($(this).data('filter-value')).change();
+
                 return false;
             });
                         

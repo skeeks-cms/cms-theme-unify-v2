@@ -20,7 +20,7 @@ if (!isset($isShowLast)) {
 
 ?>
 <section>
-    <div class="g-bg-cover__inner sx-breadcrumbs-wrapper">
+    <div class="sx-breadcrumbs-wrapper">
         <? if (count(\Yii::$app->breadcrumbs->parts) > 1) : ?>
             <? $count = count(\Yii::$app->breadcrumbs->parts); ?>
             <? $counter = 0; ?>

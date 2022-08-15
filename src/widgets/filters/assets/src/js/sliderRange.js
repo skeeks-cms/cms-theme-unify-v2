@@ -36,28 +36,35 @@
     
                         from = $this.data("from"),
                         to = $this.data("to");
-    
-                        /*from = Number(from).toLocaleString();
-                        to = Number(to).toLocaleString();
-    
-                        _.defer(function() {
-                            sx.FiltersForm.Tooltip.hide();
-                        });*/
-    
+
                         var price1 = $this.parents('.sort-slider').find('.sx-from');
                         var price2 = $this.parents('.sort-slider').find('.sx-to');
-    
-                        if (price1.val() != from) {
+
+                        /*console.log(price1.val());
+                        console.log(price2.val());
+                        console.log(from);
+                        console.log(to);
+                        console.log("-------");*/
+
+                        if (min != from) {
                             price1.val(from);
                             price1.focus();
                             price1.removeAttr('disabled');
                             price1.select();
+                        } else {
+                            price1.attr('disabled', 'disabled');
+                            price1.attr('placeholder', min);
+                            price1.val("");
                         }
-                        if (price2.val() != to) {
+                        if (max != to) {
                             price2.val(to);
                             price2.focus();
                             price2.select();
                             price2.removeAttr('disabled');
+                        } else {
+                            price2.attr('disabled', 'disabled');
+                            price2.attr('placeholder', max);
+                            price2.val("");
                         }
                     };
                     

@@ -56,7 +56,7 @@ $widget = $this->context;
             //&& $max > 0
         ) : ?>
 
-            <section class="filter--group <?= $class ?>">
+            <section class="filter--group <?= $class ?> field-eav-f<?php echo $rp->id; ?>">
                 <header class="filter--group--header">
                     <?= $name; ?>
                     <? if ($rp->hint) : ?>
@@ -102,22 +102,6 @@ $widget = $this->context;
                         <div class="sx-btn-apply-wrapper">
                             <button type="submit" class="btn btn-primary">Применить</button>
                         </div>
-
-                        <!--<div class="" style="display: none;">
-                            <div class="col-md-6">
-                                <? /*= $form->field($handler, $handler->getAttributeNameRangeFrom($rp->id))->textInput([
-                                    'placeholder' => \Yii::$app->money->currencyCode,
-                                    'id' => $id . '-from'
-                                ])->label("От"); */ ?>
-                            </div>
-                            <div class="col-md-6">
-                                <? /*= $form->field($handler, $handler->getAttributeNameRangeTo($rp->id))->textInput([
-                                    'placeholder' => \Yii::$app->money->currencyCode,
-                                    'id' => $id . '-to'
-                                ])->label("До"); */ ?>
-                            </div>
-                        </div>
--->
                     </div>
                 </div>
             </section>
@@ -130,7 +114,7 @@ $widget = $this->context;
         : ?>
 
         <? if ($options = $handler->getOprionsByRp($rp)) : ?>
-            <? if (count($options) > 1) : ?>
+            <? if (count($options) > 0) : ?>
 
                 <?
                 $code = $handler->getAttributeName($rp->id);
@@ -172,7 +156,7 @@ HTML;
 
                 <?= $form->field($handler, $code, [
                     'options'  => [
-                        'class' => 'filter--group sx-filter '.$class,
+                        'class' => 'filter--group sx-filter ' . $class,
                         'tag'   => 'section',
                     ],
                     'template' => <<<HTML
