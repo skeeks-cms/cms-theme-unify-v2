@@ -41,14 +41,24 @@
                 var property_id = jLi.data("property_id");
                 var value_id = jLi.data("value_id");
 
-                var jFilter = $(".field-e-f" + property_id);
-                if (value_id) {
-                    $("input[value=" + value_id + "]", jFilter).prop("checked", false);
+                if (property_id == 'price') {
+                    
+                    $("#sx-filter-price-from", jFilter).val("");
+                    $("#sx-filter-price-to", jFilter).val("");
                     $("#sx-filters-form").submit();
+                    
                 } else {
-                    $("input", jFilter).val("");
-                    $("#sx-filters-form").submit();
+                    var jFilter = $(".field-e-f" + property_id);
+                    
+                    if (value_id) {
+                        $("input[value=" + value_id + "]", jFilter).prop("checked", false);
+                        $("#sx-filters-form").submit();
+                    } else {
+                        $("input", jFilter).val("");
+                        $("#sx-filters-form").submit();
+                    }
                 }
+                
 
                 return false;
             });
