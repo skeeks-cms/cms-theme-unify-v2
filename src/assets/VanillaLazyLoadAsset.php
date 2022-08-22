@@ -33,6 +33,7 @@ class VanillaLazyLoadAsset extends AssetBundle
             //use_native: true,
             //elements_selector: ".lazy"
             // ... more custom settings?
+            
         });
 
         $(document).on('pjax:complete', function (e) {
@@ -42,9 +43,13 @@ class VanillaLazyLoadAsset extends AssetBundle
         });
         
         $(document).on('ajaxComplete', function() {
-          setTimeout(function() {
-              sx.LazyLoadInstance = new LazyLoad({});
-          }, 200);
+              setTimeout(function() {
+                  sx.LazyLoadInstance = new LazyLoad({});
+              }, 400);
+              
+              setTimeout(function() {
+                  sx.LazyLoadInstance = new LazyLoad({});
+              }, 1000);
         });
 JS
         );
