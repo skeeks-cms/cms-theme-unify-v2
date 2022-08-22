@@ -12,7 +12,7 @@
 <footer class="g-py-20 sx-footer-copyright">
     <div class="container sx-container">
         <div class="row">
-            <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+            <div class="col-12 col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
                 <div class="d-lg-flex">
                     <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md" style="line-height:30px;">
                         <? 
@@ -27,16 +27,15 @@
             </div>
 
 
-            <div class="col-md-4 align-self-center">
+            <div class="col-12 col-md-4 align-self-center">
                 <? if ($this->theme->is_show_copyright) : ?>
-                    <div class="float-right">
-                        <a href="https://skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
+                    <div class="float-md-right" style="text-align: center;">
+                        <small>
+                        <a href="https://skeeks.com/" style="text-align: center;" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
                             <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30">
                             <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
                         </a>
-                        <a href="https://cms.skeeks.com/" target="_blank" class="g-color-gray-dark-v4" title="Yii2 cms">
-                            <span>(Yii2 CMS)</span>
-                        </a>
+                        </small>
                     </div>
                 <? endif; ?>
             </div>

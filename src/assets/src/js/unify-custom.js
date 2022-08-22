@@ -157,6 +157,11 @@
             $("body").css("margin-top", $("#js-header").height());
         }
     }
+    if ($("#shop-menu-footer").length) {
+        if ($("#shop-menu-footer").is(":visible")) {
+            $("body").css("margin-bottom", $("#shop-menu-footer").height());
+        }
+    }
 
     $(window).ready(function () {
         _.delay(function () {
