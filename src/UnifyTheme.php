@@ -580,6 +580,29 @@ HTML,
                     ],
                 ],
 
+                'mobile' => [
+                    'class'  => FieldSet::class,
+                    'name'   => 'Мобильная версия',
+                    'fields' => [
+                   
+                        'include_mobile_assets'     => [
+                            'class'    => SelectField::class,
+                            'items'    => [
+                                UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
+                                UnifyIconMaterialAsset::class   => 'Иконки (Material)',
+                                UnifyIconLineProAsset::class    => 'Иконки (LinePro)',
+                                UnifyIconEtlineAsset::class     => 'Иконки (Etline)',
+                                UnifyIconHsAsset::class         => 'Иконки (HsIcon) — стандартные иконки, тонкие стрелочки',
+                                FontAwesomeAsset::class         => 'Иконки (FontAwesome) — самые распространенные иконки',
+                                UnifyThemeGoToAsset::class      => 'Кнопка наверх',
+                                UnifyComponentsAsset::class     => 'Все компоненты шаблона',
+                                UnifyGlobalsAsset::class        => 'Стили globals.css (большой файл)',
+                            ],
+                            'multiple' => true,
+                        ],
+                    ],
+                ],
+
                 'upa' => [
                     'class'  => FieldSet::class,
                     'name'   => 'Личный кабинет',
@@ -609,6 +632,7 @@ HTML,
                 'is_show_search_block' => 'При выборе "Да", в шапке будет выведен поисковый блок',
                 'is_show_loader'       => 'Показывать индикатор загрузки?',
                 'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
+                'include_mobile_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона. В мобильной версии.',
                 'include_font_assets'  => 'Подключаемые шрифты',
                 'col_left_width'       => 'Указывается в px',
                 'sx_container_width'   => 'Можно вказать в px или %. Например 100%',
@@ -694,6 +718,7 @@ HTML,
 
                 'is_show_home_slider' => "Показывать слайдер на главной",
                 'include_assets'      => "Дополнительные компоненты",
+                'include_mobile_assets'      => "Дополнительные компоненты",
                 'include_font_assets' => "Набор предустановленынх шрифтов",
                 'col_left_width'      => "Ширина левой колонки, px",
 
@@ -797,6 +822,7 @@ HTML,
                 [
                     [
                         'include_assets',
+                        'include_mobile_assets',
                         'include_font_assets',
                     ],
                     'safe',
@@ -883,16 +909,30 @@ HTML,
             }
         }
 
-        //Дополнительные компоненты верстки
-        if (\Yii::$app->view->theme->include_assets) {
-            foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
-                if (class_exists($assetClass)) {
-                    $assetClass::register(\Yii::$app->view);
-                } else {
-                    \Yii::error('Ошибка, класс: '.$assetClass." не существует или удален!");
+        if (!\Yii::$app->mobileDetect->isMobile) {
+             //Дополнительные компоненты верстки
+            if (\Yii::$app->view->theme->include_assets) {
+                foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
+                    if (class_exists($assetClass)) {
+                        $assetClass::register(\Yii::$app->view);
+                    } else {
+                        \Yii::error('Ошибка, класс: '.$assetClass." не существует или удален!");
+                    }
+                }
+            }
+        } else {
+             //Дополнительные компоненты верстки
+            if (\Yii::$app->view->theme->include_mobile_assets) {
+                foreach ((array)\Yii::$app->view->theme->include_mobile_assets as $assetClass) {
+                    if (class_exists($assetClass)) {
+                        $assetClass::register(\Yii::$app->view);
+                    } else {
+                        \Yii::error('Ошибка, класс: '.$assetClass." не существует или удален!");
+                    }
                 }
             }
         }
+       
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
 
@@ -1203,6 +1243,11 @@ CSS;
      * @var array
      */
     public $include_assets = [];
+    
+    /**
+     * @var array
+     */
+    public $include_mobile_assets = [];
 
     /**
      * @var array
