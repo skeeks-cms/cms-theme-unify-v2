@@ -20,8 +20,8 @@
                         <a data-pjax="0" href="<?= $model->url; ?>" class="shop-item-image">
                             <img src="<?= \skeeks\cms\helpers\Image::getSrc(\Yii::$app->imaging->thumbnailUrlOnRequest($model->mainImage ? $model->mainImage->src : null,
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                    'w' => 120,
-                                    'h' => 120,
+                                    'w' => 200,
+                                    'h' => 200,
                                     'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
                                 ]), $model->code
                             )); ?>
