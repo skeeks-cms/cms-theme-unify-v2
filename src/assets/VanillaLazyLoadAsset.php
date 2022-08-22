@@ -29,11 +29,23 @@ class VanillaLazyLoadAsset extends AssetBundle
         parent::registerAssetFiles($view);
 
         \Yii::$app->view->registerJs(<<<JS
-sx.LazyLoadInstance = new LazyLoad({
-    //use_native: true,
-    //elements_selector: ".lazy"
-    // ... more custom settings?
-});
+        sx.LazyLoadInstance = new LazyLoad({
+            //use_native: true,
+            //elements_selector: ".lazy"
+            // ... more custom settings?
+        });
+
+        $(document).on('pjax:complete', function (e) {
+            setTimeout(function() {
+                sx.LazyLoadInstance = new LazyLoad({});
+            }, 200);
+        });
+        
+        $(document).on('ajaxComplete', function() {
+          setTimeout(function() {
+              sx.LazyLoadInstance = new LazyLoad({});
+          }, 200);
+        });
 JS
         );
     }

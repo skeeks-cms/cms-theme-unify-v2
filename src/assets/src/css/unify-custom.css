@@ -226,9 +226,8 @@ body {
 }
 
 .sx-category-list-small img {
-    /*max-width: 120px;
-    max-height: 100px;*/
-    height: 100px;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 
