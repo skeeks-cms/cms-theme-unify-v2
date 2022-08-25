@@ -15,9 +15,17 @@ use skeeks\assets\unify\base\UnifyAsset;
 class UnifyJqueryAsset extends UnifyAsset
 {
     public $css = [];
-    public $js = [
+
+    /*public $js = [
         'assets/vendor/jquery/jquery.min.js',
         'assets/vendor/jquery-migrate/jquery-migrate.min.js',
+    ];*/
+
+    public $sourcePath = '@vendor/skeeks/cms-theme-unify-v2/src/assets/src/vendor/jquery';
+    public $js = [
+        'jquery-3.6.0.min.js',
+        'jquery-migrate-3.4.0.min.js',
+        'jquery-passive.js',
     ];
     public $depends = [];
 }
