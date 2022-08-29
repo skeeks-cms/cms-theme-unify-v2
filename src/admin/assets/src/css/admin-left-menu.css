@@ -1,0 +1,134 @@
+.sx-sidebar ul {
+    list-style: none;
+}
+.sx-sidebar {
+    position: static;
+    top: auto;
+    z-index: auto;
+    height: auto;
+    width: 250px;
+}
+
+.sx-sidebar .active {
+    color: var(--primary-color);
+}
+
+.sx-sidebar + * {
+    width: calc(100% - 250px);
+}
+
+
+.u-side-nav--top-level-menu-link {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.u-side-nav--top-level-menu-link {
+    white-space: nowrap;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.sx-sidebar-inner {
+    position: fixed;
+    width: 17.85714rem;
+    height: calc(100vh - 63px);
+    -webkit-transition: width .3s ease-in;
+    -o-transition: width .3s ease-in;
+    transition: width .3s ease-in;
+}
+.u-side-nav--top-level-menu {
+    margin-left: 0;
+    padding-left: 0;
+}
+.u-sidebar-navigation--light a {
+    color: black;
+}
+
+.u-sidebar-navigation--light .has-active > a {
+    color: black;
+}
+.u-header__section--admin-light a {
+    color: black;
+}
+
+.sx-now-hide {
+    display: none !important;
+}
+
+.u-sidebar-navigation--light .u-side-nav--has-sub-menu.u-side-nav-opened {
+    background-color: #efefef;
+}
+
+.u-sidebar-navigation--light .u-side-nav--second-level-menu-link.active,
+.u-sidebar-navigation--light .u-side-nav--second-level-menu-link.active i,
+.u-sidebar-navigation--light .has-active > a,
+.u-sidebar-navigation--light .has-active > a i
+{
+    color: var(--primary-color);
+}
+.u-side-nav--has-sub-menu ul li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sx-icon-wrapper {
+    margin-right: 5px;
+    margin-top: -1px;
+}
+.u-side-nav--second-level-menu {
+    padding-left: 20px;
+}
+
+/**
+ * dark theme rewrite
+ */
+
+.u-sidebar-navigation--dark {
+    background-color: #272727;
+}
+
+
+.u-sidebar-navigation--dark .u-side-nav--has-sub-menu.u-side-nav-opened {
+    background-color: #313131;
+}
+
+.u-sidebar-navigation--dark .u-side-nav--top-level-menu-link i {
+    color: white;
+}
+
+.u-sidebar-navigation--dark .u-side-nav--second-level-menu-link i {
+    color: white;
+}
+
+
+
+
+/**
+ * Form
+ */
+
+.u-sidebar-navigation--light .sx-menu-link-pink {
+    background: #e62154;
+    color: white;
+}
+
+.u-sidebar-navigation--light .sx-menu-link-pink:hover i,
+.u-sidebar-navigation--light .sx-menu-link-pink:hover {
+    color: white;
+}
+
+.u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active {
+    color: var(--primary-color);
+}
+
+.u-sidebar-navigation--light .has-active {
+    background-color: #8484841a;
+}
+
+.u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active
+{
+    background: white;
+}

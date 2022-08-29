@@ -26,22 +26,22 @@ if ($level == 4) {
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--<?= $levelName; ?>-level-menu-item
 <?= $item->items && $item->isActive ? "u-side-nav-opened has-active" : ""; ?>
 ">
-                    <a class="media u-side-nav--<?= $levelName; ?>-level-menu-link g-px-15 g-py-5 <?= $item->isActive ? "active" : ""; ?>"
+                    <a class="media u-side-nav--<?= $levelName; ?>-level-menu-link  <?= $item->isActive ? "active" : ""; ?>"
                        href="<?= $item->url; ?>"
                         <?= $item->items ? "data-hssm-target='#subMenuLevels{$item->id}'" : "" ?>
                     >
 
                         <? if ($item->icon) : ?>
-                            <span class="align-self-center g-mr-5 g-mt-minus-1 sx-icon-wrapper">
+                            <span class="align-self-center sx-icon-wrapper">
                             <i class="<?= $item->icon; ?>"></i>
                         </span>
 
                         <? elseif ($item->image) : ?>
-                            <span class="align-self-center g-mr-5 g-mt-minus-1 sx-icon-wrapper">
+                            <span class="align-self-center sx-icon-wrapper">
                             <img src="<?= $item->image; ?>" style="max-width: 19px; max-height: 19px; width: 100%;"/>
                         </span>
                         <? else : ?>
-                            <span class="align-self-center g-mr-5 g-mt-minus-1 sx-icon-wrapper">
+                            <span class="align-self-center sx-icon-wrapper">
                               <i class="far fa-dot-circle"></i>
                         </span>
                         <? endif; ?>

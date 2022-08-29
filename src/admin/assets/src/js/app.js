@@ -36,11 +36,11 @@
 
 
             // initialization of sidebar navigation component
-            $.HSCore.components.HSSideNav.init('.js-side-nav');
+            //$.HSCore.components.HSSideNav.init('.js-side-nav');
             // initialization of HSDropdown component
-            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+            //$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
             // initialization of custom scrollbar
-            $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+            //$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
         },
 
 

@@ -121,17 +121,13 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                                 && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
                                 <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
-
                                     <div class="">
                                         <div class="panel-content-before panel-content-before-second">
                                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                                                 && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-
-
                                                 <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
                                                     <?= \Yii::$app->controller->modelHeader; ?>
                                                 </div>
-
                                                 <?
                                                 echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
                                                     'actions'            => \Yii::$app->controller->modelActions,
@@ -147,8 +143,6 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                                                     ],
                                                 ]);
                                                 ?>
-
-
                                             <? endif; ?>
                                         </div>
                                     </div>

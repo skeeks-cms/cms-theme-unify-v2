@@ -7,9 +7,12 @@
  */
 /* @var $this yii\web\View */
 $level = 1;
+
+\skeeks\cms\themes\unify\admin\assets\UnifyAdminLeftMenuAsset::register($this);
 ?>
 
 <? if ($items = \skeeks\cms\backend\BackendComponent::getCurrent()->menu->items) : ?>
+
     <!--g-min-height-100vh-->
     <ul id="sideNavMenu" class="u-side-nav--top-level-menu">
         <? foreach ($items as $adminMenuItem) : ?>

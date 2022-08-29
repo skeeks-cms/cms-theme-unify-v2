@@ -40,11 +40,11 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
     <? endif; ?>
     <main class="sx-main">
         <?= $this->render('@app/views/layouts/_container-begin'); ?>
-        <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
+        <div class="row no-gutters sx-main-wrapper">
             <!-- Sidebar Nav -->
             <?php if (!$isEmpty) : ?>
                 <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
-                    <div class="js-custom-scroll u-sidebar-navigation-v1-inner">
+                    <div class="js-scrollbar sx-sidebar-inner">
                         <?= $this->render("@app/views/layouts/_before-menu"); ?>
                         <?= $this->render("@app/views/layouts/_menu"); ?>
                         <?= $this->render("@app/views/layouts/_after-menu"); ?>
@@ -97,8 +97,12 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
 
                                         <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
                                             <?
+                                            $modelActions = \Yii::$app->controller->modelActions;
+                                            \yii\helpers\ArrayHelper::remove($modelActions, "delete");
+                                            \yii\helpers\ArrayHelper::remove($modelActions, "copy");
+
                                             echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
-                                                'actions'            => \Yii::$app->controller->modelActions,
+                                                'actions'            => $modelActions,
                                                 'activeId'           => \Yii::$app->controller->action->id,
                                                 'options'            => [
                                                     'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',

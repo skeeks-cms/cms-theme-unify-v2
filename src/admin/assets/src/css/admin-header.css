@@ -1,0 +1,176 @@
+/*------------------------------------
+  Headers
+------------------------------------*/
+.sx-header {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: 0.92857rem;
+    z-index: 501;
+}
+
+.sx-header .sx-breadcrumbs-wrapper {
+    margin-left: 20px;
+}
+
+.sx-header .sx-breadcrumbs-wrapper ul {
+    margin-bottom: 0;
+}
+
+.sx-header--sticky-top {
+    position: fixed;
+    bottom: auto;
+    top: 0;
+}
+
+.sx-header-logo-toggler {
+    height: 65px;
+    padding-left: 1.07143rem !important;
+    padding-right: 1.07143rem !important;
+    overflow: hidden;
+}
+
+.sx-header .navbar {
+    padding: 0px;
+    margin: 0px;
+}
+
+.u-header__section--admin-dark {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+
+.sx-header-logo-toggler .navbar-brand img {
+    max-height: 50px;
+    margin-top: auto;
+    max-width: 187px;
+    margin-bottom: auto;
+    min-height: 25px;
+}
+
+.sx-header .g-absolute-centered {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-backface-visibility: hidden;
+}
+
+.sx-header a {
+    color: #8294b9;
+}
+
+.sx-header a:hover {
+    color: white;
+}
+
+.sx-header .sx-avatar {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.sx-btn-backend-header {
+    position: relative;
+}
+
+.sx-btn-backend-header a {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    display: block;
+}
+
+.sx-header .dropdown-menu {
+    background: #1d1d1d;
+    margin-top: 15px;
+}
+
+.sx-header .dropdown-menu a {
+    color: #8294b9;
+}
+
+.sx-header .dropdown-menu li:hover {
+    background: none;
+}
+
+.sx-header .dropdown-menu li:hover a {
+    color: white;
+}
+
+.sx-header .dropdown-menu li:last-child {
+    margin-bottom: 0px;
+}
+
+.sx-header .dropdown-menu li a {
+    padding: 5px 20px;
+}
+
+.sx-i-w {
+    margin-right: 12px;
+}
+
+.sx-lang-col, .sx-user-profile-col {
+    margin-left: 20px;
+}
+
+.sx-lang-col .dropdown {
+    margin: auto;
+}
+
+.sx-lang-col .dropdown {
+    margin: auto;
+    height: 40px;
+    display: flex;
+}
+
+.sx-lang-col .dropdown a {
+    margin: auto;
+}
+
+
+
+
+/**
+ * Стилизация хлебных крошек
+ */
+
+.sx-breadcrumbs-wrapper a {
+    color: #53585e;
+}
+
+.sx-breadcrumbs-wrapper li.sx-breadcrumbs-item {
+    margin-right: 10px;
+}
+
+.sx-breadcrumbs-wrapper li.sx-breadcrumbs-item i {
+    margin-left: 10px;
+}
+
+
+/**
+ * Хлебные крошки в шапке
+ */
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper a {
+    color: #6b7996;
+}
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper a:hover {
+    color: white;
+}
+.u-header__section--admin-dark .sx-breadcrumbs-wrapper i {
+    color: #6b7996;
+}
+
+
+@media (min-width: 576px) {
+    .sx-header-logo-toggler {
+        width: 250px;
+        -webkit-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+    }
+}
