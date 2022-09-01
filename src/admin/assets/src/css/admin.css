@@ -450,6 +450,9 @@ form.sx-form-admin .tab-content {
     color: silver;
 }
 
+.form-control { /* Firefox 18- */
+    height: auto;
+}
 .form-control:-moz-placeholder { /* Firefox 18- */
     color: silver;
 }
