@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #2185D0; /*Главный цвет ссылок и главных кнопок*/
+  --primary-color: #cb11ab; /*Главный цвет ссылок и главных кнопок*/
   --bg-gray: #f3f3f3; /*Главный цвет ссылок и главных кнопок*/
 }
 html {
@@ -712,6 +712,7 @@ iframe {
 .btn-primary
 {
     background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-primary:visited,
