@@ -222,7 +222,7 @@ body {
     border-color: #ced4da;
     padding: 10px;
     height: 43px;
-    height: auto;
+    /*height: auto;*/
 }
 
 .error-summary {
