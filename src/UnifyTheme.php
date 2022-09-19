@@ -229,6 +229,7 @@ HTML,
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
+                        
 
 
                         'body_bg_image' => [
@@ -236,7 +237,10 @@ HTML,
                             'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
                         ],
 
-
+                        'second_bg_color' => [
+                            'class'       => WidgetField::class,
+                            'widgetClass' => ColorInput::class,
+                        ],
                     ],
                 ],
 
@@ -641,6 +645,7 @@ HTML,
                 'font_texts'           => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
                 'font_css'             => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
                 'text_color'           => 'Цвет текста заданный по умолчанию для всего сайта.',
+                'second_bg_color'           => 'Цвет фона блоков',
                 'yandex_map'           => 'Если код не указан, то карта будет построена через апи',
 
                 'main_theme_color1' => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
@@ -668,6 +673,7 @@ HTML,
 
                 'second_theme_bg_color'   => "Цвет фона второстепенных кнопок",
                 'second_theme_text_color' => "Цвет текста второстепенных кнопок",
+                'second_bg_color' => "Цвет фона блока с фильтрами, и различных второстепенных блоков",
 
                 'font_css'     => "Подключаемые внешние шрифты",
                 'font_headers' => "Шрифт заголовков",
@@ -759,6 +765,7 @@ HTML,
                         'footer_bg_color',
                         'footer_color',
                         'text_color',
+                        'second_bg_color',
                         'footer_copyright_bg_color',
                         'footer_copyright_color',
 
@@ -961,6 +968,8 @@ HTML,
         $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
         $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
         $content = str_replace("{text_color}", \Yii::$app->view->theme->text_color, $content);
+        
+        $content = str_replace("{second_bg_color}", \Yii::$app->view->theme->second_bg_color, $content);
         //\Yii::$app->view->registerCss($content);
 
         if (\Yii::$app->view->theme->menu_color1) {
@@ -1049,7 +1058,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)))."-v9";
+        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)))."-v18";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -1089,6 +1098,7 @@ CSS;
             \Yii::$app->view->registerCssFile($newFilePublic, [
                 'depends' => [
                     UnifyThemeAsset::class,
+                    //\Yii::$app->view->theme->themeAssetClass
                 ],
             ]);
         });
@@ -1322,6 +1332,11 @@ CSS;
      * @var string Шрифт текста
      */
     public $text_color = "#555";
+
+    /**
+     * @var string Фон блоков
+     */
+    public $second_bg_color = "#fafafa";
 
     /**
      * @var string

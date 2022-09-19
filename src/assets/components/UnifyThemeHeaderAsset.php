@@ -26,6 +26,6 @@ class UnifyThemeHeaderAsset extends \skeeks\cms\base\AssetBundle
 
     ];
     public $depends = [
-        UnifyThemeAsset::class,
+        //UnifyThemeAsset::class,
     ];
 }
