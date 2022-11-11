@@ -38,17 +38,20 @@ class VanillaLazyLoadAsset extends AssetBundle
 
         $(document).on('pjax:complete', function (e) {
             setTimeout(function() {
-                sx.LazyLoadInstance = new LazyLoad({});
+                /*sx.LazyLoadInstance = new LazyLoad({});*/
+                sx.LazyLoadInstance.update();
             }, 200);
         });
         
         $(document).on('ajaxComplete', function() {
               setTimeout(function() {
-                  sx.LazyLoadInstance = new LazyLoad({});
+                  /*sx.LazyLoadInstance = new LazyLoad({});*/
+                  sx.LazyLoadInstance.update();
               }, 400);
               
               setTimeout(function() {
-                  sx.LazyLoadInstance = new LazyLoad({});
+                  /*sx.LazyLoadInstance = new LazyLoad({});*/
+                  sx.LazyLoadInstance.update();
               }, 1000);
         });
 JS
