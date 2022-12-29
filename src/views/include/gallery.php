@@ -22,7 +22,9 @@
 }); ?>
 <?= \skeeks\yii2\nanogalleryWidget\NanogalleryWidget::widget([
     'items'         => $items,
+    
     'clientOptions' => [
         'thumbnailHeight' => 350,
+        'locationHash' => false,
     ],
 ]); ?>
