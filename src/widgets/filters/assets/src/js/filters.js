@@ -256,7 +256,6 @@
             var self = this;
             this.JqueryForm = $("#sx-filters-form");
             this.jFilterFormWrapper = $(".sx-filters-form");
-            
             $('.sx-filter-action').on('click', function()
             {
                 var jFilter = $($(this).data('filter'));
