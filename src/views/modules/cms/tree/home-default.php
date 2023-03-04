@@ -23,7 +23,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
     'content_ids'        => [
         $content ? $content->id : "",
     ],
-    'viewFile'           => '@app/views/widgets/ContentElementsCmsWidget/slider-revo',
+    'viewFile'           => '@app/views/widgets/ContentElementsCmsWidget/slider-revo-no-full',
 ]); ?>
 
 
