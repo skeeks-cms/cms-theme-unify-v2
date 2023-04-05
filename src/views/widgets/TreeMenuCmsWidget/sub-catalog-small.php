@@ -10,7 +10,7 @@
 /* @var $models  \skeeks\cms\models\Tree[] */
 ?>
 <? if ($models = $widget->activeQuery->all()) : ?>
-    <div class="">
+    <div class="sx-main-subcatalog">
         <!--g-brd-top--md g-brd-bottom--md g-brd-gray-light-v4-->
         <ul class="row sx-category-list-small list-inline nomargin no-gutters">
             <? foreach ($models as $model) : ?>

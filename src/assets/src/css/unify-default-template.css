@@ -5,6 +5,9 @@
 
     --second-btn-text-color: {second_theme_text_color};
     --second-btn-bg-color: {second_theme_bg_color};
+
+    --base-padding: {base_padding};
+    --base-radius: {base_radius};
 }
 /*------------------------------------
   Boxed layout

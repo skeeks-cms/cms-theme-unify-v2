@@ -28,12 +28,12 @@ use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use skeeks\cms\widgets\ColorInput;
 use skeeks\widget\codemirror\CodemirrorWidget;
-use skeeks\yii2\form\elements\HtmlColEnd;
 use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\FieldSet;
 use skeeks\yii2\form\fields\HtmlBlock;
 use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
+use skeeks\yii2\form\fields\TextField;
 use skeeks\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
@@ -66,6 +66,19 @@ class UnifyTheme extends Theme
     /**
      * @return array
      */
+    public function _getDefaultTreeViews()
+    {
+        return ArrayHelper::merge(parent::_getDefaultTreeViews(), [
+            'contacts-list' => [
+                'name'        => 'Страница контактов (несколько адресов)',
+                'description' => 'Страница с картой, временем работы и контактами, подходит для нескольких адресов',
+            ],
+        ]);
+    }
+
+    /**
+     * @return array
+     */
     static public function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
@@ -80,13 +93,10 @@ HTML
     }
 
 
-
-
     public function getConfigFormModelData()
     {
         $fontDescription = '';
-        foreach ($this->getAvailbaleFontsDescription() as $id => $description)
-        {
+        foreach ($this->getAvailbaleFontsDescription() as $id => $description) {
             $fontDescription .= <<<HTML
 <div class="sx-font-desc sx-font-{$id}" style="display:none;">{$description}</div>
 HTML;
@@ -139,13 +149,13 @@ JS
                     'name'   => 'Шрифт',
                     'fields' => [
 
-                        'include_font_assets'     => [
+                        'include_font_assets' => [
                             'class'    => SelectField::class,
                             'items'    => $this->getAvailbaleFontsForSelect(),
                             'multiple' => true,
                         ],
                         [
-                            'class' => HtmlBlock::class,
+                            'class'   => HtmlBlock::class,
                             'content' => <<<HTML
 <div class="sx-font-description">
 <div class="col-12">
@@ -157,7 +167,7 @@ HTML,
                         ],
 
                         'font_css',
-                        'font_headers' => [
+                        'font_headers'        => [
                             /*'class' => SelectField::class,
                             'items' => [
                                 'Open Sans'        => 'Open Sans',
@@ -168,7 +178,7 @@ HTML,
                                 'Rubik'            => 'Rubik',
                             ],*/
                         ],
-                        'font_texts'   => [
+                        'font_texts'          => [
                             /*'class' => SelectField::class,
                             'items' => [
                                 'Open Sans'        => 'Open Sans',
@@ -229,7 +239,6 @@ HTML,
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
                         ],
-                        
 
 
                         'body_bg_image' => [
@@ -240,6 +249,13 @@ HTML,
                         'second_bg_color' => [
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
+                        ],
+
+                        'base_padding' => [
+                            'class'       => TextField::class,
+                        ],
+                        'base_radius' => [
+                            'class'       => TextField::class,
                         ],
                     ],
                 ],
@@ -588,8 +604,8 @@ HTML,
                     'class'  => FieldSet::class,
                     'name'   => 'Мобильная версия',
                     'fields' => [
-                   
-                        'include_mobile_assets'     => [
+
+                        'include_mobile_assets' => [
                             'class'    => SelectField::class,
                             'items'    => [
                                 UnifyIconSimpleLineAsset::class => 'Иконки (SimpleLine)',
@@ -624,29 +640,33 @@ HTML,
                 ],
             ],
             'attributeHints'  => [
-                'menu_color1'          => 'Если задан один цвет, меню будет одного цвета',
-                'menu_color2'          => 'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
-                'footer'               => "Нижняя часть сайта",
-                'logo'                 => "Если не будет задан логотип, то логотип возьмется из описания сайта",
-                'footer_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
-                'mobile_logo'          => "Если логотип не будет задан, то возьмется фото основного логотипа",
-                'header_shadow'        => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
-                'body_outer'           => "Задается для центрированных сайтов",
-                'is_header_sticky'     => "Фиксированная шапка будет растянута на весь экран",
-                'is_show_search_block' => 'При выборе "Да", в шапке будет выведен поисковый блок',
-                'is_show_loader'       => 'Показывать индикатор загрузки?',
-                'include_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
-                'include_mobile_assets'       => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона. В мобильной версии.',
-                'include_font_assets'  => 'Подключаемые шрифты',
-                'col_left_width'       => 'Указывается в px',
-                'sx_container_width'   => 'Можно вказать в px или %. Например 100%',
-                'is_center_logo'       => 'Работает в стандартной шапке',
-                'font_headers'         => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
-                'font_texts'           => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
-                'font_css'             => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
-                'text_color'           => 'Цвет текста заданный по умолчанию для всего сайта.',
-                'second_bg_color'           => 'Цвет фона блоков',
-                'yandex_map'           => 'Если код не указан, то карта будет построена через апи',
+                'base_radius'  => 'Базовая настройка скругления углов у кнопок и различных блоков',
+                'base_padding' => 'Базовые отступы',
+
+                'menu_color1'           => 'Если задан один цвет, меню будет одного цвета',
+                'menu_color2'           => 'Если задан второй цвет, меню будет окрашено градиентом из первого цвета в второй',
+                'footer'                => "Нижняя часть сайта",
+                'logo'                  => "Если не будет задан логотип, то логотип возьмется из описания сайта",
+                'footer_logo'           => "Если логотип не будет задан, то возьмется фото основного логотипа",
+                'mobile_logo'           => "Если логотип не будет задан, то возьмется фото основного логотипа",
+                'header_shadow'         => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
+                'body_outer'            => "Задается для центрированных сайтов",
+                'is_header_sticky'      => "Фиксированная шапка будет растянута на весь экран",
+                'is_show_search_block'  => 'При выборе "Да", в шапке будет выведен поисковый блок',
+                'is_show_loader'        => 'Показывать индикатор загрузки?',
+                'include_assets'        => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
+                'include_mobile_assets' => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона. В мобильной версии.',
+                'include_font_assets'   => 'Подключаемые шрифты',
+
+                'col_left_width'     => 'Указывается в px',
+                'sx_container_width' => 'Можно вказать в px или %. Например 100%',
+                'is_center_logo'     => 'Работает в стандартной шапке',
+                'font_headers'       => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+                'font_texts'         => 'Впишите название шрифта. Например: Open Sans, Playfair Display, Roboto, Raleway, Spectral, Rubik',
+                'font_css'           => 'Получите и настройте ссылку на ваши шрифты в сервисе: https://fonts.google.com/ https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic',
+                'text_color'         => 'Цвет текста заданный по умолчанию для всего сайта.',
+                'second_bg_color'    => 'Цвет фона блоков',
+                'yandex_map'         => 'Если код не указан, то карта будет построена через апи',
 
                 'main_theme_color1' => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
                 'main_theme_color2' => 'Чтобы на кнопках был градиент задайте второй основной цвет',
@@ -656,6 +676,9 @@ HTML,
 
             ],
             'attributeLabels' => [
+                'base_radius'  => 'Скругление углов',
+                'base_padding' => 'Базовые отступы',
+
                 'css_code'           => "CSS код",
                 'is_cap'             => "Включить заглушку?",
                 'is_cap_only_guests' => "Показывать заглушку только неавторизованным пользователям?",
@@ -673,7 +696,7 @@ HTML,
 
                 'second_theme_bg_color'   => "Цвет фона второстепенных кнопок",
                 'second_theme_text_color' => "Цвет текста второстепенных кнопок",
-                'second_bg_color' => "Цвет фона блока с фильтрами, и различных второстепенных блоков",
+                'second_bg_color'         => "Цвет фона блока с фильтрами, и различных второстепенных блоков",
 
                 'font_css'     => "Подключаемые внешние шрифты",
                 'font_headers' => "Шрифт заголовков",
@@ -722,11 +745,11 @@ HTML,
                 'news_list_view'          => 'Вариант отображения списка новостей',
                 'news_list_count_columns' => 'Количество колонок в новостях',
 
-                'is_show_home_slider' => "Показывать слайдер на главной",
-                'include_assets'      => "Дополнительные компоненты",
-                'include_mobile_assets'      => "Дополнительные компоненты",
-                'include_font_assets' => "Набор предустановленынх шрифтов",
-                'col_left_width'      => "Ширина левой колонки, px",
+                'is_show_home_slider'   => "Показывать слайдер на главной",
+                'include_assets'        => "Дополнительные компоненты",
+                'include_mobile_assets' => "Дополнительные компоненты",
+                'include_font_assets'   => "Набор предустановленынх шрифтов",
+                'col_left_width'        => "Ширина левой колонки, px",
 
                 'is_header_toolbar'         => "Показывать панельку перед меню",
                 'is_header_auth'            => "Показывать ссылки на авторизацию",
@@ -786,6 +809,9 @@ HTML,
                         'font_texts',
                         'font_css',
                         'sx_container_width',
+
+                        'base_radius',
+                        'base_padding',
                     ],
                     'string',
                 ],
@@ -907,7 +933,7 @@ HTML,
         //Предустановленные шрифты
         if (\Yii::$app->view->theme->include_font_assets) {
             foreach ((array)\Yii::$app->view->theme->include_font_assets as $id) {
-                $assetClass = ArrayHelper::getValue((array) \Yii::$app->view->theme->available_font_assets, [$id, 'class']);
+                $assetClass = ArrayHelper::getValue((array)\Yii::$app->view->theme->available_font_assets, [$id, 'class']);
                 if (class_exists($assetClass)) {
                     $assetClass::register(\Yii::$app->view);
                 } else {
@@ -917,7 +943,7 @@ HTML,
         }
 
         if (!\Yii::$app->mobileDetect->isMobile) {
-             //Дополнительные компоненты верстки
+            //Дополнительные компоненты верстки
             if (\Yii::$app->view->theme->include_assets) {
                 foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
                     if (class_exists($assetClass)) {
@@ -928,7 +954,7 @@ HTML,
                 }
             }
         } else {
-             //Дополнительные компоненты верстки
+            //Дополнительные компоненты верстки
             if (\Yii::$app->view->theme->include_mobile_assets) {
                 foreach ((array)\Yii::$app->view->theme->include_mobile_assets as $assetClass) {
                     if (class_exists($assetClass)) {
@@ -939,7 +965,7 @@ HTML,
                 }
             }
         }
-       
+
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
 
@@ -963,12 +989,15 @@ HTML,
         $content = str_replace("{second_theme_bg_color}", \Yii::$app->view->theme->second_theme_bg_color, $content);
         $content = str_replace("{second_theme_text_color}", \Yii::$app->view->theme->second_theme_text_color, $content);
 
+        $content = str_replace("{base_padding}", \Yii::$app->view->theme->base_padding, $content);
+        $content = str_replace("{base_radius}", \Yii::$app->view->theme->base_radius, $content);
+
         $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
         $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
         $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
         $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
         $content = str_replace("{text_color}", \Yii::$app->view->theme->text_color, $content);
-        
+
         $content = str_replace("{second_bg_color}", \Yii::$app->view->theme->second_bg_color, $content);
         //\Yii::$app->view->registerCss($content);
 
@@ -1253,7 +1282,7 @@ CSS;
      * @var array
      */
     public $include_assets = [];
-    
+
     /**
      * @var array
      */
@@ -1269,10 +1298,10 @@ CSS;
      */
     public $available_font_assets = [
         'futura' => [
-            'class' => FuturaFontAsset::class,
-            'label' => 'Futura',
-            'description' => 'font-family: futura35;<br />font-family: futura45;<br />font-family: futura55;<br /> font-family: futura65;'
-        ]
+            'class'       => FuturaFontAsset::class,
+            'label'       => 'Futura',
+            'description' => 'font-family: futura35;<br />font-family: futura45;<br />font-family: futura55;<br /> font-family: futura65;',
+        ],
     ];
 
     /**
@@ -1282,8 +1311,7 @@ CSS;
     {
         $result = [];
 
-        foreach ($this->available_font_assets as $id => $data)
-        {
+        foreach ($this->available_font_assets as $id => $data) {
             $result[$id] = ArrayHelper::getValue($data, 'label');
         }
 
@@ -1296,8 +1324,7 @@ CSS;
     {
         $result = [];
 
-        foreach ($this->available_font_assets as $id => $data)
-        {
+        foreach ($this->available_font_assets as $id => $data) {
             $result[$id] = ArrayHelper::getValue($data, 'description');
         }
 
@@ -1504,6 +1531,15 @@ CSS;
      */
     public $second_theme_text_color = '#ffffff';
 
+
+    /**
+     * @var string
+     */
+    public $base_padding = '5rem';
+    /**
+     * @var string
+     */
+    public $base_radius = '1rem';
 
     /**
      * @var string
