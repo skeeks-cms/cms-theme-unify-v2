@@ -7,6 +7,7 @@
  */
 /* @var $this yii\web\View */
 \skeeks\cms\themes\unify\assets\components\UnifyThemeFooterAsset::register($this);
+\skeeks\cms\themes\unify\assets\FontAwesomeAsset::register($this);
 ?>
 <div class="sx-footer-wrapper">
     <div id="contacts-section" class="sx-footer">

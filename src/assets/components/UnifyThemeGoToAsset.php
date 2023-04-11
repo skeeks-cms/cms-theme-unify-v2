@@ -39,7 +39,7 @@ class UnifyThemeGoToAsset extends \skeeks\cms\base\AssetBundle
     sx.unify.GoToInit = false;
     sx.unify.GoToCallback = function(e) {
         $("body").append(
-            '<a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position=\'{"bottom": 15,"right": 15}\' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn"><i class="hs-icon hs-icon-arrow-top"></i></a>'
+            '<a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position=\'{"bottom": 15,"right": 15}\' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn"><i class="hs-icon hs-icon-arrow-top"></i></a>'
         );
         $.HSCore.components.HSGoTo.init('.js-go-to');
         window.removeEventListener("scroll", sx.unify.GoToCallback);

@@ -82,6 +82,7 @@
     text-rendering: optimizelegibility;
     text-size-adjust: 100%;
     border-radius: 50%;
+    box-shadow: 0px 0px 12px -1px white;
 }
 
 .u-shadow-v19 {
