@@ -10,6 +10,8 @@
 \skeeks\assets\unify\base\UnifyHsHamburgersAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
 
+\skeeks\cms\themes\unify\assets\components\UnifyThemeHeaderMobileAsset::register($this);
+
 $this->registerJs(<<<JS
     /* Перемещаем модальное окно в конец body. */
     /* Это не работает нормально когда включено mmenu! Лучше так не делать! */
@@ -134,30 +136,37 @@ if ($models) {
     <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="g-py-0">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container">
-                <!-- Logo -->
-                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
-                    <img src="<?= $this->theme->mobile_logo ? $this->theme->mobile_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
-                </a>
-                <div class="float-right sx-header-menu-right">
-                    <!-- End Logo -->
-                    <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
-                        <?php echo $this->render("@app/views/headers/_header-search"); ?>
-                    <? endif; ?>
-                    <?= @$content; ?>
-                    <? if ($this->theme->is_header_auth) : ?>
-                        <?php echo $this->render("@app/views/headers/_header-auth"); ?>
-                    <? endif; ?>
-                    <!-- Responsive Toggle Button -->
+                <div class="sx-menu-mobile-top">
+                    <!-- Logo -->
+                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand d-block">
+                        <img src="<?= $this->theme->mobile_logo ? $this->theme->mobile_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                    </a>
+                    <?php if(\Yii::$app->cms->cmsSite->cmsSitePhone) : ?>
+                        <a href="tel:<?= \Yii::$app->cms->cmsSite->cmsSitePhone->value; ?>" class="sx-mobile-phone-top">
+                            <?= \Yii::$app->cms->cmsSite->cmsSitePhone->value; ?>
+                        </a>
+                    <?php endif; ?>
+                    <div class="float-right sx-header-menu-right">
+                        <!-- End Logo -->
+                        <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
+                            <?php echo $this->render("@app/views/headers/_header-search"); ?>
+                        <? endif; ?>
+                        <?= @$content; ?>
+                        <? if ($this->theme->is_header_auth) : ?>
+                            <?php echo $this->render("@app/views/headers/_header-auth"); ?>
+                        <? endif; ?>
+                        <!-- Responsive Toggle Button -->
 
-                    <!-- End Responsive Toggle Button -->
-                </div>
-                <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
+                        <!-- End Responsive Toggle Button -->
+                    </div>
+                    <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle">
                             <span class="hamburger">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
                             </span>
                     </a>
+                </div>
             </div>
         </nav>
     </div>
