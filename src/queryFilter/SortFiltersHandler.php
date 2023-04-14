@@ -131,7 +131,7 @@ class SortFiltersHandler extends Model
                     break;
 
                 case ('-new'):
-                    $query->orderBy(['created_at' => SORT_DESC]);
+                    $query->orderBy(['published_at' => SORT_DESC]);
                     break;
             }
         }
