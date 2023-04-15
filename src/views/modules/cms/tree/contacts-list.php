@@ -28,7 +28,7 @@ $this->registerCss(<<<CSS
 }
 
 .address-item {
-    background: white;
+    background: var(--second-bg-color);
     border-radius: var(--base-radius);
     padding: 1.5rem;
     margin-bottom: 1rem;
