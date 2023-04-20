@@ -166,7 +166,12 @@ JS
 
                 <?php if ($phones = \Yii::$app->skeeks->site->cmsSitePhones) : ?>
                     <? foreach ($phones as $phone) : ?>
-                        <span class="d-block"><a href="tel:<?= $phone->value; ?>"><?= $phone->value; ?> </a></span>
+                        <span class="d-block" style="line-height: 1.2; margin-bottom: 1rem;">
+                            <a href="tel:<?= $phone->value; ?>"><?= $phone->value; ?> </a>
+                            <?php if($phone->name) : ?>
+                                <br/><span style="opacity: 0.6"><?php echo $phone->name; ?></span>
+                            <?php endif; ?>
+                        </span>
                     <? endforeach; ?>
                 <?php endif; ?>
             </div>

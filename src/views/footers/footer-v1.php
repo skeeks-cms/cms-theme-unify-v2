@@ -91,7 +91,14 @@
                                         <i class="fas fa-phone"></i>
                                       </span>
                                     </div>
-                                    <a class="my-auto" href="tel:<?= $phone->value; ?>"><?= $phone->value; ?></a>
+                                    <div class="my-auto" style="line-height: 1.2;">
+                                        <a href="tel:<?= $phone->value; ?>"><?= $phone->value; ?></a>
+                                        <?php if($phone->name) : ?>
+                                            <br/><span style="opacity: 0.6"><?php echo $phone->name; ?></span>
+                                        <?php endif; ?>
+                                    </div>
+
+
                                 </div>
                                 <!-- End Phone -->
                             <? endforeach; ?>

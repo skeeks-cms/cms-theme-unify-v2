@@ -147,14 +147,14 @@ if (@$isShowMainImage !== false) {
                                 </li>
                                 <li class="list-inline-item sx-news-item-comments sx-delimiter">/</li>
                                 <li class="list-inline-item sx-news-item-comments sx-item">
-                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="#!">
+                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover">
                                         <i class="fas fa-comments"></i>
                                         <?= (int)$model->relatedPropertiesModel->getAttribute('comments'); ?>
                                     </a>
                                 </li>
                                 <li class="list-inline-item sx-news-item-shows sx-delimiter">/</li>
                                 <li class="list-inline-item sx-news-item-shows sx-item">
-                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover" href="#!">
+                                    <a class="sx-main-text-color g-text-underline--none--hover g-color-primary--hover">
                                         <i class="fas fa-eye"></i> <?= (int)$model->show_counter; ?>
                                     </a>
                                 </li>
