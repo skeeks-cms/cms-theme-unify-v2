@@ -45,6 +45,15 @@ function(pageNum, scrollOffset, url) {
 JS
         );
         }
+        if (!$this->eventOnRendered) {
+            $id = $this->id;
+            $this->eventOnRendered = new \yii\web\JsExpression(<<<JS
+function() {
+    $(document).trigger("scrollAndPagerRendered");
+}
+JS
+        );
+        }
         parent::init();
 
     }
