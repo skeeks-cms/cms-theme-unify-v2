@@ -77,8 +77,16 @@ CSS
                                 <?php if($name != $address->value) : ?>
                                     <div class="sx-address"><?php echo $address->value; ?></div>
                                 <?php endif; ?>
-                                <?php if($phone) : ?>
-                                    <div class="sx-phone"><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></div>
+                                <?php if($address->cmsSiteAddressPhones) : ?>
+                                    <? foreach ($address->cmsSiteAddressPhones as $addressPhone) : ?>
+                                        <div class="sx-phone">
+                                            <a href="tel:<?php echo $addressPhone->value; ?>"><?php echo $addressPhone->value; ?></a>
+                                            <?php if($addressPhone->name) : ?>
+                                                (<?php echo $addressPhone->name; ?>)
+                                            <?php endif; ?>
+
+                                        </div>
+                                    <? endforeach; ?>
                                 <?php endif; ?>
                                 <?php if($email) : ?>
                                     <div class="sx-email"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>

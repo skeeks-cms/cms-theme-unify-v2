@@ -64,7 +64,6 @@ CSS
 <? /*= $this->theme->is_header_toggle_sections ? "u-header--toggle-section" : ""; */ ?>
 <header id="js-header" class="
     u-header
-    <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?>
     <?= $this->theme->is_header_show_hide ? "u-header--show-hide" : ""; ?>
     <?= $this->theme->header_shadow; ?>
     u-header--change-appearance

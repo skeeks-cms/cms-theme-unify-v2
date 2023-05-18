@@ -26,7 +26,7 @@ JS
 
 <!-- Header -->
 <!--u-header--sticky-top-->
-<header id="js-header" class="<?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> <?= $this->theme->header_shadow; ?> u-header u-header--toggle-section u-header--change-appearance"
+<header id="js-header" class="<?= $this->theme->header_shadow; ?> u-header u-header--toggle-section u-header--change-appearance"
         data-header-fix-moment="100" data-header-fix-effect="slide">
     <!-- Top Bar -->
     <!--u-header__section--hidden -->

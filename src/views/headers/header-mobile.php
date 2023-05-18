@@ -130,7 +130,7 @@ if ($models) {
 
 <!-- Header -->
 <!--u-header--sticky-top-->
-<header id="js-header" class="u-shadow-v19 u-header <?= $this->theme->is_header_sticky ? "u-header--sticky-top" : ""; ?> u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
+<header id="js-header" class="u-shadow-v19 u-header u-header--toggle-section u-header--change-appearance" data-header-fix-moment="0">
     <!-- Top Bar -->
 
     <div class="u-header__section g-py-0 sx-main-menu-wrapper" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="g-py-0">
