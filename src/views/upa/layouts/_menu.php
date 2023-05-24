@@ -8,23 +8,24 @@
 /* @var $this yii\web\View */
 $level = 1;
 
-
+\skeeks\cms\themes\unify\admin\assets\UnifyAdminLeftMenuAsset::register($this);
 ?>
 
 <? if ($items = \skeeks\cms\backend\BackendComponent::getCurrent()->menu->items) : ?>
+
     <!--g-min-height-100vh-->
-    <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu mb-0">
+    <ul id="sideNavMenu" class="u-side-nav--top-level-menu">
         <? foreach ($items as $adminMenuItem) : ?>
             <? if ($adminMenuItem->isVisible) : ?>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item
+                <li class="u-side-nav--top-level-menu-item
                 <?= $adminMenuItem->items ? "u-side-nav--has-sub-menu" : ""; ?>
                 <?= $adminMenuItem->items && $adminMenuItem->isActive ? "u-side-nav-opened has-active" : ""; ?>
 ">
 
-                    <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12 <?= $adminMenuItem->isActive ? "active" : ""; ?>" href="<?= $adminMenuItem->url; ?>"
+                    <a class="media u-side-nav--top-level-menu-link <?= $adminMenuItem->isActive ? "active" : ""; ?>" href="<?= $adminMenuItem->url; ?>"
                         <?= $adminMenuItem->items ? "data-hssm-target='#subMenuLevels{$adminMenuItem->id}'" : "" ?>
                     >
-                      <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                      <span class="d-flex align-self-center g-pos-rel u-side-nav--top-level-menu-icon">
                           <? if ($adminMenuItem->icon) : ?>
                               <i class="<?= $adminMenuItem->icon; ?>"></i>
                           <? elseif ($adminMenuItem->image) : ?>
@@ -44,7 +45,7 @@ $level = 1;
                         <? endif; ?>
                     </a>
 
-                    <? if ($adminMenuItem->items) : ?>
+                    <? if ($adminMenuItem->items && $adminMenuItem->isActive) : ?>
                         <?= $this->render("@app/views/layouts/_submenu", [
                             'items'  => $adminMenuItem->items,
                             'level'  => $level,

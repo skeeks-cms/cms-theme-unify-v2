@@ -8,7 +8,6 @@
 use yii\helpers\Html;
 //\skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset::register($this);
 //\skeeks\cms\themes\unify\assets\UnifyDefaultAsset::register($this);
-
 /* @var $this \yii\web\View */
 /* @var $content string */
 $this->registerCss(<<<CSS
@@ -24,6 +23,7 @@ $this->registerCss(<<<CSS
 CSS
 );
 $isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout;
+\skeeks\cms\themes\unify\assets\UnifyThemeUpaAsset::register($this);
 
 if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
     $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
@@ -57,29 +57,31 @@ $this->theme->bodyCssClass .= " sx-upa-body";
     <?php $this->beginBody() ?>
     
     <div class="sx-main-wrapper"><!--Нужен для mmenu-->
-        <main class="sx-main" style="padding-top: 0px;">
+        <main>
+
+
             <?php if (!$isEmpty) : ?>
                 <?= $this->render("@app/views/header"); ?>
             <? endif; ?>
 
 
+            <section class="sx-main-section">
             <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
             <div class="container sx-container">
                 <? endif; ?>
 
-                <div class="row no-gutters g-pos-rel g-overflow-y-hidden g-overflow-x-hidden sx-main-wrapper">
-                    <!-- Sidebar Nav -->
-
-
-                    <a class="js-side-nav u-header__nav-toggler d-flex align-self-center ml-auto" href="#!" data-hssm-class="u-side-nav--mini u-sidebar-navigation-v1--mini" data-hssm-body-class="u-side-nav-mini"
-                       data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
-                        <i class="hs-admin-align-left"></i>
-                    </a>
-                    <?php if (!$isEmpty) : ?>
+                <div class="sx-main-wrapper-row">
+                    <?php if (!$isEmpty && !\Yii::$app->user->isGuest) : ?>
 
                         <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
                             <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
                             <?= $this->render("@app/views/layouts/_menu"); ?>
+
+                            <a class="btn btn-default btn-block" href="<?= \yii\helpers\Url::to(['/cms/auth/logout']) ?>" data-method="post">
+                                <i class="icon-logout"></i>
+                                Выход
+                            </a>
+
                             <!--<div class="text-center g-mt-20">
 
                                 <a class="btn btn-default" href="<?/*= \yii\helpers\Url::to(['/cms/auth/logout']) */?>" data-method="post">
@@ -119,44 +121,57 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                             </div>
 
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                                && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                                <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
-                                    <div class="">
-                                        <div class="panel-content-before panel-content-before-second">
-                                            <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                                                && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
-                                                <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
-                                                    <?= \Yii::$app->controller->modelHeader; ?>
-                                                </div>
-                                                <?
-                                                echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
-                                                    'actions'            => \Yii::$app->controller->modelActions,
-                                                    'activeId'           => \Yii::$app->controller->action->id,
-                                                    'options'            => [
-                                                        'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
-                                                    ],
-                                                    'itemWrapperOptions' => [
-                                                        'class' => 'nav-item',
-                                                    ],
-                                                    'itemOptions'        => [
-                                                        'class' => 'nav-link',
-                                                    ],
-                                                ]);
-                                                ?>
-                                            <? endif; ?>
+                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+
+                        <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
+
+                            <div class="sx-content-model-actions">
+                                <div class="panel-content-before panel-content-before-second">
+                                    <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
+                                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+
+
+                                        <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
+                                            <?= \Yii::$app->controller->modelHeader; ?>
                                         </div>
-                                    </div>
-                                <? endif; ?>
-                                <div class="tab-content">
-                                    <section>
-                                        <?= $content; ?>
-                                    </section>
+
+                                        <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
+                                            <?
+                                            $modelActions = \Yii::$app->controller->modelActions;
+                                            \yii\helpers\ArrayHelper::remove($modelActions, "delete");
+                                            \yii\helpers\ArrayHelper::remove($modelActions, "copy");
+
+                                            echo \skeeks\cms\backend\widgets\ControllerActionsWidget::widget([
+                                                'actions'            => $modelActions,
+                                                'activeId'           => \Yii::$app->controller->action->id,
+                                                'options'            => [
+                                                    'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
+                                                ],
+                                                'itemWrapperOptions' => [
+                                                    'class' => 'nav-item',
+                                                ],
+                                                'itemOptions'        => [
+                                                    'class' => 'nav-link',
+                                                ],
+                                            ]);
+                                            ?>
+                                        </div>
+
+
+                                    <? endif; ?>
                                 </div>
-                            <? else : ?>
-                                <section>
-                                    <?= $content; ?>
-                                </section>
-                            <? endif; ?>
+                            </div>
+                        <? endif; ?>
+                        <div class="tab-content">
+                            <section>
+                                <?= $content; ?>
+                            </section>
+                        </div>
+                    <? else : ?>
+                        <section>
+                            <?= $content; ?>
+                        </section>
+                    <? endif; ?>
 
 
                             <!--</div>-->
@@ -170,12 +185,14 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                 </div>
 
                 <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
-            </div>
-        <? endif; ?>
+                    </div>
+                <? endif; ?>
+            </section>
 
+            <?php if(!$isEmpty) : ?>
+                <?= $this->render("@app/views/footer"); ?>
+            <?php endif; ?>
 
-
-            <?= $this->render("@app/views/footer"); ?>
         </main>
     </div>
     <?= $this->render("@app/views/modals"); ?>

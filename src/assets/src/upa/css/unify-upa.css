@@ -1,0 +1,411 @@
+
+/**
+ * Fancybox rewrite
+ */
+.sx-fancy-container .fancybox-is-open .fancybox-bg {
+    opacity: 0.7;
+}
+.sx-fancy-container .fancybox-slide--iframe {
+    padding: 0;
+}
+
+.sx-fancy-container .fancybox-slide--iframe .fancybox-content {
+    max-width: 1300px;
+    min-width: 500px;
+    width: calc(100% - 10px) !important;
+    overflow: hidden;
+    margin: 0;
+    max-height: 100%;
+    float: right;
+    background: transparent;
+}
+
+
+/*Маленький размер окна*/
+.sx-fancy-container.sx-fancy-size-small .fancybox-slide--iframe .fancybox-content {
+    max-width: 500px;
+}
+
+.sx-fancy-container .fancybox-slide--iframe .fancybox-iframe {
+    left: 41px;
+    width: calc(100% - 41px);
+    background: white;
+    box-shadow: -10px 0 15px -5px rgb(0 0 0 / 10%);
+}
+
+.sx-fancy-container.fancybox-is-open .fancybox-bg {
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .sx-fancy-container .fancybox-slide--iframe .fancybox-content {
+        max-width: calc(100% - 20px);
+    }
+
+}
+
+.sx-fancy-container .fancybox-fx-slide-in-out.fancybox-slide--previous {
+    transform: translateX(100%);
+}
+
+.sx-fancy-container .fancybox-fx-slide-in-out.fancybox-slide--next {
+    transform: translateX(100%);
+}
+
+.sx-fancy-container .fancybox-fx-slide-in-out.fancybox-slide--current {
+    transform: translateX(0);
+}
+
+.sx-fancy-container .fancybox-slide--iframe .fancybox-close-small {
+    left: 0px;
+    top: 0;
+    background: #000000a8;
+    background: white;
+    color: black;
+    opacity: 1;
+    outline: none;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.sx-fancy-container .fancybox-slide--iframe .fancybox-close-small:after {
+    color: black;
+}
+.sx-fancy-container .fancybox-slide--iframe .fancybox-close-small:hover {
+    color: black;
+}
+
+.sx-fancy-container .fancybox-slide--iframe .fancybox-close-small:hover:after {
+    color: black;
+}
+
+/**
+ * Минималистичное окно
+ */
+.sx-empty .sx-hide-on-empty,
+.sx-empty #footer
+{
+    display: none;
+}
+
+.sx-empty main {
+    padding-top: 0px !important;
+}
+
+.sx-empty .sx-main-col {
+    padding-bottom: 0px !important;
+}
+
+/**
+ * Починка CKEditor
+ */
+.cke_reset [aria-labelledby],
+.cke_reset[aria-labelledby],
+.cke_reset_all[aria-labelledby],
+.cke_reset_all [aria-labelledby] {
+    opacity: inherit;
+}
+
+[aria-labelledby] {
+    opacity: inherit;
+}
+
+
+
+/**
+ * Кастомизация select2
+ */
+.select2-container--krajee-bs4.select2-container--open:not(.select2-container--disabled) .select2-selection, .select2-container--krajee-bs4:not(.select2-container--disabled) .select2-selection:focus
+{
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.select2-container--krajee-bs4:not(.select2-container--disabled) .select2-dropdown {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
+.select2-container--krajee.select2-container--open .select2-selection, .select2-container--krajee .select2-selection:focus {
+    box-shadow: none;
+}
+
+.select2-container--krajee .select2-dropdown {
+    box-shadow: none;
+}
+
+.select2-container--krajee .select2-selection--single .select2-selection__arrow {
+    border: 0px;
+}
+
+.select2-container--krajee-bs4 .select2-results__option {
+}
+.select2-container--krajee-bs4 .select2-results__option.select2-results__option--selected, .select2-container--krajee-bs4 .select2-results__option[aria-selected=true] {
+    color: white;
+    background-color: #0c41ab;
+
+}
+
+.select2-container--krajee-bs4 .select2-results__option:hover
+{
+    color: white;
+    background-color: #0c41ab;
+}
+
+.select2-container .select2-selection--single {
+    /*display: flex;*/
+    box-shadow: none;
+}
+
+.select2-container--krajee-bs4 .select2-selection--single .select2-selection__rendered {
+    /*margin: auto 5px;*/
+}
+.select2-container--krajee-bs4 .select2-selection--single .select2-selection__arrow {
+    border-left: 0;
+}
+
+/**
+ * multi select 2
+ */
+.select2-container--krajee .select2-selection {
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#sideNav {
+    width: 18rem;
+}
+
+#sideNav .sx-icon-wrapper {
+    display: none;
+}
+#sideNav .u-side-nav--top-level-menu-icon {
+    display: none !important;
+}
+
+#sideNav ul li {
+    list-style: none;
+}
+#sideNav a {
+    text-decoration: none;
+}
+#sideNav>ul>li {
+
+    background: var(--second-bg-color);
+    margin-bottom: 1rem;
+    border-radius: var(--base-radius);
+}
+.u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active {
+    background: none;
+}
+
+.u-sidebar-navigation--light .has-active {
+    background: none;
+}
+.u-sidebar-navigation--light a.active {
+    color: var(--primary-color);
+}
+
+.u-side-nav--second-level-menu {
+    padding-left: 1rem;
+}
+
+.u-side-nav--third-level-menu {
+    padding-left: 1rem;
+}
+
+.u-side-nav--second-level-menu-item ul {
+    display: none;
+}
+.u-side-nav--second-level-menu-item.has-active ul {
+    display: block;
+}
+.u-side-nav--second-level-menu-link {
+    font-size: 0.9rem;
+}
+.u-side-nav--third-level-menu {
+    font-size: 0.8rem;
+}
+
+.u-side-nav--second-level-menu {
+    padding-bottom: 1rem;
+}
+
+.sx-main-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active {
+    background: none !important;
+}
+.u-side-nav--second-level-menu-item.has-active {
+    background: none !important;
+}
+
+
+
+
+/**
+ * Стандартные кнопки действий
+ */
+.sx-content-actions .nav-item.active a {
+    background: var(--primary-color);
+    color: white;
+}
+.sx-content-actions .nav-item a {
+    border: 1px solid var(--primary-color);
+    background: white;
+    border-radius: 2.5rem;
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    transition: 200ms;
+}
+.sx-content-actions .nav-item a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.sx-backend-showing-tabs .nav-item {
+    margin-right: 0.4rem;
+}
+.sx-backend-showing-tabs.nav-tabs>li>a {
+    border-bottom: 0;
+}
+
+.sx-backend-showing-tabs.nav-tabs>li>a {
+    background: white;
+}
+
+.sx-backend-showing-tabs.nav-tabs .nav-link.active {
+     background: var(--second-bg-color);
+}
+.sx-backend-showing-tabs.nav-tabs {
+     border-bottom: 0;
+}
+.sx-backend-showing-tabs.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+
+/**
+ * Таблицы
+ */
+.sx-grid-view {
+    font-size: 0.75rem;
+}
+.sx-grid-view .sx-before-table {
+    border: 1px solid var(--second-bg-color);
+    background: var(--second-bg-color);
+    box-shadow: none;
+}
+
+table.sx-table thead tr th
+{
+    border: 1px solid var(--second-bg-color);
+    background: var(--second-bg-color);
+    box-shadow: none;
+}
+.sx-grid-view .sx-after-table
+{
+    border: 1px solid var(--second-bg-color);
+    background: var(--second-bg-color);
+    box-shadow: none;
+}
+
+.sx-backend-filters-wrapper {
+    border: 1px solid var(--second-bg-color);
+    background: var(--second-bg-color);
+    box-shadow: none;
+}
+
+
+.sx-admin-filters-form .sx-btn-hide-field {
+    padding: 0.75rem;
+}
+
+
+/**
+ * Глобальные настройки шаблона
+ */
+.sx-main-wrapper-row {
+    display: flex;
+}
+
+.sx-empty .sx-container {
+    max-width: 100%;
+}
+
+
+form.sx-form-admin {
+    border: 0px;
+    padding: 0px;
+    background: var(--second-bg-color);
+    border-radius: var(--base-radius);
+}
+
+form.sx-form-admin .form-group:hover {
+    background: none;
+}
+form.sx-form-admin .form-group {
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0px;
+}
+
+form.sx-form-admin .sx-buttons-standart {
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+form.sx-form-admin .sx-buttons-standart-wrapper {
+    margin-top: 0;
+}
+
+.sx-form-admin .nav-tabs {
+    border: none;
+}
+form.sx-form-admin .tab-content {
+    background: none;
+}
+
+
+
+
+
+
+.sx-backend-filters-form.form-inline .form-control {
+    padding: 5px;
+    font-size: 1rem;
+    line-height: 1rem;
+    height: auto;
+}
+
+.select2-container .select2-selection--single {
+
+}
+
+
+
+
+form.sx-backend-form label {
+    display: block;
+}
+
+form.sx-backend-form {
+    background: var(--second-bg-color);
+    border-radius: var(--base-radius);
+    padding-top: 1rem;
+}
