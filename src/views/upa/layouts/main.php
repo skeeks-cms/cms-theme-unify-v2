@@ -28,7 +28,7 @@ $isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBa
 if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
     $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
 }
-$this->theme->bodyCssClass .= " ".$this->theme->upa_container;
+/*$this->theme->bodyCssClass .= " ".$this->theme->upa_container;*/
 $this->theme->bodyCssClass .= " sx-upa-body";
 
 ?>

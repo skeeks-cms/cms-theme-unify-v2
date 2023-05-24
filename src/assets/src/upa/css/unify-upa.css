@@ -409,3 +409,14 @@ form.sx-backend-form {
     border-radius: var(--base-radius);
     padding-top: 1rem;
 }
+
+
+
+
+
+.sx-project-content {
+    background: var(--second-bg-color);
+    margin-bottom: 1rem;
+    border-radius: var(--base-radius);
+    padding: 2rem;
+}
