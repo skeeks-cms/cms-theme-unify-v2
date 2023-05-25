@@ -9,6 +9,7 @@
 /* @var $controller \frontend\controllers\AuthController */
 $controller = $this->context;
 \skeeks\cms\themes\unify\assets\components\UnifyThemeAuthAsset::register($this);
+\Yii::$app->getUser()->setReturnUrl(\Yii::$app->cms->afterAuthUrl);
 ?>
 <section class="sx-auth-section">
     <div class="container">

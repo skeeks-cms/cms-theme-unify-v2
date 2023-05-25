@@ -72,7 +72,7 @@ JS
                                 <? else : ?>
                                     <li class="list-inline-item g-mx-4">
                                         <i class="far fa-user g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                                        <a class="" href="<?= \yii\helpers\Url::to(['/cms/upa-personal/view']) ?>"><?= \Yii::$app->user->identity->displayName; ?></a>
+                                        <a class="" href="<?= \Yii::$app->cms->afterAuthUrl; ?>"><?= \Yii::$app->user->identity->displayName; ?></a>
                                     </li>
                                 <? endif; ?>
                             </ul>

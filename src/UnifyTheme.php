@@ -1553,7 +1553,7 @@ CSS;
     /**
      * @var string
      */
-    public $base_padding = '5rem';
+    public $base_padding = '2rem';
     /**
      * @var string
      */

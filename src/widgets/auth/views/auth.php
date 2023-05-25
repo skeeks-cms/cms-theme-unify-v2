@@ -58,11 +58,17 @@ JS
             ),
         ]); ?>
         <div class="form-group">
-            <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
+            
+            
+            <div class="input-group">
+                <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
+                <button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>
+            </div>
+            
         </div>
-        <div class="mb-4">
+        <!--<div class="mb-4">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>
+        </div>-->
         <?php $form::end(); ?>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
@@ -87,16 +93,19 @@ JS
         </div>
 
         <div class="form-group">
-            <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+            <div class="input-group">
+                <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+            </div>
         </div>
 
-        <div class="mb-4">
+       <!-- <div class="mb-4">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>
+        </div>-->
         <?php $form::end(); ?>
 
-        <div class="text-center">
-            <a href="#" class="sx-dashed sx-callcheck-phone-code-trigger">Войти через дозвон</a>
+        <div class="text-center form-group">
+            <a href="#" class="btn btn-md btn-default btn-block sx-callcheck-phone-code-trigger">Я не помню пароль</a>
         </div>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-callcheck-phone">Войти с другим телефоном</a>
@@ -198,12 +207,15 @@ JS
         </div>
         
         <div class="form-group">
-            <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+            <div class="input-group">
+                <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+            </div>
         </div>
         
-        <div class="mb-4">
+        <!--<div class="mb-4">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>
+        </div>-->
         <?php $form::end(); ?>
 
         <div class="text-center">
@@ -278,11 +290,16 @@ JS
         ]); ?>
 
         <div class="form-group">
-            <input type="text" id="sx-email" class="form-control sx-email" name="email" placeholder="Ваш email">
+            
+            <div class="input-group">
+                <input type="text" id="sx-email" class="form-control sx-email" name="email" placeholder="Ваш email">
+                <button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>
+            </div>
+            
         </div>
-        <div class="mb-4">
+        <!--<div class="mb-4">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>
+        </div>-->
         <?php $form::end(); ?>
         <?php if(\Yii::$app->cms->callcheckProvider) : ?>
             <div class="text-center">
@@ -314,15 +331,16 @@ JS
         </div>
 
         <div class="form-group">
-            <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+            <div class="input-group">
+                <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
+                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+            </div>
         </div>
 
-        <div class="mb-4">
-            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>
         <?php $form::end(); ?>
-        <div class="text-center">
-            <a href="#" class="sx-dashed sx-email-code-trigger">Выслать одноразовый код на email</a>
+        
+        <div class="form-group text-center">
+            <a href="#" class="btn btn-default btn-block sx-email-code-trigger">Я не помню пароль</a>
         </div>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти с другим email</a>
