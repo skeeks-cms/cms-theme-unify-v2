@@ -231,6 +231,8 @@ HTML,
                         ],
 
 
+                        
+
                         'second_theme_bg_color'   => [
                             'class'       => WidgetField::class,
                             'widgetClass' => ColorInput::class,
@@ -244,6 +246,10 @@ HTML,
                         'body_bg_image' => [
                             'class'       => WidgetField::class,
                             'widgetClass' => SelectModelDialogStorageFileSrcWidget::class,
+                        ],
+                        'bg_color'   => [
+                            'class'       => WidgetField::class,
+                            'widgetClass' => ColorInput::class,
                         ],
 
                         'second_bg_color' => [
@@ -670,6 +676,8 @@ HTML,
 
                 'main_theme_color1' => 'Это основной цвет темы! Является фоном основных кнопок + ссылок',
                 'main_theme_color2' => 'Чтобы на кнопках был градиент задайте второй основной цвет',
+                
+                'bg_color'   => 'Цвет фона сайта',
 
                 'second_theme_bg_color'   => 'Основной цвет фона второстепенных кнопок',
                 'second_theme_text_color' => 'Основной цвет текста второстепенных кнопок',
@@ -698,6 +706,8 @@ HTML,
                 'second_theme_text_color' => "Цвет текста второстепенных кнопок",
                 'second_bg_color'         => "Цвет фона блока с фильтрами, и различных второстепенных блоков",
 
+                'bg_color'   => 'Цвет фона сайта',
+                
                 'font_css'     => "Подключаемые внешние шрифты",
                 'font_headers' => "Шрифт заголовков",
                 'font_texts'   => "Шрифт текста",
@@ -786,9 +796,11 @@ HTML,
 
                         'footer',
                         'footer_bg_color',
+                        'bg_color',
                         'footer_color',
                         'text_color',
                         'second_bg_color',
+                        'bg_color',
                         'footer_copyright_bg_color',
                         'footer_copyright_color',
 
@@ -999,6 +1011,7 @@ HTML,
         $content = str_replace("{text_color}", \Yii::$app->view->theme->text_color, $content);
 
         $content = str_replace("{second_bg_color}", \Yii::$app->view->theme->second_bg_color, $content);
+        $content = str_replace("{bg_color}", \Yii::$app->view->theme->bg_color, $content);
         //\Yii::$app->view->registerCss($content);
 
         if (\Yii::$app->view->theme->menu_color1) {
@@ -1364,6 +1377,11 @@ CSS;
      * @var string Фон блоков
      */
     public $second_bg_color = "#fafafa";
+
+    /**
+     * @var string Фон блоков
+     */
+    public $bg_color = "#ffffff";
 
     /**
      * @var string

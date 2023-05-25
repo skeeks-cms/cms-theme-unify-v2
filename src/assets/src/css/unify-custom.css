@@ -2,7 +2,9 @@
     background-image: none;
 }
 
-
+body {
+    background: var(--bg-color);
+}
 /**
  * Кастомные checkbox
  */

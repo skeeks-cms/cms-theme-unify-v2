@@ -411,12 +411,46 @@ form.sx-backend-form {
 }
 
 
+form.sx-backend-form .form-group {
+    padding: 0.5rem var(--base-padding);
+}
 
 
-
-.sx-project-content {
+.sx-content {
     background: var(--second-bg-color);
-    margin-bottom: 1rem;
     border-radius: var(--base-radius);
-    padding: 2rem;
+    padding: var(--base-padding);
+}
+/**
+ * Главный контейнер личного кабинета
+ */
+.sx-upa-body .sx-main-section {
+    min-height: 70vh;
+}
+
+/**
+ * Главный контейнер личного кабинета
+ */
+.sx-item-list .sx-item .sx-text-wrapper {
+    padding: 1.5rem;
+}
+.sx-item-list .sx-item {
+    background-color: var(--second-bg-color);
+    border-radius: var(--base-radius);
+    min-height: 100%;
+    display: block;
+}
+.sx-item-list a.sx-item {
+    color: var(--text-color);
+}
+.sx-item-list a.sx-item:hover {
+    text-decoration: none;
+}
+
+.sx-content .sx-item-list .sx-item {
+    background-color: var(--bg-color);
+}
+
+.sx-item-list .sx-item-wrapper {
+    margin-bottom: 1rem;
 }
