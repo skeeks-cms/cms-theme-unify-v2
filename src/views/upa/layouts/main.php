@@ -66,9 +66,7 @@ $this->theme->bodyCssClass .= " sx-upa-body";
 
 
             <section class="sx-main-section">
-            <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
             <div class="container sx-container">
-                <? endif; ?>
 
                 <div class="sx-main-wrapper-row">
                     <?php if (!$isEmpty && !\Yii::$app->user->isGuest) : ?>
@@ -184,9 +182,7 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                     </div>
                 </div>
 
-                <? if ($this->theme->upa_container != \skeeks\cms\themes\unify\UnifyTheme::UPA_CONTAINER_FULL) : ?>
                     </div>
-                <? endif; ?>
             </section>
 
             <?php if(!$isEmpty) : ?>
