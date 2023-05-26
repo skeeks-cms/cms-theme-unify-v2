@@ -53,27 +53,35 @@ JS
   overflow: hidden;
   text-align: center;
 }
-
+.sx-main-wrapper {
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+}
+main {
+    width: 100%;
+}
 CSS
     );
     ?>
     <div class="sx-preloader">
         <div class="sx-loader-image"></div>
     </div>
-    <div>
+    <div class="sx-main-wrapper">
         <main>
             <? /*= $this->render("@app/views/header"); */ ?>
             <?= $content; ?>
             <? /*= $this->render("@app/views/footer"); */ ?>
+            <div class="text-center">
+                <a href="https://cms.skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site {cms}', ['cms' => 'SkeekS CMS']) ?>">
+                    SkeekS CMS
+                </a>
+                | <a href="https://skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site of the developer') ?>">SkeekS.com</a>
+        
+            </div>
         </main>
     </div>
-    <div class="text-center">
-        <a href="https://cms.skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site {cms}', ['cms' => 'SkeekS CMS']) ?>">
-            SkeekS CMS
-        </a>
-        | <a href="https://skeeks.com" style="color: #a5a5a5;" target="_blank" data-sx-widget="tooltip" title="<?= \Yii::t('skeeks/cms', 'Go to site of the developer') ?>">SkeekS.com</a>
-
-    </div>
+    
     <? /*= $this->render("@app/views/modals"); */ ?>
 
     <?php $this->endBody() ?>

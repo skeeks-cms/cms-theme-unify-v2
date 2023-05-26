@@ -24,13 +24,36 @@ a:active
     text-decoration: underline;
 }
 
-.u-btn-primary {
+.btn-default {
+    background: #eb1e6070;
+    border-color: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.btn-default:focus,
+.btn-default:active,
+.btn-default:hover
+{
+    background: #e81c62 !important;
+    color: white;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover
+{
+    background: #e81c62 !important;
+    opacity: 0.8;
+}
+.u-btn-primary, .btn-primary {
     background-color: #e81c62;
 }
-.u-btn-primary:hover {
+.u-btn-primary:hover, .btn-primary:hover {
     background-color: #fe075c;
 }
-.u-btn-primary:hover {
+.u-btn-primary:hover, .btn-primary:hover {
     border-color: #fe075c;
 }
 
