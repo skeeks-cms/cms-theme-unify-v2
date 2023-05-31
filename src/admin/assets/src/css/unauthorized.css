@@ -23,9 +23,12 @@ a:active
     color: white;
     text-decoration: underline;
 }
+.btn {
+    padding: 10px;
+}
 
 .btn-default {
-    background: #eb1e6070;
+    background: #40404070;
     border-color: none;
     color: white;
     text-decoration: none;
