@@ -28,8 +28,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-callcheck-phone">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone']),
-            'enableClientValidation' => false,
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -62,13 +60,13 @@ JS
             
             <div class="input-group">
                 <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
-                <button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>
+                <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>
             
         </div>
-        <!--<div class="mb-4">
-            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>-->
+        <div class="form-group">
+            <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Продолжить</button>
+        </div>
         <?php $form::end(); ?>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
@@ -77,7 +75,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-callcheck-phone-password">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone-password']),
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -95,13 +92,13 @@ JS
         <div class="form-group">
             <div class="input-group">
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
-                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+                <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>
         </div>
 
-       <!-- <div class="mb-4">
-            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>-->
+        <div class="form-group">
+            <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Войти</button>
+        </div>
         <?php $form::end(); ?>
 
         <div class="text-center form-group">
@@ -114,7 +111,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-callcheck-phone-code">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone-code']),
-            'enableAjaxValidation' => false,
         ]); ?>
 
         <input type="hidden" name="phone" class="sx-phone" />
@@ -125,7 +121,7 @@ JS
                    class="form-control"
             />
         </div>
-        <div class="mb-4">
+        <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Войти</button>
         </div>
         <?php $form::end(); ?>
@@ -147,8 +143,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-phone">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-phone']),
-            'enableClientValidation' => false,
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -179,7 +173,7 @@ JS
         <div class="form-group">
             <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
         </div>
-        <div class="mb-4">
+        <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
         </div>
         <?php $form::end(); ?>
@@ -191,7 +185,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-phone-password">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-phone-password']),
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -209,13 +202,13 @@ JS
         <div class="form-group">
             <div class="input-group">
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
-                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+                <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>
         </div>
         
-        <!--<div class="mb-4">
-            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>-->
+        <div class="form-group">
+            <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Войти</button>
+        </div>
         <?php $form::end(); ?>
 
         <div class="text-center">
@@ -229,7 +222,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-phone-sms-code">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-phone-sms-code']),
-            'enableAjaxValidation' => false,
         ]); ?>
 
         <input type="hidden" name="phone" class="sx-phone" />
@@ -240,7 +232,7 @@ JS
                    class="form-control"
             />
         </div>
-        <div class="mb-4">
+        <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Войти</button>
         </div>
         <?php $form::end(); ?>
@@ -259,8 +251,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-email">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-email']),
-            'enableClientValidation' => false,
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -293,13 +283,13 @@ JS
             
             <div class="input-group">
                 <input type="text" id="sx-email" class="form-control sx-email" name="email" placeholder="Ваш email">
-                <button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>
+                <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>
             
         </div>
-        <!--<div class="mb-4">
-            <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
-        </div>-->
+        <div class="form-group">
+            <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Продолжить</button>
+        </div>
         <?php $form::end(); ?>
         <?php if(\Yii::$app->cms->callcheckProvider) : ?>
             <div class="text-center">
@@ -315,7 +305,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-email-password">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-email-password']),
-            'enableAjaxValidation' => false,
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -333,8 +322,12 @@ JS
         <div class="form-group">
             <div class="input-group">
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
-                <button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>
+                <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Войти</button>
         </div>
 
         <?php $form::end(); ?>
@@ -350,7 +343,6 @@ JS
     <div class="sx-auth-action" data-action="auth-by-email-code">
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-email-code']),
-            'enableAjaxValidation' => false,
         ]); ?>
 
         <input type="hidden" name="phone" class="sx-email" />
@@ -361,7 +353,7 @@ JS
                    class="form-control"
             />
         </div>
-        <div class="mb-4">
+        <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Войти</button>
         </div>
         <?php $form::end(); ?>
