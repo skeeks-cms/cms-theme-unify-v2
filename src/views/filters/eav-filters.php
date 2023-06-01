@@ -154,7 +154,14 @@ HTML;
 
                 ?>
 
-                <?= $form->field($handler, $code, [
+                <?
+                $classCss = 'js-scrollbar';
+                if (\Yii::$app->mobileDetect->isMobile) {
+                    $classCss = 'js-scrollbar-native';
+                } else {
+                    $classCss = 'js-scrollbar';
+                }
+                echo $form->field($handler, $code, [
                     'options'  => [
                         'class' => 'filter--group sx-filter ' . $class,
                         'tag'   => 'section',
@@ -164,7 +171,7 @@ HTML;
 <div>
     <div class="filter--group--body">
         {$searchOptions}
-        <div class="js-scrollbar" style="max-height: 280px;">
+        <div class="{$classCss}">
         {input}
         </div>
     </div>

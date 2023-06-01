@@ -41,6 +41,13 @@
     padding: 0 15px 0 15px;
 }
 
+
+.filter--group .filter--group--body .js-scrollbar,
+.filter--group .filter--group--body .js-scrollbar-native {
+    max-height: 280px;
+    overflow-x: auto;
+}
+
 .filter--group .filter--group--inner {
     /*padding: 0 10px 0 10px;*/
 }

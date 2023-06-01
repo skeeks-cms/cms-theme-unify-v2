@@ -18,11 +18,13 @@
             });
             $('body').on("click", ".sx-btn-filter", function () {
                 $('.sx-filters-block').animate({left: '0'});
+                $('.sx-filters-block').trigger("show");
                 return false;
             });
 
             $('body').on("click", ".sx-mobile-filters-hide", function () {
                 $('.sx-filters-block').animate({left: '-100%'});
+                $('.sx-filters-block').trigger("hide");
                 return false;
             });
 
