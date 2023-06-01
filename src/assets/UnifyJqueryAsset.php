@@ -25,7 +25,7 @@ class UnifyJqueryAsset extends UnifyAsset
     public $js = [
         'jquery-3.6.0.min.js',
         'jquery-migrate-3.4.0.min.js',
-        'jquery-passive.js',
+        //'jquery-passive.js', //не работает прокрутка в customscroll
     ];
     public $depends = [];
 }
