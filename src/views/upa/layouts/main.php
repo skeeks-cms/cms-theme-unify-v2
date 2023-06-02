@@ -25,6 +25,16 @@ CSS
 $isEmpty = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout;
 \skeeks\cms\themes\unify\assets\UnifyThemeUpaAsset::register($this);
 
+$jsData = [];
+if (\Yii::$app->cms->afterAuthUrl == \yii\helpers\Url::current()) {
+    $jsData['is_default_action'] = true;
+}
+$jsData = \yii\helpers\Json::encode($jsData);
+$this->registerJs(<<<JS
+    new sx.classes.Upa({$jsData});
+JS
+);
+
 if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isEmptyLayout) {
     $this->theme->bodyCssClass = $this->theme->bodyCssClass.' sx-empty';
 }
@@ -71,7 +81,19 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                 <div class="sx-main-wrapper-row">
                     <?php if (!$isEmpty && !\Yii::$app->user->isGuest) : ?>
 
-                        <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
+                        <div id="sideNav" class="sx-user-mobile-menu col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
+                            
+                            <div class="sx-user-mobile-menu-header">
+                                    <div class="h2" style="width: 100%;">
+                                        Меню пользователя
+                                    </div>
+
+                                    <a href="#" class="sx-user-mobile-menu-hide">
+                                        <i class="hs-icon hs-icon-close"></i>
+                                    </a>
+
+                                </div>
+                            
                             <? /*= $this->render("@app/views/layouts/_before-menu"); */ ?>
                             <?= $this->render("@app/views/layouts/_menu"); ?>
 

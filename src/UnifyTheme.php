@@ -1675,9 +1675,10 @@ CSS;
                 $this->_bodyCssClass = 'g-layout-semiboxed';
             }
 
-            if ($this->is_header_sticky && $this->is_header_sticky_margin) {
+            if (($this->is_header_sticky && $this->is_header_sticky_margin) || \Yii::$app->mobileDetect->isMobile) {
                 $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky-margin";
             }
+            
         }
 
         return $this->_bodyCssClass;

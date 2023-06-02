@@ -31,7 +31,7 @@ class UnifyThemeUpaAsset extends AssetBundle
     ];
 
     public $js = [
-        //'js/classes/Blocker.js',
+        'js/upa.js',
         'js/classes/Window.js',
     ];
 

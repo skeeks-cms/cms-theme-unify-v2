@@ -454,3 +454,43 @@ form.sx-backend-form .form-group {
 .sx-item-list .sx-item-wrapper {
     margin-bottom: 1rem;
 }
+
+
+
+
+
+.sx-mobile-layout .sx-main-wrapper-row {
+    display: block;
+}
+
+.sx-mobile-layout #sideNav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+}
+
+.sx-mobile-layout .sx-main-section {
+    /*padding: 0;*/
+}
+
+.sx-mobile-layout .sx-main-section > .sx-container  {
+    padding: 0;
+}
+.sx-overflow-hidden {
+    overflow: hidden;
+}
+.sx-user-mobile-menu-header {
+    display: none;
+}
+.sx-mobile-layout .sx-user-mobile-menu-header {
+    display: flex;
+    padding: 1rem 0;
+}
+.sx-mobile-layout .sx-user-mobile-menu {
+    overflow-x: auto;
+    padding-bottom: 2rem;
+}
