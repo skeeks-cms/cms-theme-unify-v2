@@ -910,6 +910,10 @@ HTML,
     {
         parent::init();
 
+        $this->on(\yii\base\View::EVENT_BEFORE_RENDER, function() {
+            self::initBeforeRender();
+        });
+        
         /*if (isset(\Yii::$app->unifyThemeSettings)) {
             foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
                 if ($this->hasProperty($key) && $this->canSetProperty($key)) {

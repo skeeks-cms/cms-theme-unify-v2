@@ -20,7 +20,6 @@ return [
             'on beforeRun' => function ($e) {
     
                 $theme = \Yii::$app->view->theme;
-                $theme::initBeforeRender();
 
                 $theme->pathMap['@app/views'] = \yii\helpers\ArrayHelper::merge([
                     '@skeeks/cms/themes/unify/views/upa'
