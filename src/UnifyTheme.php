@@ -884,7 +884,7 @@ HTML,
     }
 
 
-    public static $is_ready = false;
+    protected $_is_ready = false;
     /**
      * @return bool
      */
@@ -911,7 +911,7 @@ HTML,
         parent::init();
 
         $this->on(\yii\base\View::EVENT_BEFORE_RENDER, function() {
-            self::initBeforeRender();
+            $this->initBeforeRender();
         });
         
         /*if (isset(\Yii::$app->unifyThemeSettings)) {
@@ -925,12 +925,13 @@ HTML,
     /**
      *
      */
-    static public function initThemeSettings()
+    public function initThemeSettings()
     {
+
         //Показывать заглушку?
-        if (\Yii::$app->view->theme->is_cap) {
+        if ($this->is_cap) {
             $enableCap = true;
-            if (\Yii::$app->view->theme->is_cap_only_guests) {
+            if ($this->is_cap_only_guests) {
                 $enableCap = false;
                 if (\Yii::$app->user->isGuest) {
                     $enableCap = true;
@@ -947,9 +948,9 @@ HTML,
         }
 
         //Предустановленные шрифты
-        if (\Yii::$app->view->theme->include_font_assets) {
-            foreach ((array)\Yii::$app->view->theme->include_font_assets as $id) {
-                $assetClass = ArrayHelper::getValue((array)\Yii::$app->view->theme->available_font_assets, [$id, 'class']);
+        if ($this->include_font_assets) {
+            foreach ((array)$this->include_font_assets as $id) {
+                $assetClass = ArrayHelper::getValue((array)$this->available_font_assets, [$id, 'class']);
                 if (class_exists($assetClass)) {
                     $assetClass::register(\Yii::$app->view);
                 } else {
@@ -960,8 +961,8 @@ HTML,
 
         if (!\Yii::$app->mobileDetect->isMobile) {
             //Дополнительные компоненты верстки
-            if (\Yii::$app->view->theme->include_assets) {
-                foreach ((array)\Yii::$app->view->theme->include_assets as $assetClass) {
+            if ($this->include_assets) {
+                foreach ((array)$this->include_assets as $assetClass) {
                     if (class_exists($assetClass)) {
                         $assetClass::register(\Yii::$app->view);
                     } else {
@@ -971,8 +972,8 @@ HTML,
             }
         } else {
             //Дополнительные компоненты верстки
-            if (\Yii::$app->view->theme->include_mobile_assets) {
-                foreach ((array)\Yii::$app->view->theme->include_mobile_assets as $assetClass) {
+            if ($this->include_mobile_assets) {
+                foreach ((array)$this->include_mobile_assets as $assetClass) {
                     if (class_exists($assetClass)) {
                         $assetClass::register(\Yii::$app->view);
                     } else {
@@ -985,48 +986,48 @@ HTML,
 
         $content = file_get_contents(\Yii::getAlias("@skeeks/cms/themes/unify/assets/src/css/unify-default-template.css"));
 
-        $content = str_replace("#72c02c", \Yii::$app->view->theme->main_theme_color1, $content);
-        $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.8)), $content);
-        $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.6)), $content);
-        $content = str_replace("114, 192, 44, 0.4", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.4)), $content);
-        $content = str_replace("114, 192, 44, 0.2", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.2)), $content);
-        $content = str_replace("114, 192, 44, 0.9", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.9)), $content);
-        $content = str_replace("114, 192, 44, 0.3", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.3)), $content);
-        $content = str_replace("114, 192, 44, 0.95", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.95)), $content);
-        $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.5)), $content);
-        $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb(\Yii::$app->view->theme->main_theme_color1, 0.1)), $content);
+        $content = str_replace("#72c02c", $this->main_theme_color1, $content);
+        $content = str_replace("114, 192, 44, 0.8", implode(", ", self::hexToRgb($this->main_theme_color1, 0.8)), $content);
+        $content = str_replace("114, 192, 44, 0.6", implode(", ", self::hexToRgb($this->main_theme_color1, 0.6)), $content);
+        $content = str_replace("114, 192, 44, 0.4", implode(", ", self::hexToRgb($this->main_theme_color1, 0.4)), $content);
+        $content = str_replace("114, 192, 44, 0.2", implode(", ", self::hexToRgb($this->main_theme_color1, 0.2)), $content);
+        $content = str_replace("114, 192, 44, 0.9", implode(", ", self::hexToRgb($this->main_theme_color1, 0.9)), $content);
+        $content = str_replace("114, 192, 44, 0.3", implode(", ", self::hexToRgb($this->main_theme_color1, 0.3)), $content);
+        $content = str_replace("114, 192, 44, 0.95", implode(", ", self::hexToRgb($this->main_theme_color1, 0.95)), $content);
+        $content = str_replace("114, 192, 44, 0.5", implode(", ", self::hexToRgb($this->main_theme_color1, 0.5)), $content);
+        $content = str_replace("114, 192, 44, 0.1", implode(", ", self::hexToRgb($this->main_theme_color1, 0.1)), $content);
 
-        $content = str_replace("{footer_bg_color}", \Yii::$app->view->theme->footer_bg_color, $content);
-        $content = str_replace("{footer_color}", \Yii::$app->view->theme->footer_color, $content);
-        $content = str_replace("{footer_copyright_bg_color}", \Yii::$app->view->theme->footer_copyright_bg_color, $content);
-        $content = str_replace("{footer_copyright_color}", \Yii::$app->view->theme->footer_copyright_color, $content);
+        $content = str_replace("{footer_bg_color}", $this->footer_bg_color, $content);
+        $content = str_replace("{footer_color}", $this->footer_color, $content);
+        $content = str_replace("{footer_copyright_bg_color}", $this->footer_copyright_bg_color, $content);
+        $content = str_replace("{footer_copyright_color}", $this->footer_copyright_color, $content);
 
 
-        $content = str_replace("{second_theme_bg_color}", \Yii::$app->view->theme->second_theme_bg_color, $content);
-        $content = str_replace("{second_theme_text_color}", \Yii::$app->view->theme->second_theme_text_color, $content);
+        $content = str_replace("{second_theme_bg_color}", $this->second_theme_bg_color, $content);
+        $content = str_replace("{second_theme_text_color}", $this->second_theme_text_color, $content);
 
-        $content = str_replace("{base_padding}", \Yii::$app->view->theme->base_padding, $content);
-        $content = str_replace("{base_radius}", \Yii::$app->view->theme->base_radius, $content);
+        $content = str_replace("{base_padding}", $this->base_padding, $content);
+        $content = str_replace("{base_radius}", $this->base_radius, $content);
 
-        $content = str_replace("#0185c8", \Yii::$app->view->theme->main_theme_color1, $content);
-        $content = str_replace("#e1082c", \Yii::$app->view->theme->main_theme_color2, $content);
-        $content = str_replace("{font_headers}", \Yii::$app->view->theme->font_headers, $content);
-        $content = str_replace("{font_texts}", \Yii::$app->view->theme->font_texts, $content);
-        $content = str_replace("{text_color}", \Yii::$app->view->theme->text_color, $content);
+        $content = str_replace("#0185c8", $this->main_theme_color1, $content);
+        $content = str_replace("#e1082c", $this->main_theme_color2, $content);
+        $content = str_replace("{font_headers}", $this->font_headers, $content);
+        $content = str_replace("{font_texts}", $this->font_texts, $content);
+        $content = str_replace("{text_color}", $this->text_color, $content);
 
-        $content = str_replace("{second_bg_color}", \Yii::$app->view->theme->second_bg_color, $content);
-        $content = str_replace("{bg_color}", \Yii::$app->view->theme->bg_color, $content);
+        $content = str_replace("{second_bg_color}", $this->second_bg_color, $content);
+        $content = str_replace("{bg_color}", $this->bg_color, $content);
         //\Yii::$app->view->registerCss($content);
 
-        if (\Yii::$app->view->theme->menu_color1) {
-            $bgColor1 = \Yii::$app->view->theme->menu_color1;
-            $bgColor2 = \Yii::$app->view->theme->menu_color2;
+        if ($this->menu_color1) {
+            $bgColor1 = $this->menu_color1;
+            $bgColor2 = $this->menu_color2;
             $content = str_replace("{menuBgColor1}", $bgColor1, $content);
             $content = str_replace("{menuBgColor2}", $bgColor2, $content);
         }
 
-        $color = \Yii::$app->view->theme->menu_font_color;
-        $fz = \Yii::$app->view->theme->menu_font_size;
+        $color = $this->menu_font_color;
+        $fz = $this->menu_font_size;
 
         $content = str_replace("{menuColor}", $color, $content);
         $content = str_replace("{menuFz}", $fz, $content);
@@ -1034,8 +1035,8 @@ HTML,
 
         $css_content = '';
 
-        if (\Yii::$app->view->theme->sx_container_width) {
-            $maxWidth = \Yii::$app->view->theme->sx_container_width;
+        if ($this->sx_container_width) {
+            $maxWidth = $this->sx_container_width;
             $css_content .= <<<CSS
     .sx-container {
         max-width: {$maxWidth};
@@ -1044,7 +1045,7 @@ CSS;
 
         }
 
-        if (\Yii::$app->view->theme->menu_align == 'left') {
+        if ($this->menu_align == 'left') {
             $css_content .= <<<CSS
     ul.sx-menu-top {
         margin-left: 0 !important;
@@ -1055,7 +1056,7 @@ CSS;
 CSS;
 
         }
-        if (\Yii::$app->view->theme->menu_align == 'right') {
+        if ($this->menu_align == 'right') {
             $css_content .= <<<CSS
     ul.sx-menu-top {
         margin-left: auto !important;
@@ -1063,7 +1064,7 @@ CSS;
 CSS;
 
         }
-        if (\Yii::$app->view->theme->menu_align == 'center') {
+        if ($this->menu_align == 'center') {
             $css_content .= <<<CSS
     ul.sx-menu-top {
         margin-left: auto !important;
@@ -1072,8 +1073,8 @@ CSS;
 CSS;
 
         }
-        if (\Yii::$app->view->theme->body_bg_image) {
-            $bgImage = \Yii::$app->view->theme->body_bg_image;
+        if ($this->body_bg_image) {
+            $bgImage = $this->body_bg_image;
             $css_content .= <<<CSS
         body {
             background: url('{$bgImage}') fixed;
@@ -1083,8 +1084,8 @@ CSS;
         }
 
 
-        if (\Yii::$app->view->theme->col_left_width) {
-            $leftCol = \Yii::$app->view->theme->col_left_width;
+        if ($this->col_left_width) {
+            $leftCol = $this->col_left_width;
             $css_content .= <<<CSS
 @media (min-width: 768px) {
                 .sx-content-col-main {
@@ -1104,7 +1105,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray(\Yii::$app->view->theme)))."-v18";
+        $cache = md5(serialize(ArrayHelper::toArray($this)))."-v18";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
@@ -1118,18 +1119,19 @@ CSS;
             fclose($fp);
         }
 
-        if (!\Yii::$app->view->theme->logo) {
+        if (!$this->logo) {
+
             if (\Yii::$app->skeeks->site->image) {
-                \Yii::$app->view->theme->logo = \Yii::$app->skeeks->site->image->src;
+                $this->logo = \Yii::$app->skeeks->site->image->src;
             }
         }
 
-        if (!\Yii::$app->view->theme->footer_logo && \Yii::$app->view->theme->logo) {
-            \Yii::$app->view->theme->footer_logo = \Yii::$app->view->theme->logo;
+        if (!$this->footer_logo && $this->logo) {
+            $this->footer_logo = $this->logo;
         }
 
-        if (!\Yii::$app->view->theme->mobile_logo && \Yii::$app->view->theme->logo) {
-            \Yii::$app->view->theme->mobile_logo = \Yii::$app->view->theme->logo;
+        if (!$this->mobile_logo && $this->logo) {
+            $this->mobile_logo = $this->logo;
         }
 
         \Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function () use ($newFilePublic) {
@@ -1137,25 +1139,25 @@ CSS;
                 return false;
             }
 
-            if (\Yii::$app->view->theme->font_css) {
-                \Yii::$app->view->registerCssFile(\Yii::$app->view->theme->font_css);
+            if ($this->font_css) {
+                \Yii::$app->view->registerCssFile($this->font_css);
             }
 
             \Yii::$app->view->registerCssFile($newFilePublic, [
                 'depends' => [
                     UnifyThemeAsset::class,
-                    //\Yii::$app->view->theme->themeAssetClass
+                    //$this->themeAssetClass
                 ],
             ]);
         });
 
 
-        if (\Yii::$app->view->theme->css_code && !\Yii::$app->request->isPjax) {
-            \Yii::$app->view->registerCss(\Yii::$app->view->theme->css_code);
+        if ($this->css_code && !\Yii::$app->request->isPjax) {
+            \Yii::$app->view->registerCss($this->css_code);
         }
 
 
-        $assetClass = \Yii::$app->view->theme->themeAssetClass;
+        $assetClass = $this->themeAssetClass;
         \Yii::$app->view->on(View::EVENT_END_BODY, function () use ($assetClass) {
             if (\Yii::$app->request->isPjax) {
                 return false;
@@ -1165,13 +1167,13 @@ CSS;
 
     }
 
-    static public function initBeforeRender()
+    public function initBeforeRender()
     {
-        if (self::$is_ready === true) {
+        if ($this->_is_ready === true) {
             return true;
         }
 
-        self::$is_ready = true;
+        $this->_is_ready = true;
         /**
          * Для виджетов выбора времени
          */
@@ -1260,9 +1262,7 @@ CSS;
             ]
         ));
 
-        static::initThemeSettings();
-
-
+        $this->initThemeSettings();
     }
 
     /**

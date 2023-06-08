@@ -21,7 +21,6 @@ $(window).on('load', function () {
 });
 JS
 );
-
 ?>
 
 <!-- Header -->
