@@ -1679,10 +1679,16 @@ CSS;
                 $this->_bodyCssClass = 'g-layout-semiboxed';
             }
 
-            if (($this->is_header_sticky && $this->is_header_sticky_margin) || \Yii::$app->mobileDetect->isMobile) {
-                $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky-margin";
+            if (\Yii::$app->mobileDetect->isMobile) {
+                $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky sx-header-sticky-margin";
+            } else {
+                if ($this->is_header_sticky) {
+                    $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky";
+                }
+                if ($this->is_header_sticky_margin) {
+                    $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky-margin";
+                }
             }
-            
         }
 
         return $this->_bodyCssClass;

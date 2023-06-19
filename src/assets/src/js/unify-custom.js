@@ -164,11 +164,15 @@
     }
 
     $(window).ready(function () {
-        
-        if ($("body").hasClass('sx-header-sticky-margin')) {
+
+        if ($("body").hasClass('sx-header-sticky')) {
             $("#js-header").addClass("u-header--sticky-top");
+        }
+
+        if ($("body").hasClass('sx-header-sticky-margin')) {
             $("body").css("margin-top", $("#js-header").height());
         }
+
             
         _.delay(function () {
             /*if ($("body").hasClass("sx-header-sticky-margin")) {
