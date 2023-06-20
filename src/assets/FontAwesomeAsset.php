@@ -33,7 +33,7 @@ class FontAwesomeAsset extends \skeeks\cms\base\AssetBundle
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff2',
-            'crossorigin' => 'crossorigin',
+            /*'crossorigin' => 'crossorigin',*/
         ]);
 
         $href = self::getAssetUrl('webfonts/fa-regular-400.woff2');
@@ -42,7 +42,7 @@ class FontAwesomeAsset extends \skeeks\cms\base\AssetBundle
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff2',
-            'crossorigin' => 'crossorigin',
+            /*'crossorigin' => 'crossorigin',*/
         ]);
 
         $href = self::getAssetUrl('webfonts/fa-solid-900.woff2');
@@ -51,7 +51,7 @@ class FontAwesomeAsset extends \skeeks\cms\base\AssetBundle
             'href'        => $href,
             'as'          => 'font',
             'type'        => 'font/woff2',
-            'crossorigin' => 'crossorigin',
+            /*'crossorigin' => 'crossorigin',*/
         ]);
 
 

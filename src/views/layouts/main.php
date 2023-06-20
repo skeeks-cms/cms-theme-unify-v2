@@ -12,30 +12,22 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 ?>
+<?php
+    $bodyClasses = $this->theme->bodyCssClass;
+    if (\Yii::$app->mobileDetect->isMobile) {
+        $bodyClasses = $bodyClasses . " sx-mobile-layout";
+    }
+?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#" class="<?= $this->theme->htmlCssClass; ?>" data-outer-spaces="<?= $this->theme->htmlCssClass; ?>">
     <head>
-        <meta charset="<?= Yii::$app->charset ?>"/>
+        <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <!--<link rel="icon" type="image/x-icon" href="<?/*= $this->theme->favicon; */?>"/>-->
-        <?php $this->head() ?>
-    </head>
-    <?php
-        $bodyClasses = $this->theme->bodyCssClass;
-        if (\Yii::$app->mobileDetect->isMobile) {
-            $bodyClasses = $bodyClasses . " sx-mobile-layout";
-        }
-    ?>
-    <?php if($bodyClasses) : ?>
-        <body class="<?= $bodyClasses; ?>">
-    <?php else : ?>
-        <body>
-    <?php endif; ?>
-
-
+        <?php $this->head() ?></head><?php if($bodyClasses) : ?><body class="<?= $bodyClasses; ?>"><?php else : ?><body><?php endif; ?>
     <?php $this->beginBody() ?>
     <?= $this->render("@app/views/include/pre-loader"); ?>
     <div class="sx-main-wrapper"><!--Нужен для mmenu-->
