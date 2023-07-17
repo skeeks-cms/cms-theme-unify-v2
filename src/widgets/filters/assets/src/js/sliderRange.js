@@ -24,7 +24,17 @@
                         
                     var $input1 = $(this).parents('.sort-slider').find('.sx-from');
                     var $input2 = $(this).parents('.sort-slider').find('.sx-to');
-                    
+
+                    /*$input1.on("click", function() {
+                        $(this).removeAttr('disabled');
+                        $(this).focus();
+                    });
+                    $input2.on("click", function() {
+                        alert(1);
+                        $(this).removeAttr('disabled');
+                        $(this).focus();
+                    });*/
+
                     $input1Value = $input1.val();
                     $input2Value = $input2.val();
                     
@@ -49,10 +59,10 @@
                         if (min != from) {
                             price1.val(from);
                             price1.focus();
-                            price1.removeAttr('disabled');
+                            //price1.removeAttr('disabled');
                             price1.select();
                         } else {
-                            price1.attr('disabled', 'disabled');
+                            //price1.attr('disabled', 'disabled');
                             price1.attr('placeholder', min);
                             price1.val("");
                         }
@@ -60,9 +70,9 @@
                             price2.val(to);
                             price2.focus();
                             price2.select();
-                            price2.removeAttr('disabled');
+                            //price2.removeAttr('disabled');
                         } else {
-                            price2.attr('disabled', 'disabled');
+                            //price2.attr('disabled', 'disabled');
                             price2.attr('placeholder', max);
                             price2.val("");
                         }
