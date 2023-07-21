@@ -611,6 +611,10 @@ HTML,
                     'name'   => 'Мобильная версия',
                     'fields' => [
 
+                        'is_header_mobile_sticky' => [
+                            'class' => BoolField::class,
+                        ],
+
                         'include_mobile_assets' => [
                             'class'    => SelectField::class,
                             'items'    => [
@@ -658,6 +662,7 @@ HTML,
                 'header_shadow'         => "Тень под шапкой стоит задавать только если выбран вариант отображения шапки во всю ширину",
                 'body_outer'            => "Задается для центрированных сайтов",
                 'is_header_sticky'      => "Фиксированная шапка будет растянута на весь экран",
+                'is_header_mobile_sticky'      => "Зафиксировать шапку сайта в мобильной версии",
                 'is_show_search_block'  => 'При выборе "Да", в шапке будет выведен поисковый блок',
                 'is_show_loader'        => 'Показывать индикатор загрузки?',
                 'include_assets'        => 'Выбирите дополнительные компоненты, которые будут подключены на всех страницах шаблона.',
@@ -725,6 +730,7 @@ HTML,
                 'header_shadow'           => "Тень шапки",
                 'is_show_search_block'    => "Добавить поисковый блок в шапку",
                 'is_header_sticky'        => "Зафиксировать шапку к верху экрана?",
+                'is_header_mobile_sticky'        => "Зафиксировать шапку к верху экрана (мобильная версия)?",
                 'is_header_sticky_margin' => "Если шапка фиксирована, добавлять отступ?",
 
 
@@ -835,6 +841,7 @@ HTML,
                         'is_show_loader',
                         'is_header_sticky_margin',
                         'is_header_sticky',
+                        'is_header_mobile_sticky',
                         'is_show_home_slider',
                         'is_cap',
                         'is_cap_only_guests',
@@ -1460,6 +1467,11 @@ CSS;
     /**
      * @var bool
      */
+    public $is_header_mobile_sticky = true;
+
+    /**
+     * @var bool
+     */
     public $is_header_sticky_margin = true;
 
 
@@ -1680,7 +1692,11 @@ CSS;
             }
 
             if (\Yii::$app->mobileDetect->isMobile) {
-                $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky sx-header-sticky-margin";
+
+                if ($this->is_header_mobile_sticky) {
+                    $this->_bodyCssClass = $this->_bodyCssClass." sx-header-sticky sx-header-sticky-margin";
+                }
+
             } else {
                 if ($this->is_header_sticky) {
                     $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky";
