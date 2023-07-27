@@ -1700,9 +1700,10 @@ CSS;
             } else {
                 if ($this->is_header_sticky) {
                     $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky";
-                }
-                if ($this->is_header_sticky_margin) {
-                    $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky-margin";
+                    
+                    if ($this->is_header_sticky_margin) {
+                        $this->_bodyCssClass = $this->_bodyCssClass . " sx-header-sticky-margin";
+                    }
                 }
             }
         }
