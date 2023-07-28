@@ -121,6 +121,7 @@ JS
                     <? foreach ($trees as $key => $tree) : ?>
                         <? $url = $tree->relatedPropertiesModel->getAttribute('url'); ?>
 
+                        <? if ($tree->image) : ?>
 
                         <!-- SLIDE  -->
                         <!--data-transition="slidingoverlayhorizontal" -->
@@ -292,6 +293,7 @@ JS
                                 </div>
                             <? /* endif; */ ?>
                         </li>-->
+                        <? endif; ?>
 
                     <? endforeach; ?>
                 <? endif; ?>
