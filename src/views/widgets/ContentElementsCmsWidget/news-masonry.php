@@ -8,7 +8,30 @@
 /* @var $this   yii\web\View */
 /* @var $widget \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget */
 
-
+$this->registerCss(<<<CSS
+.sx-news .sx-item {
+    color: var(--text-color);
+}
+.sx-news .sx-title {
+    line-height: 1.1;
+}
+.sx-news .sx-date {
+    opacity: 0.7;
+}
+.sx-news .item {
+    margin-bottom: 2rem;
+}
+.sx-news .sx-img-wrapper img {
+    border-radius: var(--base-radius);
+}
+.sx-news .sx-img-wrapper {
+    border-radius: var(--base-radius);
+}
+.sx-news .sx-img-wrapper {
+    margin-bottom: 0.5rem;
+}
+CSS
+);
 $layout = "{items}";
 if ($widget->enabledPaging == \skeeks\cms\components\Cms::BOOL_Y) {
     $layout = "<div class=\"row\">{items}</div><div class=\"row\"><div class=\"col-sm-12\">{summary}{pager}</div></div>";
@@ -26,7 +49,7 @@ if ($widget->enabledPaging == \skeeks\cms\components\Cms::BOOL_Y) {
     'options'           =>
     [
         'tag'   => 'div',
-        'class'   => 'masonry-grid',
+        'class'   => 'sx-news',
     ],
     'itemOptions' => [
         'tag' => false
