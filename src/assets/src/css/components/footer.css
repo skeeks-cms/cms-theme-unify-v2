@@ -35,6 +35,8 @@
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+    background: white;
+    color: var(--primary-color);
 }
 .sx-social-list a i {
     position: relative;

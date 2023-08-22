@@ -23,7 +23,7 @@
                         <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
                             <?php foreach ($socials as $social) : ?>
                                 <li class="list-inline-item">
-                                    <a class="g-color-primary g-text-underline--none--hover g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
+                                    <a class="rounded-circle"
                                        href="<?= $social->url; ?>"
                                        target="_blank"
                                     >

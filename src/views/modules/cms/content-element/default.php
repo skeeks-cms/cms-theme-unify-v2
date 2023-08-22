@@ -12,32 +12,8 @@ if (@$isShowMainImage !== false) {
 }
 ?>
 
-<? if ($this->theme->is_image_body_begin) : ?>
-    <section class="g-bg-cover g-bg-size-cover g-bg-black-opacity-0_5--after sx-body-begin-image-wrapper g-flex-centered"
-             data-bg-img-src="<?= ($model->image && $model->image->image_width >= 1920) ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
-                 new \skeeks\cms\components\imaging\filters\Thumbnail([
-                     'w' => 1920,
-                     'h' => 500,
-                     'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
-                 ]), $model->code
-             ) : $this->theme->body_begin_no_image; ?>" style="background: center;">
-        <div class="container sx-container text-center g-pos-rel g-z-index-1">
-            <div class="row d-flex justify-content-center align-content-end flex-wrap g-min-height-<?= $this->theme->body_begin_image_height_element; ?>">
-                <div class="col-lg-10 mt-auto">
-                    <div class="mb-5">
-                        <div class="lead g-color-white-opacity-0_8"><?= $this->render('@app/views/breadcrumbs', [
-                                'model'    => $model,
-                                'isShowH1' => false,
-                            ]) ?>
-                        </div>
-                        <h1 class="g-color-white g-font-weight-600"><?= $model->seoName; ?></h1>
-                        <div class="lead g-color-white-opacity-0_8 sx-head-short-description"><?= $model->description_short; ?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<? endif; ?>
+<?php echo $this->render("@app/views/include/_content-image", ['model' => $model]); ?>
+
 
 <section class="g-pb-0">
     <div class="container sx-container g-bg-white">
