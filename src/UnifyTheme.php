@@ -38,6 +38,7 @@ use skeeks\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 use yii\jui\Sortable;
+use yii\web\Application;
 use yii\web\View;
 /**
  * @property string|null $logoSrc путь к лого, если передать null, то будет лого по умолчанию
@@ -925,6 +926,27 @@ HTML,
             $this->initBeforeRender();
         });
         
+        /*\Yii::$app->on(Application::EVENT_BEFORE_REQUEST, function() {
+            if (YII_ENV_DEV) {
+                print_r("EVENT_BEFORE_REQUEST");die;
+            }
+            $this->initBeforeRender();
+        });*/
+        
+        /*\Yii::$app->on(Application::EVENT_BEFORE_ACTION, function() {
+            if (YII_ENV_DEV) {
+                print_r("EVENT_BEFORE_ACTION");die;
+            }
+            $this->initBeforeRender();
+        });
+        
+        $this->on(\yii\base\View::EVENT_BEFORE_RENDER, function() {
+            if (YII_ENV_DEV) {
+                print_r("EVENT_BEFORE_RENDER");die;
+            }
+            $this->initBeforeRender();
+        });*/
+        
         /*if (isset(\Yii::$app->unifyThemeSettings)) {
             foreach (\Yii::$app->unifyThemeSettings->toArray() as $key => $value) {
                 if ($this->hasProperty($key) && $this->canSetProperty($key)) {
@@ -1194,6 +1216,8 @@ CSS;
         \Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
             'class' => UnifyJqueryAsset::class,
         ];
+        
+        
 
         \Yii::$app->assetManager->bundles[\yii\bootstrap\BootstrapAsset::class] = [
             'class' => UnifyBootstrapAsset::class,
@@ -1211,6 +1235,13 @@ CSS;
         \Yii::$app->assetManager->bundles[\yii\bootstrap4\BootstrapAsset::class] = [
             'class' => UnifyBootstrapAsset::class,
         ];
+        
+        
+        /*if (YII_ENV_DEV) {
+            print_r("Init unify theme");
+            print_r(\Yii::$app->assetManager->bundles);die;
+        }*/
+        
 
         //Переопределение стандартных классов
         \Yii::$container->setDefinitions(\yii\helpers\ArrayHelper::merge(
