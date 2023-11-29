@@ -15,21 +15,21 @@ if (@$isShowMainImage !== false) {
 <?php echo $this->render("@app/views/include/_content-image", ['model' => $model]); ?>
 
 
-<section class="g-pb-0">
+<div class="sx-publication-page">
     <div class="container sx-container g-bg-white">
         <div class="row">
             <!-- Content -->
             <? if ($this->theme->element_content_layout == 'col-left') : ?>
-            <div class="order-md-2 sx-content-col-main">
+            <div class="order-md-2 sx-content-col-main sx-content-col">
                 <? endif; ?>
                 <? if ($this->theme->element_content_layout == 'col-right') : ?>
-                <div class="sx-content-col-main">
+                <div class="sx-content-col-main sx-content-col">
                     <? endif; ?>
                     <? if ($this->theme->element_content_layout == 'no-col') : ?>
-                    <div class="col-md-12 g-py-20">
+                    <div class="col-md-12 g-py-20 sx-content-col">
                         <? endif; ?>
                         <? if ($this->theme->element_content_layout == 'col-left-right') : ?>
-                        <div class="col-md-7  order-md-2 g-py-20">
+                        <div class="col-md-7  order-md-2 g-py-20 sx-content-col">
                             <? endif; ?>
 
                             <? if (!$this->theme->is_image_body_begin) : ?>
@@ -166,5 +166,5 @@ if (@$isShowMainImage !== false) {
                     </div>
                 </div>
 
-</section>
+</div>
 

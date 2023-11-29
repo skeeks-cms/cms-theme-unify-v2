@@ -21,6 +21,7 @@ use skeeks\cms\themes\unify\assets\components\UnifyGoToAsset;
 use skeeks\cms\themes\unify\assets\components\UnifyThemeGoToAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\cms\themes\unify\assets\FuturaFontAsset;
+use skeeks\cms\themes\unify\assets\IbmplexsansFontAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
@@ -1360,6 +1361,11 @@ CSS;
             'class'       => FuturaFontAsset::class,
             'label'       => 'Futura',
             'description' => 'font-family: futura35;<br />font-family: futura45;<br />font-family: futura55;<br /> font-family: futura65;',
+        ],
+        'ibmplexsans' => [
+            'class'       => IbmplexsansFontAsset::class,
+            'label'       => 'IBM Plex Sans',
+            'description' => 'font-family: IBM Plex Sans;',
         ],
     ];
 

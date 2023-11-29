@@ -32,7 +32,7 @@
                                 ]); ?>
                             <? endif; ?>
 
-                            <div class="sx-content">
+                            <div class="sx-content sx-content-text">
                                 <?= $model->description_full; ?>
                             </div>
 

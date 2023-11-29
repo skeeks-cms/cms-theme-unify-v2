@@ -8,6 +8,16 @@
 /* @var $this yii\web\View */
 \skeeks\cms\themes\unify\assets\VanillaLazyLoadAsset::register($this);
 \skeeks\cms\themes\unify\assets\components\UnifyThemeStickAsset::register($this);
+
+$this->registerCss(<<<CSS
+.sx-content-section {
+    padding: 4rem 0 !important;
+}
+.sx-content-section .sx-slider-block {
+    margin-top: 2rem;
+}
+CSS
+);
 ?>
 
 <?php echo $this->render("@app/views/include/_content-image", ['model' => $model]); ?>
