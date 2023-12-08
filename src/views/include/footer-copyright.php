@@ -31,8 +31,8 @@
                 <? if ($this->theme->is_show_copyright) : ?>
                     <div class="float-md-right" style="text-align: center;">
                         <small>
-                        <a href="https://skeeks.com/" style="text-align: center;" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com">
-                            <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com" width="30" height="33">
+                        <a href="https://skeeks.com/" style="text-align: center;" target="_blank" class="g-color-gray-dark-v4" title="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - https://skeeks.com">
+                            <img src="<?= \skeeks\cms\themes\unify\assets\UnifyThemeAsset::getAssetUrl('img/skeeks/logo.png') ?>" alt="<?= \Yii::t('skeeks/unify', 'Site development'); ?> - https://skeeks.com" width="30" height="33">
                             <span><?= \Yii::t('skeeks/unify', 'Site development'); ?> - SkeekS.com</span>
                         </a>
                         </small>

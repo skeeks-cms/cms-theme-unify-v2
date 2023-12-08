@@ -18,12 +18,12 @@
 
                 <? if ($model->image) : ?>
                     <div class="g-mb-20">
-                        <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
+                        <img src="<?php echo \Yii::$app->cms->image1px; ?>" data-src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                 'w' => 352,
                                 'h' => 200,
                             ]), $model->code
-                        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-fluid" style="max-width: 100% !important;"/>
+                        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-fluid lazy" style="aspect-ratio: 352/200; width: 100%; max-width: 100% !important;"/>
                     </div>
                 <? else: ?>
                     <img src="<?= \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-fluid"/>

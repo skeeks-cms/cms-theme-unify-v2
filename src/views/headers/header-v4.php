@@ -86,8 +86,8 @@ JS
                 <div class="row ">
                     <div class="col-sm-4 col-md-3 my-auto">
                         <!-- Logo -->
-                        <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
-                            <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                        <a href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>" class="navbar-brand">
+                            <img src="<?= $this->theme->logo; ?>" alt="<?= \Yii::$app->skeeks->site->name; ?>">
                         </a>
                         <!-- End Logo -->
                     </div>

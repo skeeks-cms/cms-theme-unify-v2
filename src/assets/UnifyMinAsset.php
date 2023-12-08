@@ -35,7 +35,7 @@ class UnifyMinAsset extends UnifyAsset
         YiiAsset::class,
         Custom::class,
 
-        UnifyPopperAsset::class,
+        //UnifyPopperAsset::class,
         BootstrapPluginAsset::class,
 
         UnifyIconHsAsset::class,

@@ -34,8 +34,8 @@ JS
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
                 <div class="col-auto">
                     <!-- Logo -->
-                    <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="sx-main-logo">
-                        <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                    <a href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>" class="sx-main-logo">
+                        <img src="<?= $this->theme->logo; ?>" alt="<?= \Yii::$app->skeeks->site->name; ?>">
                         <? if ($this->theme->logo_text) : ?>
                             <span class="sx-logo-text">
                                 <?= $this->theme->logo_text; ?>

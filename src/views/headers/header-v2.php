@@ -176,8 +176,8 @@ CSS
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
             <div class="container sx-container">
                 <!-- Logo -->
-                <a href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>" class="navbar-brand">
-                    <img src="<?= $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
+                <a href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>" class="navbar-brand">
+                    <img src="<?= $this->theme->logo; ?>" alt="<?= \Yii::$app->skeeks->site->name; ?>">
                 </a>
                 <!-- End Logo -->
                 <!-- Navigation -->

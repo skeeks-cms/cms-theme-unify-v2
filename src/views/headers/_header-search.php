@@ -29,7 +29,7 @@ JS
 );
 ?>
 <div class="sx-header-menu-item sx-search-btn-block">
-    <a href="#" class="sx-search-btn sx-icon-wrapper g-text-underline--none--hover">
+    <a href="#" class="sx-search-btn sx-icon-wrapper g-text-underline--none--hover" aria-label="Поиск" title="Поиск">
         <i class="icon-magnifier"></i>
     </a>
 </div>

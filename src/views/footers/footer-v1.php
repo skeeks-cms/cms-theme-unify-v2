@@ -16,7 +16,7 @@
             <div class="row">
                 <!-- Footer Content -->
                 <div class="col-sm-6 col-lg text-center sx-footer-logo-col">
-                    <a class="d-block mx-auto sx-footer-logo-wrapper" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
+                    <a class="d-block mx-auto sx-footer-logo-wrapper" href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>">
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <ul class="list-inline sx-social-list">

@@ -22,6 +22,7 @@ use skeeks\cms\themes\unify\assets\components\UnifyThemeGoToAsset;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\cms\themes\unify\assets\FuturaFontAsset;
 use skeeks\cms\themes\unify\assets\IbmplexsansFontAsset;
+use skeeks\cms\themes\unify\assets\OpensansFontAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapAsset;
 use skeeks\cms\themes\unify\assets\UnifyBootstrapPluginAsset;
 use skeeks\cms\themes\unify\assets\UnifyJqueryAsset;
@@ -1366,6 +1367,11 @@ CSS;
             'class'       => IbmplexsansFontAsset::class,
             'label'       => 'IBM Plex Sans',
             'description' => 'font-family: IBM Plex Sans;',
+        ],
+        'opensans' => [
+            'class'       => OpensansFontAsset::class,
+            'label'       => 'Open Sans',
+            'description' => 'font-family: Open Sans;',
         ],
     ];
 

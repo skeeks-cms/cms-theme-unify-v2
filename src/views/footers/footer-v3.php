@@ -14,7 +14,7 @@
             <div class="row">
                 <!-- Footer Content -->
                 <div class="col-sm-12 col-lg g-mb-30 g-mb-0--lg text-center">
-                    <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" title="<?= $this->theme->title; ?>">
+                    <a class="d-block g-width-200 mx-auto g-mb-30" href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>">
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
                     <ul class="list-inline g-mb-20">
