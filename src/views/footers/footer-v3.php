@@ -23,6 +23,7 @@
                                 <li class="list-inline-item g-mx-5">
                                     <a class="u-icon-v1 u-icon-size--sm u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-primary--hover rounded-circle"
                                        href="<?= $social->url; ?>"
+                                       aria-label="<?= $social->social_type; ?>"
                                        target="_blank"
                                     >
                                         <i class="<?= $social->iconCode; ?>"></i>

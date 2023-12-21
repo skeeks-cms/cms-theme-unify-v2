@@ -10,7 +10,7 @@
 
 <?php echo $this->render("@app/views/include/_content-image", ['model' => $model]); ?>
 
-<section class="g-mt-0 g-pb-0">
+<section class="sx-contant-page">
     <div class="container sx-container g-bg-white">
         <div class="row">
             <? if ($this->theme->tree_content_layout == 'col-left') : ?>

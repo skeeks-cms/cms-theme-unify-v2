@@ -33,6 +33,16 @@ class VanillaLazyLoadAsset extends AssetBundle
             //use_native: true,
             //elements_selector: ".lazy"
             // ... more custom settings?
+            unobserve_entered: true, // <- Avoid executing the function multiple times
+            callback_enter: function (element) {
+              var lazyFunctionName = element.getAttribute("data-lazy-function");
+              if (lazyFunctionName) {
+                  var lazyFunction = window.lazyFunctions[lazyFunctionName];
+                  if (!lazyFunction) return;
+                  lazyFunction(element);
+              }
+              
+            } // Assigning the function defined above
             
         });
 

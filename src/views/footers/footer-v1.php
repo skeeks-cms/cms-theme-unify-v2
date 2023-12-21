@@ -24,6 +24,7 @@
                             <?php foreach ($socials as $social) : ?>
                                 <li class="list-inline-item">
                                     <a class="rounded-circle"
+                                       aria-label="<?= $social->social_type; ?>"
                                        href="<?= $social->url; ?>"
                                        target="_blank"
                                     >
