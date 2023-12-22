@@ -27,7 +27,7 @@ body {
 }
 
 .sx-filters-form .checkbox label {
-    line-height: 14px;
+    line-height: 1;
 }
 
 .checkbox label,
