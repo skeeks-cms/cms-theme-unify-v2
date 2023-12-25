@@ -25,11 +25,15 @@ class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
         'nextText' => '',
         'edges'    => '2',
     ];
-    
+
+    /**
+     * @see https://flaviusmatis.github.io/simplePagination.js/#page-3
+     * @var string[]
+     */
     public $spClientMobileOptions = [
         'prevText'       => '',
         'nextText'       => '',
-        'displayedPages' => '2',
+        'displayedPages' => '3', //Minimum allowed: 3 (previous, current & next)
     ];
 
     public function init()
