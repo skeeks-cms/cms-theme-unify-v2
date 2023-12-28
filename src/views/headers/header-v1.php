@@ -11,14 +11,14 @@
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
 $this->registerJs(<<<JS
-$(window).on('load', function () {
+//$(window).on('load', function () {
     $.HSCore.components.HSHeader.init($('#js-header'));
     $('.js-mega-menu').HSMegaMenu({
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 991
     });
-});
+//});
 JS
 );
 ?>

@@ -39,11 +39,11 @@ if ($model) {
 
                 <? if ($parent && $parent->activeChildren) : ?>
 
-                    <div class="g-mb-10">
+                    <!--<div class="g-mb-10">
                         <div class="h5 sx-col-left-title">
-                            <?= \Yii::t('skeeks/unify', 'Categories'); ?>
+                            <?/*= \Yii::t('skeeks/unify', 'Categories'); */?>
                         </div>
-                    </div>
+                    </div>-->
 
                     <ul class="list-unstyled mb-0 sx-col-menu">
 
