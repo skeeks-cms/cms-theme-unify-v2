@@ -11,6 +11,9 @@
     --base-padding: {base_padding};
     --base-radius: {base_radius};
 }
+.sx-mobile-layout {
+    --base-padding: 1.5rem;
+}
 /*------------------------------------
   Boxed layout
 ------------------------------------*/

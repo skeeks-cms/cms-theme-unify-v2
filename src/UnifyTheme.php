@@ -1140,7 +1140,7 @@ CSS;
         $content = str_replace("{css_content}", $css_content, $content);
 
 
-        $cache = md5(serialize(ArrayHelper::toArray($this)))."-v18";
+        $cache = md5(serialize(ArrayHelper::toArray($this)))."-v23";
 
         $newDir = \Yii::getAlias("@webroot/assets/unify");
         $newFile = \Yii::getAlias("@webroot/assets/unify/unify-default-template-".$cache.".css");
