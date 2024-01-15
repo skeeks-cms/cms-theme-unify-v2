@@ -26,6 +26,7 @@ JS
 
 
     <div class="sx-auth-action" data-action="auth-by-callcheck-phone">
+        <!--Авторизация через дозвон-->
         <?php $form = ActiveForm::begin([
             'action'               => \yii\helpers\Url::to(['/cms/auth/auth-by-callcheck-phone']),
             'clientCallback'       => new \yii\web\JsExpression(<<<JS
@@ -56,9 +57,8 @@ JS
             ),
         ]); ?>
         <div class="form-group">
-            
-            
             <div class="input-group">
+                <input type="hidden" name="auth_submit_code_always" value="<?php echo $widget->auth_submit_code_always; ?>">
                 <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>
@@ -68,9 +68,12 @@ JS
             <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Продолжить</button>
         </div>
         <?php $form::end(); ?>
-        <div class="text-center">
-            <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
-        </div>
+
+        <? if ($widget->is_allow_auth_by_email) : ?>
+            <div class="text-center">
+                <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
+            </div>
+        <? endif; ?>
     </div>
     <div class="sx-auth-action" data-action="auth-by-callcheck-phone-password">
         <?php $form = ActiveForm::begin([
@@ -117,7 +120,7 @@ JS
         <div class="form-group field-sx-phone">
             <input type="text"
                    name="phone_code"
-                   placeholder="Последние 4 циры номера"
+                   placeholder="Последние 4 цифры номера"
                    class="form-control"
             />
         </div>
@@ -171,15 +174,18 @@ JS
             ),
         ]); ?>
         <div class="form-group">
+            <input type="hidden" name="auth_submit_code_always" value="<?php echo $widget->auth_submit_code_always; ?>">
             <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
         </div>
         <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
         </div>
         <?php $form::end(); ?>
+        <? if ($widget->is_allow_auth_by_email) : ?>
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-email">Войти по email</a>
         </div>
+        <? endif; ?>
     </div>
 
     <div class="sx-auth-action" data-action="auth-by-phone-password">
@@ -214,6 +220,7 @@ JS
         <div class="text-center">
             <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
         </div>
+
         <div class="text-center">
             <a href="#" class="sx-trigger-action sx-dashed" data-action="auth-by-phone">Войти с другим телефоном</a>
         </div>
@@ -282,6 +289,7 @@ JS
         <div class="form-group">
             
             <div class="input-group">
+                <input type="hidden" name="auth_submit_code_always" value="<?php echo $widget->auth_submit_code_always; ?>">
                 <input type="text" id="sx-email" class="form-control sx-email" name="email" placeholder="Ваш email">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>

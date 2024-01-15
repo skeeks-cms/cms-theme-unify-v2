@@ -26,11 +26,28 @@ class AuthWidget extends Widget
 
     public $action = "auth-by-phone";
 
+    /**
+     * @var bool разрешить авторизацию по email
+     */
+    public $is_allow_auth_by_email = null;
+
+    /**
+     * @var null Всегда отправлять проверочный код. Не использовать постоянный пароль.
+     */
+    public $auth_submit_code_always = null;
+
     public function init()
     {
         Html::addCssClass($this->options, "sx-auth-widget");
 
         $this->options['id'] = $this->id;
+
+        if ($this->is_allow_auth_by_email === null) {
+            $this->is_allow_auth_by_email = (int) \Yii::$app->cms->is_allow_auth_by_email;
+        }
+        if ($this->auth_submit_code_always === null) {
+            $this->auth_submit_code_always = (int) \Yii::$app->cms->auth_submit_code_always;
+        }
 
         $this->clientOptions['id'] = $this->id;
         $this->clientOptions['url-generate-callcheck-phone-code'] = Url::to(['/cms/auth/generate-callcheck-phone-code']);
