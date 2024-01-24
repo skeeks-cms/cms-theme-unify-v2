@@ -8,7 +8,6 @@
 
 namespace skeeks\cms\themes\unify\widgets\auth;
 
-use skeeks\cms\helpers\RequestResponse;
 use skeeks\cms\themes\unify\widgets\auth\assets\AuthAsset;
 use yii\base\Widget;
 use yii\helpers\Html;
@@ -43,10 +42,10 @@ class AuthWidget extends Widget
         $this->options['id'] = $this->id;
 
         if ($this->is_allow_auth_by_email === null) {
-            $this->is_allow_auth_by_email = (int) \Yii::$app->cms->is_allow_auth_by_email;
+            $this->is_allow_auth_by_email = (int)\Yii::$app->cms->is_allow_auth_by_email;
         }
         if ($this->auth_submit_code_always === null) {
-            $this->auth_submit_code_always = (int) \Yii::$app->cms->auth_submit_code_always;
+            $this->auth_submit_code_always = (int)\Yii::$app->cms->auth_submit_code_always;
         }
 
         $this->clientOptions['id'] = $this->id;
@@ -54,10 +53,10 @@ class AuthWidget extends Widget
         $this->clientOptions['url-generate-phone-code'] = Url::to(['/cms/auth/generate-phone-code']);
         $this->clientOptions['url-generate-email-code'] = Url::to(['/cms/auth/generate-email-code']);
 
-        if (\Yii::$app->cms->callcheckProvider) {
-            $this->action = "auth-by-callcheck-phone";
-        } elseif (\Yii::$app->cms->smsProvider) {
+        if (\Yii::$app->cms->smsProvider) {
             $this->action = "auth-by-phone";
+        } elseif (\Yii::$app->cms->callcheckProvider) {
+            $this->action = "auth-by-callcheck-phone";
         } else {
             $this->action = "auth-by-email";
         }
