@@ -23,7 +23,7 @@ class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
     public $spClientOptions = [
         'prevText' => '',
         'nextText' => '',
-        'edges'    => '2',
+        'edges'    => '3',
     ];
 
     /**

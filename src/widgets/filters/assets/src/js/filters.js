@@ -50,7 +50,7 @@
                     $("#sx-filters-form").submit();
                     
                 } else {
-                    var jFilter = $(".field-e-f" + property_id);
+                    var jFilter = $("." + property_id);
                     
                     if (value_id) {
                         $("input[value=" + value_id + "]", jFilter).prop("checked", false);
