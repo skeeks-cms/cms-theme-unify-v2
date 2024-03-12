@@ -28,7 +28,7 @@
                             'active' => "Y",
                             'dataProviderCallback' => function (\yii\data\ActiveDataProvider $dataProvider) {
                                 \Yii::$app->cmsSearch->buildElementsQuery($dataProvider->query);
-                                \Yii::$app->cmsSearch->logResult($dataProvider);
+                                /*\Yii::$app->cmsSearch->logResult($dataProvider);*/
                             },
                         ]) ?>
                     </div>
