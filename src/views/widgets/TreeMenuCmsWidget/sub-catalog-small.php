@@ -23,7 +23,7 @@
                                     new \skeeks\cms\components\imaging\filters\Thumbnail([
                                         'w' => 200,
                                         'h' => 200,
-                                        'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_INSET,
+                                        'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
                                     ]), $model->code
                                 )); ?>
                             " alt="<?= $model->name; ?>">
