@@ -83,10 +83,10 @@ CSS
                                                 style="aspect-ratio: <?php echo $image->image_width; ?>/<?php echo $image->image_height; ?>; width: 100%;"
                                                 src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($image->src,
                                                     new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                                        'w' => 1000,
+                                                        'w' => 1300,
                                                         'h' => 0,
                                                         'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
-                                                    ]), $activeChild->name
+                                                    ]), $activeChild->code
                                                 ); ?>"
                                         >
                                     </div>
