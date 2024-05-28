@@ -22,22 +22,22 @@
             {
                 //this.imageLoader = sx.App.get('BlockerImageLoader');
             }
-
             this.defaultOpts({
-                message: "<div style=''><img src='" + this.imageLoader + "' /></div>",
+                /*message: "<div style=''><img src='" + this.imageLoader + "' /></div>",*/
+                message: "<div style=''></div>",
                 overlayCSS: {
-                    backgroundColor: '#000',
-                    opacity:         0.3,
+                    /*background: 'linear-gradient(100deg, #eceff180 30%, #f6f7f870 50%, #eceff182 70%)',*/
+                    opacity:         1,
                     cursor:          'wait'
                 },
                 css: {
                     border: 'none',
-                    padding: '15px',
+                    /*padding: '15px',*/
                     backgroundColor: 'none;',
-                    '-webkit-border-radiloaderus': '10px',
-                    '-moz-border-radius': '10px',
+                    /*'-webkit-border-radiloaderus': '10px',
+                    '-moz-border-radius': '10px',*/
                     opacity: .5,
-                    color: '#fff'
+                    /*color: '#fff'*/
                 }
             });
 
