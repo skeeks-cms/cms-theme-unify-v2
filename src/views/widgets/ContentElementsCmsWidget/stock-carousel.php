@@ -21,7 +21,7 @@
     >
         <? foreach ($widget->dataProvider->query->orderBy([$widget->orderBy => $widget->order])->all() as $model) : ?>
             <div class="js-slide">
-                <? if ($banner_url = $model->relatedPropertiesModel->getAttribute("banner_url")) : ?>
+                <? if ($banner_url = $model->relatedPropertiesModel->getAttribute("url")) : ?>
                     <a href="<?php echo $banner_url; ?>">
                 <? endif; ?>
                 <img data-src="<?= $model->image->src; ?>" alt=" " class="img-fluid lazy">
