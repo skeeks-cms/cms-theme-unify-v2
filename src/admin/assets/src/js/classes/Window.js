@@ -79,10 +79,14 @@
                             var iframe = current.$iframe[0];
                             var iframeWindow = current.$iframe[0].contentWindow;
 
+
+                            iframeWindow.sx.Window._openerWindowWidget = self;
+
                             iframe.addEventListener("load", function(event) {
                                 //console.log(iframeWindow.sx.Window);
                                 iframeWindow.sx.Window._openerWindowWidget = self;
                             });
+
 
                             /*iframeWindow.addEventListener("load", function(event) {
                                 console.log("iframeWindow load");
