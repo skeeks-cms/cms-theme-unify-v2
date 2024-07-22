@@ -24,7 +24,7 @@
                 <? if ($banner_url = $model->relatedPropertiesModel->getAttribute("url")) : ?>
                     <a href="<?php echo $banner_url; ?>">
                 <? endif; ?>
-                <img data-src="<?= $model->image->src; ?>" alt=" " class="img-fluid lazy">
+                <img data-src="<?= $model->image->src; ?>" alt=" " class="img-fluid lazy" style="width: 100%;">
                 <? if ($banner_url) : ?>
                     </a>
                 <? endif; ?>

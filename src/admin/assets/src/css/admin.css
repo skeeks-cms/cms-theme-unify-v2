@@ -844,8 +844,11 @@ pre {
     padding-bottom: 12px;
 }
 .u-side-nav--top-level-menu-icon {
-    margin-right: 18px;
-    font-size: 18px;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.u-side-nav--top-level-menu-icon img {
+    width: 20px;
 }
 
 

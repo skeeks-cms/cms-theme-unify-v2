@@ -17,12 +17,15 @@
     width: calc(100% - 250px);
 }
 
+.sx-sidebar ul li:first-child .u-side-nav--top-level-menu-link {
+    padding-top: 14px;
+}
 
 .u-side-nav--top-level-menu-link {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 .u-side-nav--top-level-menu-link {
     white-space: nowrap;
