@@ -18,7 +18,34 @@ $js = \yii\helpers\Json::encode($widget->clientOptions);
 
 $this->registerJs(<<<JS
     new sx.classes.Auth({$js});
+
+    $("body").on("click", ".sx-view-pass", function() {
+        var jIcon = $(this);
+        var jInput = jIcon.parent("div").find("input");
+
+        
+        if (jInput.attr("type") == 'password') {
+            jInput.attr('type', 'text');
+            jIcon.addClass("fa-eye-slash");
+            jIcon.removeClass("fa-eye");
+        } else {
+            jInput.attr('type', 'password');
+            jIcon.addClass("fa-eye");
+            jIcon.removeClass("fa-eye-slash");
+        }
+    });
 JS
+);
+$this->registerCss(<<<CSS
+    .sx-view-pass {
+        position: absolute;
+        right: 1rem;
+        z-index: 1;
+        cursor: pointer;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+CSS
 );
 ?>
 
@@ -94,6 +121,7 @@ JS
 
         <div class="form-group">
             <div class="input-group">
+                <i class="far fa-eye sx-view-pass"></i>
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>
@@ -207,6 +235,7 @@ JS
         
         <div class="form-group">
             <div class="input-group">
+                <i class="far fa-eye sx-view-pass"></i>
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>
@@ -329,6 +358,7 @@ JS
 
         <div class="form-group">
             <div class="input-group">
+                <i class="far fa-eye sx-view-pass"></i>
                 <input type="password" class="form-control" name="password" value="" placeholder="Ваш пароль">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Войти</button>-->
             </div>

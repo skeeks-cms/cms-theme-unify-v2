@@ -8,7 +8,7 @@
     \skeeks\cms\themes\unify\assets\components\UnifyThemeStickAsset::register($this);
     \skeeks\cms\themes\unify\assets\VanillaLazyLoadAsset::register($this);
     ?>
-    <div class="js-carousel sx-stick"
+    <div class="js-carousel sx-stick" 
          data-infinite="true" 
          data-autoplay="true" 
          data-speed="7000" 
@@ -24,7 +24,7 @@
                 <? if ($banner_url = $model->relatedPropertiesModel->getAttribute("url")) : ?>
                     <a href="<?php echo $banner_url; ?>">
                 <? endif; ?>
-                <img data-src="<?= $model->image->src; ?>" alt=" " class="img-fluid lazy" style="width: 100%;">
+                <img data-lazy="<?= $model->image->src; ?>" alt=" " class="img-fluid" style="width: 100%;">
                 <? if ($banner_url) : ?>
                     </a>
                 <? endif; ?>

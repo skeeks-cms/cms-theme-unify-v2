@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #cb11ab; /*Главный цвет ссылок и главных кнопок*/
+  /*--primary-color: #cb11ab;*/ /*Главный цвет ссылок и главных кнопок*/
+  --primary-color: #2067b0; /*Главный цвет ссылок и главных кнопок*/
   --bg-gray: #f3f3f3; /*Главный цвет ссылок и главных кнопок*/
 }
 html {
@@ -280,6 +281,10 @@ a:hover {
 .sx-grid-view .sx-before-table, .sx-grid-view .sx-after-table
 {
     background: #f9f9f9;
+}
+table.sx-table thead tr th a.asc, table.sx-table thead tr th a.desc
+{
+    color: var(--primary-color)
 }
 
 table.sx-table thead tr th {
@@ -702,6 +707,10 @@ iframe {
 /*.btn {
     padding: 10px 25px;
 }*/
+.btn {
+    /*padding: .575rem 2rem;*/
+}
+
 .btn:visited,
 .btn:active,
 .btn:focus {
@@ -951,4 +960,9 @@ pre {
     background-size: 400%;
     animation: loading 1.2s ease-in-out infinite;
     opacity: 1 !important;
+}
+
+
+.sx-content-actions .nav-link.active {
+    color: var(--primary-color);
 }
