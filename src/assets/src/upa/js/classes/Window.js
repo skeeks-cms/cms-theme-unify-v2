@@ -79,10 +79,29 @@
                             var iframe = current.$iframe[0];
                             var iframeWindow = current.$iframe[0].contentWindow;
 
+
+                            if (iframeWindow.sx !== undefined) {
+
+                                if (self.getMainWindow() !== window) {
+                                    console.log("set opener window");
+                                }
+                                self.getMainWindow().console.log("set opener window");
+                                iframeWindow.sx.Window._openerWindowWidget = self;
+                            }
+
+                            /*setTimeout(function() {
+                                console.log(iframeWindow.sx);
+                            }, 1000);*/
+
+
                             iframe.addEventListener("load", function(event) {
-                                //console.log(iframeWindow.sx.Window);
+                                if (self.getMainWindow() !== window) {
+                                    console.log("set opener window after load");
+                                }
+                                self.getMainWindow().console.log("set opener window after load");
                                 iframeWindow.sx.Window._openerWindowWidget = self;
                             });
+
 
                             /*iframeWindow.addEventListener("load", function(event) {
                                 console.log("iframeWindow load");
