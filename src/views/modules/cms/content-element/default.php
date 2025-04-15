@@ -78,9 +78,9 @@ if (@$isShowMainImage !== false) {
                     </span>
                                 <? endif; ?>
                                 <!-- /Микроразметка новости -->
-                                <? if ($model->image && $isShowMainImage && !$this->theme->is_image_body_begin) : ?>
+                                <? if ($model->image_full_id && $isShowMainImage && !$this->theme->is_image_body_begin) : ?>
                                     <div class="" style="margin-bottom: 20px;">
-                                        <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+                                        <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->fullImage ? $model->fullImage->src : null,
                                             new \skeeks\cms\components\imaging\filters\Thumbnail([
                                                 'w' => 0,
                                                 'h' => 400,
