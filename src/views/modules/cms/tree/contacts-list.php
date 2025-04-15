@@ -107,10 +107,10 @@ CSS
                                             
                             </div>
                             <div class="sx-image">
-                                <img class="img-fluid lazy" style="aspect-ratio: 231/170; width: 100%;" src="<?php echo \Yii::$app->cms->image1px; ?>" data-src="<?php echo \Yii::$app->imaging->thumbnailUrlOnRequest($address->cmsImage ? $address->cmsImage->src : \skeeks\cms\helpers\Image::getCapSrc(),
+                                <img class="img-fluid lazy" style="aspect-ratio: 1/1; width: 100%;" src="<?php echo \Yii::$app->cms->image1px; ?>" data-src="<?php echo \Yii::$app->imaging->thumbnailUrlOnRequest($address->cmsImage ? $address->cmsImage->src : \skeeks\cms\helpers\Image::getCapSrc(),
                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
                                     'w' => 231,
-                                    'h' => 170,
+                                    'h' => 231,
                                     'm' => \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND,
                                 ])
                             ); ?>">
