@@ -46,7 +46,7 @@ if (!$image || $image->image_width < 1920) {
     $image = $model->image;
 }
 ?>
-    <section class="g-bg-cover g-bg-size-cover sx-body-begin-image-wrapper g-flex-centered" data-bg-img-src="<?= ($image && $image->image_width >= 1920) ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
+    <section class="g-bg-cover g-bg-size-cover sx-body-begin-image-wrapper g-flex-centered" data-bg-img-src="<?= ($image && $image->image_width >= 1920) ? \Yii::$app->imaging->thumbnailUrlOnRequest($image->src,
         new \skeeks\cms\components\imaging\filters\Thumbnail([
             'w' => 1920,
             'h' => $this->theme->body_begin_image_height_tree,
