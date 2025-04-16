@@ -46,6 +46,10 @@ class VanillaLazyLoadAsset extends AssetBundle
             
         });
 
+        $(window).on('load', function (e) {
+            sx.LazyLoadInstance.update();    
+        }); 
+        
         $(document).on('pjax:complete', function (e) {
             setTimeout(function() {
                 /*sx.LazyLoadInstance = new LazyLoad({});*/
