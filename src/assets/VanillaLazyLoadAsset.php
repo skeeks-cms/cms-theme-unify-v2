@@ -9,6 +9,7 @@
 namespace skeeks\cms\themes\unify\assets;
 
 use skeeks\cms\base\AssetBundle;
+use yii\web\View;
 
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
@@ -28,6 +29,8 @@ class VanillaLazyLoadAsset extends AssetBundle
     {
         parent::registerAssetFiles($view);
 
+
+
         \Yii::$app->view->registerJs(<<<JS
         sx.LazyLoadInstance = new LazyLoad({
             //use_native: true,
@@ -46,10 +49,25 @@ class VanillaLazyLoadAsset extends AssetBundle
             
         });
 
-        $(window).on('load', function (e) {
-            sx.LazyLoadInstance.update();    
-        }); 
+        window.addEventListener("load", (event) => {
+              console.log("window load");
+            sx.LazyLoadInstance.update(); 
+        });
+JS
+            ,View::POS_END
+        );
+
+        \Yii::$app->view->registerJs(<<<JS
+
+        setTimeout(function() {
+            sx.LazyLoadInstance.update();
+        }, 200);
         
+        setTimeout(function() {
+            /*sx.LazyLoadInstance = new LazyLoad({});*/
+            sx.LazyLoadInstance.update();
+        }, 200);
+
         $(document).on('pjax:complete', function (e) {
             setTimeout(function() {
                 /*sx.LazyLoadInstance = new LazyLoad({});*/
