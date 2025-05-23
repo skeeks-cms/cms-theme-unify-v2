@@ -127,13 +127,13 @@ class UnifyThemeAdmin extends Theme
      */
     public function getSlideNavClasses()
     {
-        $slideNavClasses = "col-auto sx-sidebar u-sidebar-navigation--light sx-bg-secondary";
+        $slideNavClasses = "col-auto sx-sidebar u-sidebar-navigation--light";
 
         if ($this->color_scheme == 'dark') {
             $slideNavClasses = "col-auto sx-sidebar u-sidebar-navigation--dark";
         }
         if ($this->color_scheme == 'multi') {
-            $slideNavClasses = "col-auto sx-sidebar u-sidebar-navigation--light sx-bg-secondary";
+            $slideNavClasses = "col-auto sx-sidebar u-sidebar-navigation--light";
         }
 
         return $slideNavClasses;

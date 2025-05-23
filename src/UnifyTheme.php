@@ -33,6 +33,7 @@ use skeeks\widget\codemirror\CodemirrorWidget;
 use skeeks\yii2\form\fields\BoolField;
 use skeeks\yii2\form\fields\FieldSet;
 use skeeks\yii2\form\fields\HtmlBlock;
+use skeeks\yii2\form\fields\NumberField;
 use skeeks\yii2\form\fields\SelectField;
 use skeeks\yii2\form\fields\TextareaField;
 use skeeks\yii2\form\fields\TextField;
@@ -283,6 +284,7 @@ HTML,
                                 'v1' => 'Вариант 1 (меню и высокий тулбар)',
                                 'v2' => 'Вариант 2 (стандартная шапка)',
                                 'v4' => 'Вариант 4 (большая шапка с поисковой формой)',
+                                'v5' => 'Вариант 5 (Телефон слева, лого по центру, корзину справа, меню по центру)',
                             ],
                         ],
 
@@ -640,6 +642,15 @@ HTML,
                     ],
                 ],
 
+                'pagination' => [
+                    'class'  => FieldSet::class,
+                    'name'   => 'Постраничная навигация',
+                    'fields' => [
+                        'pagination_trigger_offset'  => [
+                            'class' => NumberField::class,
+                        ],
+                    ]
+                ]
                 /*'upa' => [
                     'class'  => FieldSet::class,
                     'name'   => 'Личный кабинет',
@@ -657,6 +668,7 @@ HTML,
                 ],*/
             ],
             'attributeHints'  => [
+                'pagination_trigger_offset'  => '0 - автоподгрузка отключена, >0 количество страниц для автоподгрузки (например 1000)',
                 'base_radius'  => 'Базовая настройка скругления углов у кнопок и различных блоков',
                 'base_padding' => 'Базовые отступы',
 
@@ -703,6 +715,7 @@ HTML,
                 'is_cap'             => "Включить заглушку?",
                 'is_cap_only_guests' => "Показывать заглушку только неавторизованным пользователям?",
                 'is_min_assets'      => "Загружать минимум css и js",
+                'pagination_trigger_offset'      => "Автоматическая подгрузка след. страницы",
                 'logo'               => "Логотип",
                 'footer_logo'        => "Логотип для футера",
                 'logo_text'          => "Текст для логотипа",
@@ -875,6 +888,7 @@ HTML,
                         'body_begin_image_height_element',
                         'news_list_count_columns',
                         'col_left_width',
+                        'pagination_trigger_offset',
                     ],
                     'integer',
                 ],
@@ -1326,6 +1340,11 @@ CSS;
         }
         return $rgb;
     }
+
+    /**
+     * @var
+     */
+    public $pagination_trigger_offset = 0;
 
     /**
      * @var bool

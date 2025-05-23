@@ -28,7 +28,7 @@ $langs = \skeeks\cms\models\CmsLang::find()->active()->all();
             </div>
 
             <div class="col-auto d-flex sx-breadcrumbs-wrapper">
-                <?= $this->render("@app/views/layouts/_breadcrumbs"); ?>
+                <?/*= $this->render("@app/views/layouts/_breadcrumbs"); */?>
             </div>
 
 

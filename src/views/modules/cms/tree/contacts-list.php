@@ -17,6 +17,12 @@ $this->registerCss(<<<CSS
 .sx-contacts-v2 {
     min-height: 70vh;
 }
+
+.sx-address-list {
+    height: 70vh;
+    overflow-y: auto;
+}
+
 .sx-map {
     height: 70vh;
     border-radius: var(--base-radius);
@@ -45,8 +51,17 @@ $this->registerCss(<<<CSS
     font-weight: bold;
 }
 
+@media (max-width: 768px) {
+    
+    .sx-address-list {
+        height: auto;
+    }
+}
+
 CSS
 );
+
+\skeeks\assets\unify\base\UnifyHsScrollbarAsset::register($this);
 ?>
 
 
@@ -54,6 +69,7 @@ CSS
     <div class="">
         <div class="row">
             <div class="col-12 col-md-4">
+                <div class="sx-address-list js-scrollbar">
                 <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
                     <? foreach ($addresses as $address) : ?>
                         <?
@@ -118,6 +134,7 @@ CSS
                         </div>
                     <? endforeach; ?>
                 <?php endif; ?>
+                </div>
             </div>
             <div class="col-12 col-md-8">
                 <? if ($this->theme->yandex_map) : ?>

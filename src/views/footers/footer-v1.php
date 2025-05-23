@@ -19,6 +19,7 @@
                     <a class="d-block mx-auto sx-footer-logo-wrapper" href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>">
                         <img class="img-fluid" src="<?= $this->theme->footer_logo ? $this->theme->footer_logo : $this->theme->logo; ?>" alt="<?= $this->theme->title; ?>">
                     </a>
+                    
                     <ul class="list-inline sx-social-list">
                         <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
                             <?php foreach ($socials as $social) : ?>
@@ -34,6 +35,13 @@
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>
+                    
+                    <?
+                    $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('footer-after-logo-text');
+                    $widget->descriptor->name = 'Текст под логотипом';
+                    ?>
+                    <? $widget::end(); ?>
+                    
                 </div>
                 <!-- End Footer Content -->
                 <!-- Footer Content -->

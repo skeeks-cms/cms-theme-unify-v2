@@ -79,21 +79,24 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
                         <? endif; ?>
                     </div>
 
-
                     <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
-                        && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
+                        && \Yii::$app->controller->modelActions
+                        /*&& count(\Yii::$app->controller->modelActions) > 1*/
+                    ) : ?>
 
                         <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoModelActions) : ?>
 
                             <div class="sx-content-model-actions">
                                 <div class="panel-content-before panel-content-before-second">
+                                    <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
+                                            <?= \Yii::$app->controller->modelHeader; ?>
+                                        </div>
+
                                     <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\controllers\IBackendModelController
                                         && \Yii::$app->controller->modelActions && count(\Yii::$app->controller->modelActions) > 1) : ?>
 
 
-                                        <div class="sx-model-title" title="<?= \Yii::$app->controller->modelShowName; ?>">
-                                            <?= \Yii::$app->controller->modelHeader; ?>
-                                        </div>
+
 
                                         <div class="js-scrollbar sx-nav-model-wrapper" data-axis="x">
                                             <?
