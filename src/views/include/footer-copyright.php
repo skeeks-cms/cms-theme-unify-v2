@@ -15,12 +15,14 @@
             <div class="col-12 col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
                 <div class="d-lg-flex">
                     <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md" style="line-height:30px;">
-                        <? 
-                        $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text'); 
+                        <?
+                        $year = \Yii::$app->formatter->asDate(time(), "php:Y");
+                        $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text-v2');
                         $widget->descriptor->name = 'Блок с текстом о защите прав';
                         ?>
-                        2020 &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>
-                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
+                        <?php echo $year; ?> &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>.
+                        <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?><br>
+                        <div class="sx-legal-links" style="font-size: 0.8rem;"><a href="<?php echo \yii\helpers\Url::to(['/cms/legal/privacy-policy']); ?>">Политика конфиденциальности</a> | <a href="<?php echo \yii\helpers\Url::to(['/cms/legal/personal-data']); ?>">Обработки персональных данных</a></div>
                     </small>
 
                 </div>
