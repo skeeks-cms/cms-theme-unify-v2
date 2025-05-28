@@ -20,7 +20,7 @@
                         $widget = \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('copy-address-text-v2');
                         $widget->descriptor->name = 'Блок с текстом о защите прав';
                         ?>
-                        <?php echo $year; ?> &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. <?= $this->theme->title; ?>.
+                        <?php echo $year; ?> &copy; <?= \Yii::t('skeeks/unify', 'All rights reserved'); ?>. Сайт не является публичной офертой.
                         <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?><br>
                         <div class="sx-legal-links" style="font-size: 0.8rem;"><a href="<?php echo \yii\helpers\Url::to(['/cms/legal/privacy-policy']); ?>">Политика конфиденциальности</a> | <a href="<?php echo \yii\helpers\Url::to(['/cms/legal/personal-data']); ?>">Обработки персональных данных</a></div>
                     </small>
