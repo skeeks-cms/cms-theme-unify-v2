@@ -9,7 +9,7 @@
 ?>
 <div class="sx-header-menu-item sx-header-auth">
     <? if (\Yii::$app->user->isGuest) : ?>
-        <a class="g-text-underline--none--hover sx-icon-wrapper" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">
+        <a class="g-text-underline--none--hover sx-icon-wrapper" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/login'); ?>">
             <i class="icon-user"></i>
             <span class="">
                                         <span class="g-hidden-sm-down"></span>

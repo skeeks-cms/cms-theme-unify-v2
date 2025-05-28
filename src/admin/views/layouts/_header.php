@@ -218,7 +218,7 @@ JS
                             </li>
 
                             <li>
-                                <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('admin/admin-auth/lock')->setCurrentRef(); ?>" data-method="post">
+                                <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/admin/admin-auth/lock')->setCurrentRef(); ?>" data-method="post">
                                     <span class="d-flex align-self-center sx-i-w">
                                       <i class="fas fa-lock"></i>
                                     </span>
@@ -227,7 +227,7 @@ JS
                             </li>
 
                             <li>
-                                <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
+                                <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
                                     <span class="d-flex align-self-center sx-i-w">
                                       <i class="hs-admin-shift-right"></i>
                                     </span>

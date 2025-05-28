@@ -21,7 +21,7 @@ use skeeks\cms\helpers\UrlHelper;
             <div class="col-sm-8 col-lg-5">
                 <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30 sx-bg-block">
                     <?php $form = ActiveForm::begin([
-                        'validationUrl' => UrlHelper::construct('cms/auth/forget')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
+                        'validationUrl' => UrlHelper::construct('/cms/auth/forget')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
                         'options'       => [
                             'class' => 'reg-page',
                         ],

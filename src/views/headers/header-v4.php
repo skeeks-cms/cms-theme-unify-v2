@@ -63,11 +63,11 @@ JS
                                 <? if (\Yii::$app->user->isGuest) : ?>
                                     <li class="list-inline-item g-mx-4">
                                         <i class="far fa-user g-font-size-18 g-valign-middle g-mr-10 g-mt-minus-2"></i>
-                                        <a class="" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login'); ?>">Вход</a>
+                                        <a class="" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/login'); ?>">Вход</a>
                                     </li>
                                     <li class="list-inline-item g-mx-4">|</li>
                                     <li class="list-inline-item g-mx-4">
-                                        <a class="" href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/register'); ?>">Регистрация</a>
+                                        <a class="" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/register'); ?>">Регистрация</a>
                                     </li>
                                 <? else : ?>
                                     <li class="list-inline-item g-mx-4">
