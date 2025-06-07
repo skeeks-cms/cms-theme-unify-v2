@@ -18,14 +18,10 @@
 
 
             <ul class="list-inline g-font-size-16 text-center mb-0 my-auto">
+
                 <li class="list-inline-item g-mx-10">
-                    <a href="https://www.facebook.com/skeekscom" class="g-color-facebook g-color-secondary--hover" target="_blank">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item g-mx-10">
-                    <a href="https://www.youtube.com/channel/UC26fcOT8EK0Rr80WSM44mEA" class="g-color-youtube g-color-secondary--hover" target="_blank">
-                        <i class="fab fa-youtube"></i>
+                    <a href="https://t.me/skeeks_com" class="g-color-youtube g-color-secondary--hover" target="_blank">
+                        <i class="fab fa-telegram"></i>
                     </a>
                 </li>
                 <li class="list-inline-item g-mx-10">
