@@ -58,6 +58,10 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
                 <div class="sx-content-wrapper">
                     <div class="sx-content-actions">
                         <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
+                        <? if (
+                                        (isset(\Yii::$app->controller->modelActions) && !\Yii::$app->controller->modelActions)
+                                        || (!isset(\Yii::$app->controller->modelActions))
+                                    ) : ?>
                             <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
                                 && \Yii::$app->controller->actions) : ?>
                                 <?
@@ -75,6 +79,7 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
                                     ],
                                 ]);
                                 ?>
+                            <? endif; ?>
                             <? endif; ?>
                         <? endif; ?>
                     </div>

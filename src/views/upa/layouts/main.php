@@ -118,9 +118,15 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                         <!-- Statistic Card -->
                         <div class="sx-content-wrapper">
                             <div class="sx-content-actions">
+
                                 <? if (!\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->isNoActions) : ?>
+                                <? if (
+                                        (isset(\Yii::$app->controller->modelActions) && !\Yii::$app->controller->modelActions)
+                                        || (!isset(\Yii::$app->controller->modelActions))
+                                    ) : ?>
                                     <? if (\Yii::$app->controller && \Yii::$app->controller instanceof \skeeks\cms\backend\IHasInfoActions
-                                        && \Yii::$app->controller->actions) : ?>
+                                        && \Yii::$app->controller->actions
+                                    ) : ?>
                                         <?
                                         echo \skeeks\cms\backend\widgets\ControllerActionsWidget::currentWidget([
                                             'options'            => [
@@ -136,6 +142,7 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                                             ],
                                         ]);
                                         ?>
+                                    <? endif; ?>
                                     <? endif; ?>
                                 <? endif; ?>
                             </div>
