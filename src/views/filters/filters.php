@@ -56,6 +56,10 @@ $widget = $this->context;
         <input type="hidden" value="<?= \Yii::$app->cmsSearch->searchQuery; ?>" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"/>
     <? endif; ?>
     <div style="display: none;">
+        <?php if($catalogView = \Yii::$app->request->get('sx-catalog-view')) : ?>
+            <input type="hidden" value="<?= $catalogView; ?>" name="sx-catalog-view"/>
+        <?php endif; ?>
+
         <button type="submit" class="btn btn-default">Применить</button>
     </div>
     <? \yii\widgets\ActiveForm::end(); ?>
