@@ -51,7 +51,6 @@
                     
                 } else {
                     var jFilter = $("." + property_id);
-                    
                     if (value_id) {
                         $("input[value=" + value_id + "]", jFilter).prop("checked", false);
                         $("#sx-filters-form").submit();

@@ -11,6 +11,7 @@ if (!$model->meta_title) {
     $this->title = $this->theme->title;
 }
 ?>
+
 <? if (!\Yii::$app->mobileDetect->isMobile) : ?>
     <?
     $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->one();
