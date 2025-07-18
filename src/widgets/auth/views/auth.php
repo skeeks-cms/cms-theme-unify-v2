@@ -247,7 +247,7 @@ JS
         <?php $form::end(); ?>
 
         <div class="text-center">
-            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
+            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый код</a>
         </div>
 
         <div class="text-center">
@@ -264,7 +264,7 @@ JS
         <div class="form-group field-sx-phone">
             <input type="text"
                    name="phone_code"
-                   placeholder="Проверочный код из SMS"
+                   placeholder="Код из SMS или мессенджера"
                    class="form-control"
             />
         </div>
@@ -275,7 +275,7 @@ JS
 
         <div class="text-center sx-phone-trigger-wrapper">
             <span class="sx-phone-code-wait">Выслать код повторно, через: <span class="sx-left-time"></span> сек.</span>
-            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый SMS код</a>
+            <a href="#" class="sx-dashed sx-phone-code-trigger">Выслать одноразовый код</a>
         </div>
 
         <div class="text-center">
