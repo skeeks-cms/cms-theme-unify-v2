@@ -264,7 +264,7 @@ JS
         <div class="form-group field-sx-phone">
             <input type="text"
                    name="phone_code"
-                   placeholder="Код из SMS или мессенджера"
+                   placeholder="Код из sms или telegram"
                    class="form-control"
             />
         </div>
