@@ -35,11 +35,13 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
   ?>
 
 <? if ($model->description_full) : ?>
+<div class="sx-section">
     <div class="container sx-content">
         <header class="g-mt-50">
             <?=$model->description_full; ?>
         </header>
     </div>
+</div>
 <? endif; ?>
 
 <?php
@@ -56,8 +58,7 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
 ])); */?>
 
 
-<section class="promo-4 noborder g-bg-secondary g-pt-20 g-pb-20">
-    <div class="container">
+
 
         <?
         $contentFaq = \skeeks\cms\models\CmsContent::find()->where(['code' => 'advantage'])->one();
@@ -72,17 +73,16 @@ $content = \skeeks\cms\models\CmsContent::find()->where(['code' => 'slide'])->on
             'viewFile'        => '@app/views/widgets/ContentElementsCmsWidget/advantage',
         ]); ?>
 
-    </div>
-</section>
+    
 
 
-<section class="promo-4 noborder g-bg-secondary g-pt-20 g-pb-20">
+<section class="sx-section">
     <div class="container">
         <?= $this->render("@app/views/include/bottom-block"); ?>
     </div>
 </section>
 <? if (!\Yii::$app->mobileDetect->isMobile) : ?>
-<section class="promo-4 noborder p-y-0">
+<section class="sx-section" style="padding: 0;">
     <?= $this->theme->yandex_map; ?>
 </section>
 <? endif; ?>

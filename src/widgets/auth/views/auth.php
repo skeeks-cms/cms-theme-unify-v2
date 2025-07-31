@@ -387,7 +387,7 @@ JS
         <div class="form-group">
             <input type="text"
                    name="email_code"
-                   placeholder="Проверочный код из Email"
+                   placeholder="Проверочный код из Email (проверьте СПАМ)"
                    class="form-control"
             />
         </div>

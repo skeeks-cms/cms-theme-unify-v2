@@ -13,6 +13,8 @@
     <?/* \skeeks\cms\modules\admin\widgets\Pjax::begin(); */?>
 --><?/* endif; */?>
 <? if ($widget->dataProvider->query->count()) : ?>
+<div class="sx-section">
+    <div class="container">
 <? echo \yii\widgets\ListView::widget([
     'dataProvider'      => $widget->dataProvider,
     'itemView'          => '_advantage-item',
@@ -27,6 +29,8 @@
     ],
     'layout'            => "\n{items}"
 ])?>
+        </div>
+</div>
 <? endif; ?>
 
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--

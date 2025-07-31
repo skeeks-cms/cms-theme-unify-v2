@@ -5,6 +5,9 @@
 body {
     background: var(--bg-color);
 }
+.sx-section {
+    padding: 2rem 0;
+}
 /**
  * Кастомные checkbox
  */
