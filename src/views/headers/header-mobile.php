@@ -167,11 +167,11 @@ if ($models) {
                         <!-- End Responsive Toggle Button -->
                     </div>
                     <a href="#sx-menu" class="navbar-toggler btn g-px-0 g-valign-middle" aria-label="Меню" title="Меню">
-                            <span class="hamburger">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
+                        <span class="hamburger">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
                             </span>
+                        </span>
                     </a>
                 </div>
             </div>
