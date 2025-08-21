@@ -206,7 +206,7 @@ JS
                 <i class="icon-hotel-restaurant-003 u-line-icon-pro"></i>
 
               </span>
-                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Working time'); ?></h4>
+                <h4 class="h5 g-font-weight-600 g-mb-5"><?= \Yii::t('skeeks/unify', 'Opening hours'); ?></h4>
                 <?php if (\Yii::$app->skeeks->site->work_time) : ?>
                     <?php $data = \skeeks\yii2\scheduleInputWidget\ScheduleInputWidget::getWorkingData(\Yii::$app->skeeks->site->work_time); ?>
                     <? foreach ($data as $row) : ?>

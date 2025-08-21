@@ -19,6 +19,7 @@ return [
     'Address'             => "Адрес",
     'Phone'               => "Телефон",
     'Working time'        => "Рабочее время",
+    'Opening hours'        => "Время работы",
     'More'                => "Подробнее",
     'You searched'        => "Вы искали",
     'Search'              => "Поиск",
