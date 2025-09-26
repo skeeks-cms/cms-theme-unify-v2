@@ -384,6 +384,7 @@ ul.sx-filters-tree li, .sx-filters-tree ul li {
 
 .sx-filter .sx-btn-apply-wrapper {
     display: none;
+    padding: 0 15px 0 15px;
 }
 
 .sx-filter .sx-btn-apply-wrapper .btn {
