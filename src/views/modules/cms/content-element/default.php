@@ -96,6 +96,11 @@ if (@$isShowMainImage !== false) {
                                 <div itemprop="articleBody" style="overflow: auto;">
                                     <?= $model->description_full; ?>
 
+                                    <?php if($model->cmsFaqs) : ?>
+                                        <?php echo $this->render('@app/views/include/faq', [
+                                            'elements' => $model->cmsFaqs
+                                        ]); ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 

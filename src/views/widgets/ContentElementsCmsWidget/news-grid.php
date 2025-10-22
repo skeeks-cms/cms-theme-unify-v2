@@ -1,4 +1,6 @@
-<? echo \yii\widgets\ListView::widget([
+<? 
+\skeeks\cms\themes\unify\assets\VanillaLazyLoadAsset::register($this);
+echo \yii\widgets\ListView::widget([
     'dataProvider'      => $widget->dataProvider,
     'itemView'          => '_news-grid-item',
     'emptyText'          => '',
