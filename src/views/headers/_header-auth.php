@@ -12,17 +12,17 @@
         <a class="g-text-underline--none--hover sx-icon-wrapper" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/login'); ?>">
             <i class="icon-user"></i>
             <span class="">
-                                        <span class="g-hidden-sm-down"></span>
-                                    </span>
+                <span class="g-hidden-sm-down"></span>
+            </span>
         </a>
     <? else : ?>
 
         <!-- Top User -->
-        <a class="g-text-underline--none--hover sx-icon-wrapper" href="<?= \Yii::$app->cms->afterAuthUrl; ?>">
+        <a class="g-text-underline--none--hover sx-icon-wrapper sx-user-mobile-menu-trigger" href="<?= \Yii::$app->cms->afterAuthUrl; ?>">
             <i class="icon-user"></i>
             <span class="">
-                                    <span class="g-hidden-sm-down"></span>
-                                </span>
+                <span class="g-hidden-sm-down"></span>
+            </span>
         </a>
     <? endif; ?>
 </div>
