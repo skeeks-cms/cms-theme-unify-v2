@@ -93,6 +93,7 @@ CSS
                                 <?php if($name != $address->value) : ?>
                                     <div class="sx-address"><?php echo $address->value; ?></div>
                                 <?php endif; ?>
+                                
                                 <?php if($address->cmsSiteAddressPhones) : ?>
                                     <? foreach ($address->cmsSiteAddressPhones as $addressPhone) : ?>
                                         <div class="sx-phone">
@@ -104,9 +105,21 @@ CSS
                                         </div>
                                     <? endforeach; ?>
                                 <?php endif; ?>
-                                <?php if($email) : ?>
-                                    <div class="sx-email"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
+                                
+                                <?php if($address->cmsSiteAddressEmails) : ?>
+                                    <? foreach ($address->cmsSiteAddressEmails as $addressEmail) : ?>
+                                        <div class="sx-email">
+                                            <a href="mailto:<?php echo $addressEmail->value; ?>"><?php echo $addressEmail->value; ?></a>
+                                            <?php if($addressEmail->name) : ?>
+                                                (<?php echo $addressEmail->name; ?>)
+                                            <?php endif; ?>
+                                        </div>
+                                    <? endforeach; ?>
                                 <?php endif; ?>
+                                
+                                <?php /*if($email) : */?><!--
+                                    <div class="sx-email"><a href="mailto:<?php /*echo $email; */?>"><?php /*echo $email; */?></a></div>
+                                --><?php /*endif; */?>
                                 
                                 <?php if ($address->work_time) : ?>
                                     <?php $data = \skeeks\yii2\scheduleInputWidget\ScheduleInputWidget::getWorkingData($address->work_time); ?>
