@@ -58,4 +58,8 @@ class FontAwesomeAsset extends \skeeks\cms\base\AssetBundle
 
         \Yii::$app->assetManager->appendTimestamp = $appendTimestamp;
     }
+
+    public $depends = [
+        FontAwesomeIconsAsset::class,
+    ];
 }
