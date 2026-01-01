@@ -123,7 +123,7 @@ JS
                                         <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
                                     </a>
                                     <?php if (\Yii::$app->skeeks->site->cmsSitePhone->name) : ?>
-                                        <div style="    font-size: 12px;
+                                        <div class="sx-header-phone-address" style="    font-size: 12px;
     text-align: left;
     line-height: 12px;    max-width: 170px;">
                                             <?php echo \Yii::$app->skeeks->site->cmsSitePhone->name; ?>
