@@ -37,7 +37,7 @@ $widget = $this->context;
     <!--<div class="h-100">-->
 
     <?
-    $widget->activeFormConfig = \yii\helpers\ArrayHelper::merge($widget->activeFormConfig, [
+    /*$widget->activeFormConfig = \yii\helpers\ArrayHelper::merge($widget->activeFormConfig, [
         'options' => [
             'id'    => 'sx-filters-form',
             'class' => 'sx-filters-form',
@@ -45,7 +45,7 @@ $widget = $this->context;
                 'pjax' => new \yii\helpers\UnsetArrayValue(),
             ],
         ],
-    ]);
+    ]);*/
 
     $form = \yii\widgets\ActiveForm::begin($widget->activeFormConfig); ?>
     <? foreach ($widget->handlers as $filtersHandler) : ?>
