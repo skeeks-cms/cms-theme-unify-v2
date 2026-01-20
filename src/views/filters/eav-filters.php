@@ -56,7 +56,7 @@ $widget = $this->context;
             //&& $max > 0
         ) : ?>
 
-            <section class="filter--group <?= $class ?> field-eav-f<?php echo $rp->id; ?>">
+            <section class="filter--group sx-filter <?= $class ?> field-e-f<?php echo $rp->id; ?>">
                 <header class="filter--group--header">
                     <?= $name; ?>
                     <? if ($rp->hint) : ?>
@@ -99,11 +99,12 @@ $widget = $this->context;
                                data-to="<?= $val2; ?>"
                                data-postfix=""/>
 
-                        <div class="sx-btn-apply-wrapper">
-                            <button type="submit" class="btn btn-primary">Применить</button>
-                        </div>
+
                     </div>
                 </div>
+                <div class="sx-btn-apply-wrapper">
+                            <button type="submit" class="btn btn-primary">Применить</button>
+                        </div>
             </section>
 
         <? endif; ?>
@@ -125,7 +126,7 @@ $widget = $this->context;
                 }
                 
                 if ($values) {
-                    $class = 'opened sx-filter-selected';
+                    $class = 'opened sx-filter sx-filter-selected';
 
                     $newOptions = [];
                     foreach ($values as $value) {
