@@ -139,7 +139,7 @@ JS
         <?php if ($addresses = \Yii::$app->skeeks->site->cmsSiteAddresses) : ?>
             <div class="col-lg col-md col-sm-6 col-xs-12 g-brd-right--md g-brd-gray-light-v2">
                 <!-- Icon Blocks -->
-                <div class="text-center g-pa-20">
+                <div class="text-center g-py-20">
             <span class="g-mb-10" style="font-size:40px;">
 
                 <i class="icon-real-estate-027 u-line-icon-pro"></i>
@@ -198,7 +198,7 @@ JS
             <!-- End Icon Blocks -->
         </div>
 
-        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-gray-light-v1">
+        <div class="col-lg col-md-6 col-sm-6 col-xs-12 g-brd-gray-light-v1 sx-schedule-col">
             <!-- Icon Blocks -->
             <div class="text-center g-py-20">
             <span class="g-mb-10" style="font-size:40px;">
