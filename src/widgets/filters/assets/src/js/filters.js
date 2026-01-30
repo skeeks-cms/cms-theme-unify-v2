@@ -9,6 +9,8 @@
 
         _onDomReady: function () {
 
+            var self = this;
+            
             this._initSearchInFilters();
 
             var jHiddenWrapper = $('.sx-hidden-filters');
@@ -97,15 +99,16 @@
                 });
             });
             $("#sx-filters-form").fadeIn();
+            
             $('.sx-filters-checkbox-options').each(function () {
                 var jContainer = $(this);
                 var checkboxes = $('.checkbox', $(this));
                 var jGroup = $(this).closest(".filter--group");
                 var jSearch = $(".js-filter-search-hide", jGroup);
                 var jFilterBody = $(".filter--group--body", jGroup);
-                if (checkboxes.length > 4) {
+                if (checkboxes.length > self.get("visible_options_count", 4)) {
 
-                    var last = 4;
+                    var last = self.get("visible_options_count", 4);
                     var counter = 0;
                     checkboxes.each(function () {
                         counter = counter + 1;
