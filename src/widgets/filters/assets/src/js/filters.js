@@ -4,13 +4,14 @@
  * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
  */
+
 (function (sx, $, _) {
     sx.classes.Filters = sx.classes.Component.extend({
 
         _onDomReady: function () {
 
             var self = this;
-            
+
             this._initSearchInFilters();
 
             var jHiddenWrapper = $('.sx-hidden-filters');
@@ -46,11 +47,11 @@
                 var value_id = jLi.data("value_id");
 
                 if (property_id == 'price') {
-                    
+
                     $("#sx-filter-price-from", jFilter).val("");
                     $("#sx-filter-price-to", jFilter).val("");
                     $("#sx-filters-form").submit();
-                    
+
                 } else {
                     var jFilter = $("." + property_id);
                     if (value_id) {
@@ -61,7 +62,7 @@
                         $("#sx-filters-form").submit();
                     }
                 }
-                
+
 
                 return false;
             });
@@ -98,17 +99,23 @@
                     }
                 });
             });
-            $("#sx-filters-form").fadeIn();
             
+            
+            $("#sx-filters-form").fadeIn();
+
             $('.sx-filters-checkbox-options').each(function () {
                 var jContainer = $(this);
                 var checkboxes = $('.checkbox', $(this));
                 var jGroup = $(this).closest(".filter--group");
                 var jSearch = $(".js-filter-search-hide", jGroup);
                 var jFilterBody = $(".filter--group--body", jGroup);
-                if (checkboxes.length > self.get("visible_options_count", 4)) {
+                
+                if (checkboxes.length > 10) {
+                    jSearch.show();
+                }
+                if (checkboxes.length > self.get("visible_options_count", 40000)) {
 
-                    var last = self.get("visible_options_count", 4);
+                    var last = self.get("visible_options_count", 40000);
                     var counter = 0;
                     checkboxes.each(function () {
                         counter = counter + 1;
@@ -155,15 +162,14 @@
         },
 
 
+        _initSearchInFilters: function () {
 
-        _initSearchInFilters: function() {
-
-            $('.filter-search__input input').each(function() {
+            $('.filter-search__input input').each(function () {
 
                 var jInput = $(this);
                 var jInputWrapper = $(this).closest(".filter--group");
 
-                jInput.on('keyup', function() {
+                jInput.on('keyup', function () {
                     var searchText = $(this).val();
 
                     /*
@@ -174,7 +180,7 @@
                         $('.js-search-list-hide', jInputWrapper).show();
                     }*/
 
-                    $('.checkbox', jInputWrapper).each(function() {
+                    $('.checkbox', jInputWrapper).each(function () {
                         var jOption = $(this);
 
                         var jCleanText = jOption.find("label");
@@ -182,11 +188,11 @@
 
                         var position = text.toLowerCase().indexOf(searchText.toLowerCase());
 
-                        if(position != -1) {
+                        if (position != -1) {
                             if (searchText) {
                                 var arrText = text.split("");
                                 arrText[position] = '<span style="font-weight: bold;">' + arrText[position];
-                                arrText[position + searchText.length - 1] = arrText[position + searchText.length -1] + '</span>';
+                                arrText[position + searchText.length - 1] = arrText[position + searchText.length - 1] + '</span>';
                             } else {
                                 var arrText = text.split("");
                             }
@@ -203,8 +209,7 @@
                     });
 
 
-
-                    $('.sx-level-2', jInputWrapper).each(function() {
+                    $('.sx-level-2', jInputWrapper).each(function () {
                         var jOption = $(this);
 
                         var jCleanText = jOption.children().children().children(".label-clean-text");
@@ -217,11 +222,11 @@
 
                         var position = text.toLowerCase().indexOf(searchText.toLowerCase());
 
-                        if(position != -1) {
+                        if (position != -1) {
                             if (searchText) {
                                 var arrText = text.split("");
                                 arrText[position] = '<span style="font-weight: bold;">' + arrText[position];
-                                arrText[position + searchText.length - 1] = arrText[position + searchText.length -1] + '</span>';
+                                arrText[position + searchText.length - 1] = arrText[position + searchText.length - 1] + '</span>';
                             } else {
                                 var arrText = text.split("");
                             }
@@ -252,32 +257,27 @@
 
         }
     });
-    
+
     sx.classes.FiltersForm = sx.classes.Component.extend({
 
-        _onDomReady: function()
-        {
+        _onDomReady: function () {
             var self = this;
             this.JqueryForm = $("#sx-filters-form");
             this.jFilterFormWrapper = $(".sx-filters-form");
-            $('.sx-filter-action').on('click', function()
-            {
+            $('.sx-filter-action').on('click', function () {
                 var jFilter = $($(this).data('filter'));
                 jFilter.prop("disabled", false);
                 jFilter.val($(this).data('filter-value')).change();
 
                 return false;
             });
-                        
-            if ($(".form-group", this.JqueryForm).length > 0)
-            {
+
+            if ($(".form-group", this.JqueryForm).length > 0) {
                 $("button", self.JqueryForm).fadeIn();
             }
 
-            $("input, checkbox, select", this.JqueryForm).on("change", function()
-            {
-                if ($(this).data('no-submit'))
-                {
+            $("input, checkbox, select", this.JqueryForm).on("change", function () {
+                if ($(this).data('no-submit')) {
                     return false;
                 }
 
@@ -287,77 +287,77 @@
             });
 
             $('.dropdown-menu.keep-open').on('click', function (e) {
-              e.stopPropagation();
+                e.stopPropagation();
             });
-            
-            
+
+
             var jSelectedWrapper = $(".sx-filters-selected-wrapper");
-            
-            $("input[type=checkbox]:checked", this.jFilterFormWrapper).each(function() {
-                
-                var jOption = $(this); 
-                var text = $(this).closest('div').find('label').text(); 
-                
+
+            $("input[type=checkbox]:checked", this.jFilterFormWrapper).each(function () {
+
+                var jOption = $(this);
+                var text = $(this).closest('div').find('label').text();
+
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'hs-icon hs-icon-close',
-                    'title' : 'Отменить выбранную опцию',
+                    'class': 'hs-icon hs-icon-close',
+                    'title': 'Отменить выбранную опцию',
                 });
-                
+
                 var jBtn = $("<button>", {
-                    'href' : '#', 
-                    'class' : 'btn btn-sm sx-fast-filters-btn',
-                    'title' : jOption.closest(".filter--group").find('header').text(),
-                })
-                    .append(text)
-                    .append(" ")
-                    .append(jRemoveBtn)
+                        'href': '#',
+                        'class': 'btn btn-sm sx-fast-filters-btn',
+                        'title': jOption.closest(".filter--group").find('header').text(),
+                    })
+                        .append(text)
+                        .append(" ")
+                        .append(jRemoveBtn)
                 ;
-                
+
                 jSelectedWrapper.append(jBtn);
-                
-                jRemoveBtn.on('click', function() {
-                    jOption.click(); 
+
+                jRemoveBtn.on('click', function () {
+                    jOption.click();
                     jBtn.fadeOut();
                     jBtn.remove();
                     jOption.closest("form").submit();
                     return false;
                 });
             });
-            
-            $(".sx-filter-selected .range-slider", this.jFilterFormWrapper).each(function() {
+
+            $(".sx-filter-selected .range-slider", this.jFilterFormWrapper).each(function () {
                 var From = $(this).data('from');
                 var To = $(this).data('to');
                 var Min = $(this).data('min');
                 var Max = $(this).data('max');
-                
-                
-                var jOption = $(this); 
-                var text = "от " + new Intl.NumberFormat('ru-RU').format(From) + " до " + new Intl.NumberFormat('ru-RU').format(To) + $(this).data('postfix'); 
-                
+
+
+                var jOption = $(this);
+                var text = "от " + new Intl.NumberFormat('ru-RU').format(From) + " до " + new Intl.NumberFormat('ru-RU').format(To) + $(this).data('postfix');
+
                 var jRemoveBtn = $("<i>", {
-                    'class' : 'hs-icon hs-icon-close',
-                    'title' : 'Отменить выбранную опцию',
+                    'class': 'hs-icon hs-icon-close',
+                    'title': 'Отменить выбранную опцию',
                 });
-                
+
                 var jBtn = $("<button>", {
-                    'href' : '#', 
-                    'class' : 'btn btn-sm sx-fast-filters-btn',
-                    'title' : jOption.closest(".filter--group").find('header').text(),
-                })
-                    .append(text)
-                    .append(" ")
-                    .append(jRemoveBtn)
+                        'href': '#',
+                        'class': 'btn btn-sm sx-fast-filters-btn',
+                        'title': jOption.closest(".filter--group").find('header').text(),
+                    })
+                        .append(text)
+                        .append(" ")
+                        .append(jRemoveBtn)
                 ;
-                
+
                 jSelectedWrapper.append(jBtn);
-                
-                jRemoveBtn.on('click', function() {
-                    jOption.click(); 
+
+                jRemoveBtn.on('click', function () {
+                    jOption.click();
                     jBtn.fadeOut();
                     jBtn.remove();
                     return false;
                 });
-                
+
             });
         }
     });

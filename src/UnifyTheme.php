@@ -1142,7 +1142,7 @@ CSS;
                 }
                 .sx-content-col-left {
                     width: {$leftCol}px;
-                    position: static;
+                    position: relative;
                     top: auto;
                     z-index: auto;
                 }

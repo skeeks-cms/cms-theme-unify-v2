@@ -48,6 +48,18 @@
     overflow-x: auto;
 }
 
+.filter--group .filter--group--body .js-scrollbar-native::-webkit-scrollbar {
+    width: 6px;
+}
+.filter--group .filter--group--body .js-scrollbar-native::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.filter--group .filter--group--body .js-scrollbar-native::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
 .filter--group .filter--group--inner {
     /*padding: 0 10px 0 10px;*/
 }
