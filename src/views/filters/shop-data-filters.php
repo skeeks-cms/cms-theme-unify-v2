@@ -50,11 +50,11 @@ HTML;
         ?>
 
         <?
-        $classCss = 'js-scrollbar';
+        $classCss = 'js-scrollbar-native';
         if (\Yii::$app->mobileDetect->isMobile) {
             $classCss = 'js-scrollbar-native';
         } else {
-            $classCss = 'js-scrollbar';
+            $classCss = 'js-scrollbar-native';
         }
         echo $form->field($handler, "brand_id", [
             'options'  => [
@@ -135,11 +135,11 @@ HTML;
         ?>
 
         <?
-        $classCss = 'js-scrollbar';
+        $classCss = 'js-scrollbar-native';
         if (\Yii::$app->mobileDetect->isMobile) {
             $classCss = 'js-scrollbar-native';
         } else {
-            $classCss = 'js-scrollbar';
+            $classCss = 'js-scrollbar-native';
         }
         echo $form->field($handler, "country", [
             'options'  => [

@@ -7,7 +7,7 @@ echo \yii\widgets\ListView::widget([
     'options'           =>
     [
         'tag'   => 'div',
-        'class'   => 'sx-news-grid',
+        'class'   => 'sx-news-grid sx-news',
     ],
     'itemOptions' => [
         'tag' => false,

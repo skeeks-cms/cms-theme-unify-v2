@@ -18,12 +18,18 @@
 
                 <? if ($model->image) : ?>
                     <div class="g-mb-20">
-                        <img src="<?php echo \Yii::$app->cms->image1px; ?>" data-src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image->src,
-                            new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                'w' => 352,
-                                'h' => 200,
-                            ]), $model->code
-                        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-fluid lazy" style="aspect-ratio: 352/200; width: 100%; max-width: 100% !important;"/>
+                        <div class="sx-img-wrapper">
+                            <img class="img-fluid lazy"
+                                 style="aspect-ratio: 500/400; width: 100%;"
+                                 src="<?php echo \Yii::$app->cms->image1px; ?>"
+                                 data-src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+                                new \skeeks\cms\components\imaging\filters\Thumbnail([
+                                    'w' => 500,
+                                    'h' => 400,
+                                    'm' => \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND,
+                                ]), $model->code
+                            ) ?>" alt="<?= $model->name; ?>">
+                        </div>
                     </div>
                 <? else: ?>
                     <img src="<?= \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-fluid"/>

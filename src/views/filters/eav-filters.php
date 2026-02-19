@@ -156,11 +156,11 @@ HTML;
                 ?>
 
                 <?
-                $classCss = 'js-scrollbar';
+                $classCss = 'js-scrollbar-native';
                 if (\Yii::$app->mobileDetect->isMobile) {
                     $classCss = 'js-scrollbar-native';
                 } else {
-                    $classCss = 'js-scrollbar';
+                    $classCss = 'js-scrollbar-native';
                 }
                 echo $form->field($handler, $code, [
                     'options'  => [
