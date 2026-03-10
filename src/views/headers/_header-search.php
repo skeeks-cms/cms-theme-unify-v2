@@ -12,9 +12,14 @@ $this->registerJs(<<<JS
         sx.block($("body"));
     });
 
+    var headerHeight = $(".u-header").height();
+    
+    /*alert(headerHeight);*/
+    $('.sx-search-form').css({top: '-' + headerHeight + 'px'});
+    
     $('body').on('click','.sx-search-btn', function() {
         if ($(this).hasClass('sx-search-form-close')){
-            $('.sx-search-form').animate({top: '-120px'});
+            $('.sx-search-form').animate({top: '-' + headerHeight + 'px'});
             $('.sx-search-btn').removeClass('sx-search-form-close');
             return false;
         }
