@@ -28,6 +28,7 @@
                                        aria-label="<?= $social->social_type; ?>"
                                        href="<?= $social->url; ?>"
                                        target="_blank"
+                                       title="<?php echo $social->name; ?>"
                                     >
                                         <i class="<?= $social->iconCode; ?>"></i>
                                     </a>
