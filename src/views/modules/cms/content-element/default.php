@@ -96,9 +96,9 @@ if (@$isShowMainImage !== false) {
                                 <div itemprop="articleBody" style="overflow: auto;">
                                     <?= $model->description_full; ?>
 
-                                    <?php if($model->cmsFaqs) : ?>
+                                    <?php if ($model->cmsFaqs) : ?>
                                         <?php echo $this->render('@app/views/include/faq', [
-                                            'elements' => $model->cmsFaqs
+                                            'elements' => $model->cmsFaqs,
                                         ]); ?>
                                     <?php endif; ?>
                                 </div>
@@ -112,15 +112,15 @@ if (@$isShowMainImage !== false) {
 
 
                             <ul class="list-inline d-sm-flex sx-list-short-info sx-main-text-color sx-news-item-short-info">
-                                <?php /*if ($model->createdBy) : */?><!--
+                                <?php /*if ($model->createdBy) : */ ?><!--
                                     <li class="list-inline-item sx-news-item-created_by">
-                                        <img src="<?/*= $model->createdBy->avatarSrc; */?>" style="height: 25px; border-radius: 50%;"/>
-                                        <a href="<?/*= $model->createdBy->getPageUrl(); */?>" title="<?/*= $model->createdBy->name; */?>" class="g-color-gray-dark-v4 g-color-primary--hover">
-                                            <?/*= $model->createdBy->shortDisplayName; */?>
+                                        <img src="<? /*= $model->createdBy->avatarSrc; */ ?>" style="height: 25px; border-radius: 50%;"/>
+                                        <a href="<? /*= $model->createdBy->getPageUrl(); */ ?>" title="<? /*= $model->createdBy->name; */ ?>" class="g-color-gray-dark-v4 g-color-primary--hover">
+                                            <? /*= $model->createdBy->shortDisplayName; */ ?>
                                         </a>
                                     </li>
                                     <li class="list-inline-item g-mx-10 sx-news-item-created_by">/</li>
-                                --><?php /*endif; */?>
+                                --><?php /*endif; */ ?>
 
 
                                 <li class="list-inline-item">
@@ -152,6 +152,82 @@ if (@$isShowMainImage !== false) {
                     <? /* echo \skeeks\cms\comments\widgets\CommentsWidget::widget(['model' => $model]); */ ?>
                 </div>-->
 
+                            <? if ($model->cms_content_model_id) : ?>
+                                <?
+                                /**
+                                 * @var \skeeks\cms\models\CmsContent[] $contetns
+                                 */
+                                $contetns = \skeeks\cms\models\CmsContent::find()->andWhere([
+                                    'id' => $model->cmsContentModel->getCmsContentElements()->joinWith("cmsContent as cmsContent")->select("cmsContent.id")->groupBy(['cmsContent.id']),
+                                ])->sort()->all();
+                                if ($contetns) :
+                                    ?>
+                                    <div class="sx-joins">
+                                    <? foreach ($contetns as $content) : ?>
+                                    <div class="sx-section">
+                                        <div class="h3">Связанные <?php echo \skeeks\cms\helpers\StringHelper::strtolower($content->name); ?></div>
+
+                                        <?php 
+                                        $elementsQuery = $model->cmsContentModel->getCmsContentElements()->contentId($content->id)->select("id");
+                                        if ($content->isProducts) : ?>
+                                            <?
+                                            $this->registerCss(<<<CSS
+.sx-products-stick .slick-track {
+    margin-left: 0;
+}
+CSS
+);
+
+                                            $widgetElements2 = \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::beginWidget("joines-products", [
+                                                'viewFile'            => '@app/views/widgets/ContentElementsCmsWidget/products-stick',
+                                                'label'               => false,
+                                                'enabledPaging'       => "N",
+                                                /*'content_ids'         => [\Yii::$app->shop->contentProducts->id],*/
+                                                //'tree_ids'             => $treeIds,
+                                                'enabledSearchParams' => "N",
+                                                'enabledCurrentTree'  => "N",
+                                                'limit'               => 15,
+                                                'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::class,
+                                                'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model, $elementsQuery) {
+                                                    $query->andWhere(['in', \skeeks\cms\models\CmsContentElement::tableName().".id", $elementsQuery]);
+                                                },
+                                            ]);
+                                            ?>
+
+                                            <? if ($widgetElements2->dataProvider->query->count()) : ?>
+                                                <section class="sx-products-slider-section sx-product-viewed">
+                                                        <? $widgetElements2::end(); ?>
+                                                </section>
+                                            <? endif; ?>
+                                        <? else : ?>
+                                            <?
+                                        
+                                            $widgetElements = \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::beginWidget("joines-elements", [
+                                                'viewFile'                   => '@app/views/widgets/ContentElementsCmsWidget/news-grid',
+                                                'label'                      => false,
+                                                'enabledRunCache'            => "N",
+                                                'content_ids'                => [1],
+                                                'limit'                      => 4,
+                                                'pageSize'                   => 4,
+                                                'enabledPaging'              => 'N',
+                                                'enabledCurrentTree'         => \skeeks\cms\components\Cms::BOOL_N,
+                                                'enabledCurrentTreeChild'    => skeeks\cms\components\Cms::BOOL_N,
+                                                'enabledCurrentTreeChildAll' => skeeks\cms\components\Cms::BOOL_N,
+                                                'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model, $elementsQuery) {
+                                                    $query->andWhere(['!=', \skeeks\cms\models\CmsContentElement::tableName().".id", $model->id]);
+                                                    $query->andWhere(['in', \skeeks\cms\models\CmsContentElement::tableName().".id", $elementsQuery]);
+                                                },
+                                            ]);
+                                            $widgetElements::end();
+                                            ?>
+                                        <? endif; ?>
+
+                                    </div>
+
+                                <? endforeach; ?>
+                                <? endif; ?>
+                                </div>
+                            <? endif; ?>
 
                             <?= $this->render("@app/views/include/bottom-block"); ?>
 
@@ -171,5 +247,5 @@ if (@$isShowMainImage !== false) {
                     </div>
                 </div>
 
-</div>
+            </div>
 

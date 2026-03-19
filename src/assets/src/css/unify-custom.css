@@ -637,7 +637,9 @@ body {
 }
 
 
-
+.sx-img-wrapper img, .sx-img-wrapper {
+    border-radius: var(--base-radius);
+}
 
 
 @keyframes loading {
