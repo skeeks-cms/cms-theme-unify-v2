@@ -13,6 +13,11 @@ $this->registerJs(<<<JS
     });
 
     var headerHeight = $(".u-header").height();
+    var searchHeight = $(".sx-search-form").innerHeight()
+    
+    if (searchHeight > headerHeight) {
+        headerHeight = searchHeight;
+    }
     
     /*alert(headerHeight);*/
     $('.sx-search-form').css({top: '-' + headerHeight + 'px'});

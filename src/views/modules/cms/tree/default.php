@@ -86,6 +86,7 @@
                                 'viewFile'    => '@app/views/widgets/ContentElementsCmsWidget/gallery',
                             ]); ?>
 
+
                             <?
                             $contentNews = \skeeks\cms\models\CmsContent::find()->where(['code' => 'review'])->one();
                             ?>
@@ -96,7 +97,6 @@
                                 ],
                                 'viewFile'    => '@app/views/widgets/ContentElementsCmsWidget/review',
                             ]); ?>
-
                             <? if ($model->images) : ?>
                                 <?= $this->render("@app/views/include/gallery", ['images' => $model->images]); ?>
                             <? endif; ?>
