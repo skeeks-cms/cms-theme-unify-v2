@@ -44,7 +44,7 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
             <!-- Sidebar Nav -->
             <?php if (!$isEmpty) : ?>
                 <div id="sideNav" class="<?= $theme->slideNavClasses; ?>"> <!--js-custom-scroll g-height-100vh-->
-                    <div class="js-scrollbar sx-sidebar-inner">
+                    <div class="<?php echo \Yii::$app->mobileDetect->isMobile ? "" : "js-scrollbar"; ?> sx-sidebar-inner">
                         <?= $this->render("@app/views/layouts/_before-menu"); ?>
                         <?= $this->render("@app/views/layouts/_menu"); ?>
                         <?= $this->render("@app/views/layouts/_after-menu"); ?>

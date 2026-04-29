@@ -1200,3 +1200,48 @@ div.jGrowl-notification.ui-state-highlight {
     background: white !important;
     color: #363636;
 }
+
+
+@media (max-width: 768px) {
+    .sx-main-col .sx-content-wrapper {
+        padding-top: 90px;
+    }
+
+    .sx-empty .sx-main-col .sx-content-wrapper {
+        padding-top: 10px;
+    }
+
+    .sx-main-page-nav {
+        margin-bottom: 1rem;
+        background: var(--bg-block-color);
+        border-radius: var(--border-radius);
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sx-backend-showing-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sx-backend-filters-form .sx-filters-block {
+        width: 95%;
+    }
+
+    .sx-fancy-container .fancybox-slide--iframe .fancybox-content {
+        min-width: 0;
+    }
+
+    .sx-fancy-container {
+        top: 67px;
+        height: calc(100vh - 67px);
+    }
+
+    .sx-notifies {
+        right: 0 !important;
+        position: fixed !important;
+        width: 100% !important;
+    }
+}
