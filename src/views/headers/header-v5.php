@@ -210,7 +210,7 @@ CSS
                     <div class="col my-auto">
                         <div class="sx-phone" style="margin-right: 2rem;">
                             <a href="#sx-callback" data-toggle="modal" data-target="#sx-feedback" style="margin-right: 0.5rem;"><i class="icon-earphones-alt"></i></a>
-                            <a href="#sx-callback" data-toggle="modal" data-target="#sx-feedback">8 800 302-71-73</a>
+                            <a href="#sx-callback" data-toggle="modal" data-target="#sx-feedback"><?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?></a>
                         </div>
                     </div>
                     <div class="col text-center my-auto">
