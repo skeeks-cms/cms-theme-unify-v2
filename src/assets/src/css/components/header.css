@@ -122,6 +122,9 @@
     padding: 10px 0;
 }
 
+.sx-search-form .input-group input {
+    height: 100%;
+}
 
 /* Поисковый блок на мобильной версии */
 @media (max-width: 768px) {
