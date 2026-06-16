@@ -41,7 +41,7 @@ if ($widget->enabledPaging == \skeeks\cms\components\Cms::BOOL_Y) {
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--
     <?/* \skeeks\cms\modules\admin\widgets\Pjax::begin(); */?>
 --><?/* endif; */?>
-
+<? if ($widget->dataProvider->query->count()) : ?>
 <? echo \yii\widgets\ListView::widget([
     'dataProvider'      => $widget->dataProvider,
     'itemView'          => '_news-masonry-item',
@@ -60,8 +60,8 @@ if ($widget->enabledPaging == \skeeks\cms\components\Cms::BOOL_Y) {
     'pager'        => [
         'class' => \skeeks\cms\themes\unify\widgets\ScrollAndSpPager::class
     ],
-])?>
-
+]); ?>
+<?php endif; ?>
 <?/* if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : */?><!--
     <?/* \skeeks\cms\modules\admin\widgets\Pjax::end(); */?>
 --><?/* endif; */?>
