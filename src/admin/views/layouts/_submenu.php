@@ -31,19 +31,18 @@ if ($level == 4) {
                         <?= $item->items ? "data-hssm-target='#subMenuLevels{$item->id}'" : "" ?>
                     >
 
-                        <? if ($item->icon) : ?>
+                        <? if ($item->image) : ?>
                             <span class="align-self-center sx-icon-wrapper">
-                            <i class="<?= $item->icon; ?>"></i>
-                        </span>
-
-                        <? elseif ($item->image) : ?>
+                                <img src="<?= $item->image; ?>"/>
+                            </span>
+                        <? elseif ($item->icon) : ?>
                             <span class="align-self-center sx-icon-wrapper">
-                            <img src="<?= $item->image; ?>" style="max-width: 19px; max-height: 19px; width: 100%;"/>
-                        </span>
+                                <i class="<?= $item->icon; ?>"></i>
+                            </span>
                         <? else : ?>
                             <span class="align-self-center sx-icon-wrapper">
-                              <i class="far fa-dot-circle"></i>
-                        </span>
+                                <img src="<?= \skeeks\cms\assets\CmsAsset::getAssetUrl('images/icons/admin-menu/more.svg'); ?>"/>
+                            </span>
                         <? endif; ?>
 
                         <span class="media-body align-self-center"><?= $item->name; ?></span>

@@ -29,9 +29,9 @@ $level = 1;
                           <? if ($adminMenuItem->icon) : ?>
                               <i class="<?= $adminMenuItem->icon; ?>"></i>
                           <? elseif ($adminMenuItem->image) : ?>
-                              <img src="<?= $adminMenuItem->image; ?>" style="max-width: 20px;max-height: 20px;"/>
+                              <img src="<?= $adminMenuItem->image; ?>"/>
                           <? else : ?>
-                              <i class="far fa-dot-circle"></i>
+                              <img src="<?= \skeeks\cms\assets\CmsAsset::getAssetUrl('images/icons/admin-menu/more.svg'); ?>"/>
                           <? endif; ?>
 
                         </span>
