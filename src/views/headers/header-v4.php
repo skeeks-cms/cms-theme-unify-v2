@@ -22,6 +22,44 @@ $this->registerJs(<<<JS
 //});
 JS
 );
+$this->registerCss(<<<CSS
+.sx-header-social-list li {
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+}
+.sx-header-social-list a {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.375rem 0.9375rem -0.375rem;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background: white;
+    color: var(--primary-color);
+}
+.sx-header-social-list a:hover {
+    text-decoration: none;
+}
+.sx-header-social-list a i {
+    position: relative;
+    top: 50%;
+    display: block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sx-header-social-list a i.fa-max {
+    -webkit-transform: translateY(-50%) scale(1.25);
+    -ms-transform: translateY(-50%) scale(1.25);
+    transform: translateY(-50%) scale(1.25);
+}
+CSS
+);
 
 ?>
 <header id="js-header" class="
@@ -84,14 +122,14 @@ JS
         <div class="sx-header-middle-block">
             <div class="container sx-container sx-header-center-container">
                 <div class="row ">
-                    <div class="col-sm-4 col-md-3 my-auto">
+                    <div class="col-lg-3 col-md-3 col-sm-3 my-auto">
                         <!-- Logo -->
                         <a href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>" class="navbar-brand">
                             <img src="<?= $this->theme->logo; ?>" alt="<?= \Yii::$app->skeeks->site->name; ?>">
                         </a>
                         <!-- End Logo -->
                     </div>
-                    <div class="col-md-6 col-sm-4 my-auto">
+                    <div class="col-lg-5 col-md-3 col-sm-3 my-auto">
                         <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                             <div class="sx-search-form">
                                 <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
@@ -111,7 +149,7 @@ JS
                             </div>
                         <? endif; ?>
                     </div>
-                    <div class="col-md-3 col-sm-4 my-auto">
+                    <div class="col-lg-2 col-md-3 col-sm-3 my-auto">
                         <div class="text-right d-flex" style="margin-left: 20px;">
                             <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
                                 <div class="sx-header-phone-wrapper g-color-primary my-auto">
@@ -138,6 +176,25 @@ JS
                                     <? /*= \Yii::$app->skeeks->site->cmsSiteEmail->value; */ ?>
                                 </a>
                             --><? /* endif; */ ?>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3 my-auto">
+                        <div class="text-right d-flex" style="margin-left: 20px;">
+                            <ul class="list-inline g-mb-20 sx-header-social-list">
+                                <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
+                                    <?php foreach ($socials as $social) : ?>
+                                        <li class="list-inline-item">
+                                            <a class="rounded-circle"
+                                               href="<?= $social->url; ?>"
+                                               aria-label="<?= $social->social_type; ?>"
+                                               target="_blank"
+                                            >
+                                                <i class="<?= $social->iconCode; ?>"></i>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ul>
                         </div>
                     </div>
                 </div>

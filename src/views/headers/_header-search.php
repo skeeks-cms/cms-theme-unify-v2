@@ -12,26 +12,55 @@ $this->registerJs(<<<JS
         sx.block($("body"));
     });
 
-    var headerHeight = $(".u-header").height();
-    var searchHeight = $(".sx-search-form").innerHeight()
+    var searchSelector = '.sx-search-form';
+    var searchBtnSelector = '.sx-search-btn';
+
+    $(searchSelector).each(function() {
+        var \$searchForm = $(this);
+        var isMobileHeaderSearch = \$searchForm.closest('.sx-top-search-in-mobile').length > 0;
+        var headerHeight = $(".u-header").height();
+        var searchHeight = \$searchForm.innerHeight();
+
+        if (searchHeight > headerHeight) {
+            headerHeight = searchHeight;
+        }
+
+        var hiddenTop = isMobileHeaderSearch ? '-' + headerHeight + 'px' : '-120px';
+        \$searchForm.data('sx-search-hidden-top', hiddenTop);
+
+        if (isMobileHeaderSearch && $(window).width() <= 768) {
+            \$searchForm.css({top: '100%', display: 'none'});
+        } else {
+            \$searchForm.css({top: hiddenTop});
+        }
+    });
     
-    if (searchHeight > headerHeight) {
-        headerHeight = searchHeight;
-    }
-    
-    /*alert(headerHeight);*/
-    $('.sx-search-form').css({top: '-' + headerHeight + 'px'});
-    
-    $('body').on('click','.sx-search-btn', function() {
-        if ($(this).hasClass('sx-search-form-close')){
-            $('.sx-search-form').animate({top: '-' + headerHeight + 'px'});
-            $('.sx-search-btn').removeClass('sx-search-form-close');
+    $('body').on('click', searchBtnSelector, function() {
+        var \$searchBtn = $(this);
+        var \$searchForm = \$searchBtn.closest('.sx-search-btn-block').next(searchSelector);
+        if (!\$searchForm.length) {
+            \$searchForm = $(searchSelector).first();
+        }
+        var hiddenTop = \$searchForm.data('sx-search-hidden-top') || '-120px';
+        var isMobileHeaderSearch = \$searchForm.closest('.sx-top-search-in-mobile').length > 0;
+        var isMobileSearch = isMobileHeaderSearch && $(window).width() <= 768;
+        if (\$searchBtn.hasClass('sx-search-form-close')){
+            if (isMobileSearch) {
+                \$searchForm.stop(true, true).slideUp(150);
+            } else {
+                \$searchForm.animate({top: hiddenTop});
+            }
+            \$searchBtn.removeClass('sx-search-form-close');
             return false;
         }
         else {
-            $('.sx-search-form').animate({top: '100%'});
-            $('.sx-search-form input').focus();
-            $('.sx-search-btn').addClass('sx-search-form-close');
+            if (isMobileSearch) {
+                \$searchForm.stop(true, true).css({top: '100%'}).slideDown(150);
+            } else {
+                \$searchForm.animate({top: '100%'});
+            }
+            \$searchForm.find('input').focus();
+            \$searchBtn.addClass('sx-search-form-close');
             return false;
         }
     });
