@@ -38,7 +38,7 @@ $this->registerCss(<<<CSS
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    background: white;
+    /*background: white;*/
     color: var(--primary-color);
 }
 .sx-header-social-list a:hover {
@@ -57,6 +57,100 @@ $this->registerCss(<<<CSS
     -webkit-transform: translateY(-50%) scale(1.25);
     -ms-transform: translateY(-50%) scale(1.25);
     transform: translateY(-50%) scale(1.25);
+}
+.sx-header-v4-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+.sx-header-v4-logo {
+    flex: 0 0 auto;
+}
+.sx-header-v4-search {
+    flex: 1 1 auto;
+    min-width: 240px;
+}
+.sx-header-v4-search .sx-search-form form {
+    margin-bottom: 0;
+}
+.sx-header-v4-search .sx-search-form .row,
+.sx-header-v4-search .sx-search-form .col-sm-12 {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.sx-header-v4-phone {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+.sx-header-v4-phone-text {
+    margin-left: 5px;
+}
+.sx-header-v4-phone > .d-flex {
+    align-items: center;
+}
+.sx-header-v4-phone-link {
+    font-size: 20px;
+    line-height: 20px;
+}
+.sx-header-v4-socials {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+.sx-header-v4-socials .sx-header-social-list {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+.sx-header-v4-socials > .d-flex {
+    align-items: center;
+    justify-content: flex-end;
+}
+.sx-header-phone-address {
+    font-size: 12px;
+    text-align: left;
+    line-height: 12px;
+    max-width: 170px;
+}
+@media (max-width: 1199.98px) {
+    .sx-header-v4-row {
+        gap: 20px;
+    }
+    .sx-header-v4-phone-link {
+        font-size: 18px;
+    }
+}
+@media (max-width: 991.98px) {
+    .sx-header-v4-row {
+        flex-wrap: wrap;
+    }
+    .sx-header-v4-search {
+        order: 4;
+        flex-basis: 100%;
+    }
+    .sx-header-v4-socials {
+        margin-left: 0;
+    }
+}
+#js-header .sx-main-menu-wrapper .container {
+    display: flex;
+    align-items: center;
+}
+#js-header .sx-main-menu-wrapper .navbar-collapse {
+    flex: 1 1 auto;
+}
+#js-header .sx-main-menu-wrapper .sx-header-menu-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    margin-left: auto;
 }
 CSS
 );
@@ -121,18 +215,18 @@ CSS
         <? endif; ?>
         <div class="sx-header-middle-block">
             <div class="container sx-container sx-header-center-container">
-                <div class="row ">
-                    <div class="col-lg-3 col-md-3 col-sm-3 my-auto">
+                <div class="sx-header-v4-row">
+                    <div class="sx-header-v4-logo">
                         <!-- Logo -->
                         <a href="<?= \yii\helpers\Url::home(); ?>" aria-label="<?= \Yii::$app->skeeks->site->name; ?>" title="<?= \Yii::$app->skeeks->site->name; ?>" class="navbar-brand">
                             <img src="<?= $this->theme->logo; ?>" alt="<?= \Yii::$app->skeeks->site->name; ?>">
                         </a>
                         <!-- End Logo -->
                     </div>
-                    <div class="col-lg-5 col-md-3 col-sm-3 my-auto">
+                    <div class="sx-header-v4-search">
                         <? if (\Yii::$app->view->theme->is_show_search_block) : ?>
                             <div class="sx-search-form">
-                                <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get" style="margin-bottom: 0px;">
+                                <form action="<?= \yii\helpers\Url::to(['/cmsSearch/result/index']); ?>" method="get">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="input-group">
@@ -149,21 +243,19 @@ CSS
                             </div>
                         <? endif; ?>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3 my-auto">
-                        <div class="text-right d-flex" style="margin-left: 20px;">
+                    <div class="sx-header-v4-phone">
+                        <div class="d-flex">
                             <? if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
-                                <div class="sx-header-phone-wrapper g-color-primary my-auto">
+                                <div class="sx-header-phone-wrapper g-color-primary">
                                     <i class="fas fa-phone"></i>
                                 </div>
-                                <div class="my-auto" style="margin-left: 5px;">
-                                    <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" style="font-size: 20px; line-height: 20px;" target="_blank" title="Телефон для связи"
-                                       class="g-mr-10 sx-main-text-color g-color-primary--hover g-text-underline--none--hover">
+                                <div class="sx-header-v4-phone-text">
+                                    <a href="tel:<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>" target="_blank" title="Телефон для связи"
+                                       class="g-mr-10 sx-main-text-color g-color-primary--hover g-text-underline--none--hover sx-header-v4-phone-link">
                                         <?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>
                                     </a>
                                     <?php if (\Yii::$app->skeeks->site->cmsSitePhone->name) : ?>
-                                        <div class="sx-header-phone-address" style="    font-size: 12px;
-    text-align: left;
-    line-height: 12px;    max-width: 170px;">
+                                        <div class="sx-header-phone-address">
                                             <?php echo \Yii::$app->skeeks->site->cmsSitePhone->name; ?>
                                         </div>
                                     <?php endif; ?>
@@ -178,9 +270,9 @@ CSS
                             --><? /* endif; */ ?>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3 my-auto">
-                        <div class="text-right d-flex" style="margin-left: 20px;">
-                            <ul class="list-inline g-mb-20 sx-header-social-list">
+                    <div class="sx-header-v4-socials">
+                        <div class="d-flex">
+                            <ul class="list-inline sx-header-social-list">
                                 <?php if ($socials = \Yii::$app->skeeks->site->cmsSiteSocials) : ?>
                                     <?php foreach ($socials as $social) : ?>
                                         <li class="list-inline-item">
