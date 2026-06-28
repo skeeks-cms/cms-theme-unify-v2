@@ -14,6 +14,39 @@ $theme = $this->theme;
 ?>
 <?
 $langs = \skeeks\cms\models\CmsLang::find()->active()->all();
+$quickCreateItems = [
+    ['label' => 'Задачу', 'icon' => 'fas fa-tasks', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-task/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Компанию', 'icon' => 'fas fa-building', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-company/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Клиента', 'icon' => 'fas fa-user', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-user/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Сделку', 'icon' => 'fas fa-handshake', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-deal/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Счет', 'icon' => 'fas fa-file-invoice', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-bill/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Платеж', 'icon' => 'fas fa-credit-card', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/shop/admin-payment/create'])->enableEmptyLayout()->enableNoActions()->url],
+];
+$this->registerJs(<<<JS
+(function(sx, $)
+{
+    $(document).on('click', '[data-sx-quick-create-url]', function(event) {
+        event.preventDefault();
+
+        var url = $(this).attr('data-sx-quick-create-url');
+        if (!url) {
+            return false;
+        }
+
+        if (sx.classes && sx.classes.backend && sx.classes.backend.widgets && sx.classes.backend.widgets.Action) {
+            new sx.classes.backend.widgets.Action({
+                url: url,
+                isOpenNewWindow: true
+            }).go();
+        } else {
+            window.location.href = url;
+        }
+
+        return false;
+    });
+})(sx, sx.$);
+JS
+);
 ?>
 <header id="js-header" class="sx-header sx-header--sticky-top">
     <div class="<?= $theme->headerClasses; ?>">
@@ -33,6 +66,29 @@ $langs = \skeeks\cms\models\CmsLang::find()->active()->all();
 
 
             <div class="col-auto d-flex ml-auto sx-right-col">
+                <div class="sx-btn-backend-header dropdown sx-header-quick-create">
+                    <a href="#" data-toggle="dropdown" title="Быстро добавить" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-plus g-absolute-centered"></i>
+                    </a>
+                    <div class="dropdown-menu sx-header-quick-create__menu dropdown-menu-right">
+                        <? foreach ($quickCreateItems as $quickCreateItem) : ?>
+                            <a class="dropdown-item sx-header-quick-create__item" href="#" data-sx-quick-create-url="<?= \yii\helpers\Html::encode($quickCreateItem['url']); ?>">
+                                <i class="<?= \yii\helpers\Html::encode($quickCreateItem['icon']); ?>"></i>
+                                <span><?= \yii\helpers\Html::encode($quickCreateItem['label']); ?></span>
+                            </a>
+                        <? endforeach; ?>
+                    </div>
+                </div>
+                <div class="sx-btn-backend-header">
+                    <a href="#" data-sx-quick-access-toggle data-sx-quick-access-tab="users" title="Сотрудники">
+                        <i class="fas fa-users g-absolute-centered"></i>
+                    </a>
+                </div>
+                <div class="sx-btn-backend-header">
+                    <a href="#" data-sx-quick-access-toggle data-sx-quick-access-tab="favorites" title="Избранное">
+                        <i class="fas fa-star g-absolute-centered"></i>
+                    </a>
+                </div>
                 <?php if (\Yii::$app->skeeks->site->cmsSiteMainDomain || (!\Yii::$app->skeeks->site->cmsSiteMainDomain && Yii::$app->skeeks->site->is_default)) : ?>
                     <div class="sx-btn-backend-header">
                         <a

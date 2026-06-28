@@ -155,6 +155,9 @@ if ($isEmpty && \Yii::$app->getModule('debug')) {
     </main>
 
     <?= $this->render("@app/views/layouts/_modals"); ?>
+    <?php if (!$isEmpty) : ?>
+        <?= $this->render("@app/views/layouts/_quick-access"); ?>
+    <?php endif; ?>
     <?= $this->render("@app/views/layouts/_end-body"); ?>
 
     <?php $this->endBody() ?>
