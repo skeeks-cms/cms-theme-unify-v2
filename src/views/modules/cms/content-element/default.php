@@ -10,6 +10,326 @@
 if (@$isShowMainImage !== false) {
     $isShowMainImage = true;
 }
+
+$articleBodyId = "sx-article-body-" . (int) $model->id;
+$articleTocId = "sx-article-toc-" . (int) $model->id;
+
+$this->registerCss(<<<CSS
+.sx-article-with-toc {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.sx-article-body {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.sx-article-toc-col {
+    flex: 0 0 17.5rem;
+    max-width: 17.5rem;
+    position: sticky;
+    top: 6.25rem;
+    align-self: flex-start;
+}
+
+.doc-toc {
+    position: static;
+    padding: 1rem 0.75rem;
+    border-radius: 0.5rem;
+    background: #f7f7f7;
+    max-height: calc(100vh - 7.5rem);
+    overflow-y: auto;
+}
+
+.toc-toggle {
+    display: none;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.toc-body {
+    position: relative;
+}
+
+.toc-marker {
+    position: absolute;
+    left: 0;
+    width: 0.1875rem;
+    border-radius: 0.125rem;
+    background: var(--primary-color);
+    transition: transform .25s ease, height .25s ease;
+}
+
+.toc-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.toc-list li {
+    margin: 0.625rem 0;
+}
+
+.toc-level-3 {
+    padding-left: 1rem;
+}
+
+.toc-level-4 {
+    padding-left: 2rem;
+}
+
+.toc-level-5,
+.toc-level-6 {
+    padding-left: 3rem;
+}
+
+.doc-toc a {
+    display: block;
+    padding-left: 0.625rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+.doc-toc a.active {
+    color: var(--primary-color);
+}
+
+@media (max-width: 61.9375rem) {
+    .sx-article-with-toc {
+        display: block;
+    }
+
+    .sx-article-toc-col {
+        max-width: none;
+        position: static;
+    }
+
+    .doc-toc {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        top: auto;
+        z-index: 1000;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .toc-toggle {
+        display: block;
+    }
+
+    .toc-body {
+        display: none;
+        max-height: 50vh;
+        margin-top: 0.625rem;
+        overflow-y: auto;
+    }
+
+    .doc-toc.open .toc-body {
+        display: block;
+    }
+}
+CSS
+);
+
+$this->registerJs(<<<JS
+(function ($) {
+    if (!$.fn.docToc) {
+        $.fn.docToc = function (options) {
+            var settings = $.extend({
+                content: '.sx-content',
+                headers: 'h2, h3, h4, h5, h6',
+                header: '.u-header',
+                mobileWidth: 992,
+                scrollOffset: 10,
+                title: '\u041e\u0433\u043b\u0430\u0432\u043b\u0435\u043d\u0438\u0435',
+                scrollDuration: 400
+            }, options);
+
+            return this.each(function () {
+                var toc = $(this);
+                var doc = $(settings.content);
+                var headers = doc.find(settings.headers).filter(function () {
+                    return $.trim($(this).text()).length > 0;
+                });
+                var header = $(settings.header);
+                var index = 0;
+                var isInitialLoad = true;
+                var initialHash = window.location.hash;
+
+                if (!headers.length) {
+                    toc.removeClass('is-ready open').empty();
+                    return;
+                }
+
+                function headerOffset() {
+                    return header.outerHeight() || 0;
+                }
+
+                toc
+                    .addClass('doc-toc is-ready')
+                    .html(
+                        '<button class="toc-toggle" type="button">' + settings.title + '</button>' +
+                        '<div class="toc-body">' +
+                            '<div class="toc-marker"></div>' +
+                            '<ul class="toc-list"></ul>' +
+                        '</div>'
+                    );
+
+                var list = toc.find('.toc-list');
+                var marker = toc.find('.toc-marker');
+
+                headers.each(function () {
+                    var h = $(this);
+                    var level = parseInt(this.tagName.replace('H', ''), 10);
+                    var id = h.attr('id');
+
+                    if (!id) {
+                        id = 'toc-' + index++;
+                        h.attr('id', id);
+                    }
+
+                    $('<li/>', {
+                        'class': 'toc-level-' + level
+                    }).append($('<a/>', {
+                        href: '#' + id,
+                        text: h.text()
+                    })).appendTo(list);
+                });
+
+                function findLinkById(id) {
+                    return toc.find('a').filter(function () {
+                        return $(this).attr('href') === '#' + id;
+                    });
+                }
+
+                function moveMarker(active) {
+                    if (!active || !active.length) {
+                        return;
+                    }
+
+                    marker.css({
+                        transform: 'translateY(' + active.position().top + 'px)',
+                        height: active.outerHeight()
+                    });
+                }
+
+                function setActiveById(id, updateUrl) {
+                    var activeLink = findLinkById(id);
+
+                    if (!activeLink.length) {
+                        return;
+                    }
+
+                    toc.find('a').removeClass('active');
+                    activeLink.addClass('active');
+                    moveMarker(activeLink);
+
+                    if (updateUrl && history.pushState) {
+                        history.pushState(null, '', '#' + id);
+                    }
+                }
+
+                toc.on('click', 'a', function (e) {
+                    var id = $(this).attr('href').replace(/^#/, '');
+                    var target = document.getElementById(id);
+
+                    e.preventDefault();
+
+                    if (!target) {
+                        return;
+                    }
+
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top - headerOffset() - settings.scrollOffset
+                    }, settings.scrollDuration);
+
+                    setActiveById(id, true);
+
+                    if (window.innerWidth < settings.mobileWidth) {
+                        toc.removeClass('open');
+                    }
+                });
+
+                toc.find('.toc-toggle').on('click', function () {
+                    toc.toggleClass('open');
+                });
+
+                if ('IntersectionObserver' in window) {
+                    var observer = new IntersectionObserver(function (entries) {
+                        $.each(entries, function () {
+                            if (!this.isIntersecting) {
+                                return;
+                            }
+
+                            setActiveById(this.target.id, !isInitialLoad);
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '-' + (headerOffset() + 20) + 'px 0px -60% 0px',
+                        threshold: 0
+                    });
+
+                    headers.each(function () {
+                        observer.observe(this);
+                    });
+                } else {
+                    $(window).on('scroll.docToc resize.docToc', function () {
+                        var currentId = headers.first().attr('id');
+                        var scrollTop = $(window).scrollTop() + headerOffset() + settings.scrollOffset + 20;
+
+                        headers.each(function () {
+                            if ($(this).offset().top <= scrollTop) {
+                                currentId = this.id;
+                            }
+                        });
+
+                        setActiveById(currentId, !isInitialLoad);
+                    }).trigger('scroll.docToc');
+                }
+
+                if (initialHash) {
+                    var target = document.getElementById(initialHash.replace(/^#/, ''));
+
+                    if (target) {
+                        setTimeout(function () {
+                            $('html, body').animate({
+                                scrollTop: $(target).offset().top - headerOffset() - settings.scrollOffset
+                            }, settings.scrollDuration);
+                        }, 100);
+                    }
+                } else {
+                    setActiveById(headers.first().attr('id'), false);
+                }
+
+                setTimeout(function () {
+                    isInitialLoad = false;
+                }, 500);
+            });
+        };
+    }
+
+    $(function () {
+        $('#{$articleTocId}').docToc({
+            content: '#{$articleBodyId}',
+            mobileWidth: 992,
+            title: '\u041e\u0433\u043b\u0430\u0432\u043b\u0435\u043d\u0438\u0435'
+        });
+    });
+})(jQuery);
+JS
+);
 ?>
 
 <?php echo $this->render("@app/views/include/_content-image", ['model' => $model]); ?>
@@ -93,14 +413,19 @@ if (@$isShowMainImage !== false) {
                                 <? if (!$this->theme->is_image_body_begin) : ?>
                                     <?= $model->description_short; ?>
                                 <? endif; ?>
-                                <div itemprop="articleBody" style="overflow: auto;">
-                                    <?= $model->description_full; ?>
+                                <div class="sx-article-with-toc">
+                                    <div id="<?= $articleBodyId; ?>" class="sx-article-body" itemprop="articleBody">
+                                        <?= $model->description_full; ?>
 
-                                    <?php if ($model->cmsFaqs) : ?>
-                                        <?php echo $this->render('@app/views/include/faq', [
-                                            'elements' => $model->cmsFaqs,
-                                        ]); ?>
-                                    <?php endif; ?>
+                                        <?php if ($model->cmsFaqs) : ?>
+                                            <?php echo $this->render('@app/views/include/faq', [
+                                                'elements' => $model->cmsFaqs,
+                                            ]); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="sx-article-toc-col">
+                                        <div id="<?= $articleTocId; ?>"></div>
+                                    </div>
                                 </div>
                             </div>
 
