@@ -468,24 +468,91 @@ body:not(.sx-empty) .u-footer--bottom-sticky {
 }
 
 @media (max-width: 768px) {
+    .sx-header .navbar {
+        min-height: 65px;
+        flex-wrap: nowrap;
+    }
+
+    .sx-header-logo-toggler {
+        flex: 0 0 auto;
+        width: auto;
+        height: 65px;
+        padding-left: 12px !important;
+        padding-right: 8px !important;
+    }
+
+    .sx-header .sx-breadcrumbs-wrapper {
+        display: none !important;
+    }
+
+    .sx-header .sx-right-col {
+        flex: 0 1 auto;
+        min-width: 0;
+        margin-left: auto !important;
+        overflow: hidden;
+    }
+
+    .sx-header .sx-btn-backend-header a {
+        width: 38px;
+    }
+
+    .sx-header .sx-avatar {
+        width: 38px;
+        height: 38px;
+        margin-right: 4px;
+    }
+
+    #sideNav .sx-sidebar-inner {
+        padding-bottom: 16px;
+    }
+
+    .sx-header .sx-header-quick-create__menu {
+        position: fixed !important;
+        top: 65px !important;
+        left: 8px !important;
+        right: 8px !important;
+        width: auto;
+        margin-top: 0;
+        transform: none !important;
+        background: #1d1d1d;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .22);
+        z-index: 1200;
+    }
+
+    .sx-mobile-schedule-sidebar {
+        padding: 10px 14px 12px;
+        background: #fff;
+        border-bottom: 1px solid rgba(130, 145, 165, .18);
+    }
+
+    .sx-mobile-schedule-sidebar .sx-schedule-pjax.sx-schedule-layout-mobile-sidebar {
+        padding: 0;
+    }
+
+    .sx-mobile-schedule-sidebar .sx-schedule-pjax.sx-schedule-layout-mobile-sidebar form .btn {
+        min-height: 44px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
     .sx-quick-access-edge {
-        top: 70px;
-        width: 52px;
-        height: calc(100vh - 70px);
-        padding: 10px 8px 74px;
+        display: none;
     }
 
     .sx-quick-access-panel {
         top: 70px;
-        height: calc(100vh - 82px);
+        width: 100vw;
+        height: calc(100vh - 70px);
+        border-radius: 0;
     }
 
     body:not(.sx-empty) .sx-main-col {
-        padding-right: 52px;
+        padding-right: 0;
     }
 
     body:not(.sx-empty) .u-footer--bottom-sticky {
-        right: 52px;
+        right: 0;
     }
 }
 

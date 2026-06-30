@@ -25,6 +25,33 @@ $quickCreateItems = [
 $this->registerJs(<<<JS
 (function(sx, $)
 {
+    $(document).on('click', '[data-sx-quick-create-toggle]', function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+
+        var container = $(this).closest('.sx-header-quick-create');
+        var menu = container.find('.sx-header-quick-create__menu');
+        var isOpen = menu.hasClass('show');
+
+        $('.sx-header-quick-create__menu').removeClass('show');
+        $('.sx-header-quick-create [data-sx-quick-create-toggle]').attr('aria-expanded', 'false');
+
+        if (!isOpen) {
+            menu.addClass('show');
+            $(this).attr('aria-expanded', 'true');
+        }
+
+        return false;
+    });
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.sx-header-quick-create').length) {
+            $('.sx-header-quick-create__menu').removeClass('show');
+            $('.sx-header-quick-create [data-sx-quick-create-toggle]').attr('aria-expanded', 'false');
+        }
+    });
+
     $(document).on('click', '[data-sx-quick-create-url]', function(event) {
         event.preventDefault();
 
@@ -41,6 +68,9 @@ $this->registerJs(<<<JS
         } else {
             window.location.href = url;
         }
+
+        $('.sx-header-quick-create__menu').removeClass('show');
+        $('.sx-header-quick-create [data-sx-quick-create-toggle]').attr('aria-expanded', 'false');
 
         return false;
     });
@@ -67,7 +97,7 @@ JS
 
             <div class="col-auto d-flex ml-auto sx-right-col">
                 <div class="sx-btn-backend-header dropdown sx-header-quick-create">
-                    <a href="#" data-toggle="dropdown" title="Быстро добавить" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" data-toggle="dropdown" data-sx-quick-create-toggle title="Быстро добавить" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-plus g-absolute-centered"></i>
                     </a>
                     <div class="dropdown-menu sx-header-quick-create__menu dropdown-menu-right">

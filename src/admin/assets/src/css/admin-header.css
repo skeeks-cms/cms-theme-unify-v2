@@ -212,6 +212,20 @@
         top: 49px;
     }
 
+    .sx-header .sx-header-quick-create__menu {
+        position: fixed !important;
+        top: 65px !important;
+        left: 8px !important;
+        right: 8px !important;
+        width: auto;
+        margin-top: 0;
+        transform: none !important;
+        background: #1d1d1d;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .22);
+        z-index: 1200;
+    }
+
     /*!
      * Hamburgers
      * @description Tasty CSS-animated hamburgers
