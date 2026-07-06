@@ -42,6 +42,14 @@ class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
             $id = $this->id;
             $this->eventOnPageChange = new \yii\web\JsExpression(<<<JS
 function(pageNum, scrollOffset, url) {
+    if (window.sx && sx.$ && sx.$('#{$id}').data('pagination')) {
+        jQuery('#{$id}').data('pagination', sx.$('#{$id}').data('pagination'));
+    }
+
+    if (!jQuery('#{$id}').data('pagination')) {
+        return;
+    }
+
     var getCurrentPage = jQuery('#{$id}').pagination('getCurrentPage');
     var result = getCurrentPage + 1;
     jQuery('#{$id}').pagination('drawPage', result);
