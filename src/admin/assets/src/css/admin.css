@@ -388,7 +388,7 @@ body.sx-quick-access-open .sx-quick-access-backdrop {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin: 4px 0 8px;
+    margin: 8px 0 0;
 }
 
 .sx-quick-access-picker__item {

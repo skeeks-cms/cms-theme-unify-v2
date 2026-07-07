@@ -711,13 +711,19 @@
                     $picker.append($button);
                 });
 
-                var $label = $group.children('label').first();
-                if ($label.length) {
-                    $picker.insertAfter($label);
-                } else if ($field.next('.select2-container').length) {
-                    $picker.insertBefore($field.next('.select2-container'));
+                var $control = $field;
+                if ($field.next('.select2-container').length) {
+                    $control = $field.next('.select2-container');
+                } else if ($field.closest('.input-group').length) {
+                    $control = $field.closest('.input-group');
+                } else if (!$field.is(':visible')) {
+                    $control = $group.find('.select2-container, .select2, .form-control:visible, .input-group').first();
+                }
+
+                if ($control.length) {
+                    $picker.insertAfter($control);
                 } else {
-                    $picker.insertBefore($field);
+                    $picker.appendTo($group);
                 }
 
                 $picker.find('[data-toggle="tooltip"]').tooltip();
