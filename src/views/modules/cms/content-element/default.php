@@ -61,6 +61,7 @@ $this->registerCss(<<<CSS
 
 .toc-marker {
     position: absolute;
+    top: 0;
     left: 0;
     width: 0.1875rem;
     border-radius: 0.125rem;
@@ -187,6 +188,7 @@ $this->registerJs(<<<JS
                         '</div>'
                     );
 
+                var body = toc.find('.toc-body');
                 var list = toc.find('.toc-list');
                 var marker = toc.find('.toc-marker');
 
@@ -220,9 +222,27 @@ $this->registerJs(<<<JS
                     }
 
                     marker.css({
-                        transform: 'translateY(' + active.position().top + 'px)',
+                        transform: 'translateY(' + (active.offset().top - body.offset().top) + 'px)',
                         height: active.outerHeight()
                     });
+                }
+
+                function keepActiveVisible(active) {
+                    var overflowY = toc.css('overflow-y');
+
+                    if (!active || !active.length || (overflowY !== 'auto' && overflowY !== 'scroll')) {
+                        return;
+                    }
+
+                    var tocRect = toc[0].getBoundingClientRect();
+                    var activeRect = active[0].getBoundingClientRect();
+                    var edge = 12;
+
+                    if (activeRect.top < tocRect.top + edge) {
+                        toc.scrollTop(toc.scrollTop() - (tocRect.top + edge - activeRect.top));
+                    } else if (activeRect.bottom > tocRect.bottom - edge) {
+                        toc.scrollTop(toc.scrollTop() + (activeRect.bottom - tocRect.bottom + edge));
+                    }
                 }
 
                 function setActiveById(id, updateUrl) {
@@ -232,9 +252,10 @@ $this->registerJs(<<<JS
                         return;
                     }
 
-                    toc.find('a').removeClass('active');
-                    activeLink.addClass('active');
+                    toc.find('a').removeClass('active').removeAttr('aria-current');
+                    activeLink.addClass('active').attr('aria-current', 'location');
                     moveMarker(activeLink);
+                    keepActiveVisible(activeLink);
 
                     if (updateUrl && history.pushState) {
                         history.pushState(null, '', '#' + id);
@@ -264,6 +285,13 @@ $this->registerJs(<<<JS
 
                 toc.find('.toc-toggle').on('click', function () {
                     toc.toggleClass('open');
+                });
+
+                $(window).off('resize.docTocMarker').on('resize.docTocMarker', function () {
+                    var activeLink = toc.find('a.active');
+
+                    moveMarker(activeLink);
+                    keepActiveVisible(activeLink);
                 });
 
                 if ('IntersectionObserver' in window) {
@@ -303,6 +331,8 @@ $this->registerJs(<<<JS
                     var target = document.getElementById(initialHash.replace(/^#/, ''));
 
                     if (target) {
+                        setActiveById(target.id, false);
+
                         setTimeout(function () {
                             $('html, body').animate({
                                 scrollTop: $(target).offset().top - headerOffset() - settings.scrollOffset
