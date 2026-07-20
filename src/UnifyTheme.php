@@ -81,6 +81,10 @@ class UnifyTheme extends Theme
                 'name'        => 'Страница лендинг',
                 'description' => 'Страница подразделы которой, будут выводиться в качестве подразделов лэндинга',
             ],
+            'html-content' => [
+                'name'        => 'HTML контент',
+                'description' => 'Выводит HTML раздела без контейнеров, хлебных крошек и дополнительных блоков',
+            ],
         ]);
     }
 
@@ -122,6 +126,26 @@ sx.updateFontDescription = function (fonts) {
     });
 };
 sx.updateFontDescription($("#f-include_font_assets").val());
+
+sx.updateCustomThemePart = function (attribute) {
+    var isCustom = $("#f-" + attribute).val() === "custom";
+    var input = $("#f-" + attribute + "_custom_html");
+    var container = input.closest(".form-group");
+    container.toggle(isCustom);
+    if (isCustom) {
+        container.find(".CodeMirror").each(function () {
+            if (this.CodeMirror) {
+                this.CodeMirror.refresh();
+            }
+        });
+    }
+};
+["header", "footer"].forEach(function (attribute) {
+    $("#f-" + attribute).on("change", function () {
+        sx.updateCustomThemePart(attribute);
+    });
+    sx.updateCustomThemePart(attribute);
+});
 JS
         );
 
@@ -285,6 +309,15 @@ HTML,
                                 'v2' => 'Вариант 2 (стандартная шапка)',
                                 'v4' => 'Вариант 4 (большая шапка с поисковой формой)',
                                 'v5' => 'Вариант 5 (Телефон слева, лого по центру, корзину справа, меню по центру)',
+                                'custom' => 'Свой HTML',
+                            ],
+                        ],
+
+                        'header_custom_html' => [
+                            'class'        => WidgetField::class,
+                            'widgetClass'  => CodemirrorWidget::class,
+                            'widgetConfig' => [
+                                'preset' => 'htmlmixed',
                             ],
                         ],
 
@@ -523,6 +556,15 @@ HTML,
                                 'v2' => 'Футер с авторизацией',
                                 'v3' => 'Футер лого и соц. сети',
                                 'v4' => 'Пустой футер',
+                                'custom' => 'Свой HTML',
+                            ],
+                        ],
+
+                        'footer_custom_html' => [
+                            'class'        => WidgetField::class,
+                            'widgetClass'  => CodemirrorWidget::class,
+                            'widgetConfig' => [
+                                'preset' => 'htmlmixed',
                             ],
                         ],
 
@@ -747,6 +789,7 @@ HTML,
                 'menu_font_size'  => "Размер текста в меню",
 
                 'header'                  => "Вариант отображения шапки",
+                'header_custom_html'      => "HTML своей шапки",
                 'header_shadow'           => "Тень шапки",
                 'is_show_search_block'    => "Добавить поисковый блок в шапку",
                 'is_header_sticky'        => "Зафиксировать шапку к верху экрана?",
@@ -755,6 +798,7 @@ HTML,
 
 
                 'footer'                    => "Вариант отображения футера",
+                'footer_custom_html'        => "HTML своего футера",
                 'footer_bg_color'           => "Цвет фона футера",
                 'footer_color'              => "Цвет текста в футере футера",
                 'text_color'                => "Цвет текста по умолчанию",
@@ -817,10 +861,12 @@ HTML,
 
 
                         'header',
+                        'header_custom_html',
                         'header_shadow',
 
 
                         'footer',
+                        'footer_custom_html',
                         'footer_bg_color',
                         'bg_color',
                         'footer_color',
@@ -1521,6 +1567,12 @@ CSS;
     public $header = 'v1';
 
     /**
+     * Trusted site-wide HTML rendered instead of a preset header.
+     * @var string
+     */
+    public $header_custom_html = '';
+
+    /**
      * @var string
      */
     public $header_shadow = 'u-shadow-v19';
@@ -1575,6 +1627,12 @@ CSS;
      * @var string
      */
     public $footer = 'v1';
+
+    /**
+     * Trusted site-wide HTML rendered instead of a preset footer.
+     * @var string
+     */
+    public $footer_custom_html = '';
 
     /**
      * @var string

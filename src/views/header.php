@@ -8,7 +8,9 @@
 /* @var $this yii\web\View */
 ?>
 
-<? if (\Yii::$app->mobileDetect->isMobile) : ?>
+<? if ($this->theme->header === 'custom') : ?>
+    <?= $this->theme->header_custom_html; ?>
+<? elseif (\Yii::$app->mobileDetect->isMobile) : ?>
     <?= $this->render('@app/views/headers/header-mobile'); ?>
 <? else : ?>
     <?php \skeeks\cms\themes\unify\assets\components\UnifyThemeHeaderAsset::register($this); ?>

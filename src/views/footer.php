@@ -7,4 +7,8 @@
  */
 /* @var $this yii\web\View */
 ?>
-<?= $this->render('@app/views/footers/footer-' . $this->theme->footer); ?>
+<? if ($this->theme->footer === 'custom') : ?>
+    <?= $this->theme->footer_custom_html; ?>
+<? else : ?>
+    <?= $this->render('@app/views/footers/footer-' . $this->theme->footer); ?>
+<? endif; ?>
