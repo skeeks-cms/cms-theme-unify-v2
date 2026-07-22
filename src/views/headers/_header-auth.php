@@ -18,7 +18,7 @@
     <? else : ?>
 
         <!-- Top User -->
-        <a class="g-text-underline--none--hover sx-icon-wrapper sx-user-mobile-menu-trigger" href="<?= \Yii::$app->cms->afterAuthUrl; ?>">
+        <a class="g-text-underline--none--hover sx-icon-wrapper" href="<?= \Yii::$app->cms->afterAuthUrl; ?>">
             <i class="icon-user"></i>
             <span class="">
                 <span class="g-hidden-sm-down"></span>

@@ -41,6 +41,31 @@ if (\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendPa
 /*$this->theme->bodyCssClass .= " ".$this->theme->upa_container;*/
 $this->theme->bodyCssClass .= " sx-upa-body";
 
+$activeMenuTitle = '';
+$resolveActiveMenuTitle = static function ($items) use (&$resolveActiveMenuTitle, &$activeMenuTitle) {
+    foreach ($items as $item) {
+        if (!$item->isVisible) {
+            continue;
+        }
+
+        if ($item->isActive) {
+            $activeMenuTitle = $item->name;
+        }
+
+        if ($item->items) {
+            $resolveActiveMenuTitle($item->items);
+        }
+    }
+};
+
+if (!\Yii::$app->user->isGuest) {
+    $resolveActiveMenuTitle(\skeeks\cms\backend\BackendComponent::getCurrent()->menu->items);
+}
+
+if (!$activeMenuTitle) {
+    $activeMenuTitle = 'Меню кабинета';
+}
+
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -81,16 +106,31 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                 <div class="sx-main-wrapper-row">
                     <?php if (!$isEmpty && !\Yii::$app->user->isGuest) : ?>
 
-                        <div id="sideNav" class="sx-user-mobile-menu col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary">
+                        <button
+                            type="button"
+                            class="sx-upa-mobile-nav-trigger sx-user-mobile-menu-trigger"
+                            aria-controls="sideNav"
+                            aria-expanded="false"
+                        >
+                            <span class="sx-upa-mobile-nav-trigger__text">
+                                <span class="sx-upa-mobile-nav-trigger__label">Разделы кабинета</span>
+                                <span class="sx-upa-mobile-nav-trigger__current"><?= Html::encode($activeMenuTitle); ?></span>
+                            </span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+
+                        <aside
+                            id="sideNav"
+                            class="sx-user-mobile-menu col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light sx-bg-secondary"
+                            aria-label="Разделы кабинета"
+                        >
                             
                             <div class="sx-user-mobile-menu-header">
-                                    <div class="h2" style="width: 100%;">
-                                        Меню пользователя
-                                    </div>
+                                    <h2 class="sx-user-mobile-menu-title">Разделы кабинета</h2>
 
-                                    <a href="#" class="sx-user-mobile-menu-hide">
-                                        <i class="hs-icon hs-icon-close"></i>
-                                    </a>
+                                    <button type="button" class="sx-user-mobile-menu-hide" aria-label="Закрыть меню кабинета">
+                                        <i class="hs-icon hs-icon-close" aria-hidden="true"></i>
+                                    </button>
 
                                 </div>
                             
@@ -110,7 +150,8 @@ $this->theme->bodyCssClass .= " sx-upa-body";
                                 </a>
                             </div>-->
                             <? /*= $this->render("@app/views/layouts/_after-menu"); */ ?>
-                        </div>
+                        </aside>
+                        <div class="sx-user-mobile-menu-backdrop" aria-hidden="true"></div>
                     <? endif; ?>
 
                     <!-- End Sidebar Nav -->
