@@ -39,6 +39,11 @@
             if (self.get('size') !== 'small') {
                 var maxWidth = 1300;
                 maxWidth = maxWidth - (this.getFancyWindowInstances().length * 15);
+                maxWidth = maxWidth + 'px';
+            }
+
+            if (window.innerWidth < 768) {
+                maxWidth = '100%';
             }
 
 
@@ -48,6 +53,18 @@
                     src: self._src,
                     'type': 'iframe',
                     'opts': {
+                        mobile: {
+                            clickContent: 'close',
+                            clickSlide: 'close',
+                            dblclickContent: false,
+                            dblclickSlide: false
+                        },
+
+                        touch: {
+                            vertical: false,
+                            momentum: false
+                        },
+
                         toolbar: false,
                         smallBtn: true,
                         //slideClass: "sx-slide-class",
@@ -137,7 +154,7 @@
                             css: {
                                 width: '100%',
                                 height: '100%',
-                                'max-width': maxWidth + 'px'
+                                'max-width': maxWidth
                             }
                         },
                         animationDuration: 350,

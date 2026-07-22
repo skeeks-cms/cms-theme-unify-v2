@@ -40,8 +40,14 @@
 @media (max-width: 768px) {
     .sx-fancy-container .fancybox-slide--iframe .fancybox-content {
         max-width: calc(100% - 20px);
+        min-width: 0;
     }
 
+    .sx-upa-body .fancybox-container.sx-fancy-container {
+        top: 4.75rem;
+        height: calc(100vh - 4.75rem);
+        height: calc(100dvh - 4.75rem);
+    }
 }
 
 .sx-fancy-container .fancybox-fx-slide-in-out.fancybox-slide--previous {
