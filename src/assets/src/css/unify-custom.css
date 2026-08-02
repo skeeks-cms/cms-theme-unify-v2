@@ -21,7 +21,10 @@ body {
 .checkbox input[type=checkbox],
 .sx-project-form-wrapper input[type=checkbox] {
     position: absolute;
-    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
 }
 
 
@@ -57,11 +60,11 @@ body {
 .sx-project-form-wrapper input[type=checkbox] + label:before {
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    width: 15px;
-    height: 15px;
+    width: var(--sx-selection-control-size, 15px);
+    height: var(--sx-selection-control-size, 15px);
 
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--sx-selection-control-background, #fff);
+    border: 1px solid var(--sx-selection-control-border-color, #ddd);
 
     content: '';
     position: absolute;
@@ -72,8 +75,20 @@ body {
 .checkbox input[type=checkbox]:checked + label:before,
 .sx-project-form-wrapper input[type=checkbox]:checked + label:before {
     background: url(../img/no-bg-check.png) 50% 50% no-repeat #fff;
-    background-color: #87c451;
-    border-color: #87c451;
+    background-color: var(--sx-selection-control-checked-background, #87c451);
+    border-color: var(--sx-selection-control-checked-border-color, #87c451);
+}
+
+.checkbox input[type=checkbox]:focus-visible + label:before,
+.sx-project-form-wrapper input[type=checkbox]:focus-visible + label:before {
+    box-shadow: var(--sx-selection-control-focus-ring, 0 0 0 3px rgba(1, 133, 200, .22));
+}
+
+.checkbox input[type=checkbox]:disabled + label,
+.sx-project-form-wrapper input[type=checkbox]:disabled + label {
+    color: var(--sx-selection-control-disabled-label-color, #777);
+    cursor: not-allowed;
+    opacity: var(--sx-selection-control-disabled-opacity, .55);
 }
 
 

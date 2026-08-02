@@ -9,13 +9,6 @@
 namespace skeeks\cms\themes\unify\admin\assets;
 
 use skeeks\assets\unify\base\UnifyAsset;
-use skeeks\assets\unify\base\UnifyHsScrollbarAsset;
-use skeeks\assets\unify\base\UnifyPopperAsset;
-use skeeks\cms\assets\FancyboxAssets;
-use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
-use skeeks\sx\assets\Custom;
-use yii\bootstrap\BootstrapPluginAsset;
-use yii\web\YiiAsset;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */
@@ -34,12 +27,6 @@ class UnifyAdminAsset extends UnifyAsset
         //'assets/js/components/hs.dropdown.js',
     ];
     public $depends = [
-        YiiAsset::class,
-        Custom::class,
-        //UnifyPopperAsset::class,
-        BootstrapPluginAsset::class,
-        FontAwesomeAsset::class,
-        UnifyHsScrollbarAsset::class,
-        FancyboxAssets::class,
+        UnifyAdminCoreAsset::class,
     ];
 }

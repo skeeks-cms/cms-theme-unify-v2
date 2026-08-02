@@ -8,23 +8,13 @@
 
 namespace skeeks\cms\themes\unify\admin\assets;
 
-use skeeks\assets\unify\base\UnifyAsset;
-use skeeks\cms\base\AssetBundle;
+use skeeks\cms\backend\assets\BackendIframeAsset;
+
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * Backward-compatible alias for legacy consumers.
+ *
+ * New backend code must register BackendIframeAsset directly.
  */
-class UnifyAdminIframeAsset extends AssetBundle
+class UnifyAdminIframeAsset extends BackendIframeAsset
 {
-    public $sourcePath = '@skeeks/cms/themes/unify/admin/assets/src/';
-
-    public $css = [
-    ];
-
-    public $js = [
-        'js/classes/Iframe.js',
-    ];
-
-    public $depends = [
-        UnifyAdminAsset::class,
-    ];
 }

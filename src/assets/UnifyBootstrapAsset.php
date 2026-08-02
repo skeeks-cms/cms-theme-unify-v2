@@ -1,22 +1,10 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * Backward-compatible alias for the backend-owned Bootstrap CSS provider.
  */
 
 namespace skeeks\cms\themes\unify\assets;
 
-use skeeks\assets\unify\base\UnifyAsset;
-use yii\bootstrap\BootstrapAsset;
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
-class UnifyBootstrapAsset extends BootstrapAsset
+class UnifyBootstrapAsset extends \skeeks\cms\backend\assets\BackendBootstrapAsset
 {
-    public $sourcePath = '@skeeks/assets/unify/template/html/';
-    public $css = [
-        'assets/vendor/bootstrap/bootstrap.min.css',
-    ];
 }

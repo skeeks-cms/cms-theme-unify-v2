@@ -8,17 +8,18 @@
 
 namespace skeeks\cms\themes\unify\admin\assets;
 
-use skeeks\assets\unify\base\UnifyAsset;
 use skeeks\cms\base\AssetBundle;
+use skeeks\cms\backend\assets\BackendUiAsset;
 use skeeks\cms\themes\unify\assets\UnifyThemeAsset;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */
-class UnifyAdminUnauthorizedAsset extends UnifyThemeAsset
+class UnifyAdminUnauthorizedAsset extends AssetBundle
 {
     public $sourcePath = '@skeeks/cms/themes/unify/admin/assets/src/';
 
     public $css = [
+        'css/unify-theme.css',
         'css/unauthorized.css',
     ];
 
@@ -29,6 +30,7 @@ class UnifyAdminUnauthorizedAsset extends UnifyThemeAsset
 
     public $depends = [
         UnifyThemeAsset::class,
+        BackendUiAsset::class,
     ];
 
     /**

@@ -10,17 +10,18 @@
  * @var $theme \skeeks\cms\themes\unify\admin\UnifyThemeAdmin;
  */
 $theme = $this->theme;
-\skeeks\cms\themes\unify\admin\assets\UnifyAdminHeaderAsset::register($this);
+$headerAssetClass = $theme->headerAssetClass ?: \skeeks\cms\themes\unify\admin\assets\UnifyAdminHeaderAsset::class;
+$headerAssetClass::register($this);
 ?>
 <?
 $langs = \skeeks\cms\models\CmsLang::find()->active()->all();
 $quickCreateItems = [
-    ['label' => 'Задачу', 'icon' => 'fas fa-tasks', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-task/create'])->enableEmptyLayout()->enableNoActions()->url],
-    ['label' => 'Компанию', 'icon' => 'fas fa-building', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-company/create'])->enableEmptyLayout()->enableNoActions()->url],
-    ['label' => 'Клиента', 'icon' => 'fas fa-user', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-user/create'])->enableEmptyLayout()->enableNoActions()->url],
-    ['label' => 'Сделку', 'icon' => 'fas fa-handshake', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-deal/create'])->enableEmptyLayout()->enableNoActions()->url],
-    ['label' => 'Счет', 'icon' => 'fas fa-file-invoice', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-bill/create'])->enableEmptyLayout()->enableNoActions()->url],
-    ['label' => 'Платеж', 'icon' => 'fas fa-credit-card', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/shop/admin-payment/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Задачу', 'icon' => 'tasks', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-task/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Компанию', 'icon' => 'building', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-company/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Клиента', 'icon' => 'user', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-user/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Сделку', 'icon' => 'handshake', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-deal/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Счет', 'icon' => 'invoice', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-cms-bill/create'])->enableEmptyLayout()->enableNoActions()->url],
+    ['label' => 'Платеж', 'icon' => 'credit-card', 'url' => \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/shop/admin-payment/create'])->enableEmptyLayout()->enableNoActions()->url],
 ];
 $this->registerJs(<<<JS
 (function(sx, $)
@@ -96,14 +97,17 @@ JS
 
 
             <div class="col-auto d-flex ml-auto sx-right-col">
+                <?= \skeeks\cms\backend\widgets\BackendThemeModeSwitcher::widget([
+                    'containerClass' => 'sx-btn-backend-header',
+                ]); ?>
                 <div class="sx-btn-backend-header dropdown sx-header-quick-create">
                     <a href="#" data-toggle="dropdown" data-sx-quick-create-toggle title="Быстро добавить" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-plus g-absolute-centered"></i>
+                        <?= \skeeks\cms\backend\helpers\BackendIcon::render('plus', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                     </a>
                     <div class="dropdown-menu sx-header-quick-create__menu dropdown-menu-right">
                         <? foreach ($quickCreateItems as $quickCreateItem) : ?>
                             <a class="dropdown-item sx-header-quick-create__item" href="#" data-sx-quick-create-url="<?= \yii\helpers\Html::encode($quickCreateItem['url']); ?>">
-                                <i class="<?= \yii\helpers\Html::encode($quickCreateItem['icon']); ?>"></i>
+                                <?= \skeeks\cms\backend\helpers\BackendIcon::render($quickCreateItem['icon'], ['size' => 18]); ?>
                                 <span><?= \yii\helpers\Html::encode($quickCreateItem['label']); ?></span>
                             </a>
                         <? endforeach; ?>
@@ -111,12 +115,12 @@ JS
                 </div>
                 <div class="sx-btn-backend-header">
                     <a href="#" data-sx-quick-access-toggle data-sx-quick-access-tab="users" title="Сотрудники">
-                        <i class="fas fa-users g-absolute-centered"></i>
+                        <?= \skeeks\cms\backend\helpers\BackendIcon::render('users', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                     </a>
                 </div>
                 <div class="sx-btn-backend-header">
                     <a href="#" data-sx-quick-access-toggle data-sx-quick-access-tab="favorites" title="Избранное">
-                        <i class="fas fa-star g-absolute-centered"></i>
+                        <?= \skeeks\cms\backend\helpers\BackendIcon::render('star', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                     </a>
                 </div>
                 <?php if (\Yii::$app->skeeks->site->cmsSiteMainDomain || (!\Yii::$app->skeeks->site->cmsSiteMainDomain && Yii::$app->skeeks->site->is_default)) : ?>
@@ -127,7 +131,7 @@ JS
                                 title="<?= \Yii::t('skeeks/cms', 'To main page of site') ?>"
                         >
                             <!--<span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">7</span>-->
-                            <i class="fas fa-external-link-alt g-absolute-centered"></i>
+                            <?= \skeeks\cms\backend\helpers\BackendIcon::render('external-link', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                         </a>
                     </div>
                 <?php endif; ?>
@@ -170,7 +174,7 @@ JS
                                 title="<?= \Yii::t('skeeks/cms', 'Clear cache and temporary files') ?>"
                         >
                             <!--<span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">7</span>-->
-                            <i class="fas fa-sync g-absolute-centered"></i>
+                            <?= \skeeks\cms\backend\helpers\BackendIcon::render('refresh', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                         </a>
                     </div>
 
@@ -187,7 +191,7 @@ JS
                                 title="<?= \Yii::t('skeeks/cms', 'Project settings') ?>"
                         >
                             <!--<span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">7</span>-->
-                            <i class="hs-admin-settings g-absolute-centered"></i>
+                            <?= \skeeks\cms\backend\helpers\BackendIcon::render('settings', ['size' => 20, 'class' => 'sx-icon-centered']); ?>
                         </a>
                     </div>
 
@@ -297,7 +301,7 @@ JS
                             <li>
                                 <a class="media" href="<?= \yii\helpers\Url::to(['/cms/admin-profile/update']); ?>">
                                     <span class="d-flex align-self-center sx-i-w">
-                                      <i class="hs-admin-user"></i>
+                                      <?= \skeeks\cms\backend\helpers\BackendIcon::render('user', ['size' => 17]); ?>
                                     </span>
                                     <span class="media-body align-self-center"><?= \Yii::t('skeeks/cms', 'Profile') ?></span>
                                 </a>
@@ -306,7 +310,7 @@ JS
                             <li>
                                 <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/admin/admin-auth/lock')->setCurrentRef(); ?>" data-method="post">
                                     <span class="d-flex align-self-center sx-i-w">
-                                      <i class="fas fa-lock"></i>
+                                      <?= \skeeks\cms\backend\helpers\BackendIcon::render('lock', ['size' => 17]); ?>
                                     </span>
                                     <span class="media-body align-self-center"><?= \Yii::t('skeeks/cms', 'To block'); ?></span>
                                 </a>
@@ -315,7 +319,7 @@ JS
                             <li>
                                 <a class="media" href="<?= \skeeks\cms\helpers\UrlHelper::construct('/cms/auth/logout')->setCurrentRef(); ?>" data-method="post">
                                     <span class="d-flex align-self-center sx-i-w">
-                                      <i class="hs-admin-shift-right"></i>
+                                      <?= \skeeks\cms\backend\helpers\BackendIcon::render('logout', ['size' => 17]); ?>
                                     </span>
                                     <span class="media-body align-self-center">Выход</span>
                                 </a>

@@ -213,13 +213,13 @@ if (!$activeMenuTitle) {
                                                 'actions'            => $modelActions,
                                                 'activeId'           => \Yii::$app->controller->action->id,
                                                 'options'            => [
-                                                    'class' => 'nav nav-tabs sx-nav-with-bg sx-mgr-6 sx-nav-model',
+                                                    'class' => 'sx-nav-model',
                                                 ],
                                                 'itemWrapperOptions' => [
-                                                    'class' => 'nav-item',
+                                                    'class' => 'sx-nav-model__item',
                                                 ],
                                                 'itemOptions'        => [
-                                                    'class' => 'nav-link',
+                                                    'class' => 'sx-nav-model__link',
                                                 ],
                                             ]);
                                             ?>

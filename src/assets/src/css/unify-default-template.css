@@ -858,8 +858,8 @@ h6,
 .checkbox input[type=checkbox]:checked + label:before, .radio input[type=checkbox]:checked + label:before,
 .sx-project-form-wrapper input[type=checkbox]:checked + label:before
 {
-    background-color: #e1082c;
-    border-color: #e1082c;
+    background-color: var(--sx-selection-control-checked-background, #e1082c);
+    border-color: var(--sx-selection-control-checked-border-color, #e1082c);
 }
 
 /**
@@ -969,13 +969,13 @@ a:hover {
  */
 .custom-control-input:checked~.custom-control-label::before {
     box-shadow: none;
-    background: #0185c8;
-    border-color: #0185c8;
+    background: var(--sx-selection-control-checked-background, #0185c8);
+    border-color: var(--sx-selection-control-checked-border-color, #0185c8);
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-label::after {
     background-image: none;
-    background: white;
+    background: var(--sx-selection-control-check-color, white);
 }
 
 

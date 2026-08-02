@@ -8,8 +8,8 @@
 
 namespace skeeks\cms\themes\unify\admin\assets;
 
-use skeeks\assets\unify\base\UnifyAsset;
 use skeeks\cms\base\AssetBundle;
+use skeeks\cms\backend\assets\BackendAppAsset;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */
@@ -17,24 +17,13 @@ class UnifyAdminAppAsset extends AssetBundle
 {
     public $sourcePath = '@skeeks/cms/themes/unify/admin/assets/src/';
 
-    public $css = [
-        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap',
-        'css/admin.css',
-        //'css/unify-admin.min.css',
-        //'css/custom-theme.css',
-        //'css/app.css',
-    ];
+    public $css = [];
 
-    public $js = [
-        //'js/classes/Iframe.js',
-        'js/classes/Blocker.js',
-        'js/classes/Window.js',
-
-        'js/app.js',
-    ];
+    public $js = [];
 
     public $depends = [
-        UnifyAdminAsset::class,
+        UnifyAdminCompatibilityAsset::class,
+        BackendAppAsset::class,
     ];
 
     public function init()

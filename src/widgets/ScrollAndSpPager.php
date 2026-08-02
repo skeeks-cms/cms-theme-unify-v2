@@ -1,72 +1,10 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * Backward-compatible alias for the backend-owned pager.
  */
 
 namespace skeeks\cms\themes\unify\widgets;
 
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
-class ScrollAndSpPager extends \skeeks\yii2\ajaxpager\ScrollAndSpPager
+class ScrollAndSpPager extends \skeeks\cms\backend\widgets\BackendScrollAndSpPager
 {
-    public $triggerTemplate = '<div class="sx-scroll-and-pager ias-trigger col-12" style="margin-bottom: 15px;">
-        <button class="btn btn-primary btn-xl btn-block">{text}</button>
-    </div>';
-
-    public $triggerText = 'Показать еще';
-    public $noneLeftText = '';
-
-    public $spClientOptions = [
-        'prevText' => '',
-        'nextText' => '',
-        'edges'    => '3',
-    ];
-
-    /**
-     * @see https://flaviusmatis.github.io/simplePagination.js/#page-3
-     * @var string[]
-     */
-    public $spClientMobileOptions = [
-        'prevText'       => '',
-        'nextText'       => '',
-        'displayedPages' => '3', //Minimum allowed: 3 (previous, current & next)
-    ];
-
-    public function init()
-    {
-        if (!$this->eventOnPageChange) {
-            $id = $this->id;
-            $this->eventOnPageChange = new \yii\web\JsExpression(<<<JS
-function(pageNum, scrollOffset, url) {
-    if (window.sx && sx.$ && sx.$('#{$id}').data('pagination')) {
-        jQuery('#{$id}').data('pagination', sx.$('#{$id}').data('pagination'));
-    }
-
-    if (!jQuery('#{$id}').data('pagination')) {
-        return;
-    }
-
-    var getCurrentPage = jQuery('#{$id}').pagination('getCurrentPage');
-    var result = getCurrentPage + 1;
-    jQuery('#{$id}').pagination('drawPage', result);
-}
-JS
-        );
-        }
-        if (!$this->eventOnRendered) {
-            $id = $this->id;
-            $this->eventOnRendered = new \yii\web\JsExpression(<<<JS
-function() {
-    $(document).trigger("scrollAndPagerRendered");
-}
-JS
-        );
-        }
-        parent::init();
-
-    }
 }

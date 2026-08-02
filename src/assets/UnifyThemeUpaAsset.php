@@ -16,6 +16,7 @@ use skeeks\assets\unify\base\UnifyHsOnscrollAnimationAsset;
 use skeeks\assets\unify\base\UnifyHsPopupAsset;
 use skeeks\assets\unify\base\UnifyHsStickyBlockAsset;
 use skeeks\cms\base\AssetBundle;
+use skeeks\cms\backend\assets\BackendWindowCompatibilityAsset;
 use skeeks\sx\assets\Custom;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\YiiAsset;
@@ -32,10 +33,10 @@ class UnifyThemeUpaAsset extends AssetBundle
 
     public $js = [
         'js/upa.js',
-        'js/classes/Window.js',
     ];
 
     public $depends = [
-        Custom::class
+        Custom::class,
+        BackendWindowCompatibilityAsset::class,
     ];
 }

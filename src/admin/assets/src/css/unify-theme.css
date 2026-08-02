@@ -1,0 +1,106 @@
+:root,
+html[data-sx-theme] {
+    /*
+     * Unify-only aliases for markup that has not reached the semantic shell.
+     * Shared colors, radii, buttons and quick-access tokens live in
+     * skeeks/cms-backend.
+     */
+    --sx-unify-header-background: var(--sx-shell-header-background);
+    --sx-unify-header-color: var(--sx-shell-header-color);
+    --sx-unify-header-muted: var(--sx-shell-header-muted);
+    --sx-unify-header-action-background: var(--sx-shell-header-action-background);
+    --sx-unify-header-menu-shadow: var(--sx-shell-header-menu-shadow);
+
+    --sx-unify-sidebar-background: var(--sx-shell-sidebar-background);
+    --sx-unify-sidebar-color: var(--sx-shell-sidebar-color);
+    --sx-unify-sidebar-muted: var(--sx-shell-sidebar-muted);
+    --sx-unify-sidebar-icon-color: var(--sx-shell-sidebar-icon-color);
+    --sx-unify-sidebar-border-color: var(--sx-shell-sidebar-border-color);
+    --sx-unify-sidebar-opened-background: var(--sx-shell-sidebar-opened-background);
+    --sx-unify-sidebar-active-color: var(--sx-shell-sidebar-active-color);
+    --sx-unify-sidebar-active-background: var(--sx-shell-sidebar-active-background);
+    --sx-unify-sidebar-special-background: var(--sx-shell-sidebar-special-background);
+    --sx-unify-sidebar-special-color: var(--sx-shell-sidebar-special-color);
+
+    --sx-unify-drawer-shadow: -12px 0 28px rgba(0, 0, 0, .24);
+}
+
+/*
+ * Fancybox is an Unify compatibility adapter for old BackendAction windows.
+ * New shells use the native BackendWindow owned by cms-backend.
+ */
+html[data-sx-theme] .sx-fancy-container .fancybox-bg {
+    background: var(--sx-overlay-color);
+}
+
+html[data-sx-theme] .sx-fancy-container.fancybox-is-open .fancybox-bg {
+    opacity: var(--sx-overlay-opacity);
+}
+
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-content,
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-iframe {
+    background: var(--sx-modal-background);
+}
+
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-iframe {
+    box-shadow: var(--sx-unify-drawer-shadow);
+}
+
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-close-small {
+    color: var(--sx-modal-color);
+    background: var(--sx-color-canvas);
+}
+
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-close-small::after,
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-close-small:hover,
+html[data-sx-theme] .sx-fancy-container .fancybox-slide--iframe .fancybox-close-small:hover::after {
+    color: var(--sx-modal-color);
+}
+
+/*
+ * Dark-mode bridge for legacy Unify navigation classes. Migrated shared
+ * renderers must not emit these selectors.
+ */
+html[data-sx-theme="dark"] .u-sidebar-navigation--light,
+html[data-sx-theme="dark"] .sx-sidebar-inner {
+    color: var(--sx-color-text);
+    background: var(--sx-color-surface);
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light a,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .has-active > a,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--top-level-menu-link,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--second-level-menu-link,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--third-level-menu-link,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--fourth-level-menu-link {
+    color: var(--sx-color-text-muted);
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--top-level-menu-icon i,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .sx-icon-wrapper i {
+    color: var(--sx-color-text-subtle);
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--top-level-menu-link:hover,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--second-level-menu-link:hover,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--third-level-menu-link:hover,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--fourth-level-menu-link:hover {
+    color: var(--sx-color-text);
+    background: var(--sx-color-surface-hover);
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--top-level-menu-item:hover {
+    background: transparent;
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .has-active,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--has-sub-menu.u-side-nav-opened {
+    background: var(--sx-color-surface-muted);
+}
+
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--second-level-menu-link.active,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--third-level-menu-link.active,
+html[data-sx-theme="dark"] .u-sidebar-navigation--light .u-side-nav--fourth-level-menu-link.active {
+    color: var(--sx-color-accent);
+    background: var(--sx-color-accent-soft);
+}

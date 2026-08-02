@@ -11,45 +11,39 @@
 /* @var $parent \skeeks\cms\backend\BackendMenuItem */
 $level = $level + 1;
 
-$levelName = 'second';
-if ($level == 3) {
-    $levelName = 'third';
-}
-if ($level == 4) {
-    $levelName = 'fourth';
-}
 ?>
 <? if ($items) : ?>
-    <ul id="subMenuLevels<?= $parent->id; ?>" class="u-sidebar-navigation-v1-menu u-side-nav--<?= $levelName; ?>-level-menu mb-0" <?= $parent->isActive ? "style='display:block;' " : ""; ?>>
+    <ul id="subMenuLevels<?= $parent->id; ?>" class="sx-shell-menu sx-shell-menu--level-<?= $level ?>">
         <? foreach ($items as $item) : ?>
             <? if ($item->isVisible) : ?>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--<?= $levelName; ?>-level-menu-item
-<?= $item->items && $item->isActive ? "u-side-nav-opened has-active" : ""; ?>
+                <li class="sx-shell-menu__item sx-shell-menu__item--level-<?= $level ?>
+<?= $item->items ? "sx-shell-menu__item--has-children" : ""; ?>
+<?= $item->items && $item->isActive ? "sx-shell-menu__item--open sx-shell-menu__item--active" : ""; ?>
 ">
-                    <a class="media u-side-nav--<?= $levelName; ?>-level-menu-link  <?= $item->isActive ? "active" : ""; ?>"
+                    <a class="sx-shell-menu__link sx-shell-menu__link--level-<?= $level ?> <?= $item->isActive ? "sx-shell-menu__link--active" : ""; ?>"
                        href="<?= $item->url; ?>"
-                        <?= $item->items ? "data-hssm-target='#subMenuLevels{$item->id}'" : "" ?>
+                        <?= $item->items ? "data-sx-shell-menu-target='#subMenuLevels{$item->id}' aria-expanded='".($item->isActive ? 'true' : 'false')."' aria-controls='subMenuLevels{$item->id}'" : "" ?>
                     >
 
                         <? if ($item->image) : ?>
-                            <span class="align-self-center sx-icon-wrapper">
+                            <span class="sx-shell-menu__icon sx-shell-menu__icon--nested">
                                 <img src="<?= $item->image; ?>"/>
                             </span>
                         <? elseif ($item->icon) : ?>
-                            <span class="align-self-center sx-icon-wrapper">
+                            <span class="sx-shell-menu__icon sx-shell-menu__icon--nested">
                                 <i class="<?= $item->icon; ?>"></i>
                             </span>
                         <? else : ?>
-                            <span class="align-self-center sx-icon-wrapper">
+                            <span class="sx-shell-menu__icon sx-shell-menu__icon--nested">
                                 <img src="<?= \skeeks\cms\assets\CmsAsset::getAssetUrl('images/icons/admin-menu/more.svg'); ?>"/>
                             </span>
                         <? endif; ?>
 
-                        <span class="media-body align-self-center"><?= $item->name; ?></span>
+                        <span class="sx-shell-menu__label"><?= $item->name; ?></span>
 
                         <? if ($item->items) : ?>
-                            <span class="align-self-center u-side-nav--control-icon">
-                          <i class="hs-admin-angle-right"></i>
+                            <span class="sx-shell-menu__control">
+                          <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14]); ?>
                         </span>
                         <? endif; ?>
                     </a>

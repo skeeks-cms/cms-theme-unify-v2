@@ -15,23 +15,23 @@
 
         <li class="list-inline-item sx-breadcrumbs-item">
             <a class="g-valign-middle" href="<?= $this->theme->logoHref; ?>">Главная</a>
-            <i class="hs-admin-angle-right g-valign-middle"></i>
+            <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14, 'class' => 'g-valign-middle']); ?>
         </li>
 
         <? if (\skeeks\cms\backend\BackendComponent::getCurrent()->id == 'hostingVpsBackend') : ?>
             <li class="list-inline-item sx-breadcrumbs-item">
                 <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/hosting/upa-hosting/index']) ?>">Мои VPS</a>
-                <i class="hs-admin-angle-right g-valign-middle"></i>
+                <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14, 'class' => 'g-valign-middle']); ?>
             </li>
             <li class="list-inline-item sx-breadcrumbs-item">
                 <a class="g-valign-middle" href="
                                     <?= \yii\helpers\Url::to(['/hosting/hosting-vps/index']) ?>">VPS <?= \Yii::$app->hostingVpsBackend->vps->id; ?></a>
-                <i class="hs-admin-angle-right g-valign-middle"></i>
+                <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14, 'class' => 'g-valign-middle']); ?>
             </li>
         <? elseif (\skeeks\cms\backend\BackendComponent::getCurrent()->id == 'crmBackend') : ?>
             <li class="list-inline-item sx-breadcrumbs-item">
                 <a class="g-valign-middle" href="<?= \yii\helpers\Url::to(['/crm/crm-main']) ?>">Кабинет сотрудника</a>
-                <i class="hs-admin-angle-right g-valign-middle"></i>
+                <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14, 'class' => 'g-valign-middle']); ?>
             </li>
         <? endif; ?>
 
@@ -48,7 +48,7 @@
                 <li class="list-inline-item sx-breadcrumbs-item">
                     <a class="g-valign-middle" href="<?= \yii\helpers\ArrayHelper::getValue($row,
                         'url'); ?>"><?= \yii\helpers\ArrayHelper::getValue($row, 'label'); ?></a>
-                    <i class="hs-admin-angle-right g-valign-middle"></i>
+                    <?= \skeeks\cms\backend\helpers\BackendIcon::render('chevron-right', ['size' => 14, 'class' => 'g-valign-middle']); ?>
                 </li>
             <? endif; ?>
 

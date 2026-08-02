@@ -11,7 +11,6 @@ namespace skeeks\cms\themes\unify\admin\assets;
 use skeeks\assets\unify\base\UnifyAsset;
 use skeeks\assets\unify\base\UnifyHsScrollbarAsset;
 use skeeks\assets\unify\base\UnifyPopperAsset;
-use skeeks\cms\assets\FancyboxAssets;
 use skeeks\cms\themes\unify\assets\FontAwesomeAsset;
 use skeeks\sx\assets\Custom;
 use yii\bootstrap\BootstrapPluginAsset;
