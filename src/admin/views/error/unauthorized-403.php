@@ -40,15 +40,10 @@ JS
     <div class="col-lg-4"></div>
 
     <div class="col-lg-4">
-        <div class="panel panel-primary sx-panel">
-            <div class="panel-body">
-                <div class="panel-content">
+        <div class="sx-surface sx-surface--raised sx-surface--padded">
 
-                    <div class="sx-act-reset-password">
-                        <?= $message; ?>
-                    </div>
-
-                </div>
+            <div class="sx-act-reset-password">
+                <?= $message; ?>
             </div>
         </div>
 
