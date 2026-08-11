@@ -10,7 +10,7 @@ namespace skeeks\cms\themes\unify\widgets\jui\assets;
 use skeeks\cms\backend\widgets\jui\assets\BackendSortableAsset;
 
 /**
- * @deprecated Use BackendSortableAsset.
+ * @deprecated Use BackendSortableAdapterAsset.
  */
 class JuiSortableAsset extends BackendSortableAsset
 {

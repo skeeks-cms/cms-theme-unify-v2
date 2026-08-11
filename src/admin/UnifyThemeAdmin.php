@@ -11,16 +11,14 @@ use skeeks\cms\backend\themes\BackendTheme;
 use skeeks\cms\themes\unify\admin\assets\UnifyAdminAppAsset;
 use skeeks\cms\themes\unify\admin\assets\UnifyAdminHeaderAsset;
 use skeeks\cms\themes\unify\admin\assets\UnifyAdminLeftMenuAsset;
-use skeeks\cms\themes\unify\widgets\jui\JuiSortableWidget;
 use yii\helpers\ArrayHelper;
-use yii\jui\Sortable;
 
 /**
  * Backward-compatible Unify administration theme.
  *
  * Shared providers, theme mode and shell contracts are inherited from
  * BackendTheme. This subclass retains only Unify assets, logo defaults and
- * its historical sortable/select-field mappings.
+ * its historical select-field mapping.
  */
 class UnifyThemeAdmin extends BackendTheme
 {
@@ -63,9 +61,6 @@ class UnifyThemeAdmin extends BackendTheme
             [
                 \skeeks\yii2\form\fields\SelectField::class => [
                     'class' => \skeeks\cms\admin\form\fields\AdminSelectField::class,
-                ],
-                Sortable::class => [
-                    'class' => JuiSortableWidget::class,
                 ],
             ]
         ));

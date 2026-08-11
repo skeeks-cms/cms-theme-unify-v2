@@ -10,7 +10,8 @@ namespace skeeks\cms\themes\unify\widgets\jui;
 use skeeks\cms\backend\widgets\jui\BackendSortableWidget;
 
 /**
- * @deprecated Use BackendSortableWidget. Kept as a compatibility entry point.
+ * @deprecated Use BackendSortableAdapterAsset and sx.backend.sortable.create().
+ * Kept as a compatibility entry point.
  */
 class JuiSortableWidget extends BackendSortableWidget
 {
