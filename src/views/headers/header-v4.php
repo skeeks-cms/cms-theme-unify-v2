@@ -10,6 +10,9 @@
 
 
 \skeeks\assets\unify\base\UnifyHsHeaderAsset::register($this);
+if (class_exists(\skeeks\cms\search\assets\LiveSearchAsset::class)) {
+    \skeeks\cms\search\assets\LiveSearchAsset::register($this);
+}
 \skeeks\assets\unify\base\UnifyHsMegamenuAsset::register($this);
 $this->registerJs(<<<JS
 //$(window).on('load', function () {
@@ -73,6 +76,15 @@ $this->registerCss(<<<CSS
 }
 .sx-header-v4-search .sx-search-form form {
     margin-bottom: 0;
+}
+.sx-header-v4-search .sx-search-form {
+    position: static;
+    padding: 0;
+    background: transparent;
+}
+@media (max-width: 768px) {
+    .sx-header-v4-search { min-width: 0; }
+    .sx-header-v4-search input { font-size: 16px; }
 }
 .sx-header-v4-search .sx-search-form .row,
 .sx-header-v4-search .sx-search-form .col-sm-12 {

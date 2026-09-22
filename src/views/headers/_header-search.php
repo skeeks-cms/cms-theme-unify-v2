@@ -6,6 +6,9 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 \skeeks\assets\unify\base\UnifyIconSimpleLineAsset::register($this);
+if (class_exists(\skeeks\cms\search\assets\LiveSearchAsset::class)) {
+    \skeeks\cms\search\assets\LiveSearchAsset::register($this);
+}
 $this->registerJs(<<<JS
     $('body').on('submit', '.sx-search-form', function() {
         //alert('111');
