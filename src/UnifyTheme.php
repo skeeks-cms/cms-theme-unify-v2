@@ -61,6 +61,9 @@ class UnifyTheme extends Theme
     const UPA_CONTAINER_STANDART = 'container-standart';
     const UPA_CONTAINER_NO_STANDART = 'container-no-standart';
 
+    const UPA_LAYOUT_SITE = 'site';
+    const UPA_LAYOUT_BACKEND = 'backend';
+
     public $pathMap = [
         '@app/views' => [
             '@skeeks/cms/themes/unify/views',
@@ -692,7 +695,21 @@ HTML,
                             'class' => NumberField::class,
                         ],
                     ]
-                ]
+                ],
+
+                'upa_layout_set' => [
+                    'class'  => FieldSet::class,
+                    'name'   => 'Личный кабинет',
+                    'fields' => [
+                        'upa_layout' => [
+                            'class' => SelectField::class,
+                            'items' => [
+                                UnifyTheme::UPA_LAYOUT_SITE    => 'В дизайне сайта',
+                                UnifyTheme::UPA_LAYOUT_BACKEND => 'Отдельный кабинет',
+                            ],
+                        ],
+                    ],
+                ],
                 /*'upa' => [
                     'class'  => FieldSet::class,
                     'name'   => 'Личный кабинет',
@@ -711,6 +728,7 @@ HTML,
             ],
             'attributeHints'  => [
                 'pagination_trigger_offset'  => '0 - автоподгрузка отключена, >0 количество страниц для автоподгрузки (например 1000)',
+                'upa_layout'                 => 'В дизайне сайта — кабинет покупателя открывается с шапкой, меню и подвалом сайта. Отдельный кабинет — в собственном оформлении, как раздел управления.',
                 'base_radius'  => 'Базовая настройка скругления углов у кнопок и различных блоков',
                 'base_padding' => 'Базовые отступы',
 
@@ -810,6 +828,7 @@ HTML,
                 'body_outer'    => "Отступ вокруг контейнера сайта",
 
                 'upa_container' => "Личный кабинет",
+                'upa_layout'    => "Оформление личного кабинета",
 
                 'isShowBottomBlock' => "Показывать блок с телефоном и email на всех страницах?",
 
@@ -898,6 +917,12 @@ HTML,
                         'base_padding',
                     ],
                     'string',
+                ],
+
+                [
+                    'upa_layout',
+                    'in',
+                    'range' => [self::UPA_LAYOUT_SITE, self::UPA_LAYOUT_BACKEND],
                 ],
 
                 [
@@ -1403,6 +1428,13 @@ CSS;
      * @var string
      */
     public $upa_container = self::UPA_CONTAINER_FULL;
+
+    /**
+     * Customer cabinet presentation: inside the site design or in the
+     * standalone backend shell.
+     * @var string
+     */
+    public $upa_layout = self::UPA_LAYOUT_SITE;
 
     /**
      * @var array
