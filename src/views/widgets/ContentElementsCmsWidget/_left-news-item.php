@@ -12,7 +12,7 @@
 
 <article class="media sx-news-item">
     <a class="d-flex sx-news-img-wrapper" href="<?= $model->url; ?>" title="<?= $model->name; ?>">
-        <img src="<?= \skeeks\cms\helpers\Image::getSrc(
+        <img width="60" height="60" style="width: 60px; height: 60px; object-fit: cover; flex-shrink: 0;" src="<?= \skeeks\cms\helpers\Image::getSrc(
                     \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                         new \skeeks\cms\components\imaging\filters\Thumbnail([
                             'w' => 60,
