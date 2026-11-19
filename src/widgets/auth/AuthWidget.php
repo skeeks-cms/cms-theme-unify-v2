@@ -35,6 +35,46 @@ class AuthWidget extends Widget
      */
     public $auth_submit_code_always = null;
 
+    /**
+     * @var bool показывать обязательную галочку согласия на обработку персональных данных
+     * в первом шаге входа (телефон или email): по нему же проходит регистрация (152-ФЗ).
+     * null — по настройке сайта «Галочка согласия при входе и регистрации» в
+     * «Правовой информации» (по умолчанию включена).
+     */
+    public $is_show_consent = null;
+
+    /**
+     * Обязательная галочка согласия для формы первого шага.
+     *
+     * @param string $key уникальная часть id в пределах виджета
+     * @return string
+     */
+    public function renderConsent($key)
+    {
+        if (!\Yii::$app->has('legal') || !method_exists(\Yii::$app->legal, 'getConsentCheckboxText')) {
+            return '';
+        }
+        $show = $this->is_show_consent;
+        if ($show === null) {
+            $show = isset(\Yii::$app->legal->is_auth_consent) ? (bool) \Yii::$app->legal->is_auth_consent : true;
+        }
+        if (!$show) {
+            return '';
+        }
+
+        $id = $this->id."-consent-".$key;
+
+        if (method_exists(\Yii::$app->legal, 'renderConsentCheckbox')) {
+            return \Yii::$app->legal->renderConsentCheckbox($id);
+        }
+
+        return Html::tag('div',
+            Html::checkbox('legal_consent', false, ['id' => $id, 'value' => 1, 'required' => true, 'class' => 'sx-legal-consent-input'])
+            .' '.Html::tag('label', \Yii::$app->legal->consentCheckboxText, ['for' => $id, 'class' => 'sx-legal-consent-label']),
+            ['class' => 'form-group sx-legal-consent']
+        );
+    }
+
     public function init()
     {
         Html::addCssClass($this->options, "sx-auth-widget");

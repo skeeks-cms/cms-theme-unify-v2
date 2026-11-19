@@ -34,3 +34,20 @@
 .sx-callcheck-info {
     margin-bottom: 10px;
 }
+
+/* Галочка согласия на обработку персональных данных (152-ФЗ) */
+.sx-auth-widget .sx-legal-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    text-align: left;
+}
+.sx-auth-widget .sx-legal-consent-input {
+    flex: none;
+    margin-top: 0.15rem;
+}
+.sx-auth-widget .sx-legal-consent-label {
+    margin-bottom: 0;
+}

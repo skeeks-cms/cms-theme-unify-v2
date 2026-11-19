@@ -89,8 +89,9 @@ JS
                 <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>
-            
+
         </div>
+        <?php echo $widget->renderConsent('callcheck-phone'); ?>
         <div class="form-group">
             <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Продолжить</button>
         </div>
@@ -205,6 +206,7 @@ JS
             <input type="hidden" name="auth_submit_code_always" value="<?php echo $widget->auth_submit_code_always; ?>">
             <input type="text" id="sx-phone" class="form-control sx-phone" name="phone" placeholder="Ваш телефон">
         </div>
+        <?php echo $widget->renderConsent('phone'); ?>
         <div class="form-group">
             <button class="btn btn-md btn-block btn-primary sx-btn-submit" type="submit">Продолжить</button>
         </div>
@@ -322,8 +324,9 @@ JS
                 <input type="text" id="sx-email" class="form-control sx-email" name="email" placeholder="Ваш email">
                 <!--<button class="btn btn-primary sx-btn-submit" type="submit">Продолжить</button>-->
             </div>
-            
+
         </div>
+        <?php echo $widget->renderConsent('email'); ?>
         <div class="form-group">
             <button class="btn btn-primary sx-btn-submit btn-block" type="submit">Продолжить</button>
         </div>

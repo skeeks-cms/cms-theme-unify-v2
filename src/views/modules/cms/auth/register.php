@@ -51,6 +51,9 @@ JS
                     <?= $form->field($model, 'email')->textInput([
                         'class' => 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15',
                     ]); ?>
+                    <?php if (method_exists(\Yii::$app->legal, 'renderConsentCheckbox') && (!isset(\Yii::$app->legal->is_auth_consent) || \Yii::$app->legal->is_auth_consent)) : ?>
+                        <?= \Yii::$app->legal->renderConsentCheckbox($form->id.'-consent'); ?>
+                    <?php endif; ?>
 
                     <div class="mb-4">
                         <button class="btn btn-md btn-block btn-primary g-py-13" type="submit">Зарегистрироваться</button>
