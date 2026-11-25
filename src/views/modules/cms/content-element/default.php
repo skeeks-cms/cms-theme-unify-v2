@@ -396,18 +396,18 @@ JS
                                 <?php endif; ?>
 
                                 <span itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
-                        <meta itemprop="name" content="<?= \Yii::$app->cms->appName; ?>">
+                        <meta itemprop="name" content="<?= \yii\helpers\Html::encode(\Yii::$app->cms->appName); ?>">
                         <?php if (\Yii::$app->skeeks->site->cmsSiteAddress) : ?>
-                            <meta itemprop="address" content="<?= \Yii::$app->skeeks->site->cmsSiteAddress->value; ?>">
+                            <meta itemprop="address" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->cmsSiteAddress->value); ?>">
                         <?php endif; ?>
 
                                     <?php if (\Yii::$app->skeeks->site->cmsSitePhone) : ?>
-                                        <meta itemprop="telephone" content="<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>">
+                                        <meta itemprop="telephone" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->cmsSitePhone->value); ?>">
                                     <?php endif; ?>
 
                         <span itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
-                            <link itemprop="url" href="<?= $this->theme->logo; ?>">
-                            <meta itemprop="image" content="<?= $this->theme->logo; ?>">
+                            <link itemprop="url" href="<?= \yii\helpers\Html::encode(\yii\helpers\Url::to($this->theme->logo, true)); ?>">
+                            <link itemprop="image" href="<?= \yii\helpers\Html::encode(\yii\helpers\Url::to($this->theme->logo, true)); ?>">
                         </span>
                     </span>
                                 <meta itemprop="datePublished" content="<?= \Yii::$app->formatter->asDate($model->created_at, "php:Y-m-d"); ?>"/>

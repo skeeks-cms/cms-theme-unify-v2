@@ -25,17 +25,20 @@ $modal = \yii\bootstrap\Modal::begin([
 <? $modal::end(); ?>
 
 <div style="display: none;"  itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="<?= \Yii::$app->skeeks->site->name; ?>">
+    <meta itemprop="name" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->name); ?>">
     <?php if(\Yii::$app->skeeks->site->cmsSitePhone) : ?>
-        <meta itemprop="telephone" content="<?= \Yii::$app->skeeks->site->cmsSitePhone->value; ?>">
+        <meta itemprop="telephone" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->cmsSitePhone->value); ?>">
     <?php endif; ?>
     <?php if(\Yii::$app->skeeks->site->cmsSiteEmail) : ?>
-        <meta itemprop="email" content="<?= \Yii::$app->skeeks->site->cmsSiteEmail->value; ?>">
+        <meta itemprop="email" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->cmsSiteEmail->value); ?>">
     <?php endif; ?>
     <?php if(\Yii::$app->skeeks->site->cmsSiteAddress) : ?>
-        <meta itemprop="address" content="<?= \Yii::$app->skeeks->site->cmsSiteAddress->value; ?>">
+        <meta itemprop="address" content="<?= \yii\helpers\Html::encode(\Yii::$app->skeeks->site->cmsSiteAddress->value); ?>">
     <?php endif; ?>
     <link itemprop="url" href="<?= \yii\helpers\Url::home(true); ?>">
-    <meta itemprop="logo" content="<?= $this->theme->logo; ?>">
-    <meta itemprop="image" content="<?= $this->theme->logo; ?>">
+    <?php if ($this->theme->logo) : ?>
+        <?php //Поисковикам нужен полный адрес картинки, а логотип в настройках темы часто относительный (/uploads/...) ?>
+        <link itemprop="logo" href="<?= \yii\helpers\Html::encode(\yii\helpers\Url::to($this->theme->logo, true)); ?>">
+        <link itemprop="image" href="<?= \yii\helpers\Html::encode(\yii\helpers\Url::to($this->theme->logo, true)); ?>">
+    <?php endif; ?>
 </div>
